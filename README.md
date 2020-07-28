@@ -2,17 +2,27 @@ This is an e-commerce project built as a part of Web Develpment Diploma program 
 
 GIT WORKFLOW
 
-In our workflow, we have two branches that always exist, master and development.
+In our workflow, we have one main branch - MASTER
 
-Master represents the most stable version of our project and it is used only for deployment for production.
+If you need to add some changes to the project, you should push them to your own branch and send me a pull request, so that I can merge the changes you've made to the master branch.
 
-NEVER PUSH TO MASTER!
+Step-by-step from start:
 
-Development is the branch we all are working on BY DEFAULT. It contains changes that are in progress and may not necessarily be ready for production.
+1. Clone the repository:  git clone https://github.com/tech-soldier/e-commerce.git
 
-(test)
+2. Create your own branch you will be working on: git checkout -b dawnbranch 
 
-(test from development branch)
+3. After you've made changes:
 
-test Dawn
+ 	git add .
+ 	git commit -m "commit message"
+ 	git push
+
+4. Go to github repository -> create pull request from your branch to master branch
+
+5. Inna confirms pull request -> master branch is updated
+
+
+
+
 
