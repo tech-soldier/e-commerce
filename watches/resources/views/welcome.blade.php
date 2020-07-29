@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Tech Watch
+                    TechWatch
                 </div>
 
                 <div class="links">
