@@ -18,7 +18,7 @@ Step-by-step ONLY FOR THE FIRST TIME:
 
  	git commit -m "commit message"
 
- 	git push --set-upstream origin <your branch name>
+ 	git push --set-upstream origin dawnbranch 
 
 4. Go to github repository -> create pull request from your branch to master branch
 
