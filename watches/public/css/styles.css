@@ -1744,7 +1744,8 @@ textarea:focus,
 .special_feature_area {
   position: relative;
   z-index: 1;
-  background-color: #f8f8ff; }
+  background-color: #f8f8ff;
+  border-top: 1px solid #ccc; }
 
 .single_feature_area {
   position: relative;
