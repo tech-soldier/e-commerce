@@ -15,7 +15,7 @@
                                 <div class="welcome_slide_text text-center">
 
                                     <div class="bg_blue p-4">
-                                        <h2 data-animation="fadeInUp" data-delay="300ms">View All</h2>
+                                        <h2 data-animation="fadeInUp" data-delay="300ms">View Gallery</h2>
                                         <p class="mb-0" data-animation="fadeInUp" data-delay="100ms">Watch Collection</p>
                                         <i class="fas fa-angle-right"></i>
                                     </div>
