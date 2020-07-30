@@ -31,7 +31,7 @@
         <div class="container">
 		  <div class="row">
 		    <div class="col">
-		      <a href="/" class="nav-brand"><img class="logo my-2" src="/images/logo.png" alt="logo"></a>
+		      <a href="/" class="nav-brand"><img class="logo my-3" src="/images/logo.png" alt="logo"></a>
 		    </div>
 		    <div class="col-6">
 		       <!-- Menu -->

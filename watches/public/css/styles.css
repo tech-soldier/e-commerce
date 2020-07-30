@@ -1788,7 +1788,7 @@ textarea:focus,
 .footer_area {
   position: relative;
   z-index: 1;
-  background-color: #1d2536; }
+  background-color: #030303; }
   .footer_area .single_footer_area {
     position: relative;
     z-index: 1; }
@@ -3840,7 +3840,7 @@ img.logo{
 }
 
 .classy-menu{
-  margin-top: 1.5rem;
+  margin-top: 1.9rem;
 }
 
 .navbar-nav a{
