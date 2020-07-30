@@ -3,7 +3,7 @@
 @section('content')
 
     <!-- Welcome Slides Area -->
-    <section class="welcome_area">
+    <section class="welcome_area mt-3">
         <div class="owl-carousel">
 
             <!-- Single Slide -->
