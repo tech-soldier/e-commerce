@@ -18,17 +18,19 @@ Route::get('/', function () {
     return view('homepage');
 });
 
-Route::get('/about', function () {
-    return view('about');
-});
-
 Route::get('/shop', function(){
     return view('shop');
 });
 
+Route::get('/about', 'PagesController@about');
+
+Route::get('/contact', 'PagesController@contact');
+
+
+
+/* ----------------------------------------------*/
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/contact', 'PagesController@contact');
 
