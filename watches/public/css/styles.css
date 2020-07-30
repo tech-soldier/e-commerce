@@ -3830,3 +3830,20 @@ button.mfp-arrow {
     -o-transition-duration: 500ms;
     transition-duration: 500ms;
     box-shadow: 0 0 8px 0 rgba(47, 91, 234, 0.125); }
+
+/* custom css */
+.navbar-nav{
+  flex-direction: unset;
+}
+
+img.logo{
+  max-width: 250px;
+}
+
+.hero_meta_area{
+  height: 100%;
+}
+
+.classy-menu{
+  margin-top: 1rem;
+}

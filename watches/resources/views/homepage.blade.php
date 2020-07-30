@@ -27,131 +27,131 @@
 
     <!-- Header Area -->
     <header class="header_area">
-        <!-- Main Menu -->
-        <div class="bigshop-main-menu">
-            <div class="container">
-                <div class="classy-nav-container breakpoint-off">
-                    <nav class="classy-navbar" id="bigshopNav">
 
-                        <!-- Nav Brand -->
-                        <a href="index.html" class="nav-brand"><img src="" alt="logo"></a>
-
-                        <!-- Menu -->
-                        <div class="classy-menu">
-                            <!-- Nav -->
-                            <div class="classynav">
-                                <ul>
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">Shop</a></li>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">Contact</a></li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Hero Meta -->
-                        <div class="hero_meta_area ml-auto d-flex align-items-center justify-content-end">
-                            <!-- Search -->
-                            <div class="search-area">
-                                <div class="search-btn"><i class="icofont-search"></i></div>
-                                <!-- Form -->
-                                <div class="search-form">
-                                    <input type="search" class="form-control" placeholder="Search">
-                                    <input type="submit" class="d-none" value="Send">
-                                </div>
-                            </div>
-
-                            <!-- Wishlist -->
-                            <div class="wishlist-area">
-                                <a href="wishlist.html" class="wishlist-btn"><i class="icofont-heart"></i></a>
-                            </div>
-
-                            <!-- Cart -->
-                            <div class="cart-area">
-                                <div class="cart--btn"><i class="icofont-cart"></i> <span class="cart_quantity">2</span></div>
-
-                                <!-- Cart Dropdown Content -->
-                                <div class="cart-dropdown-content">
-                                    <ul class="cart-list">
-                                        <li>
-                                            <div class="cart-item-desc">
-                                                <a href="#" class="image">
-                                                    <img src="https://picsum.photos/500/500" class="cart-thumb" alt="">
-                                                </a>
-                                                <div>
-                                                    <a href="#">Kid's Fashion</a>
-                                                    <p>1 x - <span class="price">$32.99</span></p>
-                                                </div>
-                                            </div>
-                                            <span class="dropdown-product-remove"><i class="icofont-bin"></i></span>
-                                        </li>
-                                        <li>
-                                            <div class="cart-item-desc">
-                                                <a href="#" class="image">
-                                                    <img src="https://picsum.photos/500/500" class="cart-thumb" alt="">
-                                                </a>
-                                                <div>
-                                                    <a href="#">Headphone</a>
-                                                    <p>2x - <span class="price">$49.99</span></p>
-                                                </div>
-                                            </div>
-                                            <span class="dropdown-product-remove"><i class="icofont-bin"></i></span>
-                                        </li>
-                                    </ul>
-                                    <div class="cart-pricing my-4">
-                                        <ul>
-                                            <li>
-                                                <span>Sub Total:</span>
-                                                <span>$822.96</span>
-                                            </li>
-                                            <li>
-                                                <span>Shipping:</span>
-                                                <span>$30.00</span>
-                                            </li>
-                                            <li>
-                                                <span>Total:</span>
-                                                <span>$856.63</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="cart-box">
-                                        <a href="checkout-1.html" class="btn btn-primary d-block">Checkout</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Account -->
-                            <div class="account-area">
-                                <div class="user-thumbnail">
-                                    <img src="https://picsum.photos/500/500" alt="">
-                                </div>
-                                <ul class="user-meta-dropdown">
-                                    <li class="user-title"><span>Hello,</span> Lim Sarah</li>
-                                    <li><a href="my-account.html">My Account</a></li>
-                                    <li><a href="order-list.html">Orders List</a></li>
-                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                    <li><a href="login.html"><i class="icofont-logout"></i> Logout</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </nav>
+        <div class="container">
+		  <div class="row">
+		    <div class="col">
+		      <a href="index.html" class="nav-brand"><img class="logo" src="/images/logo.jpg" alt="logo"></a>
+		    </div>
+		    <div class="col-6">
+		       <!-- Menu -->
+                <div class="classy-menu">
+                    <!-- Nav -->
+                    <div class="classynav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </div>
+		    </div>
+		    <div class="col">
+                <!-- Hero Meta -->
+                <div class="hero_meta_area ml-auto d-flex align-items-center justify-content-end">
+                    <!-- Search -->
+                    <div class="search-area">
+                        <div class="search-btn"><i class="fas fa-search"></i></div>
+                        <!-- Form -->
+                        <div class="search-form">
+                            <input type="search" class="form-control" placeholder="Search">
+                            <input type="submit" class="d-none" value="Send">
+                        </div>
+                    </div>
+
+                    <!-- Wishlist -->
+                    <div class="wishlist-area">
+                        <a href="wishlist.html" class="wishlist-btn"><i class="fas fa-heart"></i></a>
+                    </div>
+
+                    <!-- Cart -->
+                    <div class="cart-area">
+                        <div class="cart--btn"><i class="fas fa-shopping-cart"></i></i> <span class="cart_quantity">2</span></div>
+
+                        <!-- Cart Dropdown Content -->
+                        <div class="cart-dropdown-content">
+                            <ul class="cart-list">
+                                <li>
+                                    <div class="cart-item-desc">
+                                        <a href="#" class="image">
+                                            <img src="https://picsum.photos/500/500" class="cart-thumb" alt="">
+                                        </a>
+                                        <div>
+                                            <a href="#">Swatch 800</a>
+                                            <p>1 x - <span class="price">$140.99</span></p>
+                                        </div>
+                                    </div>
+                                    <span class="dropdown-product-remove"><i class="icofont-bin"></i></span>
+                                </li>
+                                <li>
+                                    <div class="cart-item-desc">
+                                        <a href="#" class="image">
+                                            <img src="https://picsum.photos/500/500" class="cart-thumb" alt="">
+                                        </a>
+                                        <div>
+                                            <a href="#">Hublot Style</a>
+                                            <p>2x - <span class="price">$270.99</span></p>
+                                        </div>
+                                    </div>
+                                    <span class="dropdown-product-remove"><i class="icofont-bin"></i></span>
+                                </li>
+                            </ul>
+                            <div class="cart-pricing my-4">
+                                <ul>
+                                    <li>
+                                        <span>Sub Total:</span>
+                                        <span>$822.96</span>
+                                    </li>
+                                    <li>
+                                        <span>Shipping:</span>
+                                        <span>$30.00</span>
+                                    </li>
+                                    <li>
+                                        <span>Total:</span>
+                                        <span>$856.63</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="cart-box">
+                                <a href="checkout-1.html" class="btn btn-primary d-block">Checkout</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Account -->
+                    <div class="account-area">
+                        <div class="user-thumbnail">
+                            <img src="https://picsum.photos/500/500" alt="">
+                        </div>
+                        <ul class="user-meta-dropdown">
+                            <li class="user-title"><span>Hello,</span> Lim Sarah</li>
+                            <li><a href="my-account.html">My Account</a></li>
+                            <li><a href="order-list.html">Orders List</a></li>
+                            <li><a href="wishlist.html">Wishlist</a></li>
+                            <li><a href="login.html"><i class="icofont-logout"></i> Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+		    </div>
+		  </div>
+		</div>
+
     </header>
     <!-- Header Area End -->
 
     <!-- Welcome Slides Area -->
     <section class="welcome_area">
         <div class="welSlideTwo owl-carousel">
+
             <!-- Single Slide -->
             <div class="single_slide home-3 bg-img" style="background-image: url('https://picsum.photos/500/500');">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <div class="col-12">
                             <div class="welcome_slide_text text-center">
-                                <p data-animation="fadeInUp" data-delay="100ms">Shoes Collection</p>
-                                <h2 data-animation="fadeInUp" data-delay="300ms">Fancy Shoes</h2>
+                                <p data-animation="fadeInUp" data-delay="100ms">Watch Collection</p>
+                                <h2 data-animation="fadeInUp" data-delay="300ms">Fancy Watches</h2>
                                 <a href="#" class="btn btn-primary" data-animation="fadeInUp" data-delay="500ms">Buy Now</a>
                             </div>
                         </div>
@@ -159,50 +159,6 @@
                 </div>
             </div>
 
-            <!-- Single Slide -->
-            <div class="single_slide home-3 bg-img" style="background-image: url('https://picsum.photos/500/500');">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-center">
-                        <div class="col-12">
-                            <div class="welcome_slide_text text-center">
-                                <p data-animation="fadeInUp" data-delay="100ms">Latest Trends</p>
-                                <h2 data-animation="fadeInUp" data-delay="300ms">Tree pot</h2>
-                                <a href="#" class="btn btn-primary" data-animation="fadeInUp" data-delay="500ms">Shop Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Single Slide -->
-            <div class="single_slide home-3 bg-img" style="background-image: url('https://picsum.photos/500/500');">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-center">
-                        <div class="col-12">
-                            <div class="welcome_slide_text text-center">
-                                <p data-animation="fadeInUp" data-delay="100ms">Todays Deals <i class="ico-heart"></i></p>
-                                <h2 data-animation="fadeInUp" data-delay="300ms">Sunglass 20% OFF</h2>
-                                <a href="#" class="btn btn-primary" data-animation="fadeInUp" data-delay="500ms">Check Collection</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Single Slide -->
-            <div class="single_slide home-3 bg-img" style="background-image: url('https://picsum.photos/500/500');">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-center">
-                        <div class="col-12">
-                            <div class="welcome_slide_text text-center">
-                                <p data-animation="fadeInUp" data-delay="100ms">Todays Deals</p>
-                                <h2 data-animation="fadeInUp" data-delay="300ms">Woden Chair</h2>
-                                <a href="#" class="btn btn-primary" data-animation="fadeInUp" data-delay="500ms">Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
     <!-- Welcome Slides Area -->
@@ -284,7 +240,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="section-heading mb-50">
+                    <div class="section-heading mb-50 mt-5">
                         <h5>Best Selling Products</h5>
                     </div>
                 </div>
@@ -789,7 +745,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
     <!-- Third party plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
     <!-- Core theme JS-->
     <script src="/js/scripts.js"></script>
 
