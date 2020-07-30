@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 class CreateWatchesTable extends Migration
 {
     /**
-     * Run the migrations.
+     * Run the migrations for the primary table 'watches'
      *
      * @return void
      */
