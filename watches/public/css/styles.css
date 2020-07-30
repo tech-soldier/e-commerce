@@ -1387,7 +1387,7 @@ textarea:focus,
   position: relative;
   z-index: 1;
   background-color: #f8f8ff;
-  border: 1px solid #f8f8ff;
+  border: 1px solid #ccc;
   overflow: hidden;
   -webkit-transition-duration: 500ms;
   -o-transition-duration: 500ms;
@@ -3884,4 +3884,8 @@ img.logo{
 .product_image svg{
   color: #fff;
   font-size: 1.4rem;
+}
+
+.gold{
+  color: #fcba03;
 }

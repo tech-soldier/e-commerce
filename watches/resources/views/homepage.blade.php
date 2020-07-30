@@ -143,7 +143,7 @@
                         </div>
 
                         <!-- Product Description -->
-                        <div class="product_description">
+                        <div class="product_description py-2">
                             <!-- Add to cart -->
                             <div class="product_add_to_cart">
                                 <a href="#"><i class="icofont-cart"></i> Add to Cart</a>
@@ -154,8 +154,15 @@
                                 <a href="#" data-toggle="modal" data-target="#quickview"><i class="icofont-eye-alt"></i> Quick View</a>
                             </div>
 
-                            <a href="#">Hublot Spark</a>
-                            <h6 class="product-price">$279.99</h6>
+                            <a class="text-left" href="#">Hublot Spark</a>
+                            <h6 class="text-left" class="product-price">CA$279.99</h6>
+                            <p class="text-left mb-0">Hublot</p>
+                            <p class="text-left mb-0 gold">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -174,7 +181,7 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single_feature_area mb-5 d-flex align-items-center">
                         <div class="feature_icon">
-                            <i class="icofont-ship"></i>
+                            <i class="fas fa-ship mt-4"></i>
                             <span><i class="icofont-check-alt"></i></span>
                         </div>
                         <div class="feature_content">
@@ -188,7 +195,7 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single_feature_area mb-5 d-flex align-items-center">
                         <div class="feature_icon">
-                            <i class="icofont-box"></i>
+                            <i class="fas fa-shipping-fast mt-4"></i>
                             <span><i class="icofont-check-alt"></i></span>
                         </div>
                         <div class="feature_content">
@@ -202,7 +209,7 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single_feature_area mb-5 d-flex align-items-center">
                         <div class="feature_icon">
-                            <i class="icofont-money"></i>
+                            <i class="fas fa-file-invoice-dollar mt-4"></i>
                             <span><i class="icofont-check-alt"></i></span>
                         </div>
                         <div class="feature_content">
@@ -216,7 +223,7 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single_feature_area mb-5 d-flex align-items-center">
                         <div class="feature_icon">
-                            <i class="icofont-live-support"></i>
+                            <i class="fas fa-headset mt-4"></i>
                             <span><i class="icofont-check-alt"></i></span>
                         </div>
                         <div class="feature_content">
