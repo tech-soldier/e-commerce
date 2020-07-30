@@ -18,4 +18,8 @@ Route::get('/', function () {
     return view('homepage');
 });
 
-//Route::get('/', 'WatchesController@home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
