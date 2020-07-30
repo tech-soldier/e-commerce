@@ -124,7 +124,7 @@
                     <div class="single-product-area mb-30">
                         <div class="product_image">
                             <!-- Product Image -->
-                            <img class="normal_img" src="/images/product8.jpg" alt="">
+                            <img class="normal_img" src="/images/product8.JPG" alt="">
 
                             <!-- Product Badge -->
                             <div class="product_badge">
