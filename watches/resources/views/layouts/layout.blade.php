@@ -26,7 +26,7 @@
 <body>
 
     <!-- Header Area -->
-    <header class="header_area mb-3">
+    <header class="header_area">
 
         <div class="container">
 		  <div class="row">
