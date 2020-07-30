@@ -6,5 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Transaction extends Model
 {
-    //
+    public function orderwatch()
+    {
+    	return $this->hasMany(OrderWatch::class); 
+    }
 }
