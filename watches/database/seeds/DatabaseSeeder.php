@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(SeedCategoriesTable::class);
         $this->call(SeedWatchesTable::class);
+        $this->call(SeedAdminsTable::class);
     }
 }
