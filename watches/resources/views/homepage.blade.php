@@ -3,7 +3,7 @@
 @section('content')
 
     <!-- Welcome Slides Area -->
-    <section class="welcome_area">
+    <section class="welcome_area mt-3">
         <div class="owl-carousel">
 
             <!-- Single Slide -->
@@ -26,7 +26,7 @@
                             </div>
                         </div>
                     </div>
-                </div>                
+                </div>
             </div>
 
         </div>
@@ -124,7 +124,7 @@
                     <div class="single-product-area mb-30">
                         <div class="product_image">
                             <!-- Product Image -->
-                            <img class="normal_img" src="/images/product8.jpg" alt="">
+                            <img class="normal_img" src="/images/product8.JPG" alt="">
 
                             <!-- Product Badge -->
                             <div class="product_badge">

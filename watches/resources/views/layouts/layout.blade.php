@@ -31,7 +31,7 @@
         <div class="container">
 		  <div class="row">
 		    <div class="col">
-		      <a href="/" class="nav-brand"><img class="logo my-3" src="/images/logo.jpg" alt="logo"></a>
+		      <a href="/" class="nav-brand"><img class="logo my-3" src="/images/logo.png" alt="logo"></a>
 		    </div>
 		    <div class="col-6">
 		       <!-- Menu -->
@@ -40,7 +40,7 @@
                     <div class="classynav">
                         <ul class="navbar-nav">
                             <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/shop">Shop</a></li>
                             <li class="nav-item"><a class="nav-link" href="#">About</a></li>
                             <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
                         </ul>
@@ -67,7 +67,7 @@
 
                     <!-- Cart -->
                     <div class="cart-area">
-                        <div class="cart--btn"><i class="fas fa-shopping-cart"></i></i> <span class="cart_quantity">2</span></div>
+                        <div class="cart--btn"><i class="fas fa-shopping-cart"></i><span class="cart_quantity">2</span></div>
 
                         <!-- Cart Dropdown Content -->
                         <div class="cart-dropdown-content">
