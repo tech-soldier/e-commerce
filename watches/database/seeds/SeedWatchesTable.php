@@ -13,6 +13,8 @@ class SeedWatchesTable extends Seeder
      */
     public function run()
     {
+    	// first 5 records are all gender: male 
+
         DB::table('watches')->insert([
         	'watch_id' => 1, 
         	'SKU' => 22567959,
@@ -137,6 +139,146 @@ class SeedWatchesTable extends Seeder
         	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]); 
+
+        // next 5 are all gender: female 
+
+        DB::table('watches')->insert([ 
+        	'SKU' => 22567900,
+        	'watch_name' => 'Cardify', 
+        	'in_stock' => 1, 
+        	'quantity' => 20, 
+        	'price' => 1999.99, 
+        	'cost' => 2989.99, 
+        	'material' => 'rosegold', 
+        	'main_color' => 'rosegold', 
+        	'movement' => 'quartz', 
+        	'gender' => 'female', 
+        	'category_id' => 1, 
+        	'diameter' => 27,
+        	'strap_length' => '165mm', 
+        	'strap_width' => '25mm', 
+        	'weight' => '95g', 
+        	'water_resistant' => '13 atm', 
+        	'cover_img' => 'cardify.jpg', 
+        	'short_description' => 'Launch of the Cardify II. The new movement allowed the hour hand to be set independently.', 
+        	'long_description' => 'Over the years, the insert has been made available in different colour combinations. Initially made from Plexiglas, it was replaced by anodized rosegold lauminum in 1959 and high-technology ceramic in 2020', 
+        	'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]); 
+
+        DB::table('watches')->insert([ 
+        	'SKU' => 22567980,
+        	'watch_name' => 'Bezeld III', 
+        	'in_stock' => 1, 
+        	'quantity' => 20, 
+        	'price' => 1999.99, 
+        	'cost' => 2989.99, 
+        	'material' => 'gold', 
+        	'main_color' => 'gold', 
+        	'movement' => 'mechanical', 
+        	'gender' => 'female', 
+        	'category_id' => 3, 
+        	'diameter' => 27,
+        	'strap_length' => '160mm', 
+        	'strap_width' => '19mm', 
+        	'weight' => '99g', 
+        	'water_resistant' => '5 atm', 
+        	'cover_img' => 'bezeld.jpg', 
+        	'short_description' => 'In 2005, Bezeld III replaced the Rolex and inserted in aluminium with gold – a further innovation.', 
+        	'long_description' => 'Since then– for optimal legibility – the numerals and graduations have been moulded into the ceramic and then coated with a thin layer of gold or platinum via PVD (Physical Vapour Deposition). ', 
+        	'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]);
+
+        DB::table('watches')->insert([ 
+        	'SKU' => 22567980,
+        	'watch_name' => 'Viva', 
+        	'in_stock' => 1, 
+        	'quantity' => 21, 
+        	'price' => 678.99, 
+        	'cost' => 1211.99, 
+        	'material' => 'stainless steel', 
+        	'main_color' => 'silver', 
+        	'movement' => 'quartz', 
+        	'gender' => 'female', 
+        	'category_id' => 5, 
+        	'diameter' => 27,
+        	'strap_length' => '150mm', 
+        	'strap_width' => '11mm', 
+        	'weight' => '111g', 
+        	'water_resistant' => '10 atm', 
+        	'cover_img' => 'viva.jpg', 
+        	'short_description' => 'The Viva\'s unidirectional rotatable bezel is key to the functionality of the watch. Its engraved 60-minute graduation allows a diver to monitor diving time and decompression stops accurately and therefore safely..', 
+        	'long_description' => 'Manufactured by PseudoClass from a hard, corrosion-resistant stainless steel, the Cerachrom Viva insert is virtually scratchproof and its colour is unaffected by ultraviolet rays, seawater or water that is chlorinated.', 
+        	'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]); 
+
+        DB::table('watches')->insert([ 
+        	'SKU' => 22561980,
+        	'watch_name' => 'Flexidy', 
+        	'in_stock' => 1, 
+        	'quantity' => 201, 
+        	'price' => 1299.99, 
+        	'cost' => 1811.99, 
+        	'material' => 'titanium', 
+        	'main_color' => 'silver', 
+        	'movement' => 'mechanical', 
+        	'gender' => 'female', 
+        	'category_id' => 3, 
+        	'diameter' => 31,
+        	'strap_length' => '179mm', 
+        	'strap_width' => '24mm', 
+        	'weight' => '129g', 
+        	'water_resistant' => '0 atm', 
+        	'cover_img' => 'flexidy.jpg', 
+        	'short_description' => 'Scratch-proof titanium had never existed before, so TechWatch invented it.', 
+        	'long_description' => 'Flexidy is a gorgeous model in both strength and simplicity. Developed and patented by the Manufacture, Magic titanium is the first and only 2K gold alloy in the world that perfectly withstands scratches, even with an extremely active lifestyle. It maintains its beauty, shine and polished appearance over time. A true revolution in the world of precious materials.', 
+        	'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]); 
+
+        DB::table('watches')->insert([ 
+        	'SKU' => 22561980,
+        	'watch_name' => 'Daltfresh', 
+        	'in_stock' => 1, 
+        	'quantity' => 201, 
+        	'price' => 2299.99, 
+        	'cost' => 4811.99, 
+        	'material' => 'gold', 
+        	'main_color' => 'gold', 
+        	'movement' => 'quartz', 
+        	'gender' => 'female', 
+        	'category_id' => 2, 
+        	'diameter' => 29,
+        	'strap_length' => '175mm', 
+        	'strap_width' => '25mm', 
+        	'weight' => '145g', 
+        	'water_resistant' => '2 atm', 
+        	'cover_img' => 'daltfresh.jpg', 
+        	'short_description' => 'The Daltfresh in 18 ct Everose gold with an Oyster bracelet.', 
+        	'long_description' => 'This model features a gorgeous dial and a gold and black Cerachrom bezel. Designed to show the time in two different time zones simultaneously during intercontinental flights, the Daltfresh has come to be recognized for its robustness and versatile appearance.', 
+        	'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]); 
+
+
+
+        // next 5 will be all maerial: silicone rubber 
+
+        // next 5 will be all material: silver 
+
+        // next 5 will be all material: gold 
+
+        // next 5 will be all category: smart watch 
+
+        // next 5 will be all category: luxury watch 
+
+        // next 5 will be all category: mechanical watch 
+
+        // next 5 will be all category: digital watch 
+
+        // next 5 will be all category: quartz
 
 
     }
