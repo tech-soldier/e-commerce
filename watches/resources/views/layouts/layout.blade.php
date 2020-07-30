@@ -31,7 +31,7 @@
         <div class="container">
 		  <div class="row">
 		    <div class="col">
-		      <a href="/" class="nav-brand"><img class="logo my-3" src="/images/logo.png" alt="logo"></a>
+		      <a href="/" class="nav-brand"><img class="logo my-2" src="/images/logo.png" alt="logo"></a>
 		    </div>
 		    <div class="col-6">
 		       <!-- Menu -->
@@ -62,11 +62,6 @@
                             <input type="search" class="form-control" placeholder="Search">
                             <input type="submit" class="d-none" value="Send">
                         </div>
-                    </div>
-
-                    <!-- Wishlist -->
-                    <div class="wishlist-area">
-                        <a href="wishlist.html" class="wishlist-btn"><i class="fas fa-heart"></i></a>
                     </div>
 
                     <!-- Cart -->
@@ -152,7 +147,7 @@
         <div class="container">
             <div class="row">
                 <!-- Single Footer Area -->
-                <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-4">
+                <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-6">
                     <div class="single_footer_area mb-100">
                         <div class="footer_heading mb-4">
                             <h6>Contact Us</h6>
@@ -207,24 +202,6 @@
                         </ul>
                     </div>
                 </div>
-
-                <!-- Single Footer Area -->
-                <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-2">
-                    <div class="single_footer_area mb-100">
-                        <div class="footer_heading mb-4">
-                            <h6>Support</h6>
-                        </div>
-                        <ul class="footer_widget_menu">
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Payment Method</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Help</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Product Support</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Terms &amp; Conditions</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Privacy Policy</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Affiliate Program</a></li>
-                        </ul>
-                    </div>
-                </div>
-
             </div>
         </div>
 
