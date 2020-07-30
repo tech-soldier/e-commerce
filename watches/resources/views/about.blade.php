@@ -82,7 +82,7 @@
                     <div class="single_feature_area mb-5 d-flex align-items-center">
                         <div class="feature_icon">
                             <i class="fas fa-ship mt-4"></i>
-                            <span><i class="icofont-check-alt"></i></span>
+                            <!-- <span><i class="icofont-check-alt"></i></span> -->
                         </div>
                         <div class="feature_content">
                             <h6>Free Shipping</h6>
@@ -96,7 +96,7 @@
                     <div class="single_feature_area mb-5 d-flex align-items-center">
                         <div class="feature_icon">
                             <i class="fas fa-shipping-fast mt-4"></i>
-                            <span><i class="icofont-check-alt"></i></span>
+                            <!-- <span><i class="icofont-check-alt"></i></span> -->
                         </div>
                         <div class="feature_content">
                             <h6>Happy Returns</h6>
@@ -110,7 +110,7 @@
                     <div class="single_feature_area mb-5 d-flex align-items-center">
                         <div class="feature_icon">
                             <i class="fas fa-file-invoice-dollar mt-4"></i>
-                            <span><i class="icofont-check-alt"></i></span>
+                            <!-- <span><i class="icofont-check-alt"></i></span> -->
                         </div>
                         <div class="feature_content">
                             <h6>100% Money Back</h6>
@@ -124,7 +124,7 @@
                     <div class="single_feature_area mb-5 d-flex align-items-center">
                         <div class="feature_icon">
                             <i class="fas fa-headset mt-4"></i>
-                            <span><i class="icofont-check-alt"></i></span>
+                            <!-- <span><i class="icofont-check-alt"></i></span> -->
                         </div>
                         <div class="feature_content">
                             <h6>Dedicated Support</h6>
