@@ -27,49 +27,6 @@
 
     <!-- Header Area -->
     <header class="header_area">
-        <!-- Top Header Area -->
-        <div class="top-header-area">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center">
-                    <div class="col-6">
-                        <div class="welcome-note">
-                            <span class="popover--text" data-toggle="popover" data-content="Welcome to Bigshop ecommerce template."><i class="icofont-info-square"></i></span>
-                            <span class="text">Welcome to Bigshop ecommerce template.</span>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="language-currency-dropdown d-flex align-items-center justify-content-end">
-                            <!-- Language Dropdown -->
-                            <div class="language-dropdown">
-                                <div class="dropdown">
-                                    <a class="btn btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        English
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-                                        <a class="dropdown-item" href="#">Bangla</a>
-                                        <a class="dropdown-item" href="#">Arabic</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Currency Dropdown -->
-                            <div class="currency-dropdown">
-                                <div class="dropdown">
-                                    <a class="btn btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        $ USD
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
-                                        <a class="dropdown-item" href="#">৳ BDT</a>
-                                        <a class="dropdown-item" href="#">€ Euro</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!-- Main Menu -->
         <div class="bigshop-main-menu">
             <div class="container">
@@ -79,138 +36,15 @@
                         <!-- Nav Brand -->
                         <a href="index.html" class="nav-brand"><img src="" alt="logo"></a>
 
-                        <!-- Toggler -->
-                        <div class="classy-navbar-toggler">
-                            <span class="navbarToggler"><span></span><span></span><span></span></span>
-                        </div>
-
                         <!-- Menu -->
                         <div class="classy-menu">
-                            <!-- Close -->
-                            <div class="classycloseIcon">
-                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                            </div>
-
                             <!-- Nav -->
                             <div class="classynav">
                                 <ul>
-                                    <li><a href="#">Home</a>
-                                        <ul class="dropdown">
-                                            <li><a href="index-1.html">Home - 1</a></li>
-                                            <li><a href="index-2.html">Home - 2</a></li>
-                                            <li><a href="index-3.html">Home - 3</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Shop</a>
-                                        <ul class="dropdown">
-                                            <li><a href="#">Shop Grid</a>
-                                                <ul class="dropdown">
-                                                    <li><a href="shop-grid-left-sidebar.html">Shop Grid Left Sidebar</a></li>
-                                                    <li><a href="shop-grid-right-sidebar.html">Shop Grid Right Sidebar</a></li>
-                                                    <li><a href="shop-grid-top-sidebar.html">Shop Grid Top Sidebar</a></li>
-                                                    <li><a href="shop-grid-no-sidebar.html">Shop Grid No Sidebar</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Shop List</a>
-                                                <ul class="dropdown">
-                                                    <li><a href="shop-list-left-sidebar.html">Shop List Left Sidebar</a></li>
-                                                    <li><a href="shop-list-right-sidebar.html">Shop List Right Sidebar</a></li>
-                                                    <li><a href="shop-list-top-sidebar.html">Shop List Top Sidebar</a></li>
-                                                    <li><a href="shop-list-no-sidebar.html">Shop List No Sidebar</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="product-details.html">Single Product</a></li>
-                                            <li><a href="cart.html">Cart</a></li>
-                                            <li><a href="#">Checkout</a>
-                                                <ul class="dropdown">
-                                                    <li><a href="checkout-1.html">Login</a></li>
-                                                    <li><a href="checkout-2.html">Billing</a></li>
-                                                    <li><a href="checkout-3.html">Shipping Method</a></li>
-                                                    <li><a href="checkout-4.html">Payment Method</a></li>
-                                                    <li><a href="checkout-5.html">Review</a></li>
-                                                    <li><a href="checkout-complate.html">Complate</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Account Page</a>
-                                                <ul class="dropdown">
-                                                    <li><a href="my-account.html">- Dashboard</a></li>
-                                                    <li><a href="order-list.html">- Orders</a></li>
-                                                    <li><a href="downloads.html">- Downloads</a></li>
-                                                    <li><a href="addresses.html">- Addresses</a></li>
-                                                    <li><a href="account-details.html">- Account Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="wishlist.html">Wishlist</a></li>
-                                            <li><a href="compare.html">Compare</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Pages</a>
-                                        <div class="megamenu">
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="about-us.html">- About Us</a></li>
-                                                <li><a href="faq.html">- FAQ</a></li>
-                                                <li><a href="contact.html">- Contact</a></li>
-                                                <li><a href="login.html">- Login &amp; Register</a></li>
-                                                <li><a href="404.html">- 404</a></li>
-                                                <li><a href="500.html">- 500</a></li>
-                                            </ul>
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="my-account.html">- Dashboard</a></li>
-                                                <li><a href="order-list.html">- Orders</a></li>
-                                                <li><a href="downloads.html">- Downloads</a></li>
-                                                <li><a href="addresses.html">- Addresses</a></li>
-                                                <li><a href="account-details.html">- Account Details</a></li>
-                                                <li><a href="coming-soon.html">- Coming Soon</a></li>
-                                            </ul>
-                                            <div class="single-mega cn-col-2">
-                                                <div class="megamenu-slides owl-carousel">
-                                                    <a href="shop-grid-left-sidebar.html">
-                                                        <img src="img/bg-img/mega-slide-2.jpg" alt="">
-                                                    </a>
-                                                    <a href="shop-list-left-sidebar.html">
-                                                        <img src="https://picsum.photos/500/500" alt="">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li><a href="#">Blog</a>
-                                        <ul class="dropdown">
-                                            <li><a href="blog-with-left-sidebar.html">Blog Left Sidebar</a></li>
-                                            <li><a href="blog-with-right-sidebar.html">Blog Right Sidebar</a></li>
-                                            <li><a href="blog-with-no-sidebar.html">Blog No Sidebar</a></li>
-                                            <li><a href="single-blog.html">Single Blog</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Elements</a>
-                                        <div class="megamenu">
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="accordian.html">- Accordions</a></li>
-                                                <li><a href="alerts.html">- Alerts</a></li>
-                                                <li><a href="badges.html">- Badges</a></li>
-                                                <li><a href="blockquotes.html">- Blockquotes</a></li>
-                                            </ul>
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="breadcrumb.html">- Breadcrumbs</a></li>
-                                                <li><a href="buttons.html">- Buttons</a></li>
-                                                <li><a href="forms.html">- Forms</a></li>
-                                                <li><a href="gallery.html">- Gallery</a></li>
-                                            </ul>
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="heading.html">- Headings</a></li>
-                                                <li><a href="icon-fontawesome.html">- Icon FontAwesome</a></li>
-                                                <li><a href="icon-icofont.html">- Icon Ico Font</a></li>
-                                                <li><a href="labels.html">- Labels</a></li>
-                                            </ul>
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="modals.html">- Modals</a></li>
-                                                <li><a href="pagination.html">- Pagination</a></li>
-                                                <li><a href="progress-bars.html">- Progress Bars</a></li>
-                                                <li><a href="tables.html">- Tables</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">Shop</a></li>
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#">Contact</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -311,7 +145,7 @@
     <section class="welcome_area">
         <div class="welSlideTwo owl-carousel">
             <!-- Single Slide -->
-            <div class="single_slide home-3 bg-img" style="background-image: url(img/bg-img/9.jpg);">
+            <div class="single_slide home-3 bg-img" style="background-image: url('https://picsum.photos/500/500');">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <div class="col-12">
@@ -949,6 +783,16 @@
         </div>
     </footer>
     <!-- Footer Area -->
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="/js/scripts.js"></script>
+
 
 </body>
 
