@@ -942,7 +942,7 @@ textarea:focus,
   z-index: 1;
   background-position: center center;
   background-size: cover;
-  height: 600px; }
+  height: 554px; }
   @media only screen and (max-width: 767px) {
     .single_slide {
       height: 450px; } }
@@ -956,11 +956,6 @@ textarea:focus,
       @media only screen and (max-width: 767px) {
         .single_slide .welcome_slide_text p {
           letter-spacing: 2px; } }
-    .single_slide .welcome_slide_text h2 {
-      text-transform: capitalize;
-      font-size: 4rem;
-      margin-bottom: 1rem;
-      font-weight: 700; }
       @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .single_slide .welcome_slide_text h2 {
           font-size: 3.5rem; } }
@@ -3846,4 +3841,47 @@ img.logo{
 
 .classy-menu{
   margin-top: 1.8rem;
+}
+
+.bg_blue{
+  float: right;
+  background-color: rgba(15,40,79,0.9);
+  text-align: left;
+  width: 100%;
+  max-width: 430px;
+  position: relative;
+}
+
+.bg_blue h2{
+  color: #fff; 
+  text-transform: uppercase;
+  font-size: 1.8rem; 
+  letter-spacing: 0.1rem;
+}
+
+.single_slide .bg_blue p{
+  color: #fff; 
+  letter-spacing: 0.1rem;
+}
+
+.bg_blue svg{
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translate(0%,-50%);
+  color: #fff;
+  font-size: 4rem;
+}
+
+.clear{
+  clear: both;
+}
+
+.h-100 {
+    height: 110%!important;
+}
+
+.product_image svg{
+  color: #fff;
+  font-size: 1.4rem;
 }

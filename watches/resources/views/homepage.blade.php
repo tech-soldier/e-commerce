@@ -4,21 +4,29 @@
 
     <!-- Welcome Slides Area -->
     <section class="welcome_area">
-        <div class="welSlideTwo owl-carousel">
+        <div class="owl-carousel">
 
             <!-- Single Slide -->
-            <div class="single_slide home-3 bg-img" style="background-image: url(/images/placeholder.jpg);">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-center">
-                        <div class="col-12">
-                            <div class="welcome_slide_text text-center">
-                                <p data-animation="fadeInUp" data-delay="100ms">Watch Collection</p>
-                                <h2 data-animation="fadeInUp" data-delay="300ms">Fancy Watches</h2>
-                                <a href="#" class="btn btn-primary" data-animation="fadeInUp" data-delay="500ms">Buy Now</a>
+            <div class="container">
+                <div class="single_slide home-3 bg-img" style="background-image: url(/images/home_banner.jpg);">
+                    <div class="container h-100">
+                        <div class="row h-100 align-items-center">
+                            <div class="col-12 p-0">
+                                <div class="welcome_slide_text text-center">
+
+                                    <div class="bg_blue p-4">
+                                        <h2 data-animation="fadeInUp" data-delay="300ms">View Gallery</h2>
+                                        <p class="mb-0" data-animation="fadeInUp" data-delay="100ms">Watch Collection</p>
+                                        <i class="fas fa-angle-right"></i>
+                                    </div>
+                                    <div class="clear"></div>
+
+                                    <a href="#" class="btn btn-primary" data-animation="fadeInUp" data-delay="500ms">Buy Now</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>                
             </div>
 
         </div>
@@ -109,12 +117,14 @@
             </div>
 
             <div class="row justify-content-center">
+
+                <?php for($i=0; $i<8; $i++) : ?>
                 <!-- Single Product -->
                 <div class="col-9 col-sm-6 col-md-4 col-lg-3">
                     <div class="single-product-area mb-30">
                         <div class="product_image">
                             <!-- Product Image -->
-                            <img class="normal_img" src="https://picsum.photos/500/500" alt="">
+                            <img class="normal_img" src="/images/product8.jpg" alt="">
 
                             <!-- Product Badge -->
                             <div class="product_badge">
@@ -123,12 +133,12 @@
 
                             <!-- Wishlist -->
                             <div class="product_wishlist">
-                                <a href="wishlist.html"><i class="icofont-heart"></i></a>
+                                <a class="py-1" href="#"><i class="fas fa-heart"></i></a>
                             </div>
 
                             <!-- Compare -->
                             <div class="product_compare">
-                                <a href="compare.html"><i class="icofont-exchange"></i></a>
+                                <a class="py-1" href="#"><i class="fas fa-exchange-alt"></i></a>
                             </div>
                         </div>
 
@@ -144,298 +154,13 @@
                                 <a href="#" data-toggle="modal" data-target="#quickview"><i class="icofont-eye-alt"></i> Quick View</a>
                             </div>
 
-                            <a href="#">Boutique Silk Dress</a>
-                            <h6 class="product-price">$69.99</h6>
+                            <a href="#">Hublot Spark</a>
+                            <h6 class="product-price">$279.99</h6>
                         </div>
                     </div>
                 </div>
+                <?php endfor ; ?>
 
-                <!-- Single Product -->
-                <div class="col-9 col-sm-6 col-md-4 col-lg-3">
-                    <div class="single-product-area mb-30">
-                        <div class="product_image">
-                            <!-- Product Image -->
-                            <img class="normal_img" src="https://picsum.photos/500/500" alt="">
-
-                            <!-- Product Badge -->
-                            <div class="product_badge">
-                                <span>Top</span>
-                            </div>
-
-                            <!-- Wishlist -->
-                            <div class="product_wishlist">
-                                <a href="wishlist.html"><i class="icofont-heart"></i></a>
-                            </div>
-
-                            <!-- Compare -->
-                            <div class="product_compare">
-                                <a href="compare.html"><i class="icofont-exchange"></i></a>
-                            </div>
-                        </div>
-
-                        <!-- Product Description -->
-                        <div class="product_description">
-                            <!-- Add to cart -->
-                            <div class="product_add_to_cart">
-                                <a href="#"><i class="icofont-cart"></i> Add to Cart</a>
-                            </div>
-
-                            <!-- Quick View -->
-                            <div class="product_quick_view">
-                                <a href="#" data-toggle="modal" data-target="#quickview"><i class="icofont-eye-alt"></i> Quick View</a>
-                            </div>
-
-                            <a href="#">Flower Textured Dress</a>
-                            <h6 class="product-price">$39.99 <span>$49.99</span></h6>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Product -->
-                <div class="col-9 col-sm-6 col-md-4 col-lg-3">
-                    <div class="single-product-area mb-30">
-                        <div class="product_image">
-                            <!-- Product Image -->
-                            <img class="normal_img" src="https://picsum.photos/500/500" alt="">
-
-                            <!-- Product Badge -->
-                            <div class="product_badge">
-                                <span>Top</span>
-                            </div>
-
-                            <!-- Wishlist -->
-                            <div class="product_wishlist">
-                                <a href="wishlist.html"><i class="icofont-heart"></i></a>
-                            </div>
-
-                            <!-- Compare -->
-                            <div class="product_compare">
-                                <a href="compare.html"><i class="icofont-exchange"></i></a>
-                            </div>
-                        </div>
-
-                        <!-- Product Description -->
-                        <div class="product_description">
-                            <!-- Add to cart -->
-                            <div class="product_add_to_cart">
-                                <a href="#"><i class="icofont-cart"></i> Add to Cart</a>
-                            </div>
-
-                            <!-- Quick View -->
-                            <div class="product_quick_view">
-                                <a href="#" data-toggle="modal" data-target="#quickview"><i class="icofont-eye-alt"></i> Quick View</a>
-                            </div>
-
-                            <a href="#">Ballerina Dress</a>
-                            <h6 class="product-price">$89.99 <span>$107.99</span></h6>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Product -->
-                <div class="col-9 col-sm-6 col-md-4 col-lg-3">
-                    <div class="single-product-area mb-30">
-                        <div class="product_image">
-                            <!-- Product Image -->
-                            <img class="normal_img" src="https://picsum.photos/500/500" alt="">
-
-                            <!-- Product Badge -->
-                            <div class="product_badge">
-                                <span>Top</span>
-                            </div>
-
-                            <!-- Wishlist -->
-                            <div class="product_wishlist">
-                                <a href="wishlist.html"><i class="icofont-heart"></i></a>
-                            </div>
-
-                            <!-- Compare -->
-                            <div class="product_compare">
-                                <a href="compare.html"><i class="icofont-exchange"></i></a>
-                            </div>
-                        </div>
-
-                        <!-- Product Description -->
-                        <div class="product_description">
-                            <!-- Add to cart -->
-                            <div class="product_add_to_cart">
-                                <a href="#"><i class="icofont-cart"></i> Add to Cart</a>
-                            </div>
-
-                            <!-- Quick View -->
-                            <div class="product_quick_view">
-                                <a href="#" data-toggle="modal" data-target="#quickview"><i class="icofont-eye-alt"></i> Quick View</a>
-                            </div>
-
-                            <a href="#">Gracia Plaid Dress</a>
-                            <h6 class="product-price">$139.99</h6>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Product -->
-                <div class="col-9 col-sm-6 col-md-4 col-lg-3">
-                    <div class="single-product-area mb-30">
-                        <div class="product_image">
-                            <!-- Product Image -->
-                            <img class="normal_img" src="https://picsum.photos/500/500" alt="">
-
-                            <!-- Product Badge -->
-                            <div class="product_badge">
-                                <span>Top</span>
-                            </div>
-
-                            <!-- Wishlist -->
-                            <div class="product_wishlist">
-                                <a href="wishlist.html"><i class="icofont-heart"></i></a>
-                            </div>
-
-                            <!-- Compare -->
-                            <div class="product_compare">
-                                <a href="compare.html"><i class="icofont-exchange"></i></a>
-                            </div>
-                        </div>
-
-                        <!-- Product Description -->
-                        <div class="product_description">
-                            <!-- Add to cart -->
-                            <div class="product_add_to_cart">
-                                <a href="#"><i class="icofont-cart"></i> Add to Cart</a>
-                            </div>
-
-                            <!-- Quick View -->
-                            <div class="product_quick_view">
-                                <a href="#" data-toggle="modal" data-target="#quickview"><i class="icofont-eye-alt"></i> Quick View</a>
-                            </div>
-
-                            <a href="#">Boutique Silk Dress</a>
-                            <h6 class="product-price">$69.99</h6>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Product -->
-                <div class="col-9 col-sm-6 col-md-4 col-lg-3">
-                    <div class="single-product-area mb-30">
-                        <div class="product_image">
-                            <!-- Product Image -->
-                            <img class="normal_img" src="https://picsum.photos/500/500" alt="">
-
-                            <!-- Product Badge -->
-                            <div class="product_badge">
-                                <span>Top</span>
-                            </div>
-
-                            <!-- Wishlist -->
-                            <div class="product_wishlist">
-                                <a href="wishlist.html"><i class="icofont-heart"></i></a>
-                            </div>
-
-                            <!-- Compare -->
-                            <div class="product_compare">
-                                <a href="compare.html"><i class="icofont-exchange"></i></a>
-                            </div>
-                        </div>
-
-                        <!-- Product Description -->
-                        <div class="product_description">
-                            <!-- Add to cart -->
-                            <div class="product_add_to_cart">
-                                <a href="#"><i class="icofont-cart"></i> Add to Cart</a>
-                            </div>
-
-                            <!-- Quick View -->
-                            <div class="product_quick_view">
-                                <a href="#" data-toggle="modal" data-target="#quickview"><i class="icofont-eye-alt"></i> Quick View</a>
-                            </div>
-
-                            <a href="#">Flower Textured Dress</a>
-                            <h6 class="product-price">$39.99 <span>$49.99</span></h6>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Product -->
-                <div class="col-9 col-sm-6 col-md-4 col-lg-3">
-                    <div class="single-product-area mb-30">
-                        <div class="product_image">
-                            <!-- Product Image -->
-                            <img class="normal_img" src="https://picsum.photos/500/500" alt="">
-
-                            <!-- Product Badge -->
-                            <div class="product_badge">
-                                <span>Top</span>
-                            </div>
-
-                            <!-- Wishlist -->
-                            <div class="product_wishlist">
-                                <a href="wishlist.html"><i class="icofont-heart"></i></a>
-                            </div>
-
-                            <!-- Compare -->
-                            <div class="product_compare">
-                                <a href="compare.html"><i class="icofont-exchange"></i></a>
-                            </div>
-                        </div>
-
-                        <!-- Product Description -->
-                        <div class="product_description">
-                            <!-- Add to cart -->
-                            <div class="product_add_to_cart">
-                                <a href="#"><i class="icofont-cart"></i> Add to Cart</a>
-                            </div>
-
-                            <!-- Quick View -->
-                            <div class="product_quick_view">
-                                <a href="#" data-toggle="modal" data-target="#quickview"><i class="icofont-eye-alt"></i> Quick View</a>
-                            </div>
-
-                            <a href="#">Ballerina Dress</a>
-                            <h6 class="product-price">$89.99 <span>$107.99</span></h6>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Product -->
-                <div class="col-9 col-sm-6 col-md-4 col-lg-3">
-                    <div class="single-product-area mb-30">
-                        <div class="product_image">
-                            <!-- Product Image -->
-                            <img class="normal_img" src="https://picsum.photos/500/500" alt="">
-
-                            <!-- Product Badge -->
-                            <div class="product_badge">
-                                <span>Top</span>
-                            </div>
-
-                            <!-- Wishlist -->
-                            <div class="product_wishlist">
-                                <a href="wishlist.html"><i class="icofont-heart"></i></a>
-                            </div>
-
-                            <!-- Compare -->
-                            <div class="product_compare">
-                                <a href="compare.html"><i class="icofont-exchange"></i></a>
-                            </div>
-                        </div>
-
-                        <!-- Product Description -->
-                        <div class="product_description">
-                            <!-- Add to cart -->
-                            <div class="product_add_to_cart">
-                                <a href="#"><i class="icofont-cart"></i> Add to Cart</a>
-                            </div>
-
-                            <!-- Quick View -->
-                            <div class="product_quick_view">
-                                <a href="#" data-toggle="modal" data-target="#quickview"><i class="icofont-eye-alt"></i> Quick View</a>
-                            </div>
-
-                            <a href="#">Gracia Plaid Dress</a>
-                            <h6 class="product-price">$139.99</h6>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
