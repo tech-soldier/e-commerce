@@ -11,6 +11,9 @@ class SeedCustomersTable extends Seeder
      */
     public function run()
     {
-        //
+        // DB::table('customers')->insert([
+        // 	''
+        // ]); 
+
     }
 }
