@@ -11,8 +11,13 @@ class Order extends Model
     	return $this->belongsTo(Customer::class); 
     }
 
-    public function orderwatch()
+    public function transaction()
     {
-    	return $this->hasMany(OrderWatch::class); 
+    	return $this->hasMany(Transaction::class); 
+    }
+
+    public function watch()
+    {
+    	return $this->belongsToMany(Watch::class); 
     }
 }
