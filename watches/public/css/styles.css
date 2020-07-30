@@ -3840,7 +3840,17 @@ img.logo{
 }
 
 .classy-menu{
-  margin-top: 1.8rem;
+  margin-top: 1.5rem;
+}
+
+.navbar-nav a{
+  color: #fff;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+}
+
+.vavbar-nav a:hover{
+  color: #ccc;
 }
 
 .bg_blue{
@@ -3888,4 +3898,12 @@ img.logo{
 
 .gold{
   color: #fcba03;
+}
+
+.header_area{
+  background-color: #030303;
+}
+
+.account-area img{
+  margin-top: -3px;
 }

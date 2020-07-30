@@ -26,12 +26,12 @@
 <body>
 
     <!-- Header Area -->
-    <header class="header_area">
+    <header class="header_area mb-3">
 
         <div class="container">
 		  <div class="row">
 		    <div class="col">
-		      <a href="/" class="nav-brand"><img class="logo my-3" src="/images/logo.jpg" alt="logo"></a>
+		      <a href="/" class="nav-brand"><img class="logo my-2" src="/images/logo.png" alt="logo"></a>
 		    </div>
 		    <div class="col-6">
 		       <!-- Menu -->
@@ -67,7 +67,7 @@
 
                     <!-- Cart -->
                     <div class="cart-area">
-                        <div class="cart--btn"><i class="fas fa-shopping-cart"></i></i> <span class="cart_quantity">2</span></div>
+                        <div class="cart--btn"><i class="fas fa-shopping-cart"></i><span class="cart_quantity">2</span></div>
 
                         <!-- Cart Dropdown Content -->
                         <div class="cart-dropdown-content">
