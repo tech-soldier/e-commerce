@@ -132,14 +132,14 @@
                             </div>
 
                             <!-- Wishlist -->
-                            <div class="product_wishlist">
+                           <!--  <div class="product_wishlist">
                                 <a class="py-1" href="#"><i class="fas fa-heart"></i></a>
-                            </div>
+                            </div> -->
 
                             <!-- Compare -->
-                            <div class="product_compare">
+                            <!-- <div class="product_compare">
                                 <a class="py-1" href="#"><i class="fas fa-exchange-alt"></i></a>
-                            </div>
+                            </div> -->
                         </div>
 
                         <!-- Product Description -->
