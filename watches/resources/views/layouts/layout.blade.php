@@ -30,14 +30,20 @@
 
         <div class="container">
 		  <div class="row">
+
 		    <div class="col">
-		      <a href="/" class="nav-brand"><img class="logo my-2" src="/images/logo.png" alt="logo"></a>
-		    </div>
-		    <div class="col-6">
 		       <!-- Menu -->
-                <div class="classy-menu">
+                <nav class="navbar navbar-expand-lg">
+                    <a href="/" class="nav-brand"><img class="logo my-2" src="/images/logo.png" alt="logo"></a>
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon">
+                             <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+                        </span>
+                    </button>
+
                     <!-- Nav -->
-                    <div class="classynav">
+                    <div class="classynav collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav">
                             <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="/shop">Shop</a></li>
@@ -45,7 +51,7 @@
                             <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
                         </ul>
                     </div>
-                </div>
+                </nav>
 		    </div>
 		    <div class="col">
                 <!-- Hero Meta -->
@@ -224,7 +230,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <!-- Core theme JS-->
     <script src="/js/scripts.js"></script>
-
 
 </body>
 
