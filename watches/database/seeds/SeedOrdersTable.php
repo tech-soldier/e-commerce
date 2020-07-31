@@ -18,7 +18,7 @@ class SeedOrdersTable extends Seeder
          	// 'email_address' => 'milad-dirani@shaw.net', 
          	// 'billing_address' => '1411 Ashburn st.', 
          	// 'shipping_address' => '1411 Ashburn st.', 
-         	// ''
+         	// 'subtotal' => 
 
 
          ]); 
