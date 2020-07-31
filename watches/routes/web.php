@@ -18,12 +18,9 @@ Route::get('/', function () {
     return view('homepage');
 });
 
-Route::get('/shop', function(){
-    return view('shop');
-});
-
+Route::get('/', 'PagesController@home');
 Route::get('/about', 'PagesController@about');
-
+Route::get('/shop', 'PagesController@shop');
 Route::get('/contact', 'PagesController@contact');
 
 

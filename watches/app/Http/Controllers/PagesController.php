@@ -10,8 +10,7 @@ class PagesController extends Controller
      * returns about page
      * @return array
      */
-    public function contact(){
-        
+    public function contact(){ 
         $title = 'contact';
         return view('contact');
     }
@@ -20,5 +19,15 @@ class PagesController extends Controller
     public function about(){
         $title = 'about';
         return view('about');
+    }
+
+    public function shop(){
+        $title = 'shop';
+        return view('shop');
+    }
+
+     public function home(){
+        $title = 'home';
+        return view('homepage');
     }
 }
