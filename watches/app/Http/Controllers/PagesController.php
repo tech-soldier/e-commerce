@@ -19,6 +19,7 @@ class PagesController extends Controller
      * returns contact page
      * @return array
      */
+
     public function contact(){
         $title = 'contact';
         return view('contact');
@@ -32,7 +33,7 @@ class PagesController extends Controller
         $title = 'about';
         return view('about');
     }
-
+  
     /**
      * returns detail page
      * @return array

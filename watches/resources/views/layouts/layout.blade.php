@@ -25,35 +25,37 @@
 
 <body>
 
-<!-- Header Area -->
-<header class="header_area">
 
-    <div class="container">
-        <div class="row">
+    <!-- Header Area -->
+   <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="/"><img class="logo my-2" src="/images/logo.png" alt="logo"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-            <div class="col">
-                <!-- Menu -->
-                <nav class="navbar navbar-expand-lg">
-                    <a href="/" class="nav-brand navbar-brand"><img class="logo my-2" src="/images/logo1.png" alt="logo"></a>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">HOME <span class="sr-only">(current)</span></a>
+          </li>
 
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon">
-                             <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
-                        </span>
-                    </button>
 
-                    <!-- Nav -->
-                    <div class="classynav collapse navbar-collapse" id="navbarNavDropdown">
-                        <ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/shop">Shop</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-            <div class="col">
+          <li class="nav-item">
+            <a class="nav-link" href="/shop">SHOP</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/about">ABOUT</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">CONTACT</a>
+          </li>
+          
+
+
+          <div class="col">
+
                 <!-- Hero Meta -->
                 <div class="hero_meta_area ml-auto d-flex align-items-center justify-content-end">
                     <!-- Search -->
@@ -135,38 +137,42 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-</header>
-<!-- Header Area End -->
+        </ul>
+        
+      </div>
+    </nav>
 
-<!-- page content goes here -->
-@yield('content')
+    <!-- Header Area End -->
 
-<!-- Footer Area -->
-<footer class="footer_area section_padding_100_0">
-    <div class="container">
-        <div class="row">
-            <!-- Single Footer Area -->
-            <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-6">
-                <div class="single_footer_area mb-100">
-                    <div class="footer_heading mb-4">
-                        <h6>Contact Us</h6>
-                    </div>
-                    <ul class="footer_content">
-                        <li><span>Address:</span> Lords, London, UK - 1259</li>
-                        <li><span>Phone:</span> 002 63695 24624</li>
-                        <li><span>FAX:</span> 002 78965 369552</li>
-                        <li><span>Email:</span> support@example.com</li>
-                    </ul>
-                    <div class="footer_social_area mt-15">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
-                        <a href="#"><i class="fab fa-dribbble"></i></a>
-                        <a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a>
+    <!-- page content goes here -->
+    @yield('content')
+
+    <!-- Footer Area -->
+    <footer class="footer_area section_padding_100_0">
+        <div class="container">
+            <div class="row">
+                <!-- Single Footer Area -->
+                <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-6">
+                    <div class="single_footer_area mb-100">
+                        <div class="footer_heading mb-4">
+                            <h6>Contact Us</h6>
+                        </div>
+                        <ul class="footer_content">
+                            <li><span>Address:</span> Lords, London, UK - 1259</li>
+                            <li><span>Phone:</span> 002 63695 24624</li>
+                            <li><span>FAX:</span> 002 78965 369552</li>
+                            <li><span>Email:</span> support@example.com</li>
+                        </ul>
+                        <div class="footer_social_area mt-15">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-pinterest"></i></a>
+                            <a href="#"><i class="fab fa-dribbble"></i></a>
+                            <a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a>
+                        </div>
+
                     </div>
                 </div>
             </div>
