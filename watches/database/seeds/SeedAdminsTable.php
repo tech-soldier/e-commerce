@@ -13,7 +13,7 @@ class SeedAdminsTable extends Seeder
     public function run()
     {
         DB::table('admins')->insert([
-        	'email_address' => 'pseudo-class@gmail.com', 
+        	'admin_email' => 'pseudo-class@gmail.com', 
         	'password' => 'mypass', 
         	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
