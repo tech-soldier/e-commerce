@@ -3907,6 +3907,11 @@ img.logo{
   margin-top: -3px;
 }
 
+
+div.about_txt {
+  margin-top: 5rem;
+}
+=======
 /* hamburger menu styles */
 
 .navbar-toggler {
@@ -3916,3 +3921,4 @@ img.logo{
 }
 
 /* hamburger menu styles end */
+

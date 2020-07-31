@@ -15,4 +15,10 @@ class PagesController extends Controller
         $title = 'contact';
         return view('contact');
     }
+
+
+    public function about(){
+        $title = 'about';
+        return view('about');
+    }
 }
