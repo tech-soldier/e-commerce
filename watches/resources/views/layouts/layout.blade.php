@@ -176,45 +176,48 @@
                     </div>
                 </div>
 
+
+
+
                 
                 <div class="col-md-7 col-sm-12 d-flex  ">
-                <!-- Single Footer Area -->
-                <div class="col-6">
-                    <div class="single_footer_area mb-100">
-                        <div class="footer_heading mb-4">
-                            <h6>Information</h6>
+                    <!-- Single Footer Area -->
+                    <div class="col-6">
+                        <div class="single_footer_area mb-100">
+                            <div class="footer_heading mb-4">
+                                <h6>Information</h6>
+                            </div>
+                            <ul class="footer_widget_menu">
+                                <li><a href="#"><i class="icofont-rounded-right"></i> Your Account</a></li>
+                                <li><a href="#"><i class="icofont-rounded-right"></i> Free Shipping Policy</a></li>
+                                <li><a href="#"><i class="icofont-rounded-right"></i> Your Cart</a></li>
+                                <li><a href="#"><i class="icofont-rounded-right"></i> Return Policy</a></li>
+                                <li><a href="#"><i class="icofont-rounded-right"></i> Free Coupon</a></li>
+                                <li><a href="#"><i class="icofont-rounded-right"></i> Delivary Info</a></li>
+                            </ul>
+
                         </div>
-                        <ul class="footer_widget_menu">
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Your Account</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Free Shipping Policy</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Your Cart</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Return Policy</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Free Coupon</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Delivary Info</a></li>
-                        </ul>
-
-            </div>
-
-
-
-
-                <!-- Single Footer Area -->
-                <div class="col-6">
-                    <div class="single_footer_area mb-100">
-                        <div class="footer_heading mb-4">
-                            <h6>Account</h6>
-                        </div>
-                        <ul class="footer_widget_menu">
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Product Support</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Terms &amp; Conditions</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Help</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Payment Method</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Affiliate Program</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Privacy Policy</a></li>
-                        </ul>
                     </div>
-    
-                </div>
+                
+                <!-- Single Footer Area -->
+                    <div class="col-6">
+                        <div class="single_footer_area mb-100">
+                            <div class="footer_heading mb-4">
+                                <h6>Account</h6>
+                            </div>
+                            <ul class="footer_widget_menu">
+                                <li><a href="#"><i class="icofont-rounded-right"></i> Product Support</a></li>
+                                <li><a href="#"><i class="icofont-rounded-right"></i> Terms &amp; Conditions</a></li>
+                                <li><a href="#"><i class="icofont-rounded-right"></i> Help</a></li>
+                                <li><a href="#"><i class="icofont-rounded-right"></i> Payment Method</a></li>
+                                <li><a href="#"><i class="icofont-rounded-right"></i> Affiliate Program</a></li>
+                                <li><a href="#"><i class="icofont-rounded-right"></i> Privacy Policy</a></li>
+                            </ul>
+
+                        </div>
+        
+                    </div>
+                </div>    
             </div>
         </div>
     </div>
