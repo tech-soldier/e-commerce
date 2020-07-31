@@ -25,16 +25,16 @@
 
 <body>
 
-    <!-- Header Area -->
-    <header class="header_area">
+<!-- Header Area -->
+<header class="header_area">
 
-        <div class="container">
-		  <div class="row">
+    <div class="container">
+        <div class="row">
 
-		    <div class="col">
-		       <!-- Menu -->
+            <div class="col">
+                <!-- Menu -->
                 <nav class="navbar navbar-expand-lg">
-                    <a href="/" class="nav-brand"><img class="logo my-2" src="/images/logo.png" alt="logo"></a>
+                    <a href="/" class="nav-brand navbar-brand"><img class="logo my-2" src="/images/logo.png" alt="logo"></a>
 
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon">
@@ -52,8 +52,8 @@
                         </ul>
                     </div>
                 </nav>
-		    </div>
-		    <div class="col">
+            </div>
+            <div class="col">
                 <!-- Hero Meta -->
                 <div class="hero_meta_area ml-auto d-flex align-items-center justify-content-end">
                     <!-- Search -->
@@ -134,102 +134,102 @@
                         </ul>
                     </div>
                 </div>
-		    </div>
-		  </div>
-		</div>
+            </div>
+        </div>
+    </div>
 
-    </header>
-    <!-- Header Area End -->
+</header>
+<!-- Header Area End -->
 
-    <!-- page content goes here -->
-    @yield('content')
+<!-- page content goes here -->
+@yield('content')
 
-    <!-- Footer Area -->
-    <footer class="footer_area section_padding_100_0">
+<!-- Footer Area -->
+<footer class="footer_area section_padding_100_0">
+    <div class="container">
+        <div class="row">
+            <!-- Single Footer Area -->
+            <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-6">
+                <div class="single_footer_area mb-100">
+                    <div class="footer_heading mb-4">
+                        <h6>Contact Us</h6>
+                    </div>
+                    <ul class="footer_content">
+                        <li><span>Address:</span> Lords, London, UK - 1259</li>
+                        <li><span>Phone:</span> 002 63695 24624</li>
+                        <li><span>FAX:</span> 002 78965 369552</li>
+                        <li><span>Email:</span> support@example.com</li>
+                    </ul>
+                    <div class="footer_social_area mt-15">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-dribbble"></i></a>
+                        <a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Footer Area -->
+            <div class="col-12 col-sm-6 col-md col-lg-4 col-xl-3">
+                <div class="single_footer_area mb-100">
+                    <div class="footer_heading mb-4">
+                        <h6>Information</h6>
+                    </div>
+                    <ul class="footer_widget_menu">
+                        <li><a href="#"><i class="icofont-rounded-right"></i> Your Account</a></li>
+                        <li><a href="#"><i class="icofont-rounded-right"></i> Free Shipping Policy</a></li>
+                        <li><a href="#"><i class="icofont-rounded-right"></i> Your Cart</a></li>
+                        <li><a href="#"><i class="icofont-rounded-right"></i> Return Policy</a></li>
+                        <li><a href="#"><i class="icofont-rounded-right"></i> Free Coupon</a></li>
+                        <li><a href="#"><i class="icofont-rounded-right"></i> Delivary Info</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Single Footer Area -->
+            <div class="col-12 col-sm-6 col-md col-lg-4 col-xl-3">
+                <div class="single_footer_area mb-100">
+                    <div class="footer_heading mb-4">
+                        <h6>Account</h6>
+                    </div>
+                    <ul class="footer_widget_menu">
+                        <li><a href="#"><i class="icofont-rounded-right"></i> Product Support</a></li>
+                        <li><a href="#"><i class="icofont-rounded-right"></i> Terms &amp; Conditions</a></li>
+                        <li><a href="#"><i class="icofont-rounded-right"></i> Help</a></li>
+                        <li><a href="#"><i class="icofont-rounded-right"></i> Payment Method</a></li>
+                        <li><a href="#"><i class="icofont-rounded-right"></i> Affiliate Program</a></li>
+                        <li><a href="#"><i class="icofont-rounded-right"></i> Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer_bottom_area">
         <div class="container">
-            <div class="row">
-                <!-- Single Footer Area -->
-                <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-6">
-                    <div class="single_footer_area mb-100">
-                        <div class="footer_heading mb-4">
-                            <h6>Contact Us</h6>
-                        </div>
-                        <ul class="footer_content">
-                            <li><span>Address:</span> Lords, London, UK - 1259</li>
-                            <li><span>Phone:</span> 002 63695 24624</li>
-                            <li><span>FAX:</span> 002 78965 369552</li>
-                            <li><span>Email:</span> support@example.com</li>
-                        </ul>
-                        <div class="footer_social_area mt-15">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-pinterest"></i></a>
-                            <a href="#"><i class="fab fa-dribbble"></i></a>
-                            <a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Footer Area -->
-                <div class="col-12 col-sm-6 col-md col-lg-4 col-xl-3">
-                    <div class="single_footer_area mb-100">
-                        <div class="footer_heading mb-4">
-                            <h6>Information</h6>
-                        </div>
-                        <ul class="footer_widget_menu">
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Your Account</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Free Shipping Policy</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Your Cart</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Return Policy</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Free Coupon</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Delivary Info</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Single Footer Area -->
-                <div class="col-12 col-sm-6 col-md col-lg-4 col-xl-3">
-                    <div class="single_footer_area mb-100">
-                        <div class="footer_heading mb-4">
-                            <h6>Account</h6>
-                        </div>
-                        <ul class="footer_widget_menu">
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Product Support</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Terms &amp; Conditions</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Help</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Payment Method</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Affiliate Program</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Privacy Policy</a></li>
-                        </ul>
+            <div class="row align-items-center">
+                <!-- Copywrite -->
+                <div class="col-12 col-md-6">
+                    <div class="copywrite_text">
+                        <p>Copyright &copy; Pseudo Class 2020</p>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+</footer>
+<!-- Footer Area -->
 
-        <!-- Footer Bottom -->
-        <div class="footer_bottom_area">
-            <div class="container">
-                <div class="row align-items-center">
-                    <!-- Copywrite -->
-                    <div class="col-12 col-md-6">
-                        <div class="copywrite_text">
-                            <p>Copyright &copy; Pseudo Class 2020</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Footer Area -->
-
-    <!-- Bootstrap core JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
-    <!-- Third party plugin JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="/js/scripts.js"></script>
+<!-- Bootstrap core JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+<!-- Third party plugin JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<!-- Core theme JS-->
+<script src="/js/scripts.js"></script>
 
 </body>
 
