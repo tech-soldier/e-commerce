@@ -14,14 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
-    return view('homepage');
-});
+Route::get('/', 'PagesController@homepage');
 
-Route::get('/', 'PagesController@home');
 Route::get('/about', 'PagesController@about');
+
 Route::get('/shop', 'PagesController@shop');
+
 Route::get('/contact', 'PagesController@contact');
+
+Route::get('/detail', 'PagesController@detail');
 
 
 

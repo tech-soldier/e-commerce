@@ -473,7 +473,6 @@ textarea:focus,
 .header_area {
   position: relative;
   z-index: 500;
-  
 }
   .header_area .bigshop-main-menu {
     -webkit-transition-duration: 500ms;
@@ -3936,10 +3935,36 @@ img.logo{
   margin-top: -3px;
 }
 
+/* about page custom styles */
 
 div.about_txt {
   margin-top: 5rem;
 }
 
-/* hamburger menu styles */
+/* detail view page */
 
+.btn-cart {
+    background-color: #1e2537;
+    padding: 0 50px;
+    border-right: none;
+    color: white;
+    -webkit-transition-duration: 500ms;
+    -o-transition-duration: 500ms;
+    transition-duration: 500ms;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    border-color: transparent;
+    font-weight: 700;
+    height: 44px;
+    line-height: 42px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-left: 25px;
+}
+
+.btn-cart:hover {
+    background-color: #374058;
+}
+/* end of detail view page */
