@@ -44,5 +44,16 @@ class SeedOrderWatchesTable extends Seeder
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()           
          ]); 
+
+         DB::table('order_watches')->insert([
+            'watch_id' => 3, 
+            'order_id' => 4, 
+            'tax_id' => 5, 
+            'watch_name' => 'Quo Lux', 
+            'price' => 599.99, 
+            'quantity' => 1, 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()           
+         ]); 
     }
 }

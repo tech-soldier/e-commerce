@@ -53,8 +53,23 @@ class SeedOrdersTable extends Seeder
             'shipping_address' => '88 Hargrave Bay', 
             'subtotal' => 1699.99, 
             'GST' => 0.05, 
+            'PST' => 0.06, 
+            'total' => 1886.99, 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+         ]); 
+
+         DB::table('orders')->insert([
+            'customer_id' => 3, 
+            'watch_id' => 3, 
+            'first_name' => 'Inna', 
+            'email_address' => 'inna-solda@gmail.com', 
+            'billing_address' => '12 Abbots Cresent', 
+            'shipping_address' => '12 Abbots Cresent', 
+            'subtotal' => 599.99, 
+            'GST' => 0.05, 
             'PST' => 0.07, 
-            'total' => 1903.99, 
+            'total' => 671.99, 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
          ]); 
