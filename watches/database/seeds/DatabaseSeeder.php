@@ -17,5 +17,9 @@ class DatabaseSeeder extends Seeder
         $this->call(SeedWatchesTable::class);
         $this->call(SeedAdminsTable::class);
         $this->call(SeedCustomersTable::class);
+        $this->call(SeedTaxesTable::class);
+        $this->call(SeedOrderWatchesTable::class);
+        $this->call(SeedTransactionsTable::class);
+        $this->call(SeedOrdersTable::class);
     }
 }
