@@ -55,5 +55,27 @@ class SeedOrderWatchesTable extends Seeder
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()           
          ]); 
+
+         DB::table('order_watches')->insert([
+            'watch_id' => 4, 
+            'order_id' => 5, 
+            'tax_id' => 5, 
+            'watch_name' => 'Alphazap', 
+            'price' => 199.99, 
+            'quantity' => 1, 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()           
+         ]); 
+
+         DB::table('order_watches')->insert([
+            'watch_id' => 4, 
+            'order_id' => 6, 
+            'tax_id' => 4, 
+            'watch_name' => 'Alphazap', 
+            'price' => 199.99, 
+            'quantity' => 1, 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()           
+         ]); 
     }
 }

@@ -13,7 +13,7 @@ class SeedOrdersTable extends Seeder
     public function run()
     {
         
-         DB::table('orders')->insert([
+        DB::table('orders')->insert([
          	'customer_id' => 1, 
             'watch_id' => 1, 
          	'first_name' => 'Milad', 
@@ -28,7 +28,7 @@ class SeedOrdersTable extends Seeder
             'updated_at' => Carbon::now()
          ]); 
 
-         DB::table('orders')->insert([
+        DB::table('orders')->insert([
             'customer_id' => 1, 
             'watch_id' => 2, 
             'first_name' => 'Milad', 
@@ -43,8 +43,7 @@ class SeedOrdersTable extends Seeder
             'updated_at' => Carbon::now()
          ]); 
 
-
-         DB::table('orders')->insert([
+        DB::table('orders')->insert([
             'customer_id' => 2, 
             'watch_id' => 2, 
             'first_name' => 'Dawn', 
@@ -59,7 +58,7 @@ class SeedOrdersTable extends Seeder
             'updated_at' => Carbon::now()
          ]); 
 
-         DB::table('orders')->insert([
+        DB::table('orders')->insert([
             'customer_id' => 3, 
             'watch_id' => 3, 
             'first_name' => 'Inna', 
@@ -73,5 +72,36 @@ class SeedOrdersTable extends Seeder
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
          ]); 
+
+        DB::table('orders')->insert([
+            'customer_id' => 3, 
+            'watch_id' => 4, 
+            'first_name' => 'Inna', 
+            'email_address' => 'inna-solda@gmail.com', 
+            'billing_address' => '12 Abbots Cresent', 
+            'shipping_address' => '12 Abbots Cresent', 
+            'subtotal' => 199.99, 
+            'GST' => 0.05, 
+            'PST' => 0.07, 
+            'total' => 223.99, 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+         ]); 
+
+        DB::table('orders')->insert([
+            'customer_id' => 4, 
+            'watch_id' => 4, 
+            'first_name' => 'Alexandr', 
+            'email_address' => 'alex-the-great@gmail.com', 
+            'billing_address' => '43 Inkster st', 
+            'shipping_address' => '43 Inkster st', 
+            'subtotal' => 199.99, 
+            'GST' => 0.05, 
+            'PST' => 0.00, 
+            'total' => 209.99, 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+         ]); 
+
     }
 }

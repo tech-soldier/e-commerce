@@ -55,5 +55,21 @@ class SeedTransactionsTable extends Seeder
             'updated_at' => Carbon::now()         
          ]); 
 
+         DB::table('transactions')->insert([
+         	'order_id' => 5, 
+         	'transaction_code' => '78112', 
+         	'transaction' => 'mastercard', 
+         	'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()         
+         ]); 
+
+         DB::table('transactions')->insert([
+         	'order_id' => 6, 
+         	'transaction_code' => '78112', 
+         	'transaction' => 'mastercard', 
+         	'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()         
+         ]); 
+
     }
 }
