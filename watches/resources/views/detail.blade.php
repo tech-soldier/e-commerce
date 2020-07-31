@@ -46,27 +46,33 @@
 {{--            </div>--}}
 
             <div class="row ">
-                <div class="col-6 ">
-                    <div class="">
-                        <div class="">
+                <div class="col-8 ">
+                    <div>
+                        <div style="background-color: #f9f8f6">
                             <!-- Product Image -->
                             <img class="normal_img" src="/images/product1.jpg" alt="">
                         </div>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-4">
                     <div class="about_txt">
                         <div class="detail-view">
-                            <p class="font-weight-bold">Sullivan Multifunction Navy Leather Watch</p>
+                            <p class="text-uppercase">Sullivan Multifunction Navy Leather Watch</p>
                             <p class="font-weight-bold">$2,889.00</p>
-                            <button type="button" class="btn btn-info my-4 mb-6">Add to cart</button>
-                            <p class="font-weight-bold">Product Details</p>
+                            <button type="button" class="btn-cart my-4 mb-6">Add to cart</button>
+                            <p>Product Details</p>
                             <p class="font-weight-bold">Sku: <span class="text-muted">BQ2449</span></p>
                             <p class="font-weight-bold">Case Size: <span class="text-secondary">44 mm</span></p>
                             <p class="font-weight-bold">Movement: <span class="text-secondary">Quartz Multifunction</span></p>
-                            <p class="font-weight-bold">Platform: <span class="text-secondary">SULLIVAN</span></p>
+                            <p class="font-weight-bold">Platform: <span class="text-secondary text-uppercase">SULLIVAN</span></p>
                             <p class="font-weight-bold">Strap Material: <span class="text-secondary">Leather</span></p>
                             <p class="font-weight-bold">Water Resistance: <span class="text-secondary">5 ATM</span></p>
+                            <p>Sullivan introduced the first Fifty Fathoms
+                                watch in 1953 as the first modern diver's
+                                watch and this iconic version,water-resistant
+                                at up to 1000 feet offers an update on
+                                the classic with an added date marker
+                                and luminescent hands. </p>
                         </div>
                     </div>
 

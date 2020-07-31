@@ -61,7 +61,7 @@ h6 {
   font-family: "Muli", sans-serif; }
 
 p {
-  /*color: #747794;*/
+  color: #050505;
   line-height: 1.9; }
 
 a {
@@ -473,7 +473,7 @@ textarea:focus,
 .header_area {
   position: relative;
   z-index: 500;
-  height: 112px;
+  height: 115px;
 }
   .header_area .bigshop-main-menu {
     -webkit-transition-duration: 500ms;
@@ -3924,8 +3924,27 @@ div.about_txt {
 
 /* detail view page */
 
-.detail-view p {
-    color: #000;
+.btn-cart {
+    background-color: #1e2537;
+    padding: 0 50px;
+    border-right: none;
+    color: white;
+    -webkit-transition-duration: 500ms;
+    -o-transition-duration: 500ms;
+    transition-duration: 500ms;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    border-color: transparent;
+    font-weight: 700;
+    height: 44px;
+    line-height: 42px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
+.btn-cart:hover {
+    background-color: #374058;
+}
 /* end of detail view page */
