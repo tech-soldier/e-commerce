@@ -34,7 +34,7 @@
             <div class="col">
                 <!-- Menu -->
                 <nav class="navbar navbar-expand-lg">
-                    <a href="/" class="nav-brand navbar-brand"><img class="logo my-2" src="/images/logo.png" alt="logo"></a>
+                    <a href="/" class="nav-brand navbar-brand"><img class="logo my-2" src="/images/logo1.png" alt="logo"></a>
 
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon">

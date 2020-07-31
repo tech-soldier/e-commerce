@@ -473,7 +473,7 @@ textarea:focus,
 .header_area {
   position: relative;
   z-index: 500;
-  height: 115px;
+  height: 90px;
 }
   .header_area .bigshop-main-menu {
     -webkit-transition-duration: 500ms;
@@ -3942,6 +3942,7 @@ div.about_txt {
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    margin-left: 25px;
 }
 
 .btn-cart:hover {

@@ -59,7 +59,10 @@
                         <div class="detail-view">
                             <p class="text-uppercase">Sullivan Multifunction Navy Leather Watch</p>
                             <p class="font-weight-bold">$2,889.00</p>
-                            <button type="button" class="btn-cart my-4 mb-6">Add to cart</button>
+                            <div class="row">
+                                <form action="#"><input type="number" class="mt-4 mb-4 ml-3 form-control" name="days" value="1" min="0" max="10"></form>
+                                <button type="button" class="btn-cart mt-4 mb-6">Add to cart</button>
+                            </div>
                             <p>Product Details</p>
                             <p class="font-weight-bold">Sku: <span class="text-muted">BQ2449</span></p>
                             <p class="font-weight-bold">Case Size: <span class="text-secondary">44 mm</span></p>
@@ -67,12 +70,10 @@
                             <p class="font-weight-bold">Platform: <span class="text-secondary text-uppercase">SULLIVAN</span></p>
                             <p class="font-weight-bold">Strap Material: <span class="text-secondary">Leather</span></p>
                             <p class="font-weight-bold">Water Resistance: <span class="text-secondary">5 ATM</span></p>
-                            <p>Sullivan introduced the first Fifty Fathoms
-                                watch in 1953 as the first modern diver's
-                                watch and this iconic version,water-resistant
-                                at up to 1000 feet offers an update on
-                                the classic with an added date marker
-                                and luminescent hands. </p>
+                            <p>Sullivan introduced the first Fifty Fathoms watch in 1953 as the first modern diver's
+                                watch and this iconic version,water-resistant at up to 1000 feet offers an update on
+                                the classic with an added date marker and luminescent hands.
+                            </p>
                         </div>
                     </div>
 
