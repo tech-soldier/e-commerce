@@ -11,6 +11,8 @@ class SeedTransactionsTable extends Seeder
      */
     public function run()
     {
-        //
+         DB::table('transactions')->insert([
+         	
+         ]); 
     }
 }
