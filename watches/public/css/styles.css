@@ -472,7 +472,9 @@ textarea:focus,
 
 .header_area {
   position: relative;
-  z-index: 500; }
+  z-index: 500;
+  height: 112px;
+}
   .header_area .bigshop-main-menu {
     -webkit-transition-duration: 500ms;
     -o-transition-duration: 500ms;
@@ -3840,10 +3842,6 @@ img.logo{
   height: 100%;
 }
 
-.classy-menu{
-  margin-top: 1.8rem;
-}
-
 .navbar-nav a{
   color: #fff;
   font-weight: 400;
@@ -3864,14 +3862,14 @@ img.logo{
 }
 
 .bg_blue h2{
-  color: #fff; 
+  color: #fff;
   text-transform: uppercase;
-  font-size: 1.8rem; 
+  font-size: 1.8rem;
   letter-spacing: 0.1rem;
 }
 
 .single_slide .bg_blue p{
-  color: #fff; 
+  color: #fff;
   letter-spacing: 0.1rem;
 }
 
@@ -3908,3 +3906,13 @@ img.logo{
 .account-area img{
   margin-top: -3px;
 }
+
+/* hamburger menu styles */
+
+.navbar-toggler {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+}
+
+/* hamburger menu styles end */
