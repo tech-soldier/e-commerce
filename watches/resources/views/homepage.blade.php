@@ -3,7 +3,7 @@
 @section('content')
 
     <!-- Welcome Slides Area -->
-    <section class="welcome_area mt-3">
+    <section class="welcome_area mt-4">
         <div class="owl-carousel">
 
             <!-- Single Slide -->
@@ -106,7 +106,7 @@
     <!-- Quick View Modal Area -->
 
     <!-- Best Selling Products -->
-    <section class="best-selling-products-area mb-70">
+    <section class="best-selling-products-area mb-4">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -130,16 +130,6 @@
                             <div class="product_badge">
                                 <span>Top</span>
                             </div>
-
-                            <!-- Wishlist -->
-                            <div class="product_wishlist">
-                                <a class="py-1" href="#"><i class="fas fa-heart"></i></a>
-                            </div>
-
-                            <!-- Compare -->
-                            <div class="product_compare">
-                                <a class="py-1" href="#"><i class="fas fa-exchange-alt"></i></a>
-                            </div>
                         </div>
 
                         <!-- Product Description -->
@@ -157,12 +147,7 @@
                             <a class="text-left" href="#">Hublot Spark</a>
                             <h6 class="text-left" class="product-price">CA$279.99</h6>
                             <p class="text-left mb-0">Hublot</p>
-                            <p class="text-left mb-0 gold">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </p>
+
                         </div>
                     </div>
                 </div>
@@ -182,7 +167,6 @@
                     <div class="single_feature_area mb-5 d-flex align-items-center">
                         <div class="feature_icon">
                             <i class="fas fa-ship mt-4"></i>
-                            <span><i class="icofont-check-alt"></i></span>
                         </div>
                         <div class="feature_content">
                             <h6>Free Shipping</h6>
@@ -196,7 +180,6 @@
                     <div class="single_feature_area mb-5 d-flex align-items-center">
                         <div class="feature_icon">
                             <i class="fas fa-shipping-fast mt-4"></i>
-                            <span><i class="icofont-check-alt"></i></span>
                         </div>
                         <div class="feature_content">
                             <h6>Happy Returns</h6>
@@ -210,7 +193,6 @@
                     <div class="single_feature_area mb-5 d-flex align-items-center">
                         <div class="feature_icon">
                             <i class="fas fa-file-invoice-dollar mt-4"></i>
-                            <span><i class="icofont-check-alt"></i></span>
                         </div>
                         <div class="feature_content">
                             <h6>100% Money Back</h6>
@@ -224,7 +206,6 @@
                     <div class="single_feature_area mb-5 d-flex align-items-center">
                         <div class="feature_icon">
                             <i class="fas fa-headset mt-4"></i>
-                            <span><i class="icofont-check-alt"></i></span>
                         </div>
                         <div class="feature_content">
                             <h6>Dedicated Support</h6>

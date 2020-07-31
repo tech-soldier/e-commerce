@@ -14,21 +14,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
-    return view('homepage');
-});
+Route::get('/', 'PagesController@homepage');
 
-Route::get('/about', function () {
-    return view('about');
-});
+Route::get('/about', 'PagesController@about');
 
-Route::get('/shop', function(){
-    return view('shop');
-});
+Route::get('/shop', 'PagesController@shop');
+
+Route::get('/contact', 'PagesController@contact');
+
+Route::get('/detail', 'PagesController@detail');
+
+
+
+/* ----------------------------------------------*/
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/contact', 'PagesController@contact');
 

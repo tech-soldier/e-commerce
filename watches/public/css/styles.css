@@ -61,7 +61,7 @@ h6 {
   font-family: "Muli", sans-serif; }
 
 p {
-  color: #747794;
+  color: #050505;
   line-height: 1.9; }
 
 a {
@@ -472,7 +472,8 @@ textarea:focus,
 
 .header_area {
   position: relative;
-  z-index: 500; }
+  z-index: 500;
+}
   .header_area .bigshop-main-menu {
     -webkit-transition-duration: 500ms;
     -o-transition-duration: 500ms;
@@ -1744,7 +1745,8 @@ textarea:focus,
 .special_feature_area {
   position: relative;
   z-index: 1;
-  background-color: #f8f8ff; }
+  background-color: #f8f8ff;
+  border-top: 1px solid #ccc; }
 
 .single_feature_area {
   position: relative;
@@ -3827,20 +3829,45 @@ button.mfp-arrow {
     box-shadow: 0 0 8px 0 rgba(47, 91, 234, 0.125); }
 
 /* custom css */
-.navbar-nav{
-  flex-direction: unset;
+
+nav.bg-dark{
+  color:black;
+  background-color: black !important;
+}
+/* detail view page */
+
+.btn-cart {
+    background-color: #1e2537;
+    padding: 0 50px;
+    border-right: none;
+    color: white;
+    -webkit-transition-duration: 500ms;
+    -o-transition-duration: 500ms;
+    transition-duration: 500ms;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    border-color: transparent;
+    font-weight: 700;
+    height: 44px;
+    line-height: 42px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-left: 25px;
 }
 
+.btn-cart:hover {
+    background-color: #374058;
+}
+/* end of detail view page */
+
 img.logo{
-  max-width: 250px;
+  max-width: 300px;
 }
 
 .hero_meta_area{
   height: 100%;
-}
-
-.classy-menu{
-  margin-top: 1.9rem;
 }
 
 .navbar-nav a{
@@ -3863,14 +3890,14 @@ img.logo{
 }
 
 .bg_blue h2{
-  color: #fff; 
+  color: #fff;
   text-transform: uppercase;
-  font-size: 1.8rem; 
+  font-size: 1.8rem;
   letter-spacing: 0.1rem;
 }
 
 .single_slide .bg_blue p{
-  color: #fff; 
+  color: #fff;
   letter-spacing: 0.1rem;
 }
 
@@ -3907,3 +3934,31 @@ img.logo{
 .account-area img{
   margin-top: -3px;
 }
+
+/* detail view page */
+
+.btn-cart {
+    background-color: #1e2537;
+    padding: 0 50px;
+    border-right: none;
+    color: white;
+    -webkit-transition-duration: 500ms;
+    -o-transition-duration: 500ms;
+    transition-duration: 500ms;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    border-color: transparent;
+    font-weight: 700;
+    height: 44px;
+    line-height: 42px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-left: 25px;
+}
+
+.btn-cart:hover {
+    background-color: #374058;
+}
+/* end of detail view page */

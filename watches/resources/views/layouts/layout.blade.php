@@ -25,29 +25,37 @@
 
 <body>
 
-    <!-- Header Area -->
-    <header class="header_area">
 
-        <div class="container">
-		  <div class="row">
-		    <div class="col">
-		      <a href="/" class="nav-brand"><img class="logo my-3" src="/images/logo.png" alt="logo"></a>
-		    </div>
-		    <div class="col-6">
-		       <!-- Menu -->
-                <div class="classy-menu">
-                    <!-- Nav -->
-                    <div class="classynav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/shop">Shop</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-		    </div>
-		    <div class="col">
+    <!-- Header Area -->
+   <nav class="navbar navbar-expand-md navbar-dark bg-dark justify-content-between">
+      <a class="navbar-brand" href="/"><img class="logo my-2" src="/images/logo.png" alt="logo"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-center" id="navbarsExampleDefault">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">HOME <span class="sr-only">(current)</span></a>
+          </li>
+
+
+          <li class="nav-item">
+            <a class="nav-link" href="/shop">SHOP</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/about">ABOUT</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">CONTACT</a>
+          </li>
+          
+
+
+          <div class="col">
+
                 <!-- Hero Meta -->
                 <div class="hero_meta_area ml-auto d-flex align-items-center justify-content-end">
                     <!-- Search -->
@@ -58,11 +66,6 @@
                             <input type="search" class="form-control" placeholder="Search">
                             <input type="submit" class="d-none" value="Send">
                         </div>
-                    </div>
-
-                    <!-- Wishlist -->
-                    <div class="wishlist-area">
-                        <a href="wishlist.html" class="wishlist-btn"><i class="fas fa-heart"></i></a>
                     </div>
 
                     <!-- Cart -->
@@ -133,11 +136,13 @@
                         </ul>
                     </div>
                 </div>
-		    </div>
-		  </div>
-		</div>
+            </div>
 
-    </header>
+        </ul>
+        
+      </div>
+    </nav>
+
     <!-- Header Area End -->
 
     <!-- page content goes here -->
@@ -148,7 +153,7 @@
         <div class="container">
             <div class="row">
                 <!-- Single Footer Area -->
-                <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-4">
+                <div class="col-md-5 col-sm-12">
                     <div class="single_footer_area mb-100">
                         <div class="footer_heading mb-4">
                             <h6>Contact Us</h6>
@@ -167,87 +172,79 @@
                             <a href="#"><i class="fab fa-dribbble"></i></a>
                             <a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a>
                         </div>
+
                     </div>
                 </div>
 
-                <!-- Single Footer Area -->
-                <div class="col-12 col-sm-6 col-md col-lg-4 col-xl-3">
-                    <div class="single_footer_area mb-100">
-                        <div class="footer_heading mb-4">
-                            <h6>Information</h6>
+
+
+
+                
+                <div class="col-md-7 col-sm-12 d-flex  ">
+                    <!-- Single Footer Area -->
+                    <div class="col-6">
+                        <div class="single_footer_area mb-100">
+                            <div class="footer_heading mb-4">
+                                <h6>Information</h6>
+                            </div>
+                            <ul class="footer_widget_menu">
+                                <li><a href="#"><i class="icofont-rounded-right"></i> Your Account</a></li>
+                                <li><a href="#"><i class="icofont-rounded-right"></i> Free Shipping Policy</a></li>
+                                <li><a href="#"><i class="icofont-rounded-right"></i> Your Cart</a></li>
+                                <li><a href="#"><i class="icofont-rounded-right"></i> Return Policy</a></li>
+                                <li><a href="#"><i class="icofont-rounded-right"></i> Free Coupon</a></li>
+                                <li><a href="#"><i class="icofont-rounded-right"></i> Delivary Info</a></li>
+                            </ul>
+
                         </div>
-                        <ul class="footer_widget_menu">
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Your Account</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Free Shipping Policy</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Your Cart</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Return Policy</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Free Coupon</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Delivary Info</a></li>
-                        </ul>
                     </div>
-                </div>
-
+                
                 <!-- Single Footer Area -->
-                <div class="col-12 col-sm-6 col-md col-lg-4 col-xl-3">
-                    <div class="single_footer_area mb-100">
-                        <div class="footer_heading mb-4">
-                            <h6>Account</h6>
-                        </div>
-                        <ul class="footer_widget_menu">
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Product Support</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Terms &amp; Conditions</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Help</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Payment Method</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Affiliate Program</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Privacy Policy</a></li>
-                        </ul>
-                    </div>
-                </div>
+                    <div class="col-6">
+                        <div class="single_footer_area mb-100">
+                            <div class="footer_heading mb-4">
+                                <h6>Account</h6>
+                            </div>
+                            <ul class="footer_widget_menu">
+                                <li><a href="#"><i class="icofont-rounded-right"></i> Product Support</a></li>
+                                <li><a href="#"><i class="icofont-rounded-right"></i> Terms &amp; Conditions</a></li>
+                                <li><a href="#"><i class="icofont-rounded-right"></i> Help</a></li>
+                                <li><a href="#"><i class="icofont-rounded-right"></i> Payment Method</a></li>
+                                <li><a href="#"><i class="icofont-rounded-right"></i> Affiliate Program</a></li>
+                                <li><a href="#"><i class="icofont-rounded-right"></i> Privacy Policy</a></li>
+                            </ul>
 
-                <!-- Single Footer Area -->
-                <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-2">
-                    <div class="single_footer_area mb-100">
-                        <div class="footer_heading mb-4">
-                            <h6>Support</h6>
                         </div>
-                        <ul class="footer_widget_menu">
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Payment Method</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Help</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Product Support</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Terms &amp; Conditions</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Privacy Policy</a></li>
-                            <li><a href="#"><i class="icofont-rounded-right"></i> Affiliate Program</a></li>
-                        </ul>
+        
                     </div>
-                </div>
-
+                </div>    
             </div>
         </div>
+    </div>
 
-        <!-- Footer Bottom -->
-        <div class="footer_bottom_area">
-            <div class="container">
-                <div class="row align-items-center">
-                    <!-- Copywrite -->
-                    <div class="col-12 col-md-6">
-                        <div class="copywrite_text">
-                            <p>Copyright &copy; Pseudo Class 2020</p>
-                        </div>
+    <!-- Footer Bottom -->
+    <div class="footer_bottom_area">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Copywrite -->
+                <div class="col-12 col-md-6">
+                    <div class="copywrite_text">
+                        <p>Copyright &copy; Pseudo Class 2020</p>
                     </div>
                 </div>
             </div>
         </div>
-    </footer>
-    <!-- Footer Area -->
+    </div>
+</footer>
+<!-- Footer Area -->
 
-    <!-- Bootstrap core JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
-    <!-- Third party plugin JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="/js/scripts.js"></script>
-
+<!-- Bootstrap core JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+<!-- Third party plugin JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<!-- Core theme JS-->
+<script src="/js/scripts.js"></script>
 
 </body>
 
