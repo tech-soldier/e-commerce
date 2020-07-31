@@ -26,34 +26,34 @@
 <body>
 
     <!-- Header Area -->
-    <header class="header_area">
+   <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="/"><img class="logo my-2" src="/images/logo.png" alt="logo"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <div class="container">
-		  <div class="row">
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">HOME <span class="sr-only">(current)</span></a>
+          </li>
 
-		    <div class="col">
-		       <!-- Menu -->
-                <nav class="navbar navbar-expand-lg">
-                    <a href="/" class="nav-brand"><img class="logo my-2" src="/images/logo.png" alt="logo"></a>
 
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon">
-                             <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
-                        </span>
-                    </button>
+          <li class="nav-item">
+            <a class="nav-link" href="/shop">SHOP</a>
+          </li>
 
-                    <!-- Nav -->
-                    <div class="classynav collapse navbar-collapse" id="navbarNavDropdown">
-                        <ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/shop">Shop</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
-                        </ul>
-                    </div>
-                </nav>
-		    </div>
-		    <div class="col">
+          <li class="nav-item">
+            <a class="nav-link" href="/about">ABOUT</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">CONTACT</a>
+          </li>
+          
+
+
+          <div class="col">
                 <!-- Hero Meta -->
                 <div class="hero_meta_area ml-auto d-flex align-items-center justify-content-end">
                     <!-- Search -->
@@ -134,11 +134,12 @@
                         </ul>
                     </div>
                 </div>
-		    </div>
-		  </div>
-		</div>
+            </div>
+        </ul>
+        
+      </div>
+    </nav>
 
-    </header>
     <!-- Header Area End -->
 
     <!-- page content goes here -->
