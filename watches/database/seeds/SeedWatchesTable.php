@@ -604,16 +604,158 @@ class SeedWatchesTable extends Seeder
         ]);
 
 
-        // next 5 will be all category: smart watch 
+        // next 5 will be all category: smart watch --Alexandr
 
-        // next 5 will be all category: luxury watch 
+        // next 5 will be all category: luxury watch --Alexandr
 
-        // next 5 will be all category: mechanical watch 
+        // next 5 will be all category: mechanical watch --Aakash
 
-        // next 5 will be all category: digital watch 
+        // next 5 will be all category: digital watch --Aina 
 
-        // next 5 will be all category: quartz
+        DB::table('watches')->insert([ 
+            'SKU' => 66301278,
+            'watch_name' => 'Saddlery', 
+            'in_stock' => 1, 
+            'quantity' => 89, 
+            'price' => 209.99, 
+            'cost' => 249.99, 
+            'material' => 'silver', 
+            'main_color' => 'silver', 
+            'movement' => 'automatic', 
+            'gender' => 'male', 
+            'category_id' => 4, 
+            'diameter' => 28,
+            'strap_length' => '187mm', 
+            'strap_width' => '24mm', 
+            'weight' => '128g', 
+            'water_resistant' => '3 atm', 
+            'cover_img' => 'saddlrey.jpg', 
+            'short_description' => 'The completion of a corporate celebration is typically marked with purchasing the 2020 favourite digital Saddlery watch.', 
+            'long_description' => 'Using genuinely new case architecture and a crystal that curved on two separate axis, you could see why AP hailed Saddlery as radical a design as the TechWatches iconic octagonal case and integrated metal bracelet. A new-for-2020 palate of colours is a welcome update.', 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]);
 
+        DB::table('watches')->insert([ 
+            'SKU' => 66302611,
+            'watch_name' => 'Heuerald', 
+            'in_stock' => 1, 
+            'quantity' => 119, 
+            'price' => 199.99, 
+            'cost' => 299.99, 
+            'material' => 'silver', 
+            'main_color' => 'black', 
+            'movement' => 'quartz', 
+            'gender' => 'male', 
+            'category_id' => 4, 
+            'diameter' => 28,
+            'strap_length' => '170mm', 
+            'strap_width' => '23mm', 
+            'weight' => '121g', 
+            'water_resistant' => '3 atm', 
+            'cover_img' => 'heuerald.jpg', 
+            'short_description' => 'Built from a new material that combines “the lightness of titanium” with “the hardness of diamond” and looking like something from the distant future, this could only be a TechWatch.', 
+            'long_description' => 'It comes with an OLED screen, a 45mm matte black titanium case and a full suite of smartwatch functions including heart rate monitor, accelerometer and gyroscope. In addition, there’s detailed golf data for some 40,000 courses around the world, with game-focused features like distance to green and hazards, shot distance and score keeping..', 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]);
+
+        DB::table('watches')->insert([ 
+            'SKU' => 66304411,
+            'watch_name' => 'Culture', 
+            'in_stock' => 1, 
+            'quantity' => 119, 
+            'price' => 1189.99, 
+            'cost' => 1299.99, 
+            'material' => 'titanium', 
+            'main_color' => 'white', 
+            'movement' => 'quartz', 
+            'gender' => 'female', 
+            'category_id' => 4, 
+            'diameter' => 28,
+            'strap_length' => '160mm', 
+            'strap_width' => '23mm', 
+            'weight' => '111g', 
+            'water_resistant' => '3 atm', 
+            'cover_img' => 'culture.jpg', 
+            'short_description' => 'There’s something magical about a chiming cultured wristwatch, doubly so if its made by TechWatch, whose family of dress watches may be unparalleled.', 
+            'long_description' => 'The first culture came out in the Fifties, one of the first generation of wristwatches to come with a chiming, vibrating alarm complication. The 2020 version has been slimmed down and tidied up, and (naturally) features a completely new movement. It’s beautifully proportioned, extremely stylish and surprisingly loud. A modern classic.', 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]);
+
+        DB::table('watches')->insert([ 
+            'SKU' => 69302611,
+            'watch_name' => 'Huebolt', 
+            'in_stock' => 1, 
+            'quantity' => 119, 
+            'price' => 1189.99, 
+            'cost' => 1299.99, 
+            'material' => 'carbon fibre', 
+            'main_color' => 'brown', 
+            'movement' => 'quartz', 
+            'gender' => 'male', 
+            'category_id' => 4, 
+            'diameter' => 28,
+            'strap_length' => '160mm', 
+            'strap_width' => '23mm', 
+            'weight' => '122g', 
+            'water_resistant' => '3 atm', 
+            'cover_img' => 'huebolt.jpg', 
+            'short_description' => 'Following its 2018 FIFA World Cup smartwatch, Hueblot has produced a second watch running Wear OS.', 
+            'long_description' => 'The Big Bang e comes in two versions: carbon fibre, with  and black ceramic. Both feature a 42mm OLED high-definition touchscreen covered with quartz crystal, and 8GB of storage. In addition to the ‘time only’ analogue function, the Huebolt features interpretations of traditional watch complications, including one that tracks the lunar.', 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]);
+
+        DB::table('watches')->insert([ 
+            'SKU' => 61122611,
+            'watch_name' => 'Bretting', 
+            'in_stock' => 1, 
+            'quantity' => 119, 
+            'price' => 1189.99, 
+            'cost' => 1299.99, 
+            'material' => 'carbon fibre', 
+            'main_color' => 'brown', 
+            'movement' => 'quartz', 
+            'gender' => 'male', 
+            'category_id' => 4, 
+            'diameter' => 28,
+            'strap_length' => '160mm', 
+            'strap_width' => '23mm', 
+            'weight' => '122g', 
+            'water_resistant' => '3 atm', 
+            'cover_img' => 'huebolt.jpg', 
+            'short_description' => 'Bretting continues to roll out new watches for 2020 with the new Premier TechWatch Mulliner Limited Edition..', 
+            'long_description' => 'The watch features a solid 42mm polished steel case with a push/pull crown and rectangular chronograph pushers. The enlarged Arabic numbers and red and blue detailing lend this piece a vintage, dressy feel.', 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]);
+
+        // next 5 will be all category: quartz --Aina 
+        B::table('watches')->insert([ 
+            'SKU' => 81155511,
+            'watch_name' => 'Rair', 
+            'in_stock' => 1, 
+            'quantity' => 119, 
+            'price' => 1189.99, 
+            'cost' => 1299.99,   
+            'material' => 'carbon fibre', 
+            'main_color' => 'brown', 
+            'movement' => 'quartz', 
+            'gender' => 'male', 
+            'category_id' => 5, 
+            'diameter' => 28,
+            'strap_length' => '160mm', 
+            'strap_width' => '23mm', 
+            'weight' => '122g', 
+            'water_resistant' => '3 atm', 
+            'cover_img' => 'rair.jpg', 
+            'short_description' => 'Bretting continues to roll out new watches for 2020 with the new Premier TechWatch Mulliner Limited Edition..', 
+            'long_description' => 'The watch features a solid 42mm polished steel case with a push/pull crown and rectangular chronograph pushers. The enlarged Arabic numbers and red and blue detailing lend this piece a vintage, dressy feel.', 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]);
 
     }
 }
