@@ -606,6 +606,126 @@ class SeedWatchesTable extends Seeder
 
         // next 5 will be all category: smart watch --Alexandr
 
+        DB::table('watches')->insert([ 
+            'SKU' => 20073498,
+            'watch_name' => 'Galaxy Watch', 
+            'in_stock' => 1, 
+            'quantity' => 76, 
+            'price' => 369.99, 
+            'cost' => 419.99, 
+            'material' => 'titanium', 
+            'main_color' => 'black', 
+            'movement' => 'automatic', 
+            'gender' => 'male', 
+            'category_id' => 1, 
+            'diameter' => 40,
+            'strap_length' => '188mm', 
+            'strap_width' => '24mm', 
+            'weight' => '86g', 
+            'water_resistant' => '3 atm', 
+            'cover_img' => 'galaxywatch.jpg', 
+            'short_description' => 'The Galaxy Watch Active2 uses dedicated motion sensors to automatically track popular workouts and provide real-time feedback on your runs with the built-in running coach.', 
+            'long_description' => 'Evaluate your sleep patterns and form better habits with the advanced sleep tracker or enjoy interactive meditation and breathing exercises, powered by Calm. Meanwhile, the lightweight, aluminum watch and breathable, flexible strap mean the Galaxy Watch Active2 is ideal for everyday wear. Plus, you can stay connected for longer with a long-lasting battery that lasts for days on a single charge.', 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]);
+
+        DB::table('watches')->insert([ 
+            'SKU' => 20496720,
+            'watch_name' => 'Fossil Sport', 
+            'in_stock' => 1, 
+            'quantity' => 69, 
+            'price' => 129.99, 
+            'cost' => 149.99, 
+            'material' => 'stainless steel', 
+            'main_color' => 'pink', 
+            'movement' => 'automatic', 
+            'gender' => 'female', 
+            'category_id' => 1, 
+            'diameter' => 24,
+            'strap_length' => '172mm', 
+            'strap_width' => '20mm', 
+            'weight' => '112g', 
+            'water_resistant' => '3 atm', 
+            'cover_img' => 'fossilsport.jpg', 
+            'short_description' => 'Smartwatches powered with Wear OS by Google are compatible with iPhone and Android phones.', 
+            'long_description' => 'Wear OS by Google and other related marks are trademarks of Google LLC. Touchscreen smartwatches powered with Wear OS by Google require a phone running Android OS 6.0+ (excluding Go edition) or iOS 10+. Supported features may vary between platforms.', 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]);
+
+        DB::table('watches')->insert([ 
+            'SKU' => 24598763,
+            'watch_name' => 'Fitbit Versa', 
+            'in_stock' => 1, 
+            'quantity' => 97, 
+            'price' => 249.99, 
+            'cost' => 279.99, 
+            'material' => 'carbon fibre', 
+            'main_color' => 'black', 
+            'movement' => 'automatic', 
+            'gender' => 'male', 
+            'category_id' => 1, 
+            'diameter' => 28,
+            'strap_length' => '192mm', 
+            'strap_width' => '24mm', 
+            'weight' => '124g', 
+            'water_resistant' => '3 atm', 
+            'cover_img' => 'fitbitversa.jpg', 
+            'short_description' => 'Reach your physical fitness goals in style with the Fitbit Versa 2 smartwatch.', 
+            'long_description' => 'Reach your physical fitness goals in style with the Fitbit Versa 2 smartwatch. It automatically tracks your calories burned, steps taken, heart rate, sleeping patterns, and more. It helps keep you in the loop by wirelessly syncing with your smartphone for at-a-glance notifications from texts, emails, social media, and your calendar.', 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]);
+
+        DB::table('watches')->insert([ 
+            'SKU' => 29344911,
+            'watch_name' => 'Skagen Falster', 
+            'in_stock' => 1, 
+            'quantity' => 60, 
+            'price' => 119.99, 
+            'cost' => 139.99, 
+            'material' => 'stainless steel', 
+            'main_color' => 'rosegold', 
+            'movement' => 'automatic', 
+            'gender' => 'female', 
+            'category_id' => 1, 
+            'diameter' => 34,
+            'strap_length' => '168mm', 
+            'strap_width' => '20mm', 
+            'weight' => '132g', 
+            'water_resistant' => '3 atm', 
+            'cover_img' => 'skagen.jpg', 
+            'short_description' => 'The epitome of sleek style and smart functionality, the Skagen Falster 2 smartwatch is a timepiece you won’t want to take off.', 
+            'long_description' => 'The epitome of sleek style and smart functionality, the Skagen Falster 2 smartwatch is a timepiece you won’t want to take off. Powered by Wear OS, the Falster 2 tracks activity and heart rate, and alerts you of incoming calls, texts, and more. An interchangeable band and customizable dial allow you to tailor this smartwatch to your style.', 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]);
+
+        DB::table('watches')->insert([ 
+            'SKU' => 89344911,
+            'watch_name' => 'Fitbit Charge', 
+            'in_stock' => 1, 
+            'quantity' => 300, 
+            'price' => 149.99, 
+            'cost' => 179.99, 
+            'material' => 'stainless steel', 
+            'main_color' => 'black', 
+            'movement' => 'automatic', 
+            'gender' => 'mail', 
+            'category_id' => 1, 
+            'diameter' => 28,
+            'strap_length' => '190mm', 
+            'strap_width' => '20mm', 
+            'weight' => '146g', 
+            'water_resistant' => '2 atm', 
+            'cover_img' => 'fitbitcharge.jpg', 
+            'short_description' => 'Maximize workouts with PurePulse heart rate, multi-sport modes and connected GPS.', 
+            'long_description' => 'Make every beat count with Fitbit Charge 2 the all-new heart rate and fitness wristband. Maximize workouts with PurePulse heart rate, multi-sport modes and connected GPS. Track all-day activity, exercise and sleep. And make the most of your entire routine with smartphone notifications, reminders to move and personalized guided breathing sessions. With so many next-generation features, plus interchangeable bands and long battery life, it’s the motivation you need to push yourself further.', 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]);
+
         // next 5 will be all category: luxury watch --Alexandr
 
         // next 5 will be all category: mechanical watch --Aakash
