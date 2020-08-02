@@ -3,7 +3,8 @@
 @section('content')
 
 <div class="shop1" >
-        <div class="video-container">          
+        <div class="video-container">  
+            <img src="/images/shop_image.jpg" alt="">          
             <button class="shop-btn text-center"> SHOP </button>
         </div>
     </div>

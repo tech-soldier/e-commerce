@@ -3,14 +3,16 @@
 @section('content')
 
 <div class="contact1" >
-        <div class="video-container">           
+        <div class="video-container">   
+            <img src="/images/contact_banner.jpg" alt="">        
             <button class="shop-btn text-center"> CONTACT US </button>
         </div>
     </div>
 
     <div class="row">
         <!-- Map -->
-        <div class="col-5 map">                 
+        <div class="col-5 map"> 
+            <img src="/images/map1.jpg" alt="">                
           
         </div>
 

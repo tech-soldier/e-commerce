@@ -3,7 +3,8 @@
 @section('content')
 
 <div class="detail1" >
-        <div class="video-container">                   
+        <div class="video-container">  
+            <img src="/images/shop_detail_image1.jpg">                 
             <button class="shop-btn text-center"> WATCH NAME </button>
         </div>
     </div>  <!--/. Header Area  -->
@@ -11,7 +12,7 @@
     <div class="row">
         <!-- image  -->
         <div class="col-5  col-md-6 col-lg-6">
-            <img  src="images/product1.jpg" alt="">
+            <img  src="/images/product1.jpg" alt="">
         </div>
 
         <!-- description -->

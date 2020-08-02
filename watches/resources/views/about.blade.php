@@ -4,7 +4,7 @@
 
 <div class="about1" >
         <div class="video-container">
-                    
+            <img src="/images/about_banner11.jpg" alt="">  
             <button class="shop-btn text-center"> ABOUT </button>
         </div>
     </div>
