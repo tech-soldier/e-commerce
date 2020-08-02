@@ -10,9 +10,9 @@ class PagesController extends Controller
      * returns home page
      * @return array
      */
-    public function homepage(){
-        $title = 'Home';
-        return view('homepage');
+    public function watchhome(){
+        $title = 'TechWatch Home';
+        return view('watchhome');
     }
 
       /**
@@ -21,7 +21,7 @@ class PagesController extends Controller
      */
 
     public function contact(){
-        $title = 'contact';
+        $title = 'Contact';
         return view('contact');
     }
 
@@ -30,7 +30,7 @@ class PagesController extends Controller
      * @return array
      */
     public function about(){
-        $title = 'about';
+        $title = 'About';
         return view('about');
     }
   
