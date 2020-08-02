@@ -973,7 +973,7 @@ class SeedWatchesTable extends Seeder
         ]);
 
         // next 5 will be all category: quartz --Aina 
-        B::table('watches')->insert([ 
+        DB::table('watches')->insert([ 
             'SKU' => 81155511,
             'watch_name' => 'Rair', 
             'in_stock' => 1, 
@@ -991,11 +991,107 @@ class SeedWatchesTable extends Seeder
             'weight' => '122g', 
             'water_resistant' => '3 atm', 
             'cover_img' => 'rair.jpg', 
-            'short_description' => 'Bretting continues to roll out new watches for 2020 with the new Premier TechWatch Mulliner Limited Edition..', 
-            'long_description' => 'The watch features a solid 42mm polished steel case with a push/pull crown and rectangular chronograph pushers. The enlarged Arabic numbers and red and blue detailing lend this piece a vintage, dressy feel.', 
+            'short_description' => 'Rair continues to surpise and not dissapoint.', 
+            'long_description' => 'The watch features a solid movement made of rare quartz  with a push/pull crown and circular chronograph pushers. The enlarged Arabic numbers and red and blue detailing lend this piece a vintage, dressy feel.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
 
+        DB::table('watches')->insert([ 
+            'SKU' => 81155001,
+            'watch_name' => 'Elixir II', 
+            'in_stock' => 1, 
+            'quantity' => 119, 
+            'price' => 1119.99, 
+            'cost' => 1219.99,   
+            'material' => 'stainless steel', 
+            'main_color' => 'silver', 
+            'movement' => 'quartz', 
+            'gender' => 'male', 
+            'category_id' => 5, 
+            'diameter' => 28,
+            'strap_length' => '156mm', 
+            'strap_width' => '24mm', 
+            'weight' => '122g', 
+            'water_resistant' => '26 atm', 
+            'cover_img' => 'elixir.jpg', 
+            'short_description' => 'Exilir is the newly released and improved version of our first Elixir series.', 
+            'long_description' => 'When it was launched last year in a limited run, Elixir\'s first military-inspired automatic watch sold out quicker than you could say, "An automatic watch for how much?" Those who missed out now have a second chance to grab a watch that channels Elixir\'s military heritage but adds clever guts (a 21-jewel Japanese automatic movement) and will still leave you change from $1119.99. With only 100m water resistance it\'s more a desk diving watch than a diver diving watch. But at that price, we\'re not ones to quibble..', 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]);
+
+        DB::table('watches')->insert([ 
+            'SKU' => 10955531,
+            'watch_name' => 'Kunghans', 
+            'in_stock' => 1, 
+            'quantity' => 32, 
+            'price' => 119.99, 
+            'cost' => 219.99,   
+            'material' => 'stainless steel', 
+            'main_color' => 'black', 
+            'movement' => 'quartz', 
+            'gender' => 'female', 
+            'category_id' => 5, 
+            'diameter' => 28,
+            'strap_length' => '156mm', 
+            'strap_width' => '18mm', 
+            'weight' => '112g', 
+            'water_resistant' => '6 atm', 
+            'cover_img' => 'kunghans.jpg', 
+            'short_description' => 'Once this PseudoSlass company was the biggest watch manufacturer in the world. Today it maintains a pole position in the league of best-designed brands, noted for its clean dials and minimalist indices. .', 
+            'long_description' => 'When it was launched last year in a limited run, Elixir\'s first military-inspired automatic watch sold out quicker than you could say, "An automatic watch for how much?" Those who missed out now have a second chance to grab a watch that channels Elixir\'s military heritage but adds clever guts (a 21-jewel Japanese automatic movement) and will still leave you change from $1119.99. With only 100m water resistance it\'s more a desk diving watch than a diver diving watch. But at that price, we\'re not ones to quibble..', 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]);
+
+
+        DB::table('watches')->insert([ 
+            'SKU' => 10955531,
+            'watch_name' => 'Prospex', 
+            'in_stock' => 1, 
+            'quantity' => 32, 
+            'price' => 1319.99, 
+            'cost' => 2219.99,   
+            'material' => 'gold', 
+            'main_color' => 'gold', 
+            'movement' => 'quartz', 
+            'gender' => 'male', 
+            'category_id' => 5, 
+            'diameter' => 28,
+            'strap_length' => '156mm', 
+            'strap_width' => '18mm', 
+            'weight' => '42g', 
+            'water_resistant' => '26 atm', 
+            'cover_img' => 'prospex.jpg', 
+            'short_description' => 'One of the nicest-looking chronographs and arguably the classic TechWatches dress watch now comes with a self-winding in-house movement that significantly lowers its entry price.', 
+            'long_description' => 'Inspired by the world of night diving, which may be a first, Prospex new series of dive watches are distinguished by their none-more-black DLC-coated gold cases.', 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]);
+
+        DB::table('watches')->insert([ 
+            'SKU' => 19955666,
+            'watch_name' => 'Finissemo', 
+            'in_stock' => 1, 
+            'quantity' => 561, 
+            'price' => 2319.99, 
+            'cost' => 3219.99,   
+            'material' => 'gold', 
+            'main_color' => 'gold', 
+            'movement' => 'quartz', 
+            'gender' => 'male', 
+            'category_id' => 5, 
+            'diameter' => 28,
+            'strap_length' => '156mm', 
+            'strap_width' => '18mm', 
+            'weight' => '42g', 
+            'water_resistant' => '3 atm', 
+            'cover_img' => 'finissemo.jpg', 
+            'short_description' => 'Finnisemo\'s first release of 2020 is a new version of its  Finissimo Automatic, which debuted in 2017.', 
+            'long_description' => 'Back then, it created quite a stir – at a scarcely-possible 2.23mm thick, it contained the world’s thinnest self-winding movement. The paper-thin sports watch has previously been available in titanium, stainless steel, rose gold, and gold all with a sandblasted finish. Now that family is joined by two new models – in steel with a bracelet, or 18ct rose gold with a strap – that feature a fancy satin-polished finish, and also play up the contrast between the black lacquered dial and the polished hands and indexes.', 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]);
     }
 }
