@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,151 +7,132 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
     <!-- Title  -->
-    <title>Techwatch Website</title>
-
+    <title>Techwatch Home</title>
     <!-- Favicon  -->
     <!-- <link rel="icon" href="img/core-img/favicon.ico"> -->
-
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-
-    <!-- Style CSS -->
-    <link rel="stylesheet" href="/css/styles.css">
-
+    <!-- Style CSS -->   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
-
 <body>
-
-
     <!-- Header Area -->
-   <nav class="navbar navbar-expand-md navbar-dark bg-dark justify-content-between">
-      <a class="navbar-brand" href="/"><img class="logo my-2" src="/images/logo.png" alt="logo"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse justify-content-center" id="navbarsExampleDefault">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="/">HOME <span class="sr-only">(current)</span></a>
-          </li>
-
-
-          <li class="nav-item">
-            <a class="nav-link" href="/shop">SHOP</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="/about">ABOUT</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="/contact">CONTACT</a>
-          </li>
-          
-
-
-          <div class="col">
-
-                <!-- Hero Meta -->
-                <div class="hero_meta_area ml-auto d-flex align-items-center justify-content-end">
-                    <!-- Search -->
-                    <div class="search-area">
-                        <div class="search-btn"><i class="fas fa-search"></i></div>
-                        <!-- Form -->
-                        <div class="search-form">
-                            <input type="search" class="form-control" placeholder="Search">
-                            <input type="submit" class="d-none" value="Send">
-                        </div>
-                    </div>
-
-                    <!-- Cart -->
-                    <div class="cart-area">
-                        <div class="cart--btn"><i class="fas fa-shopping-cart"></i><span class="cart_quantity">2</span></div>
-
-                        <!-- Cart Dropdown Content -->
-                        <div class="cart-dropdown-content">
-                            <ul class="cart-list">
-                                <li>
-                                    <div class="cart-item-desc">
-                                        <a href="#" class="image">
-                                            <img src="https://picsum.photos/500/500" class="cart-thumb" alt="">
-                                        </a>
-                                        <div>
-                                            <a href="#">Swatch 800</a>
-                                            <p>1 x - <span class="price">$140.99</span></p>
-                                        </div>
-                                    </div>
-                                    <span class="dropdown-product-remove"><i class="icofont-bin"></i></span>
-                                </li>
-                                <li>
-                                    <div class="cart-item-desc">
-                                        <a href="#" class="image">
-                                            <img src="https://picsum.photos/500/500" class="cart-thumb" alt="">
-                                        </a>
-                                        <div>
-                                            <a href="#">Hublot Style</a>
-                                            <p>2x - <span class="price">$270.99</span></p>
-                                        </div>
-                                    </div>
-                                    <span class="dropdown-product-remove"><i class="icofont-bin"></i></span>
-                                </li>
-                            </ul>
-                            <div class="cart-pricing my-4">
-                                <ul>
-                                    <li>
-                                        <span>Sub Total:</span>
-                                        <span>$822.96</span>
-                                    </li>
-                                    <li>
-                                        <span>Shipping:</span>
-                                        <span>$30.00</span>
-                                    </li>
-                                    <li>
-                                        <span>Total:</span>
-                                        <span>$856.63</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="cart-box">
-                                <a href="checkout-1.html" class="btn btn-primary d-block">Checkout</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Account -->
-                    <div class="account-area">
-                        <div class="user-thumbnail">
-                            <img src="https://picsum.photos/500/500" alt="">
-                        </div>
-                        <ul class="user-meta-dropdown">
-                            <li class="user-title"><span>Hello,</span> Lim Sarah</li>
-                            <li><a href="my-account.html">My Account</a></li>
-                            <li><a href="order-list.html">Orders List</a></li>
-                            <li><a href="wishlist.html">Wishlist</a></li>
-                            <li><a href="login.html"><i class="icofont-logout"></i> Logout</a></li>
-                        </ul>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark justify-content-between">
+        <a class="navbar-brand" href="/"><img class="logo my-2" src="/images/logo1.png" alt="logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">HOME <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/shop">SHOP</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">CONTACT</a>
+                </li>
+            </ul>
+            
+            <div class=" ml-5 acct_srch d-flex">
+                <!-- util search -->
+                <div class="circle">
+                    <i class="fas fa-search"></i>
+                </div>
+                <!-- shopping cart -->
+                <div class="ml-2 circle">
+                    <i class="fas fa-shopping-cart"></i>
+                    <div class="sml-circle">
+                        <span class="text-center cart-blue-icon">2</span>
                     </div>
                 </div>
+                <div class="ml-2 circle act-circle">    
+                </div>
             </div>
-
-        </ul>
         
-      </div>
+        </div> 
     </nav>
+    <!-- Header Area End --> 
 
-    <!-- Header Area End -->
+    <!-- page content goes here --> 
 
-    <!-- page content goes here -->
     @yield('content')
 
+    <!-- Special Featured Area -->
+    <section class="special_feature_area pt-5">
+        <div class="container">
+            <div class="row">
+
+                <!-- Single Feature Area -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single_feature_area mb-5 d-flex align-items-center">
+                        <div class="feature_icon">
+                            <i class="fas fa-ship mt-4"></i>
+                        </div>
+                        <div class="feature_content">
+                            <h6>Free Shipping</h6>
+                            <p>For orders above $100</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Feature Area -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single_feature_area mb-5 d-flex align-items-center">
+                        <div class="feature_icon">
+                            <i class="fas fa-shipping-fast mt-4"></i>
+                        </div>
+                        <div class="feature_content">
+                            <h6>Happy Returns</h6>
+                            <p>7 Days free Returns</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Feature Area -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single_feature_area mb-5 d-flex align-items-center">
+                        <div class="feature_icon">
+                            <i class="fas fa-file-invoice-dollar mt-4"></i>
+                        </div>
+                        <div class="feature_content">
+                            <h6>100% Money Back</h6>
+                            <p>If product is damaged</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Feature Area -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single_feature_area mb-5 d-flex align-items-center">
+                        <div class="feature_icon">
+                            <i class="fas fa-headset mt-4"></i>
+                        </div>
+                        <div class="feature_content">
+                            <h6>Dedicated Support</h6>
+                            <p>We provide support 24/7</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- /. row -->
+        </div> <!-- /. container -->
+    </section>  <!-- /. Special Featured Area -->
+
+
     <!-- Footer Area -->
-    <footer class="footer_area section_padding_100_0">
+    <footer class="footer_area pt-5">
         <div class="container">
             <div class="row">
                 <!-- Single Footer Area -->
+                <!-- footer col 1 -->
                 <div class="col-md-5 col-sm-12">
                     <div class="single_footer_area mb-100">
                         <div class="footer_heading mb-4">
@@ -165,7 +145,7 @@
                             <li><span>Email:</span> support@example.com</li>
                         </ul>
                         <div class="footer_social_area mt-15">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" style="padding-left:0;"><i class="fab fa-facebook-f"></i></a>
                             <a href="#"><i class="fab fa-twitter"></i></a>
                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
                             <a href="#"><i class="fab fa-pinterest"></i></a>
@@ -174,12 +154,9 @@
                         </div>
 
                     </div>
-                </div>
+                </div>  <!-- /. end footer col 1 -->
 
-
-
-
-                
+                <!-- footer col 2 -->
                 <div class="col-md-7 col-sm-12 d-flex  ">
                     <!-- Single Footer Area -->
                     <div class="col-6">
@@ -199,7 +176,7 @@
                         </div>
                     </div>
                 
-                <!-- Single Footer Area -->
+                    <!-- Single Footer Area -->
                     <div class="col-6">
                         <div class="single_footer_area mb-100">
                             <div class="footer_heading mb-4">
@@ -217,34 +194,29 @@
                         </div>
         
                     </div>
-                </div>    
-            </div>
-        </div>
-    </div>
+                </div>  <!-- /. end footer col 2-->  
+            </div> <!-- /. footer row -->
+        </div> <!-- /. footer container -->
 
-    <!-- Footer Bottom -->
-    <div class="footer_bottom_area">
-        <div class="container">
-            <div class="row align-items-center">
-                <!-- Copywrite -->
-                <div class="col-12 col-md-6">
-                    <div class="copywrite_text">
-                        <p>Copyright &copy; Pseudo Class 2020</p>
-                    </div>
-                </div>
+        <!-- Footer Bottom -->
+        <div class="footer_bottom_area">
+            <div class="container">
+                
+                <p class="text-center pb-5">Copyright &copy; Pseudo Class 2020</p>
+                            
             </div>
         </div>
-    </div>
-</footer>
-<!-- Footer Area -->
+
+    </footer>  <!-- /. Footer Area -->
 
 <!-- Bootstrap core JS-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+
 <!-- Third party plugin JS-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 <!-- Core theme JS-->
-<script src="/js/scripts.js"></script>
+<script src="main.js"></script>
 
 </body>
 
