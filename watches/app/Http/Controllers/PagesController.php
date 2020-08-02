@@ -10,9 +10,9 @@ class PagesController extends Controller
      * returns home page
      * @return array
      */
-    public function homepage(){
+    public function watchhome(){
         $title = 'Home';
-        return view('homepage');
+        return view('watchhome');
     }
 
       /**
