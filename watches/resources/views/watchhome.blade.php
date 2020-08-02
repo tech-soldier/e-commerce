@@ -26,7 +26,7 @@
             </div> -->
             <div class="video-container">
                 <video autoplay muted loop>
-                <source src="/public/images/slider_video3.mp4" type="video/mp4" />
+                <source src="/images/slider_video3.mp4" type="video/mp4" />
                 </video>
                 <button class="shop-btn text-left"> &nbsp; VISIT SHOP &nbsp; &nbsp;&nbsp;<i class="fas fa-arrow-right"></i></button>
             </div> <!-- /. video container -->
