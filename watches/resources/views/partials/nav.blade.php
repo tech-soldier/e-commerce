@@ -5,20 +5,20 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
             <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">HOME <span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                    <a class="{{ Request::is('/') ? "active nav-link": "nav-link" }}" href="/">HOME</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/shop">SHOP</a>
+                    <a class="{{ Request::is('shop') ? "active nav-link" : "nav-link" }}" href="/shop">SHOP</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/about">ABOUT</a>
+                    <a class="{{ Request::is('about') ? "active nav-link": "nav-link" }}" href="/about">ABOUT</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/contact">CONTACT</a>
+                    <a class="{{ Request::is('contact') ? "active nav-link" : "nav-link" }}" href="/contact">CONTACT</a>
                 </li>
             </ul>
-            
+
             <div class=" ml-5 acct_srch d-flex">
                 <!-- util search -->
                 <div class="circle">
@@ -31,9 +31,9 @@
                         <span class="text-center cart-blue-icon">2</span>
                     </div>
                 </div>
-                <div class="ml-2 circle act-circle">    
+                <div class="ml-2 circle act-circle">
                 </div>
             </div>
-        
-        </div> 
+
+        </div>
     </nav>
