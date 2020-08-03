@@ -336,35 +336,35 @@ i {
 
 .shop1{
   height: 550px;
-  background-image:url("images/shop_image.jpg");
+  background-image:url("/images/shop_image.jpg");
   background-size: cover;
   background-position: center;
 }
 
 .about1{
   height: 550px;
-  background-image:url("images/about_banner11.jpg");
+  background-image:url("/images/about_banner11.jpg");
   background-size: cover;
   background-position: center;
 }
 
 .contact1{
   height: 550px;
-  background-image:url("images/contact_banner.jpg");
+  background-image:url("/images/contact_banner.jpg");
   background-size: cover;
   background-position: center;
 }
 
 .contact2{
   height: 550px;
-  background-image:url("images/contact_image.jpg");
+  background-image:url("/images/contact_image.jpg");
   background-size: cover;
   background-position: center;
 }
 
 .detail1{
   height: 550px;
-  background-image:url("images/shop_detail_image1.jpg");
+  background-image:url("/images/shop_detail_image1.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -373,7 +373,7 @@ i {
 
 .map{
   height: 550px;
-  background-image:url("images/map1.jpg");
+  background-image:url("/images/map1.jpg");
   background-size: cover;
   background-position: center;
 }
