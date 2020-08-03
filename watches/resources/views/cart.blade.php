@@ -58,16 +58,15 @@
             </tr>
 
             <tr>
-                <td colspan="5" class="hidden-xs text-right"><strong>Total $<span class="cart-total">262</span></strong></td>
-            </tr>
 
-            <tr>
-                <td><a href="{{ url('/') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
-                <td colspan="3" class="hidden-xs"></td>
-                <td><a href="{{ url('/') }}" class="btn btn-success">Checkout</a></td>
+                <td><a href="{{ url('/') }}" class="btn btn-primary"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+                <td colspan="2" class="hidden-xs"></td>
+                <td colspan="2" class="hidden-xs text-right"><strong>Total $<span class="cart-total">262</span></strong></td>
             </tr>
-            </tfoot>
-        </table>
-    </div>
+        </tfoot>
+    </table>
+</div>
+
+
 
 @endsection
