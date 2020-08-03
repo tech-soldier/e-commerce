@@ -14,6 +14,4 @@
     @include('partials/footer')
     <!-- Footer Area -->
 
-    <!-- Scripts Area-->
-    @include('partials/footer')
-    <!-- Scripts Area -->
+
