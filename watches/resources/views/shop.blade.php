@@ -15,13 +15,16 @@
         <hr>
         <div class="categories-wrapper mb-5">
             <ul>
-                @foreach($categories as $category)
-                <li><a href="">{{$category->category_name}}</a></li>
-                @endforeach
+                <li><a href="">Mens</a></li>
+                <li><a href="">Womens</a></li>
+                <li><a href="">Smart</a></li>
+                <li><a href="">Kids</a></li>
+                <li><a href="">Techy</a></li>
             </ul>
         </div>
         <!-- /. Categories -->
         <div class="row justify-content-center">
+<<<<<<< HEAD
             <!-- Single Product -->
             <div class="col-2 text-center bord">
                 <div class="single-product-area mb-30">
@@ -286,6 +289,11 @@
             </div>
 
             <!-- Single Product -->
+=======
+
+            @foreach($watches as $watch)
+            <!-- Single Product -->
+>>>>>>> master
             <div class="col-2 text-center bord">
                 <div class="single-product-area mb-30">
                     <div class="product_image">
@@ -304,16 +312,24 @@
 
                     <div class="add_quick_wrapper d-flex">
                         <!-- Quick View -->
+<<<<<<< HEAD
                         <div class="product_quick_view_shop text-center">
 
+=======
+>>>>>>> master
                         <div class="shop-view product_quick_view text-center">
                             <a href="#"> Quick View</a>
+                        </div>
+                        <!-- Add to cart -->
+                        <div class="shop-view product_quick_view text-center">
+                            <a href="add-to-cart/{{ $watch->id }}" data-id="{{ $watch->id }}" class="btn btn-warning btn-block text-center add-to-cart" role="button">Add to cart</a>
                         </div>
                     </div>
                 </div>
             </div>
             @endforeach
 
+<<<<<<< HEAD
             <!-- Single Product -->
             <div class="col-2 text-center bord">
                 <div class="single-product-area mb-30">
@@ -338,6 +354,8 @@
                         </div>
                     </div>
 
+=======
+>>>>>>> master
                 </div>
             </div>
 
