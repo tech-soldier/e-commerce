@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="detail1">
+    <div class="detail1">
         <div class="video-container">  
                
             <button class="shop-btn text-center"> WATCH NAME </button>
@@ -120,5 +120,7 @@
         </div> <!-- /. Col Description-->
     </div> <!-- /. row -->
     
+    
+@include('partials/features')
 
-@endsection
+@stop

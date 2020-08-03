@@ -72,7 +72,7 @@
         <div class="footer_bottom_area">
             <div class="container">
                 
-                <p class="text-center pb-5">Copyright &copy; Pseudo Class 2020</p>
+                <p class="text-center pb-5">Copyright &copy; PseudoClass 2020</p>
                             
             </div>
         </div>
