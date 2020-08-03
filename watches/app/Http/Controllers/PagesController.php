@@ -33,7 +33,7 @@ class PagesController extends Controller
         $title = 'About';
         return view('about');
     }
-  
+
     /**
      * returns detail page
      * @return array
@@ -50,5 +50,14 @@ class PagesController extends Controller
     public function shop(){
         $title = 'Shop';
         return view('shop');
+    }
+
+    /**
+     * returns shop page
+     * @return array
+     */
+    public function cart(){
+        $title = 'Shopping Cart';
+        return view('cart');
     }
 }

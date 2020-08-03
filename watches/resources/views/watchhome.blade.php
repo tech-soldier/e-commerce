@@ -389,4 +389,6 @@
 
     </section> <!-- /. Best Selling Products -->
 
+    @include('partials/features')
+
     @stop
