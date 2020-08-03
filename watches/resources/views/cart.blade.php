@@ -1,10 +1,11 @@
+
 @extends('layouts/layout')
 
 @section('content')
 
 
 
-<div class="container page my-5">
+    <div class="container page my-5">
 
         <span id="status"></span>
 
@@ -41,10 +42,8 @@
                 </td>
             </tr>
 
-
             </tbody>
             <tfoot>
-
             <tr class="visible-xs">
                 <td colspan="5" class="text-right"><strong>Subtotal $<span class="cart-total">244</span></strong></td>
             </tr>
@@ -67,6 +66,7 @@
         </tfoot>
     </table>
 </div>
+
 
 
 @endsection
