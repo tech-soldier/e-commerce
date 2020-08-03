@@ -4,7 +4,7 @@
 
 <div class="contact1" >
         <div class="video-container">   
-            <img src="/images/contact_banner.jpg" alt="">        
+                   
             <button class="shop-btn text-center"> CONTACT US </button>
         </div>
     </div>
