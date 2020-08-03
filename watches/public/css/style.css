@@ -232,19 +232,6 @@ i {
 
 }
 
-/*shop page quick view */
-.product_quick_view_shop a {
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.product_quick_view_shop {
-  background: black;
-  width: 100%;
-  padding: 5px;
-}
-
 .product_badge span {
     background: #0f99f3;
     clear: both;
