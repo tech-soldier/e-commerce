@@ -1,4 +1,7 @@
-    @include('partials/header')
+
+@include('partials/header')
+<body>
+
     <!-- Header Area -->
     @include('partials/nav')
     <!-- Header Area End -->
