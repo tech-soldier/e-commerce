@@ -24,6 +24,8 @@ Route::get('/contact', 'PagesController@contact');
 
 Route::get('/detail', 'PagesController@detail');
 
+Route::get('/cart', 'PagesController@cart');
+
 
 
 /* ----------------------------------------------*/
