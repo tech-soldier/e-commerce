@@ -12,7 +12,7 @@
     <div class="row">
         <!-- Map -->
         <div class="col-5 map">
-           
+
         </div>
 
         <!-- Contact us form -->
