@@ -33,7 +33,7 @@ class SeedWatchesTable extends Seeder
         	'strap_width' => '18mm', 
         	'weight' => '122g', 
         	'water_resistant' => '3 atm', 
-        	'cover_img' => 'bamity.jpg', 
+        	'cover_img' => 'product1.jpg', 
         	'short_description' => 'The beatifully crafted Bamity and designed to be apart of our luxury classics collection.', 
         	'long_description' => 'Created in 1945, the Bamity was the first self-winding waterproof chronometer wristwatch to display the date in a window at 3 o’clock on the dial – hence its name. With its timeless aesthetics, functions and rich history, the Bamity is a watchmaking icon and one of the brand’s most recognizable watches.', 
         	'created_at' => Carbon::now(), 
