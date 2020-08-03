@@ -3,8 +3,8 @@
 @section('content')
 
 <div class="shop1" >
-        <div class="video-container">  
-                      
+        <div class="video-container">
+
             <button class="shop-btn text-center"> SHOP </button>
         </div>
     </div>
@@ -49,17 +49,17 @@
                     </div>
                 </div>
             </div>
-     
+
             <!-- Single Product -->
             <div class="col-2 text-center bord">
                 <div class="single-product-area mb-30">
                     <div class="product_image">
                         <!-- Product Image -->
-                        <img class="normal_img" src="images/product39.jpg" alt="">    
+                        <img class="normal_img" src="images/product39.jpg" alt="">
                     </div>
 
                     <!-- Product Description -->
-                    <div class="product_description ">   
+                    <div class="product_description ">
                         <div class="watch_info_wrapper pt-4 pb-3 text-center ">
                             <a class="text-center h4 " href="#">Hublot Spark</a>
                             <h6 class="text-center product-price mt-2">CA$279.99</h6>
@@ -76,91 +76,13 @@
                 </div>
             </div>
 
-                
-            <!-- Single Product -->
-            <div class="col-2 text-center bord">
-                <div class="single-product-area mb-30">
-                    <div class="product_image">
-                        <!-- Product Image -->
-                        <img class="normal_img" src="images/product38.jpg" alt="">  
-                    </div>
-
-                    <!-- Product Description -->
-                    <div class="product_description "> 
-                        <div class="watch_info_wrapper pt-4 pb-3 text-center ">
-                            <a class="text-center h4 " href="#">Hublot Spark</a>
-                            <h6 class="text-center product-price mt-2">CA$279.99</h6>
-                            <p class="text-center mb-0">Hublot</p>
-                        </div>
-                    </div>
-
-                    <div class="add_quick_wrapper d-flex">
-                        <!-- Quick View -->
-                        <div class="product_quick_view text-center">
-                            <a href="#"> Quick View</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
-            <!-- Single Product -->
-            <div class="col-2 text-center bord">
-                <div class="single-product-area mb-30">
-                    <div class="product_image">
-                        <!-- Product Image -->
-                        <img class="normal_img" src="images/product37.jpg" alt="">   
-                    </div>
-
-                    <!-- Product Description -->
-                    <div class="product_description ">   
-                        <div class="watch_info_wrapper pt-4 pb-3 text-center ">
-                            <a class="text-center h4 " href="#">Hublot Spark</a>
-                            <h6 class="text-center product-price mt-2">CA$279.99</h6>
-                            <p class="text-center mb-0">Hublot</p>
-                        </div>
-                    </div>
-
-                    <div class="add_quick_wrapper d-flex">
-                        <!-- Quick View -->
-                        <div class="product_quick_view text-center">
-                            <a href="#"> Quick View</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <!-- Single Product -->
             <div class="col-2 text-center bord">
                 <div class="single-product-area mb-30">
                     <div class="product_image">
                         <!-- Product Image -->
-                        <img class="normal_img" src="images/product36.jpg" alt="">    
-                    </div>
-
-                    <!-- Product Description -->
-                    <div class="product_description "> 
-                        <div class="watch_info_wrapper pt-4 pb-3 text-center ">
-                            <a class="text-center h4 " href="#">Hublot Spark</a>
-                            <h6 class="text-center product-price mt-2">CA$279.99</h6>
-                            <p class="text-center mb-0">Hublot</p>
-                        </div>
-                    </div>
-
-                    <div class="add_quick_wrapper d-flex">
-                        <!-- Quick View -->
-                        <div class="product_quick_view text-center">
-                            <a href="#"> Quick View</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Single Product -->
-            <div class="col-2 text-center bord">
-                <div class="single-product-area mb-30">
-                    <div class="product_image">
-                        <!-- Product Image -->
-                        <img class="normal_img" src="images/product35.jpg" alt="">     
+                        <img class="normal_img" src="images/product38.jpg" alt="">
                     </div>
 
                     <!-- Product Description -->
@@ -186,7 +108,7 @@
                 <div class="single-product-area mb-30">
                     <div class="product_image">
                         <!-- Product Image -->
-                        <img class="normal_img" src="images/product43.jpg" alt="">   
+                        <img class="normal_img" src="images/product37.jpg" alt="">
                     </div>
 
                     <!-- Product Description -->
@@ -212,33 +134,7 @@
                 <div class="single-product-area mb-30">
                     <div class="product_image">
                         <!-- Product Image -->
-                        <img class="normal_img" src="images/product11.jpg" alt="">   
-                    </div>
-
-                    <!-- Product Description -->
-                    <div class="product_description "> 
-                        <div class="watch_info_wrapper pt-4 pb-3 text-center ">
-                            <a class="text-center h4 " href="#">Hublot Spark</a>
-                            <h6 class="text-center product-price mt-2">CA$279.99</h6>
-                            <p class="text-center mb-0">Hublot</p>
-                        </div>
-                    </div>
-
-                    <div class="add_quick_wrapper d-flex">
-                        <!-- Quick View -->
-                        <div class="product_quick_view text-center">
-                            <a href="#"> Quick View</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Single Product -->
-            <div class="col-2 text-center bord">
-                <div class="single-product-area mb-30">
-                    <div class="product_image">
-                        <!-- Product Image -->
-                        <img class="normal_img" src="images/product6.jpg" alt="">    
+                        <img class="normal_img" src="images/product36.jpg" alt="">
                     </div>
 
                     <!-- Product Description -->
@@ -264,7 +160,7 @@
                 <div class="single-product-area mb-30">
                     <div class="product_image">
                         <!-- Product Image -->
-                        <img class="normal_img" src="images/product8.jpg" alt="">   
+                        <img class="normal_img" src="images/product35.jpg" alt="">
                     </div>
 
                     <!-- Product Description -->
@@ -290,7 +186,7 @@
                 <div class="single-product-area mb-30">
                     <div class="product_image">
                         <!-- Product Image -->
-                        <img class="normal_img" src="images/product9.jpg" alt="">  
+                        <img class="normal_img" src="images/product43.jpg" alt="">
                     </div>
 
                     <!-- Product Description -->
@@ -316,7 +212,111 @@
                 <div class="single-product-area mb-30">
                     <div class="product_image">
                         <!-- Product Image -->
-                        <img class="normal_img" src="images/product10.jpg" alt="">    
+                        <img class="normal_img" src="images/product11.jpg" alt="">
+                    </div>
+
+                    <!-- Product Description -->
+                    <div class="product_description ">
+                        <div class="watch_info_wrapper pt-4 pb-3 text-center ">
+                            <a class="text-center h4 " href="#">Hublot Spark</a>
+                            <h6 class="text-center product-price mt-2">CA$279.99</h6>
+                            <p class="text-center mb-0">Hublot</p>
+                        </div>
+                    </div>
+
+                    <div class="add_quick_wrapper d-flex">
+                        <!-- Quick View -->
+                        <div class="product_quick_view text-center">
+                            <a href="#"> Quick View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Product -->
+            <div class="col-2 text-center bord">
+                <div class="single-product-area mb-30">
+                    <div class="product_image">
+                        <!-- Product Image -->
+                        <img class="normal_img" src="images/product6.jpg" alt="">
+                    </div>
+
+                    <!-- Product Description -->
+                    <div class="product_description ">
+                        <div class="watch_info_wrapper pt-4 pb-3 text-center ">
+                            <a class="text-center h4 " href="#">Hublot Spark</a>
+                            <h6 class="text-center product-price mt-2">CA$279.99</h6>
+                            <p class="text-center mb-0">Hublot</p>
+                        </div>
+                    </div>
+
+                    <div class="add_quick_wrapper d-flex">
+                        <!-- Quick View -->
+                        <div class="product_quick_view text-center">
+                            <a href="#"> Quick View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Product -->
+            <div class="col-2 text-center bord">
+                <div class="single-product-area mb-30">
+                    <div class="product_image">
+                        <!-- Product Image -->
+                        <img class="normal_img" src="images/product8.jpg" alt="">
+                    </div>
+
+                    <!-- Product Description -->
+                    <div class="product_description ">
+                        <div class="watch_info_wrapper pt-4 pb-3 text-center ">
+                            <a class="text-center h4 " href="#">Hublot Spark</a>
+                            <h6 class="text-center product-price mt-2">CA$279.99</h6>
+                            <p class="text-center mb-0">Hublot</p>
+                        </div>
+                    </div>
+
+                    <div class="add_quick_wrapper d-flex">
+                        <!-- Quick View -->
+                        <div class="product_quick_view text-center">
+                            <a href="#"> Quick View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Product -->
+            <div class="col-2 text-center bord">
+                <div class="single-product-area mb-30">
+                    <div class="product_image">
+                        <!-- Product Image -->
+                        <img class="normal_img" src="images/product9.jpg" alt="">
+                    </div>
+
+                    <!-- Product Description -->
+                    <div class="product_description ">
+                        <div class="watch_info_wrapper pt-4 pb-3 text-center ">
+                            <a class="text-center h4 " href="#">Hublot Spark</a>
+                            <h6 class="text-center product-price mt-2">CA$279.99</h6>
+                            <p class="text-center mb-0">Hublot</p>
+                        </div>
+                    </div>
+
+                    <div class="add_quick_wrapper d-flex">
+                        <!-- Quick View -->
+                        <div class="product_quick_view text-center">
+                            <a href="#"> Quick View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Product -->
+            <div class="col-2 text-center bord">
+                <div class="single-product-area mb-30">
+                    <div class="product_image">
+                        <!-- Product Image -->
+                        <img class="normal_img" src="images/product10.jpg" alt="">
                     </div>
 
                     <!-- Product Description -->
@@ -338,14 +338,16 @@
             </div>
 
         </div> <!-- /. row -->
-    </div> <!-- /. container --> 
+    </div> <!-- /. container -->
     <!-- /. Best Selling Products -->
-    
+
     <br>
 
     <div class="arrow-div text-center">
         <p>Load more</p>
         <i class=" text-center fas fa-arrow-down mb-3 fa-2x "></i>
     </div>
+
+    @include('partials/features')
 
     @stop
