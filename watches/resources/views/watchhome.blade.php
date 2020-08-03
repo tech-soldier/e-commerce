@@ -124,7 +124,7 @@
                     <div class="single-product-area mb-30">
                         <div class="product_image">
                             <!-- Product Image -->
-                            <img class="normal_img" src="images/product49.jpg" alt="">
+                            <img class="normal_img" src="images/product2.jpg" alt="">
                             <!-- Product Badge -->
                             <div class="product_badge">
                                 <span>Top</span>
@@ -141,7 +141,7 @@
                             </div>
                         </div>
                         <!-- Product Description -->
-                        <div class="product_description py-2">  
+                        <div class="product_description py-2">
                             <div class="watch_info_wrapper text-center ">
                                 <a class="text-center " href="#">Hublot Spark</a>
                                 <h6 class="text-center product-price mt-2">CA$279.99</h6>
@@ -150,7 +150,7 @@
                         </div>
                     </div>
                 </div>  <!-- /. end Single Product Area -->
- 
+
                 <!-- Single Product -->
                 <div class="col-9 col-sm-6 col-md-4 col-lg-3 bord">
                     <div class="single-product-area mb-30">
@@ -379,7 +379,7 @@
                                 <h6 class="text-center product-price mt-2">CA$279.99</h6>
                                 <p class="text-center mb-0">Hublot</p>
                             </div>
-                        </div> 
+                        </div>
                     </div>
                 </div> <!-- /. Single Product Area -->
 
