@@ -15,11 +15,9 @@
         <hr>
         <div class="categories-wrapper mb-5">
             <ul>
-                <li><a href="">Mens</a></li>
-                <li><a href="">Womens</a></li>
-                <li><a href="">Smart</a></li>
-                <li><a href="">Kids</a></li>
-                <li><a href="">Techy</a></li>
+                @foreach($categories as $category)
+                <li><a href="">{{$category->category_name}}</a></li>
+                @endforeach
             </ul>
         </div>
         <!-- /. Categories -->
@@ -129,8 +127,10 @@
                 </div>
             </div>
 
+
+            @foreach($watches as $watch)
             <!-- Single Product -->
-            <div class="col-2 text-center bord">
+            <div class="col-3 text-center bord">
                 <div class="single-product-area mb-30">
                     <div class="product_image">
                         <!-- Product Image -->
@@ -290,26 +290,29 @@
                 <div class="single-product-area mb-30">
                     <div class="product_image">
                         <!-- Product Image -->
-                        <img class="normal_img" src="images/product9.jpg" alt="">
+                        <img class="normal_img" src="images/product5.jpg" alt="">
                     </div>
 
                     <!-- Product Description -->
                     <div class="product_description ">
                         <div class="watch_info_wrapper pt-4 pb-3 text-center ">
-                            <a class="text-center h4 " href="#">Hublot Spark</a>
-                            <h6 class="text-center product-price mt-2">CA$279.99</h6>
-                            <p class="text-center mb-0">Hublot</p>
+                            <a class="text-center h4 " href="#">{{$watch->watch_name}}</a>
+                            <h6 class="text-center product-price mt-2">$ {{$watch->price}}</h6>
+                            <p class="text-center mb-0"> Width: {{$watch->strap_width}}</p>
                         </div>
                     </div>
 
                     <div class="add_quick_wrapper d-flex">
                         <!-- Quick View -->
                         <div class="product_quick_view_shop text-center">
+
+                        <div class="shop-view product_quick_view text-center">
                             <a href="#"> Quick View</a>
                         </div>
                     </div>
                 </div>
             </div>
+            @endforeach
 
             <!-- Single Product -->
             <div class="col-2 text-center bord">
@@ -334,6 +337,7 @@
                             <a href="#"> Quick View</a>
                         </div>
                     </div>
+
                 </div>
             </div>
 

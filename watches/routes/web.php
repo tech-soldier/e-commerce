@@ -18,7 +18,7 @@ Route::get('/', 'PagesController@watchhome');
 
 Route::get('/about', 'PagesController@about');
 
-Route::get('/shop', 'PagesController@shop');
+Route::get('/shop', 'WatchController@index');
 
 Route::get('/contact', 'PagesController@contact');
 
