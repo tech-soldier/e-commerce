@@ -218,7 +218,7 @@ i {
   background-color: cornflowerblue;
   padding: 5px;
 }
-
+/*home page quick view */
 .product_quick_view a {
   color: white;
   text-decoration: none;
@@ -230,6 +230,19 @@ i {
   width: 50%;
   padding: 5px;
 
+}
+
+/*shop page quick view */
+.product_quick_view_shop a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.product_quick_view_shop {
+  background: black;
+  width: 100%;
+  padding: 5px;
 }
 
 .product_badge span {

@@ -15,9 +15,11 @@
         <hr>
         <div class="categories-wrapper mb-5">
             <ul>
-                @foreach($categories as $category)
-                <li><a href="">{{$category->category_name}}</a></li>
-                @endforeach
+                <li><a href="">Mens</a></li>
+                <li><a href="">Womens</a></li>
+                <li><a href="">Smart</a></li>
+                <li><a href="">Kids</a></li>
+                <li><a href="">Techy</a></li>
             </ul>
         </div>
         <!-- /. Categories -->
@@ -25,7 +27,7 @@
 
             @foreach($watches as $watch)
             <!-- Single Product -->
-            <div class="col-3 text-center bord">
+            <div class="col-2 text-center bord">
                 <div class="single-product-area mb-30">
                     <div class="product_image">
                         <!-- Product Image -->
@@ -45,6 +47,10 @@
                         <!-- Quick View -->
                         <div class="shop-view product_quick_view text-center">
                             <a href="#"> Quick View</a>
+                        </div>
+                        <!-- Add to cart -->
+                        <div class="shop-view product_quick_view text-center">
+                            <a href="add-to-cart/{{ $watch->id }}" data-id="{{ $watch->id }}" class="btn btn-warning btn-block text-center add-to-cart" role="button">Add to cart</a>
                         </div>
                     </div>
                 </div>
