@@ -16,10 +16,10 @@ class WatchController extends Controller
     public function index()
     {
         $watches = Watch::all();
-        // $categories = Category::all();
+        $categories = Category::all();
         $title = "Shop";
 
-       return view('shop', compact('watches', 'title'));
+       return view('shop', compact('watches', 'categories', 'title'));
         
         
     }
