@@ -24,7 +24,7 @@
                     <div class="">
                         <div class="about_image">
                             <!-- Product Image -->
-
+                            <img class="normal_img" src="images/about_image.jpg" alt="">
                         </div>
                     </div>
                 </div>
