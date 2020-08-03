@@ -43,7 +43,7 @@
 
                     <div class="add_quick_wrapper d-flex">
                         <!-- Quick View -->
-                        <div class="product_quick_view text-center">
+                        <div class="product_quick_view_shop text-center">
                             <a href="#"> Quick View</a>
                         </div>
                     </div>
@@ -69,7 +69,7 @@
 
                     <div class="add_quick_wrapper d-flex">
                         <!-- Quick View -->
-                        <div class="product_quick_view text-center">
+                        <div class="product_quick_view_shop text-center">
                             <a href="#"> Quick View</a>
                         </div>
                     </div>
@@ -96,7 +96,7 @@
 
                     <div class="add_quick_wrapper d-flex">
                         <!-- Quick View -->
-                        <div class="product_quick_view text-center">
+                        <div class="product_quick_view_shop text-center">
                             <a href="#"> Quick View</a>
                         </div>
                     </div>
@@ -122,7 +122,7 @@
 
                     <div class="add_quick_wrapper d-flex">
                         <!-- Quick View -->
-                        <div class="product_quick_view text-center">
+                        <div class="product_quick_view_shop text-center">
                             <a href="#"> Quick View</a>
                         </div>
                     </div>
@@ -148,7 +148,7 @@
 
                     <div class="add_quick_wrapper d-flex">
                         <!-- Quick View -->
-                        <div class="product_quick_view text-center">
+                        <div class="product_quick_view_shop text-center">
                             <a href="#"> Quick View</a>
                         </div>
                     </div>
@@ -174,7 +174,7 @@
 
                     <div class="add_quick_wrapper d-flex">
                         <!-- Quick View -->
-                        <div class="product_quick_view text-center">
+                        <div class="product_quick_view_shop text-center">
                             <a href="#"> Quick View</a>
                         </div>
                     </div>
@@ -200,7 +200,7 @@
 
                     <div class="add_quick_wrapper d-flex">
                         <!-- Quick View -->
-                        <div class="product_quick_view text-center">
+                        <div class="product_quick_view_shop text-center">
                             <a href="#"> Quick View</a>
                         </div>
                     </div>
@@ -226,7 +226,7 @@
 
                     <div class="add_quick_wrapper d-flex">
                         <!-- Quick View -->
-                        <div class="product_quick_view text-center">
+                        <div class="product_quick_view_shop text-center">
                             <a href="#"> Quick View</a>
                         </div>
                     </div>
@@ -252,7 +252,7 @@
 
                     <div class="add_quick_wrapper d-flex">
                         <!-- Quick View -->
-                        <div class="product_quick_view text-center">
+                        <div class="product_quick_view_shop text-center">
                             <a href="#"> Quick View</a>
                         </div>
                     </div>
@@ -278,7 +278,7 @@
 
                     <div class="add_quick_wrapper d-flex">
                         <!-- Quick View -->
-                        <div class="product_quick_view text-center">
+                        <div class="product_quick_view_shop text-center">
                             <a href="#"> Quick View</a>
                         </div>
                     </div>
@@ -304,7 +304,7 @@
 
                     <div class="add_quick_wrapper d-flex">
                         <!-- Quick View -->
-                        <div class="product_quick_view text-center">
+                        <div class="product_quick_view_shop text-center">
                             <a href="#"> Quick View</a>
                         </div>
                     </div>
@@ -330,7 +330,7 @@
 
                     <div class="add_quick_wrapper d-flex">
                         <!-- Quick View -->
-                        <div class="product_quick_view text-center">
+                        <div class="product_quick_view_shop text-center">
                             <a href="#"> Quick View</a>
                         </div>
                     </div>
