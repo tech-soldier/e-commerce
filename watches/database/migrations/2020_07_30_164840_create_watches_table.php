@@ -24,7 +24,7 @@ class CreateWatchesTable extends Migration
             $table->string('material', 255);
             $table->string('main_color', 255);
             $table->string('movement', 255);
-            $table->enum('gender', ['male', 'female']);
+            $table->string('gender', 255);
             // this is the FK which is a PK in the categories table
             $table->integer('category_id')->unsigned(); 
             $table->string('diameter', 255); 
