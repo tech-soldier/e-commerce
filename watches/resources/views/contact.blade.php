@@ -3,21 +3,20 @@
 @section('content')
 
 <div class="contact1" >
-        <div class="video-container">   
-                   
+        <div class="video-container">
+
             <button class="shop-btn text-center"> CONTACT US </button>
         </div>
     </div>
 
     <div class="row">
         <!-- Map -->
-        <div class="col-5 map"> 
-            <img src="/images/map1.jpg" alt="">                
-          
+        <div class="col-5 map">
+           
         </div>
 
         <!-- Contact us form -->
-        <div class="col-7">  
+        <div class="col-7">
             <!-- content section  -->
             <section class="text-center dark-grey-text ">
                 <div class="card">
@@ -63,7 +62,7 @@
 
         </div> <!-- /. col -->
     </div> <!-- /. row -->
-  
+
     <!-- <div class="contact2" >
         This has a image background in css
     </div> -->

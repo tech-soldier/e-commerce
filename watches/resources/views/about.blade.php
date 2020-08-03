@@ -4,7 +4,6 @@
 
 <div class="about1" >
         <div class="video-container">
-            <img src="/images/about_banner11.jpg" alt="">  
             <button class="shop-btn text-center"> ABOUT </button>
         </div>
     </div>
@@ -25,8 +24,8 @@
                     <div class="">
                         <div class="about_image">
                             <!-- Product Image -->
-                            
-                        </div>    
+
+                        </div>
                     </div>
                 </div>
                 <div class="col-6">
@@ -36,15 +35,15 @@
                             <p class="font-weight-bold">TechWatch was founded in 2005 and quickly gained popularity in the urban youth population when we launched our first online store in 2015. Since then, it has carved a niche for itself with watches that are fashionable and affordable.</p>
                             <p class="font-weight-bold">We have a wide range of products from sports watches, to formal watches.  There are plenty of styles for women and men and watch band sizes from narrow to thick, in many different colors to suit your style, whatever that may be!</p>
                             <p class="font-weight-bold">We offer hassle-free online shopping for our customers throughout Canada.  Take a minute to check out our store and see what we have for you!</p>
-                            
+
                             <!-- signature img -->
                             <div class="signature mt-5">
                                 <img src="images/signature.png" alt="">
                             </div>
-                            
+
                         </div>
                     </div> <!-- /. about_txt -->
-                    
+
                     <p>Steve George - CEO</p>
 
                 </div> <!-- /. col -->
