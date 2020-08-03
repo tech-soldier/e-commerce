@@ -20,45 +20,7 @@
 </head>
 <body>
     <!-- Header Area -->
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark justify-content-between">
-        <a class="navbar-brand" href="/"><img class="logo my-2" src="/images/logo1.png" alt="logo"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">HOME <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/shop">SHOP</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/about">ABOUT</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/contact">CONTACT</a>
-                </li>
-            </ul>
-            
-            <div class=" ml-5 acct_srch d-flex">
-                <!-- util search -->
-                <div class="circle">
-                    <i class="fas fa-search"></i>
-                </div>
-                <!-- shopping cart -->
-                <div class="ml-2 circle">
-                    <i class="fas fa-shopping-cart"></i>
-                    <div class="sml-circle">
-                        <span class="text-center cart-blue-icon">2</span>
-                    </div>
-                </div>
-                <div class="ml-2 circle act-circle">    
-                </div>
-            </div>
-        
-        </div> 
-    </nav>
+    @include('partials/nav')
     <!-- Header Area End --> 
 
     <!-- page content goes here --> 
@@ -128,86 +90,8 @@
 
 
     <!-- Footer Area -->
-    <footer class="footer_area pt-5">
-        <div class="container">
-            <div class="row">
-                <!-- Single Footer Area -->
-                <!-- footer col 1 -->
-                <div class="col-md-5 col-sm-12">
-                    <div class="single_footer_area mb-100">
-                        <div class="footer_heading mb-4">
-                            <h6>Contact Us</h6>
-                        </div>
-                        <ul class="footer_content">
-                            <li><span>Address:</span> Lords, London, UK - 1259</li>
-                            <li><span>Phone:</span> 002 63695 24624</li>
-                            <li><span>FAX:</span> 002 78965 369552</li>
-                            <li><span>Email:</span> support@example.com</li>
-                        </ul>
-                        <div class="footer_social_area mt-15">
-                            <a href="#" style="padding-left:0;"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-pinterest"></i></a>
-                            <a href="#"><i class="fab fa-dribbble"></i></a>
-                            <a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a>
-                        </div>
-
-                    </div>
-                </div>  <!-- /. end footer col 1 -->
-
-                <!-- footer col 2 -->
-                <div class="col-md-7 col-sm-12 d-flex  ">
-                    <!-- Single Footer Area -->
-                    <div class="col-6">
-                        <div class="single_footer_area mb-100">
-                            <div class="footer_heading mb-4">
-                                <h6>Information</h6>
-                            </div>
-                            <ul class="footer_widget_menu">
-                                <li><a href="#"><i class="icofont-rounded-right"></i> Your Account</a></li>
-                                <li><a href="#"><i class="icofont-rounded-right"></i> Free Shipping Policy</a></li>
-                                <li><a href="#"><i class="icofont-rounded-right"></i> Your Cart</a></li>
-                                <li><a href="#"><i class="icofont-rounded-right"></i> Return Policy</a></li>
-                                <li><a href="#"><i class="icofont-rounded-right"></i> Free Coupon</a></li>
-                                <li><a href="#"><i class="icofont-rounded-right"></i> Delivary Info</a></li>
-                            </ul>
-
-                        </div>
-                    </div>
-                
-                    <!-- Single Footer Area -->
-                    <div class="col-6">
-                        <div class="single_footer_area mb-100">
-                            <div class="footer_heading mb-4">
-                                <h6>Account</h6>
-                            </div>
-                            <ul class="footer_widget_menu">
-                                <li><a href="#"><i class="icofont-rounded-right"></i> Product Support</a></li>
-                                <li><a href="#"><i class="icofont-rounded-right"></i> Terms &amp; Conditions</a></li>
-                                <li><a href="#"><i class="icofont-rounded-right"></i> Help</a></li>
-                                <li><a href="#"><i class="icofont-rounded-right"></i> Payment Method</a></li>
-                                <li><a href="#"><i class="icofont-rounded-right"></i> Affiliate Program</a></li>
-                                <li><a href="#"><i class="icofont-rounded-right"></i> Privacy Policy</a></li>
-                            </ul>
-
-                        </div>
-        
-                    </div>
-                </div>  <!-- /. end footer col 2-->  
-            </div> <!-- /. footer row -->
-        </div> <!-- /. footer container -->
-
-        <!-- Footer Bottom -->
-        <div class="footer_bottom_area">
-            <div class="container">
-                
-                <p class="text-center pb-5">Copyright &copy; Pseudo Class 2020</p>
-                            
-            </div>
-        </div>
-
-    </footer>  <!-- /. Footer Area -->
+    @include('partials/footer')
+     <!-- /. Footer Area -->
 
 <!-- Bootstrap core JS-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
