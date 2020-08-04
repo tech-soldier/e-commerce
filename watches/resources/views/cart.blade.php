@@ -21,12 +21,12 @@
             </thead>
             <tbody>
 
-            <?php $subtotal = 0 ?>
+            <?php $total = 0 ?>
 
             @if(session('cart'))
                 @foreach((array) session('cart') as $id => $details)
 
-                    <?php $subtotal += $details['price'] * $details['quantity'] ?>
+                    <?php $total += $details['price'] * $details['quantity'] ?>
             <tr>
                 <td data-th="Product" class="align-middle">
                     <div class="row">
@@ -42,8 +42,8 @@
                 </td>
                 <td data-th="Subtotal" class="text-center">$<span class="product-subtotal">{{ $details['price'] * $details['quantity'] }}</span></td>
                 <td class="actions" data-th="">
-                    <button class="btn btn-info btn-sm update-cart" data-id=""><i class="fas fa-sync-alt"></i></button>
-                    <button class="btn btn-danger btn-sm remove-from-cart" data-id=""><i class="fas fa-trash"></i></button>
+{{--                    <button class="btn btn-info btn-sm update-cart" data-id=""><i class="fas fa-sync-alt"></i></button>--}}
+                    <button class="btn btn-danger btn-sm remove-from-cart" data-id="{{ $id }}"><i class="fas fa-trash"></i></button>
                     <i class="fa fa-circle-o-notch fa-spin btn-loading" style="font-size:24px; display: none"></i>
                 </td>
             </tr>
@@ -52,20 +52,20 @@
             </tbody>
             <tfoot>
             <tr class="visible-xs">
-                <td colspan="5" class="text-right"><strong>Subtotal $<span class="cart-total">{{ $subtotal }}</span></strong></td>
+                <td colspan="5" class="text-right"><strong>Total $<span class="cart-total">{{ $total }}</span></strong></td>
             </tr>
-            <tr class="visible-xs">
-                <td colspan="5" class="text-right"><strong>GST $<span class="cart-total">7</span></strong></td>
-            </tr>
-            <tr class="visible-xs">
-                <td colspan="5" class="text-right"><strong>PST $<span class="cart-total">9</span></strong></td>
-            </tr>
-            <tr class="visible-xs">
-                <td colspan="5" class="text-right"><strong>Shipping $<span class="cart-total">12</span></strong></td>
-            </tr>
-            <tr class="visible-xs">
-                <td colspan="5" class="text-right"><strong>Total $<span class="cart-total"></span></strong></td>
-            </tr>
+{{--            <tr class="visible-xs">--}}
+{{--                <td colspan="5" class="text-right"><strong>GST $<span class="cart-total">7</span></strong></td>--}}
+{{--            </tr>--}}
+{{--            <tr class="visible-xs">--}}
+{{--                <td colspan="5" class="text-right"><strong>PST $<span class="cart-total">9</span></strong></td>--}}
+{{--            </tr>--}}
+{{--            <tr class="visible-xs">--}}
+{{--                <td colspan="5" class="text-right"><strong>Shipping $<span class="cart-total">12</span></strong></td>--}}
+{{--            </tr>--}}
+{{--            <tr class="visible-xs">--}}
+{{--                <td colspan="5" class="text-right"><strong>Total $<span class="cart-total"></span></strong></td>--}}
+{{--            </tr>--}}
 
             <tr>
 
@@ -77,6 +77,33 @@
     </table>
 </div>
 
+    <script type="text/javascript">
 
+        $(".remove-from-cart").click(function (e) {
+            e.preventDefault();
+
+            var ele = $(this);
+
+            var parent_row = ele.parents("tr");
+
+            var cart_total = $(".cart-total");
+
+            if(confirm("Are you sure")) {
+                $.ajax({
+                    url: '{{ url('remove-from-cart') }}',
+                    method: "DELETE",
+                    data: {_token: '{{ csrf_token() }}', id: ele.attr("data-id")},
+                    dataType: "json",
+                    success: function (response) {
+
+                        parent_row.remove();
+
+                        cart_total.text(response.total);
+                    }
+                });
+            }
+        });
+
+    </script>
 
 @endsection

@@ -6,29 +6,26 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Watches <span class="sr-only">(current)</span></a>
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/watches_table">Watches</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Customers</a>
+        <a class="nav-link" href="/admin/customers_table">Customers</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Orders</a>
+        <a class="nav-link" href="/admin/orders_table">Orders</a>
       </li>
    	  <li class="nav-item">
-        <a class="nav-link" href="#">Transactions</a>
+        <a class="nav-link" href="/admin/transactions_table">Transactions</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Admin</a>
+        <a class="nav-link" href="/admin/admin_table">Admin</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Categories</a>
+        <a class="nav-link" href="/admin/categories_table">Categories</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Admin</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Taxes</a>
+        <a class="nav-link" href="/admin/taxes_table">Taxes</a>
       </li>
     </ul>
   </div>
