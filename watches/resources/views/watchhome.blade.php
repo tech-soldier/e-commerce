@@ -93,7 +93,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading mb-50 mt-5">
-                        <h5>Luxury Watches</h5>
+                        <h5>Best Selling Products</h5>
                     </div>
                 </div>
             </div>
@@ -108,9 +108,9 @@
                             <!-- Product Image -->
                             <img class="normal_img" src="images/product2.jpg" alt="">
                             <!-- Product Badge -->
-                            <div class="product_badge">
+                            <!-- <div class="product_badge">
                                 <span>Top</span>
-                            </div>
+                            </div> -->
                             <div class="add_quick_wrapper d-flex">
                                 <!-- Add to cart -->
                                 <div class="product_add_to_cart text-center">
