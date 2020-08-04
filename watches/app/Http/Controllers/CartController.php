@@ -7,9 +7,9 @@ use App\Watch;
 
 class CartController extends Controller
 {
-    public function addToCart($watch_id)
+    public function addToCart($id)
     {
-        $watch = Watch::find($watch_id);
+        $watch = Watch::find($id);
 
         //getting cart out of session
         $cart = session()->get('cart');
@@ -18,7 +18,7 @@ class CartController extends Controller
         if (!$cart) {
 
             $cart = [
-                $watch_id => [
+                $id => [
                     "watch_name" => $watch->watch_name,
                     "quantity" => 1,
                     "price" => $watch->price,
@@ -30,15 +30,15 @@ class CartController extends Controller
         }
 
         // if cart not empty then check if this product exist and increment its quantity
-        if (isset($cart[$watch_id])) {
+        if (isset($cart[$id])) {
 
-            $cart[$watch_id]['quantity']++;
+            $cart[$id]['quantity']++;
 
             session()->put('cart', $cart);
         }
 
         // if item not exist in cart then add to cart with quantity = 1
-        $cart[$watch_id] = [
+        $cart[$id] = [
             "watch_name" => $watch->watch_name,
             "quantity" => 1,
             "price" => $watch->price,
