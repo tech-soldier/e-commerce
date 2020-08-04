@@ -12,7 +12,10 @@
     <div class="row">
         <!-- image  -->
         <div class="col-5  col-md-6 col-lg-6">
-           <img src="images/product1.jpg" alt="{{$watch->watch_name}}">
+
+           <img src="/images/product1.jpg" alt="">
+
+         
         </div>
 
         <!-- description -->
