@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Tax;
+use App\Transaction;
 
 class AdminController extends Controller
 {
@@ -36,7 +37,9 @@ class AdminController extends Controller
 
     public function transactions()
     {
-        return view('/admin/transactions_table');
+        $transactions = Transaction::all();
+        $title = "Transactions";
+        return view('/admin/transactions_table', compact('transactions', 'title'));
     }
 
     public function categories()
