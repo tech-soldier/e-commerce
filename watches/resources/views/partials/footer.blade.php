@@ -88,6 +88,31 @@
 <!-- Core theme JS-->
 <script src="main.js"></script>
 
+<!-- custom scripts (will need to be removed to main js file) -->
+<script>
+    $(document).ready(function(){
+
+        // when 'my orders' button clicked
+        $('#button_orders').click(function(){
+            //show or hide (toggle) orders table
+            $('#orders_hidden').slideToggle();
+            // if page is at top scroll down a little
+            if($(window).scrollTop() === 0) {
+                $('html,body').animate({
+                   scrollTop: $(window).scrollTop() + 120
+                });                 
+            }
+            // toggle 'my orders' and 'hide orders' accordingly
+            if($(this).html() == 'see orders'){
+                $('#button_orders').html('hide orders');
+            }else{
+                $('#button_orders').html('see orders');
+            }
+        });
+
+    });
+</script>
+
 </body>
 
 </html>
