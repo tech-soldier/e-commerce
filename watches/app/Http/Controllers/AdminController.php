@@ -30,9 +30,9 @@ class AdminController extends Controller
     {
     	$orders = Order::all();
 
-    	// $watch_id = Watch::all(); 
+    	// $orders['watch_id'] = Watch::where('watch_id')->get();
 
-    	// $customer_id = Customer::all(); 
+    	// $orders['customer_id'] = Customer::where('customer_id')->get(); 
 
         $title = "Orders";
 
@@ -44,7 +44,10 @@ class AdminController extends Controller
 
     public function customers()
     {
-        return view('/admin/customers_table');
+    	$customers = Customer::all();
+        $title = "Customers";
+
+        return view('/admin/customers_table', compact('customers', 'title'));
     }
 
     public function admin()
