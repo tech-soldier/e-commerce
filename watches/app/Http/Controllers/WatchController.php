@@ -8,6 +8,16 @@ use App\Category;
 
 class WatchController extends Controller
 {
+
+    public function homeIndex()
+    {
+        $luxury = Watch::with('category_name')->latest()->get();
+        $categories = Category::all();
+        $title = "TechWatch Home";
+
+        return view('watchhome', compact('luxury', 'categories', 'title'));
+    }
+
     /**
      * Display a listing of the resource.
      *
