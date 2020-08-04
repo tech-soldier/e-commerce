@@ -88,6 +88,23 @@
 <!-- Core theme JS-->
 <script src="main.js"></script>
 
+<!-- custom scripts (will need to be removed to main js file) -->
+<script>
+    $(document).ready(function(){
+        
+        $('#button_orders').click(function(){
+
+            $('#orders_hidden').slideToggle();
+
+            if($(this).html() == 'my orders'){
+                $('#button_orders').html('hide orders');
+            }else{
+                $('#button_orders').html('my orders');
+            }
+        });
+    });
+</script>
+
 </body>
 
 </html>

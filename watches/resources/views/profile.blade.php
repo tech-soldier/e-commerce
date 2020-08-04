@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <div class="container page my-5">
+    <div class="container page my-5" id="profile_page">
         <h1 class="mb-3 py-3 px-3 bg-secondary text-light">My Personal Information
             <span class="float-right">
                 <button type="button" class="btn btn-outline-light text-uppercase">update profile</button>
@@ -60,7 +60,7 @@
 
         <h2 class="py-3 px-3 bg-secondary text-light">
             Total Orders:
-            <span class="font-weight-bold"> 2</span>
+            <span class="font-weight-bold"> 3</span>
             <span class="float-right">
                 <button type="button" class="btn btn-outline-light text-uppercase" id="button_orders">my orders</button>
             </span>
@@ -68,7 +68,7 @@
         </h2>
 
         <div id="orders_hidden" class="mt-4">
-            <table class="table table-hover">
+            <table class="table table-hover text-center">
                 <thead class="bg-light">
                     <tr>
                         <th scope="col">Order Number</th>
