@@ -22,7 +22,7 @@ Route::get('/shop', 'WatchController@index');
 
 Route::get('/contact', 'PagesController@contact');
 
-Route::get('/detail', 'PagesController@detail');
+Route::get('/{watch}/detail', 'WatchController@show');
 
 Route::get('/cart', 'PagesController@cart');
 

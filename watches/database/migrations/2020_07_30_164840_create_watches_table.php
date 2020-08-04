@@ -14,7 +14,7 @@ class CreateWatchesTable extends Migration
     public function up()
     {
         Schema::create('watches', function (Blueprint $table) {
-           $table->id('watch_id');
+           $table->id();
             $table->integer('SKU'); 
             $table->string('watch_name', 255);
             $table->tinyInteger('in_stock');

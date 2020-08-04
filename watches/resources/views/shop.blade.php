@@ -45,7 +45,7 @@
                     <div class="add_quick_wrapper d-flex">
                         <!-- Quick View -->
                         <div class="shop-view product_quick_view text-center">
-                            <a href="#"> Quick View</a>
+                            <a href="/{{$watch->id}}/detail"> Quick View</a>
                         </div>
                         <!-- Add to cart -->
                         <div class="shop-view product_quick_view_shop text-center">
