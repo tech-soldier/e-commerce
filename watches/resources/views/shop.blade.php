@@ -51,6 +51,10 @@
                         <div class="shop-view product_quick_view_shop text-center">
                             <a href="add-to-cart/{{ $watch->watch_id }}" data-id="{{ $watch->watch_id }}" class="btn btn-warning btn-block text-center add-to-cart" role="button">Add to cart</a>
                         </div>
+                        <!-- Add to cart -->
+                        <div class="shop-view product_quick_view text-center">
+                            <a href="add-to-cart/{{ $watch->watch_id }}" data-id="{{ $watch->watch_id }}" class="btn btn-warning btn-block text-center add-to-cart" role="button">Add to cart</a>
+                        </div>
                     </div>
                 </div>
             </div>

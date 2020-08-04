@@ -21,27 +21,34 @@
             </thead>
             <tbody>
 
+            <?php $total = 0 ?>
+
+            @if(session('cart'))
+                @foreach((array) session('cart') as $id => $details)
+
+                    <?php $total += $details['price'] * $details['quantity'] ?>
             <tr>
                 <td data-th="Product" class="align-middle">
                     <div class="row">
                         <div class="col-sm-3 hidden-xs"><img src="images/product2.jpg" alt="" width="100" height="100" class="img-responsive"/></div>
                         <div class="col-sm-9 align-middle">
-                            <h4 class="mt-3">Rolex</h4>
+                            <h4 class="mt-3">{{$details['watch_name']}}</h4>
                         </div>
                     </div>
                 </td>
-                <td data-th="Price">$244</td>
+                <td data-th="Price">{{$details['price']}}</td>
                 <td data-th="Quantity">
-                    <input type="number" value="1" class="form-control quantity" />
+                    <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity" />
                 </td>
-                <td data-th="Subtotal" class="text-center">$<span class="product-subtotal">244</span></td>
+                <td data-th="Subtotal" class="text-center">$<span class="product-subtotal">{{ $details['price'] * $details['quantity'] }}</span></td>
                 <td class="actions" data-th="">
                     <button class="btn btn-info btn-sm update-cart" data-id=""><i class="fas fa-sync-alt"></i></button>
                     <button class="btn btn-danger btn-sm remove-from-cart" data-id=""><i class="fas fa-trash"></i></button>
                     <i class="fa fa-circle-o-notch fa-spin btn-loading" style="font-size:24px; display: none"></i>
                 </td>
             </tr>
-
+                @endforeach
+            @endif
             </tbody>
             <tfoot>
             <tr class="visible-xs">
