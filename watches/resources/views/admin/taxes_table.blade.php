@@ -13,48 +13,32 @@
 	  <thead class="thead-dark">
 	    <tr>
 	      <th scope="col">watch ID</th>
-	      <th scope="col">SKU</th>
-	      <th scope="col">Watch name</th>
-	      <th scope="col">Price</th>
-	      <th scope="col">Cost</th>
-	      <th scope="col">Material</th>
+	      <th scope="col">Province</th>
+	      <th scope="col">GST</th>
+	      <th scope="col">PST</th>
+	      <th scope="col">Created On</th>
+	      <th scope="col">Updated On</th>
 	      <th scope="col">Edit</th>
 	      <th scope="col">Delete</th>
 
 	    </tr>
 	  </thead>
+
+	  @foreach($taxes as $tax)
 	  <tbody>
+	  	
 	    <tr>
-	      <th scope="row">1</th>
-	      <th>145678</th>
-	      <td>Mark</td>
-	      <td>$ 199.99</td>
-	      <td>$ 299.99</td>
-	      <td>Gold</td>
-	      <td><button type="button" class="btn btn-primary">Edit</button></td>
-	      <td><button type="button" class="btn btn-danger">Delete</button></td>
-	    </tr>
-	    <tr>
-	      <th scope="row">2</th>
-	      <th>145678</th>
-	      <td>Mark</td>
-	      <td>$ 199.99</td>
-	      <td>$ 299.99</td>
-	      <td>Gold</td>
-	      <td><button type="button" class="btn btn-primary">Edit</button></td>
-	      <td><button type="button" class="btn btn-danger">Delete</button></td>
-	    </tr>
-	    <tr>
-	      <th scope="row">3</th>
-	      <th>145678</th>
-	      <td>Mark</td>
-	      <td>$ 199.99</td>
-	      <td>$ 299.99</td>
-	  	  <td>Gold</td>
+	      <th scope="row">{{ $tax->watch_id }}</th>
+	      <th>{{ $tax->province }}</th>
+	      <td>{{ $tax->GST }}</td>
+	      <td>{{ $tax->PST }}</td>
+	      <td>{{ $tax->created_at }}</td>
+	      <td>{{ $tax->updated_at }}</td>
 	      <td><button type="button" class="btn btn-primary">Edit</button></td>
 	      <td><button type="button" class="btn btn-danger">Delete</button></td>
 	    </tr>
 	  </tbody>
+	   @endforeach
 	</table>
 	<!-- end of the table-->
 </div>

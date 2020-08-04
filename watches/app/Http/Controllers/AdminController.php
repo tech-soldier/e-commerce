@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Tax;
 
 class AdminController extends Controller
 {
@@ -28,7 +29,9 @@ class AdminController extends Controller
 
     public function taxes()
     {
-        return view('/admin/taxes_table');
+        $taxes = Tax::all();
+        $title = "Taxes";
+        return view('/admin/taxes_table', compact('taxes', 'title'));
     }
 
     public function transactions()
