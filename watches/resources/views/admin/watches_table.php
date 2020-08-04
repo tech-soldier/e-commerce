@@ -5,7 +5,7 @@
 
 <div class="container">
 
-	<h1>Table Name: <em>Watches</em></h1>
+	<h1>Table Name: <em>{{ $title }}</em></h1>
 
 <!-- this is the table --> 
 	<p><button type="button" class="btn btn-success"> Add + </button></p>
