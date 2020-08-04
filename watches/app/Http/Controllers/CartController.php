@@ -78,4 +78,27 @@ class CartController extends Controller
 
         return number_format($total, 2);
     }
+
+    public function remove(Request $request)
+    {
+        if($request->id) {
+
+            $cart = session()->get('cart');
+
+            if(isset($cart[$request->id])) {
+
+                unset($cart[$request->id]);
+
+                session()->put('cart', $cart);
+            }
+
+            $total = $this->getCartTotal();
+
+
+            return response()->json(['msg' => 'Product removed successfully',  'total' => $total]);
+
+
+            //session()->flash('success', 'Product removed successfully');
+        }
+    }
 }
