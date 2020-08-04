@@ -93,7 +93,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading mb-50 mt-5">
-                        <h5>Best Selling Products</h5>
+                        <h5>Luxury Watches</h5>
                     </div>
                 </div>
             </div>
