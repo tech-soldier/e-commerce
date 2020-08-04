@@ -7,6 +7,13 @@ use App\Watch;
 
 class CartController extends Controller
 {
+
+    /**
+     * adding a product to a cart
+     *
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function addToCart($id)
     {
         $watch = Watch::find($id);
@@ -50,5 +57,25 @@ class CartController extends Controller
         session()->put('cart', $cart);
         return redirect()->back()->with('success', 'Product added to cart successfully!');
 
+    }
+
+    /**
+     * getCartTotal
+     *
+     *
+     * @return float|int
+     */
+
+    private function getCartTotal()
+    {
+        $total = 0;
+
+        $cart = session()->get('cart');
+
+        foreach($cart as $id => $details) {
+            $total += $details['price'] * $details['quantity'];
+        }
+
+        return number_format($total, 2);
     }
 }
