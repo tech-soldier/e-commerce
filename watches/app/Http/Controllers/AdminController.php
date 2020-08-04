@@ -71,6 +71,10 @@ class AdminController extends Controller
 
     public function categories()
     {
+    	$categories = Category::all();
+        $title = "Categories";
+
+        return view('/admin/categories_table', compact('categories', 'title'));
         return view('/admin/categories_table');
     }
 }
