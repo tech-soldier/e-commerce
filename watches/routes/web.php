@@ -28,6 +28,8 @@ Route::get('/cart', 'PagesController@cart');
 
 Route::get('add-to-cart/{id}', 'CartController@addToCart');
 
+Route::delete('remove-from-cart', 'CartController@remove');
+
 
 
 /* ----------------------------------------------*/
