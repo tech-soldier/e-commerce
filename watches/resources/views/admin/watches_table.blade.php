@@ -8,7 +8,7 @@
 	<h1>Table Name: <em>{{ $title }}</em></h1>
 
 <!-- this is the table --> 
-	<p><button type="button" class="btn btn-success"> Add + </button></p>
+	<p><a style="color: white;" href="/admin/create/create_watch" ><div class="btn btn-success">Add Watch +</div></a></p>
 	<table class="table table-striped">
 	  <thead class="thead-dark">
 	    <tr>
@@ -35,26 +35,6 @@
 	      <td><button type="button" class="btn btn-primary">Edit</button></td>
 	      <td><button type="button" class="btn btn-danger">Delete</button></td>
 	    </tr>
-	    <!-- <tr>
-	      <th scope="row">2</th>
-	      <th>145678</th>
-	      <td>Mark</td>
-	      <td>$ 199.99</td>
-	      <td>$ 299.99</td>
-	      <td>Gold</td>
-	      <td><button type="button" class="btn btn-primary">Edit</button></td>
-	      <td><button type="button" class="btn btn-danger">Delete</button></td>
-	    </tr> -->
-	    <!-- <tr>
-	      <th scope="row">3</th>
-	      <th>145678</th>
-	      <td>Mark</td>
-	      <td>$ 199.99</td>
-	      <td>$ 299.99</td>
-	  	  <td>Gold</td>
-	      <td><button type="button" class="btn btn-primary">Edit</button></td>
-	      <td><button type="button" class="btn btn-danger">Delete</button></td>
-	    </tr> -->
 	  </tbody>
 	  @endforeach
 	</table>
