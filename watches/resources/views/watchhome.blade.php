@@ -125,7 +125,7 @@
                         <!-- Product Description -->
                         <div class="product_description py-2">
                             <div class="watch_info_wrapper text-center ">
-                                <a class="text-center " href="#">{{$watch->watch_name}}</a>
+                                <a class="text-center " href="{{$watch->id}}/detail">{{$watch->watch_name}}</a>
                                 <h6 class="text-center product-price mt-2">${{$watch->price}}</h6>
                                 <p class="text-center mb-0">{{$watch->watch_name}}</p>
                             </div>
