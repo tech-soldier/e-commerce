@@ -877,8 +877,6 @@ class SeedWatchesTable extends Seeder
             'updated_at' => Carbon::now()
         ]);
 
-        // next 5 will be all category: mechanical watch --Aakash
-
         // next 5 will be all category: digital watch --Aina 
 
         DB::table('watches')->insert([ 
@@ -1132,5 +1130,129 @@ class SeedWatchesTable extends Seeder
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
+
+        DB::table('watches')->insert([ 
+            'SKU' => 66302621,
+            'watch_name' => 'Cartier', 
+            'in_stock' => 1, 
+            'quantity' => 179, 
+            'price' => 20992.99, 
+            'cost' => 22442.99, 
+            'material' => 'silicone rubber ', 
+            'main_color' => 'wodden', 
+            'movement' => 'mechanical', 
+            'gender' => 'female', 
+            'category_id' => 3, 
+            'diameter' => 28,
+            'strap_length' => '161mm', 
+            'strap_width' => '18mm', 
+            'weight' => '152g', 
+            'water_resistant' => '1 atm', 
+            'cover_img' => 'cartier.jpg', 
+            'short_description' => 'Cartier Tank Solo XL Automatic Stainless Steel Mens Watch W5200028', 
+            'long_description' => 'The Tank has been a collectors icon since the 1920s. It was designed in 1917 by Louis Cartier and everyone from Cary Grant to Andy Warhol has worn one. You should too.', 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]);
+
+         DB::table('watches')->insert([ 
+            'SKU' => 66302631,
+            'watch_name' => 'Grip', 
+            'in_stock' => 1, 
+            'quantity' => 279, 
+            'price' => 20993.99, 
+            'cost' => 22443.99, 
+            'material' => 'stainless steel', 
+            'main_color' => 'silver', 
+            'movement' => 'mechanical', 
+            'gender' => 'male', 
+            'category_id' => 3, 
+            'diameter' => 28,
+            'strap_length' => '181mm', 
+            'strap_width' => '20mm', 
+            'weight' => '152g', 
+            'water_resistant' => '1 atm', 
+            'cover_img' => 'grip.jpg', 
+            'short_description' => 'Grip 35mm watch Gucci', 
+            'long_description' => 'Named for the skateboard terminology for the way sneakers "grip" the skateboard tape, Guccis unusual watch features three indicator dials.', 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]);
+
+
+         DB::table('watches')->insert([ 
+            'SKU' => 66302641,
+            'watch_name' => 'Laureato', 
+            'in_stock' => 1, 
+            'quantity' => 379, 
+            'price' => 20994.99, 
+            'cost' => 22444.99, 
+            'material' => 'silver', 
+            'main_color' => 'black', 
+            'movement' => 'mechanical', 
+            'gender' => 'male', 
+            'category_id' => 3, 
+            'diameter' => 28,
+            'strap_length' => '185mm', 
+            'strap_width' => '22mm', 
+            'weight' => '172g', 
+            'water_resistant' => '1 atm', 
+            'cover_img' => 'laureato.jpg', 
+            'short_description' => 'Laureato Hand Wind Mens Watch Girard Perregaux', 
+            'long_description' => 'An updated version of the classic 1975 style, this hand-winding movement features a skeleton dial with a 54 hour power reserve and a black ceramic casing and strap.', 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]);
+
+
+         DB::table('watches')->insert([ 
+            'SKU' => 66302651,
+            'watch_name' => 'Bracelet', 
+            'in_stock' => 1, 
+            'quantity' => 479, 
+            'price' => 20995.99, 
+            'cost' => 22445.99, 
+            'material' => 'rosegold ', 
+            'main_color' => 'silver', 
+            'movement' => 'mechanical', 
+            'gender' => 'female', 
+            'category_id' => 3, 
+            'diameter' => 28,
+            'strap_length' => '175mm', 
+            'strap_width' => '21mm', 
+            'weight' => '162g', 
+            'water_resistant' => '1 atm', 
+            'cover_img' => 'bracelet.jpg', 
+            'short_description' => 'Bracelet Watch, 40mm MOVAD', 
+            'long_description' => 'For the ultra-minimalist, this all black dial features a Museum dot at 12 o clock.', 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]);
+
+
+          DB::table('watches')->insert([ 
+            'SKU' => 66302661,
+            'watch_name' => 'Piaget', 
+            'in_stock' => 1, 
+            'quantity' => 579, 
+            'price' => 20996.99, 
+            'cost' => 22446.99, 
+            'material' => 'carbon fibre', 
+            'main_color' => 'black', 
+            'movement' => 'mechanical', 
+            'gender' => 'male', 
+            'category_id' => 3, 
+            'diameter' => 28,
+            'strap_length' => '190mm', 
+            'strap_width' => '24mm', 
+            'weight' => '172g', 
+            'water_resistant' => '1 atm', 
+            'cover_img' => 'piaget.jpg', 
+            'short_description' => 'Piaget Altiplano 38mm, 18K White Gold and Alligator', 
+            'long_description' => 'Billed as the worlds thinnest automatic watch, this slender hand-wound 18k gold watch measures just 3.65mm thick.', 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]);
+        //mechanical watch ends
     }
 }
