@@ -16,7 +16,7 @@ class SeedWatchesTable extends Seeder
     	// first 5 records are all gender: male 
 
         DB::table('watches')->insert([
-        	'watch_id' => 1, 
+        	
         	'SKU' => 22567959,
         	'watch_name' => 'Bamity', 
         	'in_stock' => 1, 
@@ -41,7 +41,7 @@ class SeedWatchesTable extends Seeder
         ]); 
 
         DB::table('watches')->insert([
-        	'watch_id' => 2, 
+        	
         	'SKU' => 22567950,
         	'watch_name' => 'Vagram', 
         	'in_stock' => 1, 
@@ -66,7 +66,7 @@ class SeedWatchesTable extends Seeder
         ]); 
 
         DB::table('watches')->insert([
-        	'watch_id' => 3, 
+        	 
         	'SKU' => 22567900,
         	'watch_name' => 'Quo Lux', 
         	'in_stock' => 1, 
@@ -91,7 +91,7 @@ class SeedWatchesTable extends Seeder
         ]); 
 
         DB::table('watches')->insert([
-        	'watch_id' => 4, 
+        	
         	'SKU' => 22567000,
         	'watch_name' => 'Alphazap', 
         	'in_stock' => 1, 
@@ -116,7 +116,7 @@ class SeedWatchesTable extends Seeder
         ]); 
 
         DB::table('watches')->insert([
-        	'watch_id' => 5, 
+        	
         	'SKU' => 22567100,
         	'watch_name' => 'Transcof', 
         	'in_stock' => 1, 
@@ -143,6 +143,7 @@ class SeedWatchesTable extends Seeder
         // next 5 are all gender: female 
 
         DB::table('watches')->insert([ 
+           
         	'SKU' => 22567900,
         	'watch_name' => 'Cardify', 
         	'in_stock' => 1, 
@@ -167,6 +168,7 @@ class SeedWatchesTable extends Seeder
         ]); 
 
         DB::table('watches')->insert([ 
+           
         	'SKU' => 22567980,
         	'watch_name' => 'Bezeld III', 
         	'in_stock' => 1, 
@@ -191,6 +193,7 @@ class SeedWatchesTable extends Seeder
         ]);
 
         DB::table('watches')->insert([ 
+            
         	'SKU' => 22567980,
         	'watch_name' => 'Viva', 
         	'in_stock' => 1, 
@@ -215,6 +218,7 @@ class SeedWatchesTable extends Seeder
         ]); 
 
         DB::table('watches')->insert([ 
+           
         	'SKU' => 22561980,
         	'watch_name' => 'Flexidy', 
         	'in_stock' => 1, 
@@ -239,6 +243,7 @@ class SeedWatchesTable extends Seeder
         ]); 
 
         DB::table('watches')->insert([ 
+           
         	'SKU' => 22561980,
         	'watch_name' => 'Daltfresh', 
         	'in_stock' => 1, 
@@ -264,6 +269,7 @@ class SeedWatchesTable extends Seeder
 
         // next 5 will be all material: silicone rubber 
         DB::table('watches')->insert([ 
+      
             'SKU' => 23561980,
             'watch_name' => 'Asoka', 
             'in_stock' => 1, 
@@ -288,6 +294,7 @@ class SeedWatchesTable extends Seeder
         ]); 
 
         DB::table('watches')->insert([ 
+          
             'SKU' => 20361980,
             'watch_name' => 'Opela', 
             'in_stock' => 1, 
@@ -312,6 +319,7 @@ class SeedWatchesTable extends Seeder
         ]); 
 
         DB::table('watches')->insert([ 
+            
             'SKU' => 20001980,
             'watch_name' => 'Wrapsafe', 
             'in_stock' => 1, 
@@ -336,6 +344,7 @@ class SeedWatchesTable extends Seeder
         ]); 
 
         DB::table('watches')->insert([ 
+          
             'SKU' => 20001985,
             'watch_name' => 'Bitwold', 
             'in_stock' => 1, 
@@ -360,6 +369,7 @@ class SeedWatchesTable extends Seeder
         ]); 
 
         DB::table('watches')->insert([ 
+        
             'SKU' => 20001911,
             'watch_name' => 'Tresom', 
             'in_stock' => 1, 
@@ -386,6 +396,7 @@ class SeedWatchesTable extends Seeder
         // next 5 will be all material: silver 
 
         DB::table('watches')->insert([ 
+         
             'SKU' => 20001911,
             'watch_name' => 'Duobam', 
             'in_stock' => 1, 
@@ -410,6 +421,7 @@ class SeedWatchesTable extends Seeder
         ]);
 
         DB::table('watches')->insert([ 
+       
             'SKU' => 20071911,
             'watch_name' => 'Keylex I', 
             'in_stock' => 1, 
@@ -434,6 +446,7 @@ class SeedWatchesTable extends Seeder
         ]);
 
         DB::table('watches')->insert([ 
+       
             'SKU' => 29301911,
             'watch_name' => 'Veribet', 
             'in_stock' => 1, 
@@ -458,6 +471,7 @@ class SeedWatchesTable extends Seeder
         ]);
 
         DB::table('watches')->insert([ 
+         
             'SKU' => 29344911,
             'watch_name' => 'Regrant', 
             'in_stock' => 1, 
@@ -482,6 +496,7 @@ class SeedWatchesTable extends Seeder
         ]);
 
         DB::table('watches')->insert([ 
+          
             'SKU' => 89344911,
             'watch_name' => 'Lotlux', 
             'in_stock' => 1, 
@@ -508,6 +523,7 @@ class SeedWatchesTable extends Seeder
         // next 5 will be all material: gold 
 
         DB::table('watches')->insert([ 
+         
             'SKU' => 79344611,
             'watch_name' => 'Domainer', 
             'in_stock' => 1, 
@@ -532,6 +548,7 @@ class SeedWatchesTable extends Seeder
         ]);
 
         DB::table('watches')->insert([ 
+          
             'SKU' => 79344611,
             'watch_name' => 'Voltsillam', 
             'in_stock' => 1, 
@@ -555,7 +572,8 @@ class SeedWatchesTable extends Seeder
             'updated_at' => Carbon::now()
         ]);
 
-        DB::table('watches')->insert([ 
+        DB::table('watches')->insert([
+        
             'SKU' => 66344611,
             'watch_name' => 'Charmant', 
             'in_stock' => 1, 
@@ -580,6 +598,7 @@ class SeedWatchesTable extends Seeder
         ]);
 
         DB::table('watches')->insert([ 
+           
             'SKU' => 66302611,
             'watch_name' => 'Alastair', 
             'in_stock' => 1, 
@@ -607,6 +626,7 @@ class SeedWatchesTable extends Seeder
         // next 5 will be all category: smart watch --Alexandr
 
         DB::table('watches')->insert([ 
+          
             'SKU' => 20073498,
             'watch_name' => 'Galaxy Watch', 
             'in_stock' => 1, 
@@ -631,6 +651,7 @@ class SeedWatchesTable extends Seeder
         ]);
 
         DB::table('watches')->insert([ 
+          
             'SKU' => 20496720,
             'watch_name' => 'Fossil Sport', 
             'in_stock' => 1, 
@@ -655,6 +676,7 @@ class SeedWatchesTable extends Seeder
         ]);
 
         DB::table('watches')->insert([ 
+        
             'SKU' => 24598763,
             'watch_name' => 'Fitbit Versa', 
             'in_stock' => 1, 
@@ -679,6 +701,7 @@ class SeedWatchesTable extends Seeder
         ]);
 
         DB::table('watches')->insert([ 
+        
             'SKU' => 29344911,
             'watch_name' => 'Skagen Falster', 
             'in_stock' => 1, 
@@ -703,6 +726,7 @@ class SeedWatchesTable extends Seeder
         ]);
 
         DB::table('watches')->insert([ 
+         
             'SKU' => 89765411,
             'watch_name' => 'Fitbit Charge', 
             'in_stock' => 1, 
@@ -729,6 +753,7 @@ class SeedWatchesTable extends Seeder
         // next 5 will be all category: luxury watch --Alexandr
         
         DB::table('watches')->insert([ 
+          
             'SKU' => 20234876,
             'watch_name' => 'Speedmaster', 
             'in_stock' => 1, 
@@ -753,6 +778,7 @@ class SeedWatchesTable extends Seeder
         ]);
 
         DB::table('watches')->insert([ 
+           
             'SKU' => 20598356,
             'watch_name' => 'Cosmograph', 
             'in_stock' => 1, 
@@ -777,6 +803,7 @@ class SeedWatchesTable extends Seeder
         ]);
 
         DB::table('watches')->insert([ 
+          
             'SKU' => 24598763,
             'watch_name' => 'Blancpain', 
             'in_stock' => 1, 
@@ -801,6 +828,7 @@ class SeedWatchesTable extends Seeder
         ]);
 
         DB::table('watches')->insert([ 
+          
             'SKU' => 45982567,
             'watch_name' => 'Avalanche', 
             'in_stock' => 1, 
@@ -825,6 +853,7 @@ class SeedWatchesTable extends Seeder
         ]);
 
         DB::table('watches')->insert([ 
+            
             'SKU' => 89398743,
             'watch_name' => 'Chopard', 
             'in_stock' => 1, 
@@ -853,6 +882,7 @@ class SeedWatchesTable extends Seeder
         // next 5 will be all category: digital watch --Aina 
 
         DB::table('watches')->insert([ 
+       
             'SKU' => 66301278,
             'watch_name' => 'Saddlery', 
             'in_stock' => 1, 
@@ -877,6 +907,7 @@ class SeedWatchesTable extends Seeder
         ]);
 
         DB::table('watches')->insert([ 
+        
             'SKU' => 66302611,
             'watch_name' => 'Heuerald', 
             'in_stock' => 1, 
@@ -901,6 +932,7 @@ class SeedWatchesTable extends Seeder
         ]);
 
         DB::table('watches')->insert([ 
+         
             'SKU' => 66304411,
             'watch_name' => 'Culture', 
             'in_stock' => 1, 
@@ -925,6 +957,7 @@ class SeedWatchesTable extends Seeder
         ]);
 
         DB::table('watches')->insert([ 
+        
             'SKU' => 69302611,
             'watch_name' => 'Huebolt', 
             'in_stock' => 1, 
@@ -949,6 +982,7 @@ class SeedWatchesTable extends Seeder
         ]);
 
         DB::table('watches')->insert([ 
+           
             'SKU' => 61122611,
             'watch_name' => 'Bretting', 
             'in_stock' => 1, 
@@ -974,6 +1008,7 @@ class SeedWatchesTable extends Seeder
 
         // next 5 will be all category: quartz --Aina 
         DB::table('watches')->insert([ 
+         
             'SKU' => 81155511,
             'watch_name' => 'Rair', 
             'in_stock' => 1, 
@@ -998,6 +1033,7 @@ class SeedWatchesTable extends Seeder
         ]);
 
         DB::table('watches')->insert([ 
+         
             'SKU' => 81155001,
             'watch_name' => 'Elixir II', 
             'in_stock' => 1, 
@@ -1022,6 +1058,7 @@ class SeedWatchesTable extends Seeder
         ]);
 
         DB::table('watches')->insert([ 
+         
             'SKU' => 10955531,
             'watch_name' => 'Kunghans', 
             'in_stock' => 1, 
@@ -1047,6 +1084,7 @@ class SeedWatchesTable extends Seeder
 
 
         DB::table('watches')->insert([ 
+          
             'SKU' => 10955531,
             'watch_name' => 'Prospex', 
             'in_stock' => 1, 
@@ -1071,6 +1109,7 @@ class SeedWatchesTable extends Seeder
         ]);
 
         DB::table('watches')->insert([ 
+           
             'SKU' => 19955666,
             'watch_name' => 'Finissemo', 
             'in_stock' => 1, 

@@ -14,20 +14,20 @@
         <div class="col-5  col-md-6 col-lg-6">
            <img src="images/product1.jpg" alt="">
         </div>
-
+      
         <!-- description -->
         <div class="col-7  mt-5 col-md-6 col-lg-6">
-            <h3>Rolex Model III</h3>
-            <p class="small">With leather strap</p>
-            <p>$2,999.00</p>
+            <h3>{{$watch->watch_name}}</h3>
+            <p class="small">With {{$watch->material}} strap</p>
+            <p>{{$watch->price}}</p>
             <button class="addtobag ">ADD TO BAG</button>
             <h5 class="mt-5">Product Details</h5>
-            <p class="mt-3">Sku: BQ2249</p>
-            <p class="mt-3">Case Size: 44mm</p>
-            <p class="mt-3">Movement: Quartz Multifunction</p>
-            <p class="mt-3">Platform: Sullivian</p>
-            <p class="mt-3">Strap Material: Leather</p>
-            <p class="mt-3">Water Resistance: 5 ATM</p>
+            <p class="mt-3">Sku: {{$watch->SKU}}</p>
+            <p class="mt-3">Strap Size: {{$watch->strap_length}}</p>
+            <p class="mt-3">Movement: {{$watch->movement}}</p>
+            <p class="mt-3">Diameter: {{$watch->diameter}}</p>
+            
+            <p class="mt-3">Water Resistance:{{$watch->water_resistant}}</p>
            
             <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
                 <!-- Accordion card -->
@@ -45,7 +45,7 @@
                     <!-- Card body -->
                     <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
                       <div class="card-body">
-                        <p class="mt-4">Sullivian introduced the first Fifty Fathoms watch back in 1953 as the first modern driver's watch and this iconic version , water resitant at upto 1000 feet offer an uodate on the classic with an added date marker and luminescebt hands.</p>
+                        <p class="mt-4">{{$watch->long_description}}</p>
                       </div>
                     </div> <!-- /. Card body -->
                 </div> <!-- /. Accordion card -->
@@ -73,10 +73,10 @@
                                     <li class="tech-specs__menu-items" style="direction:ltr">Racing</li> 
                                 </ul>
                                 <div class="tech-specs__menu-header">
-                                    <h6 style="font-weight:bold !important;"><strong>Audio</strong></h6>
+                                    <h6 style="font-weight:bold !important;"><strong>Measurements</strong></h6>
                                 </div>
                                 <ul>
-                                    <li class="tech-specs__menu-item-name">Gran Turismo 79</li>
+                                    <li class="tech-specs__menu-item-name">Strap length: {{$watch->strap_length}}</li>
                                     <li class="tech-specs__menu-items">Spanish (Latin America)</li>
                                     <li class="tech-specs__menu-items">English</li>
                                     <li class="tech-specs__menu-items">Portuguese (Brazil)</li>
