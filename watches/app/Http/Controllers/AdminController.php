@@ -8,6 +8,7 @@ use App\Watch;
 use App\Category;
 use App\Order; 
 use App\Customer; 
+use App\Admin; 
 
 
 class AdminController extends Controller
@@ -52,7 +53,10 @@ class AdminController extends Controller
 
     public function admin()
     {
-        return view('/admin/admin_table');
+        $admin = Admin::all();
+        $title = "Admin User";
+
+        return view('/admin/admin_table', compact('admin', 'title'));
     }
 
     public function taxes()
