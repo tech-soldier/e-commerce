@@ -27,6 +27,7 @@ class CartController extends Controller
             ];
 
             session()->put('cart', $cart);
+            return redirect()->back()->with('success', 'Product added to cart successfully!');
         }
 
         // if cart not empty then check if this product exist and increment its quantity
@@ -35,6 +36,7 @@ class CartController extends Controller
             $cart[$id]['quantity']++;
 
             session()->put('cart', $cart);
+            return redirect()->back()->with('success', 'Product added to cart successfully!');
         }
 
         // if item not exist in cart then add to cart with quantity = 1
@@ -46,6 +48,7 @@ class CartController extends Controller
         ];
 
         session()->put('cart', $cart);
+        return redirect()->back()->with('success', 'Product added to cart successfully!');
 
     }
 }
