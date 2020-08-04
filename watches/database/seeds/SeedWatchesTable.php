@@ -854,7 +854,7 @@ class SeedWatchesTable extends Seeder
 
         DB::table('watches')->insert([ 
             'SKU' => 66301278,
-            'watch_name' => 'Saddlery', 
+            'watch_name' => 'CHRONOGRAPH', 
             'in_stock' => 1, 
             'quantity' => 89, 
             'price' => 209.99, 
@@ -869,16 +869,16 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '24mm', 
             'weight' => '128g', 
             'water_resistant' => '3 atm', 
-            'cover_img' => 'saddlrey.jpg', 
-            'short_description' => 'The completion of a corporate celebration is typically marked with purchasing the 2020 favourite digital Saddlery watch.', 
-            'long_description' => 'Using genuinely new case architecture and a crystal that curved on two separate axis, you could see why AP hailed Saddlery as radical a design as the TechWatches iconic octagonal case and integrated metal bracelet. A new-for-2020 palate of colours is a welcome update.', 
+            'cover_img' => 'Chronograph 42 MM.jpg', 
+            'short_description' => 'Chronograph 42 MM. The completion of a corporate celebration is typically marked with purchasing the 2020 favourite digital Chronograph watch.', 
+            'long_description' => 'While the crisp white dial of this 18k rose gold watch may be a departure from the classic Tiffany & Co. shade, the alligator band and gold poudré numerals still boast the timeless stylishness that made the brand an icon.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
 
         DB::table('watches')->insert([ 
             'SKU' => 66302611,
-            'watch_name' => 'Heuerald', 
+            'watch_name' => 'LONGINES', 
             'in_stock' => 1, 
             'quantity' => 119, 
             'price' => 199.99, 
@@ -893,16 +893,16 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '23mm', 
             'weight' => '121g', 
             'water_resistant' => '3 atm', 
-            'cover_img' => 'heuerald.jpg', 
-            'short_description' => 'Built from a new material that combines “the lightness of titanium” with “the hardness of diamond” and looking like something from the distant future, this could only be a TechWatch.', 
-            'long_description' => 'It comes with an OLED screen, a 45mm matte black titanium case and a full suite of smartwatch functions including heart rate monitor, accelerometer and gyroscope. In addition, there’s detailed golf data for some 40,000 courses around the world, with game-focused features like distance to green and hazards, shot distance and score keeping..', 
+            'cover_img' => 'Longines Master Collection.jpg', 
+            'short_description' => 'Longines Master Collection GMT Moonphase 40mm', 
+            'long_description' => 'The blue steel hands of this stainless steel and alligator chronograph offers a modern edge to the classic styling of its versatile dial which features sub-dials for the moon phase, date, and a 24 hour indicator.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
 
         DB::table('watches')->insert([ 
             'SKU' => 66304411,
-            'watch_name' => 'Culture', 
+            'watch_name' => 'ROLEX DAYTONA', 
             'in_stock' => 1, 
             'quantity' => 119, 
             'price' => 1189.99, 
@@ -917,9 +917,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '23mm', 
             'weight' => '111g', 
             'water_resistant' => '3 atm', 
-            'cover_img' => 'culture.jpg', 
-            'short_description' => 'There’s something magical about a chiming cultured wristwatch, doubly so if its made by TechWatch, whose family of dress watches may be unparalleled.', 
-            'long_description' => 'The first culture came out in the Fifties, one of the first generation of wristwatches to come with a chiming, vibrating alarm complication. The 2020 version has been slimmed down and tidied up, and (naturally) features a completely new movement. It’s beautifully proportioned, extremely stylish and surprisingly loud. A modern classic.', 
+            'cover_img' => 'Rolex Daytona.jpg', 
+            'short_description' => 'Rolex Daytona 45mm. There’s something magical about a chiming cultured wristwatch, doubly so if its made by TechWatch, whose family of dress watches may be unparalleled.', 
+            'long_description' => 'Blue dials have enjoyed a resurgence lately, but green, especially on a staple like a Rolex Daytona, is equally wearable and much more unique.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
@@ -950,7 +950,7 @@ class SeedWatchesTable extends Seeder
 
         DB::table('watches')->insert([ 
             'SKU' => 61122611,
-            'watch_name' => 'Bretting', 
+            'watch_name' => 'EI PRIMERO', 
             'in_stock' => 1, 
             'quantity' => 119, 
             'price' => 1189.99, 
@@ -965,9 +965,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '23mm', 
             'weight' => '122g', 
             'water_resistant' => '3 atm', 
-            'cover_img' => 'huebolt.jpg', 
-            'short_description' => 'Bretting continues to roll out new watches for 2020 with the new Premier TechWatch Mulliner Limited Edition..', 
-            'long_description' => 'The watch features a solid 42mm polished steel case with a push/pull crown and rectangular chronograph pushers. The enlarged Arabic numbers and red and blue detailing lend this piece a vintage, dressy feel.', 
+            'cover_img' => 'El Primero Chronomaster.jpg', 
+            'short_description' => 'El Primero Chronomaster Automatic Silver Dial Mens Watch', 
+            'long_description' => 'Designed from the original 1969 case, this 31 jewel timepiece features twelve hour, thirty minute, and sixty second subdials along with a stainless steel case and alligator leather strap.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
@@ -975,7 +975,7 @@ class SeedWatchesTable extends Seeder
         // next 5 will be all category: quartz --Aina 
         DB::table('watches')->insert([ 
             'SKU' => 81155511,
-            'watch_name' => 'Rair', 
+            'watch_name' => 'GRIP', 
             'in_stock' => 1, 
             'quantity' => 119, 
             'price' => 1189.99, 
@@ -990,16 +990,16 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '23mm', 
             'weight' => '122g', 
             'water_resistant' => '3 atm', 
-            'cover_img' => 'rair.jpg', 
-            'short_description' => 'Rair continues to surpise and not dissapoint.', 
-            'long_description' => 'The watch features a solid movement made of rare quartz  with a push/pull crown and circular chronograph pushers. The enlarged Arabic numbers and red and blue detailing lend this piece a vintage, dressy feel.', 
+            'cover_img' => 'Grip 35mm watch.jpg', 
+            'short_description' => 'Grip 35mm watch. Rair continues to surpise and not dissapoint.', 
+            'long_description' => 'Named for the skateboard terminology for the way sneakers "grip" the skateboard tape, Guccis unusual watch features three indicator dials.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
 
         DB::table('watches')->insert([ 
             'SKU' => 81155001,
-            'watch_name' => 'Elixir II', 
+            'watch_name' => 'PARMIGIANI FLEURIER', 
             'in_stock' => 1, 
             'quantity' => 119, 
             'price' => 1119.99, 
@@ -1014,16 +1014,16 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '24mm', 
             'weight' => '122g', 
             'water_resistant' => '26 atm', 
-            'cover_img' => 'elixir.jpg', 
-            'short_description' => 'Exilir is the newly released and improved version of our first Elixir series.', 
-            'long_description' => 'When it was launched last year in a limited run, Elixir\'s first military-inspired automatic watch sold out quicker than you could say, "An automatic watch for how much?" Those who missed out now have a second chance to grab a watch that channels Elixir\'s military heritage but adds clever guts (a 21-jewel Japanese automatic movement) and will still leave you change from $1119.99. With only 100m water resistance it\'s more a desk diving watch than a diver diving watch. But at that price, we\'re not ones to quibble..', 
+            'cover_img' => 'Parmigiani Fleurier Toric.jpg', 
+            'short_description' => 'Parmigiani Fleurier Toric Hemispheres Retrograde 42.8mm', 
+            'long_description' => 'The bi-coastal will appreciate that among this watchs plethora of options comes an independently controlled subdial for another time zone. ', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
 
         DB::table('watches')->insert([ 
             'SKU' => 10955531,
-            'watch_name' => 'Kunghans', 
+            'watch_name' => 'CARTIER', 
             'in_stock' => 1, 
             'quantity' => 32, 
             'price' => 119.99, 
@@ -1038,9 +1038,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '18mm', 
             'weight' => '112g', 
             'water_resistant' => '6 atm', 
-            'cover_img' => 'kunghans.jpg', 
-            'short_description' => 'Once this PseudoSlass company was the biggest watch manufacturer in the world. Today it maintains a pole position in the league of best-designed brands, noted for its clean dials and minimalist indices. .', 
-            'long_description' => 'When it was launched last year in a limited run, Elixir\'s first military-inspired automatic watch sold out quicker than you could say, "An automatic watch for how much?" Those who missed out now have a second chance to grab a watch that channels Elixir\'s military heritage but adds clever guts (a 21-jewel Japanese automatic movement) and will still leave you change from $1119.99. With only 100m water resistance it\'s more a desk diving watch than a diver diving watch. But at that price, we\'re not ones to quibble..', 
+            'cover_img' => 'Cartier Drive de Cartier.jpg', 
+            'short_description' => 'Cartier Drive de Cartier 40mm, Stainless Steel & Alligator', 
+            'long_description' => 'Neither square nor circular, Cartier refers to the shape of their self-winding, steel-cased watch as "cushion-shaped." It utilizes their in-house caliber 1904-PS movement with blued steel hands and a small seconds counter.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
@@ -1048,7 +1048,7 @@ class SeedWatchesTable extends Seeder
 
         DB::table('watches')->insert([ 
             'SKU' => 10955531,
-            'watch_name' => 'Prospex', 
+            'watch_name' => 'LAUREATO', 
             'in_stock' => 1, 
             'quantity' => 32, 
             'price' => 1319.99, 
@@ -1063,16 +1063,16 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '18mm', 
             'weight' => '42g', 
             'water_resistant' => '26 atm', 
-            'cover_img' => 'prospex.jpg', 
-            'short_description' => 'One of the nicest-looking chronographs and arguably the classic TechWatches dress watch now comes with a self-winding in-house movement that significantly lowers its entry price.', 
-            'long_description' => 'Inspired by the world of night diving, which may be a first, Prospex new series of dive watches are distinguished by their none-more-black DLC-coated gold cases.', 
+            'cover_img' => 'Laureato Hand Wind Mens.jpg', 
+            'short_description' => 'Laureato Hand Wind Mens WatchOne of the nicest-looking chronographs and arguably the classic TechWatches dress watch now comes with a self-winding in-house movement that significantly lowers its entry price.', 
+            'long_description' => 'An updated version of the classic 1975 style, this hand-winding movement features a skeleton dial with a 54 hour power reserve and a black ceramic casing and strap.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
 
         DB::table('watches')->insert([ 
             'SKU' => 19955666,
-            'watch_name' => 'Finissemo', 
+            'watch_name' => 'BRACELET', 
             'in_stock' => 1, 
             'quantity' => 561, 
             'price' => 2319.99, 
@@ -1087,9 +1087,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '18mm', 
             'weight' => '42g', 
             'water_resistant' => '3 atm', 
-            'cover_img' => 'finissemo.jpg', 
-            'short_description' => 'Finnisemo\'s first release of 2020 is a new version of its  Finissimo Automatic, which debuted in 2017.', 
-            'long_description' => 'Back then, it created quite a stir – at a scarcely-possible 2.23mm thick, it contained the world’s thinnest self-winding movement. The paper-thin sports watch has previously been available in titanium, stainless steel, rose gold, and gold all with a sandblasted finish. Now that family is joined by two new models – in steel with a bracelet, or 18ct rose gold with a strap – that feature a fancy satin-polished finish, and also play up the contrast between the black lacquered dial and the polished hands and indexes.', 
+            'cover_img' => 'Bracelet Watch.jpg', 
+            'short_description' => 'Bracelet Watch, 40mm first release of 2020 is a new version of its Automatic, which debuted in 2017.', 
+            'long_description' => 'For the ultra-minimalist, this all black dial features a Museum dot at 12 o clock.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
