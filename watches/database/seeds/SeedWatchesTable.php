@@ -18,13 +18,13 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([
         	
         	'SKU' => 22567959,
-        	'watch_name' => 'Bamity', 
+        	'watch_name' => 'AIR-KING', 
         	'in_stock' => 1, 
         	'quantity' => 26, 
         	'price' => 1399.99, 
         	'cost' => 1799.99, 
         	'material' => 'gold', 
-        	'main_color' => 'gold', 
+        	'main_color' => 'silver', 
         	'movement' => 'quartz', 
         	'gender' => 'male', 
         	'category_id' => 2, 
@@ -33,9 +33,9 @@ class SeedWatchesTable extends Seeder
         	'strap_width' => '18mm', 
         	'weight' => '122g', 
         	'water_resistant' => '3 atm', 
-        	'cover_img' => 'product1.jpg', 
-        	'short_description' => 'The beatifully crafted Bamity and designed to be apart of our luxury classics collection.', 
-        	'long_description' => 'Created in 1945, the Bamity was the first self-winding waterproof chronometer wristwatch to display the date in a window at 3 o’clock on the dial – hence its name. With its timeless aesthetics, functions and rich history, the Bamity is a watchmaking icon and one of the brand’s most recognizable watches.', 
+        	'cover_img' => 'AIR-KING.jpg', 
+        	'short_description' => 'The Oyster Perpetual Air-King pays tribute to the pioneers of flight and the Oyster’s roles in the epic story of aviation.', 
+        	'long_description' => 'With its 40 mm case in Oystersteel, solid-link Oyster bracelet with Oysterclasp, and distinctive Black dial, the Air-King perpetuates the aeronautical heritage of the original Rolex Oyster.', 
         	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]); 
@@ -43,7 +43,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([
         	
         	'SKU' => 22567950,
-        	'watch_name' => 'Vagram', 
+        	'watch_name' => 'BLUE-DWELLER', 
         	'in_stock' => 1, 
         	'quantity' => 89, 
         	'price' => 1699.99, 
@@ -58,9 +58,9 @@ class SeedWatchesTable extends Seeder
         	'strap_width' => '21mm', 
         	'weight' => '132g', 
         	'water_resistant' => '10 atm', 
-        	'cover_img' => 'vagram.jpg', 
-        	'short_description' => 'The beatifully crafted vagram and designed to be apart of our quartz classics collection.', 
-        	'long_description' => 'Created in 2011, the Vagram was the first titanium wristwatch to display a customized name in the back of the dial. With its timeless aesthetics, functions and rich history, the Vagram is a watchmaking icon and one of the most trendiest look for today.', 
+        	'cover_img' => 'BLUE-DWELLER.jpg', 
+        	'short_description' => 'Yellow Rolesor with a Blue Cerachrom bezel and a blue dial with large luminescent hour markers.', 
+        	'long_description' => 'It features a unidirectional rotatable bezel with Cerachrom insert and solid-link Oyster bracelet. The latest generation Submariner and Submariner Date remain faithful to the original model launched in 1953. In watchmaking, the Submariner represented a historic turning point; it set the standard for divers’ watches.', 
         	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]); 
@@ -68,7 +68,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([
         	 
         	'SKU' => 22567900,
-        	'watch_name' => 'Quo Lux', 
+        	'watch_name' => 'CELLINI', 
         	'in_stock' => 1, 
         	'quantity' => 12, 
         	'price' => 599.99, 
@@ -83,9 +83,9 @@ class SeedWatchesTable extends Seeder
         	'strap_width' => '23mm', 
         	'weight' => '92g', 
         	'water_resistant' => '3 atm', 
-        	'cover_img' => 'quolux.jpg', 
-        	'short_description' => 'The beatifully crafted Quo Lux and designed to be apart of our stainless steel classics collection.', 
-        	'long_description' => 'Created in 2020, the Vagram was the first stainless wristwatch to be waterproof within 30 meters of depth. With its seemless and glass-like aesthetics, the Quo Lux is both a luxiourious and sporty catch.', 
+        	'cover_img' => 'CELLINI.jpg', 
+        	'short_description' => 'The Cellini collection celebrates the eternal elegance of traditional timepieces with a contemporary touch; the name was inspired by the Italian Renaissance artist, Benvenuto Cellini.', 
+        	'long_description' => 'This collection combines the best of Rolex know-how and its high standards of perfection with an approach that heightens watchmaking heritage in its most timeless form. The lines of the Cellini models are sober and refined, the materials noble, the finishings luxurious: every detail respects the codes of the art of watchmaking.', 
         	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]); 
@@ -93,7 +93,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([
         	
         	'SKU' => 22567000,
-        	'watch_name' => 'Alphazap', 
+        	'watch_name' => 'COSMOGRAPH DAYTONA', 
         	'in_stock' => 1, 
         	'quantity' => 200, 
         	'price' => 199.99, 
@@ -108,9 +108,9 @@ class SeedWatchesTable extends Seeder
         	'strap_width' => '20mm', 
         	'weight' => '45g', 
         	'water_resistant' => '3 atm', 
-        	'cover_img' => 'alphazap.jpg', 
-        	'short_description' => 'Heir to the original model, the Alphazap was unveiled in 1982, with a new movement ensuring ease of use.', 
-        	'long_description' => 'Designed to show the time in two different time zones simultaneously, the GMT-Master, launched in 1955, was originally developed as a navigation instrument for professionals criss-crossing the globe.', 
+        	'cover_img' => 'COSMOGRAPH DAYTONA.jpg', 
+        	'short_description' => 'The Oyster Perpetual Cosmograph Daytona is the ultimate tool watch for those with a passion for driving and speed.', 
+        	'long_description' => 'Introduced in 1963, the Cosmograph Daytona was designed to meet the demands of professional racing drivers. It is an icon forever joined in name and function to the high-performance world of motor sport. More than 50 years after its creation, the Cosmograph Daytona remains in a class of its own among sport chronographs and continues to transcend time.', 
         	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]); 
@@ -118,7 +118,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([
         	
         	'SKU' => 22567100,
-        	'watch_name' => 'Transcof', 
+        	'watch_name' => 'DATEJUST', 
         	'in_stock' => 1, 
         	'quantity' => 20, 
         	'price' => 1999.99, 
@@ -133,9 +133,9 @@ class SeedWatchesTable extends Seeder
         	'strap_width' => '20mm', 
         	'weight' => '45g', 
         	'water_resistant' => '3 atm', 
-        	'cover_img' => 'alphazap.jpg', 
-        	'short_description' => 'The Oyster Perpetual Transcof was launched in 1955', 
-        	'long_description' => 'It even became the official watch of Pan American World Airways – better known as Pan Am – then the most prominent American intercontinental airline.', 
+        	'cover_img' => 'DATEJUST.jpg', 
+        	'short_description' => 'The Oyster Perpetual Datejust is the epitome of the classic Rolex watch. ', 
+        	'long_description' => 'Created in 1945, the Datejust was the first self-winding waterproof chronometer wristwatch to display the date in a window at 3 o’clock on the dial – hence its name. With its timeless aesthetics, functions and rich history, the Datejust is a watchmaking icon and one of the brand’s most recognizable watches.', 
         	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]); 
@@ -145,7 +145,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
            
         	'SKU' => 22567900,
-        	'watch_name' => 'Cardify', 
+        	'watch_name' => 'DAY-DATE', 
         	'in_stock' => 1, 
         	'quantity' => 20, 
         	'price' => 1999.99, 
@@ -160,9 +160,9 @@ class SeedWatchesTable extends Seeder
         	'strap_width' => '25mm', 
         	'weight' => '95g', 
         	'water_resistant' => '13 atm', 
-        	'cover_img' => 'cardify.jpg', 
-        	'short_description' => 'Launch of the Cardify II. The new movement allowed the hour hand to be set independently.', 
-        	'long_description' => 'Over the years, the insert has been made available in different colour combinations. Initially made from Plexiglas, it was replaced by anodized rosegold lauminum in 1959 and high-technology ceramic in 2020', 
+        	'cover_img' => 'DAY-DATE.jpg', 
+        	'short_description' => 'Launched in 1956, the Day-Date made its debut as the first waterproof and self-winding chronometer wristwatch.', 
+        	'long_description' => 'The exceptional precision, reliability, legibility and presence of this prestigious model has made it the ultimate status watch. It is offer a modern calendar with an instantaneous day display, spelt out in full in a window on the dial, in addition to the date.', 
         	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]); 
@@ -170,7 +170,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
            
         	'SKU' => 22567980,
-        	'watch_name' => 'Bezeld III', 
+        	'watch_name' => 'EXPLORER', 
         	'in_stock' => 1, 
         	'quantity' => 20, 
         	'price' => 1999.99, 
@@ -185,9 +185,9 @@ class SeedWatchesTable extends Seeder
         	'strap_width' => '19mm', 
         	'weight' => '99g', 
         	'water_resistant' => '5 atm', 
-        	'cover_img' => 'bezeld.jpg', 
-        	'short_description' => 'In 2005, Bezeld III replaced the Rolex and inserted in aluminium with gold – a further innovation.', 
-        	'long_description' => 'Since then– for optimal legibility – the numerals and graduations have been moulded into the ceramic and then coated with a thin layer of gold or platinum via PVD (Physical Vapour Deposition). ', 
+        	'cover_img' => 'EXPLORER.jpg', 
+        	'short_description' => 'The Oyster Perpetual Explorer and Oyster Perpetual Explorer II evolved from Rolex’s deep involvement with exploration. They go where few people venture.', 
+        	'long_description' => 'The brand was able to test these watches in real life by equipping polar, mountaineering and caving expeditions over many years. Some of the world’s most intrepid explorers, mountaineers and scientists took Explorer and Explorer II watches to places that tested their reliability in the toughest conditions.', 
         	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
@@ -195,7 +195,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
             
         	'SKU' => 22567980,
-        	'watch_name' => 'Viva', 
+        	'watch_name' => 'GMT-MASTER', 
         	'in_stock' => 1, 
         	'quantity' => 21, 
         	'price' => 678.99, 
@@ -210,9 +210,9 @@ class SeedWatchesTable extends Seeder
         	'strap_width' => '11mm', 
         	'weight' => '111g', 
         	'water_resistant' => '10 atm', 
-        	'cover_img' => 'viva.jpg', 
-        	'short_description' => 'The Viva\'s unidirectional rotatable bezel is key to the functionality of the watch. Its engraved 60-minute graduation allows a diver to monitor diving time and decompression stops accurately and therefore safely..', 
-        	'long_description' => 'Manufactured by PseudoClass from a hard, corrosion-resistant stainless steel, the Cerachrom Viva insert is virtually scratchproof and its colour is unaffected by ultraviolet rays, seawater or water that is chlorinated.', 
+        	'cover_img' => 'GMT-MASTER II.jpg', 
+        	'short_description' => 'Designed to show the time in two different time zones simultaneously, the GMT-Master, launched in 1955, was originally developed as a navigation instrument for professionals criss-crossing the globe.', 
+        	'long_description' => 'Heir to the original model, the GMT-Master II was unveiled in 1982, with a new movement ensuring ease of use. Its combination of peerless functionality, robustness and instantly recognizable aesthetics has attracted a wider audience of world travellers.', 
         	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]); 
@@ -220,7 +220,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
            
         	'SKU' => 22561980,
-        	'watch_name' => 'Flexidy', 
+        	'watch_name' => 'LADY-DATEJUST', 
         	'in_stock' => 1, 
         	'quantity' => 201, 
         	'price' => 1299.99, 
@@ -235,9 +235,9 @@ class SeedWatchesTable extends Seeder
         	'strap_width' => '24mm', 
         	'weight' => '129g', 
         	'water_resistant' => '0 atm', 
-        	'cover_img' => 'flexidy.jpg', 
-        	'short_description' => 'Scratch-proof titanium had never existed before, so TechWatch invented it.', 
-        	'long_description' => 'Flexidy is a gorgeous model in both strength and simplicity. Developed and patented by the Manufacture, Magic titanium is the first and only 2K gold alloy in the world that perfectly withstands scratches, even with an extremely active lifestyle. It maintains its beauty, shine and polished appearance over time. A true revolution in the world of precious materials.', 
+        	'cover_img' => 'LADY-DATEJUST.jpg', 
+        	'short_description' => 'With its refined glamour, Rolex’s classic women’s watch, the Lady-Datejust, stands for style and technical performance.', 
+        	'long_description' => 'The women’s version of the emblematic Datejust, created in 1945, was unveiled in 1957. With all its timeless elegance and functionality, it is today offered in a petite 28 mm size.', 
         	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]); 
@@ -245,7 +245,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
            
         	'SKU' => 22561980,
-        	'watch_name' => 'Daltfresh', 
+        	'watch_name' => 'MILGAUSS', 
         	'in_stock' => 1, 
         	'quantity' => 201, 
         	'price' => 2299.99, 
@@ -260,9 +260,9 @@ class SeedWatchesTable extends Seeder
         	'strap_width' => '25mm', 
         	'weight' => '145g', 
         	'water_resistant' => '2 atm', 
-        	'cover_img' => 'daltfresh.jpg', 
-        	'short_description' => 'The Daltfresh in 18 ct Everose gold with an Oyster bracelet.', 
-        	'long_description' => 'This model features a gorgeous dial and a gold and black Cerachrom bezel. Designed to show the time in two different time zones simultaneously during intercontinental flights, the Daltfresh has come to be recognized for its robustness and versatile appearance.', 
+        	'cover_img' => 'MILGAUUSS.jpg', 
+        	'short_description' => 'The Oyster Perpetual Milgauss is a pioneering anti-magnetic watch designed to meet the demands of engineers and scientists.', 
+        	'long_description' => 'Created in 1956, it can withstand magnetic fields of up to 1,000 gauss. Hence its name, “mille”, which is French for one thousand. The first watch of its kind, the Milgauss combines unique aesthetics and scientific heritage.', 
         	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]); 
@@ -271,7 +271,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
       
             'SKU' => 23561980,
-            'watch_name' => 'Asoka', 
+            'watch_name' => 'MILGAUUSS', 
             'in_stock' => 1, 
             'quantity' => 1222, 
             'price' => 219.99, 
@@ -286,9 +286,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '25mm', 
             'weight' => '15g', 
             'water_resistant' => '19 atm', 
-            'cover_img' => 'asoka.jpg', 
-            'short_description' => 'The Asoka watch bracelet refined and upgraded.', 
-            'long_description' => 'The Asoka model conveys sporty and elegant at the same time while providing waterproof for over 19 meters below water. Our latest watch made of silicone rubber to provide a lightweight and practical everyday watch', 
+            'cover_img' => 'MILGAUUSS.jpg', 
+            'short_description' => 'The Oyster Perpetual Milgauuss is a pioneering anti-magnetic watch designed to meet the demands of engineers and scientists.', 
+            'long_description' => 'Created in 1958, it can withstand magnetic fields of up to 1,400 gauss. Hence its name, “mille”, which is French for one thousand. The first watch of its kind, the Milgauuss combines unique aesthetics and scientific heritage.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]); 
@@ -296,7 +296,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
           
             'SKU' => 20361980,
-            'watch_name' => 'Opela', 
+            'watch_name' => 'OYSTER PERPETUAL', 
             'in_stock' => 1, 
             'quantity' => 92, 
             'price' => 211.99, 
@@ -311,9 +311,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '24mm', 
             'weight' => '16g', 
             'water_resistant' => '19 atm', 
-            'cover_img' => 'opela.jpg', 
-            'short_description' => 'The Opela 2020 series introduces a blend of critical and robust complexity and simplicity.', 
-            'long_description' => 'The Opela model features a smart feature that allows for phone calls, music, and more. Our latest watch made of silicone rubber to provide a lightweight and practical everyday watch', 
+            'cover_img' => 'OYSTER PERPETUAL.jpg', 
+            'short_description' => 'The Oyster Perpetual is the purest expression of the Oyster concept, providing a clear and accurate time display.', 
+            'long_description' => 'This watch is the direct descendant of the original Oyster launched in 1926, the first waterproof wristwatch in the world and the foundation on which Rolex has built its reputation.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]); 
@@ -321,7 +321,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
             
             'SKU' => 20001980,
-            'watch_name' => 'Wrapsafe', 
+            'watch_name' => 'PEARLMASTER', 
             'in_stock' => 1, 
             'quantity' => 9, 
             'price' => 249.99, 
@@ -336,9 +336,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '20mm', 
             'weight' => '19g', 
             'water_resistant' => '22 atm', 
-            'cover_img' => 'wrapsafe.jpg', 
-            'short_description' => 'The Wrapsafe 2020 series provides comfort and security.', 
-            'long_description' => 'The Wrapsafe model is meant for outdoor activities, meant for everyday use, meant for it to be tossed and turned and bodied. Through and through, although the Wrapsafe is lightweight, do not let it fool you into thinking it won\'t last.  Our second latest watch made of silicone rubber to provide a lightweight and practical everyday watch', 
+            'cover_img' => 'PEARLMASTER.jpg', 
+            'short_description' => 'The Oyster Perpetual Pearlmaster holds a special place in the Oyster collection', 
+            'long_description' => 'It represents the height of exquisiteness, with precious metals and gemstones. As a watchmaking jewel expressing refinement and elegance.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]); 
@@ -346,7 +346,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
           
             'SKU' => 20001985,
-            'watch_name' => 'Bitwold', 
+            'watch_name' => 'SEA-DWELLER', 
             'in_stock' => 1, 
             'quantity' => 9, 
             'price' => 1249.99, 
@@ -361,9 +361,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '21mm', 
             'weight' => '29g', 
             'water_resistant' => '30 atm', 
-            'cover_img' => 'bitwold.jpg', 
-            'short_description' => 'Hight quality silicone Material, very soft and durable enough to avoid the slipping-off problem,sweat-resistant and waterproof,Perfect fit for sport wear.', 
-            'long_description' => 'The Bitwold model is meant for outdoor activities, meant for everyday use, meant for it to be tossed and turned and bodied. Through and through, although the Wrapsafe is lightweight, do not let it fool you into thinking it won\'t last.  Our third latest watch made of silicone rubber to provide a lightweight and practical everyday watch', 
+            'cover_img' => 'SEA-DWELLER.jpg', 
+            'short_description' => 'The Sea-Dweller and Rolex Deepsea are ultra-resistant divers’ watches engineered by Rolex for deep-sea exploration.', 
+            'long_description' => 'Waterproof to a depth of 4,000 feet (1,220 metres) for the Rolex Sea-Dweller, launched in 1967, and 12,800 feet (3,900 metres) for the Rolex Deepsea unveiled in 2008, they are the ultimate manifestation of Rolex’s leadership in divers’ watches and the result of decades of collaboration with diving professionals. In 2014 Rolex released a special version of the model, the Rolex Deepsea with a D-blue dial, to commemorate James Cameron’s historic solo dive to the bottom of the Mariana Trench, some 11,000 metres deep. From twilight blue to bottomless black, its two-colour gradient dial celebrates one man’s journey to the deepest place on Earth.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]); 
@@ -371,7 +371,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
         
             'SKU' => 20001911,
-            'watch_name' => 'Tresom', 
+            'watch_name' => 'SKY-DWELLER', 
             'in_stock' => 1, 
             'quantity' => 771, 
             'price' => 299.99, 
@@ -386,9 +386,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '25mm', 
             'weight' => '29g', 
             'water_resistant' => '30 atm', 
-            'cover_img' => 'tresom.jpg', 
-            'short_description' => 'This is a genuine TechWatch Tresom silicone rubber watch strap.', 
-            'long_description' => 'POLISHED AND SATIN-FINISHED LIGHT BLUE automatic Tresom. TechWatch\'s strength resides in its very clear identity - the art of fusion - this unique ability to create timepieces which combine tradition and innovation', 
+            'cover_img' => 'SKY-DWELLER.jpg', 
+            'short_description' => 'The Oyster Perpetual Sky-Dweller is a timepiece with a unique design that blends technological sophistication and ease of use.', 
+            'long_description' => 'It features an innovative annual calendar called Saros and a dual time zone display, making it the ideal watch for world travellers.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]); 
@@ -398,7 +398,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
          
             'SKU' => 20001911,
-            'watch_name' => 'Duobam', 
+            'watch_name' => 'SUBMARINER', 
             'in_stock' => 1, 
             'quantity' => 755, 
             'price' => 299.99, 
@@ -413,9 +413,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '25mm', 
             'weight' => '129g', 
             'water_resistant' => '3 atm', 
-            'cover_img' => 'duobam.jpg', 
-            'short_description' => 'This is a real silver TechWatch Duobam series presenting you with An unparalleled power reserve of Meca-10, Tourbillon and MP-11 calibers. A revolutionary motor approach with 11 MP-05 barrels and 50-day power reserve.', 
-            'long_description' => 'In its Art of Fusion, Duobam carries out a perfect symbiosis between functionality, architecture and design.', 
+            'cover_img' => 'SUBMARINER.jpg', 
+            'short_description' => 'The Oyster Perpetual Submariner is a reference among divers’ watches; it is the watch that unlocked the deep.', 
+            'long_description' => 'Launched in 1953, the Submariner was the first divers’ wristwatch waterproof to a depth of 100 metres (330 feet). This was the second great breakthrough in the technical mastery of waterproofness, following the invention of the Oyster, the world’s first waterproof wristwatch, in 1926. In watchmaking, the Submariner represented a historic turning point; it set the standard for divers’ watches.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
@@ -423,7 +423,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
        
             'SKU' => 20071911,
-            'watch_name' => 'Keylex I', 
+            'watch_name' => 'SWISS ARMY', 
             'in_stock' => 1, 
             'quantity' => 55, 
             'price' => 2199.99, 
@@ -438,9 +438,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '25mm', 
             'weight' => '149g', 
             'water_resistant' => '3 atm', 
-            'cover_img' => 'keylex.jpg', 
-            'short_description' => 'The first 100% TechWatch House movement, the Keylex I caliber has designed a new face for the quartz chronograph.', 
-            'long_description' => 'A 10-day power reserve and atypical display with rack and pinion. Sapphire with Anti-reflective Treatment', 
+            'cover_img' => 'SWISS ARMY.jpg', 
+            'short_description' => 'The Oyster Perpetual Rolex Deepsea in Oystersteel with a black ceramic bezel and an Oyster bracelet.', 
+            'long_description' => 'It features a black dial and large luminescent hour markers. Waterproof to a depth of 12,800 feet (3,900 metres) with a unidirectional 60-minute rotatable bezel, the Rolex Deepsea is amongst the ultra-resistant divers’ watches engineered by Rolex for deep-sea exploration. ', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
@@ -448,7 +448,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
        
             'SKU' => 29301911,
-            'watch_name' => 'Veribet', 
+            'watch_name' => 'SWISS QUARTZ', 
             'in_stock' => 1, 
             'quantity' => 55, 
             'price' => 3199.99, 
@@ -463,9 +463,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '25mm', 
             'weight' => '149g', 
             'water_resistant' => '3 atm', 
-            'cover_img' => 'veribet.jpg', 
-            'short_description' => 'Transparency, radiance and robustness in unique shadesouse movement, the Keylex I caliber has designed a new face for the quartz chronograph.', 
-            'long_description' => 'POLISHED GOLD SAPPHIRE CRYSTAL. An unrivaled 14-day power reserve supported by seven in-line barrels visible on the dial side.', 
+            'cover_img' => 'SWISS QUARTZ.jpg', 
+            'short_description' => 'This is one of the more affordable variants of the Maverick watch, but not necessarily the best one.', 
+            'long_description' => 'But if you’re not in the mood to spend more than $250 on a watch, then this is just the right model to look at. And that’s Amazon’s pricing – at Victorinox, you’ll have to pay twice that. So, bear that in mind.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
@@ -473,7 +473,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
          
             'SKU' => 29344911,
-            'watch_name' => 'Regrant', 
+            'watch_name' => 'YACHT-MASTER II', 
             'in_stock' => 1, 
             'quantity' => 55, 
             'price' => 3199.99, 
@@ -488,9 +488,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '24mm', 
             'weight' => '168g', 
             'water_resistant' => '3 atm', 
-            'cover_img' => 'regrant.jpg', 
-            'short_description' => 'A contemporary style which plays with established codes, a creative universe where elegance rules.', 
-            'long_description' => 'Polished and Satin-finished grey-silver. Black PVD Stainless Steel Deployant Buckle Clasp An unrivaled 14-day power reserve supported by seven in-line barrels visible on the dial side. HUB1131 Self-winding Moonphase Movement', 
+            'cover_img' => 'YACHT-MASTER II.jpg', 
+            'short_description' => 'The Rolex Yacht-Master and Yacht-Master II models embody the spirit of the sailor.', 
+            'long_description' => 'Inspired by the rich heritage that has bound Rolex to the world of sailing since the 1950s, the Yacht-Master blends function and style, while the Yacht-Master II brings together the finest in Rolex technology to create a regatta chronograph built for yachting competition.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
@@ -498,7 +498,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
           
             'SKU' => 89344911,
-            'watch_name' => 'Lotlux', 
+            'watch_name' => 'YATCH-MASTER', 
             'in_stock' => 1, 
             'quantity' => 300, 
             'price' => 14199.99, 
@@ -513,9 +513,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '24mm', 
             'weight' => '368g', 
             'water_resistant' => '0 atm', 
-            'cover_img' => 'lotlux.jpg', 
-            'short_description' => 'Punctuality is key, and this customised Lotlux PseudoSlass series is just what Milad and Dawn Baker presents to help you always stay on time.', 
-            'long_description' => 'Imagined with a matte-gold DLC coating, the 32mm timepiece will make sure you\'re never late again. manufactured by Swiss manufacturer Vacheron Constantin and was released in 2020.', 
+            'cover_img' => 'YATCH-MASTER.jpg', 
+            'short_description' => 'The Rolex Yacht-Master and Yacht-Master models embody the spirit of the sailor.', 
+            'long_description' => 'Inspired by the rich heritage that has bound Rolex to the world of sailing since the 1960s, the Yacht-Master blends function and style, while the Yacht-Master brings together the finest in Rolex technology to create a regatta chronograph built for yachting competition.',
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
@@ -525,7 +525,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
          
             'SKU' => 79344611,
-            'watch_name' => 'Domainer', 
+            'watch_name' => 'OYSTER PERRPETUAL', 
             'in_stock' => 1, 
             'quantity' => 880, 
             'price' => 14199.99, 
@@ -540,9 +540,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '24mm', 
             'weight' => '398g', 
             'water_resistant' => '0 atm', 
-            'cover_img' => 'domainer.jpg', 
-            'short_description' => 'The watch has 876 intricate moving parts in total and is housed in a gold case. It measures 30mm in diameter and 20mm thick.', 
-            'long_description' => 'It has a moonphase perpetual calendar, a grande and petite sonnerie with minute repeater, and a split-second chronograph. The release marked the manufacturer’s 250th anniversary. They only manufactured 7 limited edition pieces to maintain exclusivity.', 
+            'cover_img' => 'OYSTER PERRPETUAL.jpg', 
+            'short_description' => 'The Oyster Perrpetual is the purest expression of the Oyster concept, providing a clear and accurate time display.', 
+            'long_description' => 'This watch is the direct descendant of the original Oyster launched in 1926, the first waterproof wristwatch in the world and the foundation on which Rolex has built its reputation.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
@@ -550,7 +550,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
           
             'SKU' => 79344611,
-            'watch_name' => 'Voltsillam', 
+            'watch_name' => 'ATLAS WALNUT', 
             'in_stock' => 1, 
             'quantity' => 80, 
             'price' => 15999.99, 
@@ -565,9 +565,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '24mm', 
             'weight' => '188g', 
             'water_resistant' => '0 atm', 
-            'cover_img' => 'voltsillam.jpg', 
-            'short_description' => 'The watch has 200 intricate moving parts in total and is housed in a gold case. It measures 28mm in diameter and 15mm thick.', 
-            'long_description' => 'Compared to its more conventional counterparts, the Voltsillam has a more sporty, luxurious look to it, thanks to its gold body and contrast stitching. The quality and craftsmanship of the 1928 timepiece are evident in its 99-year existence.', 
+            'cover_img' => 'Atlas Walnut Blue Marble.jpg', 
+            'short_description' => 'Travel through time with the Atlas Collection - Treehut’s first automatic watch - a combination of elegant style and pure form mechanics for the man who appreciates timeless designs with intelligence and grace.', 
+            'long_description' => 'Featuring a real marble dial with a small window revealing the movement, adorned with wood bezel on a vintage inspired barrel-shaped stainless steel case, creating the minimal and versatile everyday watch for the profound well-traveled man.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
@@ -575,7 +575,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([
         
             'SKU' => 66344611,
-            'watch_name' => 'Charmant', 
+            'watch_name' => 'CARTIER TANK', 
             'in_stock' => 1, 
             'quantity' => 879, 
             'price' => 20999.99, 
@@ -590,9 +590,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '26mm', 
             'weight' => '198g', 
             'water_resistant' => '1 atm', 
-            'cover_img' => 'charmant.jpg', 
-            'short_description' => 'The Charmant watch is Luxurious plus Sophistication which meets traditional design!', 
-            'long_description' => 'Housed in 18kt yellow gold, the watch features two oscillating bodies mounted on an elegant dial. Crafted in 1943, the Charmant 1527 can appear to be rather ordinary on the outside, however, the watch contains more than twenty different precious stones.', 
+            'cover_img' => 'Cartier Tank Solo XL.jpg', 
+            'short_description' => 'Cartier Tank Solo XL Automatic Stainless Steel Mens Watch W5200028', 
+            'long_description' => 'The Tank has been a collectors icon since the 1920s. It was designed in 1917 by Louis Cartier and everyone from Cary Grant to Andy Warhol has worn one. You should too. ', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
@@ -600,7 +600,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
            
             'SKU' => 66302611,
-            'watch_name' => 'Alastair', 
+            'watch_name' => 'PATEK PHILIPPE', 
             'in_stock' => 1, 
             'quantity' => 879, 
             'price' => 20999.99, 
@@ -615,9 +615,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '23mm', 
             'weight' => '178g', 
             'water_resistant' => '1 atm', 
-            'cover_img' => 'alastair.jpg', 
-            'short_description' => 'The Alastair watch is Luxurious plus simplicity which meets modern design!', 
-            'long_description' => 'Housed in 18kt yellow gold, the watch features two oscillating bodies mounted on an elegant dial. Crafted in 2012, the Charmant 1527 can appear to be rather ordinary on the inside, however, the watch contains more than thirty different precious stones.', 
+            'cover_img' => 'Patek Philippe Grand.jpg', 
+            'short_description' => 'Patek Philippe Grand Complications 41mm, 18K Rose Gold and Alligator', 
+            'long_description' => 'This manually-wound watch features day, month, leap year and day or night indicators as well as a seconds subdial.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
@@ -628,7 +628,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
           
             'SKU' => 20073498,
-            'watch_name' => 'Galaxy Watch', 
+            'watch_name' => 'OMEGA SPEEDMASTER', 
             'in_stock' => 1, 
             'quantity' => 76, 
             'price' => 369.99, 
@@ -643,9 +643,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '24mm', 
             'weight' => '86g', 
             'water_resistant' => '3 atm', 
-            'cover_img' => 'galaxywatch.jpg', 
-            'short_description' => 'The Galaxy Watch Active2 uses dedicated motion sensors to automatically track popular workouts and provide real-time feedback on your runs with the built-in running coach.', 
-            'long_description' => 'Evaluate your sleep patterns and form better habits with the advanced sleep tracker or enjoy interactive meditation and breathing exercises, powered by Calm. Meanwhile, the lightweight, aluminum watch and breathable, flexible strap mean the Galaxy Watch Active2 is ideal for everyday wear. Plus, you can stay connected for longer with a long-lasting battery that lasts for days on a single charge.', 
+            'cover_img' => 'Omega Speedmaster Racing.jpg', 
+            'short_description' => 'Omega Speedmaster Racing Automatic Chronograph 40mm, Stainless Steel', 
+            'long_description' => '60 second, 30 minute, and 12 hour subdials give you all the equipment you need for pin-point precise timing, while the stainless steel case and rubber strap add a sporty edge.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
@@ -653,7 +653,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
           
             'SKU' => 20496720,
-            'watch_name' => 'Fossil Sport', 
+            'watch_name' => 'ROLEX COSMOGRAPH', 
             'in_stock' => 1, 
             'quantity' => 69, 
             'price' => 129.99, 
@@ -668,9 +668,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '20mm', 
             'weight' => '112g', 
             'water_resistant' => '3 atm', 
-            'cover_img' => 'fossilsport.jpg', 
-            'short_description' => 'Smartwatches powered with Wear OS by Google are compatible with iPhone and Android phones.', 
-            'long_description' => 'Wear OS by Google and other related marks are trademarks of Google LLC. Touchscreen smartwatches powered with Wear OS by Google require a phone running Android OS 6.0+ (excluding Go edition) or iOS 10+. Supported features may vary between platforms.', 
+            'cover_img' => 'Rolex Cosmograph Daytona.jpg', 
+            'short_description' => 'Rolex Cosmograph Daytona 40mm, Stainless Steel Oyster Bracelet', 
+            'long_description' => 'First introduced in 1963, the Daytona, true to its name, was designed to meet the needs for pro race drivers with a self-winding calibre 4130 movement and a larger than usual mainspring to enhance its reserve power.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
@@ -678,7 +678,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
         
             'SKU' => 24598763,
-            'watch_name' => 'Fitbit Versa', 
+            'watch_name' => 'BLANCPAIN', 
             'in_stock' => 1, 
             'quantity' => 97, 
             'price' => 249.99, 
@@ -693,9 +693,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '24mm', 
             'weight' => '124g', 
             'water_resistant' => '3 atm', 
-            'cover_img' => 'fitbitversa.jpg', 
-            'short_description' => 'Reach your physical fitness goals in style with the Fitbit Versa 2 smartwatch.', 
-            'long_description' => 'Reach your physical fitness goals in style with the Fitbit Versa 2 smartwatch. It automatically tracks your calories burned, steps taken, heart rate, sleeping patterns, and more. It helps keep you in the loop by wirelessly syncing with your smartphone for at-a-glance notifications from texts, emails, social media, and your calendar.', 
+            'cover_img' => 'Blancpain Fifty Fathoms.jpg', 
+            'short_description' => 'Blancpain Fifty Fathoms Meteor Automatic 43mm', 
+            'long_description' => 'For a luxury watch you can wear every day, this watch offers a sport stainless steel case, black ceramic bezel, and a strap made from sturdy sail canvas. Inside, you will find a Blancpain calibre 1315 automatic movement with an 120-hour power reserve. ', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
@@ -703,7 +703,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
         
             'SKU' => 29344911,
-            'watch_name' => 'Skagen Falster', 
+            'watch_name' => 'CHANEL MONSIEUR', 
             'in_stock' => 1, 
             'quantity' => 60, 
             'price' => 119.99, 
@@ -718,9 +718,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '20mm', 
             'weight' => '132g', 
             'water_resistant' => '3 atm', 
-            'cover_img' => 'skagen.jpg', 
-            'short_description' => 'The epitome of sleek style and smart functionality, the Skagen Falster 2 smartwatch is a timepiece you won’t want to take off.', 
-            'long_description' => 'The epitome of sleek style and smart functionality, the Skagen Falster 2 smartwatch is a timepiece you won’t want to take off. Powered by Wear OS, the Falster 2 tracks activity and heart rate, and alerts you of incoming calls, texts, and more. An interchangeable band and customizable dial allow you to tailor this smartwatch to your style.', 
+            'cover_img' => 'Chanel Monsieur Watch.jpg', 
+            'short_description' => 'Chanel Monsieur Watch 40mm', 
+            'long_description' => 'For a sophisticated, minimalist look, this Chanel watch with an opaline dial, 18k beige gold case, and alligator strap is just what you need. ', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
@@ -728,7 +728,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
          
             'SKU' => 89765411,
-            'watch_name' => 'Fitbit Charge', 
+            'watch_name' => 'BLANCPAIN FIFTY', 
             'in_stock' => 1, 
             'quantity' => 300, 
             'price' => 149.99, 
@@ -743,9 +743,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '20mm', 
             'weight' => '146g', 
             'water_resistant' => '2 atm', 
-            'cover_img' => 'fitbitcharge.jpg', 
-            'short_description' => 'Maximize workouts with PurePulse heart rate, multi-sport modes and connected GPS.', 
-            'long_description' => 'Make every beat count with Fitbit Charge 2 the all-new heart rate and fitness wristband. Maximize workouts with PurePulse heart rate, multi-sport modes and connected GPS. Track all-day activity, exercise and sleep. And make the most of your entire routine with smartphone notifications, reminders to move and personalized guided breathing sessions. With so many next-generation features, plus interchangeable bands and long battery life, it’s the motivation you need to push yourself further.', 
+            'cover_img' => 'Blancpain Fifty Fathoms Automatic.jpg', 
+            'short_description' => 'Blancpain Fifty Fathoms Automatic 45mm', 
+            'long_description' => 'Blancpain introduced the first Fifty Fathoms watch in 1953 as the first modern divers watch and this iconic version, water-resistant at up to 1000 feet offers an update on the classic with an added date marker and luminescent hands. ', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
@@ -755,7 +755,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
           
             'SKU' => 20234876,
-            'watch_name' => 'Speedmaster', 
+            'watch_name' => 'BULGARI', 
             'in_stock' => 1, 
             'quantity' => 23, 
             'price' => 3395.99, 
@@ -770,9 +770,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '24mm', 
             'weight' => '148g', 
             'water_resistant' => '6 atm', 
-            'cover_img' => 'speedmaster.jpg', 
-            'short_description' => 'Speedmaster Racing Automatic Chronograph Black Dial Men\'s Watch', 
-            'long_description' => 'Silver-tone stainless steel case with a black rubber strap. Fixed tachymeter scale silver-tone black aluminium ring with tachymeter marki bezel. Black dial with luminous silver-tone hands and index hour markers. Minute markers around the outer rim. Dial Type: Analog. Luminescent hands and markers', 
+            'cover_img' => 'Bulgari Octo .jpg', 
+            'short_description' => 'Bulgari Octo 41mm, 18K Rose Gold and Alligator', 
+            'long_description' => 'Inspired by ancient Roman architecture, this octagonal watch features a sleek black lacquered dial to pair with the integrated black alligator leather strap, accented by a warm, 18k rose gold casing that screams Italian luxury.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
@@ -780,7 +780,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
            
             'SKU' => 20598356,
-            'watch_name' => 'Cosmograph', 
+            'watch_name' => 'ROLEX EXPLORER II', 
             'in_stock' => 1, 
             'quantity' => 13, 
             'price' => 23999.99, 
@@ -795,9 +795,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '22mm', 
             'weight' => '168g', 
             'water_resistant' => '9 atm', 
-            'cover_img' => 'cosmograph.jpg', 
-            'short_description' => 'Luminescent chromolite 18 ct white gold hands and markers. Chronograph - three sub-dials displaying: 60 second, 30 minute and 12 hour.', 
-            'long_description' => 'Silver-tone 904l stainless steel case with a silver-tone stainless steel rolex oyster bracelet. Fixed tachymeter scale black monobloc cerachrom bezel. White dial with silver-tone hands and index hour markers. Minute markers around the outer rim. Dial Type: Analog. Luminescent chromolite 18 ct white gold hands and markers. Chronograph - three sub-dials displaying: 60 second, 30 minute and 12 hour.', 
+            'cover_img' => 'Rolex Explorer II.jpg', 
+            'short_description' => 'Rolex Explorer II Automatic 42mm, Stainless Steel Oyster Bracelet', 
+            'long_description' => 'For the on-the-go guy, this Rolex, equipped with a calibre 3187 self-winding mechanical movement, also comes equipped with a separate 24-hour hand that lets you keep track of the hours in another time zone. ', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
@@ -805,7 +805,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
           
             'SKU' => 24598763,
-            'watch_name' => 'Blancpain', 
+            'watch_name' => 'VACHERON CONSTANTIN', 
             'in_stock' => 1, 
             'quantity' => 17, 
             'price' => 6299.99, 
@@ -820,9 +820,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '24mm', 
             'weight' => '194g', 
             'water_resistant' => '12 atm', 
-            'cover_img' => 'blancpain.jpg', 
-            'short_description' => 'Blancpain Calibre 1315 Automatic movement, containing 35 Jewels, composed of 227 parts.', 
-            'long_description' => 'For a luxury watch you can wear every day, this watch offers a sport stainless steel case, black ceramic bezel, and a strap made from sturdy sail canvas. Inside, you\'ll find a Blancpain calibre 1315 automatic movement with an 120-hour power reserve.', 
+            'cover_img' => 'Vacheron Constantin.jpg', 
+            'short_description' => 'Vacheron Constantin Overseas Automatic 42.5mm', 
+            'long_description' => 'With 54 jewels, this transparent-backed stainless steel chronograph features a caliber 5200 movement with a 52 hour power reserve.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
@@ -830,7 +830,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
           
             'SKU' => 45982567,
-            'watch_name' => 'Avalanche', 
+            'watch_name' => 'BELL & ROSS', 
             'in_stock' => 1, 
             'quantity' => 67, 
             'price' => 1799.99, 
@@ -845,9 +845,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '20mm', 
             'weight' => '116g', 
             'water_resistant' => '8 atm', 
-            'cover_img' => 'avalanche.jpg', 
-            'short_description' => 'White ceramic case with a white rubber strap. Fixed bezel set with diamond.', 
-            'long_description' => 'White ceramic case with a white rubber strap. Fixed bezel set with diamond. White mother of pearl dial with silver-tone hands and diamond hour markers. Arabic numerals mark the 6, 9 and 12 o\'clock positions. Minute markers around the outer rim. Dial Type: Analog. Luminescent hands. Date display at the 3 o\'clock position. Swiss quartz movement. Scratch resistant anti-reflective sapphire crystal.', 
+            'cover_img' => 'Bell and Ross Vintage.jpg', 
+            'short_description' => 'Bell and Ross Vintage V2-93 Automatic 41mm', 
+            'long_description' => 'The black rubber strap of this stainless steel watch provides a sporty feel while the Calibre BR-CAL.303 automatic movement and bi-directional bezel help you keep track of time no matter where your travels take you.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
@@ -855,7 +855,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
             
             'SKU' => 89398743,
-            'watch_name' => 'Chopard', 
+            'watch_name' => 'IWC PORTUGUESE', 
             'in_stock' => 1, 
             'quantity' => 53, 
             'price' => 8199.99, 
@@ -870,9 +870,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '20mm', 
             'weight' => '153g', 
             'water_resistant' => '12 atm', 
-            'cover_img' => 'chopard.jpg', 
-            'short_description' => '18kt rose gold case with a two-tone (silver-tone and gold-tone) stainless steel bracelet. Fixed gold-tone bezel.', 
-            'long_description' => 'White dial with gold-tone hands and Roman numeral and index hour markers. Minute markers around the outer rim. Dial Type: Analog. Date display between 4 and 5 o\'clock position. Quartz movement. Scratch resistant sapphire crystal. Solid case back. Round case shape, case size: 36 mm, case thickness: 8.1 mm. Fold over clasp. Functions: date, hour, minute, second. Luxury watch style.', 
+            'cover_img' => 'IWC Portuguese Automatic.jpg', 
+            'short_description' => 'IWC Portuguese Automatic Chronograph Silver Dial 40.9 mm Mens Watch IW371480', 
+            'long_description' => 'Based on the original 1930s design, this updated classic is the most coveted of the line for a reason: its effortlessly elegant style and the precision of its 79350 calibre self-winding movement with 31 jewels.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
@@ -882,7 +882,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
        
             'SKU' => 66301278,
-            'watch_name' => 'Saddlery', 
+            'watch_name' => 'CHRONOGRAPH', 
             'in_stock' => 1, 
             'quantity' => 89, 
             'price' => 209.99, 
@@ -897,9 +897,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '24mm', 
             'weight' => '128g', 
             'water_resistant' => '3 atm', 
-            'cover_img' => 'saddlrey.jpg', 
-            'short_description' => 'The completion of a corporate celebration is typically marked with purchasing the 2020 favourite digital Saddlery watch.', 
-            'long_description' => 'Using genuinely new case architecture and a crystal that curved on two separate axis, you could see why AP hailed Saddlery as radical a design as the TechWatches iconic octagonal case and integrated metal bracelet. A new-for-2020 palate of colours is a welcome update.', 
+            'cover_img' => 'Chronograph 42 MM.jpg', 
+            'short_description' => 'Chronograph 42 MM. The completion of a corporate celebration is typically marked with purchasing the 2020 favourite digital Chronograph watch.', 
+            'long_description' => 'While the crisp white dial of this 18k rose gold watch may be a departure from the classic Tiffany & Co. shade, the alligator band and gold poudré numerals still boast the timeless stylishness that made the brand an icon.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
@@ -907,7 +907,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
         
             'SKU' => 66302611,
-            'watch_name' => 'Heuerald', 
+            'watch_name' => 'LONGINES', 
             'in_stock' => 1, 
             'quantity' => 119, 
             'price' => 199.99, 
@@ -922,9 +922,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '23mm', 
             'weight' => '121g', 
             'water_resistant' => '3 atm', 
-            'cover_img' => 'heuerald.jpg', 
-            'short_description' => 'Built from a new material that combines “the lightness of titanium” with “the hardness of diamond” and looking like something from the distant future, this could only be a TechWatch.', 
-            'long_description' => 'It comes with an OLED screen, a 45mm matte black titanium case and a full suite of smartwatch functions including heart rate monitor, accelerometer and gyroscope. In addition, there’s detailed golf data for some 40,000 courses around the world, with game-focused features like distance to green and hazards, shot distance and score keeping..', 
+            'cover_img' => 'Longines Master Collection.jpg', 
+            'short_description' => 'Longines Master Collection GMT Moonphase 40mm', 
+            'long_description' => 'The blue steel hands of this stainless steel and alligator chronograph offers a modern edge to the classic styling of its versatile dial which features sub-dials for the moon phase, date, and a 24 hour indicator.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
@@ -932,7 +932,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
          
             'SKU' => 66304411,
-            'watch_name' => 'Culture', 
+            'watch_name' => 'ROLEX DAYTONA', 
             'in_stock' => 1, 
             'quantity' => 119, 
             'price' => 1189.99, 
@@ -947,9 +947,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '23mm', 
             'weight' => '111g', 
             'water_resistant' => '3 atm', 
-            'cover_img' => 'culture.jpg', 
-            'short_description' => 'There’s something magical about a chiming cultured wristwatch, doubly so if its made by TechWatch, whose family of dress watches may be unparalleled.', 
-            'long_description' => 'The first culture came out in the Fifties, one of the first generation of wristwatches to come with a chiming, vibrating alarm complication. The 2020 version has been slimmed down and tidied up, and (naturally) features a completely new movement. It’s beautifully proportioned, extremely stylish and surprisingly loud. A modern classic.', 
+            'cover_img' => 'Rolex Daytona.jpg', 
+            'short_description' => 'Rolex Daytona 45mm. There’s something magical about a chiming cultured wristwatch, doubly so if its made by TechWatch, whose family of dress watches may be unparalleled.', 
+            'long_description' => 'Blue dials have enjoyed a resurgence lately, but green, especially on a staple like a Rolex Daytona, is equally wearable and much more unique.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
@@ -982,7 +982,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
            
             'SKU' => 61122611,
-            'watch_name' => 'Bretting', 
+            'watch_name' => 'EI PRIMERO', 
             'in_stock' => 1, 
             'quantity' => 119, 
             'price' => 1189.99, 
@@ -997,9 +997,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '23mm', 
             'weight' => '122g', 
             'water_resistant' => '3 atm', 
-            'cover_img' => 'huebolt.jpg', 
-            'short_description' => 'Bretting continues to roll out new watches for 2020 with the new Premier TechWatch Mulliner Limited Edition..', 
-            'long_description' => 'The watch features a solid 42mm polished steel case with a push/pull crown and rectangular chronograph pushers. The enlarged Arabic numbers and red and blue detailing lend this piece a vintage, dressy feel.', 
+            'cover_img' => 'El Primero Chronomaster.jpg', 
+            'short_description' => 'El Primero Chronomaster Automatic Silver Dial Mens Watch', 
+            'long_description' => 'Designed from the original 1969 case, this 31 jewel timepiece features twelve hour, thirty minute, and sixty second subdials along with a stainless steel case and alligator leather strap.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
@@ -1008,7 +1008,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
          
             'SKU' => 81155511,
-            'watch_name' => 'Rair', 
+            'watch_name' => 'GRIP', 
             'in_stock' => 1, 
             'quantity' => 119, 
             'price' => 1189.99, 
@@ -1023,9 +1023,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '23mm', 
             'weight' => '122g', 
             'water_resistant' => '3 atm', 
-            'cover_img' => 'rair.jpg', 
-            'short_description' => 'Rair continues to surpise and not dissapoint.', 
-            'long_description' => 'The watch features a solid movement made of rare quartz  with a push/pull crown and circular chronograph pushers. The enlarged Arabic numbers and red and blue detailing lend this piece a vintage, dressy feel.', 
+            'cover_img' => 'Grip 35mm watch.jpg', 
+            'short_description' => 'Grip 35mm watch. Rair continues to surpise and not dissapoint.', 
+            'long_description' => 'Named for the skateboard terminology for the way sneakers "grip" the skateboard tape, Guccis unusual watch features three indicator dials.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
@@ -1033,7 +1033,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
          
             'SKU' => 81155001,
-            'watch_name' => 'Elixir II', 
+            'watch_name' => 'PARMIGIANI FLEURIER', 
             'in_stock' => 1, 
             'quantity' => 119, 
             'price' => 1119.99, 
@@ -1048,9 +1048,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '24mm', 
             'weight' => '122g', 
             'water_resistant' => '26 atm', 
-            'cover_img' => 'elixir.jpg', 
-            'short_description' => 'Exilir is the newly released and improved version of our first Elixir series.', 
-            'long_description' => 'When it was launched last year in a limited run, Elixir\'s first military-inspired automatic watch sold out quicker than you could say, "An automatic watch for how much?" Those who missed out now have a second chance to grab a watch that channels Elixir\'s military heritage but adds clever guts (a 21-jewel Japanese automatic movement) and will still leave you change from $1119.99. With only 100m water resistance it\'s more a desk diving watch than a diver diving watch. But at that price, we\'re not ones to quibble..', 
+            'cover_img' => 'Parmigiani Fleurier Toric.jpg', 
+            'short_description' => 'Parmigiani Fleurier Toric Hemispheres Retrograde 42.8mm', 
+            'long_description' => 'The bi-coastal will appreciate that among this watchs plethora of options comes an independently controlled subdial for another time zone. ', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
@@ -1058,7 +1058,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
          
             'SKU' => 10955531,
-            'watch_name' => 'Kunghans', 
+            'watch_name' => 'CARTIER', 
             'in_stock' => 1, 
             'quantity' => 32, 
             'price' => 119.99, 
@@ -1073,9 +1073,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '18mm', 
             'weight' => '112g', 
             'water_resistant' => '6 atm', 
-            'cover_img' => 'kunghans.jpg', 
-            'short_description' => 'Once this PseudoSlass company was the biggest watch manufacturer in the world. Today it maintains a pole position in the league of best-designed brands, noted for its clean dials and minimalist indices. .', 
-            'long_description' => 'When it was launched last year in a limited run, Elixir\'s first military-inspired automatic watch sold out quicker than you could say, "An automatic watch for how much?" Those who missed out now have a second chance to grab a watch that channels Elixir\'s military heritage but adds clever guts (a 21-jewel Japanese automatic movement) and will still leave you change from $1119.99. With only 100m water resistance it\'s more a desk diving watch than a diver diving watch. But at that price, we\'re not ones to quibble..', 
+            'cover_img' => 'Cartier Drive de Cartier.jpg', 
+            'short_description' => 'Cartier Drive de Cartier 40mm, Stainless Steel & Alligator', 
+            'long_description' => 'Neither square nor circular, Cartier refers to the shape of their self-winding, steel-cased watch as "cushion-shaped." It utilizes their in-house caliber 1904-PS movement with blued steel hands and a small seconds counter.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
@@ -1084,7 +1084,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
           
             'SKU' => 10955531,
-            'watch_name' => 'Prospex', 
+            'watch_name' => 'LAUREATO', 
             'in_stock' => 1, 
             'quantity' => 32, 
             'price' => 1319.99, 
@@ -1099,9 +1099,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '18mm', 
             'weight' => '42g', 
             'water_resistant' => '26 atm', 
-            'cover_img' => 'prospex.jpg', 
-            'short_description' => 'One of the nicest-looking chronographs and arguably the classic TechWatches dress watch now comes with a self-winding in-house movement that significantly lowers its entry price.', 
-            'long_description' => 'Inspired by the world of night diving, which may be a first, Prospex new series of dive watches are distinguished by their none-more-black DLC-coated gold cases.', 
+            'cover_img' => 'Laureato Hand Wind Mens.jpg', 
+            'short_description' => 'Laureato Hand Wind Mens WatchOne of the nicest-looking chronographs and arguably the classic TechWatches dress watch now comes with a self-winding in-house movement that significantly lowers its entry price.', 
+            'long_description' => 'An updated version of the classic 1975 style, this hand-winding movement features a skeleton dial with a 54 hour power reserve and a black ceramic casing and strap.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
@@ -1109,7 +1109,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
            
             'SKU' => 19955666,
-            'watch_name' => 'Finissemo', 
+            'watch_name' => 'BRACELET', 
             'in_stock' => 1, 
             'quantity' => 561, 
             'price' => 2319.99, 
@@ -1124,9 +1124,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '18mm', 
             'weight' => '42g', 
             'water_resistant' => '3 atm', 
-            'cover_img' => 'finissemo.jpg', 
-            'short_description' => 'Finnisemo\'s first release of 2020 is a new version of its  Finissimo Automatic, which debuted in 2017.', 
-            'long_description' => 'Back then, it created quite a stir – at a scarcely-possible 2.23mm thick, it contained the world’s thinnest self-winding movement. The paper-thin sports watch has previously been available in titanium, stainless steel, rose gold, and gold all with a sandblasted finish. Now that family is joined by two new models – in steel with a bracelet, or 18ct rose gold with a strap – that feature a fancy satin-polished finish, and also play up the contrast between the black lacquered dial and the polished hands and indexes.', 
+            'cover_img' => 'Bracelet Watch.jpg', 
+            'short_description' => 'Bracelet Watch, 40mm first release of 2020 is a new version of its Automatic, which debuted in 2017.', 
+            'long_description' => 'For the ultra-minimalist, this all black dial features a Museum dot at 12 o clock.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
