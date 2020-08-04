@@ -15,18 +15,16 @@
         <hr>
         <div class="categories-wrapper mb-5">
             <ul>
-                <li><a href="">Mens</a></li>
-                <li><a href="">Womens</a></li>
-                <li><a href="">Smart</a></li>
-                <li><a href="">Kids</a></li>
-                <li><a href="">Techy</a></li>
+                @foreach($categories as $category)
+                <li><a href="">{{$category->category_name}}</a></li>
+                @endforeach
             </ul>
         </div>
         <!-- /. Categories -->
         <div class="row justify-content-center">
             @foreach($watches as $watch)
             <!-- Single Product -->
-            <div class="col-2 text-center bord">
+            <div class="col-3 text-center bord">
                 <div class="single-product-area mb-30">
                     <div class="product_image">
                         <!-- Product Image -->
