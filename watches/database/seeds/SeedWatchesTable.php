@@ -1093,5 +1093,153 @@ class SeedWatchesTable extends Seeder
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
+
+        DB::table('watches')->insert([ 
+            'SKU' => 66302621,
+            'watch_name' => 'TOM FORD', 
+            'in_stock' => 1, 
+            'quantity' => 179, 
+            'price' => 20992.99, 
+            'cost' => 22442.99, 
+            'material' => 'silicone rubber ', 
+            'main_color' => 'wodden', 
+            'movement' => 'mechanical', 
+            'gender' => 'female', 
+            'category_id' => 3, 
+            'diameter' => 28,
+            'strap_length' => '161mm', 
+            'strap_width' => '18mm', 
+            'weight' => '152g', 
+            'water_resistant' => '1 atm', 
+            'cover_img' => 'Tom Ford Watch.jpg', 
+            'short_description' => 'Tom Ford Watch Automatic Stainless Steel Mens Watch W5200028', 
+            'long_description' => 'Leave it Tom Ford, the master of subtle sex appeal, to design a slim, everyday watch that makes a bold statement.', 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]);
+
+         DB::table('watches')->insert([ 
+            'SKU' => 66302631,
+            'watch_name' => 'ELMINGTON', 
+            'in_stock' => 1, 
+            'quantity' => 279, 
+            'price' => 20993.99, 
+            'cost' => 22443.99, 
+            'material' => 'stainless steel', 
+            'main_color' => 'silver', 
+            'movement' => 'mechanical', 
+            'gender' => 'male', 
+            'category_id' => 3, 
+            'diameter' => 28,
+            'strap_length' => '181mm', 
+            'strap_width' => '20mm', 
+            'weight' => '152g', 
+            'water_resistant' => '1 atm', 
+            'cover_img' => 'Elmington Emerald.jpg', 
+            'short_description' => 'Elmington Emerald Green Watch x Gold - 44mm', 
+            'long_description' => 'An oversized Emerald green dial recalls 1960s style with a sleek updated silhouette.', 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]);
+
+
+         DB::table('watches')->insert([ 
+            'SKU' => 66302641,
+            'watch_name' => 'GEN 5 SMARTWATCH GARRETT', 
+            'in_stock' => 1, 
+            'quantity' => 379, 
+            'price' => 20994.99, 
+            'cost' => 22444.99, 
+            'material' => 'silver', 
+            'main_color' => 'black', 
+            'movement' => 'mechanical', 
+            'gender' => 'male', 
+            'category_id' => 3, 
+            'diameter' => 28,
+            'strap_length' => '185mm', 
+            'strap_width' => '22mm', 
+            'weight' => '172g', 
+            'water_resistant' => '1 atm', 
+            'cover_img' => 'Gen 5 Smartwatch Garrett.jpeg', 
+            'short_description' => 'Gen 5 Smartwatch Garrett HR Stainless Steel', 
+            'long_description' => 'Smartwatches powered with Wear OS by Google are compatible with iPhone® and Android™ phones. Wear OS by Google and other related marks are trademarks of Google LLC. Touchscreen smartwatches powered with Wear OS by Google require a phone running Android OS 6.0+ (excluding Go edition) or iOS 10+. Supported features may vary between platforms.', 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]);
+
+
+         DB::table('watches')->insert([ 
+            'SKU' => 66302651,
+            'watch_name' => 'GEN 5 SMARTWATCH JULIANNA', 
+            'in_stock' => 1, 
+            'quantity' => 479, 
+            'price' => 20995.99, 
+            'cost' => 22445.99, 
+            'material' => 'rosegold ', 
+            'main_color' => 'silver', 
+            'movement' => 'mechanical', 
+            'gender' => 'female', 
+            'category_id' => 3, 
+            'diameter' => 28,
+            'strap_length' => '175mm', 
+            'strap_width' => '21mm', 
+            'weight' => '162g', 
+            'water_resistant' => '1 atm', 
+            'cover_img' => 'Gen 5 Smartwatch Julianna.jpeg', 
+            'short_description' => 'Gen 5 Smartwatch Julianna HR Rose Gold-Tone Stainless Steel Mesh', 
+            'long_description' => 'Activity Tracker, Control Your Music, Google Pay™, GPS, Heart Rate Tracking, Interchangeable Watch Band, Notifications, Personalise Your Dial, Swimproof', 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]);
+
+
+          DB::table('watches')->insert([ 
+            'SKU' => 66302661,
+            'watch_name' => 'GEN5 SMARTWATCH JULIANNA', 
+            'in_stock' => 1, 
+            'quantity' => 579, 
+            'price' => 20996.99, 
+            'cost' => 22446.99, 
+            'material' => 'carbon fibre', 
+            'main_color' => 'black', 
+            'movement' => 'mechanical', 
+            'gender' => 'male', 
+            'category_id' => 3, 
+            'diameter' => 28,
+            'strap_length' => '190mm', 
+            'strap_width' => '24mm', 
+            'weight' => '172g', 
+            'water_resistant' => '1 atm', 
+            'cover_img' => 'Gen5 Smartwatch Julianna.jpeg', 
+            'short_description' => 'Gen 5 Smartwatch Julianna HR Smoke Stainless Steel', 
+            'long_description' => 'BTo avoid damage to your watch, only use with included charger. Do not use a USB hub, USB splitter, USB y-cable, battery pack or other peripheral device to charge. Product should be kept more than 20 cm away from implanted medical devices to minimise potential for RF interference. See product insert for full details.', 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]);
+
+          DB::table('watches')->insert([ 
+            'SKU' => 66302661,
+            'watch_name' => 'GOLD CHRONOGRAPH', 
+            'in_stock' => 1, 
+            'quantity' => 579, 
+            'price' => 20996.99, 
+            'cost' => 22446.99, 
+            'material' => 'carbon fibre', 
+            'main_color' => 'black', 
+            'movement' => 'mechanical', 
+            'gender' => 'male', 
+            'category_id' => 3, 
+            'diameter' => 28,
+            'strap_length' => '190mm', 
+            'strap_width' => '24mm', 
+            'weight' => '172g', 
+            'water_resistant' => '1 atm', 
+            'cover_img' => 'GOLD CHRONOGRAPH.jpg', 
+            'short_description' => 'GOLD CHRONOGRAPH Stainless Steel', 
+            'long_description' => 'Each Benjamin Banneker watch incorporates wood in some way. For the Crossover, African Red Sandalwood is layered over a steel-lated case. ', 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]);
+        //mechanical watch ends
     }
 }
