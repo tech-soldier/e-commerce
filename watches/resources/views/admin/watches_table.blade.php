@@ -5,7 +5,7 @@
 
 <div class="container">
 
-	<h1>Table Name: <em>Watches</em></h1>
+	<h1>Table Name: <em>{{ $title }}</em></h1>
 
 <!-- this is the table --> 
 	<p><button type="button" class="btn btn-success"> Add + </button></p>
@@ -23,18 +23,19 @@
 
 	    </tr>
 	  </thead>
+	  @foreach($watches as $watch)
 	  <tbody>
 	    <tr>
-	      <th scope="row">1</th>
-	      <th>145678</th>
-	      <td>Mark</td>
-	      <td>$ 199.99</td>
-	      <td>$ 299.99</td>
-	      <td>Gold</td>
+	      <th scope="row">1{{ $watch->id }}</th>
+	      <th>{{ $watch->SKU }}</th>
+	      <td>{{ $watch->watch_name }}</td>
+	      <td>$ {{ $watch->price }}</td>
+	      <td>$ {{ $watch->cost }}</td>
+	      <td>{{ $watch->material }}</td>
 	      <td><button type="button" class="btn btn-primary">Edit</button></td>
 	      <td><button type="button" class="btn btn-danger">Delete</button></td>
 	    </tr>
-	    <tr>
+	    <!-- <tr>
 	      <th scope="row">2</th>
 	      <th>145678</th>
 	      <td>Mark</td>
@@ -43,8 +44,8 @@
 	      <td>Gold</td>
 	      <td><button type="button" class="btn btn-primary">Edit</button></td>
 	      <td><button type="button" class="btn btn-danger">Delete</button></td>
-	    </tr>
-	    <tr>
+	    </tr> -->
+	    <!-- <tr>
 	      <th scope="row">3</th>
 	      <th>145678</th>
 	      <td>Mark</td>
@@ -53,8 +54,9 @@
 	  	  <td>Gold</td>
 	      <td><button type="button" class="btn btn-primary">Edit</button></td>
 	      <td><button type="button" class="btn btn-danger">Delete</button></td>
-	    </tr>
+	    </tr> -->
 	  </tbody>
+	  @endforeach
 	</table>
 	<!-- end of the table-->
 </div>

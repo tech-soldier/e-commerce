@@ -4,16 +4,36 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Watch;
+use App\Category;
+use App\Order; 
+
 class AdminController extends Controller
 {
     public function watches()
     {
-        return view('/admin/watches_table');
+
+    	$watches = Watch::all();
+        //$categories = Category::all();
+        $title = "Watches";
+
+        return view('/admin/watches_table', compact('watches', 'title'));
+        
+
+
+        //return view('/admin/watches_table');
     }
 
     public function orders()
     {
-        return view('/admin/orders_table');
+    	$orders = Order::all();
+        //$categories = Category::all();
+        $title = "Orders";
+
+        return view('/admin/orders_table', compact('orders', 'title'));
+
+
+        //return view('/admin/orders_table');
     }
 
     public function customers()
