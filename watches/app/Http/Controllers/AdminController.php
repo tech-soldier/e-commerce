@@ -75,6 +75,5 @@ class AdminController extends Controller
         $title = "Categories";
 
         return view('/admin/categories_table', compact('categories', 'title'));
-        return view('/admin/categories_table');
     }
 }
