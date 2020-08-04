@@ -11,11 +11,11 @@ class WatchController extends Controller
 
     public function homeIndex()
     {
-        $luxury = Watch::with('category_name')->latest()->get();
+        $watches = Watch::with('category_name')->latest()->get();
         $categories = Category::all();
         $title = "TechWatch Home";
 
-        return view('watchhome', compact('luxury', 'categories', 'title'));
+        return view('watchhome', compact('watches', 'categories', 'title'));
     }
 
     /**
