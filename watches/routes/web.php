@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', 'PagesController@watchhome');
+// Route::get('/', 'PagesController@watchhome');
 
 Route::get('/about', 'PagesController@about');
 
@@ -28,7 +28,11 @@ Route::get('/cart', 'PagesController@cart');
 
 Route::get('add-to-cart/{id}', 'CartController@addToCart');
 
+
+Route::get('/', 'WatchController@homeIndex');
+
 Route::delete('remove-from-cart', 'CartController@remove');
+
 
 
 

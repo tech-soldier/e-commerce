@@ -5,9 +5,21 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Watch;
 use App\Category;
+use App\DB;
 
 class WatchController extends Controller
 {
+
+    public function homeIndex()
+    {
+        $categories = Category::all();
+        $two = '2';
+        $watches = \DB::select(\DB::raw("select * from watches where category_id= :two"), array('two' => $two));
+        $title = "TechWatch Home";
+
+        return view('watchhome', compact('categories', 'watches', 'title'));
+    }
+
     /**
      * Display a listing of the resource.
      *
