@@ -40,5 +40,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // this is all for the admin side 
 
-Route::get('/admin/watches_table', '/Admin/WatchesController@watches_table'); 
+Route::get('/admin/watches_table', 'AdminController@watches'); 
 
