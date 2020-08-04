@@ -11,7 +11,7 @@ class WatchController extends Controller
 
     public function homeIndex()
     {
-        $watches = Watch::with('category_name')->latest()->get();
+        $watches = Watch::all();
         $categories = Category::all();
         $title = "TechWatch Home";
 
