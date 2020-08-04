@@ -18,13 +18,13 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([
         	'watch_id' => 1, 
         	'SKU' => 22567959,
-        	'watch_name' => 'Bamity', 
+        	'watch_name' => 'AIR-KING', 
         	'in_stock' => 1, 
         	'quantity' => 26, 
         	'price' => 1399.99, 
         	'cost' => 1799.99, 
         	'material' => 'gold', 
-        	'main_color' => 'gold', 
+        	'main_color' => 'silver', 
         	'movement' => 'quartz', 
         	'gender' => 'male', 
         	'category_id' => 2, 
@@ -33,9 +33,9 @@ class SeedWatchesTable extends Seeder
         	'strap_width' => '18mm', 
         	'weight' => '122g', 
         	'water_resistant' => '3 atm', 
-        	'cover_img' => 'product1.jpg', 
-        	'short_description' => 'The beatifully crafted Bamity and designed to be apart of our luxury classics collection.', 
-        	'long_description' => 'Created in 1945, the Bamity was the first self-winding waterproof chronometer wristwatch to display the date in a window at 3 o’clock on the dial – hence its name. With its timeless aesthetics, functions and rich history, the Bamity is a watchmaking icon and one of the brand’s most recognizable watches.', 
+        	'cover_img' => 'AIR-KING.jpg', 
+        	'short_description' => 'The Oyster Perpetual Air-King pays tribute to the pioneers of flight and the Oyster’s roles in the epic story of aviation.', 
+        	'long_description' => 'With its 40 mm case in Oystersteel, solid-link Oyster bracelet with Oysterclasp, and distinctive Black dial, the Air-King perpetuates the aeronautical heritage of the original Rolex Oyster.', 
         	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]); 
@@ -43,7 +43,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([
         	'watch_id' => 2, 
         	'SKU' => 22567950,
-        	'watch_name' => 'Vagram', 
+        	'watch_name' => 'BLUE-DWELLER', 
         	'in_stock' => 1, 
         	'quantity' => 89, 
         	'price' => 1699.99, 
@@ -58,9 +58,9 @@ class SeedWatchesTable extends Seeder
         	'strap_width' => '21mm', 
         	'weight' => '132g', 
         	'water_resistant' => '10 atm', 
-        	'cover_img' => 'vagram.jpg', 
-        	'short_description' => 'The beatifully crafted vagram and designed to be apart of our quartz classics collection.', 
-        	'long_description' => 'Created in 2011, the Vagram was the first titanium wristwatch to display a customized name in the back of the dial. With its timeless aesthetics, functions and rich history, the Vagram is a watchmaking icon and one of the most trendiest look for today.', 
+        	'cover_img' => 'BLUE-DWELLER.jpg', 
+        	'short_description' => 'Yellow Rolesor with a Blue Cerachrom bezel and a blue dial with large luminescent hour markers.', 
+        	'long_description' => 'It features a unidirectional rotatable bezel with Cerachrom insert and solid-link Oyster bracelet. The latest generation Submariner and Submariner Date remain faithful to the original model launched in 1953. In watchmaking, the Submariner represented a historic turning point; it set the standard for divers’ watches.', 
         	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]); 
@@ -68,7 +68,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([
         	'watch_id' => 3, 
         	'SKU' => 22567900,
-        	'watch_name' => 'Quo Lux', 
+        	'watch_name' => 'CELLINI', 
         	'in_stock' => 1, 
         	'quantity' => 12, 
         	'price' => 599.99, 
@@ -83,9 +83,9 @@ class SeedWatchesTable extends Seeder
         	'strap_width' => '23mm', 
         	'weight' => '92g', 
         	'water_resistant' => '3 atm', 
-        	'cover_img' => 'quolux.jpg', 
-        	'short_description' => 'The beatifully crafted Quo Lux and designed to be apart of our stainless steel classics collection.', 
-        	'long_description' => 'Created in 2020, the Vagram was the first stainless wristwatch to be waterproof within 30 meters of depth. With its seemless and glass-like aesthetics, the Quo Lux is both a luxiourious and sporty catch.', 
+        	'cover_img' => 'CELLINI.jpg', 
+        	'short_description' => 'The Cellini collection celebrates the eternal elegance of traditional timepieces with a contemporary touch; the name was inspired by the Italian Renaissance artist, Benvenuto Cellini.', 
+        	'long_description' => 'This collection combines the best of Rolex know-how and its high standards of perfection with an approach that heightens watchmaking heritage in its most timeless form. The lines of the Cellini models are sober and refined, the materials noble, the finishings luxurious: every detail respects the codes of the art of watchmaking.', 
         	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]); 
@@ -93,7 +93,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([
         	'watch_id' => 4, 
         	'SKU' => 22567000,
-        	'watch_name' => 'Alphazap', 
+        	'watch_name' => 'COSMOGRAPH DAYTONA', 
         	'in_stock' => 1, 
         	'quantity' => 200, 
         	'price' => 199.99, 
@@ -108,9 +108,9 @@ class SeedWatchesTable extends Seeder
         	'strap_width' => '20mm', 
         	'weight' => '45g', 
         	'water_resistant' => '3 atm', 
-        	'cover_img' => 'alphazap.jpg', 
-        	'short_description' => 'Heir to the original model, the Alphazap was unveiled in 1982, with a new movement ensuring ease of use.', 
-        	'long_description' => 'Designed to show the time in two different time zones simultaneously, the GMT-Master, launched in 1955, was originally developed as a navigation instrument for professionals criss-crossing the globe.', 
+        	'cover_img' => 'COSMOGRAPH DAYTONA.jpg', 
+        	'short_description' => 'The Oyster Perpetual Cosmograph Daytona is the ultimate tool watch for those with a passion for driving and speed.', 
+        	'long_description' => 'Introduced in 1963, the Cosmograph Daytona was designed to meet the demands of professional racing drivers. It is an icon forever joined in name and function to the high-performance world of motor sport. More than 50 years after its creation, the Cosmograph Daytona remains in a class of its own among sport chronographs and continues to transcend time.', 
         	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]); 
@@ -118,7 +118,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([
         	'watch_id' => 5, 
         	'SKU' => 22567100,
-        	'watch_name' => 'Transcof', 
+        	'watch_name' => 'DATEJUST', 
         	'in_stock' => 1, 
         	'quantity' => 20, 
         	'price' => 1999.99, 
@@ -133,9 +133,9 @@ class SeedWatchesTable extends Seeder
         	'strap_width' => '20mm', 
         	'weight' => '45g', 
         	'water_resistant' => '3 atm', 
-        	'cover_img' => 'alphazap.jpg', 
-        	'short_description' => 'The Oyster Perpetual Transcof was launched in 1955', 
-        	'long_description' => 'It even became the official watch of Pan American World Airways – better known as Pan Am – then the most prominent American intercontinental airline.', 
+        	'cover_img' => 'DATEJUST.jpg', 
+        	'short_description' => 'The Oyster Perpetual Datejust is the epitome of the classic Rolex watch. ', 
+        	'long_description' => 'Created in 1945, the Datejust was the first self-winding waterproof chronometer wristwatch to display the date in a window at 3 o’clock on the dial – hence its name. With its timeless aesthetics, functions and rich history, the Datejust is a watchmaking icon and one of the brand’s most recognizable watches.', 
         	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]); 
@@ -144,7 +144,7 @@ class SeedWatchesTable extends Seeder
 
         DB::table('watches')->insert([ 
         	'SKU' => 22567900,
-        	'watch_name' => 'Cardify', 
+        	'watch_name' => 'DAY-DATE', 
         	'in_stock' => 1, 
         	'quantity' => 20, 
         	'price' => 1999.99, 
@@ -159,16 +159,16 @@ class SeedWatchesTable extends Seeder
         	'strap_width' => '25mm', 
         	'weight' => '95g', 
         	'water_resistant' => '13 atm', 
-        	'cover_img' => 'cardify.jpg', 
-        	'short_description' => 'Launch of the Cardify II. The new movement allowed the hour hand to be set independently.', 
-        	'long_description' => 'Over the years, the insert has been made available in different colour combinations. Initially made from Plexiglas, it was replaced by anodized rosegold lauminum in 1959 and high-technology ceramic in 2020', 
+        	'cover_img' => 'DAY-DATE.jpg', 
+        	'short_description' => 'Launched in 1956, the Day-Date made its debut as the first waterproof and self-winding chronometer wristwatch.', 
+        	'long_description' => 'The exceptional precision, reliability, legibility and presence of this prestigious model has made it the ultimate status watch. It is offer a modern calendar with an instantaneous day display, spelt out in full in a window on the dial, in addition to the date.', 
         	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]); 
 
         DB::table('watches')->insert([ 
         	'SKU' => 22567980,
-        	'watch_name' => 'Bezeld III', 
+        	'watch_name' => 'EXPLORER', 
         	'in_stock' => 1, 
         	'quantity' => 20, 
         	'price' => 1999.99, 
@@ -183,9 +183,9 @@ class SeedWatchesTable extends Seeder
         	'strap_width' => '19mm', 
         	'weight' => '99g', 
         	'water_resistant' => '5 atm', 
-        	'cover_img' => 'bezeld.jpg', 
-        	'short_description' => 'In 2005, Bezeld III replaced the Rolex and inserted in aluminium with gold – a further innovation.', 
-        	'long_description' => 'Since then– for optimal legibility – the numerals and graduations have been moulded into the ceramic and then coated with a thin layer of gold or platinum via PVD (Physical Vapour Deposition). ', 
+        	'cover_img' => 'EXPLORER.jpg', 
+        	'short_description' => 'The Oyster Perpetual Explorer and Oyster Perpetual Explorer II evolved from Rolex’s deep involvement with exploration. They go where few people venture.', 
+        	'long_description' => 'The brand was able to test these watches in real life by equipping polar, mountaineering and caving expeditions over many years. Some of the world’s most intrepid explorers, mountaineers and scientists took Explorer and Explorer II watches to places that tested their reliability in the toughest conditions.', 
         	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
