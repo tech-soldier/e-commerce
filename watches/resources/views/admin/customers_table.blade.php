@@ -5,56 +5,39 @@
 
 <div class="container">
 
-	<h1>Table Name: <em>Customers</em></h1>
+	<h1>Table Name: <em>{{ $title }}</em></h1>
 
 <!-- this is the table --> 
 	<p><button type="button" class="btn btn-success"> Add + </button></p>
 	<table class="table table-striped">
 	  <thead class="thead-dark">
 	    <tr>
-	      <th scope="col">watch ID</th>
-	      <th scope="col">SKU</th>
-	      <th scope="col">Watch name</th>
-	      <th scope="col">Price</th>
-	      <th scope="col">Cost</th>
-	      <th scope="col">Material</th>
+	      <th scope="col">Customer ID</th>
+	      <th scope="col">First Name</th>
+	      <th scope="col">Last Name</th>
+	      <th scope="col">Email Address</th>
+	      <th scope="col">Phone Number</th>	      
+	      <th scope="col">Postal Code</th>
 	      <th scope="col">Edit</th>
 	      <th scope="col">Delete</th>
 
 	    </tr>
 	  </thead>
+	  @foreach($customers as $customer)
 	  <tbody>
 	    <tr>
-	      <th scope="row">1</th>
-	      <th>145678</th>
-	      <td>Mark</td>
-	      <td>$ 199.99</td>
-	      <td>$ 299.99</td>
-	      <td>Gold</td>
-	      <td><button type="button" class="btn btn-primary">Edit</button></td>
-	      <td><button type="button" class="btn btn-danger">Delete</button></td>
-	    </tr>
-	    <tr>
-	      <th scope="row">2</th>
-	      <th>145678</th>
-	      <td>Mark</td>
-	      <td>$ 199.99</td>
-	      <td>$ 299.99</td>
-	      <td>Gold</td>
-	      <td><button type="button" class="btn btn-primary">Edit</button></td>
-	      <td><button type="button" class="btn btn-danger">Delete</button></td>
-	    </tr>
-	    <tr>
-	      <th scope="row">3</th>
-	      <th>145678</th>
-	      <td>Mark</td>
-	      <td>$ 199.99</td>
-	      <td>$ 299.99</td>
-	  	  <td>Gold</td>
+	      <th scope="row">{{ $customer->customer_id }}</th>
+	      <th>{{ $customer->first_name }}</th>
+	      <td>{{ $customer->last_name }}</td>
+	      <td>{{ $customer->email_address }}</td>
+	      <td>{{ $customer->phone_number }}</td>
+	      <td>{{ $customer->postal_code }}</td>
 	      <td><button type="button" class="btn btn-primary">Edit</button></td>
 	      <td><button type="button" class="btn btn-danger">Delete</button></td>
 	    </tr>
 	  </tbody>
+	  @endforeach
+
 	</table>
 	<!-- end of the table-->
 </div>
