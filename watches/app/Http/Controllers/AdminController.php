@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Watch;
 use App\Category;
 use App\Order; 
+use App\Customer; 
+
 
 class AdminController extends Controller
 {
@@ -27,7 +29,11 @@ class AdminController extends Controller
     public function orders()
     {
     	$orders = Order::all();
-        //$categories = Category::all();
+
+    	// $watch_id = Watch::all(); 
+
+    	// $customer_id = Customer::all(); 
+
         $title = "Orders";
 
         return view('/admin/orders_table', compact('orders', 'title'));
