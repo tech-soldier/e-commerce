@@ -42,24 +42,27 @@ class WatchesController extends Controller
 
 		]); 
  
-  // 		if(!empty($valid['image'])) {
-  //           //get the uploaded file
-  //           $file = $request->file('image');
+  		if(!empty($valid['image'])) {
+            //get the uploaded file
+            $file = $request->file('image');
 
-  //           //get the original filename
-  //           //concatenate time so if same file uploaded, won't be overridden
-  //           $image = time() . '_' . $file->getClientOriginalName();
+            //get the original filename
+            //concatenate time so if same file uploaded, won't be overridden
+            $image = time() . '_' . $file->getClientOriginalName();
 
-  //           //save the image
-  //           $path = $file->storeAs('images', $image);
-  //       }
+            //save the image
+            $path = $file->storeAs('images', $image);
+        }
 
-        BasketballPlayer::create([
+        Watch::create([
         	'SKU' => $valid['SKU'], 
 			'watch_name' => $valid['watch_name'], 
 			'in_stock' => $valid['in_stock'], 
 			'quantity' => $valid['quantity'], 
 			'price'=> $valid['price'],
+			'cost'=> $valid['cost'],
+			'material'=> $valid['material'],
+			'movement'=> $valid['movement'],
 			'gender' => $valid['gender'], 
 			'category_id' => $valid['category_id'],
 			'diameter' => $valid['diameter'], 
@@ -73,6 +76,7 @@ class WatchesController extends Controller
 
         ]); 
 
-     	   return redirect('/admin/watches_table')->with('success', 'Watch was successfully created'); 
+        	//return redirect('/admin/'); 
+     	    return redirect('/admin/watches_table')->with('success', 'Watch was successfully created'); 
 	}
 }
