@@ -80,18 +80,18 @@
                                 </div>
                                 <ul>
                                     <li class="tech-specs__menu-item-name">Strap length: {{$watch->strap_length}}</li>
-                                    <li class="tech-specs__menu-items">Spanish (Latin America)</li>
-                                    <li class="tech-specs__menu-items">English</li>
-                                    <li class="tech-specs__menu-items">Portuguese (Brazil)</li>
-                                    <li class="tech-specs__menu-items">French</li>
+                                    <li class="tech-specs__menu-items">Strap width: {{$watch->strap_width}}</li>
+                                    <li class="tech-specs__menu-items">Diameter: {{$watch->diameter}}mm</li>
+                                    <li class="tech-specs__menu-items">Weight: {{$watch->weight}}</li>
+                                    
                                 </ul>
-                                <div class="tech-specs__menu-header">Subtitles</div>
+                                <div class="tech-specs__menu-header">Specs</div>
                                 <ul>
-                                    <li class="tech-specs__menu-item-name">The Art of The Gran Turismo 79</li>
-                                    <li class="tech-specs__menu-items">Spanish (Latin America)</li>
-                                    <li class="tech-specs__menu-items">English</li>
-                                    <li class="tech-specs__menu-items">Portuguese (Brazil)</li>
-                                    <li class="tech-specs__menu-items">French</li>
+                                    <li class="tech-specs__menu-item-name">Water resistance {{$watch->water_resistant}}</li>
+                                    <li class="tech-specs__menu-items">Movement: {{$watch->movement}}</li>
+                                    <li class="tech-specs__menu-items">Gender: {{$watch->gender}}</li>
+                                    <li class="tech-specs__menu-items">Material: {{$watch->material}}</li>
+                                    <li class="tech-specs__menu-items">Main color: {{$watch->main_color}}</li>
                                 </ul>
                                 <ul>
                                     <li class="tech-specs__menu-item-name">The Gran Turismo 79 Original Soundtrack</li>
