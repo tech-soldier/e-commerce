@@ -104,4 +104,17 @@ class WatchController extends Controller
         $title = 'contact';
         return view('contact');
     }
+
+    /**
+     * Display profile page with previous orders
+     *
+     * @return view 'profile'
+     */
+    public function profile()
+    {
+        $title = 'Profile';
+        return view('/profile', compact('title'));
+    }    
+
+
 }
