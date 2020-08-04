@@ -24,7 +24,6 @@
         </div>
         <!-- /. Categories -->
         <div class="row justify-content-center">
-
             @foreach($watches as $watch)
             <!-- Single Product -->
             <div class="col-2 text-center bord">
@@ -46,7 +45,11 @@
                     <div class="add_quick_wrapper d-flex">
                         <!-- Quick View -->
                         <div class="shop-view product_quick_view text-center">
-                            <a href="#"> Quick View</a>
+                            <a href="/{{$watch->id}}/detail"> Quick View</a>
+                        </div>
+                        <!-- Add to cart -->
+                        <div class="shop-view product_quick_view_shop text-center">
+                            <a href="add-to-cart/{{ $watch->watch_id }}" data-id="{{ $watch->watch_id }}" class="btn btn-warning btn-block text-center add-to-cart" role="button">Add to cart</a>
                         </div>
                         <!-- Add to cart -->
                         <div class="shop-view product_quick_view text-center">
@@ -56,9 +59,6 @@
                 </div>
             </div>
             @endforeach
-
-                </div>
-            </div>
 
         </div> <!-- /. row -->
     </div> <!-- /. container -->

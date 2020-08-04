@@ -16,10 +16,10 @@ class WatchController extends Controller
     public function index()
     {
         $watches = Watch::all();
-        // $categories = Category::all();
+        $categories = Category::all();
         $title = "Shop";
 
-       return view('shop', compact('watches', 'title'));
+       return view('shop', compact('watches', 'categories', 'title'));
         
         
     }
@@ -53,7 +53,12 @@ class WatchController extends Controller
      */
     public function show($id)
     {
-        //
+        $watch=Watch::find($id);
+        $watches=Watch::all();
+        $categories = Category::all();
+        $title = 'Detail';
+
+        return view('/detail', compact('watch','title','watches', 'categories'));
     }
 
     /**

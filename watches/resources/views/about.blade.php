@@ -50,6 +50,6 @@
             </div> <!-- /. row -->
         </div> <!-- /. container -->
     </section> <!-- /. about us -->
-    @include('partials/features')
+  
     
 @stop
