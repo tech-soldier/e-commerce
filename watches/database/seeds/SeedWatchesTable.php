@@ -192,7 +192,7 @@ class SeedWatchesTable extends Seeder
 
         DB::table('watches')->insert([ 
         	'SKU' => 22567980,
-        	'watch_name' => 'Viva', 
+        	'watch_name' => 'GMT-MASTER', 
         	'in_stock' => 1, 
         	'quantity' => 21, 
         	'price' => 678.99, 
@@ -207,16 +207,16 @@ class SeedWatchesTable extends Seeder
         	'strap_width' => '11mm', 
         	'weight' => '111g', 
         	'water_resistant' => '10 atm', 
-        	'cover_img' => 'viva.jpg', 
-        	'short_description' => 'The Viva\'s unidirectional rotatable bezel is key to the functionality of the watch. Its engraved 60-minute graduation allows a diver to monitor diving time and decompression stops accurately and therefore safely..', 
-        	'long_description' => 'Manufactured by PseudoClass from a hard, corrosion-resistant stainless steel, the Cerachrom Viva insert is virtually scratchproof and its colour is unaffected by ultraviolet rays, seawater or water that is chlorinated.', 
+        	'cover_img' => 'GMT-MASTER II.jpg', 
+        	'short_description' => 'Designed to show the time in two different time zones simultaneously, the GMT-Master, launched in 1955, was originally developed as a navigation instrument for professionals criss-crossing the globe.', 
+        	'long_description' => 'Heir to the original model, the GMT-Master II was unveiled in 1982, with a new movement ensuring ease of use. Its combination of peerless functionality, robustness and instantly recognizable aesthetics has attracted a wider audience of world travellers.', 
         	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]); 
 
         DB::table('watches')->insert([ 
         	'SKU' => 22561980,
-        	'watch_name' => 'Flexidy', 
+        	'watch_name' => 'LADY-DATEJUST', 
         	'in_stock' => 1, 
         	'quantity' => 201, 
         	'price' => 1299.99, 
@@ -231,16 +231,16 @@ class SeedWatchesTable extends Seeder
         	'strap_width' => '24mm', 
         	'weight' => '129g', 
         	'water_resistant' => '0 atm', 
-        	'cover_img' => 'flexidy.jpg', 
-        	'short_description' => 'Scratch-proof titanium had never existed before, so TechWatch invented it.', 
-        	'long_description' => 'Flexidy is a gorgeous model in both strength and simplicity. Developed and patented by the Manufacture, Magic titanium is the first and only 2K gold alloy in the world that perfectly withstands scratches, even with an extremely active lifestyle. It maintains its beauty, shine and polished appearance over time. A true revolution in the world of precious materials.', 
+        	'cover_img' => 'LADY-DATEJUST.jpg', 
+        	'short_description' => 'With its refined glamour, Rolex’s classic women’s watch, the Lady-Datejust, stands for style and technical performance.', 
+        	'long_description' => 'The women’s version of the emblematic Datejust, created in 1945, was unveiled in 1957. With all its timeless elegance and functionality, it is today offered in a petite 28 mm size.', 
         	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]); 
 
         DB::table('watches')->insert([ 
         	'SKU' => 22561980,
-        	'watch_name' => 'Daltfresh', 
+        	'watch_name' => 'MILGAUSS', 
         	'in_stock' => 1, 
         	'quantity' => 201, 
         	'price' => 2299.99, 
@@ -255,9 +255,9 @@ class SeedWatchesTable extends Seeder
         	'strap_width' => '25mm', 
         	'weight' => '145g', 
         	'water_resistant' => '2 atm', 
-        	'cover_img' => 'daltfresh.jpg', 
-        	'short_description' => 'The Daltfresh in 18 ct Everose gold with an Oyster bracelet.', 
-        	'long_description' => 'This model features a gorgeous dial and a gold and black Cerachrom bezel. Designed to show the time in two different time zones simultaneously during intercontinental flights, the Daltfresh has come to be recognized for its robustness and versatile appearance.', 
+        	'cover_img' => 'MILGAUUSS.jpg', 
+        	'short_description' => 'The Oyster Perpetual Milgauss is a pioneering anti-magnetic watch designed to meet the demands of engineers and scientists.', 
+        	'long_description' => 'Created in 1956, it can withstand magnetic fields of up to 1,000 gauss. Hence its name, “mille”, which is French for one thousand. The first watch of its kind, the Milgauss combines unique aesthetics and scientific heritage.', 
         	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]); 
@@ -265,7 +265,7 @@ class SeedWatchesTable extends Seeder
         // next 5 will be all material: silicone rubber 
         DB::table('watches')->insert([ 
             'SKU' => 23561980,
-            'watch_name' => 'Asoka', 
+            'watch_name' => 'MILGAUUSS', 
             'in_stock' => 1, 
             'quantity' => 1222, 
             'price' => 219.99, 
@@ -280,16 +280,16 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '25mm', 
             'weight' => '15g', 
             'water_resistant' => '19 atm', 
-            'cover_img' => 'asoka.jpg', 
-            'short_description' => 'The Asoka watch bracelet refined and upgraded.', 
-            'long_description' => 'The Asoka model conveys sporty and elegant at the same time while providing waterproof for over 19 meters below water. Our latest watch made of silicone rubber to provide a lightweight and practical everyday watch', 
+            'cover_img' => 'MILGAUUSS.jpg', 
+            'short_description' => 'The Oyster Perpetual Milgauuss is a pioneering anti-magnetic watch designed to meet the demands of engineers and scientists.', 
+            'long_description' => 'Created in 1958, it can withstand magnetic fields of up to 1,400 gauss. Hence its name, “mille”, which is French for one thousand. The first watch of its kind, the Milgauuss combines unique aesthetics and scientific heritage.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]); 
 
         DB::table('watches')->insert([ 
             'SKU' => 20361980,
-            'watch_name' => 'Opela', 
+            'watch_name' => 'OYSTER PERPETUAL', 
             'in_stock' => 1, 
             'quantity' => 92, 
             'price' => 211.99, 
@@ -304,16 +304,16 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '24mm', 
             'weight' => '16g', 
             'water_resistant' => '19 atm', 
-            'cover_img' => 'opela.jpg', 
-            'short_description' => 'The Opela 2020 series introduces a blend of critical and robust complexity and simplicity.', 
-            'long_description' => 'The Opela model features a smart feature that allows for phone calls, music, and more. Our latest watch made of silicone rubber to provide a lightweight and practical everyday watch', 
+            'cover_img' => 'OYSTER PERPETUAL.jpg', 
+            'short_description' => 'The Oyster Perpetual is the purest expression of the Oyster concept, providing a clear and accurate time display.', 
+            'long_description' => 'This watch is the direct descendant of the original Oyster launched in 1926, the first waterproof wristwatch in the world and the foundation on which Rolex has built its reputation.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]); 
 
         DB::table('watches')->insert([ 
             'SKU' => 20001980,
-            'watch_name' => 'Wrapsafe', 
+            'watch_name' => 'PEARLMASTER', 
             'in_stock' => 1, 
             'quantity' => 9, 
             'price' => 249.99, 
@@ -328,16 +328,16 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '20mm', 
             'weight' => '19g', 
             'water_resistant' => '22 atm', 
-            'cover_img' => 'wrapsafe.jpg', 
-            'short_description' => 'The Wrapsafe 2020 series provides comfort and security.', 
-            'long_description' => 'The Wrapsafe model is meant for outdoor activities, meant for everyday use, meant for it to be tossed and turned and bodied. Through and through, although the Wrapsafe is lightweight, do not let it fool you into thinking it won\'t last.  Our second latest watch made of silicone rubber to provide a lightweight and practical everyday watch', 
+            'cover_img' => 'PEARLMASTER.jpg', 
+            'short_description' => 'The Oyster Perpetual Pearlmaster holds a special place in the Oyster collection', 
+            'long_description' => 'It represents the height of exquisiteness, with precious metals and gemstones. As a watchmaking jewel expressing refinement and elegance.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]); 
 
         DB::table('watches')->insert([ 
             'SKU' => 20001985,
-            'watch_name' => 'Bitwold', 
+            'watch_name' => 'SEA-DWELLER', 
             'in_stock' => 1, 
             'quantity' => 9, 
             'price' => 1249.99, 
@@ -352,16 +352,16 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '21mm', 
             'weight' => '29g', 
             'water_resistant' => '30 atm', 
-            'cover_img' => 'bitwold.jpg', 
-            'short_description' => 'Hight quality silicone Material, very soft and durable enough to avoid the slipping-off problem,sweat-resistant and waterproof,Perfect fit for sport wear.', 
-            'long_description' => 'The Bitwold model is meant for outdoor activities, meant for everyday use, meant for it to be tossed and turned and bodied. Through and through, although the Wrapsafe is lightweight, do not let it fool you into thinking it won\'t last.  Our third latest watch made of silicone rubber to provide a lightweight and practical everyday watch', 
+            'cover_img' => 'SEA-DWELLER.jpg', 
+            'short_description' => 'The Sea-Dweller and Rolex Deepsea are ultra-resistant divers’ watches engineered by Rolex for deep-sea exploration.', 
+            'long_description' => 'Waterproof to a depth of 4,000 feet (1,220 metres) for the Rolex Sea-Dweller, launched in 1967, and 12,800 feet (3,900 metres) for the Rolex Deepsea unveiled in 2008, they are the ultimate manifestation of Rolex’s leadership in divers’ watches and the result of decades of collaboration with diving professionals. In 2014 Rolex released a special version of the model, the Rolex Deepsea with a D-blue dial, to commemorate James Cameron’s historic solo dive to the bottom of the Mariana Trench, some 11,000 metres deep. From twilight blue to bottomless black, its two-colour gradient dial celebrates one man’s journey to the deepest place on Earth.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]); 
 
         DB::table('watches')->insert([ 
             'SKU' => 20001911,
-            'watch_name' => 'Tresom', 
+            'watch_name' => 'SKY-DWELLER', 
             'in_stock' => 1, 
             'quantity' => 771, 
             'price' => 299.99, 
@@ -376,9 +376,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '25mm', 
             'weight' => '29g', 
             'water_resistant' => '30 atm', 
-            'cover_img' => 'tresom.jpg', 
-            'short_description' => 'This is a genuine TechWatch Tresom silicone rubber watch strap.', 
-            'long_description' => 'POLISHED AND SATIN-FINISHED LIGHT BLUE automatic Tresom. TechWatch\'s strength resides in its very clear identity - the art of fusion - this unique ability to create timepieces which combine tradition and innovation', 
+            'cover_img' => 'SKY-DWELLER.jpg', 
+            'short_description' => 'The Oyster Perpetual Sky-Dweller is a timepiece with a unique design that blends technological sophistication and ease of use.', 
+            'long_description' => 'It features an innovative annual calendar called Saros and a dual time zone display, making it the ideal watch for world travellers.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]); 
@@ -387,7 +387,7 @@ class SeedWatchesTable extends Seeder
 
         DB::table('watches')->insert([ 
             'SKU' => 20001911,
-            'watch_name' => 'Duobam', 
+            'watch_name' => 'SUBMARINER', 
             'in_stock' => 1, 
             'quantity' => 755, 
             'price' => 299.99, 
@@ -402,16 +402,16 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '25mm', 
             'weight' => '129g', 
             'water_resistant' => '3 atm', 
-            'cover_img' => 'duobam.jpg', 
-            'short_description' => 'This is a real silver TechWatch Duobam series presenting you with An unparalleled power reserve of Meca-10, Tourbillon and MP-11 calibers. A revolutionary motor approach with 11 MP-05 barrels and 50-day power reserve.', 
-            'long_description' => 'In its Art of Fusion, Duobam carries out a perfect symbiosis between functionality, architecture and design.', 
+            'cover_img' => 'SUBMARINER.jpg', 
+            'short_description' => 'The Oyster Perpetual Submariner is a reference among divers’ watches; it is the watch that unlocked the deep.', 
+            'long_description' => 'Launched in 1953, the Submariner was the first divers’ wristwatch waterproof to a depth of 100 metres (330 feet). This was the second great breakthrough in the technical mastery of waterproofness, following the invention of the Oyster, the world’s first waterproof wristwatch, in 1926. In watchmaking, the Submariner represented a historic turning point; it set the standard for divers’ watches.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
 
         DB::table('watches')->insert([ 
             'SKU' => 20071911,
-            'watch_name' => 'Keylex I', 
+            'watch_name' => 'SWISS ARMY', 
             'in_stock' => 1, 
             'quantity' => 55, 
             'price' => 2199.99, 
@@ -426,16 +426,16 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '25mm', 
             'weight' => '149g', 
             'water_resistant' => '3 atm', 
-            'cover_img' => 'keylex.jpg', 
-            'short_description' => 'The first 100% TechWatch House movement, the Keylex I caliber has designed a new face for the quartz chronograph.', 
-            'long_description' => 'A 10-day power reserve and atypical display with rack and pinion. Sapphire with Anti-reflective Treatment', 
+            'cover_img' => 'SWISS ARMY.jpg', 
+            'short_description' => 'The Oyster Perpetual Rolex Deepsea in Oystersteel with a black ceramic bezel and an Oyster bracelet.', 
+            'long_description' => 'It features a black dial and large luminescent hour markers. Waterproof to a depth of 12,800 feet (3,900 metres) with a unidirectional 60-minute rotatable bezel, the Rolex Deepsea is amongst the ultra-resistant divers’ watches engineered by Rolex for deep-sea exploration. ', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
 
         DB::table('watches')->insert([ 
             'SKU' => 29301911,
-            'watch_name' => 'Veribet', 
+            'watch_name' => 'SWISS QUARTZ', 
             'in_stock' => 1, 
             'quantity' => 55, 
             'price' => 3199.99, 
@@ -450,16 +450,16 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '25mm', 
             'weight' => '149g', 
             'water_resistant' => '3 atm', 
-            'cover_img' => 'veribet.jpg', 
-            'short_description' => 'Transparency, radiance and robustness in unique shadesouse movement, the Keylex I caliber has designed a new face for the quartz chronograph.', 
-            'long_description' => 'POLISHED GOLD SAPPHIRE CRYSTAL. An unrivaled 14-day power reserve supported by seven in-line barrels visible on the dial side.', 
+            'cover_img' => 'SWISS QUARTZ.jpg', 
+            'short_description' => 'This is one of the more affordable variants of the Maverick watch, but not necessarily the best one.', 
+            'long_description' => 'But if you’re not in the mood to spend more than $250 on a watch, then this is just the right model to look at. And that’s Amazon’s pricing – at Victorinox, you’ll have to pay twice that. So, bear that in mind.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
 
         DB::table('watches')->insert([ 
             'SKU' => 29344911,
-            'watch_name' => 'Regrant', 
+            'watch_name' => 'YACHT-MASTER II', 
             'in_stock' => 1, 
             'quantity' => 55, 
             'price' => 3199.99, 
@@ -474,16 +474,16 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '24mm', 
             'weight' => '168g', 
             'water_resistant' => '3 atm', 
-            'cover_img' => 'regrant.jpg', 
-            'short_description' => 'A contemporary style which plays with established codes, a creative universe where elegance rules.', 
-            'long_description' => 'Polished and Satin-finished grey-silver. Black PVD Stainless Steel Deployant Buckle Clasp An unrivaled 14-day power reserve supported by seven in-line barrels visible on the dial side. HUB1131 Self-winding Moonphase Movement', 
+            'cover_img' => 'YACHT-MASTER II.jpg', 
+            'short_description' => 'The Rolex Yacht-Master and Yacht-Master II models embody the spirit of the sailor.', 
+            'long_description' => 'Inspired by the rich heritage that has bound Rolex to the world of sailing since the 1950s, the Yacht-Master blends function and style, while the Yacht-Master II brings together the finest in Rolex technology to create a regatta chronograph built for yachting competition.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
 
         DB::table('watches')->insert([ 
             'SKU' => 89344911,
-            'watch_name' => 'Lotlux', 
+            'watch_name' => 'YATCH-MASTER', 
             'in_stock' => 1, 
             'quantity' => 300, 
             'price' => 14199.99, 
@@ -498,9 +498,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '24mm', 
             'weight' => '368g', 
             'water_resistant' => '0 atm', 
-            'cover_img' => 'lotlux.jpg', 
-            'short_description' => 'Punctuality is key, and this customised Lotlux PseudoSlass series is just what Milad and Dawn Baker presents to help you always stay on time.', 
-            'long_description' => 'Imagined with a matte-gold DLC coating, the 32mm timepiece will make sure you\'re never late again. manufactured by Swiss manufacturer Vacheron Constantin and was released in 2020.', 
+            'cover_img' => 'YATCH-MASTER.jpg', 
+            'short_description' => 'The Rolex Yacht-Master and Yacht-Master models embody the spirit of the sailor.', 
+            'long_description' => 'Inspired by the rich heritage that has bound Rolex to the world of sailing since the 1960s, the Yacht-Master blends function and style, while the Yacht-Master brings together the finest in Rolex technology to create a regatta chronograph built for yachting competition.',
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
@@ -509,7 +509,7 @@ class SeedWatchesTable extends Seeder
 
         DB::table('watches')->insert([ 
             'SKU' => 79344611,
-            'watch_name' => 'Domainer', 
+            'watch_name' => 'OYSTER PERRPETUAL', 
             'in_stock' => 1, 
             'quantity' => 880, 
             'price' => 14199.99, 
@@ -524,9 +524,9 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '24mm', 
             'weight' => '398g', 
             'water_resistant' => '0 atm', 
-            'cover_img' => 'domainer.jpg', 
-            'short_description' => 'The watch has 876 intricate moving parts in total and is housed in a gold case. It measures 30mm in diameter and 20mm thick.', 
-            'long_description' => 'It has a moonphase perpetual calendar, a grande and petite sonnerie with minute repeater, and a split-second chronograph. The release marked the manufacturer’s 250th anniversary. They only manufactured 7 limited edition pieces to maintain exclusivity.', 
+            'cover_img' => 'OYSTER PERRPETUAL.jpg', 
+            'short_description' => 'The Oyster Perrpetual is the purest expression of the Oyster concept, providing a clear and accurate time display.', 
+            'long_description' => 'This watch is the direct descendant of the original Oyster launched in 1926, the first waterproof wristwatch in the world and the foundation on which Rolex has built its reputation.', 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);
