@@ -26,6 +26,8 @@ Route::get('/{watch}/detail', 'WatchController@show');
 
 Route::get('/cart', 'PagesController@cart');
 
+Route::get('add-to-cart/{id}', 'CartController@addToCart');
+
 
 
 /* ----------------------------------------------*/

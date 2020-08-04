@@ -6,16 +6,16 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="{{ Request::is('/') ? "active nav-link": "nav-link" }}" href="/">HOME</a>
+                <a class="{{ Request::is('/') ? " active nav-link": "nav-link" }}" href="/">HOME</a>
             </li>
             <li class="nav-item">
-                <a class="{{ Request::is('shop') ? "active nav-link" : "nav-link" }}" href="/shop">SHOP</a>
+                <a class="{{ Request::is('shop') ? " active nav-link" : "nav-link" }}" href="/shop">SHOP</a>
             </li>
             <li class="nav-item">
-                <a class="{{ Request::is('about') ? "active nav-link": "nav-link" }}" href="/about">ABOUT</a>
+                <a class="{{ Request::is('about') ? " active nav-link": "nav-link" }}" href="/about">ABOUT</a>
             </li>
             <li class="nav-item">
-                <a class="{{ Request::is('contact') ? "active nav-link" : "nav-link" }}" href="/contact">CONTACT</a>
+                <a class="{{ Request::is('contact') ? " active nav-link" : "nav-link" }}" href="/contact">CONTACT</a>
             </li>
         </ul>
 
@@ -27,9 +27,11 @@
             <!-- shopping cart -->
             <div class="ml-2 circle">
                 <a href="/cart"> <i class="fas fa-shopping-cart"></i></a>
+                @if(session('cart'))
                 <div class="sml-circle">
-                    <span class="text-center cart-blue-icon">2</span>
+                    <span class="text-center cart-blue-icon">{{ count((array) session('cart')) }}</span>
                 </div>
+                @endif
             </div>
             <div class="ml-2 circle act-circle">
             </div>
