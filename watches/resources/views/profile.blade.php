@@ -13,8 +13,10 @@
         
         <div class="row pb-3">
             <div class="col-4">
+
                 <!-- this will need to test if there is an image associated -->
                 <img src="images/profile_placeholder.png" alt="" width="100%">
+
             </div>
             <div class="col-8">
                 <ul class="list-group list-group-flush">
@@ -62,7 +64,7 @@
             Total Orders:
             <span class="font-weight-bold"> 3</span>
             <span class="float-right">
-                <button type="button" class="btn btn-outline-light text-uppercase" id="button_orders">my orders</button>
+                <button type="button" class="btn btn-outline-light text-uppercase" id="button_orders">see orders</button>
             </span>
             <span style="display: block; clear: both;"></span>
         </h2>
