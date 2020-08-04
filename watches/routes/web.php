@@ -36,3 +36,20 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+/* -------------------------------------------------- */
+
+// this is all for the admin side 
+
+Route::get('/admin/watches_table', 'AdminController@watches'); 
+
+Route::get('/admin/orders_table', 'AdminController@orders'); 
+
+Route::get('/admin/customers_table', 'AdminController@customers'); 
+
+Route::get('/admin/admin_table', 'AdminController@admin'); 
+
+Route::get('/admin/taxes_table', 'AdminController@taxes'); 
+
+Route::get('/admin/transactions_table', 'AdminController@transactions'); 
+
+Route::get('/admin/categories_table', 'AdminController@categories'); 
