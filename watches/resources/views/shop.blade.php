@@ -49,7 +49,7 @@
                         </div>
                         <!-- Add to cart -->
                         <div class="shop-view product_quick_view_shop text-center">
-                            <a href="add-to-cart/{{ $watch->id }}" data-id="{{ $watch->id }}" class="btn btn-warning btn-block text-center add-to-cart" role="button">Add to cart</a>
+                            <a href="add-to-cart/{{ $watch->id }}" data-id="{{ $watch->id }}" class="btn btn-primary btn-block text-center add-to-cart" role="button">Add to cart</a>
                         </div>
 
                     </div>

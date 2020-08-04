@@ -28,7 +28,7 @@
                 <video autoplay muted loop>
                 <source src="/images/slider_video3.mp4" type="video/mp4" />
                 </video>
-                <button class="shop-btn text-left"> &nbsp; VISIT SHOP &nbsp; &nbsp;&nbsp;<i class="fas fa-arrow-right"></i></button>
+                <a href="/shop"><button class="shop-btn text-left"> &nbsp; VISIT SHOP &nbsp; &nbsp;&nbsp;<i class="fas fa-arrow-right"></i></button></a>
             </div> <!-- /. video container -->
         </div> <!-- /. carousel -->
     </section>
