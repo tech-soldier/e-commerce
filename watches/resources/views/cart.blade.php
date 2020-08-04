@@ -21,12 +21,12 @@
             </thead>
             <tbody>
 
-            <?php $total = 0 ?>
+            <?php $subtotal = 0 ?>
 
             @if(session('cart'))
                 @foreach((array) session('cart') as $id => $details)
 
-                    <?php $total += $details['price'] * $details['quantity'] ?>
+                    <?php $subtotal += $details['price'] * $details['quantity'] ?>
             <tr>
                 <td data-th="Product" class="align-middle">
                     <div class="row">
@@ -52,7 +52,7 @@
             </tbody>
             <tfoot>
             <tr class="visible-xs">
-                <td colspan="5" class="text-right"><strong>Subtotal $<span class="cart-total">244</span></strong></td>
+                <td colspan="5" class="text-right"><strong>Subtotal $<span class="cart-total">{{ $subtotal }}</span></strong></td>
             </tr>
             <tr class="visible-xs">
                 <td colspan="5" class="text-right"><strong>GST $<span class="cart-total">7</span></strong></td>
@@ -63,12 +63,15 @@
             <tr class="visible-xs">
                 <td colspan="5" class="text-right"><strong>Shipping $<span class="cart-total">12</span></strong></td>
             </tr>
+            <tr class="visible-xs">
+                <td colspan="5" class="text-right"><strong>Total $<span class="cart-total"></span></strong></td>
+            </tr>
 
             <tr>
 
-                <td><a href="{{ url('/') }}" class="btn btn-primary"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
-                <td colspan="2" class="hidden-xs"></td>
-                <td colspan="2" class="hidden-xs text-right"><strong>Total $<span class="cart-total">262</span></strong></td>
+                <td><a href="{{ url('/') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+                <td colspan="3" class="hidden-xs"></td>
+                <td><a href="{{ url('/') }}" class="btn btn-primary"> Checkout</a></td>
             </tr>
         </tfoot>
     </table>
