@@ -23,9 +23,7 @@ class AdminController extends Controller
         $title = "Watches";
 
         return view('/admin/watches_table', compact('watches', 'title'));
-        
-
-
+       
         //return view('/admin/watches_table');
     }
 

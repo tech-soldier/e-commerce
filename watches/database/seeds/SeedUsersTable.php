@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 
 use Carbon\Carbon;
 
-class SeedCustomersTable extends Seeder
+class SeedUsersTable extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,7 +13,7 @@ class SeedCustomersTable extends Seeder
      */
     public function run()
     {
-        DB::table('customers')->insert([
+        DB::table('users')->insert([
         	'first_name' => 'Milad', 
         	'last_name' => 'Dirani', 
         	'billing_address' => '1411 Ashburn st.', 
@@ -28,7 +28,7 @@ class SeedCustomersTable extends Seeder
             'updated_at' => Carbon::now()
         ]); 
 
-        DB::table('customers')->insert([
+        DB::table('users')->insert([
         	'first_name' => 'Dawn', 
         	'last_name' => 'Baker', 
         	'billing_address' => '88 Hargrave Bay', 
@@ -43,7 +43,7 @@ class SeedCustomersTable extends Seeder
             'updated_at' => Carbon::now() 
         ]); 
 
-        DB::table('customers')->insert([
+        DB::table('users')->insert([
         	'first_name' => 'Inna', 
         	'last_name' => 'Soldatkina', 
         	'billing_address' => '12 Abbots Cresent', 
@@ -58,7 +58,7 @@ class SeedCustomersTable extends Seeder
             'updated_at' => Carbon::now() 
         ]); 
 
-        DB::table('customers')->insert([
+        DB::table('users')->insert([
         	'first_name' => 'Alexandr', 
         	'last_name' => 'Pasko', 
         	'billing_address' => '43 Inkster st', 
@@ -73,7 +73,7 @@ class SeedCustomersTable extends Seeder
             'updated_at' => Carbon::now() 
         ]); 
 
-        DB::table('customers')->insert([
+        DB::table('users')->insert([
         	'first_name' => 'Rahwa', 
         	'last_name' => 'Mehreteab', 
         	'billing_address' => '11 Hudson Street', 
@@ -88,7 +88,7 @@ class SeedCustomersTable extends Seeder
             'updated_at' => Carbon::now() 
         ]); 
 
-        DB::table('customers')->insert([
+        DB::table('users')->insert([
         	'first_name' => 'Akash', 
         	'last_name' => 'Bakshi', 
         	'billing_address' => '330 Nortmount Av', 
@@ -102,6 +102,5 @@ class SeedCustomersTable extends Seeder
         	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now() 
         ]); 
-
     }
 }

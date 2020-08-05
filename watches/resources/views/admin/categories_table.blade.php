@@ -8,7 +8,7 @@
 	<h1>Table Name: <em>{{ $title }}</em></h1>
 
 <!-- this is the table --> 
-	<p><button type="button" class="btn btn-success"> Add + </button></p>
+	
 	<table class="table table-striped">
 	  <thead class="thead-dark">
 	    <tr>
@@ -24,7 +24,7 @@
 	  @foreach($categories as $category)
 	  <tbody>
 	    <tr>
-	      <th scope="row">{{ $category->customer_id }}</th>
+	      <th scope="row">{{ $category->category_id }}</th>
 	      <th>{{ $category->category_name }}</th>
 	      <td>{{ $category->created_at }}</td>
 	      <td>{{ $category->updated_at }}</td>

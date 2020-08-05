@@ -64,8 +64,17 @@ Route::get('/admin/taxes_table', 'AdminController@taxes');
 
 Route::get('/admin/transactions_table', 'AdminController@transactions');
 
+
+
+/* admin create files */ 
+Route::get('admin/create/create_watch', 'Admin\WatchController@create'); 
+Route::post('admin/create/create_watch', 'Admin\WatchController@store'); 
+
 Route::get('/admin/categories_table', 'AdminController@categories');
 
+
+Route::get('admin/create/create_admin', 'Admin\AdminController@create'); 
+Route::post('admin/create/create_admin', 'Admin\AdminController@store'); 
 
 /* admin create files */
 Route::get('/admin/create/create_watch', 'Admin\WatchesController@create');
