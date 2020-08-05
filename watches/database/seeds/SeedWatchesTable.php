@@ -13,7 +13,7 @@ class SeedWatchesTable extends Seeder
      */
     public function run()
     {
-    	// first 5 records are all gender: male 
+    	// first 5 record are all gender: male 
 
         DB::table('watches')->insert([
         	
