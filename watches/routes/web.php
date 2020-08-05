@@ -51,6 +51,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // this is all for the admin side
 
+Route::get('/admin', 'AdminController@index');
 
 Route::get('/admin/watches_table', 'AdminController@watches');
 
