@@ -58,6 +58,8 @@ Route::get('/admin/orders_table', 'AdminController@orders');
 
 Route::get('/admin/customers_table', 'AdminController@customers');
 
+Route::delete('/admin/customers_table', 'AdminController@destroy');
+
 Route::get('/admin/admin_table', 'AdminController@admin');
 
 Route::get('/admin/taxes_table', 'AdminController@taxes');
