@@ -86,11 +86,11 @@
       </div>
 
       <div class="form-group">
-        <label for="gender">Gender: </label>
-        <input type="text" class="form-control" name="gender" id="gender" value="{{ old('gender') }}">
-        @error('gender')
-            <span class="alert-danger">{{ $message }}</span>
-        @enderror
+        <label for="status">Gender</label> <br />
+        <input type="radio" name="gender" checked value="female" />
+        Female &nbsp;
+        <input type="radio" name="gender" value="male" />
+        Male
       </div>
 
       <div class="form-group">
@@ -114,26 +114,78 @@
             <span class="alert-danger">{{ $message }}</span>
       @enderror
 
-    </div>
+      <div class="form-group">
+        <label for="diameter">Diameter (mm): </label>
+        <input type="text" class="form-control" name="diameter" id="diameter" value="{{ old('diameter') }}">
+        @error('diameter')
+            <span class="alert-danger">{{ $message }}</span>
+        @enderror
+      </div>
 
+      <div class="form-group">
+        <label for="strap_width">Strap Width (mm): </label>
+        <input type="text" class="form-control" name="strap_width" id="strap_width" value="{{ old('strap_width') }}">
+        @error('strap_width')
+            <span class="alert-danger">{{ $message }}</span>
+        @enderror
+      </div>
 
-      
+      <div class="form-group">
+        <label for="strap_length">Strap Length (mm): </label>
+        <input type="text" class="form-control" name="strap_length" id="strap_length" value="{{ old('strap_length') }}">
+        @error('strap_length')
+            <span class="alert-danger">{{ $message }}</span>
+        @enderror
+      </div>
 
-     <div class="form-group">
-        <label for="status">Gender</label> <br />
-        <input type="radio" name="gender" checked value="female" />
-        Female &nbsp;
-        <input type="radio" name="gender" value="male" />
-        Male
-    </div>
-     <div class="form-group">       
-        <label for="description">Description</label>
-        <textarea id="description" class="form-control" row="3" name="description">{{ old('description') }}</textarea>
+      <div class="form-group">
+        <label for="strap_width">Weight (g):  </label>
+        <input type="text" class="form-control" name="strap_width" id="strap_width" value="{{ old('strap_width') }}">
+        @error('strap_width')
+            <span class="alert-danger">{{ $message }}</span>
+        @enderror
+      </div>
+
+      <div class="form-group">
+        <label for="strap_width">Water Resistant (atm): </label>
+        <input type="text" class="form-control" name="strap_width" id="strap_width" value="{{ old('strap_width') }}">
+        @error('strap_width')
+            <span class="alert-danger">{{ $message }}</span>
+        @enderror
+      </div>
+
+      <div class="form-group">     
+        <label for="cover_img">Cover Image</label> <br />
+        <input type="file" id="cover_img" name="cover_img" value="{{ old('cover_img') }}" />
+        @error('cover_img')
+            <span class="alert-danger">{{ $message }}</span>
+        @enderror
+      </div>
+
+      <div class="form-group">
+        <label for="short_description">Short Description: </label>
+        <input type="text" class="form-control" name="short_description" id="short_description" value="{{ old('short_description') }}">
+        @error('short_description')
+            <span class="alert-danger">{{ $message }}</span>
+        @enderror
+      </div>
+
+      <div class="form-group">       
+        <label for="long_description">Long Description</label>
+        <textarea id="long_description" class="form-control" row="3" id="long_description" name="long_description">{{ old('long_description') }}</textarea>
         @error('description')
             <span class="alert-danger">{{ $message }}</span>
         @enderror
 
     </div>
+
+    </div>
+
+
+      
+
+     
+     
 
       <td><button type="submit" class="btn btn-primary">Submit</button></td>
     </form>
