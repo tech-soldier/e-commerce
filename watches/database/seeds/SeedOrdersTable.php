@@ -23,8 +23,7 @@ class SeedOrdersTable extends Seeder
          	'billing_address' => '1411 Ashburn st.', 
          	'shipping_address' => '1411 Ashburn st.', 
          	'subtotal' => 1399.99, 
-            'GST' => 0.05, 
-            'PST' => 0.07, 
+            'tax_id' => 1,
             'total' => 1567.99, 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
@@ -40,8 +39,7 @@ class SeedOrdersTable extends Seeder
             'billing_address' => '1411 Ashburn st.', 
             'shipping_address' => '1411 Ashburn st.', 
             'subtotal' => 1699.99, 
-            'GST' => 0.05, 
-            'PST' => 0.07, 
+            'tax_id' =>1,  
             'total' => 1903.99, 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
@@ -57,8 +55,7 @@ class SeedOrdersTable extends Seeder
             'billing_address' => '88 Hargrave Bay', 
             'shipping_address' => '88 Hargrave Bay', 
             'subtotal' => 1699.99, 
-            'GST' => 0.05, 
-            'PST' => 0.06, 
+            'tax_id' => 3,
             'total' => 1886.99, 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
@@ -74,8 +71,7 @@ class SeedOrdersTable extends Seeder
             'billing_address' => '12 Abbots Cresent', 
             'shipping_address' => '12 Abbots Cresent', 
             'subtotal' => 599.99, 
-            'GST' => 0.05, 
-            'PST' => 0.07, 
+            'tax_id' => 5, 
             'total' => 671.99, 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
@@ -91,8 +87,7 @@ class SeedOrdersTable extends Seeder
             'billing_address' => '12 Abbots Cresent', 
             'shipping_address' => '12 Abbots Cresent', 
             'subtotal' => 199.99, 
-            'GST' => 0.05, 
-            'PST' => 0.07, 
+            'tax_id' => 5, 
             'total' => 223.99, 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
@@ -107,8 +102,7 @@ class SeedOrdersTable extends Seeder
             'billing_address' => '43 Inkster st', 
             'shipping_address' => '43 Inkster st', 
             'subtotal' => 199.99, 
-            'GST' => 0.05, 
-            'PST' => 0.00, 
+            'tax_id' => 4, 
             'total' => 209.99, 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
