@@ -21,9 +21,9 @@ class SeedUsersTable extends Seeder
         	'province' => 'Manitoba', 
         	'country' => 'Canada', 
         	'postal_code' => 'r4t2b8', 
-        	'email_address' => 'milad-dirani@shaw.net', 
+        	'email' => 'milad-dirani@shaw.net', 
         	'phone_number' => '204-786-9007', 
-        	'password' => 'mypass', 
+        	'password' => password_hash('mypass', PASSWORD_DEFAULT), 
         	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]); 
@@ -36,9 +36,9 @@ class SeedUsersTable extends Seeder
         	'province' => 'Saskatchewan', 
         	'country' => 'Canada', 
         	'postal_code' => 'r5y6u8', 
-        	'email_address' => 'dawn-baker@bellmts.com', 
+        	'email' => 'dawn-baker@bellmts.com', 
         	'phone_number' => '309-446-9007', 
-        	'password' => 'mypass', 
+        	'password' => password_hash('mypass', PASSWORD_DEFAULT),  
         	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now() 
         ]); 
@@ -51,9 +51,9 @@ class SeedUsersTable extends Seeder
         	'province' => 'British Columbia', 
         	'country' => 'Canada', 
         	'postal_code' => 'r5y6u7', 
-        	'email_address' => 'inna-solda@gmail.com', 
+        	'email' => 'inna-solda@gmail.com', 
         	'phone_number' => '604-146-9007', 
-        	'password' => 'mypass', 
+        	'password' => password_hash('mypass', PASSWORD_DEFAULT), 
         	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now() 
         ]); 
@@ -66,9 +66,9 @@ class SeedUsersTable extends Seeder
         	'province' => 'Alberta', 
         	'country' => 'Canada', 
         	'postal_code' => '35y6u7', 
-        	'email_address' => 'alex-the-great@gmail.com', 
+        	'email' => 'alex-the-great@gmail.com', 
         	'phone_number' => '825-146-9007', 
-        	'password' => 'mypass', 
+        	'password' => password_hash('mypass', PASSWORD_DEFAULT), 
         	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now() 
         ]); 
@@ -81,9 +81,9 @@ class SeedUsersTable extends Seeder
         	'province' => 'Ontario', 
         	'country' => 'Canada', 
         	'postal_code' => 'e5y6u7', 
-        	'email_address' => 'rahwa@mts.net', 
+        	'email' => 'rahwa@mts.net', 
         	'phone_number' => '226-146-9107', 
-        	'password' => 'mypass', 
+        	'password' => password_hash('mypass', PASSWORD_DEFAULT),  
         	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now() 
         ]); 
@@ -96,9 +96,9 @@ class SeedUsersTable extends Seeder
         	'province' => 'Ontario', 
         	'country' => 'Canada', 
         	'postal_code' => 'e5y8u7', 
-        	'email_address' => 'aCash-money@mts.net', 
+        	'email' => 'aCash-money@mts.net', 
         	'phone_number' => '226-146-9107', 
-        	'password' => 'mypass', 
+        	'password' => password_hash('mypass', PASSWORD_DEFAULT), 
         	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now() 
         ]); 
