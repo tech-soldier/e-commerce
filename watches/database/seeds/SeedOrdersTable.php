@@ -14,7 +14,7 @@ class SeedOrdersTable extends Seeder
     {
         
         DB::table('orders')->insert([
-         	'customer_id' => 1, 
+         	'user_id' => 1, 
             'watch_id' => 1, 
          	'first_name' => 'Milad', 
          	'email_address' => 'milad-dirani@shaw.net', 
@@ -29,7 +29,7 @@ class SeedOrdersTable extends Seeder
          ]); 
 
         DB::table('orders')->insert([
-            'customer_id' => 1, 
+            'user_id' => 1, 
             'watch_id' => 2, 
             'first_name' => 'Milad', 
             'email_address' => 'milad-dirani@shaw.net', 
@@ -44,7 +44,7 @@ class SeedOrdersTable extends Seeder
          ]); 
 
         DB::table('orders')->insert([
-            'customer_id' => 2, 
+            'user_id' => 2, 
             'watch_id' => 2, 
             'first_name' => 'Dawn', 
             'email_address' => 'dawn-baker@bellmts.com', 
@@ -59,7 +59,7 @@ class SeedOrdersTable extends Seeder
          ]); 
 
         DB::table('orders')->insert([
-            'customer_id' => 3, 
+            'user_id' => 3, 
             'watch_id' => 3, 
             'first_name' => 'Inna', 
             'email_address' => 'inna-solda@gmail.com', 
@@ -74,7 +74,7 @@ class SeedOrdersTable extends Seeder
          ]); 
 
         DB::table('orders')->insert([
-            'customer_id' => 3, 
+            'user_id' => 3, 
             'watch_id' => 4, 
             'first_name' => 'Inna', 
             'email_address' => 'inna-solda@gmail.com', 
@@ -89,7 +89,7 @@ class SeedOrdersTable extends Seeder
          ]); 
 
         DB::table('orders')->insert([
-            'customer_id' => 4, 
+            'user_id' => 4, 
             'watch_id' => 4, 
             'first_name' => 'Alexandr', 
             'email_address' => 'alex-the-great@gmail.com', 
