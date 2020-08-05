@@ -32,14 +32,14 @@
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Created At</label>
                     <div class="col-lg-9">
-                        <input class="form-control" type="number" value="" />
+                        <input class="form-control" type="create" value="" />
                     </div>
                 </div>
                
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Updated At</label>
                     <div class="col-lg-9">
-                        <input class="form-control" type="number" value="" />
+                        <input class="form-control" type="update" value="" />
                     </div>
                 </div>
             </form>
