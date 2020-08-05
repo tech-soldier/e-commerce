@@ -15,6 +15,18 @@ use App\Admin;
 
 class AdminController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     * to display the dashboard page of Admin
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $title = "Admin Dashboard";
+
+        return view('/admin/dashboard', compact('title'));
+    }
+
     public function watches()
     {
 
