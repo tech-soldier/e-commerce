@@ -40,9 +40,9 @@
                              action="/admin/customers_table" method="post">
                             @csrf
                             @method('DELETE')
-                            <input type="hidden" name="id" value="{{ $customer->id }}"/>
+                            <input type="hidden" name="id" value="{{ $customer->customer_id }}"/>
                             <button type="submit" class="btn btn-danger">delete</button>
-                </form>
+            </form>
          </td>
 
 	    </tr>

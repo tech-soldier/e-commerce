@@ -58,7 +58,7 @@ Route::get('/admin/orders_table', 'AdminController@orders');
 
 Route::get('/admin/customers_table', 'AdminController@customers');
 
-Route::delete('/admin/customers_table', 'AdminController@destroy');
+Route::delete('/admin/customers_table', 'Admin\CustomerController@destroy');
 
 Route::get('/admin/admin_table', 'AdminController@admin');
 
@@ -85,6 +85,8 @@ Route::get('/admin/create/create_watch', 'Admin\WatchesController@create');
 /* admin edit files */ 
 Route::get('/admin/edit/{id}/edit_watch', 'Admin\WatchesController@edit'); 
 
-Route::put('/admin/edit/edit_watch', 'Admin\WatchesController@update'); 
+Route::put('/admin/edit/edit_watch', 'Admin\WatchesController@update');
+
+Route::delete('/admin/watches_table', 'Admin\WatchController@destroy'); 
 
   

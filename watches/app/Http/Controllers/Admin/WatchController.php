@@ -144,8 +144,18 @@ class WatchController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        // validated -- make sure id is passed in request
+        $valid = $request->validate([
+            'id' => 'required|integer'
+        ]);
+
+        // Try to delete the post and send the user back to the posts 
+        // index view with a flash message
+        if( Watch::find($valid['id'])->delete() ) {
+            return back()->with('success', 'Post has been deleted!');
+        }
+        return back()->with('error', 'There was a problem deleting that post');
     }
 }
