@@ -18,7 +18,7 @@ class CreateOrdersTable extends Migration
             //$table->integer('watch_id')->unsigned(); 
             $table->integer('user_id')->unsigned(); 
             $table->string('first_name', 255); 
-            $table->string('email_address', 255); 
+            $table->string('email', 255); 
             $table->string('billing_address', 255); 
             $table->string('shipping_address', 255); 
             $table->decimal('subtotal', 14,2); 

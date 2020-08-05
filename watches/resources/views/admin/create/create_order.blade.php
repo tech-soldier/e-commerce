@@ -8,32 +8,32 @@
     <form method="post" action="/admin/create/create_watch" enctype="multipart/form-data" >
       @csrf 
       <div class="form-group">
-        <label for="watch_id">Watch ID: </label>
-        <input type="text" name="watch_id" disabled class="form-control" id="watch_id" value="{{ old('watch_id') }}">
-        @error('watch_id')
+        <label for="order_id">Order ID: </label>
+        <input type="text" name="order_id" disabled class="form-control" id="order_id" value="{{ old('order_id') }}">
+        @error('order_id')
             <span class="alert-danger">{{ $message }}</span>
         @enderror
       </div>
        <div class="form-group">
-        <label for="SKU">SKU: </label>
-        <input type="text" name="SKU" class="form-control" id="SKU" value="{{ old('SKU') }}">
-        @error('SKU')
+        <label for="user_id">User ID: </label>
+        <input type="text" name="user_id" class="form-control" id="user_id" value="{{ old('user_id') }}">
+        @error('user_id')
             <span class="alert-danger">{{ $message }}</span>
         @enderror
       </div>
       
        <div class="form-group">
-        <label for="watch_name">Watch Name: </label>
-        <input type="text" name="watch_name" class="form-control" id="watch_name" value="{{ old('watch_name') }}">
-        @error('watch_name')
+        <label for="first_name">First Name: </label>
+        <input type="text" name="first_name" class="form-control" id="first_name" value="{{ old('first_name') }}">
+        @error('first_name')
             <span class="alert-danger">{{ $message }}</span>
         @enderror
       </div>
 
        <div class="form-group">
-        <label for="in_stock">In Stock: </label>
-        <input type="text" class="form-control" name="in_stock" id="in_stock" value="{{ old('in_stock') }}">
-        @error('in_stock')
+        <label for="email">In Stock: </label>
+        <input type="text" class="form-control" name="email" id="email" value="{{ old('email') }}">
+        @error('email')
             <span class="alert-danger">{{ $message }}</span>
         @enderror
       </div>
