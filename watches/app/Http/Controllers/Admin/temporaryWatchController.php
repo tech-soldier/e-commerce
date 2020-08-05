@@ -48,19 +48,18 @@ class WatchesController extends Controller
 
 		]); 
 
-
  
-  		// if(!empty($valid['cover_img'])) {
-    //         //get the uploaded file
-    //         $file = $request->file('cover_img');
+  		if(!empty($valid['cover_img'])) {
+            //get the uploaded file
+            $file = $request->file('cover_img');
 
-    //         //get the original filename
-    //         //concatenate time so if same file uploaded, won't be overridden
-    //         $image = time() . '_' . $file->getClientOriginalName();
+            //get the original filename
+            //concatenate time so if same file uploaded, won't be overridden
+            $image = time() . '_' . $file->getClientOriginalName();
 
-    //         //save the image
-    //         $path = $file->storeAs('images', $image);
-    //     }
+            //save the image
+            $path = $file->storeAs('cover_img', $image);
+        }
 
         Watch::create([
         	'SKU' => $valid['SKU'], 

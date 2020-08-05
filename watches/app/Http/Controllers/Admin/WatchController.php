@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Watch; 
 use App\Category; 
 
-class WatchesController extends Controller
+class WatchController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -35,7 +35,7 @@ class WatchesController extends Controller
 
 
         return view('/admin/create/create_watch', $data); 
-        dd('you are here');
+        
     }
 
     /**
@@ -46,6 +46,8 @@ class WatchesController extends Controller
      */
     public function store(Request $request)
     {
+        dd('you are here');
+        
         $valid = $request->validate([
             'SKU' => 'required|integer', 
             'watch_name' => 'required|string|max:255',
@@ -56,7 +58,7 @@ class WatchesController extends Controller
             'material' => 'required|string|max:255', 
             'movement' => 'required|string|max:255', 
             'gender' => 'required|string|max:255', 
-            'category_id' => 'required|integer', 
+            'category_id' => 'nullable|integer', 
             'diameter' => 'required|string|max:255', 
             'strap_width' => 'required|string|max:255', 
             'strap_length' => 'required|string|max:255', 
@@ -64,21 +66,21 @@ class WatchesController extends Controller
             'water_resistant' => 'required|string|max:255', 
             'cover_img' => 'required|string|max:255',
             'short_description' => 'required|string|max:255', 
-            'long_description' => 'required|string|max:500', 
+            'long_description' => 'required|string|max:500'
 
         ]); 
  
         // if(!empty($valid['cover_img'])) {
-    //         //get the uploaded file
-    //         $file = $request->file('cover_img');
+        //     //get the uploaded file
+        //     $file = $request->file('cover_img');
 
-    //         //get the original filename
-    //         //concatenate time so if same file uploaded, won't be overridden
-    //         $image = time() . '_' . $file->getClientOriginalName();
+        //     //get the original filename
+        //     //concatenate time so if same file uploaded, won't be overridden
+        //     $image = time() . '_' . $file->getClientOriginalName();
 
-    //         //save the image
-    //         $path = $file->storeAs('images', $image);
-    //     }
+        //     //save the image
+        //     $path = $file->storeAs('images', $image);
+        // }
 
         Watch::create([
             'SKU' => $valid['SKU'], 
@@ -96,7 +98,7 @@ class WatchesController extends Controller
             'strap_length' => $valid['strap_length'],
             'weight' => $valid['weight'],
             'water_resistant' => $valid['water_resistant'],
-            'cover_img' => $valid['cover_img'],
+            'cover_img' => $valid['cover_img'] ?? '',
             'short_description' => $valid['short_description'],
             'long_description' => $valid['long_description']
 

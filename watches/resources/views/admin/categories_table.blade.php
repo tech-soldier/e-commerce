@@ -25,7 +25,7 @@
 	  @foreach($categories as $category)
 	  <tbody>
 	    <tr>
-	      <th scope="row">{{ $category->customer_id }}</th>
+	      <th scope="row">{{ $category->category_id }}</th>
 	      <th>{{ $category->category_name }}</th>
 	      <td>{{ $category->created_at }}</td>
 	      <td>{{ $category->updated_at }}</td>
