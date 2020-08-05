@@ -114,28 +114,25 @@
                 </div>
 
                 <div class="form-group row">
-			        <label for="category_id" class="col-lg-3 col-form-label form-control-label">Category:</label>
-			        <div class="col-lg-9">
-				        <select class="form-control" name="category_id">
-				            <option value="">Select a category</option>
-				            @foreach($categories as $cat)
-				            <option 
-				                @if($cat->id == old('category_id'))
-				                selected
-				                @endif
-				                value="{{ $cat->id }}">{{ ucfirst($cat->category_name) }}</option>
-				            @endforeach
-				        </select>
-			        </div>
-			        @error('category_id')
-			            <span class="alert-danger">{{ $message }}</span>
-			        @enderror
-			    </div>
-			    @error('team')
-	    			<span class="alert-danger">{{ $message }}</span>
-	    		@enderror
-
-	    		 <div class="form-group row">
+                    <label for="category_id" class="col-lg-3 col-form-label form-control-label">Category</label>
+                    <div class="col-lg-9">
+                        <select class="form-control" name="category_id">
+                                <option value="">Select a category</option>
+                                @foreach($categories as $cat)
+                                <option 
+                                    @if($cat->category_id == old('category_id'))
+                                    selected
+                                    @endif
+                                    value="{{ $cat->category_id }}">{{ ucfirst($cat->category_name) }}</option>
+                                @endforeach
+                        </select>
+                    </div>
+                    @error('category_id')
+                        <span class="alert-danger">{{ $message }}</span>
+                    @enderror
+                </div>
+            
+	    		<div class="form-group row">
                     <label for="diameter" class="col-lg-3 col-form-label form-control-label">Diameter (mm):</label>
                     <div class="col-lg-9">
                         <input class="form-control" type="text" id="diameter" value="{{ old('diameter') }}" />
@@ -214,7 +211,6 @@
 				    	<span class="alert-danger">{{ $message }}</span>
 				    @enderror
                 </div>           
-               
             </form>
 
             <div class="form-group">

@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Admin; 
+
 class AdminController extends Controller
 {
     /**
@@ -24,7 +26,11 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        $data['title'] = 'Create A New Admin'; 
+
+        $data['admins'] = Admin::all(); 
+
+        return view('/admin/create/create_watch', $data); 
     }
 
     /**
@@ -35,7 +41,20 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $valid = $request->validate([
+            'admin_id', 
+            'admin_email', 
+            'password'
+        ]); 
+
+        Admin::create([
+            'admin_id' => $valid['admin_id'],
+            'admin_email' => $valid['admin_email'], 
+            'password' => $valid['password']
+        ]); 
+
+        return redirect('/admin/admin_table')->with('success', 'Admin was successfully created'); 
+
     }
 
     /**
