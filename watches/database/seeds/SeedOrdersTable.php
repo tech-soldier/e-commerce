@@ -16,8 +16,7 @@ class SeedOrdersTable extends Seeder
         DB::table('orders')->insert([
 
          	'user_id' => 1, 
-            'watch_id' => 1, 
-
+            // 'watch_id' => 1, 
          	'first_name' => 'Milad', 
          	'email_address' => 'milad-dirani@shaw.net', 
          	'billing_address' => '1411 Ashburn st.', 
@@ -32,8 +31,7 @@ class SeedOrdersTable extends Seeder
         DB::table('orders')->insert([
 
             'user_id' => 1, 
-            'watch_id' => 2, 
-
+            // 'watch_id' => 2, 
             'first_name' => 'Milad', 
             'email_address' => 'milad-dirani@shaw.net', 
             'billing_address' => '1411 Ashburn st.', 
@@ -48,8 +46,7 @@ class SeedOrdersTable extends Seeder
         DB::table('orders')->insert([
 
             'user_id' => 2, 
-            'watch_id' => 2, 
-
+            // 'watch_id' => 2, 
             'first_name' => 'Dawn', 
             'email_address' => 'dawn-baker@bellmts.com', 
             'billing_address' => '88 Hargrave Bay', 
@@ -64,8 +61,7 @@ class SeedOrdersTable extends Seeder
         DB::table('orders')->insert([
 
             'user_id' => 3, 
-            'watch_id' => 3, 
-
+            // 'watch_id' => 3, 
             'first_name' => 'Inna', 
             'email_address' => 'inna-solda@gmail.com', 
             'billing_address' => '12 Abbots Cresent', 
@@ -80,8 +76,7 @@ class SeedOrdersTable extends Seeder
         DB::table('orders')->insert([
 
             'user_id' => 3, 
-            'watch_id' => 4, 
-
+            // 'watch_id' => 4, 
             'first_name' => 'Inna', 
             'email_address' => 'inna-solda@gmail.com', 
             'billing_address' => '12 Abbots Cresent', 
@@ -96,7 +91,7 @@ class SeedOrdersTable extends Seeder
         DB::table('orders')->insert([
 
             'user_id' => 4, 
-            'watch_id' => 4, 
+            // 'watch_id' => 4, 
             'first_name' => 'Alexandr', 
             'email_address' => 'alex-the-great@gmail.com', 
             'billing_address' => '43 Inkster st', 
