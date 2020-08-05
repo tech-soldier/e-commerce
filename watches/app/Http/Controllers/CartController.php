@@ -65,7 +65,6 @@ class CartController extends Controller
      *
      * @return float|int
      */
-
     private function getCartTotal()
     {
         $total = 0;
@@ -79,6 +78,14 @@ class CartController extends Controller
         return number_format($total, 2);
     }
 
+
+    /**
+     * @param Request $request
+     *
+     * removing an item from a cart
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function remove(Request $request)
     {
         if($request->id) {
@@ -94,11 +101,38 @@ class CartController extends Controller
 
             $total = $this->getCartTotal();
 
+            return response()->json(['total' => $total]);
 
-            return response()->json(['msg' => 'Product removed successfully',  'total' => $total]);
+            session()->flash('success', 'Product removed successfully');
+        }
+    }
 
 
-            //session()->flash('success', 'Product removed successfully');
+    /**
+     * @param Request $request
+     *
+     * updating quantity of a product in a cart and total/subtotal accordingly
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+
+    public function update(Request $request)
+    {
+        if($request->id and $request->quantity)
+        {
+            $cart = session()->get('cart');
+
+            $cart[$request->id]["quantity"] = $request->quantity;
+
+            session()->put('cart', $cart);
+
+            $subTotal = $cart[$request->id]['quantity'] * $cart[$request->id]['price'];
+
+            $total = $this->getCartTotal();
+
+            return response()->json(['msg' => 'Cart updated successfully',  'total' => $total, 'subTotal' => $subTotal]);
+
+            session()->flash('success', 'Cart updated successfully');
         }
     }
 }
