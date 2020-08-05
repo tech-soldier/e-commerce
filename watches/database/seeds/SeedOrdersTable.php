@@ -102,7 +102,6 @@ class SeedOrdersTable extends Seeder
 
             'user_id' => 4, 
             'watch_id' => 4, 
-
             'first_name' => 'Alexandr', 
             'email_address' => 'alex-the-great@gmail.com', 
             'billing_address' => '43 Inkster st', 
