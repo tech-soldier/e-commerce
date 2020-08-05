@@ -140,17 +140,17 @@
       </div>
 
       <div class="form-group">
-        <label for="strap_width">Weight (g):  </label>
-        <input type="text" class="form-control" name="strap_width" id="strap_width" value="{{ old('strap_width') }}">
-        @error('strap_width')
+        <label for="weight">Weight (g):  </label>
+        <input type="text" class="form-control" name="weight" id="weight" value="{{ old('weight') }}">
+        @error('weight')
             <span class="alert-danger">{{ $message }}</span>
         @enderror
       </div>
 
       <div class="form-group">
-        <label for="strap_width">Water Resistant (atm): </label>
-        <input type="text" class="form-control" name="strap_width" id="strap_width" value="{{ old('strap_width') }}">
-        @error('strap_width')
+        <label for="water_resistant">Water Resistant (atm): </label>
+        <input type="text" class="form-control" name="water_resistant" id="water_resistant" value="{{ old('water_resistant') }}">
+        @error('water_resistant')
             <span class="alert-danger">{{ $message }}</span>
         @enderror
       </div>
@@ -171,13 +171,21 @@
         @enderror
       </div>
 
-      <div class="form-group">       
-        <label for="long_description">Long Description</label>
-        <textarea id="long_description" class="form-control" row="3" id="long_description" name="long_description">{{ old('long_description') }}</textarea>
-        @error('description')
+      <div class="form-group">
+        <label for="short_description">Long Description: </label>
+        <input type="text" class="form-control" name="long_description" id="long_description" value="{{ old('long_description') }}">
+        @error('long_description')
             <span class="alert-danger">{{ $message }}</span>
         @enderror
       </div>
+
+      <!-- <div class="form-group">       
+        <label for="long_description">Long Description</label>
+        <textarea id="long_description" class="form-control" row="3" id="long_description" name="long_description">{{ old('long_description') }}</textarea>
+        @error('long_description')
+            <span class="alert-danger">{{ $message }}</span>
+        @enderror
+      </div> -->
 
       <p><button type="submit" class="btn btn-primary">Submit</button></p>
     </form>

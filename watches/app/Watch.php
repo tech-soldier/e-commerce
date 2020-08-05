@@ -16,6 +16,7 @@ class Watch extends Model
         'price', 
         'cost', 
         'material', 
+        'main_color',
         'movement', 
         'gender', 
         'category_id', 

@@ -49,9 +49,10 @@ class WatchController extends Controller
             'watch_name' => 'required|string|max:255',
             'in_stock' => 'required|integer', // default is 
             'quantity' => 'required|integer',
-            'price' => "required|regex:/^\d+(\.\d{1,2})?$/", // change later
-            'cost' => "required|regex:/^\d+(\.\d{1,2})?$/", // change later 
+            'price' => "required|regex:/^\d+(\.\d{1,2})?$/", 
+            'cost' => "required|regex:/^\d+(\.\d{1,2})?$/", 
             'material' => 'required|string|max:255', 
+            'main_color' => 'required|string|max:255',
             'movement' => 'required|string|max:255', 
             'gender' => 'required|string|max:255', 
             'category_id' => 'nullable|integer', 
@@ -86,9 +87,10 @@ class WatchController extends Controller
             'price'=> $valid['price'],
             'cost'=> $valid['cost'],
             'material'=> $valid['material'],
+            'main_color' => $valid['main_color'],
             'movement'=> $valid['movement'],
             'gender' => $valid['gender'], 
-            'category_id' => $valid['category_id'],
+            'category_id' => $valid['category_id'] ?? 1,
             'diameter' => $valid['diameter'], 
             'strap_width' => $valid['strap_width'],
             'strap_length' => $valid['strap_length'],
