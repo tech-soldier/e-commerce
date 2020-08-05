@@ -31,7 +31,7 @@ class OrderController extends Controller
         $order = Order::all(); 
         $taxes = Tax::all(); 
 
-        return view('/admin/create/create_order', compact('title', 'order', 'taxes')); 
+        return view('/admin/create/create_order', compact('title', 'order', 'taxes'));
     }
 
     /**
@@ -42,7 +42,31 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $valid = $request->validate([      
+            'user_id' => 'required|integer',                                                       
+            'first_name' => 'required|string|max:255',                                                      
+            'email' => 'required|string|max:255',                                                 
+            'billing_address' => 'required|string|max:255',                                              
+            'shipping_address' => 'required|string|max:255',
+            'subtotal' => "required|regex:/^\d+(\.\d{1,2})?$/",                                              
+            'tax_id' => 'required|integer',                                                         
+            'total' => "required|regex:/^\d+(\.\d{1,2})?$/"                                   
+        ]); 
+
+
+         Order::create([
+            'order_id' => $valid['order_id'],      
+            'user_id' => $valid['user_id'],                                                       
+            'first_name' => $valid['first_name'],                                                      
+            'email'=> $valid['email'],                                                 
+            'billing_address' => $valid['billing_address'],                                              
+            'shipping_address' => $valid['shipping_address'],
+            'subtotal' => $valid['subtotal'],                                              
+            'tax_id' => $valid['tax_id'],                                                         
+            'total' => $valid['total']
+         ]); 
+
+         return redirect('/admin/orders_table')->with('success', 'Order was successfully created'); 
     }
 
     /**

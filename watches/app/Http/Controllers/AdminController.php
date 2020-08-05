@@ -45,10 +45,10 @@ class AdminController extends Controller
 
     public function users()
     {
-    	$customers = User::all();
+    	$users = User::all();
         $title = "Users";
 
-        return view('/admin/customers_table', compact('customers', 'title'));
+        return view('/admin/users_table', compact('users', 'title'));
     }
 
     public function admin()

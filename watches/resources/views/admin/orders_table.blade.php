@@ -8,7 +8,7 @@
 	<h1>Table Name: <em>{{ $title }}</em></h1>
 
 <!-- this is the table --> 
-	<p><button type="button" class="btn btn-success"> Add Order + </button></p>
+	<p><a style="color: white;" href="/admin/create/create_order"><div class="btn btn-success">Add Order +</div></a></p>
 	<table class="table table-striped">
 	  <thead class="thead-dark">
 	    <tr>

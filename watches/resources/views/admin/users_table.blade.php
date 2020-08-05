@@ -23,15 +23,15 @@
 
 	    </tr>
 	  </thead>     
-	  @foreach($customers as $customer)
+	  @foreach($users as $user)
 	  <tbody>
 	    <tr>
-	      <th scope="row">{{ $customer->id }}</th>
-	      <th>{{ $customer->first_name }}</th>
-	      <td>{{ $customer->last_name }}</td>
-	      <td>{{ $customer->email_address }}</td>
-	      <td>{{ $customer->phone_number }}</td>
-	      <td>{{ $customer->postal_code }}</td>
+	      <th scope="row">{{ $user->id }}</th>
+	      <th>{{ $user->first_name }}</th>
+	      <td>{{ $user->last_name }}</td>
+	      <td>{{ $user->email }}</td>
+	      <td>{{ $user->phone_number }}</td>
+	      <td>{{ $user->postal_code }}</td>
 	      <td><button type="button" class="btn btn-primary">Edit</button></td>
 	      <td><button type="button" class="btn btn-danger">Delete</button></td>
 	    </tr>
