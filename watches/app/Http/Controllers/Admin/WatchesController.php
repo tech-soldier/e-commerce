@@ -12,9 +12,10 @@ class WatchesController extends Controller
 {
     public function create()
 	{
-		$title = 'Create new Watch'; 
+		$title = 'Create A New Watch'; 
+		$watches = Watch::all(); 
 		$categories = Category::all(); 
-		return view('/admin/create/create_watch', compact('categories', 'title')); 
+		return view('/admin/create/create_watch', compact('categories', 'watches','title')); 
 	}
 
 	public function store(Request $request)
@@ -42,17 +43,17 @@ class WatchesController extends Controller
 
 		]); 
  
-  		if(!empty($valid['image'])) {
-            //get the uploaded file
-            $file = $request->file('image');
+  		// if(!empty($valid['image'])) {
+    //         //get the uploaded file
+    //         $file = $request->file('image');
 
-            //get the original filename
-            //concatenate time so if same file uploaded, won't be overridden
-            $image = time() . '_' . $file->getClientOriginalName();
+    //         //get the original filename
+    //         //concatenate time so if same file uploaded, won't be overridden
+    //         $image = time() . '_' . $file->getClientOriginalName();
 
-            //save the image
-            $path = $file->storeAs('images', $image);
-        }
+    //         //save the image
+    //         $path = $file->storeAs('images', $image);
+    //     }
 
         Watch::create([
         	'SKU' => $valid['SKU'], 

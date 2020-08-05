@@ -4,6 +4,9 @@
 
 <!-- Header Area -->
 @include('partialsadmin/nav')
+
+@include('partialsadmin/flash')
+
 <!-- Header Area End -->
 
 <!-- page content goes here -->

@@ -1,12 +1,13 @@
 @extends('layouts/admin')
 
+
 @section('content')
 
-<div class="container py-2 justify-content-center">
+<div class="container py-2 justify-content-center" style="margin-top: 25px">
     <div class="row my-2">
         <!-- create form column -->
         <div class="col-lg-4">
-            <h2 class="text-center font-weight-light">Create Watch</h2>
+            <h2 class="text-center font-weight-light" style="margin-top: 25px; margin-bottom: 25px">{{ $title }}</h2>
         </div>
 
         <div class="col-lg-8 mt-50">
@@ -15,7 +16,6 @@
         <div class="col-lg-8 order-lg-1 personal-info">
             <form method="post" action="/admin/create/create_watch" enctype="multipart/form-data">
             	@csrf 
-
 				<div class="form-group row">
                     <label for="id" class="col-lg-3 col-form-label form-control-label">ID:</label>
                     <div class="col-lg-9">
@@ -34,7 +34,7 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="watch_name" class="col-lg-3 col-form-label form-control-label">Watch Name</label>
+                    <label for="watch_name" class="col-lg-3 col-form-label form-control-label">Watch Name:</label>
                     <div class="col-lg-9">
                         <input class="form-control" type="text" id="watch_name" value="{{ old('watch_name') }}" />
                     </div>
@@ -66,7 +66,7 @@
                 <div class="form-group row">
                     <label for="price" class="col-lg-3 col-form-label form-control-label">Price:</label>
                     <div class="col-lg-9">
-                        <input class="form-control" type="text" id="price" value="{{ old('price') }}" />
+                        <input class="form-control" type="text" id="price" value="${{ old('price') }}" />
                     </div>
                     @error('price')
 				    	<span class="alert-danger">{{ $message }}</span>
@@ -76,7 +76,7 @@
                 <div class="form-group row">
                     <label for="cost" class="col-lg-3 col-form-label form-control-label">Cost:</label>
                     <div class="col-lg-9">
-                        <input class="form-control" type="text" id="cost" value="{{ old('cost') }}" />
+                        <input class="form-control" type="text" id="cost" value="${{ old('cost') }}" />
                     </div>
                     @error('cost')
 				    	<span class="alert-danger">{{ $message }}</span>
@@ -113,25 +113,107 @@
 				    @enderror
                 </div>
 
-                <div class="form-group">
-			        <label for="category_id">Category</label>
-			        <select class="form-control" name="category_id">
-			            <option value="">Select a category</option>
-			            @foreach($categories as $cat)
-			            <option 
-			                @if($cat->id == old('category_id'))
-			                selected
-			                @endif
-			                value="{{ $cat->id }}">{{ ucfirst($cat->team) }}</option>
-			            @endforeach
-			        </select>
+                <div class="form-group row">
+			        <label for="category_id" class="col-lg-3 col-form-label form-control-label">Category:</label>
+			        <div class="col-lg-9">
+				        <select class="form-control" name="category_id">
+				            <option value="">Select a category</option>
+				            @foreach($categories as $cat)
+				            <option 
+				                @if($cat->id == old('category_id'))
+				                selected
+				                @endif
+				                value="{{ $cat->id }}">{{ ucfirst($cat->category_name) }}</option>
+				            @endforeach
+				        </select>
+			        </div>
 			        @error('category_id')
 			            <span class="alert-danger">{{ $message }}</span>
 			        @enderror
 			    </div>
+			    @error('team')
+	    			<span class="alert-danger">{{ $message }}</span>
+	    		@enderror
 
-               
-               
+	    		 <div class="form-group row">
+                    <label for="diameter" class="col-lg-3 col-form-label form-control-label">Diameter (mm):</label>
+                    <div class="col-lg-9">
+                        <input class="form-control" type="text" id="diameter" value="{{ old('diameter') }}" />
+                    </div>
+                    @error('diameter')
+				    	<span class="alert-danger">{{ $message }}</span>
+				    @enderror
+                </div>
+
+                 <div class="form-group row">
+                    <label for="strap_width" class="col-lg-3 col-form-label form-control-label">Strap Width (mm):</label>
+                    <div class="col-lg-9">
+                        <input class="form-control" type="text" id="strap_width" value="{{ old('strap_width') }}" />
+                    </div>
+                    @error('strap_width')
+				    	<span class="alert-danger">{{ $message }}</span>
+				    @enderror
+                </div>
+
+                 <div class="form-group row">
+                    <label for="strap_length" class="col-lg-3 col-form-label form-control-label">Strap Length (mm):</label>
+                    <div class="col-lg-9">
+                        <input class="form-control" type="text" id="strap_length" value="{{ old('strap_length') }}" />
+                    </div>
+                    @error('strap_length')
+				    	<span class="alert-danger">{{ $message }}</span>
+				    @enderror
+                </div>
+
+                 <div class="form-group row">
+                    <label for="weight" class="col-lg-3 col-form-label form-control-label">Weight (lbs):</label>
+                    <div class="col-lg-9">
+                        <input class="form-control" type="text" id="weight" value="{{ old('weight') }}" />
+                    </div>
+                    @error('weight')
+				    	<span class="alert-danger">{{ $message }}</span>
+				    @enderror
+                </div>
+
+                 <div class="form-group row">
+                    <label for="water_resistant" class="col-lg-3 col-form-label form-control-label">Water Resistant:</label>
+                    <div class="col-lg-9">
+                        <input class="form-control" type="text" id="water_resistant" value="{{ old('water_resistant') }}" />
+                    </div>
+                    @error('water_resistant')
+				    	<span class="alert-danger">{{ $message }}</span>
+				    @enderror
+                </div>
+
+                 <div class="form-group row">
+                    <label for="cover_img" class="col-lg-3 col-form-label form-control-label">Cover Image:</label>
+                    <div class="col-lg-9">
+                        <input class="form-control" type="text" id="cover_img" value="{{ old('cover_img') }}" />
+                    </div>
+                    @error('cover_img')
+				    	<span class="alert-danger">{{ $message }}</span>
+				    @enderror
+                </div>
+
+                 <div class="form-group row">
+                    <label for="short_description" class="col-lg-3 col-form-label form-control-label">Short Description:</label>
+                    <div class="col-lg-9">
+                        <input class="form-control" type="text" id="short_description" value="{{ old('short_description') }}" />
+                    </div>
+                    @error('short_description')
+				    	<span class="alert-danger">{{ $message }}</span>
+				    @enderror
+                </div>
+
+                 <div class="form-group row">
+                    <label for="long_description" class="col-lg-3 col-form-label form-control-label">Long Description:</label>
+                    <div class="col-lg-9">
+                        <input class="form-control" type="text" id="long_description" value="{{ old('long_description') }}" />
+                    </div>
+                    @error('long_description')
+				    	<span class="alert-danger">{{ $message }}</span>
+				    @enderror
+                </div>           
                
             </form>
 
