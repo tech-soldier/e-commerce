@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Customer extends Model
 {
-
+	// temporary - will be removed later 
 	protected $fillable = [
 		'user_id',
 		'first_name', 

@@ -76,17 +76,19 @@ Route::post('admin/create/create_watch', 'Admin\WatchController@store');
 Route::get('admin/create/create_admin', 'Admin\AdminController@create'); 
 Route::post('admin/create/create_admin', 'Admin\AdminController@store'); 
 
-// create categories incomplete
+// create categories COMPLETE
 Route::get('admin/create/create_category', 'Admin\CategoryController@create'); 
 Route::post('admin/create/create_category', 'Admin\CategoryController@store'); 
 
 // create orders incomplete
+Route::get('admin/create/create_order', 'Admin\OrderController@create'); 
+Route::post('admin/create/create_order', 'Admin\OrderController@store'); 
 
 // crate taxes incomeplete
 
 // create transactions incomplete
 
-
+/* ------------------------------------------------------------------ */
 
 
 
