@@ -19,17 +19,16 @@ class WatchesController extends Controller
 
     public function edit($id)
     {
-        $watches = Watch::all(); 
+        $watch=Watch::find($id);
         $title = 'Edit Watch'; 
-        $categories = Category::all();
-        return view('/admin/edit/edit_watch', compact('categories', 'title', 'watches')); 
+        return view('/admin/edit/edit_watch', compact('title', 'watch')); 
     }
 
     public function update(Request $request)
     {
         $valid = $request->validate([
-            'watch_id' => 'required|integer',
-            'SKU' => 'required|max.8',
+           
+            'SKU' => 'required|max:10',
             'watch_name'=> 'required|string|max:255',
             'in_stock' => 'required',
             'quantity' => 'required|integer',
@@ -61,8 +60,7 @@ class WatchesController extends Controller
 
     }
 
-    $watch = Watch::find($valid['watch_id']);
-    $watch->SKU = $valid['SKU'];
+    $watch = Watch::find($valid['SKU']);
     $watch->watch_name = $valid['watch_name'];
     $watch->in_stock = $valid['in_stock'];
     $watch->quantity = $valid['quantity'];
