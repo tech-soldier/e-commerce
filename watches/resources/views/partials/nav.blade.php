@@ -48,14 +48,14 @@
             <!-- shopping cart -->
             <div class="ml-2 circle">
                 <a href="/cart"> <i class="fas fa-shopping-cart"></i></a>
+                
                 @if(session('cart'))
                 <div class="sml-circle">
                     <span class="text-center cart-blue-icon">{{ count((array) session('cart')) }}</span>
                 </div>
                 @endif
             </div>
-            <div class="ml-2 circle act-circle">
-            </div>
+            
         </div>
 
     </div>
