@@ -2,6 +2,7 @@ body {
   font-family: 'Nanum Gothic', sans-serif;
   perspective: 100px;
   perspective-origin: 25% 75%;
+  
 }
 
 nav.bg-dark{

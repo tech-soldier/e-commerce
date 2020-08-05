@@ -28,7 +28,7 @@
                 <div class="single-product-area mb-30">
                     <div class="product_image">
                         <!-- Product Image -->
-                        <img class="normal_img" src="images/product5.jpg" alt="">
+                        <img class="normal_img" src="images/{{$watch->cover_img}}" alt="{{$watch->watch_name}}">
                     </div>
 
                     <!-- Product Description -->
