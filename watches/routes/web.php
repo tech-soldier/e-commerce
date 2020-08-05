@@ -63,7 +63,7 @@ Route::get('/admin/categories_table', 'AdminController@categories');
 
 /* admin create files */ 
 Route::get('/admin/create/create_watch', 'Admin\WatchesController@create'); 
-Route::post('/admin/create/create_watch', 'Admin\WatchesController@store');
+
 
 
 
