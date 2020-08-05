@@ -22,7 +22,7 @@
 	      <th scope="col">Delete</th>
 
 	    </tr>
-	  </thead>
+	  </thead>     
 	  @foreach($customers as $customer)
 	  <tbody>
 	    <tr>
