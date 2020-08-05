@@ -9,7 +9,7 @@ use App\Transaction;
 use App\Watch;
 use App\Category;
 use App\Order; 
-use App\Customer; 
+use App\User; 
 use App\Admin; 
 
 
@@ -43,10 +43,10 @@ class AdminController extends Controller
         //return view('/admin/orders_table');
     }
 
-    public function customers()
+    public function users()
     {
-    	$customers = Customer::all();
-        $title = "Customers";
+    	$customers = User::all();
+        $title = "Users";
 
         return view('/admin/customers_table', compact('customers', 'title'));
     }
