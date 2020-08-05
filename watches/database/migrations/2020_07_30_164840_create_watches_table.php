@@ -14,7 +14,8 @@ class CreateWatchesTable extends Migration
     public function up()
     {
         Schema::create('watches', function (Blueprint $table) {
-           $table->id('watch_id');
+
+            $table->id();
             $table->integer('SKU'); 
             $table->string('watch_name', 255);
             $table->tinyInteger('in_stock');
@@ -24,17 +25,17 @@ class CreateWatchesTable extends Migration
             $table->string('material', 255);
             $table->string('main_color', 255);
             $table->string('movement', 255);
-            $table->enum('gender', ['male', 'female']);
+            $table->string('gender', 255);
             // this is the FK which is a PK in the categories table
-            $table->integer('category_id')->unsigned(); 
-            $table->string('diameter', 255); 
-            $table->string('strap_width', 255); 
-            $table->string('strap_length', 255); 
-            $table->string('weight', 255); 
-            $table->string('water_resistant', 255); 
-            $table->string('cover_img', 255); 
+            $table->integer('category_id')->unsigned();
+            $table->string('diameter', 255);
+            $table->string('strap_width', 255);
+            $table->string('strap_length', 255);
+            $table->string('weight', 255);
+            $table->string('water_resistant', 255);
+            $table->string('cover_img', 255);
             $table->text('short_description');
-            $table->longText('long_description'); 
+            $table->longText('long_description');
             $table->timestamps();
             // or this option below
             // $table->dateTime('created_at', 0);
@@ -42,7 +43,7 @@ class CreateWatchesTable extends Migration
 
             // this is for the soft delete
             //$table->enum('is_deleted', ['true', 'false']);
-            // or this option 
+            // or this option
             $table->softDeletes('deleted_at', 0);
         });
     }

@@ -3,32 +3,35 @@
 @section('content')
 
     <div class="detail1">
-        <div class="video-container">  
-               
-            <button class="shop-btn text-center"> WATCH NAME </button>
+        <div class="video-container">
+
+            <button class="shop-btn text-center"> {{strtoupper($watch->watch_name)}} </button>
         </div>
     </div>  <!--/. Header Area  -->
-   
+
     <div class="row">
         <!-- image  -->
         <div class="col-5  col-md-6 col-lg-6">
-           <img src="images/product1.jpg" alt="">
+
+           <img src="/images/product1.jpg" alt="">
+
+         
         </div>
 
         <!-- description -->
         <div class="col-7  mt-5 col-md-6 col-lg-6">
-            <h3>Rolex Model III</h3>
-            <p class="small">With leather strap</p>
-            <p>$2,999.00</p>
-            <button class="addtobag ">ADD TO BAG</button>
+            <h3>{{$watch->watch_name}}</h3>
+            <p class="small">With {{$watch->material}} strap</p>
+            <p>{{$watch->price}}</p>
+            <a href="/add-to-cart/{{ $watch->id }}" data-id="{{ $watch->id }}" class="btn add-to-cart addtobag" role="button">ADD TO CART</a>
             <h5 class="mt-5">Product Details</h5>
-            <p class="mt-3">Sku: BQ2249</p>
-            <p class="mt-3">Case Size: 44mm</p>
-            <p class="mt-3">Movement: Quartz Multifunction</p>
-            <p class="mt-3">Platform: Sullivian</p>
-            <p class="mt-3">Strap Material: Leather</p>
-            <p class="mt-3">Water Resistance: 5 ATM</p>
-           
+            <p class="mt-3">Sku: {{$watch->SKU}}</p>
+            <p class="mt-3">Strap Size: {{$watch->strap_length}}</p>
+            <p class="mt-3">Movement: {{$watch->movement}}</p>
+            <p class="mt-3">Diameter: {{$watch->diameter}}</p>
+
+            <p class="mt-3">Water Resistance:{{$watch->water_resistant}}</p>
+
             <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
                 <!-- Accordion card -->
                 <div class="card">
@@ -45,7 +48,7 @@
                     <!-- Card body -->
                     <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
                       <div class="card-body">
-                        <p class="mt-4">Sullivian introduced the first Fifty Fathoms watch back in 1953 as the first modern driver's watch and this iconic version , water resitant at upto 1000 feet offer an uodate on the classic with an added date marker and luminescebt hands.</p>
+                        <p class="mt-4">{{$watch->long_description}}</p>
                       </div>
                     </div> <!-- /. Card body -->
                 </div> <!-- /. Accordion card -->
@@ -70,25 +73,25 @@
                                     <h6 style="font-weight:bold !important;"><strong>Genre</strong></h6>
                                 </div>
                                 <ul>
-                                    <li class="tech-specs__menu-items" style="direction:ltr">Racing</li> 
+                                    <li class="tech-specs__menu-items" style="direction:ltr">Racing</li>
                                 </ul>
                                 <div class="tech-specs__menu-header">
-                                    <h6 style="font-weight:bold !important;"><strong>Audio</strong></h6>
+                                    <h6 style="font-weight:bold !important;"><strong>Measurements</strong></h6>
                                 </div>
                                 <ul>
-                                    <li class="tech-specs__menu-item-name">Gran Turismo 79</li>
-                                    <li class="tech-specs__menu-items">Spanish (Latin America)</li>
-                                    <li class="tech-specs__menu-items">English</li>
-                                    <li class="tech-specs__menu-items">Portuguese (Brazil)</li>
-                                    <li class="tech-specs__menu-items">French</li>
+                                    <li class="tech-specs__menu-item-name">Strap length: {{$watch->strap_length}}</li>
+                                    <li class="tech-specs__menu-items">Strap width: {{$watch->strap_width}}</li>
+                                    <li class="tech-specs__menu-items">Diameter: {{$watch->diameter}}mm</li>
+                                    <li class="tech-specs__menu-items">Weight: {{$watch->weight}}</li>
+                                    
                                 </ul>
-                                <div class="tech-specs__menu-header">Subtitles</div>
+                                <div class="tech-specs__menu-header">Specs</div>
                                 <ul>
-                                    <li class="tech-specs__menu-item-name">The Art of The Gran Turismo 79</li>
-                                    <li class="tech-specs__menu-items">Spanish (Latin America)</li>
-                                    <li class="tech-specs__menu-items">English</li>
-                                    <li class="tech-specs__menu-items">Portuguese (Brazil)</li>
-                                    <li class="tech-specs__menu-items">French</li>
+                                    <li class="tech-specs__menu-item-name">Water resistance {{$watch->water_resistant}}</li>
+                                    <li class="tech-specs__menu-items">Movement: {{$watch->movement}}</li>
+                                    <li class="tech-specs__menu-items">Gender: {{$watch->gender}}</li>
+                                    <li class="tech-specs__menu-items">Material: {{$watch->material}}</li>
+                                    <li class="tech-specs__menu-items">Main color: {{$watch->main_color}}</li>
                                 </ul>
                                 <ul>
                                     <li class="tech-specs__menu-item-name">The Gran Turismo 79 Original Soundtrack</li>
@@ -113,14 +116,14 @@
                                 </div><!---->
                             </div> <!--/. pivot menu -->
                         </div> <!--/. Card Body -->
-                    </div>  
-                </div> <!--/. Accordion Card -->   
+                    </div>
+                </div> <!--/. Accordion Card -->
             </div> <!--/.Accordion wrapper-->
 
         </div> <!-- /. Col Description-->
     </div> <!-- /. row -->
-    
-    
+
+
 @include('partials/features')
 
 @stop
