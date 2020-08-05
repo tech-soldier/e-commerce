@@ -107,6 +107,7 @@
                         <div class="product_image">
                             <!-- Product Image -->
                             <img class="normal_img" src="images/{{$watch->cover_img}}" alt="{{$watch->watch_name}}">
+
                             <!-- Product Badge -->
                             <!-- <div class="product_badge">
                                 <span>Top</span>
@@ -127,7 +128,7 @@
                             <div class="watch_info_wrapper text-center ">
                                 <a class="text-center " href="{{$watch->id}}/detail">{{$watch->watch_name}}</a>
                                 <h6 class="text-center product-price mt-2">${{$watch->price}}</h6>
-                                <p class="text-center mb-0">{{$watch->watch_name}}</p>
+                                <p class="text-center mb-0"> Width: {{$watch->strap_width}}</p>
                             </div>
                         </div>
                     </div>
