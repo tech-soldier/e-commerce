@@ -65,7 +65,6 @@ class CartController extends Controller
      *
      * @return float|int
      */
-
     private function getCartTotal()
     {
         $total = 0;
@@ -79,6 +78,14 @@ class CartController extends Controller
         return number_format($total, 2);
     }
 
+
+    /**
+     * @param Request $request
+     *
+     * removing an item from a cart
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function remove(Request $request)
     {
         if($request->id) {
@@ -100,6 +107,14 @@ class CartController extends Controller
         }
     }
 
+
+    /**
+     * @param Request $request
+     *
+     * updating quantity of a product in a cart and total/subtotal accordingly
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
 
     public function update(Request $request)
     {

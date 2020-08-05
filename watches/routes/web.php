@@ -48,6 +48,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // this is all for the admin side
 
+
 Route::get('/admin/watches_table', 'AdminController@watches');
 
 Route::get('/admin/orders_table', 'AdminController@orders');
@@ -65,8 +66,6 @@ Route::get('/admin/categories_table', 'AdminController@categories');
 
 /* admin create files */
 Route::get('/admin/create/create_watch', 'Admin\WatchesController@create');
-
-
 
 
 /* admin edit files */
