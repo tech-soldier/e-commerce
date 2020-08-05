@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Category; 
+
 class CategoryController extends Controller
 {
     /**
@@ -24,7 +26,11 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        $data['title'] = 'Create A New Admin'; 
+
+        $data['categories'] = Category::all(); 
+
+        return view('/admin/create/create_category', $data); 
     }
 
     /**

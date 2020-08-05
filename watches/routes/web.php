@@ -64,10 +64,11 @@ Route::get('/admin/taxes_table', 'AdminController@taxes');
 
 Route::get('/admin/transactions_table', 'AdminController@transactions');
 
+Route::get('/admin/categories_table', 'AdminController@categories');
 
 
 /* admin create files ----------------------------------------------*/ 
-// create watches incomplete
+// create watches COMPLETE *except for image upload* 
 Route::get('admin/create/create_watch', 'Admin\WatchController@create'); 
 Route::post('admin/create/create_watch', 'Admin\WatchController@store'); 
 
@@ -76,6 +77,8 @@ Route::get('admin/create/create_admin', 'Admin\AdminController@create');
 Route::post('admin/create/create_admin', 'Admin\AdminController@store'); 
 
 // create categories incomplete
+Route::get('admin/create/create_category', 'Admin\CategoryController@create'); 
+Route::post('admin/create/create_category', 'Admin\CategoryController@store'); 
 
 // create orders incomplete
 
