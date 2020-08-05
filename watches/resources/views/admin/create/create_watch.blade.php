@@ -5,11 +5,11 @@
 
 <div class="container" style="width: 50%;">
     <h1>{{ $title }}</h1>
-    <form method="post" action="/admin/pages/create" enctype="multipart/form-data" >
+    <form method="post" action="/admin/create/create_watch" enctype="multipart/form-data" >
       @csrf 
       <div class="form-group">
         <label for="watch_id">Watch ID: </label>
-        <input type="text" name="watch_id" class="form-control" id="watch_id" value="{{ old('watch_id') }}">
+        <input type="text" name="watch_id" disabled class="form-control" id="watch_id" value="{{ old('watch_id') }}">
         @error('watch_id')
             <span class="alert-danger">{{ $message }}</span>
         @enderror
@@ -176,8 +176,9 @@
         @error('description')
             <span class="alert-danger">{{ $message }}</span>
         @enderror
+      </div>
 
-      <td><button type="submit" class="btn btn-primary">Submit</button></td>
+      <p><button type="submit" class="btn btn-primary">Submit</button></p>
     </form>
 </div>
 
