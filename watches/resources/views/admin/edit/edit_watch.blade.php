@@ -10,7 +10,7 @@
     
     <div class="card-body">
     
-        <p><a href="/admin/edit" class="btn btn-warning class=previous">&laquo; Back</a></p>
+        <p><a href="/admin/watches_table" class="btn btn-warning class=previous">&laquo; Back</a></p>
         
         <form class="form" action="/admin/watches_table" method="post" enctype="multipart/form-data">
 
