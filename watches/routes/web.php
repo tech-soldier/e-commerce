@@ -59,7 +59,7 @@ Route::get('/admin/orders_table', 'AdminController@orders');
 
 Route::get('/admin/customers_table', 'AdminController@users');
 
-Route::delete('/admin/customers_table', 'Admin\CustomerController@destroy');
+// Route::delete('/admin/customers_table', 'Admin\CustomerController@destroy');
 
 Route::get('/admin/admin_table', 'AdminController@admin');
 

@@ -84,15 +84,15 @@ class CustomerController extends Controller
     public function destroy(Request $request)
     {
         // validated -- make sure id is passed in request
-        $valid = $request->validate([
-            'customer_id' => 'required|integer'
-        ]);
+        // $valid = $request->validate([
+        //     'customer_id' => 'required|integer'
+        // ]);
 
-        // Try to delete the post and send the user back to the posts 
-        // index view with a flash message
-        if( Customer::find($valid['customer_id'])->delete() ) {
-            return back()->with('success', 'Post has been deleted!');
-        }
-        return back()->with('error', 'There was a problem deleting that post');
+        // // Try to delete the post and send the user back to the posts 
+        // // index view with a flash message
+        // if( Customer::find($valid['customer_id'])->delete() ) {
+        //     return back()->with('success', 'Post has been deleted!');
+        // }
+        // return back()->with('error', 'There was a problem deleting that post');
     }
 }
