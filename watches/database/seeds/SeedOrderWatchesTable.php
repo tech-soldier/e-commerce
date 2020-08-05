@@ -25,11 +25,11 @@ class SeedOrderWatchesTable extends Seeder
 
          DB::table('order_watches')->insert([
             'watch_id' => 2, 
-            'order_id' => 2, 
+            'order_id' => 1, 
             'tax_id' => 1, 
             'watch_name' => 'Vagram', 
             'price' => 1699.99, 
-            'quantity' => 1, 
+            'quantity' => 2, 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()           
          ]); 

@@ -5,25 +5,6 @@
 <!-- Welcome Slides Area -->
     <section class="welcome_area">
         <div class="owl-carousel">
-            <!-- Single Slide -->
-            <!-- <div class="container"> -->
-                <!-- <div class="single_slide home-3 bg-img" style="background-image: url(images/home_banner.jpg);">
-                    <div class="container h-100">
-                        <div class="row h-100 align-items-center">
-                            <div class="col-12 p-0">
-                                <div class="welcome_slide_text text-center">
-                                    <div class="bg_blue p-4">
-                                        <h2 data-animation="fadeInUp" data-delay="300ms">View Gallery</h2>
-                                        <p class="mb-0" data-animation="fadeInUp" data-delay="100ms">Watch Collection</p>
-                                        <i class="fas fa-angle-right"></i>
-                                    </div>
-                                <div class="clear"></div>
-                                <a href="#" class="mt-3 btn btn-primary" data-animation="fadeInUp" data-delay="500ms">Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
             <div class="video-container">
                 <video autoplay muted loop>
                 <source src="/images/slider_video3.mp4" type="video/mp4" />
@@ -118,270 +99,41 @@
             </div>
 
             <div class="row justify-content-center">
-
+                @foreach($watches as $watch)
                 <!-- Single Product -->
                 <div class="col-9 col-sm-6 col-md-4 col-lg-3 bord">
+                    
                     <div class="single-product-area mb-30">
                         <div class="product_image">
                             <!-- Product Image -->
-                            <img class="normal_img" src="images/product2.jpg" alt="">
+                            <img class="normal_img" src="images/{{$watch->cover_img}}" alt="{{$watch->watch_name}}">
+
                             <!-- Product Badge -->
-                            <div class="product_badge">
+                            <!-- <div class="product_badge">
                                 <span>Top</span>
-                            </div>
+                            </div> -->
                             <div class="add_quick_wrapper d-flex">
                                 <!-- Add to cart -->
                                 <div class="product_add_to_cart text-center">
-                                    <a href="#"> Add to Cart</a>
+                                    <a href="add-to-cart/{{ $watch->id }}" data-id="{{ $watch->id }}"> Add to Cart</a>
                                 </div>
                                 <!-- Quick View -->
                                 <div class="product_quick_view text-center">
-                                    <a href="#"> Quick View</a>
+                                    <a href="{{$watch->id}}/detail"> Quick View</a>
                                 </div>
                             </div>
                         </div>
                         <!-- Product Description -->
                         <div class="product_description py-2">
                             <div class="watch_info_wrapper text-center ">
-                                <a class="text-center " href="#">Hublot Spark</a>
-                                <h6 class="text-center product-price mt-2">CA$279.99</h6>
-                                <p class="text-center mb-0">Hublot</p>
+                                <a class="text-center " href="{{$watch->id}}/detail">{{$watch->watch_name}}</a>
+                                <h6 class="text-center product-price mt-2">${{$watch->price}}</h6>
+                                <p class="text-center mb-0"> Width: {{$watch->strap_width}}</p>
                             </div>
                         </div>
                     </div>
                 </div>  <!-- /. end Single Product Area -->
-
-                <!-- Single Product -->
-                <div class="col-9 col-sm-6 col-md-4 col-lg-3 bord">
-                    <div class="single-product-area mb-30">
-                        <div class="product_image">
-                            <!-- Product Image -->
-                            <img class="normal_img" src="images/product31.jpg" alt="">
-
-                            <!-- Product Badge -->
-                            <div class="product_badge">
-                                <span>Top</span>
-                            </div>
-                        </div>
-
-                        <!-- Product Description -->
-                        <div class="product_description py-2">
-
-                            <div class="add_quick_wrapper d-flex">
-                                <!-- Add to cart -->
-                                <div class="product_add_to_cart text-center">
-                                    <a href="#">Add to Cart</a>
-                                </div>
-
-                                <!-- Quick View -->
-                                <div class="product_quick_view text-center">
-                                    <a href="#"> Quick View</a>
-                                </div>
-                            </div>
-                            <div class="watch_info_wrapper text-center">
-                                <a class="text-center " href="#">Hublot Spark</a>
-                                <h6 class="text-center product-price mt-2">CA$279.99</h6>
-                                <p class="text-center mb-0">Hublot</p>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- /. end Single Product Area -->
-
-                <!-- Single Product -->
-                <div class="col-9 col-sm-6 col-md-4 col-lg-3 bord">
-                    <div class="single-product-area mb-30">
-                        <div class="product_image">
-                            <!-- Product Image -->
-                            <img class="normal_img" src="images/product26.jpg" alt="">
-                            <!-- Product Badge -->
-                            <div class="product_badge">
-                                <span>Top</span>
-                            </div>
-                        </div>
-                        <!-- Product Description -->
-                        <div class="product_description py-2">
-                            <div class="add_quick_wrapper d-flex">
-                                <!-- Add to cart -->
-                                <div class="product_add_to_cart text-center">
-                                    <a href="#"> Add to Cart</a>
-                                </div>
-                                <!-- Quick View -->
-                                <div class="product_quick_view text-center">
-                                    <a href="#"> Quick View</a>
-                                </div>
-                            </div>
-                            <div class="watch_info_wrapper text-center">
-                                <a class="text-center " href="#">Hublot Spark</a>
-                                <h6 class="text-center product-price mt-2">CA$279.99</h6>
-                                <p class="text-center mb-0">Hublot</p>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- /. end Single Product Area -->
-
-                <!-- Single Product -->
-                <div class="col-9 col-sm-6 col-md-4 col-lg-3 bord">
-                    <div class="single-product-area mb-30">
-                        <div class="product_image">
-                            <!-- Product Image -->
-                            <img class="normal_img" src="images/product46.jpg" alt="">
-                            <!-- Product Badge -->
-                            <div class="product_badge">
-                                <span>Top</span>
-                            </div>
-                        </div>
-                        <!-- Product Description -->
-                        <div class="product_description py-2">
-                            <div class="add_quick_wrapper d-flex">
-                                <!-- Add to cart -->
-                                <div class="product_add_to_cart text-center">
-                                    <a href="#">Add to Cart</a>
-                                </div>
-                                <!-- Quick View -->
-                                <div class="product_quick_view text-center">
-                                    <a href="#"> Quick View</a>
-                                </div>
-                            </div>
-                            <div class="watch_info_wrapper text-center">
-                                <a class="text-center " href="#">Hublot Spark</a>
-                                <h6 class="text-center product-price mt-2">CA$279.99</h6>
-                                <p class="text-center mb-0">Hublot</p>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- /. end Single Product Area -->
-
-                <!-- Single Product -->
-                <div class="col-9 col-sm-6 col-md-4 col-lg-3 bord">
-                    <div class="single-product-area mb-30">
-                        <div class="product_image">
-                            <!-- Product Image -->
-                            <img class="normal_img" src="images/product45.jpg" alt="">
-
-                            <!-- Product Badge -->
-                            <div class="product_badge">
-                                <span>Top</span>
-                            </div>
-                        </div>
-                        <!-- Product Description -->
-                        <div class="product_description py-2">
-
-                            <div class="add_quick_wrapper d-flex">
-                                <!-- Add to cart -->
-                                <div class="product_add_to_cart text-center">
-                                    <a href="#">Add to Cart</a>
-                                </div>
-                                <!-- Quick View -->
-                                <div class="product_quick_view text-center">
-                                    <a href="#"> Quick View</a>
-                                </div>
-                            </div>
-                            <div class="watch_info_wrapper text-center">
-                                <a class="text-center " href="#">Hublot Spark</a>
-                                <h6 class="text-center product-price mt-2">CA$279.99</h6>
-                                <p class="text-center mb-0">Hublot</p>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- /. end Single Product Area -->
-
-                <!-- Single Product -->
-                <div class="col-9 col-sm-6 col-md-4 col-lg-3 bord">
-                    <div class="single-product-area mb-30">
-                        <div class="product_image">
-                            <!-- Product Image -->
-                            <img class="normal_img" src="images/product44.jpg" alt="">
-                            <!-- Product Badge -->
-                            <div class="product_badge">
-                                <span>Top</span>
-                            </div>
-                        </div>
-                        <!-- Product Description -->
-                        <div class="product_description py-2">
-
-                            <div class="add_quick_wrapper d-flex">
-                                <!-- Add to cart -->
-                                <div class="product_add_to_cart text-center">
-                                    <a href="#">Add to Cart</a>
-                                </div>
-                                <!-- Quick View -->
-                                <div class="product_quick_view text-center">
-                                    <a href="#"> Quick View</a>
-                                </div>
-                            </div>
-                            <div class="watch_info_wrapper text-center">
-                                <a class="text-center " href="#">Hublot Spark</a>
-                                <h6 class="text-center product-price mt-2">CA$279.99</h6>
-                                <p class="text-center mb-0">Hublot</p>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- /. end Single Product Area -->
-
-                <!-- Single Product -->
-                <div class="col-9 col-sm-6 col-md-4 col-lg-3 bord">
-                    <div class="single-product-area mb-30">
-                        <div class="product_image">
-                            <!-- Product Image -->
-                            <img class="normal_img" src="images/product43.jpg" alt="">
-
-                            <!-- Product Badge -->
-                            <div class="product_badge">
-                                <span>Top</span>
-                            </div>
-                        </div>
-                        <!-- Product Description -->
-                        <div class="product_description py-2">
-                            <div class="add_quick_wrapper d-flex">
-                                <!-- Add to cart -->
-                                <div class="product_add_to_cart text-center">
-                                    <a href="#">Add to Cart</a>
-                                </div>
-                                <!-- Quick View -->
-                                <div class="product_quick_view text-center">
-                                    <a href="#"> Quick View</a>
-                                </div>
-                            </div>
-                            <div class="watch_info_wrapper text-center">
-                                <a class="text-center " href="#">Hublot Spark</a>
-                                <h6 class="text-center product-price mt-2">CA$279.99</h6>
-                                <p class="text-center mb-0">Hublot</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>  <!-- /. end Single Product Area -->
-
-                <!-- Single Product -->
-                <div class="col-9 col-sm-6 col-md-4 col-lg-3 bord">
-                    <div class="single-product-area mb-30">
-                        <div class="product_image">
-                            <!-- Product Image -->
-                            <img class="normal_img" src="images/product41.jpg" alt="">
-                            <!-- Product Badge -->
-                            <div class="product_badge">
-                                <span>Top</span>
-                            </div>
-                        </div>
-                        <!-- Product Description -->
-                        <div class="product_description py-2">
-                            <div class="add_quick_wrapper d-flex">
-                                <!-- Add to cart -->
-                                <div class="product_add_to_cart text-center">
-                                    <a href="#">Add to Cart</a>
-                                </div>
-                                <!-- Quick View -->
-                                <div class="product_quick_view text-center">
-                                    <a href="#"> Quick View</a>
-                                </div>
-                            </div>
-                            <div class="watch_info_wrapper text-center">
-                                <a class="text-center " href="#">Hublot Spark</a>
-                                <h6 class="text-center product-price mt-2">CA$279.99</h6>
-                                <p class="text-center mb-0">Hublot</p>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- /. Single Product Area -->
+                @endforeach
 
             </div> <!-- /. row -->
 

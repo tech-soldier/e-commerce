@@ -12,9 +12,8 @@
     <div class="row">
         <!-- image  -->
         <div class="col-5  col-md-6 col-lg-6">
-
-           <img src="/images/product1.jpg" alt="">
-
+        
+           <img class="normal_img" src="/images/{{$watch->cover_img}}" alt="{{$watch->watch_name}}">
          
         </div>
 
@@ -80,37 +79,20 @@
                                 </div>
                                 <ul>
                                     <li class="tech-specs__menu-item-name">Strap length: {{$watch->strap_length}}</li>
-                                    <li class="tech-specs__menu-items">Spanish (Latin America)</li>
-                                    <li class="tech-specs__menu-items">English</li>
-                                    <li class="tech-specs__menu-items">Portuguese (Brazil)</li>
-                                    <li class="tech-specs__menu-items">French</li>
+                                    <li class="tech-specs__menu-items">Strap width: {{$watch->strap_width}}</li>
+                                    <li class="tech-specs__menu-items">Diameter: {{$watch->diameter}}mm</li>
+                                    <li class="tech-specs__menu-items">Weight: {{$watch->weight}}</li>
+                                    
                                 </ul>
-                                <div class="tech-specs__menu-header">Subtitles</div>
+                                <div class="tech-specs__menu-header">Specs</div>
                                 <ul>
-                                    <li class="tech-specs__menu-item-name">The Art of The Gran Turismo 79</li>
-                                    <li class="tech-specs__menu-items">Spanish (Latin America)</li>
-                                    <li class="tech-specs__menu-items">English</li>
-                                    <li class="tech-specs__menu-items">Portuguese (Brazil)</li>
-                                    <li class="tech-specs__menu-items">French</li>
+                                    <li class="tech-specs__menu-item-name">Water resistance {{$watch->water_resistant}}</li>
+                                    <li class="tech-specs__menu-items">Movement: {{$watch->movement}}</li>
+                                    <li class="tech-specs__menu-items">Gender: {{$watch->gender}}</li>
+                                    <li class="tech-specs__menu-items">Material: {{$watch->material}}</li>
+                                    <li class="tech-specs__menu-items">Main color: {{$watch->main_color}}</li>
                                 </ul>
-                                <ul>
-                                    <li class="tech-specs__menu-item-name">The Gran Turismo 79 Original Soundtrack</li>
-                                    <li class="tech-specs__menu-items">Spanish (Latin America)</li>
-                                    <li class="tech-specs__menu-items">English</li>
-                                    <li class="tech-specs__menu-items">Portuguese (Brazil)</li>
-                                    <li class="tech-specs__menu-items">French</li>
-                                </ul>
-                                <ul>
-                                    <li class="tech-specs__menu-item-name">The Gran Turismo 79</li>
-                                    <li class="tech-specs__menu-items">Spanish (Latin America)</li>
-                                    <li class="tech-specs__menu-items">English</li>
-                                    <li class="tech-specs__menu-items">Portuguese (Brazil)</li>
-                                    <li class="tech-specs__menu-items">French</li>
-                                </ul>
-
-                                <div class="tech-specs__menu-header">File Size</div>
-
-                                <div class="tech-specs__menu-items">84.01 GB</div>
+                                
 
                                 <div id="ember970" class="__desktop-presentation__product-detail__details-list__23fd5 ember-view">
                                 </div><!---->

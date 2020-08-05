@@ -177,16 +177,6 @@
             <span class="alert-danger">{{ $message }}</span>
         @enderror
 
-    </div>
-
-    </div>
-
-
-      
-
-     
-     
-
       <td><button type="submit" class="btn btn-primary">Submit</button></td>
     </form>
 </div>

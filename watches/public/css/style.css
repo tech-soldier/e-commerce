@@ -2,6 +2,7 @@ body {
   font-family: 'Nanum Gothic', sans-serif;
   perspective: 100px;
   perspective-origin: 25% 75%;
+  
 }
 
 nav.bg-dark{
@@ -485,3 +486,15 @@ video {
 .shop-view{
   width: 100% !important;
 }
+
+
+/* Profile Page */
+div#orders_hidden{
+  display: none;
+}
+
+#profile_page .btn-outline-light:focus,
+#profile_page .btn:focus{
+  box-shadow: none;
+}
+/* Profile Page End */
