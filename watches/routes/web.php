@@ -74,6 +74,6 @@ Route::get('/admin/create/create_watch', 'Admin\WatchesController@create');
 /* admin edit files */ 
 Route::get('/admin/edit/{id}/edit_watch', 'Admin\WatchesController@edit'); 
 
-Route::put('/admin/edit/edit_watch', 'Admin\WatchesController@update'); 
+Route::put('/admin/edit/watches_table', 'Admin\WatchesController@update'); 
 
   
