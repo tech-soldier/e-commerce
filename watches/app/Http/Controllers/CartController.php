@@ -101,4 +101,24 @@ class CartController extends Controller
             //session()->flash('success', 'Product removed successfully');
         }
     }
+
+    public function update(Request $request)
+    {
+        if($request->id and $request->quantity)
+        {
+            $cart = session()->get('cart');
+
+            $cart[$request->id]["quantity"] = $request->quantity;
+
+            session()->put('cart', $cart);
+
+            $subTotal = $cart[$request->id]['quantity'] * $cart[$request->id]['price'];
+
+            $total = $this->getCartTotal();
+
+            return response()->json(['msg' => 'Cart updated successfully',  'total' => $total, 'subTotal' => $subTotal]);
+
+            //session()->flash('success', 'Cart updated successfully');
+        }
+    }
 }

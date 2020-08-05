@@ -24,19 +24,19 @@ Route::get('/contact', 'PagesController@contact');
 
 Route::get('/{watch}/detail', 'WatchController@show');
 
+Route::get('/profile', 'WatchController@profile');
+
+Route::get('/', 'WatchController@homeIndex');
+
+/* --------------- CART ROUTES ------------------*/
+
 Route::get('/cart', 'PagesController@cart');
 
 Route::get('add-to-cart/{id}', 'CartController@addToCart');
 
-Route::get('/profile', 'WatchController@profile');
-
-
-Route::get('/', 'WatchController@homeIndex');
-
 Route::delete('remove-from-cart', 'CartController@remove');
 
-
-
+Route::patch('update-cart', 'CartController@update');
 
 /* ----------------------------------------------*/
 
@@ -46,27 +46,27 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 /* -------------------------------------------------- */
 
-// this is all for the admin side 
+// this is all for the admin side
 
-Route::get('/admin/watches_table', 'AdminController@watches'); 
+Route::get('/admin/watches_table', 'AdminController@watches');
 
-Route::get('/admin/orders_table', 'AdminController@orders'); 
+Route::get('/admin/orders_table', 'AdminController@orders');
 
-Route::get('/admin/customers_table', 'AdminController@customers'); 
+Route::get('/admin/customers_table', 'AdminController@customers');
 
-Route::get('/admin/admin_table', 'AdminController@admin'); 
+Route::get('/admin/admin_table', 'AdminController@admin');
 
-Route::get('/admin/taxes_table', 'AdminController@taxes'); 
+Route::get('/admin/taxes_table', 'AdminController@taxes');
 
-Route::get('/admin/transactions_table', 'AdminController@transactions'); 
+Route::get('/admin/transactions_table', 'AdminController@transactions');
 
-Route::get('/admin/categories_table', 'AdminController@categories'); 
-
-
-/* admin create files */ 
-Route::get('/admin/create/create_watch', 'Admin\WatchesController@create'); 
+Route::get('/admin/categories_table', 'AdminController@categories');
 
 
+/* admin create files */
+Route::get('/admin/create/create_watch', 'Admin\WatchesController@create');
 
 
-/* admin edit files */ 
+
+
+/* admin edit files */
