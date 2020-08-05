@@ -30,6 +30,7 @@ Route::get('add-to-cart/{id}', 'CartController@addToCart');
 
 Route::delete('remove-from-cart', 'CartController@remove');
 
+Route::post('send-mail','SendMailController@Email');
 
 
 /* ----------------------------------------------*/

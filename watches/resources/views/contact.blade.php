@@ -25,29 +25,30 @@
                             <!-- Section heading -->
                             <h3 class="font-weight-bold my-4">Contact Us</h3>
                             <!-- Section description -->
-                            <form class="mb-4 mx-md-5" action="/">
+                            <form class="mb-4 mx-md-5" method="post" action="/send-mail">
+                                {{ csrf_field() }}
                                 <!-- Contact Info -->
                                 <div class="row">
                                     <div class="col-md-6 mb-4">
                                         <!-- Name -->
-                                        <input type="text" id="name" class="form-control" placeholder="Name">
+                                        <input type="text" name='user_name' id="name" class="form-control" placeholder="Name">
                                     </div>
                                     <div class="col-md-6 mb-4">
                                         <!-- Email -->
-                                        <input type="email" id="email" class="form-control" placeholder="Email">
+                                        <input type="email" id="email" name="user_email" class="form-control" placeholder="Email">
                                     </div>
                                 </div>
                                 <!-- Subject -->
                                 <div class="row">
                                     <div class="col-md-12 mb-4">
-                                        <input type="text" id="subject" class="form-control" placeholder="Subject">
+                                        <input type="text" id="subject" name="user_subject" class="form-control" placeholder="Subject">
                                     </div>
                                 </div>
                                 <!-- textarea -->
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group mb-4">
-                                            <textarea class="form-control rounded" id="message" rows="3" placeholder="How can we help?"></textarea>
+                                            <textarea class="form-control rounded" name="user_message" id="message" rows="3" placeholder="How can we help?"></textarea>
                                         </div>
                                         <div class="text-center">
                                             <button type="submit" class="btn btn-info btn-md">Submit</button>
