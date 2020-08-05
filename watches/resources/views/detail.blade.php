@@ -12,9 +12,8 @@
     <div class="row">
         <!-- image  -->
         <div class="col-5  col-md-6 col-lg-6">
-
-           <img src="/images/{{ $watch->cover_img }}" alt="{{ $watch->watch_name }}">
-
+        
+           <img class="normal_img" src="/images/{{$watch->cover_img}}" alt="{{$watch->watch_name}}">
          
         </div>
 
