@@ -94,13 +94,12 @@ class CartController extends Controller
 
             $total = $this->getCartTotal();
 
+            return response()->json(['total' => $total]);
 
-            return response()->json(['msg' => 'Product removed successfully',  'total' => $total]);
-
-
-            //session()->flash('success', 'Product removed successfully');
+            session()->flash('success', 'Product removed successfully');
         }
     }
+
 
     public function update(Request $request)
     {
@@ -118,7 +117,7 @@ class CartController extends Controller
 
             return response()->json(['msg' => 'Cart updated successfully',  'total' => $total, 'subTotal' => $subTotal]);
 
-            //session()->flash('success', 'Cart updated successfully');
+            session()->flash('success', 'Cart updated successfully');
         }
     }
 }
