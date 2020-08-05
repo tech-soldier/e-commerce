@@ -21,52 +21,89 @@
             </thead>
             <tbody>
 
+            <?php $total = 0 ?>
+
+            @if(session('cart'))
+                @foreach((array) session('cart') as $id => $details)
+
+                    <?php $total += $details['price'] * $details['quantity'] ?>
             <tr>
                 <td data-th="Product" class="align-middle">
                     <div class="row">
-                        <div class="col-sm-3 hidden-xs"><img src="images/product2.jpg" width="100" height="100" class="img-responsive"/></div>
+                        <div class="col-sm-3 hidden-xs"><img src="images/product2.jpg" alt="" width="100" height="100" class="img-responsive"/></div>
                         <div class="col-sm-9 align-middle">
-                            <h4 class="mt-3">Rolex</h4>
+                            <h4 class="mt-3">{{$details['watch_name']}}</h4>
                         </div>
                     </div>
                 </td>
-                <td data-th="Price">$244</td>
+                <td data-th="Price">{{$details['price']}}</td>
                 <td data-th="Quantity">
-                    <input type="number" value="1" class="form-control quantity" />
+                    <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity" />
                 </td>
-                <td data-th="Subtotal" class="text-center">$<span class="product-subtotal">244</span></td>
+                <td data-th="Subtotal" class="text-center">$<span class="product-subtotal">{{ $details['price'] * $details['quantity'] }}</span></td>
                 <td class="actions" data-th="">
-                    <button class="btn btn-info btn-sm update-cart" data-id=""><i class="fas fa-sync-alt"></i></button>
-                    <button class="btn btn-danger btn-sm remove-from-cart" data-id=""><i class="fas fa-trash"></i></button>
+{{--                    <button class="btn btn-info btn-sm update-cart" data-id=""><i class="fas fa-sync-alt"></i></button>--}}
+                    <button class="btn btn-danger btn-sm remove-from-cart" data-id="{{ $id }}"><i class="fas fa-trash"></i></button>
                     <i class="fa fa-circle-o-notch fa-spin btn-loading" style="font-size:24px; display: none"></i>
                 </td>
             </tr>
-
+                @endforeach
+            @endif
             </tbody>
             <tfoot>
             <tr class="visible-xs">
-                <td colspan="5" class="text-right"><strong>Subtotal $<span class="cart-total">244</span></strong></td>
+                <td colspan="5" class="text-right"><strong>Total $<span class="cart-total">{{ $total }}</span></strong></td>
             </tr>
-            <tr class="visible-xs">
-                <td colspan="5" class="text-right"><strong>GST $<span class="cart-total">7</span></strong></td>
-            </tr>
-            <tr class="visible-xs">
-                <td colspan="5" class="text-right"><strong>PST $<span class="cart-total">9</span></strong></td>
-            </tr>
-            <tr class="visible-xs">
-                <td colspan="5" class="text-right"><strong>Shipping $<span class="cart-total">12</span></strong></td>
-            </tr>
+{{--            <tr class="visible-xs">--}}
+{{--                <td colspan="5" class="text-right"><strong>GST $<span class="cart-total">7</span></strong></td>--}}
+{{--            </tr>--}}
+{{--            <tr class="visible-xs">--}}
+{{--                <td colspan="5" class="text-right"><strong>PST $<span class="cart-total">9</span></strong></td>--}}
+{{--            </tr>--}}
+{{--            <tr class="visible-xs">--}}
+{{--                <td colspan="5" class="text-right"><strong>Shipping $<span class="cart-total">12</span></strong></td>--}}
+{{--            </tr>--}}
+{{--            <tr class="visible-xs">--}}
+{{--                <td colspan="5" class="text-right"><strong>Total $<span class="cart-total"></span></strong></td>--}}
+{{--            </tr>--}}
 
             <tr>
 
-                <td><a href="{{ url('/') }}" class="btn btn-primary"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
-                <td colspan="2" class="hidden-xs"></td>
-                <td colspan="2" class="hidden-xs text-right"><strong>Total $<span class="cart-total">262</span></strong></td>
+                <td><a href="{{ url('/') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+                <td colspan="3" class="hidden-xs"></td>
+                <td><a href="{{ url('/') }}" class="btn btn-primary"> Checkout</a></td>
             </tr>
         </tfoot>
     </table>
 </div>
 
+    <script type="text/javascript">
 
+        $(".remove-from-cart").click(function (e) {
+            e.preventDefault();
+
+            var ele = $(this);
+
+            var parent_row = ele.parents("tr");
+
+            var cart_total = $(".cart-total");
+
+            if(confirm("Are you sure")) {
+                $.ajax({
+                    url: '{{ url('remove-from-cart') }}',
+                    method: "DELETE",
+                    data: {_token: '{{ csrf_token() }}', id: ele.attr("data-id")},
+                    dataType: "json",
+                    success: function (response) {
+
+                        parent_row.remove();
+
+                        cart_total.text(response.total);
+                    }
+                });
+            }
+        });
+
+    </script>
 
 @endsection

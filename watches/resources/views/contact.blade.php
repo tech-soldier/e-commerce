@@ -68,6 +68,6 @@
     <!-- <div class="contact2" >
         This has a image background in css
     </div> -->
-    @include('partials/features')
+
 
 @stop
