@@ -118,10 +118,10 @@
                     <div class="col-lg-9">
                         <select class="form-control" name="category_id">
                                 <option value="">Select a category</option>
-                                @foreach($categories as $cat)
+                                @foreach($categories ?? '' as $cat)
                                 <option 
                                     @if($cat->category_id == old('category_id'))
-                                    selected
+                                    selected 
                                     @endif
                                     value="{{ $cat->category_id }}">{{ ucfirst($cat->category_name) }}</option>
                                 @endforeach

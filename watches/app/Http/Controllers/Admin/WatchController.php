@@ -27,11 +27,11 @@ class WatchController extends Controller
      */
     public function create()
     {
-        $title = 'Create A New Watch'; 
+        $title = "Create A New Watch"; 
         $watches = Watch::all(); 
         $categories = Category::all(); 
 
-        return view('/admin/create/create_watch', compact('title', 'watches', 'categories')); 
+        return view("/admin/create/create_watch", compact("title", "watches", "categories")); 
     }
 
     /**

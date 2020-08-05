@@ -8,7 +8,7 @@ class Admin extends Model
 {
 	protected $fillable = [
 		'admin_id', 
-		'email_address', 
+		'admin_email', 
 		'password'
 	]; 
     

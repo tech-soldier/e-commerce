@@ -8,7 +8,7 @@
 	<h1>Table Name: <em>{{ $title }}</em></h1>
 
 <!-- this is the table --> 
-	<p><a style="color: white;" href="/admin/create/create_admin"><div class="btn btn-success">Add Admin +</div></a></p>
+	<p><a style="color: white;" href="/admin/create/create_admin"><div class="btn btn-success">Add Watch +</div></a></p>
 	<table class="table table-striped">
 	  <thead class="thead-dark">
 	    <tr>

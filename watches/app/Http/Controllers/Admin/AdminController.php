@@ -30,7 +30,7 @@ class AdminController extends Controller
 
         $data['admins'] = Admin::all(); 
 
-        return view('/admin/create/create_watch', $data); 
+        return view('/admin/create/create_admin', $data); 
     }
 
     /**
@@ -42,13 +42,11 @@ class AdminController extends Controller
     public function store(Request $request)
     {
         $valid = $request->validate([
-            'admin_id', 
-            'admin_email', 
-            'password'
+            'admin_email' => 'required|string|max:255', 
+            'password'  => 'required|string|max:255'
         ]); 
 
         Admin::create([
-            'admin_id' => $valid['admin_id'],
             'admin_email' => $valid['admin_email'], 
             'password' => $valid['password']
         ]); 
