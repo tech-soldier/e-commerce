@@ -28,6 +28,8 @@ Route::get('/profile', 'WatchController@profile');
 
 Route::get('/', 'WatchController@homeIndex');
 
+Route::post('send-mail','SendMailController@Email');
+
 /* --------------- CART ROUTES ------------------*/
 
 Route::get('/cart', 'PagesController@cart');
@@ -37,6 +39,7 @@ Route::get('add-to-cart/{id}', 'CartController@addToCart');
 Route::delete('remove-from-cart', 'CartController@remove');
 
 Route::patch('update-cart', 'CartController@update');
+
 
 /* ----------------------------------------------*/
 

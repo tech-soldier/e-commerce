@@ -93,24 +93,7 @@
                                     <li class="tech-specs__menu-items">Material: {{$watch->material}}</li>
                                     <li class="tech-specs__menu-items">Main color: {{$watch->main_color}}</li>
                                 </ul>
-                                <ul>
-                                    <li class="tech-specs__menu-item-name">The Gran Turismo 79 Original Soundtrack</li>
-                                    <li class="tech-specs__menu-items">Spanish (Latin America)</li>
-                                    <li class="tech-specs__menu-items">English</li>
-                                    <li class="tech-specs__menu-items">Portuguese (Brazil)</li>
-                                    <li class="tech-specs__menu-items">French</li>
-                                </ul>
-                                <ul>
-                                    <li class="tech-specs__menu-item-name">The Gran Turismo 79</li>
-                                    <li class="tech-specs__menu-items">Spanish (Latin America)</li>
-                                    <li class="tech-specs__menu-items">English</li>
-                                    <li class="tech-specs__menu-items">Portuguese (Brazil)</li>
-                                    <li class="tech-specs__menu-items">French</li>
-                                </ul>
-
-                                <div class="tech-specs__menu-header">File Size</div>
-
-                                <div class="tech-specs__menu-items">84.01 GB</div>
+                                
 
                                 <div id="ember970" class="__desktop-presentation__product-detail__details-list__23fd5 ember-view">
                                 </div><!---->
