@@ -485,3 +485,15 @@ video {
 .shop-view{
   width: 100% !important;
 }
+
+
+/* Profile Page */
+div#orders_hidden{
+  display: none;
+}
+
+#profile_page .btn-outline-light:focus,
+#profile_page .btn:focus{
+  box-shadow: none;
+}
+/* Profile Page End */
