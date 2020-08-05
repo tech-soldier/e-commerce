@@ -21,6 +21,7 @@
             <span class="alert-danger">{{ $message }}</span>
         @enderror
       </div>
+      
        <div class="form-group">
         <label for="watch_name">Watch Name: </label>
         <input type="text" name="watch_name" class="form-control" id="watch_name" value="{{ old('watch_name') }}">
