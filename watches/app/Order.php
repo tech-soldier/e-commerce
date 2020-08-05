@@ -20,4 +20,9 @@ class Order extends Model
     {
     	return $this->belongsToMany(Watch::class); 
     }
+
+    public function tax()
+    {
+        return $this->belongsTo(Tax::class);
+    }
 }
