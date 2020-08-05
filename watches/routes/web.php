@@ -59,6 +59,8 @@ Route::get('/admin/orders_table', 'AdminController@orders');
 
 Route::get('/admin/customers_table', 'AdminController@users');
 
+// Route::delete('/admin/customers_table', 'Admin\CustomerController@destroy');
+
 Route::get('/admin/admin_table', 'AdminController@admin');
 
 Route::get('/admin/taxes_table', 'AdminController@taxes');
@@ -91,6 +93,12 @@ Route::post('admin/create/create_admin', 'Admin\AdminController@store');
 /* admin edit files */ 
 Route::get('/admin/edit/{id}/edit_watch', 'Admin\WatchesController@edit'); 
 
+
+Route::put('/admin/edit/edit_watch', 'Admin\WatchesController@update');
+
+Route::delete('/admin/watches_table', 'Admin\WatchController@destroy'); 
+
 Route::put('/admin/edit/watches_table', 'Admin\WatchesController@update'); 
+
 
   
