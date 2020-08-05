@@ -56,7 +56,7 @@ Route::get('/admin/watches_table', 'AdminController@watches');
 
 Route::get('/admin/orders_table', 'AdminController@orders');
 
-Route::get('/admin/customers_table', 'AdminController@customers');
+Route::get('/admin/customers_table', 'AdminController@users');
 
 Route::get('/admin/admin_table', 'AdminController@admin');
 

@@ -26,7 +26,7 @@
 	  @foreach($customers as $customer)
 	  <tbody>
 	    <tr>
-	      <th scope="row">{{ $customer->customer_id }}</th>
+	      <th scope="row">{{ $customer->id }}</th>
 	      <th>{{ $customer->first_name }}</th>
 	      <td>{{ $customer->last_name }}</td>
 	      <td>{{ $customer->email_address }}</td>
