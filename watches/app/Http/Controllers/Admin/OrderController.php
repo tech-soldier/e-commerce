@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Tax; 
+use App\Order; 
+
 class OrderController extends Controller
 {
     /**
@@ -24,7 +27,11 @@ class OrderController extends Controller
      */
     public function create()
     {
-        
+        $title = 'Create A New Order'; 
+        $order = Order::all(); 
+        $taxes = Tax::all(); 
+
+        return view('/admin/create/create_order', compact('title', 'order', 'taxes')); 
     }
 
     /**

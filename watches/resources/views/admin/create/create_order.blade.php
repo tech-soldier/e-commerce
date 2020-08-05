@@ -31,7 +31,7 @@
       </div>
 
        <div class="form-group">
-        <label for="email">In Stock: </label>
+        <label for="email">Email: </label>
         <input type="text" class="form-control" name="email" id="email" value="{{ old('email') }}">
         @error('email')
             <span class="alert-danger">{{ $message }}</span>
@@ -39,28 +39,49 @@
       </div>
 
       <div class="form-group">
-        <label for="quantity">Quantity: </label>
-        <input type="text" class="form-control" name="quantity" id="quantity" value="{{ old('quantity') }}">
-        @error('quantity')
+        <label for="billing_address">Billing Address: </label>
+        <input type="text" class="form-control" name="billing_address" id="billing_address" value="{{ old('billing_address') }}">
+        @error('billing_address')
             <span class="alert-danger">{{ $message }}</span>
         @enderror
       </div>
 
       <div class="form-group">
-        <label for="price">Price: </label>
-        <input type="text" class="form-control" name="price" id="price" value="{{ old('price') }}">
-        @error('price')
+        <label for="shipping_address">Shipping Address: </label>
+        <input type="text" class="form-control" name="shipping_address" id="shipping_address" value="{{ old('shipping_address') }}">
+        @error('shipping_address')
             <span class="alert-danger">{{ $message }}</span>
         @enderror
       </div>
 
       <div class="form-group">
-        <label for="cost">Cost: </label>
-        <input type="text" class="form-control" name="cost" id="cost" value="{{ old('cost') }}">
-        @error('cost')
+        <label for="subtotal">Subtotal: </label>
+        <input type="text" class="form-control" name="subtotal" id="subtotal" value="{{ old('subtotal') }}">
+        @error('subtotal')
             <span class="alert-danger">{{ $message }}</span>
         @enderror
       </div>
+
+      <div class="form-group">
+        <label for="tax_id">Tax (Choose Province):</label>
+        <select class="form-control" name="tax_id">
+            <option value="">Select a Province</option>
+            @foreach($taxes as $tax) 
+            <option 
+                @if($tax->id == old('tax_id'))
+                selected
+                @endif
+                value="{{ $tax->tax_id }}">{{ ucfirst($tax->province) }}</option>
+            @endforeach
+        </select>
+        @error('tax_id')
+            <span class="alert-danger">{{ $message }}</span>
+        @enderror
+
+      </div>
+      @error('category_name')
+            <span class="alert-danger">{{ $message }}</span>
+      @enderror
 
       <div class="form-group">
         <label for="material">Material: </label>
@@ -93,27 +114,6 @@
         <input type="radio" name="gender" value="male" />
         Male
       </div>
-
-      <div class="form-group">
-        <label for="category_id">Category</label>
-        <select class="form-control" name="category_id">
-            <option value="">Select a category</option>
-            @foreach($categories as $cat) 
-            <option 
-                @if($cat->id == old('category_id'))
-                selected
-                @endif
-                value="{{ $cat->category_id }}">{{ ucfirst($cat->category_name) }}</option>
-            @endforeach
-        </select>
-        @error('category_id')
-            <span class="alert-danger">{{ $message }}</span>
-        @enderror
-
-      </div>
-      @error('category_name')
-            <span class="alert-danger">{{ $message }}</span>
-      @enderror
 
       <div class="form-group">
         <label for="diameter">Diameter (mm): </label>
