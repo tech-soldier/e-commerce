@@ -37,10 +37,10 @@
 		  <td>
 		  	<form class="delete" 
                             onSubmit="return confirm('Do you really want to delete this post?')"
-                             action="/admin/customers_table" method="post">
+                             action="/admin/users_table" method="post">
                             @csrf
                             @method('DELETE')
-                            <input type="hidden" name="id" value="{{ $customer->customer_id }}"/>
+                            <input type="hidden" name="id" value="{{ $user->user_id }}"/>
                             <button type="submit" class="btn btn-danger">delete</button>
             </form>
          </td>
