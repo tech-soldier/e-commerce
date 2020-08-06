@@ -41,7 +41,18 @@ class TaxController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $valid = $request->validate([
+            'province' => 'required|string|max:255',
+            'PST' => "required|regex:/^\d+(\.\d{1,2})?$/"
+        ]); 
+
+        Tax::create([
+            'province' => $valid['province'],  
+            'PST' => $valid['PST']
+
+        ]); 
+
+        return redirect('/admin/taxes_table')->with('success', 'PST was successfully created'); 
     }
 
     /**

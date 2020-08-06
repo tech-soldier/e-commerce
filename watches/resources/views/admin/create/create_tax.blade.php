@@ -24,7 +24,7 @@
       
        <div class="form-group">
         <label for="GST">GST: </label>
-        <input type="text" name="GST" class="form-control" id="GST" value="{{ old('GST') }}">
+        <input type="text" name="GST" placeholder="0.05" disabled class="form-control" id="GST" value="{{ old('GST') }}">
         @error('GST')
             <span class="alert-danger">{{ $message }}</span>
         @enderror
