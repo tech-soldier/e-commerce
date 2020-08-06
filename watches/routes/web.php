@@ -55,12 +55,15 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // this is all for the admin side
 
+Route::get('/admin', 'AdminController@index');
 
 Route::get('/admin/watches_table', 'AdminController@watches');
 
 Route::get('/admin/orders_table', 'AdminController@orders');
 
-Route::get('/admin/customers_table', 'AdminController@customers');
+Route::get('/admin/customers_table', 'AdminController@users');
+
+// Route::delete('/admin/customers_table', 'Admin\CustomerController@destroy');
 
 Route::get('/admin/admin_table', 'AdminController@admin');
 
@@ -68,15 +71,35 @@ Route::get('/admin/taxes_table', 'AdminController@taxes');
 
 Route::get('/admin/transactions_table', 'AdminController@transactions');
 
-Route::get('/admin/categories_table', 'AdminController@categories');
 
 
-/* admin create files */
-Route::get('/admin/create/create_watch', 'Admin\WatchesController@create');
+/* admin create files ----------------------------------------------*/
+// create watches incomplete
+Route::get('admin/create/create_watch', 'Admin\WatchController@create');
+Route::post('admin/create/create_watch', 'Admin\WatchController@store');
+
+// create admin COMPLETE
+Route::get('admin/create/create_admin', 'Admin\AdminController@create');
+Route::post('admin/create/create_admin', 'Admin\AdminController@store');
+
+// create categories incomplete
+
+// create orders incomplete
+
+// crate taxes incomeplete
+
+// create transactions incomplete
 
 
 /* admin edit files */
 Route::get('/admin/edit/{id}/edit_watch', 'Admin\WatchesController@edit');
 
+
 Route::put('/admin/edit/edit_watch', 'Admin\WatchesController@update');
+
+Route::delete('/admin/watches_table', 'Admin\WatchController@destroy');
+
+Route::put('/admin/edit/watches_table', 'Admin\WatchesController@update');
+
+
 
