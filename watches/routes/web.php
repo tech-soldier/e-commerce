@@ -90,6 +90,10 @@ Route::get('admin/create/create_tax', 'Admin\TaxController@create');
 Route::post('admin/create/create_tax', 'Admin\TaxController@store');
 
 // create transactions incomplete
+Route::get('admin/create/create_transaction', 'Admin\TransactionController@create'); 
+Route::post('admin/create/create_transaction', 'Admin\TransactionController@store');
+
+// create users incomplete 
 
 /* ------------------------------------------------------------------ */
 

@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Transaction; 
+
 class TransactionController extends Controller
 {
     /**
@@ -24,7 +26,11 @@ class TransactionController extends Controller
      */
     public function create()
     {
-        //
+        $title = 'Create A Transaction'; 
+
+        $transactions = Transaction::all(); 
+
+        return view('/admin/create/create_transaction', compact('title', 'transactions')); 
     }
 
     /**
