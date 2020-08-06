@@ -91,6 +91,10 @@ Route::post('admin/create/create_admin', 'Admin\AdminController@store');
 // create transactions incomplete
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 /* admin edit files */
 Route::get('/admin/edit/{id}/edit_watch', 'Admin\WatchesController@edit');
 

@@ -28,6 +28,10 @@
             <tr>
                 <td data-th="Product" class="align-middle">
                     <div class="row">
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
                         <div class="col-sm-3 hidden-xs"><img src="images/{{ $details['cover_img'] }}" alt="{{ $details['cover_img'] }}" width="100" height="100" class="img-responsive"/></div>
 
                         <div class="col-sm-9 align-middle">
