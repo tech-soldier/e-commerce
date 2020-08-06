@@ -27,11 +27,11 @@ class WatchController extends Controller
      */
     public function create()
     {
-        $title = "Create A New Watch"; 
+        $title = 'Create A New Watch'; 
         $watches = Watch::all(); 
         $categories = Category::all(); 
 
-        return view("/admin/create/create_watch", compact("title", "watches", "categories")); 
+        return view('/admin/create/create_watch', compact('title', 'watches', 'categories')); 
     }
 
     /**
@@ -47,10 +47,10 @@ class WatchController extends Controller
         $valid = $request->validate([
             'SKU' => 'required|integer', 
             'watch_name' => 'required|string|max:255',
-            'in_stock' => 'required|tinyInteger',
+            'in_stock' => 'required|integer', // default is 
             'quantity' => 'required|integer',
-            'price' => 'required|integer', // change later
-            'cost' => 'required|integer', // change later 
+            'price' => "required|regex:/^\d+(\.\d{1,2})?$/", // change later
+            'cost' => "required|regex:/^\d+(\.\d{1,2})?$/", // change later 
             'material' => 'required|string|max:255', 
             'movement' => 'required|string|max:255', 
             'gender' => 'required|string|max:255', 
@@ -60,7 +60,7 @@ class WatchController extends Controller
             'strap_length' => 'required|string|max:255', 
             'weight' => 'required|string|max:255', 
             'water_resistant' => 'required|string|max:255', 
-            'cover_img' => 'required|string|max:255',
+            'cover_img' => 'nullable|string|max:255',
             'short_description' => 'required|string|max:255', 
             'long_description' => 'required|string|max:500'
 
@@ -207,8 +207,18 @@ class WatchController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        // validated -- make sure id is passed in request
+        $valid = $request->validate([
+            'id' => 'required|integer'
+        ]);
+
+        // Try to delete the post and send the user back to the posts 
+        // index view with a flash message
+        if( Watch::find($valid['id'])->delete() ) {
+            return back()->with('success', 'Post has been deleted!');
+        }
+        return back()->with('error', 'There was a problem deleting that post');
     }
 }

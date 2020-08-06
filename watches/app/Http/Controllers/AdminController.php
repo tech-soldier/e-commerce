@@ -9,12 +9,24 @@ use App\Transaction;
 use App\Watch;
 use App\Category;
 use App\Order; 
-use App\Customer; 
+use App\User; 
 use App\Admin; 
 
 
 class AdminController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     * to display the dashboard page of Admin
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $title = "Admin Dashboard";
+
+        return view('/admin/dashboard', compact('title'));
+    }
+
     public function watches()
     {
 
@@ -43,10 +55,10 @@ class AdminController extends Controller
         //return view('/admin/orders_table');
     }
 
-    public function customers()
+    public function users()
     {
-    	$customers = Customer::all();
-        $title = "Customers";
+    	$customers = User::all();
+        $title = "Users";
 
         return view('/admin/customers_table', compact('customers', 'title'));
     }

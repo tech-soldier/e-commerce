@@ -8,16 +8,16 @@ class Order extends Model
 {
     public function customer()
     {
-    	return $this->belongsTo(Customer::class); 
+    	return $this->belongsTo(User::class);
     }
 
     public function transaction()
     {
-    	return $this->hasMany(Transaction::class); 
+    	return $this->hasMany(Transaction::class);
     }
 
     public function watch()
     {
-    	return $this->belongsToMany(Watch::class); 
+    	return $this->belongsToMany(Watch::class);
     }
 }
