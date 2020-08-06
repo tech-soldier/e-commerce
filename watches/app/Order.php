@@ -10,7 +10,7 @@ class Order extends Model
         'order_id',      
         'user_id',                                                            
         'first_name',                                                            
-        'email_address',                                                        
+        'email',                                                        
         'billing_address',                                                        
         'shipping_address',                                                       
         'subtotal',                                             

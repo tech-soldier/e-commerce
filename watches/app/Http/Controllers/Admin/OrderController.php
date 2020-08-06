@@ -62,7 +62,6 @@ class OrderController extends Controller
 
 
          Order::create([
-            'order_id' => $valid['order_id'],      
             'user_id' => $valid['user_id'],                                                       
             'first_name' => $valid['first_name'],                                                      
             'email'=> $valid['email'],                                                 
