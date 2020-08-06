@@ -46,7 +46,7 @@ Route::patch('update-cart', 'CartController@update');
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/checkout', 'CheckoutController@getCheckout')->name('checkout.index');
     Route::post('/checkout/order', 'CheckoutController@placeOrder')->name('checkout.place.order');
-    Route::patch('/checkout/calculate', 'CheckoutController@calculateCost')->name('checkout.calculate.cost');;
+    Route::patch('checkout-calculate-cost', 'CheckoutController@calculateCost');
 });
 
 Auth::routes();

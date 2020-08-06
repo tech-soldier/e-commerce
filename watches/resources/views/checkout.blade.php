@@ -145,7 +145,7 @@ use \App\Http\Controllers\CartController;
                                     </header>
                                     <article class="card-body">
                                         <dl class="dlist-align">
-                                            <dt>Subtotal: ${{ CartController::getCartTotal() }}</dt>
+                                            <dt>Subtotal: <span id="subtotal">{{ CartController::getCartTotal() }}</span></dt>
                                         </dl>
                                         <dl class="dlist-align">
                                             <dt id="gst">GST:</dt>
@@ -179,16 +179,18 @@ use \App\Http\Controllers\CartController;
                // e.preventDefault();
                 var ele = $(this).val();
                 var gst = $("#gst");
-                //alert(ele);
+                var total = $("#subtotal").text();
+                //alert(subtotal);
 
                     $.ajax({
-                        url: '{{ url('checkout.calculate.cost') }}',
+                        url: '{{ url('checkout-calculate-cost') }}',
                         method: "patch",
-                        data: {_token: '{{ csrf_token() }}', province: ele},
+                        data: {_token: '{{ csrf_token() }}', province: ele, subtotal: total},
                         dataType: "json",
                         success: function (response) {
-                            alert(response.taxes);
-                            gst.text(response.taxes);
+                            alert(response.gst);
+
+
 
                         }
                     });
