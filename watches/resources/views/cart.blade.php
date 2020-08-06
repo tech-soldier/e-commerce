@@ -3,8 +3,6 @@
 
 @section('content')
 
-
-
     <div class="container page my-5">
 
         <span id="status"></span>
@@ -30,7 +28,7 @@
             <tr>
                 <td data-th="Product" class="align-middle">
                     <div class="row">
-                        <div class="col-sm-3 hidden-xs"><img src="images/product2.jpg" alt="" width="100" height="100" class="img-responsive"/></div>
+                        <div class="col-sm-3 hidden-xs"><img src="images/{{ $details['cover_img'] }}" alt="{{ $details['cover_img'] }}" width="100" height="100" class="img-responsive"/></div>
                         <div class="col-sm-9 align-middle">
                             <h4 class="mt-3">{{$details['watch_name']}}</h4>
                         </div>

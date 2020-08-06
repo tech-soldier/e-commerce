@@ -7,7 +7,7 @@
 
 	<h1>Table Name: <em>{{ $title }}</em></h1>
 
-<!-- this is the table --> 
+<!-- this is the table -->
 	<p><a style="color: white;" href="/admin/create/create_watch" ><div class="btn btn-success">Add Watch +</div></a></p>
 	<table class="table table-striped">
 	  <thead class="thead-dark">
@@ -34,9 +34,6 @@
 	      <td>{{ $watch->material }}</td>
 	      <td> <p><a href="/admin/edit/{{ $watch->watch_id }}/edit_watch" class="btn btn-primary">Edit</a></p>
 	      <td><button type="button" class="btn btn-danger">Delete</button></td>
-
-
-                   
 	    </tr>
 	  </tbody>
 	  @endforeach
@@ -44,4 +41,4 @@
 	<!-- end of the table-->
 </div>
 
-@stop 
+@stop
