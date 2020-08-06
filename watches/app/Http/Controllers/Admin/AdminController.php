@@ -43,13 +43,13 @@ class AdminController extends Controller
     public function store(Request $request)
     {
         $valid = $request->validate([
-            'admin_email' => 'required|string|max:255', 
+            'admin_email' => 'required|email|unique:admins,admin_email', 
             'password'  => 'required|string|max:255'
         ]); 
 
         Admin::create([
             'admin_email' => $valid['admin_email'], 
-            'password' => $valid['password']
+            'password' => password_hash($valid['password'], PASSWORD_DEFAULT)
         ]); 
 
         return redirect('/admin/admin_table')->with('success', 'Admin was successfully created'); 
