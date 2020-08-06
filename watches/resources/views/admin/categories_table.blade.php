@@ -24,11 +24,11 @@
 	  @foreach($categories as $category)
 	  <tbody>
 	    <tr>
-	      <th scope="row">{{ $category->category_id }}</th>
-	      <th>{{ $category->category_name }}</th>
+	      <th scope="row">{{ $category->id }}</th>
+	      <td>{{ $category->category_name}}
 	      <td>{{ $category->created_at }}</td>
 	      <td>{{ $category->updated_at }}</td>
-	      <td><button type="button" class="btn btn-primary">Edit</button></td>
+	      <td><p><a href="/admin/edit/{{ $category->id }}/edit_categories" class="btn btn-primary">Edit</a></p>
 	      <td><button type="button" class="btn btn-danger">Delete</button></td>
 	    </tr>
 	  </tbody>

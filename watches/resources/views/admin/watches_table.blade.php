@@ -7,15 +7,10 @@
 
 	<h1>Table Name: <em>{{ $title }}</em></h1>
 
-<<<<<<< HEAD
-<!-- this is the table -->
-	<p><a style="color: white;" href="/admin/create/create_watch" ><div class="btn btn-success">Add Watch +</div></a></p>
-
-=======
 
 <!-- this is the table --> 
 	<p><a style="color: white;" href="/admin/create/create_watch"><div class="btn btn-success">Add Watch +</div></a></p>
->>>>>>> master
+
 
 	<table class="table table-striped">
 	  <thead class="thead-dark">
@@ -41,13 +36,11 @@
 	      <td>$ {{ $watch->cost }}</td>
 	      <td>{{ $watch->material }}</td>
 
-	      <td> <p><a href="/admin/edit/{{ $watch->watch_id }}/edit_watch" class="btn btn-primary">Edit</a></p>
-<<<<<<< HEAD
-=======
-	      
+	      <td> <p><a href="/admin/edit/{{ $watch->id }}/edit_watch" class="btn btn-primary">Edit</a></p>
+  
 	      <!-- <td><button type="button" class="btn btn-danger">Delete</button></td> -->
 
->>>>>>> master
+
 
 	      <td>
 		  	<form class="delete"
