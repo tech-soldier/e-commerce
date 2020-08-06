@@ -9,6 +9,16 @@ use App\Category;
 
 class CategoryController extends Controller
 {
+
+    public function search()
+    {
+        $search_term = $_GET['query']; 
+        $categories = Category::where('category_name', 'LIKE', '%'.$search_term.'%')->get(); 
+
+        return view('/admin/search/search_categories', compact('categories', 'search_term')); 
+    }
+
+
     /**
      * Display a listing of the resource.
      *

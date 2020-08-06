@@ -5,7 +5,7 @@
 
 <div class="container">
 
-	<h1>Table Name: <em>{{ $title }}</em></h1>
+	<h1>You Searched For: <em>{{ $search_term }}</em></h1>
 
 <!-- this is the table --> 
 	<p><a style="color: white;" href="/admin/create/create_category"><div class="btn btn-success">Add Category +</div></a></p>
@@ -14,14 +14,17 @@
 		@csrf
 	    <div class="input-group">
 	        <input type="text" class="form-control" name="query"
-	            placeholder="Search categories"> <span class="input-group-btn">
+	            placeholder="Search watches"> <span class="input-group-btn">
 	            <button type="submit" class="btn btn-default">
 	                <span class="glyphicon glyphicon-search"></span>
 	            </button>
 	        </span>
 	    </div>
+	    <p><a style="color: white;" href="/admin/categories_table"><div class="btn btn-info">Refresh Results &#x27F3;</div></a></p>
+
 	</form>
 
+	@if(count($categories) > 0)
 	<table class="table table-striped">
 	  <thead class="thead-dark">
 	    <tr>
@@ -49,6 +52,13 @@
 
 	</table>
 	<!-- end of the table-->
+
+	@else
+
+		<h1><strong>404 Error: </strong><em>Sorry, we couldn't find what you were looking for<em></h1>
+
+	@endif 
+	
 </div>
 
 @stop 

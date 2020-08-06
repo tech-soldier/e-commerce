@@ -5,23 +5,24 @@
 
 <div class="container">
 
-	<h1>Table Name: <em>Taxes</em></h1>
+	<h1>You Searched For: <em>{{ $search_term }}</em></h1>
 
 <!-- this is the table --> 
 	<p><a style="color: white;" href="/admin/create/create_tax"><div class="btn btn-success">Add Tax +</div></a></p>
 
-	<form method="GET" action="{{ url('/admin/search/search_taxes') }}" style="margin-bottom: 25px">
+	<form method="GET" action="{{ url('/admin/search/search_watches') }}" style="margin-bottom: 25px">
 		@csrf
 	    <div class="input-group">
 	        <input type="text" class="form-control" name="query"
-	            placeholder="Search for PST"> <span class="input-group-btn">
+	            placeholder="Search watches"> <span class="input-group-btn">
 	            <button type="submit" class="btn btn-default">
 	                <span class="glyphicon glyphicon-search"></span>
 	            </button>
 	        </span>
 	    </div>
-	</form>
+	    <p><a style="color: white;" href="/admin/taxes_table"><div class="btn btn-info">Refresh Results &#x27F3;</div></a></p>
 
+	</form>
 	<table class="table table-striped">
 	  <thead class="thead-dark">
 	    <tr>
