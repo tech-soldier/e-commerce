@@ -70,10 +70,12 @@
             </li>
             
             <div class=" ml-3 acct_user d-flex">
-            <!-- util search -->
-                <div class="circle1">
-                    <img class="profile-pic" src="http://lorempixel.com/50/50/people" alt="profile picture">
-                </div>
+            <!-- util profile -->
+                <a href="/profile">
+                    <div class="circle1">
+                        <img class="profile-pic" src="http://lorempixel.com/50/50/people" alt="profile picture">
+                    </div>                    
+                </a>
 
             </div>
 
