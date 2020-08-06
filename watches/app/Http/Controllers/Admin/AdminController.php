@@ -9,6 +9,15 @@ use App\Admin;
 
 class AdminController extends Controller
 {
+
+    public function search()
+    {
+        $search_term = $_GET['query']; 
+        $admin = Order::where('id', 'LIKE', '%'.$search_term.'%')->orWhere('billing_address', 'LIKE', '%'.$search_term.'%')->orWhere('shipping_address', 'LIKE', '%'.$search_term.'%')->get(); 
+
+        return view('/admin/search/search_orders', compact('admin', 'search_term')); 
+    }
+
     /**
      * Display a listing of the resource.
      *

@@ -38,7 +38,8 @@ class SeedUsersTable extends Seeder
         	'postal_code' => 'r5y6u8', 
         	'email' => 'dawn-baker@bellmts.com', 
         	'phone_number' => '309-446-9007', 
-        	'password' => password_hash('mypass', PASSWORD_DEFAULT),  
+        	'password' => password_hash('mypass', PASSWORD_DEFAULT),
+            'is_admin' => true,  
         	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now() 
         ]); 
@@ -83,7 +84,8 @@ class SeedUsersTable extends Seeder
         	'postal_code' => 'e5y6u7', 
         	'email' => 'rahwa@mts.net', 
         	'phone_number' => '226-146-9107', 
-        	'password' => password_hash('mypass', PASSWORD_DEFAULT),  
+        	'password' => password_hash('mypass', PASSWORD_DEFAULT),
+            'is_admin' => true,                
         	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now() 
         ]); 
@@ -99,6 +101,7 @@ class SeedUsersTable extends Seeder
         	'email' => 'aCash-money@mts.net', 
         	'phone_number' => '226-146-9107', 
         	'password' => password_hash('mypass', PASSWORD_DEFAULT), 
+            'is_admin' => true,              
         	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now() 
         ]); 
