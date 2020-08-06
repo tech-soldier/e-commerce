@@ -16,7 +16,7 @@ class CreateTaxesTable extends Migration
         Schema::create('taxes', function (Blueprint $table) {
             $table->id('tax_id');
             $table->string('province', 255);
-            $table->decimal('GST', 10,2); 
+            $table->decimal('GST', 10,2)->default('0.05');; 
             $table->decimal('PST', 10,2);
             $table->timestamps();
             $table->softDeletes('deleted_at', 0);

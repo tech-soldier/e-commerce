@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Tax; 
+
 class TaxController extends Controller
 {
     /**
@@ -14,7 +16,7 @@ class TaxController extends Controller
      */
     public function index()
     {
-        //
+    
     }
 
     /**
@@ -24,7 +26,11 @@ class TaxController extends Controller
      */
     public function create()
     {
-        //
+        $title = 'Create A New TaX'; 
+
+        $taxes = Tax::all(); 
+
+        return view('/admin/create/create_tax', compact('title', 'taxes')); 
     }
 
     /**
