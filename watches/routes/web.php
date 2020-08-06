@@ -89,7 +89,7 @@ Route::post('admin/create/create_order', 'Admin\OrderController@store');
 Route::get('admin/create/create_tax', 'Admin\TaxController@create'); 
 Route::post('admin/create/create_tax', 'Admin\TaxController@store');
 
-// create transactions incomplete
+// create transactions COMPLETE
 Route::get('admin/create/create_transaction', 'Admin\TransactionController@create'); 
 Route::post('admin/create/create_transaction', 'Admin\TransactionController@store');
 
