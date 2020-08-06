@@ -53,7 +53,7 @@ use \App\Http\Controllers\CartController;
                                 <div class="form-row">
                                     <div class="form-group  col-md-6">
                                         <label>Province</label>
-                                        <input type="text" class="form-control bg-light" name="province">
+                                        <input type="text" class="form-control bg-light" name="province" id="province">
                                     </div>
                                     <div class="form-group  col-md-6">
                                         <label>Postal Code</label>
@@ -130,7 +130,7 @@ use \App\Http\Controllers\CartController;
                                         <input type="checkbox" class="form-check-input" id="materialUnchecked">
                                         <label class="form-check-label" for="materialUnchecked">Same as Billing Address</label>
                                     </div>
-                                    <button type="button" class="btn btn-info">Info</button>
+
                                 </article>
                             </div>
                     </div>
@@ -148,13 +148,13 @@ use \App\Http\Controllers\CartController;
                                             <dt>Subtotal: ${{ CartController::getCartTotal() }}</dt>
                                         </dl>
                                         <dl class="dlist-align">
-                                            <dt>GST: $19</dt>
+                                            <dt id="gst">GST:</dt>
                                         </dl>
                                         <dl class="dlist-align">
-                                            <dt>PST: $23</dt>
+                                            <dt>PST: </dt>
                                         </dl>
                                         <dl class="dlist-align">
-                                            <dt>Shipping: $12</dt>
+                                            <dt>Shipping: </dt>
                                         </dl>
                                         <dl class="dlist-align">
                                             <dt>Total: </dt>
@@ -172,5 +172,29 @@ use \App\Http\Controllers\CartController;
             </form>
         </div>
 
+
+        <script type="text/javascript">
+
+            $("#province").on('change', function() {
+               // e.preventDefault();
+                var ele = $(this).val();
+                var gst = $("#gst");
+                //alert(ele);
+
+                    $.ajax({
+                        url: '{{ url('checkout.calculate.cost') }}',
+                        method: "patch",
+                        data: {_token: '{{ csrf_token() }}', province: ele},
+                        dataType: "json",
+                        success: function (response) {
+                            alert(response.taxes);
+                            gst.text(response.taxes);
+
+                        }
+                    });
+            });
+
+
+        </script>
 
 @endsection

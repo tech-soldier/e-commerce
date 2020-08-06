@@ -45,6 +45,8 @@ Route::patch('update-cart', 'CartController@update');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/checkout', 'CheckoutController@getCheckout')->name('checkout.index');
+    Route::post('/checkout/order', 'CheckoutController@placeOrder')->name('checkout.place.order');
+    Route::patch('/checkout/calculate', 'CheckoutController@calculateCost')->name('checkout.calculate.cost');;
 });
 
 Auth::routes();
@@ -75,11 +77,11 @@ Route::get('/admin/categories_table', 'AdminController@categories');
 
 
 
-/* admin create files ----------------------------------------------*/ 
+/* admin create files ----------------------------------------------*/
 
-// create watches COMPLETE *except for image upload* 
-Route::get('admin/create/create_watch', 'Admin\WatchController@create'); 
-Route::post('admin/create/create_watch', 'Admin\WatchController@store'); 
+// create watches COMPLETE *except for image upload*
+Route::get('admin/create/create_watch', 'Admin\WatchController@create');
+Route::post('admin/create/create_watch', 'Admin\WatchController@store');
 
 /* admin create files ----------------------------------------------*/
 // create watches incomplete
@@ -92,23 +94,23 @@ Route::get('admin/create/create_admin', 'Admin\AdminController@create');
 Route::post('admin/create/create_admin', 'Admin\AdminController@store');
 
 // create categories COMPLETE
-Route::get('admin/create/create_category', 'Admin\CategoryController@create'); 
-Route::post('admin/create/create_category', 'Admin\CategoryController@store'); 
+Route::get('admin/create/create_category', 'Admin\CategoryController@create');
+Route::post('admin/create/create_category', 'Admin\CategoryController@store');
 
 // create orders COMPLETE
-Route::get('admin/create/create_order', 'Admin\OrderController@create'); 
-Route::post('admin/create/create_order', 'Admin\OrderController@store'); 
+Route::get('admin/create/create_order', 'Admin\OrderController@create');
+Route::post('admin/create/create_order', 'Admin\OrderController@store');
 
 // create taxes COMPLETE
-Route::get('admin/create/create_tax', 'Admin\TaxController@create'); 
+Route::get('admin/create/create_tax', 'Admin\TaxController@create');
 Route::post('admin/create/create_tax', 'Admin\TaxController@store');
 
 // create transactions COMPLETE
-Route::get('admin/create/create_transaction', 'Admin\TransactionController@create'); 
+Route::get('admin/create/create_transaction', 'Admin\TransactionController@create');
 Route::post('admin/create/create_transaction', 'Admin\TransactionController@store');
 
-// create users COMPLETE 
-Route::get('admin/create/create_user', 'Admin\UserController@create'); 
+// create users COMPLETE
+Route::get('admin/create/create_user', 'Admin\UserController@create');
 Route::post('admin/create/create_user', 'Admin\UserController@store');
 
 /* admin edit files */
@@ -126,5 +128,5 @@ Route::get('/admin/edit/{id}/edit_categories', 'Admin\CategoryController@edit');
 
 Route::put('/admin/edit/categories_table', 'Admin\CategoryController@update');
 
-  
+
 
