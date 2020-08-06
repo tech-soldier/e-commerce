@@ -68,15 +68,21 @@
                     </form>
                 </div>
             </li>
+            
+            <div class=" ml-3 acct_user d-flex">
+            <!-- util search -->
+                <div class="circle1">
+                    <img class="profile-pic" src="http://lorempixel.com/50/50/people" alt="profile picture">
+                </div>
 
-
+            </div>
 
             
             @endguest
 
         </ul>
 
-        <div class=" ml-5 acct_srch d-flex">
+        <div class=" ml-2 acct_srch d-flex">
             <!-- util search -->
             <div class="circle">
                 <i class="fas fa-search"></i>
