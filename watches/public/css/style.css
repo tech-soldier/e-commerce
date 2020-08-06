@@ -435,11 +435,17 @@ video {
 }
 
 .accordion {
-  width: 70%;
+  
 }
 .accordion a {
   color: black;
   text-decoration:none;
+}
+.add-div{
+  text-align:center;
+}
+.col-md-6 {
+  padding-right: 0px !important;
 }
 /* end of detail view page
 

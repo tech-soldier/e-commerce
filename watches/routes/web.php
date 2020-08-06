@@ -43,6 +43,10 @@ Route::patch('update-cart', 'CartController@update');
 
 /* ----------------------------------------------*/
 
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/checkout', 'CheckoutController@getCheckout')->name('checkout.index');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -51,12 +55,15 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // this is all for the admin side
 
+Route::get('/admin', 'AdminController@index');
 
 Route::get('/admin/watches_table', 'AdminController@watches');
 
 Route::get('/admin/orders_table', 'AdminController@orders');
 
 Route::get('/admin/users_table', 'AdminController@users');
+
+// Route::delete('/admin/customers_table', 'Admin\CustomerController@destroy');
 
 Route::get('/admin/admin_table', 'AdminController@admin');
 
@@ -67,15 +74,22 @@ Route::get('/admin/transactions_table', 'AdminController@transactions');
 Route::get('/admin/categories_table', 'AdminController@categories');
 
 
+
 /* admin create files ----------------------------------------------*/ 
 
 // create watches COMPLETE *except for image upload* 
 Route::get('admin/create/create_watch', 'Admin\WatchController@create'); 
 Route::post('admin/create/create_watch', 'Admin\WatchController@store'); 
 
+/* admin create files ----------------------------------------------*/
+// create watches incomplete
+Route::get('admin/create/create_watch', 'Admin\WatchController@create');
+Route::post('admin/create/create_watch', 'Admin\WatchController@store');
+
+
 // create admin COMPLETE
-Route::get('admin/create/create_admin', 'Admin\AdminController@create'); 
-Route::post('admin/create/create_admin', 'Admin\AdminController@store'); 
+Route::get('admin/create/create_admin', 'Admin\AdminController@create');
+Route::post('admin/create/create_admin', 'Admin\AdminController@store');
 
 // create categories COMPLETE
 Route::get('admin/create/create_category', 'Admin\CategoryController@create'); 
@@ -97,13 +111,20 @@ Route::post('admin/create/create_transaction', 'Admin\TransactionController@stor
 Route::get('admin/create/create_user', 'Admin\UserController@create'); 
 Route::post('admin/create/create_user', 'Admin\UserController@store');
 
+/* admin edit files */
+Route::get('/admin/edit/{id}/edit_watch', 'Admin\WatchController@edit');
+
+Route::put('/admin/edit/watches_table', 'Admin\WatchController@update');
+
+Route::delete('/admin/watches_table', 'Admin\WatchController@destroy');
+
+
 /* ------------------------------------------------------------------ */
 
 
+Route::get('/admin/edit/{id}/edit_categories', 'Admin\CategoryController@edit');
 
-/* admin edit files */ 
-Route::get('/admin/edit/{id}/edit_watch', 'Admin\WatchesController@edit'); 
-
-Route::put('/admin/edit/watches_table', 'Admin\WatchesController@update'); 
+Route::put('/admin/edit/categories_table', 'Admin\CategoryController@update');
 
   
+

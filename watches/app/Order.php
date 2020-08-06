@@ -24,17 +24,21 @@ class Order extends Model
 
     public function user()
     {
+<<<<<<< HEAD
     	return $this->belongsTo(User::class); 
+=======
+    	return $this->belongsTo(User::class);
+>>>>>>> master
     }
 
     public function transaction()
     {
-    	return $this->hasMany(Transaction::class); 
+    	return $this->hasMany(Transaction::class);
     }
 
     public function watch()
     {
-    	return $this->belongsToMany(Watch::class); 
+    	return $this->belongsToMany(Watch::class);
     }
 
     public function tax()

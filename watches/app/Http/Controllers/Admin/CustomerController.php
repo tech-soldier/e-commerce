@@ -6,8 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Admin; 
+use App\Customer; 
 
-class AdminController extends Controller
+class CustomerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +17,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $data = DB::table('watches')->get();
-        print_r($data);
+        //
     }
 
     /**
@@ -27,11 +27,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        $data['title'] = 'Create A New Admin'; 
-
-        $data['admins'] = Admin::all(); 
-
-        return view('/admin/create/create_admin', $data); 
+        //
     }
 
     /**
@@ -42,18 +38,7 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        $valid = $request->validate([
-            'admin_email' => 'required|email|unique:admins,admin_email', 
-            'password'  => 'required|string|max:255'
-        ]); 
-
-        Admin::create([
-            'admin_email' => $valid['admin_email'], 
-            'password' => password_hash($valid['password'], PASSWORD_DEFAULT)
-        ]); 
-
-        return redirect('/admin/admin_table')->with('success', 'Admin was successfully created'); 
-
+        //
     }
 
     /**
@@ -96,16 +81,16 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy (Request $request)
+    public function destroy(Request $request)
     {
-        // // validated -- make sure id is passed in request
+        // validated -- make sure id is passed in request
         // $valid = $request->validate([
         //     'customer_id' => 'required|integer'
         // ]);
 
         // // Try to delete the post and send the user back to the posts 
         // // index view with a flash message
-        // if( User::find($valid['customer_id'])->delete() ) {
+        // if( Customer::find($valid['customer_id'])->delete() ) {
         //     return back()->with('success', 'Post has been deleted!');
         // }
         // return back()->with('error', 'There was a problem deleting that post');
