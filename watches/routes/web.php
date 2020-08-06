@@ -112,6 +112,7 @@ Route::get('admin/create/create_user', 'Admin\UserController@create');
 Route::post('admin/create/create_user', 'Admin\UserController@store');
 
 /* admin edit files */
+//edit watch table
 Route::get('/admin/edit/{id}/edit_watch', 'Admin\WatchController@edit');
 
 Route::put('/admin/edit/watches_table', 'Admin\WatchController@update');
@@ -119,12 +120,16 @@ Route::put('/admin/edit/watches_table', 'Admin\WatchController@update');
 Route::delete('/admin/watches_table', 'Admin\WatchController@destroy');
 
 
-/* ------------------------------------------------------------------ */
 
+//edit category table
 
 Route::get('/admin/edit/{id}/edit_categories', 'Admin\CategoryController@edit');
 
 Route::put('/admin/edit/categories_table', 'Admin\CategoryController@update');
 
-  
+ 
+ //edit order table
+Route::get('/admin/edit/{id}/edit_orders', 'Admin\OrderController@edit');
+
+Route::put('/admin/edit/orders_table', 'Admin\OrderController@update');
 
