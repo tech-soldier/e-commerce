@@ -9,15 +9,15 @@ use App\User;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+
+    public function search()
     {
-        //
+        $search_term = $_GET['query']; 
+        $users = User::where('first_name', 'LIKE', '%'.$search_term.'%')->orWhere('last_name', 'LIKE', '%'.$search_term.'%')->get(); 
+
+        return view('/admin/search/search_users', compact('users', 'search_term')); 
     }
+
 
     /**
      * Show the form for creating a new resource.

@@ -5,11 +5,10 @@
 
 <div class="container">
 
-	<h1>Table Name: <em>{{ $title }}</em></h1>
+	<h1>You Searched For: <em>{{ $search_term }}</em></h1>
 
 <!-- this is the table --> 
 	<p><a style="color: white;" href="/admin/create/create_user"><div class="btn btn-success">Add User +</div></a></p>
-
 
 	<form method="GET" action="{{ url('/admin/search/search_users') }}" style="margin-bottom: 25px">
 		@csrf
@@ -21,9 +20,12 @@
 	            </button>
 	        </span>
 	    </div>
+	    <p><a style="color: white;" href="/admin/users_table"><div class="btn btn-info">Refresh Results &#x27F3;</div></a></p>
+
 	</form>
 
-	
+
+
 	<table class="table table-striped">
 	  <thead class="thead-dark">
 	    <tr>
