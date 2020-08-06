@@ -113,7 +113,7 @@ Route::get('admin/create/create_user', 'Admin\UserController@create');
 Route::post('admin/create/create_user', 'Admin\UserController@store');
 
 /* admin edit files */
-HEAD
+
 // Route::get('/admin/edit/{id}/edit_watch', 'Admin\WatchController@edit');
 //edit watch table
 Route::get('/admin/edit/{id}/edit_watch', 'Admin\WatchController@edit');
