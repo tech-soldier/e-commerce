@@ -36,7 +36,7 @@
 	      <td>$ {{ $watch->cost }}</td>
 	      <td>{{ $watch->material }}</td>
 
-	      <td> <p><a href="/admin/edit/{{ $watch->watch_id }}/edit_watch" class="btn btn-primary">Edit</a></p>
+	      <td> <p><a href="/admin/edit/{{ $watch->id }}/edit_watch" class="btn btn-primary">Edit</a></p>
   
 	      <!-- <td><button type="button" class="btn btn-danger">Delete</button></td> -->
 

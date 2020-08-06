@@ -3,31 +3,31 @@
 @section('content')
 
 <div class="card my-r">
-    
+
     <div class="card-header">
         <h1 class="card-title">{{ $title }}</h1>
     </div>
-    
+
     <div class="card-body">
-    
-        <p><a href="/admin/categories_table" class="btn btn-warning class=previous">&laquo; Back</a></p>
-        
-        <form class="form" action="/admin/categories_table" method="post" enctype="multipart/form-data">
+
+        <p><a href="/admin/edit/categories_table" class="btn btn-warning class=previous">&laquo; Back</a></p>
+
+        <form class="form" action="/admin/edit/categories_table" method="post" enctype="multipart/form-data">
 
            <input type="hidden" name="id" value="{{ $categories->id }}" />
 
 
            @method('PUT')
-           
+
            <div class="form-group">
-           
+
                 <label for="categories">Category Name</label>
                  <input id="categories" class="form-control" name="category" value="{{ $categories->name}}" />
                 @error('categories')
                <span class="alert-danger"> {{ $message }}</span>
                @enderror
             </div>
-            
+
            <!--  <div class="form-group">
            
                 <label for="created_at">Created At</label>
@@ -58,32 +58,4 @@
 
 
 @stop           
-           
-          
-         
-        
-       
-      
-     
-    
-   
-  
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
