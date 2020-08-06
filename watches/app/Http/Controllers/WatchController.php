@@ -131,6 +131,12 @@ class WatchController extends Controller
         //get authenticated user id
         $id = Auth::id();
 
+        // test if user is authenticated
+        if(empty($id)){
+            // redirect to login if not
+            return view('/auth/login');
+        }
+
         // get user's data
         $user = User::find($id);
 
