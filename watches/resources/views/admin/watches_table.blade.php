@@ -5,12 +5,11 @@
 
 <div class="container">
 
-	<h1>Table Name: <em>{{ $title }}</em></h1>
+	<h1>Table Name: <em>{{ $title ?? '' }}</em></h1>
 
 
 <!-- this is the table --> 
 	<p><a style="color: white;" href="/admin/create/create_watch"><div class="btn btn-success">Add Watch +</div></a></p>
-
 
 	<table class="table table-striped">
 	  <thead class="thead-dark">
@@ -27,37 +26,40 @@
 
 	    </tr>
 	  </thead>
-	  @foreach($watches as $watch)
-	  <tbody>
-	    <tr>
-	      <th scope="row">1{{ $watch->id }}</th>
-	      <th>{{ $watch->SKU }}</th>
-	      <td>{{ $watch->watch_name }}</td>
-	      <td>$ {{ $watch->price }}</td>
-	      <td>$ {{ $watch->cost }}</td>
-	      <td>{{ $watch->category_id }}</td>
-	      <td>{{ $watch->material }}</td>
+	  @if(isset($watch))
 
-	      <td> <p><a href="/admin/edit/{{ $watch->id }}/edit_watch" class="btn btn-primary">Edit</a></p>
-  
-	      <!-- <td><button type="button" class="btn btn-danger">Delete</button></td> -->
+		  @foreach($watches as $watch)
+		  <tbody>
+		    <tr>
+		      <th scope="row">1{{ $watch->id }}</th>
+		      <th>{{ $watch->SKU }}</th>
+		      <td>{{ $watch->watch_name }}</td>
+		      <td>$ {{ $watch->price }}</td>
+		      <td>$ {{ $watch->cost }}</td>
+		      <td>{{ $watch->category_id }}</td>
+		      <td>{{ $watch->material }}</td>
+
+		      <td> <p><a href="/admin/edit/{{ $watch->id }}/edit_watch" class="btn btn-primary">Edit</a></p>
+	  
+		      <!-- <td><button type="button" class="btn btn-danger">Delete</button></td> -->
 
 
 
-	      <td>
-		  	<form class="delete"
-                            onSubmit="return confirm('Do you really want to delete this post?')"
-                             action="/admin/watches_table" method="post">
-                            @csrf
-                            @method('DELETE')
-                            <input type="hidden" name="id" value="{{ $watch->id }}"/>
-                            <button type="submit" class="btn btn-danger">Delete</button>
-            </form>
-         </td>
+		      <td>
+			  	<form class="delete"
+                    onSubmit="return confirm('Do you really want to delete this post?')"
+                     action="/admin/watches_table" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <input type="hidden" name="id" value="{{ $watch->id }}"/>
+                    <button type="submit" class="btn btn-danger">Delete</button>
+	            </form>
+	         </td>
 
-	    </tr>
-	  </tbody>
-	  @endforeach
+		    </tr>
+		  </tbody>
+		  @endforeach
+	  @endif
 	</table>
 	<!-- end of the table-->
 </div>

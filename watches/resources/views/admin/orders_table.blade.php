@@ -13,7 +13,7 @@
 	  <thead class="thead-dark">
 	    <tr>
 	      <th scope="col">Order ID</th>
-	      <th scope="col">Customer ID</th>
+	      <th scope="col">User ID</th>
 	      <th scope="col">Billing Address</th>
 	      <th scope="col">Shipping Address</th>	      
 	      <th scope="col">Subtotal</th>
@@ -26,7 +26,7 @@
 	  @foreach($orders as $order)
 	  <tbody>
 	    <tr>
-	      <th scope="row">{{ $order->order_id }}</th>
+	      <th scope="row">{{ $order->id }}</th>
 	      <td>{{ $order->user_id }}</td>
 	      <td>{{ $order->billing_address }}</td>
 	      <td>{{ $order->shipping_address }}</td>

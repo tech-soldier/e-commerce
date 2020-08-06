@@ -26,7 +26,7 @@
 	   @foreach($transactions as $transaction)
 	  <tbody>
 	    <tr>
-	      <th scope="row">{{ $transaction->transaction_id }}</th>
+	      <th scope="row">{{ $transaction->id }}</th>
 	      <th>{{ $transaction->transaction_code }}</th>
 	      <th>{{ $transaction->order_id }}</th>
 	      <td>{{ $transaction->transaction }}</td>

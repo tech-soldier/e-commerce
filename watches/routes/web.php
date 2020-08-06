@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Watch; 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -74,6 +75,10 @@ Route::get('/admin/transactions_table', 'AdminController@transactions');
 Route::get('/admin/categories_table', 'AdminController@categories');
 
 
+/* admin search routes ------------------------------------------*/ 
+
+
+/*----------------------------------------------------------------*/
 
 /* admin create files ----------------------------------------------*/ 
 
