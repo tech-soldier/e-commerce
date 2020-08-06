@@ -28,7 +28,7 @@
 	  <tbody>
 	  	
 	    <tr>
-	      <th scope="row">{{ $tax->tax_id }}</th>
+	      <th scope="row">{{ $tax->id }}</th>
 	      <th>{{ $tax->province }}</th>
 	      <td>{{ $tax->GST }}</td>
 	      <td>{{ $tax->PST }}</td>

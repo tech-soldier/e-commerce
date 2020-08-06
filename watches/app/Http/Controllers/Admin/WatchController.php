@@ -11,15 +11,16 @@ use App\Category;
 
 class WatchController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+
+    public function search()
     {
-        //
+        $search_term = $_GET['query']; 
+        $watches = Watch::where('watch_name', 'LIKE', '%'.$search_term.'%')->orWhere('material', 'LIKE', '%'.$search_term.'%')->get(); 
+
+        return view('/admin/search/search_watches', compact('watches', 'search_term')); 
     }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -170,6 +171,7 @@ class WatchController extends Controller
         $cover_img = time() . '_' . $file->getClientOriginalName();
         //save the image
         $path = $file->storeAs('storage', $cover_img);
+
     }
 
         $watch = Watch::find($valid['id']);
@@ -196,13 +198,14 @@ class WatchController extends Controller
 
         if($watch->save() ) {
             return redirect('/admin/watches_table')->with('success', 'Your watch is successfully updated');
+
         }
 
         return redirect('/admin/watches_table')->with('error', 'There was a problem updating the watch');
 
-    }
+        }
 
-    /**
+        /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
