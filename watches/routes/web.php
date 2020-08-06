@@ -94,6 +94,8 @@ Route::get('admin/create/create_transaction', 'Admin\TransactionController@creat
 Route::post('admin/create/create_transaction', 'Admin\TransactionController@store');
 
 // create users incomplete 
+Route::get('admin/create/create_user', 'Admin\UserController@create'); 
+Route::post('admin/create/create_user', 'Admin\UserController@store');
 
 /* ------------------------------------------------------------------ */
 
