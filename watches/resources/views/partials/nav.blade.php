@@ -36,11 +36,53 @@
             </li>
             @endif
 
+            <li>
+                <a class="nav-link" href="/">Home
+                  <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li >
+                <a class="nav-link" href="/about">About</a>
+            </li>
+            <li  >
+                <a class="nav-link" href="/contact">Contact</a>
+            </li>
+            <li  >
+                <a class="nav-link" href="/shop">Shop</a>
+            </li>
+            <li class="nav-item dropdown">
+
+                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    Logout <span class="caret"></span>
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a style="color:black" class="dropdown-item" href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
+                                     document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </div>
+            </li>
+            
+            <div class=" ml-3 acct_user d-flex">
+            <!-- util search -->
+                <div class="circle1">
+                    <img class="profile-pic" src="http://lorempixel.com/50/50/people" alt="profile picture">
+                </div>
+
+            </div>
+
+            
             @endguest
 
         </ul>
 
-        <div class=" ml-5 acct_srch d-flex">
+        <div class=" ml-2 acct_srch d-flex">
             <!-- util search -->
             <div class="circle">
                 <i class="fas fa-search"></i>
