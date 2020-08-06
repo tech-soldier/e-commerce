@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="card my-r">
+<div class="container" style="width: 50%">
     
     <div class="card-header">
         <h1 class="card-title">{{ $title }}</h1>
@@ -31,7 +31,7 @@
             <div class="form-group">
            
                 <label for="watch_name">Watch Name</label>
-                 <input id="watach_name" class="form-control" name="watch_name" value="{{  $watch->watch_name }}" />
+                 <input id="watch_name" class="form-control" name="watch_name" value="{{  $watch->watch_name }}" />
                 @error('watch_name')
                <span class="alert-danger"> {{ $message }}</span>
                @enderror
@@ -92,8 +92,17 @@
                @enderror
             </div>
 
+             
             <div class="form-group">
              
+            <label for="movement">Movement</label>
+                 <input id="movement" class="form-control" name="movement" value="{{ $watch->movement }}" />
+                @error('movement')
+               <span class="alert-danger"> {{ $message }}</span>
+               @enderror
+            </div>
+
+            <div class="form-group">
             <label for="gender">Gender</label>
                  <input id="gender" class="form-control" name="gender" value="{{ $watch->gender }}" />
                 @error('gender')
@@ -180,7 +189,7 @@
             </div>
 
           </form>
-          {{ dd($errors)}}
+
         </div>
     </div>
 
