@@ -54,6 +54,7 @@ use \App\Http\Controllers\CartController;
                                     <div class="form-group col-md-6">
                                         <label for="exampleFormControlSelect1">Province</label>
                                         <select class="form-control province" id="exampleFormControlSelect1">
+                                            <option disabled selected> -- select an option -- </option>
                                             @foreach($taxes as $tax)
                                                 <option value="{{$tax->province}}">
                                                     {{$tax->province}}
@@ -125,6 +126,7 @@ use \App\Http\Controllers\CartController;
                                         <div class="form-group col-md-6">
                                             <label for="exampleFormControlSelect1">Province</label>
                                             <select class="form-control" id="exampleFormControlSelect1">
+                                                <option disabled selected> -- select an option -- </option>
                                                 @foreach($taxes as $tax)
                                                     <option value="{{$tax->province}}">
                                                         {{$tax->province}}
@@ -157,20 +159,20 @@ use \App\Http\Controllers\CartController;
                                     </header>
                                     <article class="card-body">
                                         <dl class="dlist-align">
-                                            <dt>Subtotal: <span id="subtotal">{{ CartController::getCartTotal() }}</span></dt>
+                                            <dt>Subtotal: $<span id="subtotal">{{ CartController::getCartTotal() }}</span></dt>
                                         </dl>
                                         <dl class="dlist-align">
-                                            <dt>GST: <span id="gst"></span></dt>
+                                            <dt>GST: $<span id="gst"></span></dt>
                                         </dl>
                                         <dl class="dlist-align">
-                                            <dt>PST:  <span id="pst"></span></dt>
+                                            <dt>PST:  $<span id="pst"></span></dt>
                                         </dl>
                                         <dl class="dlist-align">
-                                            <dt>Shipping: </dt>
+                                            <dt>Shipping: $<span id="shipping"></span></dt>
                                         </dl>
                                         <dl class="dlist-align">
                                             <dt>Total: </dt>
-                                            <dd class="text-right h5 b">$20,000</dd>
+                                            <dd class="text-right h5 b" id="total_final">$20,000</dd>
                                         </dl>
                                     </article>
                                 </div>
@@ -188,11 +190,14 @@ use \App\Http\Controllers\CartController;
         <script type="text/javascript">
 
             $(".province").on('change', function() {
-               // e.preventDefault();
+
                 var ele = $(this).val();
                 var gst = $("#gst");
+                var pst = $("#pst");
                 var total = $("#subtotal").text();
-                //alert(subtotal);
+                var shipping = $("#shipping");
+                var total_final = $("#total_final");
+
 
                     $.ajax({
                         url: '{{ url('checkout-calculate-cost') }}',
@@ -202,6 +207,9 @@ use \App\Http\Controllers\CartController;
                         success: function (response) {
                             alert(response.gst);
                             gst.text(response.gst);
+                            pst.text(response.pst);
+                            shipping.text(response.shipping);
+                            total_final.text(response.total);
 
 
                         }
