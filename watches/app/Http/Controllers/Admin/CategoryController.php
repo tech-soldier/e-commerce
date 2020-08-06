@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Category;
 
 class CategoryController extends Controller
 {
@@ -14,7 +15,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        //display a view all of our catargories
+
+
     }
 
     /**
@@ -57,7 +60,9 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categories = Category::find($id);
+        $title = 'Edit Categories'; 
+        return view('/admin/edit/edit_categories', compact('title', 'categories')); 
     }
 
     /**
@@ -69,7 +74,17 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $valid = $request->validate([
+           
+            'category_name' => 'required|string|max:255'
+          
+        ]);
+
+        if($category->save() ) {
+        return redirect('/admin/categories_table')->with('success', 'Your category is successfully updated');
+      }
+
+      return redirect('/admin/categories_table')->with('error', 'There was a problem updating the category');
     }
 
     /**
