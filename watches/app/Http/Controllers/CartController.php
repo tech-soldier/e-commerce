@@ -130,7 +130,7 @@ class CartController extends Controller
 
             $total = $this->getCartTotal();
 
-            return response()->json(['msg' => 'Cart updated successfully',  'total' => $total, 'subTotal' => $subTotal]);
+            return response()->json(['total' => $total, 'subTotal' => $subTotal]);
 
             session()->flash('success', 'Cart updated successfully');
         }

@@ -7,8 +7,10 @@
 
 	<h1>Table Name: <em>{{ $title }}</em></h1>
 
+
 <!-- this is the table --> 
 	<p><a style="color: white;" href="/admin/create/create_watch"><div class="btn btn-success">Add Watch +</div></a></p>
+
 	<table class="table table-striped">
 	  <thead class="thead-dark">
 	    <tr>
@@ -49,8 +51,6 @@
             </form>
          </td>
 
-
-                   
 	    </tr>
 	  </tbody>
 	  @endforeach
@@ -58,4 +58,4 @@
 	<!-- end of the table-->
 </div>
 
-@stop 
+@stop
