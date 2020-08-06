@@ -27,6 +27,10 @@ Route::get('/{watch}/detail', 'WatchController@show');
 
 Route::get('/profile', 'WatchController@profile');
 
+Route::get('/profile/{id}/edit', 'UserController@edit'); // edit form
+
+Route::put('/profile/edit', 'UserController@update'); // validate and update
+
 Route::get('/', 'WatchController@homeIndex');
 
 Route::post('send-mail','SendMailController@Email');
