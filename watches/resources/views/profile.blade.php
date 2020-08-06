@@ -22,98 +22,87 @@
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item px-0 pb-1 font-weight-bold">
                         <span class="text-secondary">First Name:</span>
-                        <span class="float-right">Alexandr</span>
+                        <span class="float-right">{{ (!empty($user->first_name)) ? $user->first_name : '-' }}</span>
                     </li>
                     <li class="list-group-item px-0 pb-1 font-weight-bold">
                         <span class="text-secondary">Last Name:</span>
-                        <span class="float-right">Pasko</span>
+                        <span class="float-right">{{ (!empty($user->last_name)) ? $user->last_name : '-' }}</span>
                     </li>
                     <li class="list-group-item px-0 pb-1 font-weight-bold">
                         <span class="text-secondary">Billing Address:</span>
-                        <span class="float-right">43 Inkster str.</span>
+                        <span class="float-right">{{ (!empty($user->billing_address)) ? $user->billing_address : '-' }}</span>
                     </li>
                     <li class="list-group-item px-0 pb-1 font-weight-bold">
                         <span class="text-secondary">City:</span>
-                        <span class="float-right">Calgary</span>
+                        <span class="float-right">{{ (!empty($user->city)) ? $user->city : '-' }}</span>
                     </li>
                     <li class="list-group-item px-0 pb-1 font-weight-bold">
                         <span class="text-secondary">Province:</span>
-                        <span class="float-right">Alberta</span>
+                        <span class="float-right">{{ (!empty($user->province)) ? $user->province : '-' }}</span>
                     </li>
                     <li class="list-group-item px-0 pb-1 font-weight-bold">
                         <span class="text-secondary">Country:</span>
-                        <span class="float-right">Canada</span>
+                        <span class="float-right">{{ (!empty($user->country)) ? $user->country : '-' }}</span>
                     </li>
                     <li class="list-group-item px-0 pb-1 font-weight-bold">
                         <span class="text-secondary">Postal Code:</span>
-                        <span class="float-right">35Y6U7</span>
+                        <span class="float-right">{{ (!empty($user->postal_code)) ? $user->postal_code : '-' }}</span>
                     </li>
                     <li class="list-group-item px-0 pb-1 font-weight-bold">
                         <span class="text-secondary">Email Address:</span>
-                        <span class="float-right">pasko2050@gmail.com</span>
+                        <span class="float-right">{{ (!empty($user->email)) ? $user->email : '-' }}</span>
                     </li>
                     <li class="list-group-item px-0 pb-1 font-weight-bold">
                         <span class="text-secondary">Phone Number:</span>
-                        <span class="float-right">(825) 146-9007</span>
+                        <span class="float-right">{{ (!empty($user->phone_number)) ? $user->phone_number : '-' }}</span>
                     </li>
                 </ul>
             </div>
         </div>
 
-        <h2 class="py-3 px-3 bg-secondary text-light">
-            Total Orders:
-            <span class="font-weight-bold"> 3</span>
-            <span class="float-right">
-                <button type="button" class="btn btn-outline-light text-uppercase" id="button_orders">see orders</button>
-            </span>
-            <span style="display: block; clear: both;"></span>
-        </h2>
+        <?php if(count($orders) > 0) : // if there are orders ?>
+            <h2 class="py-3 px-3 bg-secondary text-light">
+                Total Orders: 
+                <span class="font-weight-bold">{{ count($orders) }}</span>
+                <span class="float-right">
+                    <button type="button" class="btn btn-outline-light text-uppercase" id="button_orders">see orders</button>
+                </span>
+                <span style="display: block; clear: both;"></span>
+            </h2>
 
-        <div id="orders_hidden" class="mt-4">
-            <table class="table table-hover text-center">
-                <thead class="bg-light">
-                    <tr>
-                        <th scope="col">Order Number</th>
-                        <th scope="col">Order Summury</th>
-                        <th scope="col">Shipped To</th>
-                        <th scope="col">Total</th>
-                        <th scope="col">Details</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">456789</th>
-                        <td>2 items</td>
-                        <td>Winnipeg (R3N 1Z3)</td>
-                        <td>$1258.00</td>
-                        <td>
-                            <button type="button" class="btn btn-outline-primary">see order</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">876543</th>
-                        <td>1 item</td>
-                        <td>Winnipeg (R3N 1Z3)</td>
-                        <td>$578.00</td>
-                        <td>
-                            <button type="button" class="btn btn-outline-primary">see order</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">098765</th>
-                        <td>3 items</td>
-                        <td>Winnipeg (R3N 1Z3)</td>
-                        <td>$2799.00</td>
-                        <td>
-                            <button type="button" class="btn btn-outline-primary">see order</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>       
+            <div id="orders_hidden" class="mt-4">
+                <table class="table table-hover text-center">
+                    <thead class="bg-light">
+                        <tr>
+                            <th scope="col">Order Number</th>
+                            <th scope="col">Ordered</th>
+                            <th scope="col">Shipped To</th>
+                            <th scope="col">Total</th>
+                            <th scope="col">Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-        <div class="row">
-        </div>
+                        <?php foreach ($orders as $order) : ?>
+                            <tr>
+                                <th scope="row">{{$order->id}}</th>
+                                <td>{{ $order->created_at->diffForHumans() }}</td>
+                                <td>{{$order->shipping_address}}</td>
+                                <td>{{$order->total}}</td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-primary">see order</button>
+                                </td>
+                            </tr>
+                        <?php endforeach ; ?>
+
+                    </tbody>
+                </table>
+            </div>
+        <?php else : ?>
+            <h2 class="py-3 px-3 bg-secondary text-light">
+                No orders yet 
+            </h2>            
+        <?php endif ; ?>       
 
     </div>
 

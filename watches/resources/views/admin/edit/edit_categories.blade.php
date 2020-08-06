@@ -3,6 +3,21 @@
 
 @section('content')
 
+<div class="card my-r">
+
+    <div class="card-header">
+        <h1 class="card-title">{{ $title }}</h1>
+    </div>
+
+    <div class="card-body">
+
+        <p><a href="/admin/categories_table" class="btn btn-warning class=previous">&laquo; Back</a></p>
+
+        <form class="form" action="/admin/categories_table" method="post" enctype="multipart/form-data">
+
+
+@section('content')
+
 <div class="container" style="width: 50%;">
   <h1>{{ $title }}</h1>
   <p><a href="/admin/categories_table"><button type="button" class="btn btn-primary" style="margin-bottom: 5px;">&#x2B05; Go Back</button></a></p>
