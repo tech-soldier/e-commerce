@@ -48,7 +48,7 @@ class TransactionController extends Controller
         ]); 
 
         Transaction::create([
-             'order_id' => $valid['order_id'],
+            'order_id' => $valid['order_id'],
             'transaction_code' => $valid['transaction_code'],
             'transaction' => $valid['transaction']
         ]); 

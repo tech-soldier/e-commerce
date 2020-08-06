@@ -56,7 +56,7 @@ class UserController extends Controller
 
         User::create([
             'email' => $valid['email'], 
-            'password' => $valid['password'],
+            'password' => password_hash($valid['password'], PASSWORD_DEFAULT),
             'first_name' => $valid['first_name'], 
             'last_name' => $valid['last_name'], 
             'billing_address' => $valid['billing_address'], 

@@ -52,7 +52,7 @@ class OrderController extends Controller
         $valid = $request->validate([      
             'user_id' => 'required|integer',                                                       
             'first_name' => 'required|string|max:255',                                                      
-            'email' => 'required|string|max:255',                                                 
+            'email' => 'required|email',                                                 
             'billing_address' => 'required|string|max:255',                                              
             'shipping_address' => 'required|string|max:255',
             'subtotal' => "required|regex:/^\d+(\.\d{1,2})?$/",                                              
