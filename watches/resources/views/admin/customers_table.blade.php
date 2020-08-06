@@ -33,7 +33,18 @@
 	      <td>{{ $customer->phone_number }}</td>
 	      <td>{{ $customer->postal_code }}</td>
 	      <td><button type="button" class="btn btn-primary">Edit</button></td>
-	      <td><button type="button" class="btn btn-danger">Delete</button></td>
+	      <!-- <td><button type="button" class="btn btn-danger">Delete</button></td> -->
+		  <td>
+		  	<form class="delete" 
+                            onSubmit="return confirm('Do you really want to delete this post?')"
+                             action="/admin/customers_table" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <input type="hidden" name="id" value="{{ $customer->customer_id }}"/>
+                            <button type="submit" class="btn btn-danger">delete</button>
+            </form>
+         </td>
+
 	    </tr>
 	  </tbody>
 	  @endforeach

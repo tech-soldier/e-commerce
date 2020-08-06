@@ -5,7 +5,7 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
         <ul class="navbar-nav">
-            
+
             @guest
             <li class="nav-item">
                 <a class="nav-link" href="/">Home</a>
@@ -35,7 +35,7 @@
                 <a class="nav-link" href="/admin">Admin Dash</a>
             </li>
             @endif
-            
+
             @endguest
 
         </ul>
@@ -48,14 +48,14 @@
             <!-- shopping cart -->
             <div class="ml-2 circle">
                 <a href="/cart"> <i class="fas fa-shopping-cart"></i></a>
+
                 @if(session('cart'))
                 <div class="sml-circle">
                     <span class="text-center cart-blue-icon">{{ count((array) session('cart')) }}</span>
                 </div>
                 @endif
             </div>
-            <div class="ml-2 circle act-circle">
-            </div>
+
         </div>
 
     </div>
