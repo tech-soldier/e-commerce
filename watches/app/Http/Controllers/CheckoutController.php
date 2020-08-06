@@ -10,7 +10,10 @@ class CheckoutController extends Controller
 {
     public function getCheckout()
     {
-        return view('checkout');
+        $taxes = Tax::all();
+        $title = "Checkout";
+
+        return view('checkout', compact('taxes', 'title'));
     }
 
 
@@ -18,10 +21,10 @@ class CheckoutController extends Controller
         if($request->province and $request->subtotal) {
             $taxes = Tax::where('province', '=', $request->province)->first();
             $subtotal = floatval($request->subtotal);
-            $gst = $subtotal * $taxes->GST;
-            $pst = $subtotal * $taxes->GST;
+            $gst = round($subtotal * $taxes->GST, 3);
+            $pst = round($subtotal * $taxes->GST, 3);
             return response()->json(['gst' => $gst, 'pst' => $pst]);
-            
+
       }
     }
 }

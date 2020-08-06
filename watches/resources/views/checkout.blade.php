@@ -51,9 +51,15 @@ use \App\Http\Controllers\CartController;
                                     </div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="form-group  col-md-6">
-                                        <label>Province</label>
-                                        <input type="text" class="form-control bg-light" name="province" id="province">
+                                    <div class="form-group col-md-6">
+                                        <label for="exampleFormControlSelect1">Province</label>
+                                        <select class="form-control" id="exampleFormControlSelect1">
+                                            @foreach($taxes as $tax)
+                                                <option value="{{$tax->province}}">
+                                                    {{$tax->province}}
+                                                </option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                     <div class="form-group  col-md-6">
                                         <label>Postal Code</label>
@@ -148,10 +154,10 @@ use \App\Http\Controllers\CartController;
                                             <dt>Subtotal: <span id="subtotal">{{ CartController::getCartTotal() }}</span></dt>
                                         </dl>
                                         <dl class="dlist-align">
-                                            <dt id="gst">GST:</dt>
+                                            <dt>GST: <span id="gst"></span></dt>
                                         </dl>
                                         <dl class="dlist-align">
-                                            <dt>PST: </dt>
+                                            <dt>PST:  <span id="pst"></span></dt>
                                         </dl>
                                         <dl class="dlist-align">
                                             <dt>Shipping: </dt>
@@ -189,7 +195,7 @@ use \App\Http\Controllers\CartController;
                         dataType: "json",
                         success: function (response) {
                             alert(response.gst);
-
+                            gst.text(response.gst);
 
 
                         }
