@@ -8,11 +8,11 @@
 	<h1>Table Name: <em>Taxes</em></h1>
 
 <!-- this is the table --> 
-	<p><button type="button" class="btn btn-success"> Add + </button></p>
+	<p><a style="color: white;" href="/admin/create/create_tax"><div class="btn btn-success">Add Tax +</div></a></p>
 	<table class="table table-striped">
 	  <thead class="thead-dark">
 	    <tr>
-	      <th scope="col">watch ID</th>
+	      <th scope="col">Tax ID</th>
 	      <th scope="col">Province</th>
 	      <th scope="col">GST</th>
 	      <th scope="col">PST</th>
@@ -28,7 +28,7 @@
 	  <tbody>
 	  	
 	    <tr>
-	      <th scope="row">{{ $tax->watch_id }}</th>
+	      <th scope="row">{{ $tax->tax_id }}</th>
 	      <th>{{ $tax->province }}</th>
 	      <td>{{ $tax->GST }}</td>
 	      <td>{{ $tax->PST }}</td>

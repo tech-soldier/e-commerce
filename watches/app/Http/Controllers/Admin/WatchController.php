@@ -47,11 +47,12 @@ class WatchController extends Controller
         $valid = $request->validate([
             'SKU' => 'required|integer', 
             'watch_name' => 'required|string|max:255',
-            'in_stock' => 'required|integer', // default is 
+            'in_stock' => 'required|integer', 
             'quantity' => 'required|integer',
-            'price' => "required|regex:/^\d+(\.\d{1,2})?$/", // change later
-            'cost' => "required|regex:/^\d+(\.\d{1,2})?$/", // change later 
+            'price' => "required|regex:/^\d+(\.\d{1,2})?$/", 
+            'cost' => "required|regex:/^\d+(\.\d{1,2})?$/", 
             'material' => 'required|string|max:255', 
+            'main_color' => 'required|string|max:255',
             'movement' => 'required|string|max:255', 
             'gender' => 'required|string|max:255', 
             'category_id' => 'nullable|integer', 
@@ -60,7 +61,7 @@ class WatchController extends Controller
             'strap_length' => 'required|string|max:255', 
             'weight' => 'required|string|max:255', 
             'water_resistant' => 'required|string|max:255', 
-            'cover_img' => 'nullable|string|max:255',
+            'cover_img' => 'nullable|image',
             'short_description' => 'required|string|max:255', 
             'long_description' => 'required|string|max:500'
 
@@ -81,14 +82,15 @@ class WatchController extends Controller
         Watch::create([
             'SKU' => $valid['SKU'], 
             'watch_name' => $valid['watch_name'], 
-            'in_stock' => $valid['in_stock'], 
+            'in_stock' => $valid['in_stock'] ?? 0, 
             'quantity' => $valid['quantity'], 
             'price'=> $valid['price'],
             'cost'=> $valid['cost'],
             'material'=> $valid['material'],
+            'main_color' => $valid['main_color'],
             'movement'=> $valid['movement'],
             'gender' => $valid['gender'], 
-            'category_id' => $valid['category_id'],
+            'category_id' => $valid['category_id'] ?? 1,
             'diameter' => $valid['diameter'], 
             'strap_width' => $valid['strap_width'],
             'strap_length' => $valid['strap_length'],

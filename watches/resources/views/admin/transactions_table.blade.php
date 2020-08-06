@@ -8,12 +8,13 @@
 	<h1>Table Name: <em>Transactions</em></h1>
 
 <!-- this is the table --> 
-	<p><button type="button" class="btn btn-success"> Add + </button></p>
+	<p><a style="color: white;" href="/admin/create/create_transaction"><div class="btn btn-success">Add Transaction +</div></a></p>
 	<table class="table table-striped">
 	  <thead class="thead-dark">
 	    <tr>
-	      <th scope="col">Order ID</th>
+	      <th scope="col">Transaction ID</th>
 	      <th scope="col">Transaction Code</th>
+	      <th scope="col">Order ID</th>
 	      <th scope="col">Transaction</th>
 	      <th scope="col">Created On</th>
 	      <th scope="col">Updated On</th>
@@ -25,8 +26,9 @@
 	   @foreach($transactions as $transaction)
 	  <tbody>
 	    <tr>
-	      <th scope="row">{{ $transaction->order_id }}</th>
+	      <th scope="row">{{ $transaction->transaction_id }}</th>
 	      <th>{{ $transaction->transaction_code }}</th>
+	      <th>{{ $transaction->order_id }}</th>
 	      <td>{{ $transaction->transaction }}</td>
 	      <td>{{ $transaction->created_at }}</td>
 	      <td>{{ $transaction->updated_at }}</td>

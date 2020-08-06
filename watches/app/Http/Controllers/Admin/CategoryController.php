@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Category;
 
+use App\Category; 
+
 class CategoryController extends Controller
 {
     /**
@@ -27,7 +29,11 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        $data['title'] = 'Create A New Category'; 
+
+        $data['categories'] = Category::all(); 
+
+        return view('/admin/create/create_category', $data); 
     }
 
     /**
@@ -38,7 +44,16 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $valid = $request->validate([
+            'category_name' => 'required|string|max:255'
+        ]); 
+
+        Category::create([
+            'category_name' => $valid['category_name']
+        ]); 
+
+        return redirect('/admin/categories_table')->with('success', 'Category was successfully created'); 
+
     }
 
     /**
