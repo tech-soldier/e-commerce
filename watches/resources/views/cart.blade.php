@@ -4,7 +4,9 @@
 @section('content')
 
     <div class="container page my-5">
-
+        @if (Session::has('error'))
+            <p class="alert alert-danger">{{ Session::get('error') }}</p>
+        @endif
         <span id="status"></span>
 
         <table id="cart" class="table table-hover table-condensed">
@@ -28,10 +30,7 @@
             <tr>
                 <td data-th="Product" class="align-middle">
                     <div class="row">
-<<<<<<< HEAD
-=======
 
->>>>>>> master
                         <div class="col-sm-3 hidden-xs"><img src="images/{{ $details['cover_img'] }}" alt="{{ $details['cover_img'] }}" width="100" height="100" class="img-responsive"/></div>
 
                         <div class="col-sm-9 align-middle">
