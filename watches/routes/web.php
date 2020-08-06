@@ -43,6 +43,10 @@ Route::patch('update-cart', 'CartController@update');
 
 /* ----------------------------------------------*/
 
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/checkout', 'CheckoutController@getCheckout')->name('checkout.index');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -71,9 +75,8 @@ Route::get('/admin/categories_table', 'AdminController@categories');
 Route::get('/admin/create/create_watch', 'Admin\WatchesController@create');
 
 
-/* admin edit files */ 
-Route::get('/admin/edit/{id}/edit_watch', 'Admin\WatchesController@edit'); 
+/* admin edit files */
+Route::get('/admin/edit/{id}/edit_watch', 'Admin\WatchesController@edit');
 
-Route::put('/admin/edit/edit_watch', 'Admin\WatchesController@update'); 
+Route::put('/admin/edit/edit_watch', 'Admin\WatchesController@update');
 
-  
