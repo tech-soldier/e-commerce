@@ -8,7 +8,6 @@
 	<h1>Table Name: <em>Transactions</em></h1>
 
 <!-- this is the table --> 
-	<p><a style="color: white;" href="/admin/create/create_transaction"><div class="btn btn-success">Add Transaction +</div></a></p>
 	<table class="table table-striped">
 	  <thead class="thead-dark">
 	    <tr>
@@ -17,10 +16,6 @@
 	      <th scope="col">Order ID</th>
 	      <th scope="col">Transaction</th>
 	      <th scope="col">Created On</th>
-	      <th scope="col">Updated On</th>
-	      <th scope="col">Edit</th>
-	      <th scope="col">Delete</th>
-
 	    </tr>
 	  </thead>
 	   @foreach($transactions as $transaction)
@@ -31,9 +26,6 @@
 	      <th>{{ $transaction->order_id }}</th>
 	      <td>{{ $transaction->transaction }}</td>
 	      <td>{{ $transaction->created_at }}</td>
-	      <td>{{ $transaction->updated_at }}</td>
-	      <td><button type="button" class="btn btn-primary">Edit</button></td>
-	      <td><button type="button" class="btn btn-danger">Delete</button></td>
 	    </tr>
 	  </tbody>
 	  @endforeach

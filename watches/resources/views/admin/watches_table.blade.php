@@ -26,7 +26,7 @@
 
 	    </tr>
 	  </thead>
-	  @if(isset($watch))
+	  @if(isset($watches))
 
 		  @foreach($watches as $watch)
 		  <tbody>
