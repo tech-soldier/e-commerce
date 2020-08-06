@@ -65,7 +65,7 @@ class CartController extends Controller
      *
      * @return float|int
      */
-    private function getCartTotal()
+    public static function getCartTotal()
     {
         $total = 0;
 

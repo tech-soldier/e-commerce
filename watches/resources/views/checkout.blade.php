@@ -1,3 +1,9 @@
+<?php
+
+use \App\Http\Controllers\CartController;
+
+?>
+
 @extends('layouts/layout')
 
 @section('content')
@@ -6,9 +12,9 @@
         <div class="container py-5">
             <div class="row">
                 <div class="col-sm-12">
-                    @if (Session::has('error'))
-                        <p class="alert alert-danger">{{ Session::get('error') }}</p>
-                    @endif
+{{--                    @if (Session::has('error'))--}}
+{{--                        <p class="alert alert-danger">{{ Session::get('error') }}</p>--}}
+{{--                    @endif--}}
                 </div>
             </div>
             <form action="" method="POST" role="form">
@@ -98,8 +104,20 @@
                                     </header>
                                     <article class="card-body">
                                         <dl class="dlist-align">
-                                            <dt>Total cost: </dt>
-                                            <dd class="text-right h5 b">  </dd>
+                                            <dt>Subtotal: ${{ CartController::getCartTotal() }}</dt>
+                                        </dl>
+                                        <dl class="dlist-align">
+                                            <dt>GST: $19</dt>
+                                        </dl>
+                                        <dl class="dlist-align">
+                                            <dt>PST: $23</dt>
+                                        </dl>
+                                        <dl class="dlist-align">
+                                            <dt>Shipping: $12</dt>
+                                        </dl>
+                                        <dl class="dlist-align">
+                                            <dt>Total: </dt>
+                                            <dd class="text-right h5 b">$20,000</dd>
                                         </dl>
                                     </article>
                                 </div>
