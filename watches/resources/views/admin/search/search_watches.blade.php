@@ -5,7 +5,7 @@
 
 <div class="container">
 
-	<h1>Table Name: <em>{{ $title ?? '' }}</em></h1>
+	<h1>You searched for: <em>{{ $search_term }}</em></h1>
 
 
 <!-- this is the table --> 
@@ -21,7 +21,7 @@
 	            </button>
 	        </span>
 	    </div>
-	    <button type="button" class="btn btn-info">Refresh Results &#x27F3;</button>
+	    <p><a style="color: white;" href="/admin/watches_table"><div class="btn btn-info">Refresh Results &#x27F3;</div></a></p>
 
 	</form>
 

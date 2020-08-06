@@ -17,7 +17,7 @@ class WatchController extends Controller
         $search_term = $_GET['query']; 
         $watches = Watch::where('watch_name', 'LIKE', '%'.$search_term.'%')->get(); 
 
-        return view('/admin/search/search_watches', compact('watches')); 
+        return view('/admin/search/search_watches', compact('watches', 'search_term')); 
     }
 
 
