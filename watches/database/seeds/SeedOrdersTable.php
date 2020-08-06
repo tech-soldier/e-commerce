@@ -114,5 +114,21 @@ class SeedOrdersTable extends Seeder
             'updated_at' => Carbon::now()
          ]); 
 
+        DB::table('orders')->insert([
+
+            'user_id' => 4, 
+            'watch_id' => 5, 
+            'first_name' => 'Alexandr', 
+            'email_address' => 'alex-the-great@gmail.com', 
+            'billing_address' => '43 Inkster st', 
+            'shipping_address' => '43 Inkster st', 
+            'subtotal' => 799.99, 
+            'GST' => 0.05, 
+            'PST' => 0.00, 
+            'total' => 999.99, 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+         ]); 
+
     }
 }
