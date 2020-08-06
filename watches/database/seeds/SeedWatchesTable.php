@@ -90,30 +90,7 @@ class SeedWatchesTable extends Seeder
             'updated_at' => Carbon::now()
         ]); 
 
-        DB::table('watches')->insert([
-        	
-        	'SKU' => 22567000,
-        	'watch_name' => 'COSMOGRAPH DAYTONA', 
-        	'in_stock' => 1, 
-        	'quantity' => 200, 
-        	'price' => 199.99, 
-        	'cost' => 299.99, 
-        	'material' => 'silver', 
-        	'main_color' => 'silver', 
-        	'movement' => 'mechanical', 
-        	'gender' => 'male', 
-        	'category_id' => 1, 
-        	'diameter' => 30,
-        	'strap_length' => '182mm', 
-        	'strap_width' => '20mm', 
-        	'weight' => '45g', 
-        	'water_resistant' => '3 atm', 
-        	'cover_img' => 'COSMOGRAPH_DAYTONA.jpg', 
-        	'short_description' => 'The Oyster Perpetual Cosmograph Daytona is the ultimate tool watch for those with a passion for driving and speed.', 
-        	'long_description' => 'Introduced in 1963, the Cosmograph Daytona was designed to meet the demands of professional racing drivers. It is an icon forever joined in name and function to the high-performance world of motor sport. More than 50 years after its creation, the Cosmograph Daytona remains in a class of its own among sport chronographs and continues to transcend time.', 
-        	'created_at' => Carbon::now(), 
-            'updated_at' => Carbon::now()
-        ]); 
+         
 
         DB::table('watches')->insert([
         	
@@ -286,7 +263,7 @@ class SeedWatchesTable extends Seeder
             'strap_width' => '25mm', 
             'weight' => '15g', 
             'water_resistant' => '19 atm', 
-            'cover_img' => 'MILGAUUSS.jpg', 
+            'cover_img' => 'MILGAUSS.jpg', 
             'short_description' => 'The Oyster Perpetual Milgauuss is a pioneering anti-magnetic watch designed to meet the demands of engineers and scientists.', 
             'long_description' => 'Created in 1958, it can withstand magnetic fields of up to 1,400 gauss. Hence its name, “mille”, which is French for one thousand. The first watch of its kind, the Milgauuss combines unique aesthetics and scientific heritage.', 
             'created_at' => Carbon::now(), 
@@ -625,55 +602,7 @@ class SeedWatchesTable extends Seeder
 
         // next 5 will be all category: smart watch --Alexandr
 
-        DB::table('watches')->insert([ 
-          
-            'SKU' => 20073498,
-            'watch_name' => 'OMEGA SPEEDMASTER', 
-            'in_stock' => 1, 
-            'quantity' => 76, 
-            'price' => 369.99, 
-            'cost' => 419.99, 
-            'material' => 'titanium', 
-            'main_color' => 'black', 
-            'movement' => 'automatic', 
-            'gender' => 'male', 
-            'category_id' => 1, 
-            'diameter' => 40,
-            'strap_length' => '188mm', 
-            'strap_width' => '24mm', 
-            'weight' => '86g', 
-            'water_resistant' => '3 atm', 
-            'cover_img' => 'Omega_Speedmaster_Racing.jpg', 
-            'short_description' => 'Omega Speedmaster Racing Automatic Chronograph 40mm, Stainless Steel', 
-            'long_description' => '60 second, 30 minute, and 12 hour subdials give you all the equipment you need for pin-point precise timing, while the stainless steel case and rubber strap add a sporty edge.', 
-            'created_at' => Carbon::now(), 
-            'updated_at' => Carbon::now()
-        ]);
-
-        DB::table('watches')->insert([ 
-          
-            'SKU' => 20496720,
-            'watch_name' => 'ROLEX COSMOGRAPH', 
-            'in_stock' => 1, 
-            'quantity' => 69, 
-            'price' => 129.99, 
-            'cost' => 149.99, 
-            'material' => 'stainless steel', 
-            'main_color' => 'pink', 
-            'movement' => 'automatic', 
-            'gender' => 'female', 
-            'category_id' => 1, 
-            'diameter' => 24,
-            'strap_length' => '172mm', 
-            'strap_width' => '20mm', 
-            'weight' => '112g', 
-            'water_resistant' => '3 atm', 
-            'cover_img' => 'Rolex_Cosmograph_Daytona.jpg', 
-            'short_description' => 'Rolex Cosmograph Daytona 40mm, Stainless Steel Oyster Bracelet', 
-            'long_description' => 'First introduced in 1963, the Daytona, true to its name, was designed to meet the needs for pro race drivers with a self-winding calibre 4130 movement and a larger than usual mainspring to enhance its reserve power.', 
-            'created_at' => Carbon::now(), 
-            'updated_at' => Carbon::now()
-        ]);
+        
 
         DB::table('watches')->insert([ 
         
@@ -802,31 +731,7 @@ class SeedWatchesTable extends Seeder
             'updated_at' => Carbon::now()
         ]);
 
-        DB::table('watches')->insert([ 
-          
-            'SKU' => 24598763,
-            'watch_name' => 'VACHERON CONSTANTIN', 
-            'in_stock' => 1, 
-            'quantity' => 17, 
-            'price' => 6299.99, 
-            'cost' => 6999.99, 
-            'material' => 'stainless steel', 
-            'main_color' => 'black', 
-            'movement' => 'automatic', 
-            'gender' => 'male', 
-            'category_id' => 2, 
-            'diameter' => 32,
-            'strap_length' => '190mm', 
-            'strap_width' => '24mm', 
-            'weight' => '194g', 
-            'water_resistant' => '12 atm', 
-            'cover_img' => 'Vacheron_Constantin.jpg', 
-            'short_description' => 'Vacheron Constantin Overseas Automatic 42.5mm', 
-            'long_description' => 'With 54 jewels, this transparent-backed stainless steel chronograph features a caliber 5200 movement with a 52 hour power reserve.', 
-            'created_at' => Carbon::now(), 
-            'updated_at' => Carbon::now()
-        ]);
-
+        
         DB::table('watches')->insert([ 
           
             'SKU' => 45982567,
@@ -957,7 +862,7 @@ class SeedWatchesTable extends Seeder
         DB::table('watches')->insert([ 
         
             'SKU' => 69302611,
-            'watch_name' => 'Huebolt', 
+            'watch_name' => 'HUEBOLT', 
             'in_stock' => 1, 
             'quantity' => 119, 
             'price' => 1189.99, 
@@ -1132,55 +1037,6 @@ class SeedWatchesTable extends Seeder
         ]);
 
         DB::table('watches')->insert([ 
-            'SKU' => 66302621,
-            'watch_name' => 'TOM FORD', 
-            'in_stock' => 1, 
-            'quantity' => 179, 
-            'price' => 20992.99, 
-            'cost' => 22442.99, 
-            'material' => 'silicone rubber ', 
-            'main_color' => 'wodden', 
-            'movement' => 'mechanical', 
-            'gender' => 'female', 
-            'category_id' => 3, 
-            'diameter' => 28,
-            'strap_length' => '161mm', 
-            'strap_width' => '18mm', 
-            'weight' => '152g', 
-            'water_resistant' => '1 atm', 
-            'cover_img' => 'Tom_Ford_Watch.jpg', 
-            'short_description' => 'Tom Ford Watch Automatic Stainless Steel Mens Watch W5200028', 
-            'long_description' => 'Leave it Tom Ford, the master of subtle sex appeal, to design a slim, everyday watch that makes a bold statement.', 
-            'created_at' => Carbon::now(), 
-            'updated_at' => Carbon::now()
-        ]);
-
-         DB::table('watches')->insert([ 
-            'SKU' => 66302631,
-            'watch_name' => 'ELMINGTON', 
-            'in_stock' => 1, 
-            'quantity' => 279, 
-            'price' => 20993.99, 
-            'cost' => 22443.99, 
-            'material' => 'stainless steel', 
-            'main_color' => 'silver', 
-            'movement' => 'mechanical', 
-            'gender' => 'male', 
-            'category_id' => 3, 
-            'diameter' => 28,
-            'strap_length' => '181mm', 
-            'strap_width' => '20mm', 
-            'weight' => '152g', 
-            'water_resistant' => '1 atm', 
-            'cover_img' => 'Elmington_Emerald.jpg', 
-            'short_description' => 'Elmington Emerald Green Watch x Gold - 44mm', 
-            'long_description' => 'An oversized Emerald green dial recalls 1960s style with a sleek updated silhouette.',
-            'created_at' => Carbon::now(), 
-            'updated_at' => Carbon::now()
-        ]);
-
-
-         DB::table('watches')->insert([ 
             'SKU' => 66302641,
             'watch_name' => 'GEN 5 SMARTWATCH GARRETT', 
             'in_stock' => 1, 
@@ -1230,6 +1086,32 @@ class SeedWatchesTable extends Seeder
         ]);
 
 
+         DB::table('watches')->insert([
+            
+            'SKU' => 22567000,
+            'watch_name' => 'COSMOGRAPH DAYTONA', 
+            'in_stock' => 1, 
+            'quantity' => 200, 
+            'price' => 199.99, 
+            'cost' => 299.99, 
+            'material' => 'silver', 
+            'main_color' => 'silver', 
+            'movement' => 'mechanical', 
+            'gender' => 'male', 
+            'category_id' => 1, 
+            'diameter' => 30,
+            'strap_length' => '182mm', 
+            'strap_width' => '20mm', 
+            'weight' => '45g', 
+            'water_resistant' => '3 atm', 
+            'cover_img' => 'COSMOGRAPH_DAYTONA.jpg', 
+            'short_description' => 'The Oyster Perpetual Cosmograph Daytona is the ultimate tool watch for those with a passion for driving and speed.', 
+            'long_description' => 'Introduced in 1963, the Cosmograph Daytona was designed to meet the demands of professional racing drivers. It is an icon forever joined in name and function to the high-performance world of motor sport. More than 50 years after its creation, the Cosmograph Daytona remains in a class of its own among sport chronographs and continues to transcend time.', 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]); 
+
+
           DB::table('watches')->insert([ 
             'SKU' => 66302661,
             'watch_name' => 'GEN5 SMARTWATCH JULIANNA', 
@@ -1274,6 +1156,133 @@ class SeedWatchesTable extends Seeder
             'cover_img' => 'GOLD_CHRONOGRAPH.jpg', 
             'short_description' => 'GOLD CHRONOGRAPH Stainless Steel', 
             'long_description' => 'Each Benjamin Banneker watch incorporates wood in some way. For the Crossover, African Red Sandalwood is layered over a steel-lated case. ', 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]);
+
+
+          DB::table('watches')->insert([ 
+          
+            'SKU' => 24598763,
+            'watch_name' => 'VACHERON CONSTANTIN', 
+            'in_stock' => 1, 
+            'quantity' => 17, 
+            'price' => 6299.99, 
+            'cost' => 6999.99, 
+            'material' => 'stainless steel', 
+            'main_color' => 'black', 
+            'movement' => 'automatic', 
+            'gender' => 'male', 
+            'category_id' => 2, 
+            'diameter' => 32,
+            'strap_length' => '190mm', 
+            'strap_width' => '24mm', 
+            'weight' => '194g', 
+            'water_resistant' => '12 atm', 
+            'cover_img' => 'Vacheron_Constantin.jpg', 
+            'short_description' => 'Vacheron Constantin Overseas Automatic 42.5mm', 
+            'long_description' => 'With 54 jewels, this transparent-backed stainless steel chronograph features a caliber 5200 movement with a 52 hour power reserve.', 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]);
+
+
+
+          DB::table('watches')->insert([ 
+            'SKU' => 66302621,
+            'watch_name' => 'TOM FORD', 
+            'in_stock' => 1, 
+            'quantity' => 179, 
+            'price' => 20992.99, 
+            'cost' => 22442.99, 
+            'material' => 'silicone rubber ', 
+            'main_color' => 'wodden', 
+            'movement' => 'mechanical', 
+            'gender' => 'female', 
+            'category_id' => 3, 
+            'diameter' => 28,
+            'strap_length' => '161mm', 
+            'strap_width' => '18mm', 
+            'weight' => '152g', 
+            'water_resistant' => '1 atm', 
+            'cover_img' => 'Tom_Ford_Watch.jpg', 
+            'short_description' => 'Tom Ford Watch Automatic Stainless Steel Mens Watch W5200028', 
+            'long_description' => 'Leave it Tom Ford, the master of subtle sex appeal, to design a slim, everyday watch that makes a bold statement.', 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]);
+
+
+          DB::table('watches')->insert([ 
+          
+            'SKU' => 20073498,
+            'watch_name' => 'OMEGA SPEEDMASTER', 
+            'in_stock' => 1, 
+            'quantity' => 76, 
+            'price' => 369.99, 
+            'cost' => 419.99, 
+            'material' => 'titanium', 
+            'main_color' => 'black', 
+            'movement' => 'automatic', 
+            'gender' => 'male', 
+            'category_id' => 1, 
+            'diameter' => 40,
+            'strap_length' => '188mm', 
+            'strap_width' => '24mm', 
+            'weight' => '86g', 
+            'water_resistant' => '3 atm', 
+            'cover_img' => 'Omega_Speedmaster_Racing.jpg', 
+            'short_description' => 'Omega Speedmaster Racing Automatic Chronograph 40mm, Stainless Steel', 
+            'long_description' => '60 second, 30 minute, and 12 hour subdials give you all the equipment you need for pin-point precise timing, while the stainless steel case and rubber strap add a sporty edge.', 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]);
+
+        DB::table('watches')->insert([ 
+          
+            'SKU' => 20496720,
+            'watch_name' => 'ROLEX COSMOGRAPH', 
+            'in_stock' => 1, 
+            'quantity' => 69, 
+            'price' => 129.99, 
+            'cost' => 149.99, 
+            'material' => 'stainless steel', 
+            'main_color' => 'pink', 
+            'movement' => 'automatic', 
+            'gender' => 'female', 
+            'category_id' => 1, 
+            'diameter' => 24,
+            'strap_length' => '172mm', 
+            'strap_width' => '20mm', 
+            'weight' => '112g', 
+            'water_resistant' => '3 atm', 
+            'cover_img' => 'Rolex_Cosmograph_Daytona.jpg', 
+            'short_description' => 'Rolex Cosmograph Daytona 40mm, Stainless Steel Oyster Bracelet', 
+            'long_description' => 'First introduced in 1963, the Daytona, true to its name, was designed to meet the needs for pro race drivers with a self-winding calibre 4130 movement and a larger than usual mainspring to enhance its reserve power.', 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]);
+
+         DB::table('watches')->insert([ 
+            'SKU' => 66302631,
+            'watch_name' => 'ELMINGTON', 
+            'in_stock' => 1, 
+            'quantity' => 279, 
+            'price' => 20993.99, 
+            'cost' => 22443.99, 
+            'material' => 'stainless steel', 
+            'main_color' => 'silver', 
+            'movement' => 'mechanical', 
+            'gender' => 'male', 
+            'category_id' => 3, 
+            'diameter' => 28,
+            'strap_length' => '181mm', 
+            'strap_width' => '20mm', 
+            'weight' => '152g', 
+            'water_resistant' => '1 atm', 
+            'cover_img' => 'Elmington_Emerald.jpg', 
+            'short_description' => 'Elmington Emerald Green Watch x Gold - 44mm', 
+            'long_description' => 'An oversized Emerald green dial recalls 1960s style with a sleek updated silhouette.',
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
         ]);

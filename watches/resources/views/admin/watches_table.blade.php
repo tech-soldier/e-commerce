@@ -7,8 +7,10 @@
 
 	<h1>Table Name: <em>{{ $title }}</em></h1>
 
-<!-- this is the table -->
-	<p><a style="color: white;" href="/admin/create/create_watch" ><div class="btn btn-success">Add Watch +</div></a></p>
+
+<!-- this is the table --> 
+	<p><a style="color: white;" href="/admin/create/create_watch"><div class="btn btn-success">Add Watch +</div></a></p>
+
 	<table class="table table-striped">
 	  <thead class="thead-dark">
 	    <tr>
@@ -32,8 +34,23 @@
 	      <td>$ {{ $watch->price }}</td>
 	      <td>$ {{ $watch->cost }}</td>
 	      <td>{{ $watch->material }}</td>
+
 	      <td> <p><a href="/admin/edit/{{ $watch->watch_id }}/edit_watch" class="btn btn-primary">Edit</a></p>
-	      <td><button type="button" class="btn btn-danger">Delete</button></td>
+	      
+	      <!-- <td><button type="button" class="btn btn-danger">Delete</button></td> -->
+
+
+	      <td>
+		  	<form class="delete" 
+                            onSubmit="return confirm('Do you really want to delete this post?')"
+                             action="/admin/watches_table" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <input type="hidden" name="id" value="{{ $watch->id }}"/>
+                            <button type="submit" class="btn btn-danger">delete</button>
+            </form>
+         </td>
+
 	    </tr>
 	  </tbody>
 	  @endforeach
