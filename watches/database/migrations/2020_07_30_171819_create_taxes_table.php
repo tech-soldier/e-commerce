@@ -14,7 +14,7 @@ class CreateTaxesTable extends Migration
     public function up()
     {
         Schema::create('taxes', function (Blueprint $table) {
-            $table->id('tax_id');
+            $table->id();
             $table->string('province', 255);
             $table->decimal('GST', 10,2)->default('0.05');; 
             $table->decimal('PST', 10,2);
