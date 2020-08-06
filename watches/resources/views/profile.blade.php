@@ -22,39 +22,39 @@
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item px-0 pb-1 font-weight-bold">
                         <span class="text-secondary">First Name:</span>
-                        <span class="float-right">Alexandr</span>
+                        <span class="float-right">{{ $user->first_name }}</span>
                     </li>
                     <li class="list-group-item px-0 pb-1 font-weight-bold">
                         <span class="text-secondary">Last Name:</span>
-                        <span class="float-right">Pasko</span>
+                        <span class="float-right">{{ $user->last_name }}</span>
                     </li>
                     <li class="list-group-item px-0 pb-1 font-weight-bold">
                         <span class="text-secondary">Billing Address:</span>
-                        <span class="float-right">43 Inkster str.</span>
+                        <span class="float-right">{{ $user->billing_address }}</span>
                     </li>
                     <li class="list-group-item px-0 pb-1 font-weight-bold">
                         <span class="text-secondary">City:</span>
-                        <span class="float-right">Calgary</span>
+                        <span class="float-right">{{ $user->city }}</span>
                     </li>
                     <li class="list-group-item px-0 pb-1 font-weight-bold">
                         <span class="text-secondary">Province:</span>
-                        <span class="float-right">Alberta</span>
+                        <span class="float-right">{{ $user->province }}</span>
                     </li>
                     <li class="list-group-item px-0 pb-1 font-weight-bold">
                         <span class="text-secondary">Country:</span>
-                        <span class="float-right">Canada</span>
+                        <span class="float-right">{{ $user->country }}</span>
                     </li>
                     <li class="list-group-item px-0 pb-1 font-weight-bold">
                         <span class="text-secondary">Postal Code:</span>
-                        <span class="float-right">35Y6U7</span>
+                        <span class="float-right">{{ $user->postal_code }}</span>
                     </li>
                     <li class="list-group-item px-0 pb-1 font-weight-bold">
                         <span class="text-secondary">Email Address:</span>
-                        <span class="float-right">pasko2050@gmail.com</span>
+                        <span class="float-right">{{ $user->email }}</span>
                     </li>
                     <li class="list-group-item px-0 pb-1 font-weight-bold">
                         <span class="text-secondary">Phone Number:</span>
-                        <span class="float-right">(825) 146-9007</span>
+                        <span class="float-right">{{ $user->phone_number }}</span>
                     </li>
                 </ul>
             </div>
