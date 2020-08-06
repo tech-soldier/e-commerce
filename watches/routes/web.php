@@ -76,7 +76,7 @@ Route::get('/admin/categories_table', 'AdminController@categories');
 
 
 /* admin search routes ------------------------------------------*/ 
-
+Route::get('/admin/search/search_watches', 'Admin\WatchController@search');
 
 /*----------------------------------------------------------------*/
 
