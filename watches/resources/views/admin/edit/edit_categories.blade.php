@@ -15,8 +15,8 @@
         <form class="form" action="/admin/categories_table" method="post" enctype="multipart/form-data">
 
            <input type="hidden" name="id" value="{{ $categories->id }}" />
-
-
+            @csrf
+  
            @method('PUT')
 
            <div class="form-group">
@@ -39,7 +39,7 @@
             
             <div class="form-group">
            
-                <label for="updated_at">Updated At</label>
+                <label for="updated_at">Updated At</label>  
                  <input id="updated_at" class="form-control" name="updated_at" value="{{ $categories->updated_At}}" />
                 @error('in_stock')
                <span class="alert-danger"> {{ $message }}</span>
