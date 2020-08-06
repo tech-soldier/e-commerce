@@ -85,7 +85,7 @@ Route::post('admin/create/create_category', 'Admin\CategoryController@store');
 Route::get('admin/create/create_order', 'Admin\OrderController@create'); 
 Route::post('admin/create/create_order', 'Admin\OrderController@store'); 
 
-// create taxes incomeplete
+// create taxes COMPLETE
 Route::get('admin/create/create_tax', 'Admin\TaxController@create'); 
 Route::post('admin/create/create_tax', 'Admin\TaxController@store');
 

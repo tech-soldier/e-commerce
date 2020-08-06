@@ -19,7 +19,7 @@ class CreateTaxesTable extends Migration
             $table->decimal('GST', 10,2)->default('0.05');; 
             $table->decimal('PST', 10,2);
             $table->timestamps();
-            $table->softDeletes('deleted_at', 0);
+            $table->softDeletes();
         });
     }
 

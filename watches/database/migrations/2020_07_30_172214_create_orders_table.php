@@ -25,7 +25,7 @@ class CreateOrdersTable extends Migration
             $table->integer('tax_id')->unsigned(); 
             $table->decimal('total', 14,2); 
             $table->timestamps();
-            $table->softDeletes('deleted_at', 0);
+            $table->softDeletes();
         });
     }
 

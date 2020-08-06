@@ -19,7 +19,7 @@ class CreateTransactionsTable extends Migration
             $table->string('transaction_code', 255); 
             $table->text('transaction'); 
             $table->timestamps();
-            $table->softDeletes('deleted_at', 0);
+            $table->softDeletes();
         });
     }
 
