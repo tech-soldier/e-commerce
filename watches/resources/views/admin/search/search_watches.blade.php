@@ -14,7 +14,7 @@
 	<form method="GET" action="{{ url('/admin/search/search_watches') }}" style="margin-bottom: 25px">
 		@csrf
 	    <div class="input-group">
-	        <input type="text" class="form-control" name="queryf"
+	        <input type="text" class="form-control" name="query"
 	            placeholder="Search watches"> <span class="input-group-btn">
 	            <button type="submit" class="btn btn-default">
 	                <span class="glyphicon glyphicon-search"></span>
