@@ -50,7 +50,10 @@ Route::group(['middleware' => ['auth']], function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', function(){
+	return redirect('/'); // loged in user is redirected to watchhome page
+});
 
 /* -------------------------------------------------- */
 
@@ -150,3 +153,5 @@ Route::get('/admin/edit/{id}/edit_orders', 'Admin\OrderController@edit');
 
 Route::put('/admin/edit/orders_table', 'Admin\OrderController@update');
 
+// front-end search
+Route::get('/shop', 'WatchController@search');

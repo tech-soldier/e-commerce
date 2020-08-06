@@ -16,7 +16,38 @@
         <form class="form" action="/admin/categories_table" method="post" enctype="multipart/form-data">
 
 
-@section('content')
+           <input type="hidden" name="id" value="{{ $categories->id }}" />
+            @csrf
+  
+           @method('PUT')
+
+           <div class="form-group">
+
+                <label for="categories">Category Name</label>
+                 <input id="categories" class="form-control" name="category" value="{{ $categories->name}}" />
+                @error('categories')
+               <span class="alert-danger"> {{ $message }}</span>
+               @enderror
+            </div>
+
+           <!--  <div class="form-group">
+           
+                <label for="created_at">Created At</label>
+                 <input id="created_at" class="form-control" name="created_at" value="{{  $categories->created_at }}" />
+                @error('watch_name')
+               <span class="alert-danger"> {{ $message }}</span>
+               @enderror
+            </div>
+            
+            <div class="form-group">
+           
+                <label for="updated_at">Updated At</label>  
+                 <input id="updated_at" class="form-control" name="updated_at" value="{{ $categories->updated_At}}" />
+                @error('in_stock')
+               <span class="alert-danger"> {{ $message }}</span>
+               @enderror
+            </div>       -->
+
 
 <div class="container" style="width: 50%;">
   <h1>{{ $title }}</h1>

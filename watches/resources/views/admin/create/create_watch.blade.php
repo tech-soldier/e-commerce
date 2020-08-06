@@ -16,7 +16,7 @@
       </div>
        <div class="form-group">
         <label for="SKU">SKU: </label>
-        <input type="text" name="SKU" class="form-control" id="SKU" value="{{ old('SKU') }}">
+        <input type="text" name="SKU" class="form-control" id="SKU" value="{{ old('SKU') }}" placeholder="22567959">
         @error('SKU')
             <span class="alert-danger">{{ $message }}</span>
         @enderror
@@ -88,7 +88,7 @@
 
       <div class="form-group">
         <label for="movement">Movement: </label>
-        <input type="text" class="form-control" name="movement" id="movement" value="{{ old('movement') }}">
+        <input type="text" class="form-control" name="movement" id="movement" value="{{ old('movement') }}" placeholder="Quartz, Mechanical, Automatic" >
         @error('movement')
             <span class="alert-danger">{{ $message }}</span>
         @enderror
