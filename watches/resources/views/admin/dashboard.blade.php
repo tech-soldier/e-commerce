@@ -1,7 +1,7 @@
 @extends('layouts/admin')
 
 @section('content')
-
+<div class="container">
     <div class="card my-4 ">
         
         <div class="card-header">
@@ -10,11 +10,29 @@
 
         <div class="card-body">
         
-            <p>As an admin user, you have access to make changes to records on this site.  Make wise choices as it is a great responsibility.</p>
+            <table class="table">
+                <thead class="bg-light">
+                    <tr>
+                        <th>Watches Overview</th><th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Min Price: </strong> $ {{ $min }}</td>
+
+                    </tr>
+                </tbody>    
+                    
+            </table>
+            
+            
 
         </div>
         
     </div>
+
+</div>
+    
 
 
 @stop

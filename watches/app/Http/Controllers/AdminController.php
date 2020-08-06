@@ -22,9 +22,11 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $title = "Admin Dashboard";
+        $title = "Dashboard";
+        $min = \DB::table('watches')->min('price');
 
-        return view('/admin/dashboard', compact('title'));
+
+        return view('/admin/dashboard', compact('title', 'min'));
     }
 
     public function watches()
