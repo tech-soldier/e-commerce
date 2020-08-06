@@ -56,7 +56,7 @@ Route::get('/admin/watches_table', 'AdminController@watches');
 
 Route::get('/admin/orders_table', 'AdminController@orders');
 
-Route::get('/admin/customers_table', 'AdminController@users');
+Route::get('/admin/users_table', 'AdminController@users');
 
 Route::get('/admin/admin_table', 'AdminController@admin');
 
@@ -83,6 +83,8 @@ Route::post('admin/create/create_category', 'Admin\CategoryController@store');
 // create orders incomplete
 Route::get('admin/create/create_order', 'Admin\OrderController@create'); 
 Route::post('admin/create/create_order', 'Admin\OrderController@store'); 
+
+
 
 // crate taxes incomeplete
 

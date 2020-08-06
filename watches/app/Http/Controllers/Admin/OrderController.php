@@ -7,9 +7,13 @@ use Illuminate\Http\Request;
 
 use App\Tax; 
 use App\Order; 
+use App\Watch; 
+use App\User; 
 
 class OrderController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      *
@@ -29,7 +33,10 @@ class OrderController extends Controller
     {
         $title = 'Create A New Order'; 
         $order = Order::all(); 
+        $user = User::all();
+        $watch = Watch::all(); 
         $taxes = Tax::all(); 
+
 
         return view('/admin/create/create_order', compact('title', 'order', 'taxes'));
     }
