@@ -22,7 +22,7 @@ use \App\Http\Controllers\CartController;
                 <div class="row">
                     <div class="col-md-8">
                         <div class="card">
-                            <header class="card-header">
+                            <header class="card-header bg-secondary text-white">
                                 <h4 class="card-title mt-2">Billing Details</h4>
                             </header>
                             <article class="card-body">
@@ -94,12 +94,53 @@ use \App\Http\Controllers\CartController;
 
                             </article>
                         </div>
+
+                            <div class="card mt-3">
+                                <header class="card-header bg-secondary text-white">
+                                    <h4 class="card-title mt-2">Shipping Details</h4>
+                                </header>
+                                <article class="card-body">
+
+                                    <div class="form-group">
+                                        <label>Address</label>
+                                        <input type="text" class="form-control bg-light" name="address">
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label>City</label>
+                                            <input type="text" class="form-control bg-light" name="city">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label>Country</label>
+                                            <input type="text" class="form-control bg-light" name="country">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group  col-md-6">
+                                            <label>Province</label>
+                                            <input type="text" class="form-control bg-light" name="province">
+                                        </div>
+                                        <div class="form-group  col-md-6">
+                                            <label>Postal Code</label>
+                                            <input type="text" class="form-control bg-light" name="postal_code">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="materialUnchecked">
+                                        <label class="form-check-label" for="materialUnchecked">Same as Billing Address</label>
+                                    </div>
+                                    <button type="button" class="btn btn-info">Info</button>
+                                </article>
+                            </div>
                     </div>
+
+
                     <div class="col-md-4">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="card">
-                                    <header class="card-header">
+                                    <header class="card-header bg-secondary text-white">
                                         <h4 class="card-title mt-2">Your Order</h4>
                                     </header>
                                     <article class="card-body">
