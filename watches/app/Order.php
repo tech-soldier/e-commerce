@@ -3,12 +3,32 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Order extends Model
 {
-    public function customer()
+    use SoftDeletes; 
+
+    protected $fillable = [
+        'order_id',      
+        'user_id',                                                            
+        'first_name',                                                            
+        'email',                                                        
+        'billing_address',                                                        
+        'shipping_address',                                                       
+        'subtotal',                                             
+        'tax_id',                                                              
+        'total'    
+    ];
+
+
+    public function user()
     {
+<<<<<<< HEAD
+    	return $this->belongsTo(User::class); 
+=======
     	return $this->belongsTo(User::class);
+>>>>>>> master
     }
 
     public function transaction()
@@ -19,5 +39,10 @@ class Order extends Model
     public function watch()
     {
     	return $this->belongsToMany(Watch::class);
+    }
+
+    public function tax()
+    {
+        return $this->belongsTo(Tax::class);
     }
 }

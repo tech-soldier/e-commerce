@@ -8,7 +8,7 @@
 	<h1>Table Name: <em>{{ $title }}</em></h1>
 
 <!-- this is the table --> 
-	
+	<p><a style="color: white;" href="/admin/create/create_category"><div class="btn btn-success">Add Category +</div></a></p>
 	<table class="table table-striped">
 	  <thead class="thead-dark">
 	    <tr>
@@ -28,7 +28,7 @@
 	      <td>{{ $category->category_name}}
 	      <td>{{ $category->created_at }}</td>
 	      <td>{{ $category->updated_at }}</td>
-	      <td> <p><a href="/admin/edit/{{ $category->id }}/edit_categories" class="btn btn-primary">Edit</a></p>
+	      <td><p><a href="/admin/edit/{{ $category->id }}/edit_categories" class="btn btn-primary">Edit</a></p>
 	      <td><button type="button" class="btn btn-danger">Delete</button></td>
 	    </tr>
 	  </tbody>

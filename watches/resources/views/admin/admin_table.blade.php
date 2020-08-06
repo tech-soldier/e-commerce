@@ -14,7 +14,6 @@
 	    <tr>
 	      <th scope="col">Admin ID</th>
 	      <th scope="col">Email</th>
-	      <th scope="col">Password</th>
 	      <th scope="col">Created At</th>
 	      <th scope="col">Updated At</th>	      
 	      <th scope="col">Edit</th>
@@ -25,9 +24,8 @@
 	  @foreach($admin as $admin)
 	  <tbody>
 	    <tr>
-	      <th scope="row">{{ $admin->admin_id }}</th>
+	      <th scope="row">{{ $admin->id }}</th>
 	      <th>{{ $admin->admin_email }}</th>
-	      <td>{{ $admin->password }}</td>
 	      <td>{{ $admin->created_at }}</td>
 	      <td>{{ $admin->updated_at }}</td>
 	      <td><button type="button" class="btn btn-primary">Edit</button></td>

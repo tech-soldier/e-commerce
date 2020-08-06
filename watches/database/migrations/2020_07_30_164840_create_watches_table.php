@@ -44,7 +44,7 @@ class CreateWatchesTable extends Migration
             // this is for the soft delete
             //$table->enum('is_deleted', ['true', 'false']);
             // or this option
-            $table->softDeletes('deleted_at', 0);
+            $table->softDeletes();
         });
     }
 

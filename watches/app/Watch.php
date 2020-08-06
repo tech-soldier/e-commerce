@@ -3,9 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Watch extends Model
 {
+    use SoftDeletes; 
 
 	protected $fillable = [
 		'watch_id',
@@ -16,6 +18,7 @@ class Watch extends Model
         'price', 
         'cost', 
         'material', 
+        'main_color',
         'movement', 
         'gender', 
         'category_id', 

@@ -8,7 +8,7 @@
 	<h1>Table Name: <em>{{ $title }}</em></h1>
 
 <!-- this is the table --> 
-	<p><button type="button" class="btn btn-success"> Add + </button></p>
+	<p><a style="color: white;" href="/admin/create/create_user"><div class="btn btn-success">Add User +</div></a></p>
 	<table class="table table-striped">
 	  <thead class="thead-dark">
 	    <tr>
@@ -23,24 +23,24 @@
 
 	    </tr>
 	  </thead>     
-	  @foreach($customers as $customer)
+	  @foreach($users as $user)
 	  <tbody>
 	    <tr>
-	      <th scope="row">{{ $customer->id }}</th>
-	      <th>{{ $customer->first_name }}</th>
-	      <td>{{ $customer->last_name }}</td>
-	      <td>{{ $customer->email_address }}</td>
-	      <td>{{ $customer->phone_number }}</td>
-	      <td>{{ $customer->postal_code }}</td>
+	      <th scope="row">{{ $user->id }}</th>
+	      <th>{{ $user->first_name }}</th>
+	      <td>{{ $user->last_name }}</td>
+	      <td>{{ $user->email }}</td>
+	      <td>{{ $user->phone_number }}</td>
+	      <td>{{ $user->postal_code }}</td>
 	      <td><button type="button" class="btn btn-primary">Edit</button></td>
 	      <!-- <td><button type="button" class="btn btn-danger">Delete</button></td> -->
 		  <td>
 		  	<form class="delete" 
                             onSubmit="return confirm('Do you really want to delete this post?')"
-                             action="/admin/customers_table" method="post">
+                             action="/admin/users_table" method="post">
                             @csrf
                             @method('DELETE')
-                            <input type="hidden" name="id" value="{{ $customer->customer_id }}"/>
+                            <input type="hidden" name="id" value="{{ $user->user_id }}"/>
                             <button type="submit" class="btn btn-danger">delete</button>
             </form>
          </td>

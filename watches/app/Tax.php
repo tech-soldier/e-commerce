@@ -3,11 +3,24 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Tax extends Model
 {
-   	public function orderwatch()
-    {
-    	return $this->hasMany(OrderWatch::class); 
-    }
+
+	use SoftDeletes;
+
+	protected $fillable = [
+		'tax_id', 
+		'province', 
+		'GST', 
+		'PST'
+	]; 
+
+   	public function order() 
+	{
+		return $this->hasMany(Order::class); 
+	}
+
 }
+
