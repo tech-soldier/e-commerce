@@ -13,6 +13,8 @@
 	    <tr>
 	      <th scope="col">Transaction ID</th>
 	      <th scope="col">Transaction Code</th>
+	      <th scope="col">Response Code</th>
+	      <th scope="col">Auth Code</th>
 	      <th scope="col">Order ID</th>
 	      <th scope="col">Transaction</th>
 	      <th scope="col">Created On</th>
@@ -23,6 +25,8 @@
 	    <tr>
 	      <th scope="row">{{ $transaction->id }}</th>
 	      <th>{{ $transaction->transaction_code }}</th>
+	      <th>{{ $transaction->response_code }}</th>
+	      <th>{{ $transaction->auth_code }}</th>
 	      <th>{{ $transaction->order_id }}</th>
 	      <td>{{ $transaction->transaction }}</td>
 	      <td>{{ $transaction->created_at }}</td>
