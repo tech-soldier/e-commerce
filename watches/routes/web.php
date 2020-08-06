@@ -115,7 +115,7 @@ Route::post('admin/create/create_user', 'Admin\UserController@store');
 //edit watch table
 Route::get('/admin/edit/{id}/edit_watch', 'Admin\WatchController@edit');
 
-Route::put('/admin/edit/watches_table', 'Admin\WatchController@update');
+Route::put('/admin/edit/{id}', 'Admin\WatchController@update');
 
 Route::delete('/admin/watches_table', 'Admin\WatchController@destroy');
 
