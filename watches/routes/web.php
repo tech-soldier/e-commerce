@@ -82,6 +82,7 @@ Route::get('admin/create/create_watch', 'Admin\WatchController@create');
 Route::post('admin/create/create_watch', 'Admin\WatchController@store'); 
 
 /* admin create files ----------------------------------------------*/
+
 // create watches incomplete
 Route::get('admin/create/create_watch', 'Admin\WatchController@create');
 Route::post('admin/create/create_watch', 'Admin\WatchController@store');
@@ -112,19 +113,19 @@ Route::get('admin/create/create_user', 'Admin\UserController@create');
 Route::post('admin/create/create_user', 'Admin\UserController@store');
 
 /* admin edit files */
-Route::get('/admin/edit/{id}/edit_watch', 'Admin\WatchController@edit');
+// Route::get('/admin/edit/{id}/edit_watch', 'Admin\WatchController@edit');
 
-Route::put('/admin/edit/watches_table', 'Admin\WatchController@update');
+// Route::put('/admin/edit/watches_table', 'Admin\WatchController@update');
 
-Route::delete('/admin/watches_table', 'Admin\WatchController@destroy');
-
-
-/* ------------------------------------------------------------------ */
+// Route::delete('/admin/watches_table', 'Admin\WatchController@destroy');
 
 
-Route::get('/admin/edit/{id}/edit_categories', 'Admin\CategoryController@edit');
+/* Admin EDIT files -------------------------------------------------------- */
 
-Route::put('/admin/edit/categories_table', 'Admin\CategoryController@update');
+
+Route::get('/admin/edit/{category_id}/edit_category', 'Admin\CategoryController@edit');
+
+Route::put('/admin/edit/edit_category', 'Admin\CategoryController@update');
 
   
 
