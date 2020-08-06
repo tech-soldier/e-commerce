@@ -94,23 +94,17 @@ Route::post('admin/create/create_admin', 'Admin\AdminController@store');
 
 
 /* admin edit files */
-Route::get('/admin/edit/{id}/edit_watch', 'Admin\WatchesController@edit');
+Route::get('/admin/edit/{id}/edit_watch', 'Admin\WatchController@edit');
 
-
-Route::put('/admin/edit/edit_watch', 'Admin\WatchesController@update');
+Route::put('/admin/edit/watches_table', 'Admin\WatchController@update');
 
 Route::delete('/admin/watches_table', 'Admin\WatchController@destroy');
 
-Route::put('/admin/edit/watches_table', 'Admin\WatchesController@update');
-
-
-/* admin edit files */ 
-Route::get('/admin/edit/{id}/edit_watch', 'Admin\WatchesController@edit'); 
-Route::put('/admin/edit/watches_table', 'Admin\WatchesController@update'); 
 
 
 Route::get('/admin/edit/{id}/edit_categories', 'Admin\CategoryController@edit');
-Route::post('/admin/edit/categories_table', 'Admin\CategoryController@update');
+
+Route::put('/admin/edit/categories_table', 'Admin\CategoryController@update');
 
   
 
