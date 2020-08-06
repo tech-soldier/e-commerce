@@ -128,8 +128,9 @@ class WatchController extends Controller
     public function edit($id)
     {
         $watch=Watch::find($id);
+        $categories = Category::all(); 
         $title = 'Edit Watch'; 
-        return view('/admin/edit/edit_watch', compact('title', 'watch')); 
+        return view('/admin/edit/edit_watch', compact('title', 'watch', 'categories')); 
     }
 
     /**
@@ -144,42 +145,39 @@ class WatchController extends Controller
 
         $valid = $request->validate([
             'id' => 'required|integer',
-            'SKU' => 'required|max:10',
-            'watch_name'=> 'required|string|max:255',
-            'in_stock' => 'required',
+            'SKU' => 'required|integer', 
+            'watch_name' => 'required|string|max:255',
+            'in_stock' => 'required|integer', 
             'quantity' => 'required|integer',
-            'price' => 'required|numeric',
-            'cost' => 'required|numeric',
-            'material' => 'required|string|max:255',
+            'price' => "required|regex:/^\d+(\.\d{1,2})?$/", 
+            'cost' => "required|regex:/^\d+(\.\d{1,2})?$/", 
+            'material' => 'required|string|max:255', 
             'main_color' => 'required|string|max:255',
-            'movement' => 'required|string',
-            'gender' => 'required|string|max:255',
-            'category_id' => 'required|integer',
-            'diameter' => 'required|string',
-            'strap_width' => 'required|string|max:255',
-            'weight' => 'required|string',
-            'water_resistant' => 'required|string|max:255',
+            'movement' => 'required|string|max:255', 
+            'gender' => 'required|string|max:255', 
+            'category_id' => 'nullable|integer', 
+            'diameter' => 'required|string|max:255', 
+            'strap_width' => 'required|string|max:255', 
+            'strap_length' => 'required|string|max:255', 
+            'weight' => 'required|string|max:255', 
+            'water_resistant' => 'required|string|max:255', 
             'cover_img' => 'nullable|image',
-            'short_description' => 'required',
-            'long_description' => 'required'
-
+            'short_description' => 'required|string|max:255', 
+            'long_description' => 'required|string|max:500'
         ]);
-    
         if(!empty($valid['cover_img'])){
-
         $file = $request->file('cover_img');
         //getting the orginal file name
-
         $cover_img = time() . '_' . $file->getClientOriginalName();
-
         //save the image
         $path = $file->storeAs('storage', $cover_img);
 
     }
 
-        $watch = Watch::find($valid['SKU']);
+        $watch = Watch::find($valid['id']);
+        $watch->SKU = $valid['SKU'];
         $watch->watch_name = $valid['watch_name'];
-        $watch->in_stock = $valid['in_stock'];
+        $watch->in_stock = $valid['in_stock'] ?? 0;
         $watch->quantity = $valid['quantity'];
         $watch->price = $valid['price'];
         $watch->cost = $valid['cost'];
@@ -187,17 +185,16 @@ class WatchController extends Controller
         $watch->main_color = $valid['main_color'];
         $watch->movement = $valid['movement'];
         $watch->gender = $valid['gender'];
-        $watch->category_id = $valid['category_id'];
-        $watch->diamenter = $valid['diamenter'];
+        $watch->category_id = $valid['category_id'] ?? 1;
+        $watch->diameter = $valid['diameter'];
         $watch->strap_width = $valid['strap_width'];
         $watch->weight = $valid['weight'];
         $watch->water_resistant = $valid['water_resistant'];
         $watch->short_description = $valid['short_description'];
         $watch->long_description = $valid['long_description'];
         if(!empty($cover_img)) {
-             $watch->cover_img = '/cover_img/' .$cover_img;
+             $watch->cover_img = $cover_img;
         }
-
 
         if($watch->save() ) {
             return redirect('/admin/watches_table')->with('success', 'Your watch is successfully updated');
