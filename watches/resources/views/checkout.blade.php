@@ -53,7 +53,7 @@ use \App\Http\Controllers\CartController;
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="exampleFormControlSelect1">Province</label>
-                                        <select class="form-control" id="exampleFormControlSelect1">
+                                        <select class="form-control province" id="exampleFormControlSelect1">
                                             @foreach($taxes as $tax)
                                                 <option value="{{$tax->province}}">
                                                     {{$tax->province}}
@@ -122,9 +122,15 @@ use \App\Http\Controllers\CartController;
                                         </div>
                                     </div>
                                     <div class="form-row">
-                                        <div class="form-group  col-md-6">
-                                            <label>Province</label>
-                                            <input type="text" class="form-control bg-light" name="province">
+                                        <div class="form-group col-md-6">
+                                            <label for="exampleFormControlSelect1">Province</label>
+                                            <select class="form-control" id="exampleFormControlSelect1">
+                                                @foreach($taxes as $tax)
+                                                    <option value="{{$tax->province}}">
+                                                        {{$tax->province}}
+                                                    </option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                         <div class="form-group  col-md-6">
                                             <label>Postal Code</label>
@@ -181,7 +187,7 @@ use \App\Http\Controllers\CartController;
 
         <script type="text/javascript">
 
-            $("#province").on('change', function() {
+            $(".province").on('change', function() {
                // e.preventDefault();
                 var ele = $(this).val();
                 var gst = $("#gst");
