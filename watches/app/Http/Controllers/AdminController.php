@@ -24,9 +24,10 @@ class AdminController extends Controller
     {
         $title = "Dashboard";
         $min = \DB::table('watches')->min('price');
+        $max = \DB::table('watches')->max('price');
+        $avg = \DB::table('watches')->avg('price');
 
-
-        return view('/admin/dashboard', compact('title', 'min'));
+        return view('/admin/dashboard', compact('title', 'min', 'max', 'avg'));
     }
 
     public function watches()

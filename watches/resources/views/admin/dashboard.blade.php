@@ -13,13 +13,14 @@
             <table class="table">
                 <thead class="bg-light">
                     <tr>
-                        <th>Watches Overview</th><th></th>
+                        <th>Watches Overview</th><th></th><th></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td><strong>Min Price: </strong> $ {{ $min }}</td>
-
+                        <td><strong>Max Price: </strong> $ {{ $max }}</td>
+                        <td><strong>Avg Price: </strong> $ {{ $avg }}</td>
                     </tr>
                 </tbody>    
                     
