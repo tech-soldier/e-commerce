@@ -80,6 +80,7 @@ Route::get('/admin/search/search_watches', 'Admin\WatchController@search');
 Route::get('/admin/search/search_users', 'Admin\UserController@search');
 Route::get('/admin/search/search_orders', 'Admin\OrderController@search');
 
+Route::get('/admin/search/search_admins', 'Admin\AdminController@search');
 
 /*----------------------------------------------------------------*/
 
