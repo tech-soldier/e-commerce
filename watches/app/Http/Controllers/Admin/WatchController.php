@@ -144,7 +144,7 @@ class WatchController extends Controller
     {
 
         $valid = $request->validate([
-            'id' => 'required|integer',
+            'watch_id' => 'required|integer',
             'SKU' => 'required|integer', 
             'watch_name' => 'required|string|max:255',
             'in_stock' => 'required|integer', 
@@ -174,7 +174,7 @@ class WatchController extends Controller
 
     }
 
-        $watch = Watch::find($valid['id']);
+        $watch = Watch::find($request['watch_id']);
         $watch->SKU = $valid['SKU'];
         $watch->watch_name = $valid['watch_name'];
         $watch->in_stock = $valid['in_stock'] ?? 0;
