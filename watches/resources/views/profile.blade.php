@@ -88,7 +88,7 @@
                                 <th scope="row">{{$order->id}}</th>
                                 <td>{{ $order->created_at->diffForHumans() }}</td>
                                 <td>{{$order->shipping_address}}</td>
-                                <td>{{$order->total}}</td>
+                                <td>${{$order->total}}</td>
                                 <td>
                                     <button type="button" class="btn btn-outline-primary">see order</button>
                                 </td>
