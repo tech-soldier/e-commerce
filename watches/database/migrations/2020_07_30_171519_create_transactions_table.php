@@ -17,6 +17,9 @@ class CreateTransactionsTable extends Migration
             $table->id();
             $table->integer('order_id')->unsigned(); 
             $table->string('transaction_code', 255); 
+            // suggested to add
+            $table->integer('response_code'); 
+            $table->string('auth_code', 255); 
             $table->text('transaction'); 
             $table->timestamps();
             $table->softDeletes();

@@ -26,7 +26,9 @@ class SeedTransactionsTable extends Seeder
          DB::table('transactions')->insert([
          	'order_id' => 1, 
          	'transaction_code' => '11289', 
-         	'transaction' => 'VISA', 
+            'response_code' => 112233,
+            'auth_code' => '2011-01',
+         	'transaction' => 'mock_date', 
          	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()         
          ]); 
@@ -34,7 +36,9 @@ class SeedTransactionsTable extends Seeder
          DB::table('transactions')->insert([
          	'order_id' => 2, 
          	'transaction_code' => '11289', 
-         	'transaction' => 'VISA', 
+            'response_code' => 112663,
+            'auth_code' => '9990-01',
+         	'transaction' => 'mock_data', 
          	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()         
          ]); 
@@ -42,7 +46,9 @@ class SeedTransactionsTable extends Seeder
          DB::table('transactions')->insert([
          	'order_id' => 3, 
          	'transaction_code' => '29900', 
-         	'transaction' => 'Paypal', 
+            'response_code' => 109633,
+            'auth_code' => '3010-01',
+         	'transaction' => 'mock_data', 
          	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()         
          ]); 
@@ -50,7 +56,9 @@ class SeedTransactionsTable extends Seeder
          DB::table('transactions')->insert([
          	'order_id' => 4, 
          	'transaction_code' => '78112', 
-         	'transaction' => 'mastercard', 
+            'response_code' => 112199,
+            'auth_code' => '2881-01',
+         	'transaction' => 'mock_data', 
          	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()         
          ]); 
@@ -58,7 +66,9 @@ class SeedTransactionsTable extends Seeder
          DB::table('transactions')->insert([
          	'order_id' => 5, 
          	'transaction_code' => '78112', 
-         	'transaction' => 'mastercard', 
+            'response_code' => 112009,
+            'auth_code' => '2090-01',
+         	'transaction' => 'mock_data', 
          	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()         
          ]); 
@@ -66,7 +76,9 @@ class SeedTransactionsTable extends Seeder
          DB::table('transactions')->insert([
          	'order_id' => 6, 
          	'transaction_code' => '78112', 
-         	'transaction' => 'mastercard', 
+            'response_code' => 112000,
+            'auth_code' => '2020-11', 
+         	'transaction' => 'mock_data', 
          	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()         
          ]); 
