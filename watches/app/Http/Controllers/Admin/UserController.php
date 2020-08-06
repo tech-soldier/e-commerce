@@ -5,9 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\Transaction; 
+use App\User; 
 
-class TransactionController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -26,11 +26,11 @@ class TransactionController extends Controller
      */
     public function create()
     {
-        $title = 'Create A Transaction'; 
+        $title = 'Create A New User'; 
 
-        $transactions = Transaction::all(); 
+        $users = User::all(); 
 
-        return view('/admin/create/create_transaction', compact('title', 'transactions')); 
+        return view('/admin/create/create_user', compact('title', 'users')); 
     }
 
     /**
@@ -42,18 +42,32 @@ class TransactionController extends Controller
     public function store(Request $request)
     {
         $valid = $request->validate([
-            'order_id' => 'required|integer',
-            'transaction_code' => 'required|string|max:255',
-            'transaction' => 'required|string|max:255'
+            'email' => 'required|email|unique:users,email', 
+            'password' => 'required|string|max:255',
+            'first_name' => 'required|string|max:255', 
+            'last_name' => 'required|string|max:255', 
+            'billing_address' => 'required|string|max:255', 
+            'city' => 'required|string|max:255', 
+            'province' => 'required|string|max:255', 
+            'country' => 'required|string|max:255', 
+            'postal_code' => 'required|string|max:6', 
+            'phone_number' => 'required|regex:/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/'
         ]); 
 
-        Transaction::create([
-            'order_id' => $valid['order_id'],
-            'transaction_code' => $valid['transaction_code'],
-            'transaction' => $valid['transaction']
+        User::create([
+            'email' => $valid['email'], 
+            'password' => password_hash($valid['password'], PASSWORD_DEFAULT),
+            'first_name' => $valid['first_name'], 
+            'last_name' => $valid['last_name'], 
+            'billing_address' => $valid['billing_address'], 
+            'city' => $valid['city'], 
+            'province' => $valid['province'], 
+            'country' => $valid['country'], 
+            'postal_code' => $valid['postal_code'], 
+            'phone_number' => $valid['phone_number']
         ]); 
 
-        return redirect('/admin/transactions_table')->with('success', 'Transaction was successfully created'); 
+        return redirect('/admin/users_table')->with('success', 'User was successfully created'); 
     }
 
     /**

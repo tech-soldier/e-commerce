@@ -10,7 +10,7 @@
         <a class="nav-link" href="/admin/watches_table">Watches</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/admin/customers_table">Customers</a>
+        <a class="nav-link" href="/admin/users_table">Users</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/admin/orders_table">Orders</a>

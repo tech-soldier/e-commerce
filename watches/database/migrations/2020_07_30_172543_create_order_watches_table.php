@@ -21,7 +21,7 @@ class CreateOrderWatchesTable extends Migration
             $table->decimal('price', 14,2); 
             $table->integer('quantity'); 
             $table->timestamps();
-            $table->softDeletes('deleted_at', 0);
+            $table->softDeletes();
         });
     }
 

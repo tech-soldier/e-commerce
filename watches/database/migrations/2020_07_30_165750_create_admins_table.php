@@ -18,7 +18,7 @@ class CreateAdminsTable extends Migration
             $table->string('admin_email', 255); 
             $table->string('password', 255); 
             $table->timestamps();
-            $table->softDeletes('deleted_at', 0);
+            $table->softDeletes();
         });
     }
 

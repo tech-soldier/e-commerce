@@ -15,11 +15,12 @@
 	<table class="table table-striped">
 	  <thead class="thead-dark">
 	    <tr>
-	      <th scope="col">watch ID</th>
+	      <th scope="col">Watch ID</th>
 	      <th scope="col">SKU</th>
 	      <th scope="col">Watch name</th>
 	      <th scope="col">Price</th>
 	      <th scope="col">Cost</th>
+	      <th scope="col">Category ID</th>
 	      <th scope="col">Material</th>
 	      <th scope="col">Edit</th>
 	      <th scope="col">Delete</th>
@@ -34,6 +35,7 @@
 	      <td>{{ $watch->watch_name }}</td>
 	      <td>$ {{ $watch->price }}</td>
 	      <td>$ {{ $watch->cost }}</td>
+	      <td>{{ $watch->category_id }}</td>
 	      <td>{{ $watch->material }}</td>
 
 	      <td> <p><a href="/admin/edit/{{ $watch->id }}/edit_watch" class="btn btn-primary">Edit</a></p>

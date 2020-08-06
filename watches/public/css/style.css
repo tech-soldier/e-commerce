@@ -504,3 +504,6 @@ div#orders_hidden{
   box-shadow: none;
 }
 /* Profile Page End */
+.profile-pic{
+  border-radius: 50px;
+}
