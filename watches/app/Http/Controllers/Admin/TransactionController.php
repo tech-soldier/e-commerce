@@ -41,7 +41,19 @@ class TransactionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $valid = $request->validate([
+            'order_id' => 'required|integer',
+            'transaction_code' => 'required|string|max:255',
+            'transaction' => 'required|string|max:255'
+        ]); 
+
+        Transaction::create([
+             'order_id' => $valid['order_id'],
+            'transaction_code' => $valid['transaction_code'],
+            'transaction' => $valid['transaction']
+        ]); 
+
+        return redirect('/admin/transactions_table')->with('success', 'Transaction was successfully created'); 
     }
 
     /**
