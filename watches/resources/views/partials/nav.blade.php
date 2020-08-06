@@ -89,12 +89,12 @@
             <div class="circle">
                 <i class="fas fa-search"></i>
 
-                <form class="form" action="shop.blade.php" method="get" autocomplete="on" novalidate>
+                <!-- <form class="form" action="shop.blade.php" method="get" autocomplete="on" novalidate>
                     <input id="s" type="text" name="s" maxlength="255" />&nbsp;
                     <div>
                         <ul id="live_search"></ul>
                     </div>
-                </form>
+                </form> -->
 
             </div>
             <!-- shopping cart -->
