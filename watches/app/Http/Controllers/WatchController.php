@@ -141,7 +141,42 @@ class WatchController extends Controller
 
         // return view with user's profile
         return view('/profile', compact('title','user','orders'));
-    }    
+    } 
+
+
+    public function getAllWatchesBySearch($searchterm)
+    {
+
+        global $dbh; // $dbh = the global $dbh;
+
+        $query = 'SELECT watches.*,
+                      watch_name,gender,long_description
+                      FROM 
+                      watches
+                      WHERE 
+                      watch_name LIKE :searchterm1
+                      OR
+                      gender LIKE :searchterm2
+                      OR
+                      long_description LIKE :searchterm3
+                      ORDER BY watch_name ASC';
+
+        $stmt = static::$dbh->prepare($query);
+
+        $params = array(
+            ':searchterm1' => "%{$searchterm}%",
+            ':searchterm2' => "%{$searchterm}%",
+            ':searchterm3' => "%{$searchterm}%"
+        );
+
+        $stmt->execute($params);
+
+        $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+        return $result;
+    
+}
+   
 
 
 }
