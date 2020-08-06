@@ -141,8 +141,9 @@ class WatchController extends Controller
      */
     public function update(Request $request)
     {
+
         $valid = $request->validate([
-           
+            'id' => 'required|integer',
             'SKU' => 'required|max:10',
             'watch_name'=> 'required|string|max:255',
             'in_stock' => 'required',
@@ -151,19 +152,19 @@ class WatchController extends Controller
             'cost' => 'required|numeric',
             'material' => 'required|string|max:255',
             'main_color' => 'required|string|max:255',
-            'movement' => 'required|string|max:255',
+            'movement' => 'required|string',
             'gender' => 'required|string|max:255',
             'category_id' => 'required|integer',
-            'diamenter' => 'required|integer',
+            'diameter' => 'required|string',
             'strap_width' => 'required|string|max:255',
-            'weight' => 'required|integer',
+            'weight' => 'required|string',
             'water_resistant' => 'required|string|max:255',
-            'cover_img' => 'nullable|cover_img',
+            'cover_img' => 'nullable|image',
             'short_description' => 'required',
             'long_description' => 'required'
 
         ]);
-
+    
         if(!empty($valid['cover_img'])){
 
         $file = $request->file('cover_img');
@@ -172,7 +173,7 @@ class WatchController extends Controller
         $cover_img = time() . '_' . $file->getClientOriginalName();
 
         //save the image
-        $path = $file->storeAs('images', $cover_img);
+        $path = $file->storeAs('storage', $cover_img);
 
     }
 
@@ -196,6 +197,7 @@ class WatchController extends Controller
         if(!empty($cover_img)) {
              $watch->cover_img = '/cover_img/' .$cover_img;
         }
+
 
         if($watch->save() ) {
             return redirect('/admin/watches_table')->with('success', 'Your watch is successfully updated');
