@@ -32,7 +32,7 @@
 	      <td>{{ $order->shipping_address }}</td>
 	      <td>$ {{ $order->subtotal }}</td>
 	      <td>$ {{ $order->total }}</td>
-	      <td><button type="button" class="btn btn-primary">Edit</button></td>
+	       <td><p><a href="/admin/edit/{{ $order->id }}/edit_orders" class="btn btn-primary">Edit</a></p>
 	      <td><button type="button" class="btn btn-danger">Delete</button></td>
 	    </tr>
 	  </tbody>

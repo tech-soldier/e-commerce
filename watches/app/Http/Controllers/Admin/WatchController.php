@@ -163,10 +163,11 @@ class WatchController extends Controller
 
         ]);
 
-         if(!empty($valid['cover_img'])){
+        if(!empty($valid['cover_img'])){
 
         $file = $request->file('cover_img');
         //getting the orginal file name
+
         $cover_img = time() . '_' . $file->getClientOriginalName();
 
         //save the image
