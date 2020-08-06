@@ -140,6 +140,7 @@ class WatchController extends Controller
      */
     public function update(Request $request)
     {
+
         $valid = $request->validate([
            
             'SKU' => 'required|max:10',
@@ -155,14 +156,14 @@ class WatchController extends Controller
             'category_id' => 'required|integer',
             'diamenter' => 'required|integer',
             'strap_width' => 'required|string|max:255',
-            'weight' => 'required|integer',
+            'weight' => 'required|string',
             'water_resistant' => 'required|string|max:255',
-            'cover_img' => 'nullable|cover_img',
+            'cover_img' => 'nullable|string',
             'short_description' => 'required',
             'long_description' => 'required'
 
         ]);
-
+        dd($valid);
         if(!empty($valid['cover_img'])){
 
         $file = $request->file('cover_img');
