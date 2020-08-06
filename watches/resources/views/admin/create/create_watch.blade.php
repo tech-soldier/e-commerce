@@ -30,12 +30,20 @@
         @enderror
       </div>
 
-       <div class="form-group">
+       <!-- <div class="form-group">
         <label for="in_stock">In Stock: </label>
         <input type="text" class="form-control" name="in_stock" id="in_stock" value="{{ old('in_stock') }}">
         @error('in_stock')
             <span class="alert-danger">{{ $message }}</span>
         @enderror
+      </div> -->
+
+      <div class="form-group">
+        <label for="in_stock">In Stock</label> <br />
+        <input type="radio" name="in_stock" checked value="0" />
+        No &nbsp;
+        <input type="radio" name="in_stock" value="1" />
+        Yes
       </div>
 
       <div class="form-group">

@@ -47,7 +47,7 @@ class WatchController extends Controller
         $valid = $request->validate([
             'SKU' => 'required|integer', 
             'watch_name' => 'required|string|max:255',
-            'in_stock' => 'required|integer', // default is 
+            'in_stock' => 'required|integer', 
             'quantity' => 'required|integer',
             'price' => "required|regex:/^\d+(\.\d{1,2})?$/", 
             'cost' => "required|regex:/^\d+(\.\d{1,2})?$/", 
@@ -61,7 +61,7 @@ class WatchController extends Controller
             'strap_length' => 'required|string|max:255', 
             'weight' => 'required|string|max:255', 
             'water_resistant' => 'required|string|max:255', 
-            'cover_img' => 'nullable|string|max:255',
+            'cover_img' => 'nullable|image',
             'short_description' => 'required|string|max:255', 
             'long_description' => 'required|string|max:500'
 
@@ -82,7 +82,7 @@ class WatchController extends Controller
         Watch::create([
             'SKU' => $valid['SKU'], 
             'watch_name' => $valid['watch_name'], 
-            'in_stock' => $valid['in_stock'], 
+            'in_stock' => $valid['in_stock'] ?? 0, 
             'quantity' => $valid['quantity'], 
             'price'=> $valid['price'],
             'cost'=> $valid['cost'],
