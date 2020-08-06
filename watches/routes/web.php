@@ -152,3 +152,5 @@ Route::get('/admin/edit/{id}/edit_orders', 'Admin\OrderController@edit');
 
 Route::put('/admin/edit/orders_table', 'Admin\OrderController@update');
 
+// front-end search
+Route::get('/shop', 'WatchController@search');
