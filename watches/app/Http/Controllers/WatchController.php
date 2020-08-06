@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Watch;
 use App\Category;
 use App\DB;
+use Auth;
+use App\User;
 
 class WatchController extends Controller
 {
@@ -125,7 +127,15 @@ class WatchController extends Controller
     public function profile()
     {
         $title = 'Profile';
-        return view('/profile', compact('title'));
+
+        //get authenticated user id
+        $id = Auth::id();
+
+        // get user's data
+        $user = User::find($id);
+
+        // return view with user's profile
+        return view('/profile', compact('title','user'));
     }    
 
 
