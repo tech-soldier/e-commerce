@@ -38,7 +38,7 @@
 
 	    </tr>
 	  </thead>
-	  @if(isset($watches))
+	  
 
 		  @foreach($watches as $watch)
 		  <tbody>
@@ -71,9 +71,8 @@
 		    </tr>
 		  </tbody>
 		  @endforeach
-	  @endif
-	</table>
-	<!-- end of the table-->
+	</table><!-- end of the table-->
+
 </div>
 
 @stop

@@ -70,9 +70,9 @@
 	  
 
 	</table><!-- end of table-->
-	 @else
+	@elseif
 
-	  <h1><strong>404 Error: </strong><em>Sorry, we couldn't find what you were looking for<em></h1>
+	 	<h1><strong>404 Error: </strong><em>Sorry, we couldn't find what you were looking for<em></h1>
 
 	@endif
 </div>

@@ -25,6 +25,7 @@
 
 	</form>
 
+	@if(count($watches) > 0)
 	<table class="table table-striped">
 	  <thead class="thead-dark">
 	    <tr>
@@ -40,7 +41,7 @@
 
 	    </tr>
 	  </thead>
-	  @if(isset($watches))
+	  
 
 		  @foreach($watches as $watch)
 		  <tbody>
@@ -69,13 +70,17 @@
                     <button type="submit" class="btn btn-danger">Delete</button>
 	            </form>
 	         </td>
-
 		    </tr>
 		  </tbody>
 		  @endforeach
-	  @endif
-	</table>
-	<!-- end of the table-->
+	</table><!-- end of the table-->
+
+	@else
+
+		<h1><strong>404 Error: </strong><em>Sorry, we couldn't find what you were looking for<em></h1>
+
+
+	@endif 
 </div>
 
 @stop
