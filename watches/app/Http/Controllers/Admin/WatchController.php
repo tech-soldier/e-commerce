@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Watch; 
 use App\Category; 
+// use App\Validator;
 
 class WatchController extends Controller
 {
@@ -137,7 +138,7 @@ class WatchController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         $valid = $request->validate([
            
@@ -149,16 +150,16 @@ class WatchController extends Controller
             'cost' => 'required|numeric',
             'material' => 'required|string|max:255',
             'main_color' => 'required|string|max:255',
-            'movement' => 'require|string|max:255',
-            'gender' => 'require|string|max:255',
-            'category_id' => 'require|integer',
-            'diamenter' => 'require|integer',
-            'strap_width' => 'require|string|max:255',
-            'weight' => 'require|integer',
-            'water_resistant' => 'require|string|max:255',
+            'movement' => 'required|string|max:255',
+            'gender' => 'required|string|max:255',
+            'category_id' => 'required|integer',
+            'diamenter' => 'required|integer',
+            'strap_width' => 'required|string|max:255',
+            'weight' => 'required|integer',
+            'water_resistant' => 'required|string|max:255',
             'cover_img' => 'nullable|cover_img',
-            'short_description' => 'require',
-            'long_description' => 'require'
+            'short_description' => 'required',
+            'long_description' => 'required'
 
         ]);
 
@@ -166,7 +167,8 @@ class WatchController extends Controller
 
         $file = $request->file('cover_img');
         //getting the orginal file name
-        $cover_img = time() . '_' . $file->getClientOriginalNAme();
+
+        $cover_img = time() . '_' . $file->getClientOriginalName();
 
         //save the image
         $path = $file->storeAs('images', $cover_img);
