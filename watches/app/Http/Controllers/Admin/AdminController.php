@@ -16,7 +16,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        //
+        $data = DB::table('watches')->get();
+        print_r($data);
     }
 
     /**

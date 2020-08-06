@@ -22,9 +22,16 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $title = "Admin Dashboard";
+        $title = "Dashboard";
+        $min = \DB::table('watches')->min('price');
+        $max = \DB::table('watches')->max('price');
+        $avg = \DB::table('watches')->avg('price');
+        $users = \DB::table('users')->count();
+        $minorder = \DB::table('orders')->min('total');
+        $maxorder = \DB::table('orders')->max('total');
+        $avgorder = \DB::table('orders')->avg('total');
 
-        return view('/admin/dashboard', compact('title'));
+        return view('/admin/dashboard', compact('title', 'min', 'max', 'avg', 'users', 'minorder', 'maxorder', 'avgorder'));
     }
 
     public function watches()
