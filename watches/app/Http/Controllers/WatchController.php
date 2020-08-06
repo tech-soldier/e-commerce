@@ -144,38 +144,13 @@ class WatchController extends Controller
     } 
 
 
-    public function getAllWatchesBySearch($searchterm)
+    public function search()
     {
+        $search_term = $_GET['query']; 
+        $watches = Watch::where('watch_name', 'LIKE', '%'.$search_term.'%')->orWhere('material', 'LIKE', '%'.$search_term.'%')->orWhere('long_description', 'LIKE', '%'.$search_term.'%')->with('category_name')->get(); 
 
-        global $dbh; // $dbh = the global $dbh;
-
-        $query = 'SELECT watches.*,
-                      watch_name,gender,long_description
-                      FROM 
-                      watches
-                      WHERE 
-                      watch_name LIKE :searchterm1
-                      OR
-                      gender LIKE :searchterm2
-                      OR
-                      long_description LIKE :searchterm3
-                      ORDER BY watch_name ASC';
-
-        $stmt = static::$dbh->prepare($query);
-
-        $params = array(
-            ':searchterm1' => "%{$searchterm}%",
-            ':searchterm2' => "%{$searchterm}%",
-            ':searchterm3' => "%{$searchterm}%"
-        );
-
-        $stmt->execute($params);
-
-        $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-
-        return $result;
-    
-}
+        return view('/shop', compact('watches')); 
+    }
    
 
 

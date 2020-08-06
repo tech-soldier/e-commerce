@@ -28,7 +28,7 @@
 	      <td>{{ $category->category_name}}
 	      <td>{{ $category->created_at }}</td>
 	      <td>{{ $category->updated_at }}</td>
-	      <td><p><a href="/admin/edit/{{ $category->id }}/edit_categories" class="btn btn-primary">Edit</a></p>
+	      <td><p><a href="/admin/edit/{{ $category->category_id }}/edit_category" class="btn btn-primary">Edit</a></p>
 	      <td><button type="button" class="btn btn-danger">Delete</button></td>
 	    </tr>
 	  </tbody>
