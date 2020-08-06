@@ -22,84 +22,87 @@
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item px-0 pb-1 font-weight-bold">
                         <span class="text-secondary">First Name:</span>
-                        <span class="float-right">{{ $user->first_name }}</span>
+                        <span class="float-right">{{ (!empty($user->first_name)) ? $user->first_name : '-' }}</span>
                     </li>
                     <li class="list-group-item px-0 pb-1 font-weight-bold">
                         <span class="text-secondary">Last Name:</span>
-                        <span class="float-right">{{ $user->last_name }}</span>
+                        <span class="float-right">{{ (!empty($user->last_name)) ? $user->last_name : '-' }}</span>
                     </li>
                     <li class="list-group-item px-0 pb-1 font-weight-bold">
                         <span class="text-secondary">Billing Address:</span>
-                        <span class="float-right">{{ $user->billing_address }}</span>
+                        <span class="float-right">{{ (!empty($user->billing_address)) ? $user->billing_address : '-' }}</span>
                     </li>
                     <li class="list-group-item px-0 pb-1 font-weight-bold">
                         <span class="text-secondary">City:</span>
-                        <span class="float-right">{{ $user->city }}</span>
+                        <span class="float-right">{{ (!empty($user->city)) ? $user->city : '-' }}</span>
                     </li>
                     <li class="list-group-item px-0 pb-1 font-weight-bold">
                         <span class="text-secondary">Province:</span>
-                        <span class="float-right">{{ $user->province }}</span>
+                        <span class="float-right">{{ (!empty($user->province)) ? $user->province : '-' }}</span>
                     </li>
                     <li class="list-group-item px-0 pb-1 font-weight-bold">
                         <span class="text-secondary">Country:</span>
-                        <span class="float-right">{{ $user->country }}</span>
+                        <span class="float-right">{{ (!empty($user->country)) ? $user->country : '-' }}</span>
                     </li>
                     <li class="list-group-item px-0 pb-1 font-weight-bold">
                         <span class="text-secondary">Postal Code:</span>
-                        <span class="float-right">{{ $user->postal_code }}</span>
+                        <span class="float-right">{{ (!empty($user->postal_code)) ? $user->postal_code : '-' }}</span>
                     </li>
                     <li class="list-group-item px-0 pb-1 font-weight-bold">
                         <span class="text-secondary">Email Address:</span>
-                        <span class="float-right">{{ $user->email }}</span>
+                        <span class="float-right">{{ (!empty($user->email)) ? $user->email : '-' }}</span>
                     </li>
                     <li class="list-group-item px-0 pb-1 font-weight-bold">
                         <span class="text-secondary">Phone Number:</span>
-                        <span class="float-right">{{ $user->phone_number }}</span>
+                        <span class="float-right">{{ (!empty($user->phone_number)) ? $user->phone_number : '-' }}</span>
                     </li>
                 </ul>
             </div>
         </div>
 
-        <h2 class="py-3 px-3 bg-secondary text-light">
-            Total Orders: 
-            <span class="font-weight-bold">{{ count($orders) }}</span>
-            <span class="float-right">
-                <button type="button" class="btn btn-outline-light text-uppercase" id="button_orders">see orders</button>
-            </span>
-            <span style="display: block; clear: both;"></span>
-        </h2>
+        <?php if(count($orders) > 0) : // if there are orders ?>
+            <h2 class="py-3 px-3 bg-secondary text-light">
+                Total Orders: 
+                <span class="font-weight-bold">{{ count($orders) }}</span>
+                <span class="float-right">
+                    <button type="button" class="btn btn-outline-light text-uppercase" id="button_orders">see orders</button>
+                </span>
+                <span style="display: block; clear: both;"></span>
+            </h2>
 
-        <div id="orders_hidden" class="mt-4">
-            <table class="table table-hover text-center">
-                <thead class="bg-light">
-                    <tr>
-                        <th scope="col">Order Number</th>
-                        <th scope="col">Ordered</th>
-                        <th scope="col">Shipped To</th>
-                        <th scope="col">Total</th>
-                        <th scope="col">Details</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                    <?php foreach ($orders as $order) : ?>
+            <div id="orders_hidden" class="mt-4">
+                <table class="table table-hover text-center">
+                    <thead class="bg-light">
                         <tr>
-                            <th scope="row">{{$order->id}}</th>
-                            <td>{{ $order->created_at->diffForHumans() }}</td>
-                            <td>{{$order->shipping_address}}</td>
-                            <td>{{$order->total}}</td>
-                            <td>
-                                <button type="button" class="btn btn-outline-primary">see order</button>
-                            </td>
+                            <th scope="col">Order Number</th>
+                            <th scope="col">Ordered</th>
+                            <th scope="col">Shipped To</th>
+                            <th scope="col">Total</th>
+                            <th scope="col">Details</th>
                         </tr>
-                    <?php endforeach ; ?>
+                    </thead>
+                    <tbody>
 
-                </tbody>
-            </table>
-        </div>       
+                        <?php foreach ($orders as $order) : ?>
+                            <tr>
+                                <th scope="row">{{$order->id}}</th>
+                                <td>{{ $order->created_at->diffForHumans() }}</td>
+                                <td>{{$order->shipping_address}}</td>
+                                <td>{{$order->total}}</td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-primary">see order</button>
+                                </td>
+                            </tr>
+                        <?php endforeach ; ?>
 
-        <div class="row">
-        </div>
+                    </tbody>
+                </table>
+            </div>
+        <?php else : ?>
+            <h2 class="py-3 px-3 bg-secondary text-light">
+                No orders yet 
+            </h2>            
+        <?php endif ; ?>       
 
     </div>
 
