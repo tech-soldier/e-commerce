@@ -25,7 +25,7 @@
 	</form>
 
 
-
+	@if(count($users) > 0)
 	<table class="table table-striped">
 	  <thead class="thead-dark">
 	    <tr>
@@ -40,34 +40,41 @@
 
 	    </tr>
 	  </thead>     
-	  @foreach($users as $user)
-	  <tbody>
-	    <tr>
-	      <th scope="row">{{ $user->id }}</th>
-	      <th>{{ $user->first_name }}</th>
-	      <td>{{ $user->last_name }}</td>
-	      <td>{{ $user->email }}</td>
-	      <td>{{ $user->phone_number }}</td>
-	      <td>{{ $user->postal_code }}</td>
-	      <td><button type="button" class="btn btn-primary">Edit</button></td>
-	      <!-- <td><button type="button" class="btn btn-danger">Delete</button></td> -->
-		  <td>
-		  	<form class="delete" 
-                            onSubmit="return confirm('Do you really want to delete this post?')"
-                             action="/admin/users_table" method="post">
-                            @csrf
-                            @method('DELETE')
-                            <input type="hidden" name="id" value="{{ $user->user_id }}"/>
-                            <button type="submit" class="btn btn-danger">delete</button>
-            </form>
-         </td>
+	 
+		  @foreach($users as $user)
+		  <tbody>
+		    <tr>
+		      <th scope="row">{{ $user->id }}</th>
+		      <th>{{ $user->first_name }}</th>
+		      <td>{{ $user->last_name }}</td>
+		      <td>{{ $user->email }}</td>
+		      <td>{{ $user->phone_number }}</td>
+		      <td>{{ $user->postal_code }}</td>
+		      <td><button type="button" class="btn btn-primary">Edit</button></td>
+		      <!-- <td><button type="button" class="btn btn-danger">Delete</button></td> -->
+			  <td>
+			  	<form class="delete" 
+	                            onSubmit="return confirm('Do you really want to delete this post?')"
+	                             action="/admin/users_table" method="post">
+	                            @csrf
+	                            @method('DELETE')
+	                            <input type="hidden" name="id" value="{{ $user->user_id }}"/>
+	                            <button type="submit" class="btn btn-danger">delete</button>
+	            </form>
+	         </td>
 
-	    </tr>
-	  </tbody>
-	  @endforeach
+		    </tr>
+		  </tbody>
+		  @endforeach
+	 
+	  
 
-	</table>
-	<!-- end of the table-->
+	</table><!-- end of table-->
+	 @else
+
+	  <h1><strong>404 Error: </strong><em>Sorry, we couldn't find what you were looking for<em></h1>
+
+	@endif
 </div>
 
 @stop 

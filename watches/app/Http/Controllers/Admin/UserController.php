@@ -13,7 +13,7 @@ class UserController extends Controller
     public function search()
     {
         $search_term = $_GET['query']; 
-        $users = User::where('first_name', 'LIKE', '%'.$search_term.'%')->orWhere('last_name', 'LIKE', '%'.$search_term.'%')->get(); 
+        $users = User::where('first_name', 'LIKE', '%'.$search_term.'%')->orWhere('last_name', 'LIKE', '%'.$search_term.'%')->orWhere('email', 'LIKE', '%'.$search_term.'%')->get(); 
 
         return view('/admin/search/search_users', compact('users', 'search_term')); 
     }
