@@ -1,5 +1,6 @@
 @extends('layouts/admin')
 
+
 @section('content')
 
 <div class="container" style="width: 50%;">
@@ -10,8 +11,10 @@
 
         <form class="form" action="/admin/categories_table" method="post" enctype="multipart/form-data">
 
+
            <input type="hidden" name="id" value="{{ $categories->id }}" />
            
+
            @csrf 
            @method('PUT')
 
@@ -36,6 +39,7 @@
     </form>
     
 </div>
+
 
 
 @stop 

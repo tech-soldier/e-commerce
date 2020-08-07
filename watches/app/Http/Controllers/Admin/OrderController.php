@@ -14,6 +14,13 @@ use App\User;
 
 class OrderController extends Controller
 {
+       public function search()
+    {
+        $search_term = $_GET['query']; 
+        $orders = Order::where('id', 'LIKE', '%'.$search_term.'%')->orWhere('billing_address', 'LIKE', '%'.$search_term.'%')->orWhere('shipping_address', 'LIKE', '%'.$search_term.'%')->get(); 
+
+        return view('/admin/search/search_orders', compact('orders', 'search_term')); 
+    }
 
 
     /**
@@ -34,13 +41,13 @@ class OrderController extends Controller
     public function create()
     {
         $title = 'Create A New Order'; 
-        $order = Order::all(); 
+        $orders = Order::all(); 
         $user = User::all();
         $watch = Watch::all(); 
         $taxes = Tax::all(); 
 
 
-        return view('/admin/create/create_order', compact('title', 'order', 'taxes'));
+        return view('/admin/create/create_order', compact('title', 'orders', 'taxes'));
     }
 
     /**

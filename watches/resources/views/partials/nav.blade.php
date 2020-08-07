@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark justify-content-between">
-    <a class="navbar-brand" href="/"><img class="logo my-2" src="/storage/images/logo1.png" alt="logo"></a>
+    <a class="navbar-brand" href="/"><img class="logo my-3" src="/storage/images/logo1.png" alt="logo"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -70,10 +70,12 @@
             </li>
             
             <div class=" ml-3 acct_user d-flex">
-            <!-- util search -->
-                <div class="circle1">
-                    <img class="profile-pic" src="http://lorempixel.com/50/50/people" alt="profile picture">
-                </div>
+            <!-- util profile -->
+                <a href="/profile">
+                    <div class="circle1">
+                        <img class="profile-pic" src="http://lorempixel.com/50/50/people" alt="profile picture">
+                    </div>                    
+                </a>
 
             </div>
 
@@ -86,6 +88,14 @@
             <!-- util search -->
             <div class="circle">
                 <i class="fas fa-search"></i>
+
+                <!-- <form class="form" action="shop.blade.php" method="get" autocomplete="on" novalidate>
+                    <input id="s" type="text" name="s" maxlength="255" />&nbsp;
+                    <div>
+                        <ul id="live_search"></ul>
+                    </div>
+                </form> -->
+
             </div>
             <!-- shopping cart -->
             <div class="ml-2 circle">

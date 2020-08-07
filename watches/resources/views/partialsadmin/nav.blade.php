@@ -18,9 +18,9 @@
    	  <li class="nav-item">
         <a class="nav-link" href="/admin/transactions_table">Transactions</a>
       </li>
-      <li class="nav-item">
+  <!--     <li class="nav-item">
         <a class="nav-link" href="/admin/admin_table">Admin</a>
-      </li>
+      </li> -->
       <li class="nav-item">
         <a class="nav-link" href="/admin/categories_table">Categories</a>
       </li>

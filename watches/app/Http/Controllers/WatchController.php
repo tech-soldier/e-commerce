@@ -141,7 +141,17 @@ class WatchController extends Controller
 
         // return view with user's profile
         return view('/profile', compact('title','user','orders'));
-    }    
+    } 
+
+
+    public function search()
+    {
+        $search_term = $_GET['query']; 
+        $watches = Watch::where('watch_name', 'LIKE', '%'.$search_term.'%')->orWhere('material', 'LIKE', '%'.$search_term.'%')->orWhere('long_description', 'LIKE', '%'.$search_term.'%')->with('category_name')->get(); 
+
+        return view('/shop', compact('watches')); 
+    }
+   
 
 
 }
