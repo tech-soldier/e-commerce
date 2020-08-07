@@ -5,7 +5,7 @@
 
 <div class="container">
 
-	<h1>Table Name: <em>Taxes</em></h1>
+	<h1>Table Name: <em>{{ $title }}</em></h1>
 
 <!-- this is the table --> 
 	<p><a style="color: white;" href="/admin/create/create_tax"><div class="btn btn-success">Add Tax +</div></a></p>
@@ -52,7 +52,7 @@
 	                     	action="/admin/orders_table" method="post">
 	                    @csrf
 	                    @method('DELETE')
-	                    <input type="hidden" name="id" value="{{ $order->id }}"/>
+	                    <input type="hidden" name="id" value="{{ $order ?? ''->id }}"/>
 	                    <button type="submit" class="btn btn-danger">Delete</button>
 		            </form>
 				</td>
