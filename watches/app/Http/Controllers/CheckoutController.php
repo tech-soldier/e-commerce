@@ -26,8 +26,6 @@ class CheckoutController extends Controller
             $subtotal = floatval($request->subtotal);
             $gst = round($subtotal * $taxes->GST, 3);
             $pst = round($subtotal * $taxes->PST, 3);
-
-
             $items_total = 0;
 
             $cart = session()->get('cart');
@@ -38,6 +36,13 @@ class CheckoutController extends Controller
 
             $shipping = $items_total * 3;
             $total = round($shipping + $gst + $pst + $subtotal,2);
+
+            //getting cart out of session
+
+            session()->put('order_total', $total);
+            session()->put('gst', $total);
+            session()->put('pst', $total);
+            session()->put('shipping', $shipping);
 
             return response()->json(['gst' => $gst, 'pst' => $pst, 'shipping' => $shipping, 'total' => $total]);
 
