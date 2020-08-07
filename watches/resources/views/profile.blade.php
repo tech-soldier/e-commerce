@@ -7,7 +7,7 @@
         <h1 class="mb-3 py-3 px-3 bg-secondary text-light">My Personal Information
             <span class="float-right">
                 <a href="/profile/{{$user->id}}/edit">
-                    <button type="button" class="btn btn-outline-light text-uppercase">update profile</button>
+                    <button type="button" class="btn btn-outline-light text-uppercase">edit profile</button>
                 </a>
             </span>
             <span style="display: block; clear: both;"></span>

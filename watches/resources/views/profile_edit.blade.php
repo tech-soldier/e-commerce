@@ -53,11 +53,21 @@
 
                     <div class="form-group">
                         <label for="province">Province</label>
-                        <input type="text" class="form-control" name="province" id="province" value="{{ old('province', $user->province) }}" />
-
+                        <select class="form-control" name="province" id="province">
+                            <option value="">Choose Province</option>
+                            @foreach($provinces as $province)
+                            <option 
+                            @if($province->province == old('province', $user->province)) 
+                                selected 
+                            @endif 
+                             value="{{ $province->province }}">
+                                {{ $province->province }}
+                            </option>
+                            @endforeach
+                        </select>
                         @error('province')
                             <span class="alert-danger">{{ $message }}</span>
-                        @enderror
+                        @enderror                   
                     </div>
 
                     <div class="form-group">
@@ -110,7 +120,7 @@
                     <input type="hidden" name="id" value="{{ old('id', $user->id) }}">
 
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Update Profile</button>
                     </div>
 
                 </form>

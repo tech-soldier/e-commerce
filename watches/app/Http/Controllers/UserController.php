@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\User;
 use App\Order;
+use App\Tax;
 use Auth;
 
 class UserController extends Controller
@@ -60,10 +61,11 @@ class UserController extends Controller
      */
     public function edit($id)
     {
+        $title = 'Edit My Profile';
         $user=User::find($id);
-        $title = 'Edit Profile';
+        $provinces = Tax::all(); // access to all provinces specified in database
 
-        return view('/profile_edit', compact('user','title'));
+        return view('/profile_edit', compact('user','title','provinces'));
     }
 
     /**
@@ -83,9 +85,9 @@ class UserController extends Controller
             'city' => 'nullable|string|max:255',
             'province' => 'nullable|string|max:255',
             'country' => 'nullable|string|max:255',
-            'postal_code' => 'nullable|string|max:255',
+            'postal_code' => 'nullable|string|max:6',
             'email' => 'required|string|max:255',
-            'phone_number' => 'nullable|string|min:7|max:32',
+            'phone_number' => 'nullable|string|min:7|max:14',
             //'category_id' => 'required|integer',
             //'image' => 'nullable|image',            
             'id' => 'required|integer'
@@ -144,17 +146,12 @@ class UserController extends Controller
     public function profile()
     {
         $title = 'Profile';
-        //get authenticated user id
-        $id = Auth::id();
-        // test if user is authenticated
-        if(empty($id)){
+        $id = Auth::id(); //get authenticated user id
+        if(empty($id)){ // test if user is authenticated
             return view('/auth/login'); // redirect to login if not
         }
-        // get user's data
-        $user = User::find($id);
-        // get all orders associated with the user
-        $orders = Order::all()->where('user_id', $id);
-
+        $user = User::find($id); // get user's data
+        $orders = Order::all()->where('user_id', $id); // get all orders associated with the user
         // return view with user's profile
         return view('/profile', compact('title','user','orders'));
     }   
