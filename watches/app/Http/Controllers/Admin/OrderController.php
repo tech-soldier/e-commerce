@@ -85,17 +85,6 @@ class OrderController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -159,13 +148,32 @@ class OrderController extends Controller
     return redirect('/admin/orders_table')->with('error', 'There was a problem updating the order');
 
     }
+    
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
+    {
+        $valid = $request->validate([
+            'id' => 'required|integer'
+        ]);
+        
+        if( Order::find($valid['id'] )->delete() ) {
+            return back()->with('success', 'The record has been deleted!');
+        }
+        return back()->with('error', 'There was a problem deleting that record');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
     {
         //
     }
