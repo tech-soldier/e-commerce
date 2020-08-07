@@ -6,18 +6,17 @@
     
     <h1>{{ $title }}</h1>
     <p><a href="/admin/watches_table" class="btn btn-warning">Back to watches</a></p>
+        
     <form method="post" action="/admin/edit/edit_watch" enctype="multipart/form-data" >
-        <input type="hidden" name="_method" value="PUT" />
+       
 
         @csrf 
         @method('PUT')
            
         <div class="form-group">
-            <label for="watch_id">Watch ID</label>
-            <input type="text" name="watch_id" disabled class="form-control" id="watch_id" value="{{ old('watch_id', $watch->watch_id) }}">
-            @error('watch_id')
-                <span class="alert-danger"> {{ $message }}</span>
-            @enderror
+            <label for="id">Watch ID</label>
+            <input type="hidden" name="id" class="form-control" id="id" value="{{ old('id', $watch->id) }}">
+          
         </div>
 
         <div class="form-group">
@@ -185,6 +184,8 @@
 
         <p><button type="submit" class="btn btn-primary">Submit</button></p>
     </form>
+
+   
 
 </div>
 
