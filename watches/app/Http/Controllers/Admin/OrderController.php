@@ -103,9 +103,7 @@ class OrderController extends Controller
         $title = 'Edit Order';
         $order = Order::find($id); 
         $user = User::all();
-        $watch = Watch::all(); 
-        $taxes = Tax::all();
-        return view('/admin/edit/edit_orders', compact('title', 'order', 'user', 'watch', 'taxes')); 
+        return view('/admin/edit/edit_orders', compact('title', 'order', 'user')); 
     }
 
     /**
@@ -120,26 +118,34 @@ class OrderController extends Controller
          $valid = $request->validate([
             'id' => 'required|integer',
             'user_id' => 'required|integer',                                                       
-            'first_name' => 'required|string|max:255',                                                      
+            'full_name' => 'required|string|max:255',                                                      
             'email' => 'required|email',                                                 
             'billing_address' => 'required|string|max:255',                                              
             'shipping_address' => 'required|string|max:255',
-            'subtotal' => "required|regex:/^\d+(\.\d{1,2})?$/",                                              
-            'tax_id' => 'required|integer',                                                         
-            'total' => "required|regex:/^\d+(\.\d{1,2})?$/"   
+            'subtotal' => "required|regex:/^\d+(\.\d{1,2})?$/",     
+            'GST' => "required|regex:/^\d+(\.\d{1,2})?$/",   
+            'PST' => "required|regex:/^\d+(\.\d{1,2})?$/",  
+            'HST' => "required|regex:/^\d+(\.\d{1,2})?$/",  
+            'shipping' => "required|regex:/^\d+(\.\d{1,2})?$/", 
+            'transaction_status' => 'required|integer', 
+            'total' => "required|regex:/^\d+(\.\d{1,2})?$/"     
          ]);   
-         dd($valid);
     
 
-        $order = Order::find($valid['id']);
-        $order->first_name = $valid['first_name'];
-        $order->user_id = $valid['user_id'];
-        $order->email = $valid['email'];
-        $order->billing_address = $valid['billing_address'];
-        $order->shipping_address = $valid['shipping_address'];
-        $order->subtotal = $valid['subtotal'];
-        $order->tax_id = $valid['tax_id'];
-        $order->total = $valid['total'];
+            $order = Order::find($valid['id']);
+            $order->user_id = $valid['user_id'];
+            $order->full_name = $valid['full_name'];
+            $order->user_id = $valid['user_id'];
+            $order->email = $valid['email'];
+            $order->billing_address = $valid['billing_address'];
+            $order->shipping_address = $valid['shipping_address'];
+            $order->subtotal = $valid['subtotal'];
+            $order->GST = $valid['GST']; 
+            $order->PST = $valid['PST']; 
+            $order->HST = $valid['HST'];
+            $order->shipping = $valid['shipping']; 
+            $order->transaction_status = $valid['transaction_status']; 
+            $order->total = $valid['total'];
        
 
         if($order->save() ) {

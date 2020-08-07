@@ -1,19 +1,17 @@
 @extends('layouts/admin')
 
+
 @section('content')
 
 <div class="container" style="width: 50%;">
     <h1>{{ $title }}</h1>
-  <p><a href="/admin/orders_table" class="btn btn-warning class=previous">&laquo; Back</a></p>
-
-   <form class="form" action="/admin/edit/edit_orders" method="post" enctype="multipart/form-data">
-      @csrf
+    <form method="post" action="/admin/edit/edit_order" enctype="multipart/form-data" >
+      <input type="hidden" name="_method" value="PUT" />
+      @csrf 
       @method('PUT')
-   
+
       <div class="form-group">
-        <label for="id">Order ID: </label>
-        <input type="hidden" name="id"  class="form-control" id="id" value="{{ old('id', $order->id) }}">
-        
+        <input type="text" name="id" hidden class="form-control" id="id" value="{{ old('id') }}">
       </div>
 
        <div class="form-group">
@@ -24,10 +22,10 @@
         @enderror
       </div>
       
-        <div class="form-group">
-        <label for="first_name">First Name: </label>
-        <input type="text" name="first_name" class="form-control" id="first_name" value="{{ old('first_name', $order->first_name) }}">
-        @error('first_name')
+       <div class="form-group">
+        <label for="full_name">Full Name: </label>
+        <input type="text" name="full_name" class="form-control" id="full_name" value="{{ old('full_name', $order->full_name) }}">
+        @error('full_name')
             <span class="alert-danger">{{ $message }}</span>
         @enderror
       </div>
@@ -65,21 +63,43 @@
       </div>
 
       <div class="form-group">
-        <label for="tax_id">Tax: <span style="color:#cfcfcf">(Choose Province for GST% + PST% )</span></label>
-        <select class="form-control" name="tax_id">
-            <option value="">Select a Province</option>
-            @foreach($taxes as $tax) 
-            <option 
-                @if($tax->id == old('tax_id'))
-                selected
-                @endif
-                value="{{ $tax->tax_id }}">{{ ucfirst($tax->province) }}</option>
-            @endforeach
-        </select>
-        @error('tax_id')
+        <label for="GST">GST: </label>
+        <input type="text" class="form-control" name="GST" id="GST" value="{{ old('GST', $order->GST) }}">
+        @error('GST')
             <span class="alert-danger">{{ $message }}</span>
         @enderror
+      </div>
+      
+      <div class="form-group">
+        <label for="PST">PST: </label>
+        <input type="text" class="form-control" name="PST" id="PST" value="{{ old('PST', $order->PST) }}">
+        @error('PST')
+            <span class="alert-danger">{{ $message }}</span>
+        @enderror
+      </div>
 
+      <div class="form-group">
+        <label for="HST">HST: </label>
+        <input type="text" class="form-control" name="HST" id="HST" value="{{ old('HST', $order->HST) }}">
+        @error('HST')
+            <span class="alert-danger">{{ $message }}</span>
+        @enderror
+      </div>
+
+      <div class="form-group">
+        <label for="shipping">Shipping: </label>
+        <input type="text" class="form-control" name="shipping" id="shipping" value="{{ old('shipping', $order->shipping) }}">
+        @error('shipping')
+            <span class="alert-danger">{{ $message }}</span>
+        @enderror
+      </div>
+
+      <div class="form-group">
+        <label for="transaction_status">Transaction Status</label> <br />
+        <input type="radio" name="transaction_status" value="0" {{ ($order->transaction_status=="0")? "checked" : "" }} />
+        False &nbsp;
+        <input type="radio" name="transaction_status" value="1" {{ ($order->transaction_status=="1")? "checked" : "" }} />
+        True
       </div>
 
       <div class="form-group">
@@ -92,7 +112,6 @@
 
       <p><button type="submit" class="btn btn-primary">Submit</button></p>
     </form>
-
 </div>
 
 @stop 

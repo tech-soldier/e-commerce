@@ -11,15 +11,9 @@
         <p><a href="/admin/categories_table" class="btn btn-warning class=previous">&laquo; Back</a></p>
 
         <form class="form" action="/admin/edit/edit_categories" method="post" enctype="multipart/form-data">
-
-          
-           
-
            <input type="hidden" name="id" value="{{ $categories->id }}" />
-           
-
-           @csrf 
-           @method('PUT')
+             @csrf 
+             @method('PUT')
 
       <div class="form-group">
         <label for="category_id">Category ID: </label>
