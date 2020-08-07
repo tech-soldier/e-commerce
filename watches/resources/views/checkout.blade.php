@@ -12,12 +12,12 @@ use \App\Http\Controllers\CartController;
         <div class="container py-5">
             <div class="row">
                 <div class="col-sm-12">
-{{--                    @if (Session::has('error'))--}}
-{{--                        <p class="alert alert-danger">{{ Session::get('error') }}</p>--}}
-{{--                    @endif--}}
+                    @if (Session::has('error'))
+                        <p class="alert alert-danger">{{ Session::get('error') }}</p>
+                    @endif
                 </div>
             </div>
-            <form action="" method="POST" role="form">
+            <form action="{{ route('checkout.place.order') }}" method="post" enctype="multipart/form-data" >
                 @csrf
                 <div class="row">
                     <div class="col-md-8">
@@ -27,27 +27,40 @@ use \App\Http\Controllers\CartController;
                             </header>
                             <article class="card-body">
                                 <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="order_id">User ID: </label>
+                                        <input type="text" name="user_id" disabled class="form-control" id="user_id" value="{{ auth()->user()->id }}">
+                                    </div>
                                     <div class="col form-group">
                                         <label>First name</label>
                                         <input type="text" class="form-control bg-light" name="first_name" value="{{ auth()->user()->first_name }}">
+                                        @error('id')
+                                        <span class="alert-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                     <div class="col form-group">
                                         <label>Last name</label>
                                         <input type="text" class="form-control bg-light" name="last_name" value="{{ auth()->user()->last_name }}">
+                                        @error('last_name')
+                                        <span class="alert-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label>Address</label>
-                                    <input type="text" class="form-control bg-light" name="address" value="{{ auth()->user()->billing_address }}">
+                                    <input type="text" class="form-control bg-light" name="billing_address" value="{{ old('billing_address') }}">
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label>City</label>
-                                        <input type="text" class="form-control bg-light" name="city" value="{{ auth()->user()->city }}">
+                                        <input type="text" class="form-control bg-light" name="city" value="{{ old('city') }}">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Country</label>
-                                        <input type="text" class="form-control bg-light" name="country" value="{{ auth()->user()->country }}">
+                                        <input type="text" class="form-control bg-light" name="country" value="{{ old(country) }}">
+                                        @error('country')
+                                        <span class="alert-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -64,16 +77,26 @@ use \App\Http\Controllers\CartController;
                                     </div>
                                     <div class="form-group  col-md-6">
                                         <label>Postal Code</label>
-                                        <input type="text" class="form-control bg-light" name="postal_code" value="{{ auth()->user()->postal_code }}">
+                                        <input type="text" class="form-control bg-light" name="postal_code" value="{{ old('postal_code') }}">
+                                        @error('postal_code')
+                                        <span class="alert-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label>Phone Number</label>
-                                    <input type="phone" class="form-control bg-light" name="phone" value="{{ auth()->user()->phone_number }}">
+                                    <input type="phone" class="form-control bg-light" name="phone_number" value="{{ old('phone_number') }}">
+                                    @error('phone_number')
+                                    <span class="alert-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <label>Email Address</label>
-                                    <input type="email" class="form-control bg-light" name="email" value="{{ auth()->user()->email }}">
+                                    <input type="email" class="form-control bg-light" name="email" value="{{ old('email') }}">
+                                    @error('email')
+                                    <span class="alert-danger">{{ $message }}</span>
+                                    @enderror
+
                                 </div>
 
 
@@ -159,7 +182,7 @@ use \App\Http\Controllers\CartController;
                                     </header>
                                     <article class="card-body">
                                         <dl class="dlist-align">
-                                            <dt>Subtotal: <span id="subtotal">{{ CartController::getCartTotal() }}</span></dt>
+                                            <dt>Subtotal: <span id="subtotal" name="subtotal">{{ CartController::getCartTotal() }}</span></dt>
                                         </dl>
                                         <dl class="dlist-align">
                                             <dt>GST: <span id="gst"></span></dt>
@@ -172,7 +195,7 @@ use \App\Http\Controllers\CartController;
                                         </dl>
                                         <dl class="dlist-align">
                                             <dt>Total: </dt>
-                                            <dd class="text-right h5 b" id="total_final"></dd>
+                                            <dd class="text-right h5 b" id="total_final" name="total"></dd>
                                         </dl>
                                     </article>
                                 </div>
