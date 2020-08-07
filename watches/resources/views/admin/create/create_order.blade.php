@@ -79,9 +79,7 @@
         @enderror
 
       </div>
-      @error('category_name')
-            <span class="alert-danger">{{ $message }}</span>
-      @enderror
+     
 
       <div class="form-group">
         <label for="total">Total: </label>

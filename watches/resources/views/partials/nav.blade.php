@@ -71,9 +71,8 @@
 
 
 
-            <div class="circle_search">
-                <!-- <i class="fas fa-search"></i> -->
-
+            <!-- <div class="circle_search">
+                
                 <form method="get" action="{{ url('/shop_search') }}">
                     @csrf
                     <div class="input-group">
@@ -87,7 +86,7 @@
                  </form>
 
             </div>
-
+ -->
 
 
             
@@ -115,7 +114,7 @@
 
         <div class=" ml-2 acct_srch d-flex">
             <!-- util search -->
-            <!-- <div class="circle_search">
+            <div class="circle_search">
                 
 
                 <form method="get" action="{{ url('/shop_search') }}">
@@ -130,7 +129,7 @@
                     </div>
                  </form>
 
-            </div> -->
+            </div>
             <!-- shopping cart -->
             <div class="ml-2 circle">
                 <a href="/cart"> <i class="fas fa-shopping-cart"></i></a>
