@@ -108,12 +108,6 @@ Route::post('admin/create/create_user', 'Admin\UserController@store');
 
 /* Admin EDIT files -------------------------------------------------------- */
 
-// edit users table 
-Route::get('/admin/edit/{id}/edit_user', 'Admin\UserController@edit');
-Route::put('/admin/edit/{id}', 'Admin\UserController@update');
-
-Route::delete('/admin/users_table', 'Admin\UserController@destroy');
-
 //edit watch table
 Route::get('/admin/edit/{id}/edit_watch', 'Admin\WatchController@edit');
 Route::put('/admin/edit/edit_watch', 'Admin\WatchController@update');

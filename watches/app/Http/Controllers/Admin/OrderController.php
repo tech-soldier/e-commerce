@@ -81,11 +81,11 @@ class OrderController extends Controller
             'billing_address' => $valid['billing_address'],                                              
             'shipping_address' => $valid['shipping_address'],
             'subtotal' => $valid['subtotal'], 
-            'GST' => $valid['GST'], 
+            'GST' => $valid['GST'] ?? 0.05, 
             'PST' => $valid['PST'],
             'HST' => $valid['HST'], 
             'shipping' => $valid['shipping'], 
-            'transaction_status' => $valid['transaction_status'],                                               
+            'transaction_status' => $valid['transaction_status'] ?? 0,                                               
             'total' => $valid['total']
          ]); 
 
@@ -102,8 +102,8 @@ class OrderController extends Controller
     {
         $title = 'Edit Order';
         $order = Order::find($id); 
-        $user = User::all();
-        return view('/admin/edit/edit_orders', compact('title', 'order', 'user')); 
+        //$user = User::all();
+        return view('/admin/edit/edit_orders', compact('title', 'order')); 
     }
 
     /**
@@ -135,16 +135,15 @@ class OrderController extends Controller
             $order = Order::find($valid['id']);
             $order->user_id = $valid['user_id'];
             $order->full_name = $valid['full_name'];
-            $order->user_id = $valid['user_id'];
             $order->email = $valid['email'];
             $order->billing_address = $valid['billing_address'];
             $order->shipping_address = $valid['shipping_address'];
             $order->subtotal = $valid['subtotal'];
-            $order->GST = $valid['GST']; 
+            $order->GST = $valid['GST'] ?? 0.05; 
             $order->PST = $valid['PST']; 
             $order->HST = $valid['HST'];
             $order->shipping = $valid['shipping']; 
-            $order->transaction_status = $valid['transaction_status']; 
+            $order->transaction_status = $valid['transaction_status'] ?? 0; 
             $order->total = $valid['total'];
        
 

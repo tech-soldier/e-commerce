@@ -11,12 +11,12 @@
       @method('PUT')
 
       <div class="form-group">
-        <input type="text" name="id" hidden class="form-control" id="id" value="{{ old('id') }}">
+        <input type="text" name="id" hidden class="form-control" id="id" value="{{ old('id', $order->id) }}">
       </div>
 
        <div class="form-group">
         <label for="user_id">User ID: <span style="color:#cfcfcf">(Your personal User ID)</span> </label>
-        <input type="text" name="user_id" class="form-control" id="user_id" value="{{ old('user_id', $order->user_id) }}">
+        <input type="text" name="user_id" disabled class="form-control" id="user_id" value="{{ old('user_id', $order->user_id) }}">
         @error('user_id')
             <span class="alert-danger">{{ $message }}</span>
         @enderror
@@ -30,7 +30,7 @@
         @enderror
       </div>
 
-       <div class="form-group">
+      <div class="form-group">
         <label for="email">Email: </label>
         <input type="text" class="form-control" name="email" id="email" value="{{ old('email', $order->email) }}">
         @error('email')
@@ -64,7 +64,7 @@
 
       <div class="form-group">
         <label for="GST">GST: </label>
-        <input type="text" class="form-control" name="GST" id="GST" value="{{ old('GST', $order->GST) }}">
+        <input type="text" class="form-control" disabled name="GST" id="GST" value="{{ old('GST', $order->GST) }}">
         @error('GST')
             <span class="alert-danger">{{ $message }}</span>
         @enderror
@@ -111,6 +111,7 @@
       </div>
 
       <p><button type="submit" class="btn btn-primary">Submit</button></p>
+
     </form>
 </div>
 
