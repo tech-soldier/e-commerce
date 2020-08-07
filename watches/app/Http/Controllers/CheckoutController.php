@@ -128,7 +128,7 @@ class CheckoutController extends Controller
 //        $hst = session()->get('hst');
 
         $cost = session()->get('cost');
-        $carrt = session()->get('cart');
+        $cart = session()->get('cart');
 
         Order::create([
             'user_id' => auth()->user()->id,
@@ -138,8 +138,11 @@ class CheckoutController extends Controller
                 $request['city'] . ', ' . $request['province'] . ' ' . $request['postal_code'],
             'shipping_address' => $request['billing_address'],
             'subtotal' => $cost['subtotal'],
-
-            'total' => $cost['total']
+            'GST' => $cost['gst'],
+            'PST' => $cost['pst'],
+            'HST' => $cost['pst'],
+            'shipping' => $cost['shipping'],
+            'total' => $cost['order_total']
         ]);
 
         unset($cost);
