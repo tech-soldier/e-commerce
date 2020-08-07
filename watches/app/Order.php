@@ -16,8 +16,12 @@ class Order extends Model
         'email',                                                        
         'billing_address',                                                        
         'shipping_address',                                                       
-        'subtotal',                                             
-        'tax_id',                                                              
+        'subtotal',  
+        'transaction_status',  
+        'GST', 
+        'PST', 
+        'HST', 
+        'shipping',                                         
         'total'    
     ];
 

@@ -38,6 +38,14 @@
         @enderror
       </div>
 
+      <div class="form-group">
+        <label for="HST">HST: </label>
+        <input type="text" class="form-control" name="HST" id="HST" value="{{ old('HST') }}">
+        @error('HST')
+            <span class="alert-danger">{{ $message }}</span>
+        @enderror
+      </div>
+
       <p><button type="submit" class="btn btn-primary">Submit</button></p>
     </form>
 </div>
