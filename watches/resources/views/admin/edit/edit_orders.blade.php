@@ -6,14 +6,9 @@
     <h1>{{ $title }}</h1>
   <p><a href="/admin/orders_table" class="btn btn-warning class=previous">&laquo; Back</a></p>
 
-   <form class="form" action="/admin/edit/orders_table" method="post" enctype="multipart/form-data">
-
-         
-
-
-           @csrf
-
-           @method('PUT')
+   <form class="form" action="/admin/edit/edit_orders" method="post" enctype="multipart/form-data">
+      @csrf
+      @method('PUT')
    
       <div class="form-group">
         <label for="id">Order ID: </label>
@@ -86,8 +81,6 @@
         @enderror
 
       </div>
-      
-
 
       <div class="form-group">
         <label for="total">Total: </label>
@@ -100,7 +93,6 @@
       <p><button type="submit" class="btn btn-primary">Submit</button></p>
     </form>
 
-     {{ dd($errors)}}
 </div>
 
 @stop 
