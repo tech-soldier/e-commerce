@@ -64,8 +64,12 @@ class OrderController extends Controller
             'email' => 'required|email',                                                 
             'billing_address' => 'required|string|max:255',                                              
             'shipping_address' => 'required|string|max:255',
-            'subtotal' => "required|regex:/^\d+(\.\d{1,2})?$/",                                              
-            'tax_id' => 'required|integer',                                                         
+            'subtotal' => "required|regex:/^\d+(\.\d{1,2})?$/",     
+            'GST' => "required|regex:/^\d+(\.\d{1,2})?$/",   
+            'PST' => "required|regex:/^\d+(\.\d{1,2})?$/",  
+            'HST' => "required|regex:/^\d+(\.\d{1,2})?$/",  
+            'shipping' => "required|regex:/^\d+(\.\d{1,2})?$/", 
+            'transaction_status' => 'required|integer', 
             'total' => "required|regex:/^\d+(\.\d{1,2})?$/"                                   
         ]); 
 
@@ -76,8 +80,12 @@ class OrderController extends Controller
             'email'=> $valid['email'],                                                 
             'billing_address' => $valid['billing_address'],                                              
             'shipping_address' => $valid['shipping_address'],
-            'subtotal' => $valid['subtotal'],                                              
-            'tax_id' => $valid['tax_id'],                                                         
+            'subtotal' => $valid['subtotal'], 
+            'GST' => $valid['GST'], 
+            'PST' => $valid['PST'],
+            'HST' => $valid['HST'], 
+            'shipping' => $valid['shipping'], 
+            'transaction_status' => $valid['transaction_status'],                                               
             'total' => $valid['total']
          ]); 
 

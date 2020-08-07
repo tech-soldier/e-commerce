@@ -8,11 +8,8 @@
     <form method="post" action="/admin/create/create_order" enctype="multipart/form-data" >
       @csrf 
       <div class="form-group">
-        <label for="order_id">Order ID: </label>
-        <input type="text" name="order_id" disabled class="form-control" id="order_id" value="{{ old('order_id') }}">
-        @error('order_id')
-            <span class="alert-danger">{{ $message }}</span>
-        @enderror
+        <input type="text" name="order_id" hidden class="form-control" id="order_id" value="{{ old('order_id') }}">
+        
       </div>
        <div class="form-group">
         <label for="user_id">User ID: <span style="color:#cfcfcf">(Your personal User ID)</span> </label>
@@ -88,8 +85,8 @@
 
       <div class="form-group">
         <label for="shipping">Shipping: </label>
-        <input type="text" class="form-control" name="GST" id="GST" value="{{ old('GST') }}">
-        @error('GST')
+        <input type="text" class="form-control" name="shipping" id="shipping" value="{{ old('shipping') }}">
+        @error('shipping')
             <span class="alert-danger">{{ $message }}</span>
         @enderror
       </div>
