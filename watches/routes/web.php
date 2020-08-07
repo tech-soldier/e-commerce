@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Watch; 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,6 +31,9 @@ Route::get('/', 'WatchController@homeIndex');
 
 Route::post('send-mail','SendMailController@Email');
 
+// front-end search
+Route::get('/shop_search', 'WatchController@search');
+
 /* --------------- CART ROUTES ------------------*/
 
 Route::get('/cart', 'PagesController@cart');
@@ -51,7 +55,10 @@ Route::group(['middleware' => ['auth']], function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', function(){
+	return redirect('/'); // loged in user is redirected to watchhome page
+});
 
 /* -------------------------------------------------- */
 
@@ -76,6 +83,18 @@ Route::get('/admin/transactions_table', 'AdminController@transactions');
 Route::get('/admin/categories_table', 'AdminController@categories');
 
 
+/* admin search routes ------------------------------------------*/ 
+Route::get('/admin/search/search_watches', 'Admin\WatchController@search');
+
+Route::get('/admin/search/search_users', 'Admin\UserController@search');
+
+Route::get('/admin/search/search_orders', 'Admin\OrderController@search');
+
+Route::get('/admin/search/search_categories', 'Admin\CategoryController@search');
+
+Route::get('/admin/search/search_taxes', 'Admin\TaxController@search');
+
+/*----------------------------------------------------------------*/
 
 /* admin create files ----------------------------------------------*/
 
@@ -84,6 +103,7 @@ Route::get('admin/create/create_watch', 'Admin\WatchController@create');
 Route::post('admin/create/create_watch', 'Admin\WatchController@store');
 
 /* admin create files ----------------------------------------------*/
+
 // create watches incomplete
 Route::get('admin/create/create_watch', 'Admin\WatchController@create');
 Route::post('admin/create/create_watch', 'Admin\WatchController@store');
@@ -113,20 +133,28 @@ Route::post('admin/create/create_transaction', 'Admin\TransactionController@stor
 Route::get('admin/create/create_user', 'Admin\UserController@create');
 Route::post('admin/create/create_user', 'Admin\UserController@store');
 
-/* admin edit files */
+
+/* Admin EDIT files -------------------------------------------------------- */
+
+
+//edit watch table
 Route::get('/admin/edit/{id}/edit_watch', 'Admin\WatchController@edit');
 
-Route::put('/admin/edit/watches_table', 'Admin\WatchController@update');
+Route::put('/admin/edit/{id}', 'Admin\WatchController@update');
 
-Route::delete('/admin/watches_table', 'Admin\WatchController@destroy');
+Route::delete('/admin/watches_table, Admin\WatchController@destroy');
 
+//edit category table
 
-/* ------------------------------------------------------------------ */
+Route::get('/admin/edit/{category_id}/edit_category', 'Admin\CategoryController@edit');
 
+Route::put('/admin/edit/edit_category', 'Admin\CategoryController@update');
 
-Route::get('/admin/edit/{id}/edit_categories', 'Admin\CategoryController@edit');
+ 
+ //edit order table
+Route::get('/admin/edit/{id}/edit_orders', 'Admin\OrderController@edit');
 
-Route::put('/admin/edit/categories_table', 'Admin\CategoryController@update');
+Route::put('/admin/edit/orders_table', 'Admin\OrderController@update');
 
 
 

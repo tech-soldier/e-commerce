@@ -5,7 +5,7 @@
 
 <div class="container">
 
-	<h1>Table Name: <em>{{ $title }}</em></h1>
+	<h1>You Searched For: <em>{{ $search_term }}</em></h1>
 
 <!-- this is the table --> 
 	<p><a style="color: white;" href="/admin/create/create_order"><div class="btn btn-success">Add Order +</div></a></p>
@@ -20,8 +20,11 @@
 	            </button>
 	        </span>
 	    </div>
+	    <p><a style="color: white;" href="/admin/orders_table"><div class="btn btn-info">Refresh Results &#x27F3;</div></a></p>
+
 	</form>
 
+	@if(count($orders) > 0)
 	<table class="table table-striped">
 	  <thead class="thead-dark">
 	    <tr>
@@ -36,7 +39,7 @@
 
 	    </tr>
 	  </thead>
-	  @foreach($orders as $order)
+	  @foreach($orders ?? '' as $order)
 	  <tbody>
 	    <tr>
 	      <th scope="row">{{ $order->id }}</th>
@@ -53,6 +56,13 @@
 
 	</table>
 	<!-- end of the table-->
+
+	@else
+
+		<h1><strong>404 Error: </strong><em>Sorry, we couldn't find what you were looking for<em></h1>
+
+	@endif 
+
 </div>
 
 @stop 

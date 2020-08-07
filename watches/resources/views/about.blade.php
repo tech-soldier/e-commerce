@@ -38,7 +38,7 @@
 
                             <!-- signature img -->
                             <div class="signature mt-5">
-                                <img src="images/signature.png" alt="">
+                                <img src="/storage/images/signature.png" alt="">
                             </div>
 
                         </div>

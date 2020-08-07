@@ -15,7 +15,7 @@
             <div class="col-4">
 
                 <!-- this will need to test if there is an image associated -->
-                <img src="images/profile_placeholder.png" alt="" width="100%">
+                <img src="/storage/images/profile_placeholder.png" alt="" width="100%">
 
             </div>
             <div class="col-8">
@@ -88,7 +88,7 @@
                                 <th scope="row">{{$order->id}}</th>
                                 <td>{{ $order->created_at->diffForHumans() }}</td>
                                 <td>{{$order->shipping_address}}</td>
-                                <td>{{$order->total}}</td>
+                                <td>${{$order->total}}</td>
                                 <td>
                                     <button type="button" class="btn btn-outline-primary">see order</button>
                                 </td>

@@ -11,27 +11,20 @@
 
     <div class="container pt-5">
         <!-- Categories -->
-    <form method="get" action="{{ url('/shop_search') }}" style="margin-bottom: 25px">
-        @csrf
-        <div class="input-group">
-            <input type="text" class="form-control" id="query" name="query" placeholder="Search Watch" /> 
-                <span class="input-group-btn">
-                    <button type="submit" class="btn btn-default">
-                        <span class="glyphicon glyphicon-search"></span>
-                    </button>
-                </span>
-        </div>
-     </form>
-
         <h2 class="text-center">COLLECTION</h2>
         <hr>
-        <div class="categories-wrapper mb-5">
-            <ul>
-                @foreach($categories as $category)
-                <li><a href="">{{$category->category_name}}</a></li>
-                @endforeach
-            </ul>
-        </div>
+        <form method="get" action="{{ url('/shop_search') }}" style="margin-bottom: 25px">
+            @csrf
+            <div class="input-group">
+                <input type="text" class="form-control" id="query" name="query" placeholder="Search Watch" /> 
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn btn-default">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+            </div>
+         </form>
+
         @if(isset($watches))
             <!-- /. Categories -->
             <div class="row justify-content-center">

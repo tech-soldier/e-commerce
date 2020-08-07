@@ -9,6 +9,15 @@ use App\Tax;
 
 class TaxController extends Controller
 {
+
+    public function search()
+    {
+        $search_term = $_GET['query']; 
+        $taxes = Tax::where('province', 'LIKE', '%'.$search_term.'%')->orWhere('PST', 'LIKE', '%'.$search_term.'%')->get(); 
+
+        return view('/admin/search/search_taxes', compact('taxes', 'search_term')); 
+    }
+
     /**
      * Display a listing of the resource.
      *
