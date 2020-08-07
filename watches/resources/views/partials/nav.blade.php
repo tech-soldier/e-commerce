@@ -95,6 +95,14 @@
             <!-- util search -->
             <div class="circle">
                 <i class="fas fa-search"></i>
+
+                <!-- <form class="form" action="shop.blade.php" method="get" autocomplete="on" novalidate>
+                    <input id="s" type="text" name="s" maxlength="255" />&nbsp;
+                    <div>
+                        <ul id="live_search"></ul>
+                    </div>
+                </form> -->
+
             </div>
             <!-- shopping cart -->
             <div class="ml-2 circle">

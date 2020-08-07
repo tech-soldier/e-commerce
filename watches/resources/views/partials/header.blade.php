@@ -1,3 +1,16 @@
+<?php
+
+use App\Watches;
+
+// $watches = new Watches();
+
+// $p = $watches->all();
+
+if(!empty($_GET['s'])) {
+    $p = $watches->getAllWatchesBySearch($_GET['s']);
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 

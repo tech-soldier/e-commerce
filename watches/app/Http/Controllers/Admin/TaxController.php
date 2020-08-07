@@ -9,6 +9,15 @@ use App\Tax;
 
 class TaxController extends Controller
 {
+
+    public function search()
+    {
+        $search_term = $_GET['query']; 
+        $taxes = Tax::where('province', 'LIKE', '%'.$search_term.'%')->orWhere('PST', 'LIKE', '%'.$search_term.'%')->get(); 
+
+        return view('/admin/search/search_taxes', compact('taxes', 'search_term')); 
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -77,6 +86,25 @@ class TaxController extends Controller
         //
     }
 
+    
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Request $request)
+    {
+        $valid = $request->validate([
+            'id' => 'required|integer'
+        ]);
+        
+        if( Tax::find($valid['id'] )->delete() ) {
+            return back()->with('success', 'The record has been deleted!');
+        }
+        return back()->with('error', 'There was a problem deleting that record');
+    }
+    
     /**
      * Update the specified resource in storage.
      *
@@ -89,14 +117,4 @@ class TaxController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

@@ -30,6 +30,21 @@ class SeedUsersTable extends Seeder
         ]); 
 
         DB::table('users')->insert([
+            'first_name' => 'Milad', 
+            'last_name' => 'Darani', 
+            'billing_address' => '141187 Ashburn st.', 
+            'city' => 'Winnipeg', 
+            'province' => 'Manitoba', 
+            'country' => 'Canada', 
+            'postal_code' => 'r4t2b8', 
+            'email' => 'techwatch7@gmail.com', 
+            'phone_number' => '204-786-9007', 
+            'password' => password_hash('mypass', PASSWORD_DEFAULT), 
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]); 
+
+        DB::table('users')->insert([
         	'first_name' => 'Dawn', 
         	'last_name' => 'Baker', 
         	'billing_address' => '88 Hargrave Bay', 
