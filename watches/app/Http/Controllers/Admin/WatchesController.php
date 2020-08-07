@@ -5,29 +5,28 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\Watch; 
-use App\Category; 
+use App\Watch;
+use App\Category;
 
 class WatchesController extends Controller
 {
     public function create()
 	{
-		$title = 'Create new Watch'; 
-		$categories = Category::all(); 
-		return view('/admin/create/create_watch', compact('categories', 'title')); 
+		$title = 'Create new Watch';
+		$categories = Category::all();
+		return view('/admin/create/create_watch', compact('categories', 'title'));
 	}
 
-    public function edit($id)
-    // {
+    public function edit($id) {
     //     $watch=Watch::find($id);
-    //     $title = 'Edit Watch'; 
-    //     return view('/admin/edit/edit_watch', compact('title', 'watch')); 
+    //     $title = 'Edit Watch';
+    //     return view('/admin/edit/edit_watch', compact('title', 'watch'));
     }
 
     public function update(Request $request)
     {
         // $valid = $request->validate([
-           
+
         //     'SKU' => 'required|max:10',
         //     'watch_name'=> 'required|string|max:255',
         //     'in_stock' => 'required',
@@ -88,7 +87,7 @@ class WatchesController extends Controller
 
     // return redirect('/admin/watches_table')->with('error', 'There was a problem updating the watch');
 
-    // }
+     }
 
-    
+
 }
