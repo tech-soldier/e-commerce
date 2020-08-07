@@ -23,29 +23,38 @@
 	</form>
 
 	<table class="table table-striped">
-	  <thead class="thead-dark">
-	    <tr>
-	      <th scope="col">Category ID</th>
-	      <th scope="col">Category Name</th>
-	      <th scope="col">Created At</th>
-	      <th scope="col">Updated At</th>
-	      <th scope="col">Edit</th>
-	      <th scope="col">Delete</th>
+	  	<thead class="thead-dark">
+		    <tr>
+		      	<th scope="col">Category ID</th>
+		      	<th scope="col">Category Name</th>
+		      	<th scope="col">Created At</th>
+		      	<th scope="col">Updated At</th>
+		      	<th scope="col">Edit</th>
+		      	<th scope="col">Delete</th>
 
-	    </tr>
-	  </thead>
-	  @foreach($categories as $category)
-	  <tbody>
-	    <tr>
-	      <th scope="row">{{ $category->id }}</th>
-	      <td>{{ $category->category_name}}
-	      <td>{{ $category->created_at }}</td>
-	      <td>{{ $category->updated_at }}</td>
-	      <td><p><a href="/admin/edit/{{ $category->id }}/edit_category" class="btn btn-primary">Edit</a></p>
-	      <td><button type="button" class="btn btn-danger">Delete</button></td>
-	    </tr>
-	  </tbody>
-	  @endforeach
+		    </tr>
+	  	</thead>
+	  	@foreach($categories as $category)
+	  	<tbody>
+		    <tr>
+				<th scope="row">{{ $category->id }}</th>
+				<td>{{ $category->category_name}}
+				<td>{{ $category->created_at }}</td>
+				<td>{{ $category->updated_at }}</td>
+				<td><p><a href="/admin/edit/{{ $category->id }}/edit_category" class="btn btn-primary">Edit</a></p>
+				<td>
+					<form class="delete" 
+							onSubmit="return confirm('Do you really want to delete this post?')"
+                     		action="/admin/categories_table" method="post">
+                    	@csrf
+                    	@method('DELETE')
+                    	<input type="hidden" name="id" value="{{ $category->id }}"/>
+                    	<button type="submit" class="btn btn-danger">Delete</button>
+	            	</form>
+				</td>
+		    </tr>
+	  	</tbody>
+	  	@endforeach
 
 	</table>
 	<!-- end of the table-->

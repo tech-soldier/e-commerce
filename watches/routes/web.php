@@ -60,7 +60,7 @@ Route::get('/home', function(){
 	return redirect('/'); // loged in user is redirected to watchhome page
 });
 
-/* -------------------------------------------------- */
+/* ----------------  ADMIN ROUTES  ------------------ */
 
 // this is all for the admin side
 
@@ -71,8 +71,6 @@ Route::get('/admin/watches_table', 'AdminController@watches');
 Route::get('/admin/orders_table', 'AdminController@orders');
 
 Route::get('/admin/users_table', 'AdminController@users');
-
-// Route::delete('/admin/customers_table', 'Admin\CustomerController@destroy');
 
 Route::get('/admin/admin_table', 'AdminController@admin');
 
@@ -150,11 +148,20 @@ Route::get('/admin/edit/{id}/edit_category', 'Admin\CategoryController@edit');
 
 Route::put('/admin/edit/{id}', 'Admin\CategoryController@update');
 
+Route::delete('/admin/categories_table, Admin\CategoryController@destroy');
+
  
  //edit order table
 Route::get('/admin/edit/{id}/edit_orders', 'Admin\OrderController@edit');
 
-Route::put('/admin/edit/orders_table', 'Admin\OrderController@update');
+Route::put('/admin/edit/{id}', 'Admin\OrderController@update');
 
+Route::delete('/admin/orders_table, Admin\OrderController@destroy');
 
+// edit taxes table
 
+Route::delete('/admin/taxes_table, Admin\CategoryController@destroy');
+
+// edit users table
+
+Route::delete('/admin/users_table, Admin\UserController@destroy');
