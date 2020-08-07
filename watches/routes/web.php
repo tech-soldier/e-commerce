@@ -145,7 +145,7 @@ Route::get('/admin/edit/{id}/edit_category', 'Admin\CategoryController@edit');
 
 Route::put('/admin/edit/edit_category', 'Admin\CategoryController@update');
 
-Route::delete('/admin/categories_table, Admin\CategoryController@destroy');
+Route::delete('/admin/categories_table', 'Admin\CategoryController@destroy');
 
 
  //edit order table
@@ -157,8 +157,8 @@ Route::delete('/admin/orders_table', 'Admin\OrderController@destroy');
 
 // edit taxes table
 
-Route::delete('/admin/taxes_table, Admin\CategoryController@destroy');
+Route::delete('/admin/taxes_table', 'Admin\CategoryController@destroy');
 
 // edit users table
 
-Route::delete('/admin/users_table, Admin\UserController@destroy');
+Route::delete('/admin/users_table', 'Admin\UserController@destroy');

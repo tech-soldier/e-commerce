@@ -155,7 +155,8 @@ class WatchController extends Controller
             'long_description' => 'required|string|max:500'
         ]);
         
-
+        dd($valid);
+        
         if(!empty($valid['cover_img'])){
         $file = $request->file('cover_img');
         //getting the orginal file name
