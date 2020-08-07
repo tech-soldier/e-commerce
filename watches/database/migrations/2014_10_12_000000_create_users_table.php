@@ -29,6 +29,7 @@ class CreateUsersTable extends Migration
             $table->string('country', 255)->nullable();
             $table->string('postal_code', 6)->nullable();
             $table->string('phone_number', 14)->nullable();
+            $table->string('image', 255)->nullable();
             $table->softDeletes();
             $table->boolean('is_admin')->default(false); // added this field for admin auth
         });

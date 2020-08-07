@@ -9,6 +9,15 @@ use App\Transaction;
 
 class TransactionController extends Controller
 {
+
+    public function search()
+    {
+        $search_term = $_GET['query']; 
+        $transactions = Transaction::where('id', 'LIKE', '%'.$search_term.'%')->get(); 
+
+        return view('/admin/search/search_transactions', compact('transactions', 'search_term')); 
+    }
+
     /**
      * Display a listing of the resource.
      *

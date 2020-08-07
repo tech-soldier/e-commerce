@@ -6,7 +6,9 @@
     <div class="container page my-5" id="profile_page">
         <h1 class="mb-3 py-3 px-3 bg-secondary text-light">My Personal Information
             <span class="float-right">
-                <button type="button" class="btn btn-outline-light text-uppercase">update profile</button>
+                <a href="/profile/{{$user->id}}/edit">
+                    <button type="button" class="btn btn-outline-light text-uppercase">edit profile</button>
+                </a>
             </span>
             <span style="display: block; clear: both;"></span>
         </h1>
@@ -15,7 +17,7 @@
             <div class="col-4">
 
                 <!-- this will need to test if there is an image associated -->
-                <img src="/storage/images/profile_placeholder.png" alt="" width="100%">
+                <img src="{{ !empty($user->image) ? '/storage/images/' . $user->image : '/storage/images/profile_placeholder.png' }}" alt="" width="100%">
 
             </div>
             <div class="col-8">

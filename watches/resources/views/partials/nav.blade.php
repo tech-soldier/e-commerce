@@ -73,7 +73,14 @@
             <!-- util profile -->
                 <a href="/profile">
                     <div class="circle1">
-                        <img class="profile-pic" src="http://lorempixel.com/50/50/people" alt="profile picture">
+                        <?php if(!empty($user->image)) : ?>
+                            <div class="user_image" style="background-image: url('/storage/images/{{$user->image}}')"></div>
+                        <?php else : ?>
+                            <div class="user_image">
+                                <i class="fas fa-user-alt text-dark"></i>
+                            </div>
+                        <?php endif ; ?>
+
                     </div>                    
                 </a>
 
@@ -86,15 +93,20 @@
 
         <div class=" ml-2 acct_srch d-flex">
             <!-- util search -->
-            <div class="circle">
-                <i class="fas fa-search"></i>
+            <div class="circle_search">
+                <!-- <i class="fas fa-search"></i> -->
 
-                <!-- <form class="form" action="shop.blade.php" method="get" autocomplete="on" novalidate>
-                    <input id="s" type="text" name="s" maxlength="255" />&nbsp;
-                    <div>
-                        <ul id="live_search"></ul>
+                <form method="get" action="{{ url('/shop_search') }}">
+                    @csrf
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="query" name="query" placeholder="Search Watch" /> 
+                            <span class="input-group-btn">
+                                <button type="submit" class="btn btn-default">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </span>
                     </div>
-                </form> -->
+                 </form>
 
             </div>
             <!-- shopping cart -->
