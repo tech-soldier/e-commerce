@@ -119,40 +119,36 @@ class OrderController extends Controller
     {
          $valid = $request->validate([
 
-            'user_id' => 'required|integer',
-            'watch_id' => 'required|integer', 
-            'first_name' => 'required|string|max:255', 
-            'email_address' => 'required|string|max:255', 
-            'billing_address' => 'required|string|max:255', 
-            'shipping_address' => 'required|string|max:255', 
-            'subtotal' => 'reqired|integer', 
-            'GST' => 'required|integer', 
-            'PST' => 'required|integer', 
-            'total' => 'required|integer', 
+            'user_id' => 'required|integer',                                                       
+            'first_name' => 'required|string|max:255',                                                      
+            'email' => 'required|email',                                                 
+            'billing_address' => 'required|string|max:255',                                              
+            'shipping_address' => 'required|string|max:255',
+            'subtotal' => "required|regex:/^\d+(\.\d{1,2})?$/",                                              
+            'tax_id' => 'required|integer',                                                         
+            'total' => "required|regex:/^\d+(\.\d{1,2})?$/"   
          ]);   
 
-        if(!empty($valid['watch_id'])){
+        if(!empty($valid['user_id'])){
 
-        $file = $request->file('watch_id');
+        $file = $request->file('user_id');
+
         //getting the orginal file name
-        $watch_id = time() . '_' . $file->getClientOriginalNAme();
+        $user_id = time() . '_' . $file->getClientOriginalName();
 
         //save the watch_id
         $path = $file->storeAs('', $watch_id);
     }
 
-    $order = Order::find($valid['user_id']);
-    $order->watch_id = $valid['watch_id'];
+    $order = Order::find($valid['id']);
     $order->first_name = $valid['first_name'];
-    $order->email_address = $valid['email_address'];
+    $order->email = $valid['email'];
     $order->billing_address = $valid['billing_address'];
+    $order->shipping_address = $valid['shipping_address'];
     $order->subtotal = $valid['subtotal'];
-    $order->GST = $valid['GST'];
-    $order->PST = $valid['PST'];
+    $order->tax_id = $valid['tax_id'];
     $order->total = $valid['total'];
-    if(!empty($watch_id)) {
-         $watch->watch_id = '/watch_id/' .$watch_id;
-    }
+   
 
     if($order->save() ) {
         return redirect('/admin/orders_table')->with('success', 'Your order is successfully updated');
