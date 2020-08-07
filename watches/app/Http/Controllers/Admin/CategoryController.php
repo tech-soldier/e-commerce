@@ -9,6 +9,16 @@ use App\Category;
 
 class CategoryController extends Controller
 {
+
+    public function search()
+    {
+        $search_term = $_GET['query']; 
+        $categories = Category::where('category_name', 'LIKE', '%'.$search_term.'%')->get(); 
+
+        return view('/admin/search/search_categories', compact('categories', 'search_term')); 
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -56,17 +66,6 @@ class CategoryController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -86,13 +85,15 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         $valid = $request->validate([
-           
+            'id' => 'required|integer',
             'category_name' => 'required|string|max:255'
-          
+            
         ]);
+
+        $category = Category::find($request['category_id']);
 
         if($category->save() ) {
         return redirect('/admin/categories_table')->with('success', 'Your category is successfully updated');
@@ -101,14 +102,33 @@ class CategoryController extends Controller
       return redirect('/admin/categories_table')->with('error', 'There was a problem updating the category');
     }
 
-    /**
-     * Remove the specified resource from storage.
+    /* Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
+    {
+        $valid = $request->validate([
+            'id' => 'required|integer'
+        ]);
+
+        if( Category::find($valid['id'] )->delete() ) {
+            return back()->with('success', 'The record has been deleted!');
+        }
+        return back()->with('error', 'There was a problem deleting that record');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
     {
         //
     }
+
+
 }

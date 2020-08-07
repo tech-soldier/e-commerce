@@ -21,7 +21,7 @@ class WatchController extends Controller
     }
 
 
-
+  
     /**
      * Show the form for creating a new resource.
      *
@@ -109,17 +109,6 @@ class WatchController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -140,7 +129,7 @@ class WatchController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
 
         $valid = $request->validate([
@@ -165,6 +154,7 @@ class WatchController extends Controller
             'short_description' => 'required|string|max:255', 
             'long_description' => 'required|string|max:500'
         ]);
+
         if(!empty($valid['cover_img'])){
         $file = $request->file('cover_img');
         //getting the orginal file name
@@ -205,7 +195,7 @@ class WatchController extends Controller
 
         }
 
-        /**
+    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
@@ -213,16 +203,25 @@ class WatchController extends Controller
      */
     public function destroy(Request $request)
     {
-        // validated -- make sure id is passed in request
         $valid = $request->validate([
             'id' => 'required|integer'
         ]);
 
-        // Try to delete the post and send the user back to the posts 
-        // index view with a flash message
-        if( Watch::find($valid['id'])->delete() ) {
-            return back()->with('success', 'Post has been deleted!');
+        if( Watch::find($valid['id'] )->delete() ) {
+            return back()->with('success', 'The record has been deleted!');
         }
-        return back()->with('error', 'There was a problem deleting that post');
+        return back()->with('error', 'There was a problem deleting that record');
     }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
 }

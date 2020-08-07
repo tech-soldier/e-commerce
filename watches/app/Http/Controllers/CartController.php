@@ -75,7 +75,7 @@ class CartController extends Controller
             $total += $details['price'] * $details['quantity'];
         }
 
-        return number_format($total, 2);
+        return round($total, 2);
     }
 
 
