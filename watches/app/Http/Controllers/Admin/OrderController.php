@@ -92,9 +92,12 @@ class OrderController extends Controller
      */
     public function edit($id)
     {
-        $order=Order::find($id);
-        $title = 'Edit Order'; 
-        return view('/admin/edit/edit_orders', compact('title', 'order')); 
+        $title = 'Edit Order';
+        $order = Order::find($id); 
+        $user = User::all();
+        $watch = Watch::all(); 
+        $taxes = Tax::all();
+        return view('/admin/edit/edit_orders', compact('title', 'order', 'user', 'watch', 'taxes')); 
     }
 
     /**
@@ -104,10 +107,10 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
          $valid = $request->validate([
-            'order_id' => 'required|integer',
+            'id' => 'required|integer',
             'user_id' => 'required|integer',                                                       
             'first_name' => 'required|string|max:255',                                                      
             'email' => 'required|email',                                                 
@@ -118,34 +121,25 @@ class OrderController extends Controller
             'total' => "required|regex:/^\d+(\.\d{1,2})?$/"   
          ]);   
 
-        if(!empty($valid['order_id'])){
+    
 
-        $file = $request->file('order_id');
+        $order = Order::find($valid['id']);
+        $order->first_name = $valid['first_name'];
+        $order->user_id = $valid['user_id'];
+        $order->email = $valid['email'];
+        $order->billing_address = $valid['billing_address'];
+        $order->shipping_address = $valid['shipping_address'];
+        $order->subtotal = $valid['subtotal'];
+        $order->tax_id = $valid['tax_id'];
+        $order->total = $valid['total'];
+       
 
-        //getting the orginal file name
-        $user_id = time() . '_' . $file->getClientOriginalName();
+        if($order->save() ) {
+            return redirect('/admin/orders_table')->with('success', 'Your order is successfully updated');
 
-        //save the watch_id
-        $path = $file->storeAs('', $watch_id);
-    }
+        }
 
-    $order = Order::find($valid['order_id']);
-    $order->first_name = $valid['first_name'];
-    $order->user_id = $valid['user_id'];
-    $order->email = $valid['email'];
-    $order->billing_address = $valid['billing_address'];
-    $order->shipping_address = $valid['shipping_address'];
-    $order->subtotal = $valid['subtotal'];
-    $order->tax_id = $valid['tax_id'];
-    $order->total = $valid['total'];
-   
-
-    if($order->save() ) {
-        return redirect('/admin/orders_table')->with('success', 'Your order is successfully updated');
-
-    }
-
-    return redirect('/admin/orders_table')->with('error', 'There was a problem updating the order');
+        return redirect('/admin/orders_table')->with('error', 'There was a problem updating the order');
 
     }
     
