@@ -89,10 +89,12 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         $valid = $request->validate([
-           
+            'id' => 'required|integer',
             'category_name' => 'required|string|max:255'
           
         ]);
+
+        $category = Category::find($valid['id']);
 
         if($category->save() ) {
         return redirect('/admin/categories_table')->with('success', 'Your category is successfully updated');
