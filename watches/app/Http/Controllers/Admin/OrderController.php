@@ -60,7 +60,7 @@ class OrderController extends Controller
     {
         $valid = $request->validate([      
             'user_id' => 'required|integer',                                                       
-            'first_name' => 'required|string|max:255',                                                      
+            'full_name' => 'required|string|max:255',                                                      
             'email' => 'required|email',                                                 
             'billing_address' => 'required|string|max:255',                                              
             'shipping_address' => 'required|string|max:255',
@@ -76,7 +76,7 @@ class OrderController extends Controller
 
          Order::create([
             'user_id' => $valid['user_id'],                                                       
-            'first_name' => $valid['first_name'],                                                      
+            'full_name' => $valid['full_name'],                                                      
             'email'=> $valid['email'],                                                 
             'billing_address' => $valid['billing_address'],                                              
             'shipping_address' => $valid['shipping_address'],

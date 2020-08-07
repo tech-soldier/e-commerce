@@ -20,9 +20,9 @@
       </div>
       
        <div class="form-group">
-        <label for="first_name">First Name: </label>
-        <input type="text" name="first_name" class="form-control" id="first_name" value="{{ old('first_name') }}">
-        @error('first_name')
+        <label for="full_name">Full Name: </label>
+        <input type="text" name="full_name" class="form-control" id="full_name" value="{{ old('full_name') }}">
+        @error('full_name')
             <span class="alert-danger">{{ $message }}</span>
         @enderror
       </div>
