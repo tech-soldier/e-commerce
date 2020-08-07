@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Pagerange\Bx\_5bx;
 use App\Order;
 use App\User;
 use Illuminate\Http\Request;
@@ -15,8 +15,6 @@ class CheckoutController extends Controller
         $taxes = Tax::all();
         $title = "Checkout";
         $user = User::all();
-
-
 
         return view('checkout', compact('taxes', 'title', 'user'));
     }
@@ -39,9 +37,7 @@ class CheckoutController extends Controller
             }
 
             $shipping = $items_total * 3;
-            $total = $shipping + $gst + $pst + $subtotal;
-
-
+            $total = round($shipping + $gst + $pst + $subtotal,2);
 
             return response()->json(['gst' => $gst, 'pst' => $pst, 'shipping' => $shipping, 'total' => $total]);
 
@@ -56,8 +52,44 @@ class CheckoutController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function placeOrder(Request $request) {
+//        //5 px
+//
+//        //validate cart info
+//        //save order , get id
+//
+//        //fake order id
+//        $order_id=345;
+//        //5bx object
+//        $transaction = new _5bx(env('BX_LOGIN'), env("BX_KEY"));
+//        $transaction->ref_num($order_id);
+//
+//
+//        function processTransaction(_5bx $transaction)
+//        {
+//            // Replace hard coded values with your own variables
+//            $transaction->amount('5.99'); // total sale
+//            $transaction->card_num('4111111111111111'); // credit card number
+//            $transaction->exp_date ('0822'); // expiry date month and year (august 2022)
+//            $transaction->cvv('333'); // card cvv number
+//            $transaction->ref_num('2011099'); // your reference or invoice number
+//            $transaction->card_type('visa'); // card type (visa, mastercard, amex)
+//            return $transaction->authorize_and_capture(); // returns JSON object
+//
+//        }
+//
+//        //send transaction to 5bx
+//        $response = processTransaction($transaction);
+//    dd($response);
+//
+//    if($response->transaction_response->response_code ==1) {
+//        //save transaction info into transaction table
+//        //update order table if you have transaction_status field = 1
+//    } else {
+//        // set transaction_status field in order table to failed (0)
+//        //return back with errors
+//        //return back()->withErrors((array) $response->errors);
+//    }
 
-        dd($request['order_subtotal']);
 
         $request->validate([
             'first_name' => 'required|string|max:255',
@@ -100,6 +132,7 @@ class CheckoutController extends Controller
 //
 //        $user->save();
 
+        //return redirect('/invoice')->with('success', 'Order was successfully created');
         return redirect('/shop')->with('success', 'Order was successfully created');
     }
 
