@@ -14,7 +14,8 @@
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
-        "laravel/ui": "^2.1"
+        "laravel/ui": "^2.1",
+        "pagerange/5bx-client-library": "^2.0@alpha"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
@@ -33,6 +34,13 @@
             "dont-discover": []
         }
     },
+    "repositories": [
+        {
+            "type": "git",
+            "name": "pagerange/5bx-client-library",
+            "url": "https://github.com/pagerange/5bx-client-library"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "App\\": "app/"
