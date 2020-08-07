@@ -31,6 +31,9 @@ Route::get('/', 'WatchController@homeIndex');
 
 Route::post('send-mail','SendMailController@Email');
 
+// front-end search
+Route::get('/shop_search', 'WatchController@search');
+
 /* --------------- CART ROUTES ------------------*/
 
 Route::get('/cart', 'PagesController@cart');
@@ -80,10 +83,14 @@ Route::get('/admin/categories_table', 'AdminController@categories');
 
 /* admin search routes ------------------------------------------*/ 
 Route::get('/admin/search/search_watches', 'Admin\WatchController@search');
+
 Route::get('/admin/search/search_users', 'Admin\UserController@search');
+
 Route::get('/admin/search/search_orders', 'Admin\OrderController@search');
 
-Route::get('/admin/search/search_admins', 'Admin\AdminController@search');
+Route::get('/admin/search/search_categories', 'Admin\CategoryController@search');
+
+Route::get('/admin/search/search_taxes', 'Admin\TaxController@search');
 
 /*----------------------------------------------------------------*/
 
@@ -148,10 +155,3 @@ Route::get('/admin/edit/{id}/edit_orders', 'Admin\OrderController@edit');
 Route::put('/admin/edit/orders_table', 'Admin\OrderController@update');
 
 
-
-
-/*  ----------------END ADMIN EDIT FILES -------------------------*/
-
-
-// front-end search
-Route::get('/shop', 'WatchController@search');

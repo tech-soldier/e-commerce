@@ -14,7 +14,7 @@ use App\User;
 
 class OrderController extends Controller
 {
-       public function search()
+    public function search()
     {
         $search_term = $_GET['query']; 
         $orders = Order::where('id', 'LIKE', '%'.$search_term.'%')->orWhere('billing_address', 'LIKE', '%'.$search_term.'%')->orWhere('shipping_address', 'LIKE', '%'.$search_term.'%')->get(); 
