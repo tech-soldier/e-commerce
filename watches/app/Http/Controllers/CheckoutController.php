@@ -74,7 +74,47 @@ class CheckoutController extends Controller
 //
 //        //fake order id
 //        $order_id=345;
-//        //5bx object
+
+
+
+        $valid = $request->validate([
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'email' => 'required|email',
+            'billing_address' => 'required|string|max:255',
+            'city' => 'required|string|max:255',
+            'province' => 'required|string|max:255',
+            'country' => 'required|string|max:255',
+            'postal_code' => 'required|string|max:6',
+            'shipping_address' => 'required|string|max:255',
+            'shipping_city' => 'required|string|max:255',
+            'shipping_province' => 'required|string|max:255',
+            'shipping_country' => 'required|string|max:255',
+            'shipping_postal_code' => 'required|string|max:6',
+        ]);
+
+        $cost = session()->get('cost');
+
+        $order = Order::create([
+            'user_id' => auth()->user()->id,
+            'full_name' => $valid['first_name'] . ' ' . $valid['last_name'],
+            'email'=> $valid['email'],
+            'billing_address' => $valid['country'] . ', ' .  $valid['billing_address'] . ', ' .
+                $valid['city'] . ', ' . $valid['province'] . ' ' . $valid['postal_code'],
+            'shipping_address' => $valid['shipping_country'] . ', ' .  $valid['shipping_address'] . ', ' .
+                $valid['shipping_city'] . ', ' . $valid['shipping_province'] . ' ' . $valid['shipping_postal_code'],
+            'subtotal' => $cost['subtotal'],
+            'GST' => $cost['gst'],
+            'PST' => $cost['pst'],
+            'HST' => $cost['pst'],
+            'shipping' => $cost['shipping'],
+            'total' => $cost['order_total']
+        ]);
+
+        session()->forget('cart');
+        $order_id = $order->id;
+
+        //5bx object
 //        $transaction = new _5bx(env('BX_LOGIN'), env("BX_KEY"));
 //        $transaction->ref_num($order_id);
 //
@@ -105,64 +145,7 @@ class CheckoutController extends Controller
 //        //return back()->withErrors((array) $response->errors);
 //    }
 
-
-        $request->validate([
-            'first_name' => 'required|string|max:255',
-            'email' => 'required|email',
-            'billing_address' => 'required|string|max:255',
-            'city' => 'required|string|max:255',
-            'province' => 'required|string|max:255',
-            'country' => 'required|string|max:255',
-            'postal_code' => 'required|string|max:6',
-////        'shipping_address' => 'required|string|max:255',
-////        'subtotal' => "required|regex:/^\d+(\.\d{1,2})?$/",
-////        'tax_id' => 'required|integer',
-////        'total' => "required|regex:/^\d+(\.\d{1,2})?$/"
-        ]);
-
-//        $subtotal = session()->get('subtotal');
-//        $total = session()->get('order_total');
-//        $shipping = session()->get('shipping');
-//        $gst = session()->get('gst');
-//        $pst = session()->get('pst');
-//        $hst = session()->get('hst');
-
-        $cost = session()->get('cost');
-        $cart = session()->get('cart');
-
-        Order::create([
-            'user_id' => auth()->user()->id,
-            'first_name' => $request['first_name'],
-            'email'=> $request['email'],
-            'billing_address' => $request['country'] . ', ' .  $request['billing_address'] . ', ' .
-                $request['city'] . ', ' . $request['province'] . ' ' . $request['postal_code'],
-            'shipping_address' => $request['billing_address'],
-            'subtotal' => $cost['subtotal'],
-            'GST' => $cost['gst'],
-            'PST' => $cost['pst'],
-            'HST' => $cost['pst'],
-            'shipping' => $cost['shipping'],
-            'total' => $cost['order_total']
-        ]);
-
-        unset($cost);
-        unset($cart);
-
-//        $user = User::find(auth()->user()->id);
-//
-//        $user->first_name = $request['first_name'];
-//        $user->last_name = $request['last_name'];
-//        $user->billing_address = $request['billing_address'];
-//        $user->city = $request['city'];
-//        $user->province = $request['province'];
-//        $user->country = $request['country'];
-//        $user->first_name = $request['postal_code'];
-//        $user->first_name = $request['postal_code'];
-//
-//
-//        $user->save();
-
-        //return redirect('/invoice')->with('success', 'Order was successfully created');
+        
         return redirect('/shop')->with('success', 'Order was successfully created');
     }
 
