@@ -47,7 +47,10 @@
 				<td>{{ $user->email }}</td>
 				<td>{{ $user->phone_number }}</td>
 				<td>{{ $user->postal_code }}</td>
-				<td><button type="button" class="btn btn-primary">Edit</button></td>
+				<td><p>
+						<a href="/admin/edit/{{ $user->id }}/edit_users"  class="btn btn-primary">Edit</a>
+					</p>
+				</td>
 				<td>
 					<form class="delete" 
 				                onSubmit="return confirm('Do you really want to delete this post?')"
