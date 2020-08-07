@@ -47,7 +47,7 @@ use \App\Http\Controllers\CartController;
                                 </div>
                                 <div class="form-group">
                                     <label>Address</label>
-                                    <input type="text" class="form-control bg-light" name="billing_address" value="{{ old('billing_address') }}">
+                                    <input type="text" class="form-control bg-light" name="billing_address" value="{{ auth()->user()->billing_address }}">
                                     @error('billing_address')
                                     <span class="alert-danger">{{ $message }}</span>
                                     @enderror
@@ -55,14 +55,14 @@ use \App\Http\Controllers\CartController;
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label>City</label>
-                                        <input type="text" class="form-control bg-light" name="city" id="city" value="{{ old('city') }}">
+                                        <input type="text" class="form-control bg-light" name="city" id="city" value="{{ auth()->user()->city }}">
                                         @error('city')
                                         <span class="alert-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Country</label>
-                                        <input type="text" class="form-control bg-light" name="country" value="{{ old('country') }}">
+                                        <input type="text" class="form-control bg-light" name="country" value="{{ auth()->user()->country }}">
                                         @error('country')
                                         <span class="alert-danger">{{ $message }}</span>
                                         @enderror
@@ -85,7 +85,7 @@ use \App\Http\Controllers\CartController;
                                     </div>
                                     <div class="form-group  col-md-6">
                                         <label>Postal Code</label>
-                                        <input type="text" class="form-control bg-light" name="postal_code" value="{{ old('postal_code') }}">
+                                        <input type="text" class="form-control bg-light" name="postal_code" value="{{ auth()->user()->postal_code }}">
                                         @error('postal_code')
                                         <span class="alert-danger">{{ $message }}</span>
                                         @enderror
@@ -93,7 +93,7 @@ use \App\Http\Controllers\CartController;
                                 </div>
                                 <div class="form-group">
                                     <label>Phone Number</label>
-                                    <input type="phone" class="form-control bg-light" name="phone_number" value="{{ old('phone_number') }}">
+                                    <input type="phone" class="form-control bg-light" name="phone_number" value="{{ auth()->user()->phone_number }}">
                                     @error('phone_number')
                                     <span class="alert-danger">{{ $message }}</span>
                                     @enderror
@@ -219,8 +219,6 @@ use \App\Http\Controllers\CartController;
                                         <dl class="dlist-align">
                                             <dt>Subtotal: <span id="subtotal" name="subtotal">{{ CartController::getCartTotal() }}</span></dt>
                                         </dl>
-
-                                            <input type="text" name="order_subtotal" disabled class="form-control" id="order_subtotal" value="{{ CartController::getCartTotal() }}">
 
                                         <dl class="dlist-align">
                                             <dt>GST: <span id="gst"></span></dt>
