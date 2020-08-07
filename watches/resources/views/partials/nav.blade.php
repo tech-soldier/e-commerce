@@ -73,7 +73,12 @@
             <!-- util profile -->
                 <a href="/profile">
                     <div class="circle1">
-                        <img class="profile-pic" src="http://lorempixel.com/50/50/people" alt="profile picture">
+                        <?php if(!empty($user->image)) : ?>
+                            <div class="user_image" style="background-image: url('/storage/images/{{$user->image}}')"></div>
+                        <?php else : ?>
+                            <img class="profile-pic" src="http://lorempixel.com/44/44/people" alt="profile picture">
+                        <?php endif ; ?>
+
                     </div>                    
                 </a>
 
