@@ -51,7 +51,8 @@ class UserController extends Controller
             'province' => 'required|string|max:255', 
             'country' => 'required|string|max:255', 
             'postal_code' => 'required|string|max:6', 
-            'phone_number' => 'required|regex:/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/'
+            'phone_number' => 'required|regex:/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/',
+            'is_admin' => 'required|integer'
         ]); 
 
         User::create([
@@ -64,7 +65,8 @@ class UserController extends Controller
             'province' => $valid['province'], 
             'country' => $valid['country'], 
             'postal_code' => $valid['postal_code'], 
-            'phone_number' => $valid['phone_number']
+            'phone_number' => $valid['phone_number'],
+            'is_admin' => $valid['is_admin'] ?? 0
         ]); 
 
         return redirect('/admin/users_table')->with('success', 'User was successfully created'); 
@@ -104,8 +106,8 @@ class UserController extends Controller
             'province' => 'required|string|max:255', 
             'country' => 'required|string|max:255', 
             'postal_code' => 'required|string|max:6', 
-            'phone_number' => 'required|regex:/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/'
-
+            'phone_number' => 'required|regex:/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/',
+            'is_admin' => 'required|integer'
         ]);
 
         $user=User::find($valid['id']);
@@ -119,6 +121,7 @@ class UserController extends Controller
         $user->country=$valid['country'];
         $user->postal_code=$valid['postal_code'];
         $user->phone_number=$valid['phone_number'];
+        $user->is_admin=$valid['is_admin'];
 
         if($user->save()){
             return redirect('/admin/users_table')->with('success', 'User successfully updated');

@@ -12,10 +12,8 @@
 
       <div class="form-group">
         <label for="id">User ID: </label>
-        <input type="hidden" name="id" disabled class="form-control" id="id" value="{{ old('id', $user->id) }}">
-        @error('id')
-            <span class="alert-danger">{{ $message }}</span>
-        @enderror
+        <input type="hidden" name="id" class="form-control" id="id" value="{{ old('id', $user->id) }}">
+        
       </div>
 
       <div class="form-group">
@@ -98,8 +96,17 @@
         @enderror
       </div>
 
+      <div class="form-group">
+        <label for="is_admin">Is Admin</label> <br />
+        <input type="radio" name="is_admin" value="0" {{ ($user->is_admin=="0")? "checked" : "" }} />
+        False &nbsp;
+        <input type="radio" name="is_admin" value="1" {{ ($user->is_admin=="1")? "checked" : "" }} />
+        True
+      </div>
+
       <p><button type="submit" class="btn btn-primary">Submit</button></p>
     </form>
+    {{ dd($errors )}}
 </div>
 
 @stop 
