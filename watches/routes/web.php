@@ -98,38 +98,25 @@ Route::get('/admin/search/search_taxes', 'Admin\TaxController@search');
 
 /*----------------------------------------------------------------*/
 
-/* admin create files ----------------------------------------------*/
 
-// create watches COMPLETE *except for image upload*
-Route::get('admin/create/create_watch', 'Admin\WatchController@create');
-Route::post('admin/create/create_watch', 'Admin\WatchController@store');
 
 /* admin create files ----------------------------------------------*/
 
-// create watches incomplete
+// create watches 
 Route::get('admin/create/create_watch', 'Admin\WatchController@create');
 Route::post('admin/create/create_watch', 'Admin\WatchController@store');
 
-
-// create admin COMPLETE
-Route::get('admin/create/create_admin', 'Admin\AdminController@create');
-Route::post('admin/create/create_admin', 'Admin\AdminController@store');
-
-// create categories COMPLETE
+// create categories 
 Route::get('admin/create/create_category', 'Admin\CategoryController@create');
 Route::post('admin/create/create_category', 'Admin\CategoryController@store');
 
-// create orders COMPLETE
+// create orders 
 Route::get('admin/create/create_order', 'Admin\OrderController@create');
 Route::post('admin/create/create_order', 'Admin\OrderController@store');
 
-// create taxes COMPLETE
+// create taxes 
 Route::get('admin/create/create_tax', 'Admin\TaxController@create');
 Route::post('admin/create/create_tax', 'Admin\TaxController@store');
-
-// create transactions COMPLETE
-Route::get('admin/create/create_transaction', 'Admin\TransactionController@create');
-Route::post('admin/create/create_transaction', 'Admin\TransactionController@store');
 
 // create users COMPLETE
 Route::get('admin/create/create_user', 'Admin\UserController@create');
@@ -142,15 +129,18 @@ Route::post('admin/create/create_user', 'Admin\UserController@store');
 //edit watch table
 Route::get('/admin/edit/{id}/edit_watch', 'Admin\WatchController@edit');
 
-Route::put('/admin/edit/{id}', 'Admin\WatchController@update');
+Route::put('/admin/edit/edit_watch', 'Admin\WatchController@update');
 
-Route::delete('/admin/watches_table, Admin\WatchController@destroy');
+Route::delete('/admin/watches_table', 'Admin\WatchController@destroy');
+
+
+
 
 //edit category table
 
 Route::get('/admin/edit/{id}/edit_category', 'Admin\CategoryController@edit');
 
-Route::put('/admin/edit/{id}', 'Admin\CategoryController@update');
+Route::put('/admin/edit/edit_category', 'Admin\CategoryController@update');
 
 Route::delete('/admin/categories_table, Admin\CategoryController@destroy');
 

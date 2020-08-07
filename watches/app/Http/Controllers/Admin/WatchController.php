@@ -129,11 +129,11 @@ class WatchController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
 
         $valid = $request->validate([
-            'watch_id' => 'required|integer',
+            'id' => 'required|integer',
             'SKU' => 'required|integer', 
             'watch_name' => 'required|string|max:255',
             'in_stock' => 'required|integer', 
@@ -154,6 +154,7 @@ class WatchController extends Controller
             'short_description' => 'required|string|max:255', 
             'long_description' => 'required|string|max:500'
         ]);
+        
 
         if(!empty($valid['cover_img'])){
         $file = $request->file('cover_img');
@@ -164,7 +165,7 @@ class WatchController extends Controller
 
     }
 
-        $watch = Watch::find($request['watch_id']);
+        $watch = Watch::find($valid['id']);
         $watch->SKU = $valid['SKU'];
         $watch->watch_name = $valid['watch_name'];
         $watch->in_stock = $valid['in_stock'] ?? 0;
