@@ -146,9 +146,9 @@ Route::delete('/admin/watches_table, Admin\WatchController@destroy');
 
 //edit category table
 
-Route::get('/admin/edit/{category_id}/edit_category', 'Admin\CategoryController@edit');
+Route::get('/admin/edit/{id}/edit_category', 'Admin\CategoryController@edit');
 
-Route::put('/admin/edit/edit_category', 'Admin\CategoryController@update');
+Route::put('/admin/edit/{id}', 'Admin\CategoryController@update');
 
  
  //edit order table
