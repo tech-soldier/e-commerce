@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5a993688a4552c644071256b6b56c39a",
+    "content-hash": "cc5c4b8fc9324d29b806ad466eda2d14",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1492,6 +1492,32 @@
                 "serialize"
             ],
             "time": "2020-06-17T14:59:55+00:00"
+        },
+        {
+            "name": "pagerange/5bx-client-library",
+            "version": "v2.0.1-alpha",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pagerange/5bx-client-library",
+                "reference": "14cc838be953677f7c992cfc10b802d65d2ca7db"
+            },
+            "type": "package",
+            "autoload": {
+                "psr-4": {
+                    "Pagerange\\Bx\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Steve George",
+                    "email": "steve@pagerange.com"
+                }
+            ],
+            "description": "5bx Client Library",
+            "time": "2020-07-31T16:19:25+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -6560,7 +6586,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "pagerange/5bx-client-library": 15
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

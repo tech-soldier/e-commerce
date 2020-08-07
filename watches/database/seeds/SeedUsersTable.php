@@ -39,6 +39,7 @@ class SeedUsersTable extends Seeder
             'postal_code' => 'r4t2b8', 
             'email' => 'techwatch7@gmail.com', 
             'phone_number' => '204-786-9007', 
+            'is_admin' => true, 
             'password' => password_hash('mypass', PASSWORD_DEFAULT), 
             'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now()
@@ -101,7 +102,7 @@ class SeedUsersTable extends Seeder
         	'province' => 'Ontario', 
         	'country' => 'Canada', 
         	'postal_code' => 'e5y6u7', 
-        	'email' => 'rahwa@mts.net', 
+        	'email' => 'rahwa3netsereab@gmail.com', 
         	'phone_number' => '226-146-9107', 
             'image' => 'linkedin_rahwa.jpg', 
         	'password' => password_hash('mypass', PASSWORD_DEFAULT),

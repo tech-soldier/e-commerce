@@ -17,6 +17,7 @@ class SeedTaxesTable extends Seeder
 	        'province' => 'Manitoba', 
 	        'GST' => 0.05, 
 	        'PST' => 0.07, 
+	        'HST' => 0.12, 
 	        'created_at' => Carbon::now(), 
 	        'updated_at' => Carbon::now()
 	    ]);
@@ -25,6 +26,7 @@ class SeedTaxesTable extends Seeder
 	        'province' => 'Ontario', 
 	        'GST' => 0.05, 
 	        'PST' => 0.08, 
+	        'HST' => 0.12, 
 	        'created_at' => Carbon::now(), 
 	        'updated_at' => Carbon::now()
 	    ]); 
@@ -33,6 +35,7 @@ class SeedTaxesTable extends Seeder
 	        'province' => 'Saskatchewan', 
 	        'GST' => 0.05, 
 	        'PST' => 0.06, 
+	        'HST' => 0.11, 
 	        'created_at' => Carbon::now(), 
 	        'updated_at' => Carbon::now()
 	    ]);
@@ -41,6 +44,7 @@ class SeedTaxesTable extends Seeder
 	        'province' => 'Alberta', 
 	        'GST' => 0.05, 
 	        'PST' => 0.00, 
+	        'HST' => 0.05, 
 	        'created_at' => Carbon::now(), 
 	        'updated_at' => Carbon::now()
 	    ]);
@@ -49,6 +53,7 @@ class SeedTaxesTable extends Seeder
 	        'province' => 'British Columbia', 
 	        'GST' => 0.05, 
 	        'PST' => 0.07, 
+	        'HST' => 0.12, 
 	        'created_at' => Carbon::now(), 
 	        'updated_at' => Carbon::now()
 	    ]);
@@ -57,6 +62,7 @@ class SeedTaxesTable extends Seeder
 	        'province' => 'New Brunswick', 
 	        'GST' => 0.05, 
 	        'PST' => 0.10, 
+	        'HST' => 0.15, 
 	        'created_at' => Carbon::now(), 
 	        'updated_at' => Carbon::now()
 	    ]);
@@ -65,6 +71,7 @@ class SeedTaxesTable extends Seeder
 	        'province' => 'Newfoundland and Labrador', 
 	        'GST' => 0.05, 
 	        'PST' => 0.10, 
+	        'HST' => 0.15, 
 	        'created_at' => Carbon::now(), 
 	        'updated_at' => Carbon::now()
 	    ]);
@@ -73,6 +80,7 @@ class SeedTaxesTable extends Seeder
 	        'province' => 'Prince Edward Island', 
 	        'GST' => 0.05, 
 	        'PST' => 0.10, 
+	        'HST' => 0.15, 
 	        'created_at' => Carbon::now(), 
 	        'updated_at' => Carbon::now()
 	    ]);
@@ -81,6 +89,7 @@ class SeedTaxesTable extends Seeder
 	        'province' => 'Quebec', 
 	        'GST' => 0.05, 
 	        'PST' => 0.0975, 
+	        'HST' => 0.1475,
 	        'created_at' => Carbon::now(), 
 	        'updated_at' => Carbon::now()
 	    ]);
@@ -89,6 +98,7 @@ class SeedTaxesTable extends Seeder
 	        'province' => 'Yukon', 
 	        'GST' => 0.05, 
 	        'PST' => 0.00, 
+	        'HST' => 0.05, 
 	        'created_at' => Carbon::now(), 
 	        'updated_at' => Carbon::now()
 	    ]);
@@ -97,6 +107,7 @@ class SeedTaxesTable extends Seeder
 	        'province' => 'Nunavut', 
 	        'GST' => 0.05, 
 	        'PST' => 0.00, 
+	        'HST' => 0.05,
 	        'created_at' => Carbon::now(), 
 	        'updated_at' => Carbon::now()
 	    ]);
@@ -105,6 +116,7 @@ class SeedTaxesTable extends Seeder
 	        'province' => 'Nova Scotia', 
 	        'GST' => 0.05, 
 	        'PST' => 0.10, 
+	        'HST' => 0.15,
 	        'created_at' => Carbon::now(), 
 	        'updated_at' => Carbon::now()
 	    ]);
@@ -113,6 +125,7 @@ class SeedTaxesTable extends Seeder
 	        'province' => 'Northwest Territories', 
 	        'GST' => 0.05, 
 	        'PST' => 0.00, 
+	        'HST' => 0.05,
 	        'created_at' => Carbon::now(), 
 	        'updated_at' => Carbon::now()
 	    ]);
