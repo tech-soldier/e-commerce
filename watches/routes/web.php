@@ -166,8 +166,11 @@ Route::put('/admin/edit/{id}', 'Admin\OrderController@update');
 Route::delete('/admin/orders_table, Admin\OrderController@destroy');
 
 // edit taxes table
+Route::get('/admin/edit/{id}/edit_tax', 'Admin\TaxController@edit');
 
-Route::delete('/admin/taxes_table, Admin\CategoryController@destroy');
+Route::put('/admin/edit/{id}', 'Admin\TaxController@update');
+
+//Route::delete('/admin/taxes_table, Admin\CategoryController@destroy');
 
 // edit users table
 

@@ -47,8 +47,8 @@
 				<td>{{ $tax->HST }}</td>
 				<td>{{ $tax->created_at }}</td>
 				<td>{{ $tax->updated_at }}</td>
-				<td><button type="button" class="btn btn-primary">Edit</button></td>
-				<td><button type="button" class="btn btn-danger">Edit</button></td>
+				<td><p><a href="/admin/edit/{{ $tax->id }}/edit_tax" class="btn btn-primary">Edit</a></p></td>
+				<td><button type="button" class="btn btn-danger">Delete</button></td>
 		    </tr>
 	  	</tbody>
 	   	@endforeach
