@@ -92,6 +92,9 @@ Route::get('/admin/search/search_categories', 'Admin\CategoryController@search')
 
 Route::get('/admin/search/search_taxes', 'Admin\TaxController@search');
 
+Route::get('/admin/search/search_transactions', 'Admin\TransactionController@search');
+
+
 /*----------------------------------------------------------------*/
 
 /* admin create files ----------------------------------------------*/ 
