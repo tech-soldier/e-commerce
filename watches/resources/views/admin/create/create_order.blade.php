@@ -63,23 +63,44 @@
       </div>
 
       <div class="form-group">
-        <label for="tax_id">Tax: <span style="color:#cfcfcf">(Choose Province for GST% + PST% )</span></label>
-        <select class="form-control" name="tax_id">
-            <option value="">Select a Province</option>
-            @foreach($taxes as $tax) 
-            <option 
-                @if($tax->id == old('tax_id'))
-                selected
-                @endif
-                value="{{ $tax->tax_id }}">{{ ucfirst($tax->province) }}</option>
-            @endforeach
-        </select>
-        @error('tax_id')
+        <label for="GST">GST: </label>
+        <input type="text" class="form-control" name="GST" id="GST" value="{{ old('GST') }}">
+        @error('GST')
             <span class="alert-danger">{{ $message }}</span>
         @enderror
-
       </div>
-     
+      
+      <div class="form-group">
+        <label for="PST">PST: </label>
+        <input type="text" class="form-control" name="PST" id="PST" value="{{ old('PST') }}">
+        @error('PST')
+            <span class="alert-danger">{{ $message }}</span>
+        @enderror
+      </div>
+
+      <div class="form-group">
+        <label for="HST">HST: </label>
+        <input type="text" class="form-control" name="HST" id="HST" value="{{ old('HST') }}">
+        @error('HST')
+            <span class="alert-danger">{{ $message }}</span>
+        @enderror
+      </div>
+
+      <div class="form-group">
+        <label for="shipping">Shipping: </label>
+        <input type="text" class="form-control" name="GST" id="GST" value="{{ old('GST') }}">
+        @error('GST')
+            <span class="alert-danger">{{ $message }}</span>
+        @enderror
+      </div>
+
+      <div class="form-group">
+        <label for="transaction_status">Transaction Status</label> <br />
+        <input type="radio" name="transaction_status" checked value="0" />
+        False &nbsp;
+        <input type="radio" name="transaction_status" value="1" />
+        True
+      </div>
 
       <div class="form-group">
         <label for="total">Total: </label>
