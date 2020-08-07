@@ -16,7 +16,7 @@ class SeedOrdersTable extends Seeder
         DB::table('orders')->insert([
 
          	'user_id' => 1,
-         	'first_name' => 'Milad',
+         	'full_name' => 'Milad',
          	'email' => 'milad-dirani@shaw.net',
          	'billing_address' => '1411 Ashburn st.',
          	'shipping_address' => '1411 Ashburn st.',
@@ -34,7 +34,7 @@ class SeedOrdersTable extends Seeder
         DB::table('orders')->insert([
 
             'user_id' => 1,
-            'first_name' => 'Milad',
+            'full_name' => 'Milad',
             'email' => 'milad-dirani@shaw.net',
             'billing_address' => '1411 Ashburn st.',
             'shipping_address' => '1411 Ashburn st.',
@@ -52,7 +52,7 @@ class SeedOrdersTable extends Seeder
         DB::table('orders')->insert([
 
             'user_id' => 2,
-            'first_name' => 'Dawn',
+            'full_name' => 'Dawn',
             'email' => 'dawn-baker@bellmts.com',
             'billing_address' => '88 Hargrave Bay',
             'shipping_address' => '88 Hargrave Bay',
@@ -70,7 +70,7 @@ class SeedOrdersTable extends Seeder
         DB::table('orders')->insert([
 
             'user_id' => 3,
-            'first_name' => 'Inna',
+            'full_name' => 'Inna',
             'email' => 'inna-solda@gmail.com',
             'billing_address' => '12 Abbots Cresent',
             'shipping_address' => '12 Abbots Cresent',
@@ -88,7 +88,7 @@ class SeedOrdersTable extends Seeder
         DB::table('orders')->insert([
 
             'user_id' => 3,
-            'first_name' => 'Inna',
+            'full_name' => 'Inna',
             'email' => 'inna-solda@gmail.com',
             'billing_address' => '12 Abbots Cresent',
             'shipping_address' => '12 Abbots Cresent',
@@ -106,7 +106,7 @@ class SeedOrdersTable extends Seeder
         DB::table('orders')->insert([
 
             'user_id' => 4,
-            'first_name' => 'Alexandr',
+            'full_name' => 'Alexandr',
             'email' => 'alex-the-great@gmail.com',
             'billing_address' => '43 Inkster st',
             'shipping_address' => '43 Inkster st',

@@ -78,12 +78,10 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $title = "Edit User";
 
+        $title = "Edit User";
         $user = User::find($id);
         return view('/admin/edit/edit_users', compact('title', 'user'));
-
-
     }
 
     /**
