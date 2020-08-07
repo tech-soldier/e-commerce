@@ -108,6 +108,8 @@ class UserController extends Controller
 
         ]);
 
+        
+
         $user=User::find($valid['id']);
         $user->email=$valid['email'];
         $user->password=$valid['password'];
