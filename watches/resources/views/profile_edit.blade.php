@@ -5,7 +5,7 @@
 
     <div class="container page my-5" id="profile_page">
 
-        <div class="card my-3">
+        <div class="card my-3  bg-light">
             <div class="card-header bg-secondary text-light">
                 <h1 class="card-title my-2">{{ $title }}</h1>
             </div> 
@@ -107,19 +107,23 @@
                     </div>                
                    
 
-                    <!-- <div class="form-group">
-                                      <label for="image">user Image</label>
-                                      <input type="file" class="" name="image" id="image" value="{{ old('image', $user->image) }}" />
-                                      @error('image')
-                                          <span class="alert-danger">{{ $message }}</span>
-                                      @enderror
-                                  </div> -->              
+                    <div class="form-group">
+                        <label for="image">User Image</label>
+                        <input type="file" class="" name="image" id="image" value="{{ old('image', $user->image) }}" />
+                        @error('image')
+                            <span class="alert-danger">{{ $message }}</span>
+                        @enderror
+                    </div>  
+
+                    <div>
+                        <img src="{{ !empty($user->image) ? '/storage/images/' . $user->image : '/storage/images/profile_placeholder.png' }}" alt="profile image" width="300">
+                    </div>            
 
                     @csrf
 
                     <input type="hidden" name="id" value="{{ old('id', $user->id) }}">
 
-                    <div class="form-group">
+                    <div class="form-group mt-3">
                         <button type="submit" class="btn btn-primary">Update Profile</button>
                     </div>
 

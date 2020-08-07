@@ -17,7 +17,7 @@
             <div class="col-4">
 
                 <!-- this will need to test if there is an image associated -->
-                <img src="/storage/images/profile_placeholder.png" alt="" width="100%">
+                <img src="{{ !empty($user->image) ? '/storage/images/' . $user->image : '/storage/images/profile_placeholder.png' }}" alt="" width="100%">
 
             </div>
             <div class="col-8">

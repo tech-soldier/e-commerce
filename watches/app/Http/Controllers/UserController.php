@@ -88,17 +88,16 @@ class UserController extends Controller
             'postal_code' => 'nullable|string|max:6',
             'email' => 'required|string|max:255',
             'phone_number' => 'nullable|string|min:7|max:14',
-            //'category_id' => 'required|integer',
-            //'image' => 'nullable|image',            
+            'image' => 'nullable|image',            
             'id' => 'required|integer'
         ]);
 
         // if image provided save the file in storage and get the name of the image
-        /*if(!empty($valid['image'])){
+        if(!empty($valid['image'])){
             $file = $request->file('image'); // get the uploaded file
             $image = time() . '_' . $file->getClientOriginalName(); //get the original filename
-            $path = $file->storeAs('images', $image); // save the image (link to storage added) 
-        }*/
+            $path = $file->storeAs('public/images', $image); // save the image (link to storage added) 
+        }
 
         // find the record in database
         $user = User::find($valid['id']);
@@ -107,9 +106,9 @@ class UserController extends Controller
         $user->first_name = $valid['first_name'];
         $user->last_name = $valid['last_name'];
         $user->billing_address = $valid['billing_address'];
-        /*if(!empty($image)){
+        if(!empty($image)){
             $user->image = $image; // saving just a filename            
-        }*/
+        }
         $user->city = $valid['city'];
         $user->province = $valid['province'];
         $user->country = $valid['country'];
