@@ -86,7 +86,7 @@
 <!-- Third party plugin JS-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 <!-- Core theme JS-->
-<script src="main.js"></script>
+<script src="/js/main.js"></script>
 
 <!-- custom scripts (will need to be removed to main js file) -->
 <script>
