@@ -29,40 +29,47 @@ use \App\Http\Controllers\CartController;
                                 <div class="form-row">
                                     <div class="col form-group">
                                         <label>First name</label>
-                                        <input type="text" class="form-control bg-light" name="first_name">
+                                        <input type="text" class="form-control bg-light" name="first_name" value="{{ auth()->user()->first_name }}">
                                     </div>
                                     <div class="col form-group">
                                         <label>Last name</label>
-                                        <input type="text" class="form-control bg-light" name="last_name">
+                                        <input type="text" class="form-control bg-light" name="last_name" value="{{ auth()->user()->last_name }}">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label>Address</label>
-                                    <input type="text" class="form-control bg-light" name="address">
+                                    <input type="text" class="form-control bg-light" name="address" value="{{ auth()->user()->billing_address }}">
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label>City</label>
-                                        <input type="text" class="form-control bg-light" name="city">
+                                        <input type="text" class="form-control bg-light" name="city" value="{{ auth()->user()->city }}">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Country</label>
-                                        <input type="text" class="form-control bg-light" name="country">
+                                        <input type="text" class="form-control bg-light" name="country" value="{{ auth()->user()->country }}">
                                     </div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="form-group  col-md-6">
-                                        <label>Province</label>
-                                        <input type="text" class="form-control bg-light" name="province">
+                                    <div class="form-group col-md-6">
+                                        <label for="exampleFormControlSelect1">Province</label>
+                                        <select class="form-control province" id="exampleFormControlSelect1">
+                                            <option disabled selected> -- Select Province -- </option>
+                                            @foreach($taxes as $tax)
+                                                <option value="{{$tax->province}}">
+                                                    {{$tax->province}}
+                                                </option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                     <div class="form-group  col-md-6">
                                         <label>Postal Code</label>
-                                        <input type="text" class="form-control bg-light" name="postal_code">
+                                        <input type="text" class="form-control bg-light" name="postal_code" value="{{ auth()->user()->postal_code }}">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label>Phone Number</label>
-                                    <input type="phone" class="form-control bg-light" name="phone" value="">
+                                    <input type="phone" class="form-control bg-light" name="phone" value="{{ auth()->user()->phone_number }}">
                                 </div>
                                 <div class="form-group">
                                     <label>Email Address</label>
@@ -116,9 +123,16 @@ use \App\Http\Controllers\CartController;
                                         </div>
                                     </div>
                                     <div class="form-row">
-                                        <div class="form-group  col-md-6">
-                                            <label>Province</label>
-                                            <input type="text" class="form-control bg-light" name="province">
+                                        <div class="form-group col-md-6">
+                                            <label for="exampleFormControlSelect1">Province</label>
+                                            <select class="form-control" id="exampleFormControlSelect1">
+                                                <option disabled selected> -- Select Province -- </option>
+                                                @foreach($taxes as $tax)
+                                                    <option value="{{$tax->province}}">
+                                                        {{$tax->province}}
+                                                    </option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                         <div class="form-group  col-md-6">
                                             <label>Postal Code</label>
@@ -130,7 +144,7 @@ use \App\Http\Controllers\CartController;
                                         <input type="checkbox" class="form-check-input" id="materialUnchecked">
                                         <label class="form-check-label" for="materialUnchecked">Same as Billing Address</label>
                                     </div>
-                                    <button type="button" class="btn btn-info">Info</button>
+
                                 </article>
                             </div>
                     </div>
@@ -145,20 +159,20 @@ use \App\Http\Controllers\CartController;
                                     </header>
                                     <article class="card-body">
                                         <dl class="dlist-align">
-                                            <dt>Subtotal: ${{ CartController::getCartTotal() }}</dt>
+                                            <dt>Subtotal: <span id="subtotal">{{ CartController::getCartTotal() }}</span></dt>
                                         </dl>
                                         <dl class="dlist-align">
-                                            <dt>GST: $19</dt>
+                                            <dt>GST: <span id="gst"></span></dt>
                                         </dl>
                                         <dl class="dlist-align">
-                                            <dt>PST: $23</dt>
+                                            <dt>PST:  <span id="pst"></span></dt>
                                         </dl>
                                         <dl class="dlist-align">
-                                            <dt>Shipping: $12</dt>
+                                            <dt>Shipping: <span id="shipping"></span></dt>
                                         </dl>
                                         <dl class="dlist-align">
                                             <dt>Total: </dt>
-                                            <dd class="text-right h5 b">$20,000</dd>
+                                            <dd class="text-right h5 b" id="total_final"></dd>
                                         </dl>
                                     </article>
                                 </div>
@@ -172,5 +186,37 @@ use \App\Http\Controllers\CartController;
             </form>
         </div>
 
+
+        <script type="text/javascript">
+
+            $(".province").on('change', function() {
+
+                var ele = $(this).val();
+                var gst = $("#gst");
+                var pst = $("#pst");
+                var total = $("#subtotal").text();
+                var shipping = $("#shipping");
+                var total_final = $("#total_final");
+
+
+                    $.ajax({
+                        url: '{{ url('checkout-calculate-cost') }}',
+                        method: "patch",
+                        data: {_token: '{{ csrf_token() }}', province: ele, subtotal: total},
+                        dataType: "json",
+                        success: function (response) {
+
+                            gst.text(response.gst);
+                            pst.text(response.pst);
+                            shipping.text(response.shipping);
+                            total_final.text(response.total);
+
+
+                        }
+                    });
+            });
+
+
+        </script>
 
 @endsection
