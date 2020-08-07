@@ -5,7 +5,20 @@
 
 <div class="container">
 
-	<h1>Table Name: <em>Transactions</em></h1>
+	<h1>Table Name: <em>{{ $title }}</em></h1>
+
+	<form method="GET" action="{{ url('/admin/search/search_transactions') }}" style="margin-bottom: 25px">
+		@csrf
+	    <div class="input-group">
+	        <input type="text" class="form-control" name="query"
+	            placeholder="Search transaction by ID"> <span class="input-group-btn">
+	            <button type="submit" class="btn btn-default">
+	                <span class="glyphicon glyphicon-search"></span>
+	            </button>
+	        </span>
+	    </div>
+	  
+	</form>
 
 <!-- this is the table --> 
 	<table class="table table-striped">
