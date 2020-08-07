@@ -118,7 +118,7 @@ class OrderController extends Controller
     public function update(Request $request, $id)
     {
          $valid = $request->validate([
-
+            'order_id' => 'required|integer',
             'user_id' => 'required|integer',                                                       
             'first_name' => 'required|string|max:255',                                                      
             'email' => 'required|email',                                                 
@@ -129,9 +129,9 @@ class OrderController extends Controller
             'total' => "required|regex:/^\d+(\.\d{1,2})?$/"   
          ]);   
 
-        if(!empty($valid['user_id'])){
+        if(!empty($valid['order_id'])){
 
-        $file = $request->file('user_id');
+        $file = $request->file('order_id');
 
         //getting the orginal file name
         $user_id = time() . '_' . $file->getClientOriginalName();
@@ -140,8 +140,9 @@ class OrderController extends Controller
         $path = $file->storeAs('', $watch_id);
     }
 
-    $order = Order::find($valid['id']);
+    $order = Order::find($valid['order_id']);
     $order->first_name = $valid['first_name'];
+    $order->user_id = $valid['user_id'];
     $order->email = $valid['email'];
     $order->billing_address = $valid['billing_address'];
     $order->shipping_address = $valid['shipping_address'];

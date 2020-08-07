@@ -3,14 +3,17 @@
 
 @section('content')
 
+
 <div class="container" style="width: 50%;">
 
     <h1>{{ $title }}</h1>
     
         <p><a href="/admin/categories_table" class="btn btn-warning class=previous">&laquo; Back</a></p>
 
-        <form class="form" action="/admin/categories_table" method="post" enctype="multipart/form-data">
+        <form class="form" action="/admin/edit/edit_categories" method="post" enctype="multipart/form-data">
 
+          
+           
 
            <input type="hidden" name="id" value="{{ $categories->id }}" />
            
