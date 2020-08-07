@@ -76,7 +76,9 @@
                         <?php if(!empty($user->image)) : ?>
                             <div class="user_image" style="background-image: url('/storage/images/{{$user->image}}')"></div>
                         <?php else : ?>
-                            <img class="profile-pic" src="http://lorempixel.com/44/44/people" alt="profile picture">
+                            <div class="user_image">
+                                <i class="fas fa-user-alt text-dark"></i>
+                            </div>
                         <?php endif ; ?>
 
                     </div>                    

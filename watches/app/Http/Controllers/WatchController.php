@@ -20,7 +20,10 @@ class WatchController extends Controller
         $watches = \DB::select(\DB::raw("select * from watches where category_id= :two"), array('two' => $two));
         $title = "TechWatch Home";
 
-        return view('watchhome', compact('categories', 'watches', 'title'));
+        $id = Auth::id(); //get authenticated user id
+        $user = User::find($id); // get authenticated user
+
+        return view('watchhome', compact('categories', 'watches', 'title', 'user'));
     }
 
     /**
@@ -34,7 +37,10 @@ class WatchController extends Controller
         $categories = Category::all();
         $title = "Shop";
 
-       return view('shop', compact('watches', 'categories', 'title'));
+        $id = Auth::id(); //get authenticated user id
+        $user = User::find($id); // get authenticated user
+
+       return view('shop', compact('watches', 'categories', 'title', 'user'));
         
         
     }
@@ -73,7 +79,10 @@ class WatchController extends Controller
         $categories = Category::all();
         $title = 'Detail';
 
-        return view('/detail', compact('watch','title','watches', 'categories'));
+        $id = Auth::id(); //get authenticated user id
+        $user = User::find($id); // get authenticated user
+
+        return view('/detail', compact('watch','title','watches', 'categories', 'user'));
     }
 
     /**
@@ -117,7 +126,11 @@ class WatchController extends Controller
     public function contact(){
         
         $title = 'contact';
-        return view('contact');
+
+        $id = Auth::id(); //get authenticated user id
+        $user = User::find($id); // get authenticated user
+
+        return view('contact', compact('user'));
     } 
 
 
