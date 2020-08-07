@@ -52,37 +52,32 @@ class CheckoutController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function placeOrder(Request $request)
-    {
-        $valid = $request->validate([
-            'user_id' => 'required|integer',
+    public function placeOrder(Request $request) {
+
+        $request->validate([
             'first_name' => 'required|string|max:255',
             'email' => 'required|email',
             'billing_address' => 'required|string|max:255',
             'city' => 'required|string|max:255',
             'province' => 'required|string|max:255',
-//            'country' => 'required|string|max:255',
-//            'postal_code' => 'required|string|max:6'
-//            'shipping_address' => 'required|string|max:255',
-//            'subtotal' => "required|regex:/^\d+(\.\d{1,2})?$/",
-//            'tax_id' => 'required|integer',
-//            'total' => "required|regex:/^\d+(\.\d{1,2})?$/"
+            'country' => 'required|string|max:255',
+            'postal_code' => 'required|string|max:6',
+////        'shipping_address' => 'required|string|max:255',
+////            'subtotal' => "required|regex:/^\d+(\.\d{1,2})?$/",
+////            'tax_id' => 'required|integer',
+////            'total' => "required|regex:/^\d+(\.\d{1,2})?$/"
         ]);
 
 
         Order::create([
-            'user_id' => $valid['user_id'],
-            'first_name' => $valid['first_name'],
-            'email'=> $valid['email'],
-            'billing_address' => $valid['billing_address'],
-            'city' => $valid['city'],
-            'province' => $valid['province'],
-            'country' => $request['country'],
-            'postal_code' => $valid['postal_code'],
-            'shipping_address' => $valid['billing_address'],
+            'user_id' => auth()->user()->id,
+            'first_name' => auth()->user()->first_name,
+            'email'=> auth()->user()->email,
+            'billing_address' => $request['country'] . $request['billing_address'] . $request['city'],
+            'shipping_address' => $request['billing_address'],
             'subtotal' => 222,
-            'tax_id' => 3,
-            'total' => 333
+            'tax_id' => 2,
+            'total' => 22
         ]);
 
         return redirect('/shop')->with('success', 'Order was successfully created');
