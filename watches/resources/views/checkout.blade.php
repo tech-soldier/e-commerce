@@ -153,23 +153,23 @@ use \App\Http\Controllers\CartController;
 
                                     <div class="form-group">
                                         <label>Address</label>
-                                        <input type="text" class="form-control bg-light" name="shipping-address" value="{{ auth()->user()->billing_address }}">
-                                        @error('shipping-address')
+                                        <input type="text" class="form-control bg-light" name="shipping_address" value="{{ auth()->user()->billing_address }}">
+                                        @error('shipping_address')
                                         <span class="alert-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label>City</label>
-                                            <input type="text" class="form-control bg-light" name="shipping-city" value="{{ auth()->user()->city }}">
-                                            @error('shipping-city')
+                                            <input type="text" class="form-control bg-light" name="shipping_city" value="{{ auth()->user()->city }}">
+                                            @error('shipping_city')
                                             <span class="alert-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label>Country</label>
-                                            <input type="text" class="form-control bg-light" name="shipping-country" value="{{ auth()->user()->country }}">
-                                            @error('shipping-country')
+                                            <input type="text" class="form-control bg-light" name="shipping_country" value="{{ auth()->user()->country }}">
+                                            @error('shipping_country')
                                             <span class="alert-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
@@ -177,7 +177,7 @@ use \App\Http\Controllers\CartController;
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label for="exampleFormControlSelect1">Province</label>
-                                            <select class="form-control" id="exampleFormControlSelect1" name="shipping-province">
+                                            <select class="form-control" id="exampleFormControlSelect1" name="shipping_province">
                                                 <option disabled selected> -- Select Province -- </option>
                                                 @foreach($taxes as $tax)
                                                     <option value="{{$tax->province}}">
@@ -185,14 +185,14 @@ use \App\Http\Controllers\CartController;
                                                     </option>
                                                 @endforeach
                                             </select>
-                                            @error('shipping-province')
+                                            @error('shipping_province')
                                             <span class="alert-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
                                         <div class="form-group  col-md-6">
                                             <label>Postal Code</label>
                                             <input type="text" class="form-control bg-light" name="shipping_postal_code" value="{{ auth()->user()->postal_code }}">
-                                            @error('shipping-postal-code')
+                                            @error('shipping_postal_code')
                                             <span class="alert-danger">{{ $message }}</span>
                                             @enderror
                                         </div>

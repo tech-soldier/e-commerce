@@ -115,22 +115,23 @@ class CheckoutController extends Controller
             'province' => 'required|string|max:255',
             'country' => 'required|string|max:255',
             'postal_code' => 'required|string|max:6',
-//            'shipping_address' => 'required|string|max:255',
-//            'shipping_city' => 'required|string|max:255',
-//            'shipping_province' => 'required|string|max:255',
-//            'shipping_country' => 'required|string|max:255',
-//            'shipping_postal_code' => 'required|string|max:6',
+            'shipping_address' => 'required|string|max:255',
+            'shipping_city' => 'required|string|max:255',
+            'shipping_province' => 'required|string|max:255',
+            'shipping_country' => 'required|string|max:255',
+            'shipping_postal_code' => 'required|string|max:6',
         ]);
 
         $cost = session()->get('cost');
 
         Order::create([
             'user_id' => auth()->user()->id,
-            'full_name' => $request['first_name'] . ' ' . $request['last_name'],
-            'email'=> $request['email'],
-            'billing_address' => $request['country'] . ', ' .  $request['billing_address'] . ', ' .
-                $request['city'] . ', ' . $request['province'] . ' ' . $request['postal_code'],
-            'shipping_address' => $request['billing_address'],
+            'full_name' => $valid['first_name'] . ' ' . $valid['last_name'],
+            'email'=> $valid['email'],
+            'billing_address' => $valid['country'] . ', ' .  $valid['billing_address'] . ', ' .
+                $valid['city'] . ', ' . $valid['province'] . ' ' . $valid['postal_code'],
+            'shipping_address' => $valid['shipping_country'] . ', ' .  $valid['shipping_address'] . ', ' .
+                $valid['shipping_city'] . ', ' . $valid['shipping_province'] . ' ' . $valid['shipping_postal_code'],
             'subtotal' => $cost['subtotal'],
             'GST' => $cost['gst'],
             'PST' => $cost['pst'],
