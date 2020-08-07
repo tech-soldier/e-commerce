@@ -25,7 +25,7 @@ Route::get('/contact', 'PagesController@contact');
 
 Route::get('/{watch}/detail', 'WatchController@show');
 
-Route::get('/profile', 'WatchController@profile');
+Route::get('/profile', 'UserController@profile');
 
 Route::get('/profile/{id}/edit', 'UserController@edit'); // edit form
 

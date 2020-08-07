@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\User;
+use App\Order;
+use Auth;
 
 class UserController extends Controller
 {
@@ -132,4 +134,28 @@ class UserController extends Controller
     {
         //
     }
+
+
+    /**
+     * Display profile page with previous orders
+     *
+     * @return view 'profile'
+     */
+    public function profile()
+    {
+        $title = 'Profile';
+        //get authenticated user id
+        $id = Auth::id();
+        // test if user is authenticated
+        if(empty($id)){
+            return view('/auth/login'); // redirect to login if not
+        }
+        // get user's data
+        $user = User::find($id);
+        // get all orders associated with the user
+        $orders = Order::all()->where('user_id', $id);
+
+        // return view with user's profile
+        return view('/profile', compact('title','user','orders'));
+    }   
 }
