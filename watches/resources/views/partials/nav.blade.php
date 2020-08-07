@@ -68,6 +68,28 @@
                     </form>
                 </div>
             </li>
+
+
+
+            <div class="circle_search">
+                <!-- <i class="fas fa-search"></i> -->
+
+                <form method="get" action="{{ url('/shop_search') }}">
+                    @csrf
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="query" name="query" placeholder="Search Watch" /> 
+                            <span class="input-group-btn">
+                                <button type="submit" class="btn btn-default">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </span>
+                    </div>
+                 </form>
+
+            </div>
+
+
+
             
             <div class=" ml-3 acct_user d-flex">
             <!-- util profile -->
@@ -93,8 +115,8 @@
 
         <div class=" ml-2 acct_srch d-flex">
             <!-- util search -->
-            <div class="circle_search">
-                <!-- <i class="fas fa-search"></i> -->
+            <!-- <div class="circle_search">
+                
 
                 <form method="get" action="{{ url('/shop_search') }}">
                     @csrf
@@ -108,7 +130,7 @@
                     </div>
                  </form>
 
-            </div>
+            </div> -->
             <!-- shopping cart -->
             <div class="ml-2 circle">
                 <a href="/cart"> <i class="fas fa-shopping-cart"></i></a>
