@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use Auth;
 
 class PagesController extends Controller
 {
@@ -12,7 +14,9 @@ class PagesController extends Controller
      */
     public function watchhome(){
         $title = 'TechWatch Home';
-        return view('watchhome');
+        $id = Auth::id(); //get authenticated user id
+        $user = User::find($id); // get authenticated user
+        return view('watchhome', compact('user'));
     }
 
       /**
@@ -22,7 +26,9 @@ class PagesController extends Controller
 
     public function contact(){
         $title = 'Contact';
-        return view('contact');
+        $id = Auth::id(); //get authenticated user id
+        $user = User::find($id); // get authenticated user
+        return view('contact', compact('user'));
     }
 
     /**
@@ -31,7 +37,9 @@ class PagesController extends Controller
      */
     public function about(){
         $title = 'About';
-        return view('about');
+        $id = Auth::id(); //get authenticated user id
+        $user = User::find($id); // get authenticated user
+        return view('about', compact('user'));
     }
 
     /**
@@ -40,7 +48,9 @@ class PagesController extends Controller
      */
     public function detail(){
         $title = 'Product Detail';
-        return view('detail');
+        $id = Auth::id(); //get authenticated user id
+        $user = User::find($id); // get authenticated user
+        return view('detail', compact('user'));
     }
 
     /**
@@ -49,7 +59,9 @@ class PagesController extends Controller
      */
     public function shop(){
         $title = 'Shop';
-        return view('shop');
+        $id = Auth::id(); //get authenticated user id
+        $user = User::find($id); // get authenticated user
+        return view('shop', compact('user'));
     }
 
     /**
@@ -58,6 +70,8 @@ class PagesController extends Controller
      */
     public function cart(){
         $title = 'Shopping Cart';
-        return view('cart');
+        $id = Auth::id(); //get authenticated user id
+        $user = User::find($id); // get authenticated user
+        return view('cart', compact('user'));
     }
 }

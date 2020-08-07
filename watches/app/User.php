@@ -32,7 +32,8 @@ class User extends Authenticatable
         'province', 
         'country', 
         'postal_code', 
-        'phone_number'
+        'phone_number',
+        'is_admin'
         
     ];
 
