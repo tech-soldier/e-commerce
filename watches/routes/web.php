@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Watch; 
+use App\Watch;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -83,7 +83,7 @@ Route::get('/admin/transactions_table', 'AdminController@transactions');
 Route::get('/admin/categories_table', 'AdminController@categories');
 
 
-/* admin search routes ------------------------------------------*/ 
+/* admin search routes ------------------------------------------*/
 Route::get('/admin/search/search_watches', 'Admin\WatchController@search');
 
 Route::get('/admin/search/search_users', 'Admin\UserController@search');
@@ -150,7 +150,7 @@ Route::get('/admin/edit/{category_id}/edit_category', 'Admin\CategoryController@
 
 Route::put('/admin/edit/edit_category', 'Admin\CategoryController@update');
 
- 
+
  //edit order table
 Route::get('/admin/edit/{id}/edit_orders', 'Admin\OrderController@edit');
 

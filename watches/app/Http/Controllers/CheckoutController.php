@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Order;
+use App\User;
 use Illuminate\Http\Request;
 use App\Tax;
 use \CartController;
@@ -12,8 +14,9 @@ class CheckoutController extends Controller
     {
         $taxes = Tax::all();
         $title = "Checkout";
+        $user = User::all();
 
-        return view('checkout', compact('taxes', 'title'));
+        return view('checkout', compact('taxes', 'title', 'user'));
     }
 
 
@@ -41,8 +44,48 @@ class CheckoutController extends Controller
             return response()->json(['gst' => $gst, 'pst' => $pst, 'shipping' => $shipping, 'total' => $total]);
 
       }
-
-
-
     }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function placeOrder(Request $request)
+    {
+        $valid = $request->validate([
+            'user_id' => 'required|integer',
+            'first_name' => 'required|string|max:255',
+            'email' => 'required|email',
+            'billing_address' => 'required|string|max:255',
+            'city' => 'required|string|max:255',
+            'province' => 'required|string|max:255',
+//            'country' => 'required|string|max:255',
+//            'postal_code' => 'required|string|max:6'
+//            'shipping_address' => 'required|string|max:255',
+//            'subtotal' => "required|regex:/^\d+(\.\d{1,2})?$/",
+//            'tax_id' => 'required|integer',
+//            'total' => "required|regex:/^\d+(\.\d{1,2})?$/"
+        ]);
+
+
+        Order::create([
+            'user_id' => $valid['user_id'],
+            'first_name' => $valid['first_name'],
+            'email'=> $valid['email'],
+            'billing_address' => $valid['billing_address'],
+            'city' => $valid['city'],
+            'province' => $valid['province'],
+            'country' => $request['country'],
+            'postal_code' => $valid['postal_code'],
+            'shipping_address' => $valid['billing_address'],
+            'subtotal' => 222,
+            'tax_id' => 3,
+            'total' => 333
+        ]);
+
+        return redirect('/shop')->with('success', 'Order was successfully created');
+    }
+
 }
