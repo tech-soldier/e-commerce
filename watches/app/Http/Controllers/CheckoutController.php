@@ -39,10 +39,20 @@ class CheckoutController extends Controller
 
             //getting cart out of session
 
-            session()->put('order_total', $total);
-            session()->put('gst', $total);
-            session()->put('pst', $total);
-            session()->put('shipping', $shipping);
+            $cost = [
+                "order_total" => $total,
+                "subtotal" => $subtotal,
+                "gst" => $gst,
+                "pst" => $pst,
+                "shipping" => $shipping
+            ];
+
+            session()->put('cost', $cost);
+//            session()->put('subtotal', $subtotal);
+//            session()->put('gst', $gst);
+//            session()->put('pst', $pst);
+//            //session()->put('hst', $hst);
+//            session()->put('shipping', $shipping);
 
             return response()->json(['gst' => $gst, 'pst' => $pst, 'shipping' => $shipping, 'total' => $total]);
 
@@ -110,18 +120,30 @@ class CheckoutController extends Controller
 ////        'total' => "required|regex:/^\d+(\.\d{1,2})?$/"
         ]);
 
+//        $subtotal = session()->get('subtotal');
+//        $total = session()->get('order_total');
+//        $shipping = session()->get('shipping');
+//        $gst = session()->get('gst');
+//        $pst = session()->get('pst');
+//        $hst = session()->get('hst');
+
+        $cost = session()->get('cost');
+        $carrt = session()->get('cart');
 
         Order::create([
             'user_id' => auth()->user()->id,
             'first_name' => $request['first_name'],
             'email'=> $request['email'],
-            'billing_address' => $request['country'] . ' ' .  $request['billing_address'] . ' ' .
-                $request['city'] . ' ' . $request['province'] . ' ' . $request['postal_code'],
+            'billing_address' => $request['country'] . ', ' .  $request['billing_address'] . ', ' .
+                $request['city'] . ', ' . $request['province'] . ' ' . $request['postal_code'],
             'shipping_address' => $request['billing_address'],
-            'subtotal' => $request['order_subtotal'],
-            'tax_id' => 2,
-            'total' => $request['total']
+            'subtotal' => $cost['subtotal'],
+
+            'total' => $cost['total']
         ]);
+
+        unset($cost);
+        unset($cart);
 
 //        $user = User::find(auth()->user()->id);
 //
