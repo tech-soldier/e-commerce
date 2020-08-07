@@ -120,7 +120,7 @@ class OrderController extends Controller
             'tax_id' => 'required|integer',                                                         
             'total' => "required|regex:/^\d+(\.\d{1,2})?$/"   
          ]);   
-
+         dd($valid);
     
 
         $order = Order::find($valid['id']);
