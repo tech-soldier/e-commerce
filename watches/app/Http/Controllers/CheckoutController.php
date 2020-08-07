@@ -16,11 +16,13 @@ class CheckoutController extends Controller
         $title = "Checkout";
         $user = User::all();
 
+
+
         return view('checkout', compact('taxes', 'title', 'user'));
     }
 
 
-    public function calculateCost(Request $request) {
+    public static function calculateCost(Request $request) {
         if($request->province and $request->subtotal) {
             $taxes = Tax::where('province', '=', $request->province)->first();
             $subtotal = floatval($request->subtotal);
@@ -43,7 +45,8 @@ class CheckoutController extends Controller
 
             return response()->json(['gst' => $gst, 'pst' => $pst, 'shipping' => $shipping, 'total' => $total]);
 
-      }
+
+        }
     }
 
     /**
@@ -54,6 +57,8 @@ class CheckoutController extends Controller
      */
     public function placeOrder(Request $request) {
 
+        dd($request['order_subtotal']);
+
         $request->validate([
             'first_name' => 'required|string|max:255',
             'email' => 'required|email',
@@ -63,22 +68,37 @@ class CheckoutController extends Controller
             'country' => 'required|string|max:255',
             'postal_code' => 'required|string|max:6',
 ////        'shipping_address' => 'required|string|max:255',
-////            'subtotal' => "required|regex:/^\d+(\.\d{1,2})?$/",
-////            'tax_id' => 'required|integer',
-////            'total' => "required|regex:/^\d+(\.\d{1,2})?$/"
+////        'subtotal' => "required|regex:/^\d+(\.\d{1,2})?$/",
+////        'tax_id' => 'required|integer',
+////        'total' => "required|regex:/^\d+(\.\d{1,2})?$/"
         ]);
 
 
         Order::create([
             'user_id' => auth()->user()->id,
-            'first_name' => auth()->user()->first_name,
-            'email'=> auth()->user()->email,
-            'billing_address' => $request['country'] . $request['billing_address'] . $request['city'],
+            'first_name' => $request['first_name'],
+            'email'=> $request['email'],
+            'billing_address' => $request['country'] . ' ' .  $request['billing_address'] . ' ' .
+                $request['city'] . ' ' . $request['province'] . ' ' . $request['postal_code'],
             'shipping_address' => $request['billing_address'],
-            'subtotal' => 222,
+            'subtotal' => $request['order_subtotal'],
             'tax_id' => 2,
-            'total' => 22
+            'total' => $request['total']
         ]);
+
+//        $user = User::find(auth()->user()->id);
+//
+//        $user->first_name = $request['first_name'];
+//        $user->last_name = $request['last_name'];
+//        $user->billing_address = $request['billing_address'];
+//        $user->city = $request['city'];
+//        $user->province = $request['province'];
+//        $user->country = $request['country'];
+//        $user->first_name = $request['postal_code'];
+//        $user->first_name = $request['postal_code'];
+//
+//
+//        $user->save();
 
         return redirect('/shop')->with('success', 'Order was successfully created');
     }

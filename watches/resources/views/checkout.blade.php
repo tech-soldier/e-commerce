@@ -219,6 +219,9 @@ use \App\Http\Controllers\CartController;
                                         <dl class="dlist-align">
                                             <dt>Subtotal: <span id="subtotal" name="subtotal">{{ CartController::getCartTotal() }}</span></dt>
                                         </dl>
+
+                                            <input type="text" name="order_subtotal" disabled class="form-control" id="order_subtotal" value="{{ CartController::getCartTotal() }}">
+
                                         <dl class="dlist-align">
                                             <dt>GST: <span id="gst"></span></dt>
                                         </dl>
@@ -231,7 +234,11 @@ use \App\Http\Controllers\CartController;
                                         <dl class="dlist-align">
                                             <dt>Total: </dt>
                                             <dd class="text-right h5 b" id="total_final" name="total"></dd>
+                                            <div class="form-group">
+                                                <input type="hidden" name="total" disabled class="form-control" id="total" value=" ">
+                                            </div>
                                         </dl>
+
                                     </article>
                                 </div>
                             </div>
@@ -255,6 +262,7 @@ use \App\Http\Controllers\CartController;
                 var total = $("#subtotal").text();
                 var shipping = $("#shipping");
                 var total_final = $("#total_final");
+                var order_total = $("#total");
 
 
                     $.ajax({
@@ -268,6 +276,7 @@ use \App\Http\Controllers\CartController;
                             pst.text(response.pst);
                             shipping.text(response.shipping);
                             total_final.text(response.total);
+                            order_total.setAttribute("value", response.total);
 
 
                         }
