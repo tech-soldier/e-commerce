@@ -166,4 +166,8 @@ Route::delete('/admin/taxes_table', 'Admin\CategoryController@destroy');
 
 // edit users table
 
+Route::get('/admin/edit/{id}/edit_users', 'Admin\UserController@edit');
+
+Route::put('/admin/edit/edit_users', 'Admin\USerController@update');
+
 Route::delete('/admin/users_table', 'Admin\UserController@destroy');
