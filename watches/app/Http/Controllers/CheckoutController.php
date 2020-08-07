@@ -106,33 +106,27 @@ class CheckoutController extends Controller
 //    }
 
 
-        $request->validate([
+        $valid = $request->validate([
             'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
             'email' => 'required|email',
             'billing_address' => 'required|string|max:255',
             'city' => 'required|string|max:255',
             'province' => 'required|string|max:255',
             'country' => 'required|string|max:255',
             'postal_code' => 'required|string|max:6',
-////        'shipping_address' => 'required|string|max:255',
-////        'subtotal' => "required|regex:/^\d+(\.\d{1,2})?$/",
-////        'tax_id' => 'required|integer',
-////        'total' => "required|regex:/^\d+(\.\d{1,2})?$/"
+//            'shipping_address' => 'required|string|max:255',
+//            'shipping_city' => 'required|string|max:255',
+//            'shipping_province' => 'required|string|max:255',
+//            'shipping_country' => 'required|string|max:255',
+//            'shipping_postal_code' => 'required|string|max:6',
         ]);
 
-//        $subtotal = session()->get('subtotal');
-//        $total = session()->get('order_total');
-//        $shipping = session()->get('shipping');
-//        $gst = session()->get('gst');
-//        $pst = session()->get('pst');
-//        $hst = session()->get('hst');
-
         $cost = session()->get('cost');
-        $cart = session()->get('cart');
 
         Order::create([
             'user_id' => auth()->user()->id,
-            'first_name' => $request['first_name'],
+            'full_name' => $request['first_name'] . ' ' . $request['last_name'],
             'email'=> $request['email'],
             'billing_address' => $request['country'] . ', ' .  $request['billing_address'] . ', ' .
                 $request['city'] . ', ' . $request['province'] . ' ' . $request['postal_code'],
@@ -145,8 +139,7 @@ class CheckoutController extends Controller
             'total' => $cost['order_total']
         ]);
 
-        unset($cost);
-        unset($cart);
+        session()->forget('cart');
 
 //        $user = User::find(auth()->user()->id);
 //
