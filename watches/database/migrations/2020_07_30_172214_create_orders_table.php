@@ -23,12 +23,12 @@ class CreateOrdersTable extends Migration
             $table->string('shipping_address', 255); 
             $table->decimal('subtotal', 14,2); 
             // recently added below
-            $table->integer('GST')->unsigned(); 
-            $table->integer('PST')->unsigned(); 
-            $table->integer('HST')->unsigned(); 
+            $table->decimal('GST', 10,2)->unsigned(); 
+            $table->decimal('PST', 10,2)->unsigned(); 
+            $table->decimal('HST', 10,2)->unsigned(); 
             $table->decimal('shipping', 14,2);
             $table->boolean('transaction_status')->default(false); 
-            
+
             $table->decimal('total', 14,2); 
             $table->timestamps();
             $table->softDeletes();
