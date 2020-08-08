@@ -25,6 +25,7 @@ if(!empty($_GET['s'])) {
     <!-- Favicon  -->
     <!-- <link rel="icon" href="img/core-img/favicon.ico"> -->
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Hairline&family=Staatliches&display=swap" rel="stylesheet">
     <!-- Font Awesome icons (free version)-->
 
     <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
