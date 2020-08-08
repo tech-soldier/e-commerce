@@ -16,7 +16,7 @@ class CreateTransactionsTable extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
             $table->integer('order_id')->unsigned(); 
-            $table->string('transaction_code', 255); 
+            $table->boolean('transaction_status')->default(false); 
             // suggested to add
             $table->integer('response_code'); 
             $table->string('auth_code', 255); 

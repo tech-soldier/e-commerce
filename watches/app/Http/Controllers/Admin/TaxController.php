@@ -17,7 +17,7 @@ class TaxController extends Controller
 
         return view('/admin/search/search_taxes', compact('taxes', 'search_term')); 
     }
-
+  
     /**
      * Display a listing of the resource.
      *
@@ -52,12 +52,14 @@ class TaxController extends Controller
     {
         $valid = $request->validate([
             'province' => 'required|string|max:255',
-            'PST' => "required|regex:/^\d+(\.\d{1,2})?$/"
+            'PST' => "required|regex:/^\d+(\.\d{1,2})?$/", 
+            'HST' => "required|regex:/^\d+(\.\d{1,2})?$/"
         ]); 
 
         Tax::create([
             'province' => $valid['province'],  
-            'PST' => $valid['PST']
+            'PST' => $valid['PST'], 
+            'HST' => $valid['HST']
 
         ]); 
 
@@ -83,8 +85,41 @@ class TaxController extends Controller
      */
     public function edit($id)
     {
-        //
+        $taxes=Tax::find($id);
+        $title = 'Edit Tax'; 
+        return view('/admin/edit/edit_tax', compact('taxes', 'title')); 
     }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $valid = $request->validate([
+            'id' => 'required|integer',
+            'province' => 'required|string|max:255',
+            'PST' => "required|regex:/^\d+(\.\d{1,2})?$/", 
+            'HST' => "required|regex:/^\d+(\.\d{1,2})?$/"
+        ]); 
+
+
+         $taxes = Tax::find($request['id']);
+         $taxes->province = $valid['province'];
+         $taxes->PST = $valid['PST']; 
+         $taxes->HST = $valid['HST']; 
+    
+        if($taxes->save() ) {
+            return redirect('/admin/taxes_table')->with('success', 'Your tax was successfully updated');
+
+        }
+
+        return redirect('/admin/taxes_table')->with('error', 'There was a problem updating the tax');
+    }
+
 
     
     /**
@@ -105,16 +140,6 @@ class TaxController extends Controller
         return back()->with('error', 'There was a problem deleting that record');
     }
     
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+    
 
 }

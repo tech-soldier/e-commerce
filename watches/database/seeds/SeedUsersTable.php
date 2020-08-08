@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 
 use Carbon\Carbon;
 
-class SeedUsersTable extends Seeder
+class SeedUsersTable extends Seeder 
 {
     /**
      * Run the database seeds.
@@ -102,7 +102,7 @@ class SeedUsersTable extends Seeder
         	'province' => 'Ontario', 
         	'country' => 'Canada', 
         	'postal_code' => 'e5y6u7', 
-        	'email' => 'rahwa@mts.net', 
+        	'email' => 'rahwa3netsereab@gmail.com', 
         	'phone_number' => '226-146-9107', 
             'image' => 'linkedin_rahwa.jpg', 
         	'password' => password_hash('mypass', PASSWORD_DEFAULT),

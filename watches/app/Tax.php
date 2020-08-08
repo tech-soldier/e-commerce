@@ -11,10 +11,11 @@ class Tax extends Model
 	use SoftDeletes;
 
 	protected $fillable = [
-		'tax_id', 
+		'id', 
 		'province', 
 		'GST', 
-		'PST'
+		'PST', 
+		'HST'
 	]; 
 
    	public function order() 

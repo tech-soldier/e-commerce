@@ -10,14 +10,18 @@ class Order extends Model
     use SoftDeletes; 
 
     protected $fillable = [
-        'order_id',      
+        'id',      
         'user_id',                                                            
-        'first_name',                                                            
+        'full_name',                                                            
         'email',                                                        
         'billing_address',                                                        
         'shipping_address',                                                       
-        'subtotal',                                             
-        'tax_id',                                                              
+        'subtotal',  
+        'transaction_status',  
+        'GST', 
+        'PST', 
+        'HST', 
+        'shipping',                                         
         'total'    
     ];
 

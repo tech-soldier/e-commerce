@@ -17,12 +17,18 @@ class CreateOrdersTable extends Migration
             $table->id();
             //$table->integer('watch_id')->unsigned(); 
             $table->integer('user_id')->unsigned(); 
-            $table->string('first_name', 255); 
+            $table->string('full_name', 255); 
             $table->string('email', 255); 
             $table->string('billing_address', 255); 
             $table->string('shipping_address', 255); 
             $table->decimal('subtotal', 14,2); 
-            $table->integer('tax_id')->unsigned(); 
+            // recently added below
+            $table->decimal('GST', 10,2)->unsigned(); 
+            $table->decimal('PST', 10,2)->unsigned(); 
+            $table->decimal('HST', 10,2)->unsigned(); 
+            $table->decimal('shipping', 14,2);
+            $table->boolean('transaction_status')->default(false); 
+
             $table->decimal('total', 14,2); 
             $table->timestamps();
             $table->softDeletes();

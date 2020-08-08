@@ -39,7 +39,7 @@
 			<tr>
 				<th scope="row">{{ $transaction->id }}</th>
 				<th>{{ $transaction->order_id }}</th>
-				<th>{{ $transaction->transaction_code }}</th>
+				<th>{{ $transaction->transaction_status }}</th>
 				<th>{{ $transaction->response_code }}</th>
 				<th>{{ $transaction->auth_code }}</th>
 				<th>{{ $transaction->order_id }}</th>
