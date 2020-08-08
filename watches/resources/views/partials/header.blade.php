@@ -1,6 +1,7 @@
 <?php
 
 use App\Watches;
+use Illuminate\Http\Request;
 
 // $watches = new Watches();
 
