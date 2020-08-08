@@ -5,8 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-
-use App\Tax; 
 use App\Order; 
 use App\Watch; 
 use App\User; 
@@ -43,7 +41,7 @@ class OrderController extends Controller
         $title = 'Create A New Order'; 
         $orders = Order::all(); 
         $user = User::all();
-        $watch = Watch::all(); 
+        // $watch = Watch::all(); 
         $taxes = Tax::all(); 
 
 
@@ -102,7 +100,6 @@ class OrderController extends Controller
     {
         $title = 'Edit Order';
         $order = Order::find($id); 
-        //$user = User::all();
         return view('/admin/edit/edit_orders', compact('title', 'order')); 
     }
 
@@ -115,31 +112,31 @@ class OrderController extends Controller
      */
     public function update(Request $request)
     {
+
+        // dd($request); 
+
          $valid = $request->validate([
-            'id' => 'required|integer',
-            'user_id' => 'required|integer',                                                       
+            'id' => 'required|integer',                                             
             'full_name' => 'required|string|max:255',                                                      
             'email' => 'required|email',                                                 
             'billing_address' => 'required|string|max:255',                                              
             'shipping_address' => 'required|string|max:255',
             'subtotal' => "required|regex:/^\d+(\.\d{1,2})?$/",     
-            'GST' => "required|regex:/^\d+(\.\d{1,2})?$/",   
             'PST' => "required|regex:/^\d+(\.\d{1,2})?$/",  
             'HST' => "required|regex:/^\d+(\.\d{1,2})?$/",  
             'shipping' => "required|regex:/^\d+(\.\d{1,2})?$/", 
             'transaction_status' => 'required|integer', 
-            'total' => "required|regex:/^\d+(\.\d{1,2})?$/"     
+            'total' => "required|regex:/^\d+(\.\d{1,2})?$/"
          ]);   
     
 
+
             $order = Order::find($valid['id']);
-            $order->user_id = $valid['user_id'];
             $order->full_name = $valid['full_name'];
             $order->email = $valid['email'];
             $order->billing_address = $valid['billing_address'];
             $order->shipping_address = $valid['shipping_address'];
             $order->subtotal = $valid['subtotal'];
-            $order->GST = $valid['GST'] ?? 0.05; 
             $order->PST = $valid['PST']; 
             $order->HST = $valid['HST'];
             $order->shipping = $valid['shipping']; 

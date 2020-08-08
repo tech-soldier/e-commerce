@@ -22,7 +22,7 @@ class Order extends Model
         'PST', 
         'HST', 
         'shipping',                                         
-        'total'    
+        'total', 
     ];
 
 
@@ -37,13 +37,13 @@ class Order extends Model
     	return $this->hasMany(Transaction::class);
     }
 
-    public function watch()
-    {
-    	return $this->belongsToMany(Watch::class);
-    }
+    // public function watch()
+    // {
+    // 	return $this->belongsToMany(Watch::class);
+    // }
 
-    public function tax()
-    {
-        return $this->belongsTo(Tax::class);
-    }
+//     public function tax()
+//     {
+//         return $this->belongsTo(Tax::class);
+//     }
 }
