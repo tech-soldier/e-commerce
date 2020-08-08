@@ -110,6 +110,8 @@ class UserController extends Controller
             'is_admin' => 'required|integer'
         ]);
 
+        dd($valid);
+        
         $user=User::find($valid['id']);
         $user->email=$valid['email'];
         $user->password=$valid['password'];
