@@ -10,7 +10,7 @@
 
   @if(session('success'))
 
-    <div class="alert alert-success  my-4">
+    <div class="alert alert-success text-center">
 
       {{session('success')}}
 
@@ -20,7 +20,7 @@
 
   @if($errors->any()) <!--if there is any errors, returns true of false, output-->
 
-    <div class="alert alert-danger  my-4">
+    <div class="alert alert-danger text-center">
 
       Please review and correct form submission.
 
