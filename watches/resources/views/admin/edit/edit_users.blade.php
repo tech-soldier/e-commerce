@@ -8,6 +8,7 @@
     <p><a href="/admin/users_table" class="btn btn-warning">Back to users</a></p>
 
     <form method="post" action="/admin/edit/edit_users" enctype="multipart/form-data" >
+
           @csrf 
           @method('PUT')
 
