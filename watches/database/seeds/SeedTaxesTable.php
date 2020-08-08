@@ -17,16 +17,16 @@ class SeedTaxesTable extends Seeder
 	        'province' => 'Manitoba', 
 	        'GST' => 0.05, 
 	        'PST' => 0.07, 
-	        'HST' => 0.12, 
+	        'HST' => 0, 
 	        'created_at' => Carbon::now(), 
 	        'updated_at' => Carbon::now()
 	    ]);
 
 	    DB::table('taxes')->insert([
 	        'province' => 'Ontario', 
-	        'GST' => 0.05, 
-	        'PST' => 0.08, 
-	        'HST' => 0.12, 
+	        'GST' => null, 
+	        'PST' => null, 
+	        'HST' => 0.13, // USES HST
 	        'created_at' => Carbon::now(), 
 	        'updated_at' => Carbon::now()
 	    ]); 
@@ -60,27 +60,27 @@ class SeedTaxesTable extends Seeder
 
 	    DB::table('taxes')->insert([
 	        'province' => 'New Brunswick', 
-	        'GST' => 0.05, 
-	        'PST' => 0.10, 
-	        'HST' => 0.15, 
+	        'GST' => null , 
+	        'PST' => null , 
+	        'HST' => 0.15, // USES HST
 	        'created_at' => Carbon::now(), 
 	        'updated_at' => Carbon::now()
 	    ]);
 
 	    DB::table('taxes')->insert([
 	        'province' => 'Newfoundland and Labrador', 
-	        'GST' => 0.05, 
-	        'PST' => 0.10, 
-	        'HST' => 0.15, 
+	        'GST' => null , 
+	        'PST' => null , 
+	        'HST' => 0.15, // USES HST
 	        'created_at' => Carbon::now(), 
 	        'updated_at' => Carbon::now()
 	    ]);
 
 	    DB::table('taxes')->insert([
 	        'province' => 'Prince Edward Island', 
-	        'GST' => 0.05, 
-	        'PST' => 0.10, 
-	        'HST' => 0.15, 
+	        'GST' => null , 
+	        'PST' => null , 
+	        'HST' => 0.15, // USES HST
 	        'created_at' => Carbon::now(), 
 	        'updated_at' => Carbon::now()
 	    ]);
@@ -114,9 +114,9 @@ class SeedTaxesTable extends Seeder
 
 	    DB::table('taxes')->insert([
 	        'province' => 'Nova Scotia', 
-	        'GST' => 0.05, 
-	        'PST' => 0.10, 
-	        'HST' => 0.15,
+	        'GST' => null , 
+	        'PST' => null , 
+	        'HST' => 0.15, // USES HST
 	        'created_at' => Carbon::now(), 
 	        'updated_at' => Carbon::now()
 	    ]);
