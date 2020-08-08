@@ -15,25 +15,26 @@
              @csrf 
              @method('PUT')
 
-      <div class="form-group">
-        <label for="category_id">Category ID: </label>
-        <input type="text" name="category_id" disabled class="form-control" id="category_id" value="{{ old('category_id') }}">
-        
-        @error('category_id')
-            <span class="alert-danger">{{ $message }}</span>
-        @enderror
-      </div>
-      
-       <div class="form-group">
-        <label for="category_name">Category Name: </label>
-        <input type="text" name="category_name" class="form-control" id="category_name" value="{{ old('category_name') }}">
-        @error('category_name')
-            <span class="alert-danger">{{ $message }}</span>
-        @enderror
-      </div>
 
-      <td><button type="submit" class="btn btn-primary">Submit</button></td>
-    </form>
+          <div class="form-group">
+            <label for="category_id">Category ID: </label>
+            <input type="text" name="category_id" disabled class="form-control" id="category_id" value="{{ old('category_id', $category->id) }}">
+            
+            @error('category_id')
+                <span class="alert-danger">{{ $message }}</span>
+            @enderror
+          </div>
+          
+           <div class="form-group">
+            <label for="category_name">Category Name: </label>
+            <input type="text" name="category_name" class="form-control" id="category_name" value="{{ old('category_name', $category->category_name) }}">
+            @error('category_name')
+                <span class="alert-danger">{{ $message }}</span>
+            @enderror
+          </div>
+
+          <td><button type="submit" class="btn btn-primary">Submit</button></td>
+        </form>
     
 </div>
 

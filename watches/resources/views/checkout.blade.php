@@ -108,18 +108,31 @@ use \App\Http\Controllers\CartController;
                                 </div>
 
 
-
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="card_type">Card Type</label>
+                                        <select class="form-control province" id="card_type" name="card_type">
+                                            <option disabled selected> -- Select Card Type -- </option>
+                                            <option value="Visa">Visa</option>
+                                            <option value="Mastercard">Mastercard</option>
+                                            <option value="Amex">Amex</option>
+                                        </select>
+                                        @error('card_type')
+                                        <span class="alert-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
                                 <div class="form-row">
                                     <div class="form-group  col-md-6">
                                         <label>Name On Card</label>
-                                        <input type="text" class="form-control bg-light" name="card_name">
+                                        <input type="text" class="form-control bg-light" name="card_name" value="{{ old('card_name') }}">
                                         @error('card_name')
                                         <span class="alert-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="form-group  col-md-6">
                                         <label>Card Number</label>
-                                        <input type="text" class="form-control bg-light" name="card_number">
+                                        <input type="text" class="form-control bg-light" name="card_number" value="{{ old('card_number') }}">
                                         @error('card_number')
                                         <span class="alert-danger">{{ $message }}</span>
                                         @enderror
@@ -128,14 +141,14 @@ use \App\Http\Controllers\CartController;
                                 <div class="form-row">
                                     <div class="form-group  col-md-6">
                                         <label>Card Expiry</label>
-                                        <input type="text" class="form-control bg-light" name="card_expiry">
+                                        <input type="text" class="form-control bg-light" name="card_expiry" value="{{ old('card_expiry') }}">
                                         @error('card_expiry')
                                         <span class="alert-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="form-group  col-md-6">
                                         <label>CVV</label>
-                                        <input type="text" class="form-control bg-light" name="cvv">
+                                        <input type="text" class="form-control bg-light" name="cvv" value="{{ old('cvv') }}">
                                         @error('cvv')
                                         <span class="alert-danger">{{ $message }}</span>
                                         @enderror
@@ -153,23 +166,23 @@ use \App\Http\Controllers\CartController;
 
                                     <div class="form-group">
                                         <label>Address</label>
-                                        <input type="text" class="form-control bg-light" name="shipping-address">
-                                        @error('shipping-address')
+                                        <input type="text" class="form-control bg-light" name="shipping_address" value="{{ auth()->user()->billing_address }}">
+                                        @error('shipping_address')
                                         <span class="alert-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label>City</label>
-                                            <input type="text" class="form-control bg-light" name="shipping-city">
-                                            @error('shipping-city')
+                                            <input type="text" class="form-control bg-light" name="shipping_city" value="{{ auth()->user()->city }}">
+                                            @error('shipping_city')
                                             <span class="alert-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label>Country</label>
-                                            <input type="text" class="form-control bg-light" name="shipping-country">
-                                            @error('shipping-country')
+                                            <input type="text" class="form-control bg-light" name="shipping_country" value="{{ auth()->user()->country }}">
+                                            @error('shipping_country')
                                             <span class="alert-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
@@ -177,7 +190,7 @@ use \App\Http\Controllers\CartController;
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label for="exampleFormControlSelect1">Province</label>
-                                            <select class="form-control" id="exampleFormControlSelect1" name="shipping-province">
+                                            <select class="form-control" id="exampleFormControlSelect1" name="shipping_province">
                                                 <option disabled selected> -- Select Province -- </option>
                                                 @foreach($taxes as $tax)
                                                     <option value="{{$tax->province}}">
@@ -185,14 +198,14 @@ use \App\Http\Controllers\CartController;
                                                     </option>
                                                 @endforeach
                                             </select>
-                                            @error('shipping-province')
+                                            @error('shipping_province')
                                             <span class="alert-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
                                         <div class="form-group  col-md-6">
                                             <label>Postal Code</label>
-                                            <input type="text" class="form-control bg-light" name="shipping_postal_code">
-                                            @error('shipping-postal-code')
+                                            <input type="text" class="form-control bg-light" name="shipping_postal_code" value="{{ auth()->user()->postal_code }}">
+                                            @error('shipping_postal_code')
                                             <span class="alert-danger">{{ $message }}</span>
                                             @enderror
                                         </div>

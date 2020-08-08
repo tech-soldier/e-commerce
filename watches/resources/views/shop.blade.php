@@ -47,7 +47,8 @@
                         <!-- Product Description -->
                         <div class="product_description ">
                             <div class="watch_info_wrapper pt-4 pb-3 text-center ">
-                                <a class="text-center h4 " href="{{$watch->id}}/detail">{{$watch->watch_name}}</a>
+                                <a class="text-center h4 watch-name " href="{{$watch->id}}/detail">{{$watch->watch_name}}</a>
+                                <hr style="background-color: white; width: 90% ;">
                                 <h6 class="text-center product-price mt-2">$ {{$watch->price}}</h6>
                                 <p class="text-center mb-0"> Width: {{$watch->strap_width}}</p>
                             </div>

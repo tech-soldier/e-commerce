@@ -51,7 +51,8 @@ class UserController extends Controller
             'province' => 'required|string|max:255', 
             'country' => 'required|string|max:255', 
             'postal_code' => 'required|string|max:6', 
-            'phone_number' => 'required|regex:/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/'
+            'phone_number' => 'required|regex:/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/',
+            'is_admin' => 'required|integer'
         ]); 
 
         User::create([
@@ -64,7 +65,8 @@ class UserController extends Controller
             'province' => $valid['province'], 
             'country' => $valid['country'], 
             'postal_code' => $valid['postal_code'], 
-            'phone_number' => $valid['phone_number']
+            'phone_number' => $valid['phone_number'],
+            'is_admin' => $valid['is_admin'] ?? 0
         ]); 
 
         return redirect('/admin/users_table')->with('success', 'User was successfully created'); 
@@ -78,9 +80,10 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $users=User::find($id);
-        $title = 'Edit User'; 
-        return view('/admin/edit/edit_user', compact('users', 'title')); 
+
+        $title = "Edit User";
+        $user = User::find($id);
+        return view('/admin/edit/edit_users', compact('title', 'user'));
     }
 
     /**
@@ -90,10 +93,45 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $valid = $request->validate([
+            'id' => 'required|integer',
+            'email' => 'required|email|unique:users,email', 
+            'password' => 'required|string|max:255',
+            'first_name' => 'required|string|max:255', 
+            'last_name' => 'required|string|max:255', 
+            'billing_address' => 'required|string|max:255', 
+            'city' => 'required|string|max:255', 
+            'province' => 'required|string|max:255', 
+            'country' => 'required|string|max:255', 
+            'postal_code' => 'required|string|max:6', 
+            'phone_number' => 'required|regex:/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/',
+            'is_admin' => 'required|integer'
+        ]);
+
+        
+
+        $user=User::find($valid['id']);
+        $user->email=$valid['email'];
+        $user->password=$valid['password'];
+        $user->first_name=$valid['first_name'];
+        $user->last_name=$valid['last_name'];
+        $user->billing_address=$valid['billing_address'];
+        $user->city=$valid['city'];
+        $user->province=$valid['province'];
+        $user->country=$valid['country'];
+        $user->postal_code=$valid['postal_code'];
+        $user->phone_number=$valid['phone_number'];
+        $user->is_admin=$valid['is_admin'];
+
+        if($user->save()){
+            return redirect('/admin/users_table')->with('success', 'User successfully updated');
+        }
+
+            return redirect('/admin/users_table')->with('error', 'User record not updated');
     }
+
 
     /**
      * Remove the specified resource from storage.
