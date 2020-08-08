@@ -21,6 +21,12 @@ class CheckoutController extends Controller
     }
 
 
+    /**
+     * @param Request $request
+     *
+     * returns json with cost details
+     * @return \Illuminate\Http\JsonResponse
+     */
     public static function calculateCost(Request $request) {
         if($request->province and $request->subtotal) {
             $taxes = Tax::where('province', '=', $request->province)->first();
@@ -49,11 +55,6 @@ class CheckoutController extends Controller
             ];
 
             session()->put('cost', $cost);
-//            session()->put('subtotal', $subtotal);
-//            session()->put('gst', $gst);
-//            session()->put('pst', $pst);
-//            //session()->put('hst', $hst);
-//            session()->put('shipping', $shipping);
 
             return response()->json(['gst' => $gst, 'pst' => $pst, 'shipping' => $shipping, 'total' => $total]);
 
@@ -62,21 +63,12 @@ class CheckoutController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a new order in the database, complete payment and transaction.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function placeOrder(Request $request) {
-//        //5 px
-//
-//        //validate cart info
-//        //save order , get id
-//
-//        //fake order id
-//        $order_id=345;
-
-
 
         $valid = $request->validate([
             'first_name' => 'required|string|max:255',
@@ -87,11 +79,13 @@ class CheckoutController extends Controller
             'province' => 'required|string|max:255',
             'country' => 'required|string|max:255',
             'postal_code' => 'required|string|max:6',
+            // PLEASE MAKE SURE CARD VALIDATION WORKS //
             'card_type' => 'required|string',
             'card_name' => 'required|string|max:255',
-            'card_number' => 'required|numeric|digits:16',
+            'card_number' => 'required|numeric|digits_between:15,16',
             'card_expiry' => 'required|numeric|digits:4',
             'cvv' => 'required|numeric|min:301|max:499',
+            /////////////////////////////////////////////////
             'shipping_address' => 'required|string|max:255',
             'shipping_city' => 'required|string|max:255',
             'shipping_province' => 'required|string|max:255',
@@ -112,11 +106,13 @@ class CheckoutController extends Controller
             'subtotal' => $cost['subtotal'],
             'GST' => $cost['gst'],
             'PST' => $cost['pst'],
+            // EDIT HST
             'HST' => $cost['pst'],
             'shipping' => $cost['shipping'],
             'total' => $cost['order_total']
         ]);
 
+        //clean session, empty cart
         session()->forget('cart');
         $order_id = $order->id;
 
@@ -131,7 +127,7 @@ class CheckoutController extends Controller
             $transaction->card_type($valid['card_type']); // card type
 
             $response = $transaction->authorize_and_capture(); // returns object
-            //dd($response);
+            //dd$response);
             if ($response->transaction_response->response_code == '1') {
                 // Your transaction was authorized...
                 echo "Success! Authorization Code: " .
@@ -140,10 +136,10 @@ class CheckoutController extends Controller
                 //save transaction info into transaction table
                 Transaction::create([
                     'order_id' => $order_id,
-                    'transaction_status' => $response->transaction_response->response_code,
-                    'transaction_code' => $response->transaction_response->trans_id,
+                    'transaction_status' => 1,
+                    'response_code' => $response->transaction_response->trans_id,
                     'auth_code' => $response->transaction_response->auth_code,
-                    'transaction' => 'test'
+                    'transaction' => json_encode($response)
                 ]);
 
                 //update order table if you have transaction_status field = 1
@@ -153,7 +149,7 @@ class CheckoutController extends Controller
                 $update_order->save();
 
             } else {
-                // set transaction_status field in order table to failed (0)
+
                 //return back with errors
                 //return back()->withErrors((array) $response->errors);
                 echo "Failed";

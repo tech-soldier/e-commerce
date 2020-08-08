@@ -24,7 +24,7 @@
                     <div class="">
                         <div class="about_image">
                             <!-- Product Image -->
-                            <img class="normal_img" src="/images/about_image.jpg" alt="">
+                            <img class="normal_img" src="/storage/images/about_image.jpg" alt="">
                         </div>
                     </div>
                 </div>
@@ -50,6 +50,6 @@
             </div> <!-- /. row -->
         </div> <!-- /. container -->
     </section> <!-- /. about us -->
-  
-    
+
+
 @stop
