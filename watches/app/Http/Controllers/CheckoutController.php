@@ -136,14 +136,14 @@ class CheckoutController extends Controller
                 // Your transaction was authorized...
                 echo "Success! Authorization Code: " .
                     $response->transaction_response->auth_code;
-                    $response_code = intval($response->transaction_response->trans_id);
+
                 //save transaction info into transaction table
                 Transaction::create([
                     'order_id' => $order_id,
                     'transaction_status' => 1,
-                    'response_code' => $response_code,
-                    'auth_code' => intval($response->transaction_response->auth_code),
-                    'transaction' => 'test'
+                    'response_code' => $response->transaction_response->trans_id,
+                    'auth_code' => $response->transaction_response->auth_code,
+                    'transaction' => json_encode($response)
                 ]);
 
                 //update order table if you have transaction_status field = 1
