@@ -93,7 +93,8 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading mb-50 mt-5">
-                        <h5>Best Selling Products</h5>
+                        <h2 class="text-center mb-5">Best Selling Products</h2>
+                        <hr>
                     </div>
                 </div>
             </div>
@@ -106,13 +107,26 @@
                     <div class="single-product-area mb-30">
                         <div class="product_image">
                             <!-- Product Image -->
-                            <img class="normal_img" src="/storage/images/{{$watch->cover_img}}" alt="{{$watch->watch_name}}">
-
+                            <a href="{{$watch->id}}/detail">
+                            <img class="normal_img" src="/storage/images/{{$watch->cover_img}}" alt="{{$watch->watch_name}}" href="{{$watch->id}}/detail">
+                            </a>
                             <!-- Product Badge -->
                             <!-- <div class="product_badge">
                                 <span>Top</span>
                             </div> -->
-                            <div class="add_quick_wrapper d-flex">
+                            
+                        </div>
+                        <!-- Product Description -->
+                        <div class="product_description py-2">
+                            <div class="watch_info_wrapper text-center ">
+                                <a class="text-center watch-name" href="{{$watch->id}}/detail">{{$watch->watch_name}}</a>
+                                <hr style="background-color: white; width: 90% ;">
+                                <h6 class="text-center product-price mt-2">${{$watch->price}}</h6>
+                                <p class="text-center mb-0"> Width: {{$watch->strap_width}}</p>
+                            </div>
+                        </div>
+
+                        <div class="add_quick_wrapper d-flex">
                                 <!-- Add to cart -->
                                 <div class="product_add_to_cart text-center">
                                     <a href="add-to-cart/{{ $watch->id }}" data-id="{{ $watch->id }}"> Add to Cart</a>
@@ -122,15 +136,6 @@
                                     <a href="{{$watch->id}}/detail"> Quick View</a>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Product Description -->
-                        <div class="product_description py-2">
-                            <div class="watch_info_wrapper text-center ">
-                                <a class="text-center " href="{{$watch->id}}/detail">{{$watch->watch_name}}</a>
-                                <h6 class="text-center product-price mt-2">${{$watch->price}}</h6>
-                                <p class="text-center mb-0"> Width: {{$watch->strap_width}}</p>
-                            </div>
-                        </div>
                     </div>
                 </div>  <!-- /. end Single Product Area -->
                 @endforeach
