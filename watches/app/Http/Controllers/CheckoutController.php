@@ -149,7 +149,7 @@ class CheckoutController extends Controller
                 $update_order->save();
 
             } else {
-                
+
                 //return back with errors
                 //return back()->withErrors((array) $response->errors);
                 echo "Failed";
