@@ -591,3 +591,22 @@ a.watch-name::first-letter {
   border-radius: 0;
   
 }
+.load-more{
+  text-align:center;
+  transition: .3s;
+}
+
+.load-p{
+  color:cornflowerblue;
+  font-size: 16px;
+}
+
+.load-arrow{
+  transition: .3s;
+}
+
+.load-arrow:hover{
+  color:orange !important;
+  transform: scale(1.1);
+  cursor: pointer;
+}
