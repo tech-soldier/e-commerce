@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Transaction;
 use Pagerange\Bx\_5bx;
 use App\Order;
 use App\User;
@@ -86,6 +87,7 @@ class CheckoutController extends Controller
             'province' => 'required|string|max:255',
             'country' => 'required|string|max:255',
             'postal_code' => 'required|string|max:6',
+            'card_type' => 'required|string',
             'card_name' => 'required|string|max:255',
             'card_number' => 'required|numeric|digits:16',
             'card_expiry' => 'required|numeric|digits:4',
@@ -129,26 +131,38 @@ class CheckoutController extends Controller
             $transaction->card_type($valid['card_type']); // card type
 
             $response = $transaction->authorize_and_capture(); // returns object
-
+            //dd($response);
             if ($response->transaction_response->response_code == '1') {
                 // Your transaction was authorized...
                 echo "Success! Authorization Code: " .
                     $response->transaction_response->auth_code;
+
                 //save transaction info into transaction table
-               //update order table if you have transaction_status field = 1
-            } elseif(count($response->transaction_response->errors)) {
-                foreach($response->transaction_response->errors as $error) {
-                    echo $error . '<br />';
-                }
+                Transaction::create([
+                    'order_id' => $order_id,
+                    'transaction_status' => $response->transaction_response->response_code,
+                    'transaction_code' => $response->transaction_response->trans_id,
+                    'auth_code' => $response->transaction_response->auth_code,
+                    'transaction' => 'test'
+                ]);
+
+                //update order table if you have transaction_status field = 1
+                $update_order = Order::find($order_id);
+
+                $update_order->transaction_status = 1;
+                $update_order->save();
+
+            } else {
                 // set transaction_status field in order table to failed (0)
                 //return back with errors
                 //return back()->withErrors((array) $response->errors);
+                echo "Failed";
             }
 
         } catch (Exception $e) {
             die($e->getMessage());
         }
-        
+
         return redirect('/shop')->with('success', 'Order was successfully created');
     }
 
