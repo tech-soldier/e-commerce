@@ -89,12 +89,11 @@ class CategoryController extends Controller
     {
         // validate form submition 
         $valid = $request->validate([
-            'category_name' => 'required|string|max:255'   
+            'category_name' => 'required|string|min:2|max:255'   
         ]);
 
         // get the category and update its name
         $category = Category::find($request['id']);
-        dd($category);
         $category->category_name = $valid['category_name'];
 
         // save into database and redirect accordingly with appropriate message
