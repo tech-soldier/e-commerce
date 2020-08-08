@@ -89,7 +89,7 @@ class CheckoutController extends Controller
             'postal_code' => 'required|string|max:6',
             'card_type' => 'required|string',
             'card_name' => 'required|string|max:255',
-            'card_number' => 'required|numeric|digits:16',
+            'card_number' => 'required|numeric|digits_between:15,16',
             'card_expiry' => 'required|numeric|digits:4',
             'cvv' => 'required|numeric|min:301|max:499',
             'shipping_address' => 'required|string|max:255',
@@ -131,18 +131,18 @@ class CheckoutController extends Controller
             $transaction->card_type($valid['card_type']); // card type
 
             $response = $transaction->authorize_and_capture(); // returns object
-            //dd($response);
+            //dd(intval($response->transaction_response->trans_id));
             if ($response->transaction_response->response_code == '1') {
                 // Your transaction was authorized...
                 echo "Success! Authorization Code: " .
                     $response->transaction_response->auth_code;
-
+                    $response_code = intval($response->transaction_response->trans_id);
                 //save transaction info into transaction table
                 Transaction::create([
                     'order_id' => $order_id,
-                    'transaction_status' => $response->transaction_response->response_code,
-                    'transaction_code' => $response->transaction_response->trans_id,
-                    'auth_code' => $response->transaction_response->auth_code,
+                    'transaction_status' => 1,
+                    'response_code' => $response_code,
+                    'auth_code' => intval($response->transaction_response->auth_code),
                     'transaction' => 'test'
                 ]);
 
