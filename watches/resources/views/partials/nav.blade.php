@@ -3,7 +3,9 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
+
         <ul class="navbar-nav">
 
             @guest
@@ -112,24 +114,23 @@
 
         </ul>
 
-        <div class=" ml-2 acct_srch d-flex">
-            <!-- util search -->
-            <div class="circle_search">
+        <div class="ml-3" >
                 
 
-                <form method="get" action="{{ url('/shop_search') }}">
+                <form method="get" class="form-inline" action="{{ url('/shop_search') }}">
                     @csrf
-                    <div class="input-group">
-                        <input type="text" class="form-control" id="query" name="query" placeholder="Search Watch" /> 
-                            <span class="input-group-btn">
-                                <button type="submit" class="btn btn-default">
-                                    <span class="glyphicon glyphicon-search"></span>
-                                </button>
-                            </span>
-                    </div>
+                    
+                    <input type="search" class="form-control mr-sm-2 searchbox" id="query" name="query" placeholder="Search" /> 
+                    <span class="input-group-btn">
+                        <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>                            
+                    </span>
+                    
                  </form>
 
             </div>
+        <div class=" ml-2 acct_srch d-flex">
+            <!-- util search -->
+            
             <!-- shopping cart -->
             <div class="ml-2 circle">
                 <a href="/cart"> <i class="fas fa-shopping-cart"></i></a>

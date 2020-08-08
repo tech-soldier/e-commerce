@@ -227,7 +227,7 @@ i {
 }
 
 .product_quick_view {
-  background: black;
+  background: darkcyan;
   width: 50%;
   padding: 5px;
 
@@ -257,8 +257,6 @@ i {
 .single-product-area{
     position: relative;
     z-index: 1;
-    background-color: #f8f8ff;
-    border: 1px solid #ccc;
     overflow: hidden;
     -webkit-transition-duration: 300ms;
     -o-transition-duration: 300ms;
@@ -268,7 +266,13 @@ i {
 .single-product-area:hover {
   box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
   transform: scale(1.01);
-  transform: skew(1deg, -1deg);
+  
+}
+.normal_img{
+  transition: 2.5s
+}
+.normal_img:hover{
+  transform: scale(2.1);
 }
 .bord{
   margin-bottom: 30px;
@@ -524,4 +528,66 @@ div.user_image{
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
+}
+
+.watch-name{
+  font-size: 20px;
+  font-family: 'Staatliches', cursive;
+  text-transform: capitalize;
+  color:white !important;
+  
+
+
+}
+
+.watch-name a{
+ color:-webkit-linear-gradient(left, #8f6B29, #FDE08D, #DF9F28) !important;
+  color: linear-gradient(left, #8f6B29, #FDE08D, #DF9F28) !important;
+  padding:5px 0 0;
+
+}
+
+a.watch-name::first-letter {
+  text-transform: capitalize;
+  color: red
+}
+
+.watch_info_wrapper{
+  
+}
+
+.single-product-area {
+  border: 1px solid gray;
+}
+
+.product_description {
+  background-color: black;
+  color:white;
+  border-top: 2px solid white;
+
+}
+
+.product_description p {
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.product_description h6 {
+ letter-spacing: 8.5px;
+  font-family: 'Staatliches', cursive;
+  font-size:20px;
+}
+
+.product_description p {
+  font-family: 'Bungee Hairline', cursive;
+
+}
+.product-price{
+  font-size: 14px;
+}
+
+.searchbox{
+  
+  border-radius: 0;
+  
 }
