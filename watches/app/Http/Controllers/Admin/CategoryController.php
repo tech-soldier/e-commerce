@@ -73,9 +73,9 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $categories = Category::find($id);
+        $category = Category::find($id);
         $title = 'Edit Categories'; 
-        return view('/admin/edit/edit_categories', compact('title', 'categories')); 
+        return view('/admin/edit/edit_categories', compact('title', 'category')); 
     }
 
     /**
@@ -87,19 +87,23 @@ class CategoryController extends Controller
      */
     public function update(Request $request)
     {
+        // validate form submition 
         $valid = $request->validate([
-            'id' => 'required|integer',
-            'category_name' => 'required|string|max:255'
-            
+            'category_name' => 'required|string|max:255'   
         ]);
 
-        $category = Category::find($request['category_id']);
+        // get the category and update its name
+        $category = Category::find($request['id']);
+        dd($category);
+        $category->category_name = $valid['category_name'];
 
+        // save into database and redirect accordingly with appropriate message
         if($category->save() ) {
-        return redirect('/admin/categories_table')->with('success', 'Your category is successfully updated');
-      }
+            return redirect('/admin/categories_table')->with('success', 'Your category is successfully updated');
+        }else{
+           return redirect('/admin/categories_table')->with('error', 'There was a problem updating the category'); 
+        }
 
-      return redirect('/admin/categories_table')->with('error', 'There was a problem updating the category');
     }
 
     /* Remove the specified resource from storage.
