@@ -86,6 +86,10 @@ class CheckoutController extends Controller
             'province' => 'required|string|max:255',
             'country' => 'required|string|max:255',
             'postal_code' => 'required|string|max:6',
+            'card_name' => 'required|string|max:255',
+            'card_number' => 'required|numeric|digits:16',
+            'card_expiry' => 'required|numeric|digits:4',
+            'cvv' => 'required|numeric|min:301|max:499',
             'shipping_address' => 'required|string|max:255',
             'shipping_city' => 'required|string|max:255',
             'shipping_province' => 'required|string|max:255',
@@ -114,37 +118,36 @@ class CheckoutController extends Controller
         session()->forget('cart');
         $order_id = $order->id;
 
-        //5bx object
-//        $transaction = new _5bx(env('BX_LOGIN'), env("BX_KEY"));
-//        $transaction->ref_num($order_id);
-//
-//
-//        function processTransaction(_5bx $transaction)
-//        {
-//            // Replace hard coded values with your own variables
-//            $transaction->amount('5.99'); // total sale
-//            $transaction->card_num('4111111111111111'); // credit card number
-//            $transaction->exp_date ('0822'); // expiry date month and year (august 2022)
-//            $transaction->cvv('333'); // card cvv number
-//            $transaction->ref_num('2011099'); // your reference or invoice number
-//            $transaction->card_type('visa'); // card type (visa, mastercard, amex)
-//            return $transaction->authorize_and_capture(); // returns JSON object
-//
-//        }
-//
-//        //send transaction to 5bx
-//        $response = processTransaction($transaction);
-//    dd($response);
-//
-//    if($response->transaction_response->response_code ==1) {
-//        //save transaction info into transaction table
-//        //update order table if you have transaction_status field = 1
-//    } else {
-//        // set transaction_status field in order table to failed (0)
-//        //return back with errors
-//        //return back()->withErrors((array) $response->errors);
-//    }
+        try {
 
+            $transaction = new _5bx(env('BX_LOGIN'), env("BX_KEY"));
+            $transaction->amount($cost['order_total']);
+            $transaction->card_num($valid['card_number']); // credit card number
+            $transaction->exp_date ($valid['card_expiry']); // eg  1118
+            $transaction->cvv($valid['cvv']); // card cvv number
+            $transaction->ref_num($order_id); // your reference or invoice number
+            $transaction->card_type($valid['card_type']); // card type
+
+            $response = $transaction->authorize_and_capture(); // returns object
+
+            if ($response->transaction_response->response_code == '1') {
+                // Your transaction was authorized...
+                echo "Success! Authorization Code: " .
+                    $response->transaction_response->auth_code;
+                //save transaction info into transaction table
+               //update order table if you have transaction_status field = 1
+            } elseif(count($response->transaction_response->errors)) {
+                foreach($response->transaction_response->errors as $error) {
+                    echo $error . '<br />';
+                }
+                // set transaction_status field in order table to failed (0)
+                //return back with errors
+                //return back()->withErrors((array) $response->errors);
+            }
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
         
         return redirect('/shop')->with('success', 'Order was successfully created');
     }
