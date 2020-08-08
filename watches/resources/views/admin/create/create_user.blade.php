@@ -95,6 +95,14 @@
         @enderror
       </div>
 
+      <div class="form-group">
+        <label for="is_admin">Is Admin</label> <br />
+        <input type="radio" name="is_admin" value="0" checked />
+        False &nbsp;
+        <input type="radio" name="is_admin" value="1"  />
+        True
+      </div>
+
       <p><button type="submit" class="btn btn-primary">Submit</button></p>
     </form>
 </div>

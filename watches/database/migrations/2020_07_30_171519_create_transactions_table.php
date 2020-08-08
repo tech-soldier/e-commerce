@@ -15,12 +15,12 @@ class CreateTransactionsTable extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->integer('order_id')->unsigned(); 
-            $table->boolean('transaction_status')->default(false); 
+            $table->integer('order_id')->unsigned();
+            $table->boolean('transaction_status')->default(false); //same as response code
             // suggested to add
-            $table->integer('response_code'); 
-            $table->string('auth_code', 255); 
-            $table->text('transaction'); 
+            $table->integer('response_code'); // here will go trans_id
+            $table->string('auth_code', 255);
+            $table->text('transaction');
             $table->timestamps();
             $table->softDeletes();
         });

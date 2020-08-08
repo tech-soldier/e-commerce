@@ -52,14 +52,15 @@
 					</p>
 				</td>
 				<td>
-					<form class="delete" 
-				                onSubmit="return confirm('Do you really want to delete this post?')"
-				                 action="/admin/users_table" method="post">
-		                @csrf
-		                @method('DELETE')
-		                <input type="hidden" name="id" value="{{ $user->user_id }}"/>
-		                <button type="submit" class="btn btn-danger">delete</button>
-					</form>
+
+					<form class="delete"
+                    	onSubmit="return confirm('Do you really want to delete this post?')"
+                     	action="/admin/users_table" method="post">
+	                    @csrf
+	                    @method('DELETE')
+	                    <input type="hidden" name="id" value="{{ $user->id }}"/>
+	                    <button type="submit" class="btn btn-danger">Delete</button>
+	            	</form>
 				</td>
 	    	</tr>
 	  	</tbody>
