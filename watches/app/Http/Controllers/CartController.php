@@ -128,7 +128,7 @@ class CartController extends Controller
 
             $subTotal = $cart[$request->id]['quantity'] * $cart[$request->id]['price'];
 
-            $total = $this->getCartTotal();
+            $total = round($this->getCartTotal(),2);
 
             return response()->json(['total' => $total, 'subTotal' => $subTotal]);
 
