@@ -23,22 +23,42 @@
         @enderror
       </div>
       
+
+      @if($taxes->GST != null)
        <div class="form-group">
         <label for="GST">GST: </label>
-        <input type="text" name="GST" placeholder="0.05" disabled class="form-control" id="GST" value="{{ old('GST', $taxes->GST) }}">
+        <input type="text" name="GST" class="form-control" id="GST" value="{{ old('GST', $taxes->GST) }}">
         @error('GST')
             <span class="alert-danger">{{ $message }}</span>
         @enderror
       </div>
+      @else 
+      <div class="form-group">
+        <input type="text" name="GST" class="form-control" hidden id="GST" value="{{ old('GST', $taxes->GST) }}">
+        @error('GST')
+            <span class="alert-danger">{{ $message }}</span>
+        @enderror
+      </div>
+      @endif
 
-       <div class="form-group">
+      @if($taxes->PST != null)
+      <div class="form-group">
         <label for="PST">PST: </label>
         <input type="text" class="form-control" name="PST" id="PST" value="{{ old('PST', $taxes->PST) }}">
         @error('PST')
             <span class="alert-danger">{{ $message }}</span>
         @enderror
       </div>
+      @else 
+      <div class="form-group">
+        <input type="text" class="form-control" hidden name="PST" id="PST" value="{{ old('PST', $taxes->PST) }}">
+        @error('PST')
+            <span class="alert-danger">{{ $message }}</span>
+        @enderror
+      </div>
+      @endif
 
+      @if($taxes->HST != null)
       <div class="form-group">
         <label for="HST">HST: </label>
         <input type="text" class="form-control" name="HST" id="HST" value="{{ old('HST', $taxes->HST) }}">
@@ -46,6 +66,15 @@
             <span class="alert-danger">{{ $message }}</span>
         @enderror
       </div>
+      @else 
+      <div class="form-group">
+        <input type="text" class="form-control" hidden name="HST" id="HST" value="{{ old('HST', $taxes->HST) }}">
+        @error('HST')
+            <span class="alert-danger">{{ $message }}</span>
+        @enderror
+      </div>
+      @endif
+
 
       <p><button type="submit" class="btn btn-primary">Submit</button></p>
     </form>
