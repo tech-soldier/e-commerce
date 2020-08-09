@@ -41,7 +41,9 @@
                     <div class="single-product-area mb-30">
                         <div class="product_image">
                             <!-- Product Image -->
-                            <img class="normal_img" src="/storage/images/{{$watch->cover_img}}" alt="{{$watch->watch_name}}">
+                            <a href="{{$watch->id}}/detail">
+                            <img class="normal_img" src="/storage/images/{{$watch->cover_img}}" alt="{{$watch->watch_name}}" href="{{$watch->id}}/detail">
+                            </a>
                         </div>
 
                         <!-- Product Description -->
@@ -69,6 +71,7 @@
                 @endforeach
 
             </div> <!-- /. row -->
+           
         @else
 
             <h1><strong>404 Error: </strong><em>Sorry, we couldn't find what you were looking for<em></h1>
@@ -78,12 +81,60 @@
     <!-- /. Best Selling Products -->
 
     <br>
-
-    <div class="arrow-div text-center">
-        <p>Load more</p>
-        <i class=" text-center fas fa-arrow-down mb-3 fa-2x "></i>
-    </div>
-
+        
+        <div class="container">
+            <div id="results" class="row justify-content-center">
+        
+                <!-- <div class="ajax-loading" style="border:2px solid red; width:25%;">
+                    <img src="/storage/images/loading.gif" />
+                </div> -->
+        
+            </div>
+        </div>
+        <div class="load-more pb-4">
+            <p class="load-p text-center">load more</p>
+            <i id="load-arr" class="fas load-arrow fa-2x fa-angle-double-down" style="margin:0 auto; color:cornflowerblue"></i>
+        </div>
     @include('partials/features')
-
+    
+<script>
+   var SITEURL = "{{ url('/') }}";
+   var page = 1; //track user scroll as page number, right now page number is 1
+    //initial content load
+   $(".load-more").on("click",function() { //detect page scroll
+       //if user scrolled from top to bottom of the page
+      page++; //page number increment
+      load_more(page); //load content   
+      
+    });     
+    function load_more(page){
+        $.ajax({
+           url: SITEURL + "/shop?page=" + page,
+           type: "get",
+           datatype: "html",
+           beforeSend: function()
+           {
+                
+                $('.ajax-loading').show();
+                
+            }
+        })
+        .done(function(data)
+        {
+            if(data.length == 0){
+            console.log(data.length);
+            //notify user if nothing to load
+            $('.ajax-loading').html("No more records!");
+            return;
+          }
+          $('.ajax-loading').hide(); //hide loading animation once data is received
+          $("#results").append(data); //append data into #results element          
+           console.log('data.length');
+       })
+       .fail(function(jqXHR, ajaxOptions, thrownError)
+       {
+          alert('No response from server');
+       });
+    }
+</script>
     @stop

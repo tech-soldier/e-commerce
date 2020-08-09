@@ -140,7 +140,7 @@ use \App\Http\Controllers\CartController;
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group  col-md-6">
-                                        <label>Card Expiry</label>
+                                        <label>4 Digit Card Expiry  </label>
                                         <input type="text" class="form-control bg-light" name="card_expiry" value="{{ old('card_expiry') }}">
                                         @error('card_expiry')
                                         <span class="alert-danger">{{ $message }}</span>
@@ -276,22 +276,21 @@ use \App\Http\Controllers\CartController;
                 var order_total = $("#total");
 
 
-                    $.ajax({
-                        url: '{{ url('checkout-calculate-cost') }}',
-                        method: "patch",
-                        data: {_token: '{{ csrf_token() }}', province: ele, subtotal: total},
-                        dataType: "json",
-                        success: function (response) {
+                $.ajax({
+                    url: '{{ url('checkout-calculate-cost') }}',
+                    method: "patch",
+                    data: {_token: '{{ csrf_token() }}', province: ele, subtotal: total},
+                    dataType: "json",
+                    success: function (response) {
 
-                            gst.text(response.gst);
-                            pst.text(response.pst);
-                            shipping.text(response.shipping);
-                            total_final.text(response.total);
-                            order_total.setAttribute("value", response.total);
+                        gst.text(response.gst);
+                        pst.text(response.pst);
+                        shipping.text(response.shipping);
+                        total_final.text(response.total);
+                        order_total.setAttribute("value", response.total);
 
-
-                        }
-                    });
+                    }
+                });
             });
 
 

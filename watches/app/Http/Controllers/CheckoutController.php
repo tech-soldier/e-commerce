@@ -69,7 +69,12 @@ class CheckoutController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function placeOrder(Request $request) {
-
+        
+        $current_year = date("Y");
+        $current_month = date("m");
+        $now = $current_year.$current_month;
+        $today = intval($now);
+        $max_date = intval($today + 8000);
         $valid = $request->validate([
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
@@ -80,11 +85,11 @@ class CheckoutController extends Controller
             'country' => 'required|string|max:255',
             'postal_code' => 'required|string|max:6',
             // PLEASE MAKE SURE CARD VALIDATION WORKS //
-            'card_type' => 'required|string',
+            'card_type' => 'required|in:Visa, Mastercard, Amex',
             'card_name' => 'required|string|max:255',
             'card_number' => 'required|numeric|digits_between:15,16',
-            'card_expiry' => 'required|numeric|digits:4',
-            'cvv' => 'required|numeric|min:301|max:499',
+            'card_expiry' => 'required|numeric|min:0920',
+            'cvv' => "required|numeric|min:301|max:499",
             /////////////////////////////////////////////////
             'shipping_address' => 'required|string|max:255',
             'shipping_city' => 'required|string|max:255',

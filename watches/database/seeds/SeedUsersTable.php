@@ -94,20 +94,21 @@ class SeedUsersTable extends Seeder
             'updated_at' => Carbon::now() 
         ]); 
 
+
         DB::table('users')->insert([
-        	'first_name' => 'Rahwa', 
-        	'last_name' => 'Mehreteab', 
-        	'billing_address' => '11 Hudson Street', 
-        	'city' => 'Toronto', 
-        	'province' => 'Ontario', 
-        	'country' => 'Canada', 
-        	'postal_code' => 'e5y6u7', 
-        	'email' => 'rahwa3netsereab@gmail.com', 
-        	'phone_number' => '226-146-9107', 
+            'first_name' => 'Rahwa', 
+            'last_name' => 'Mehreteab', 
+            'billing_address' => '11 Hudson Street', 
+            'city' => 'Toronto', 
+            'province' => 'Ontario', 
+            'country' => 'Canada', 
+            'postal_code' => 'e5y6u7', 
+            'email' => 'rahwa3netsereab@gmail.com', 
+            'phone_number' => '226-146-9107', 
             'image' => 'linkedin_rahwa.jpg', 
-        	'password' => password_hash('mypass', PASSWORD_DEFAULT),
+            'password' => password_hash('mypass', PASSWORD_DEFAULT),
             'is_admin' => true,                
-        	'created_at' => Carbon::now(), 
+            'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now() 
         ]); 
 

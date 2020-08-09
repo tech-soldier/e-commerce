@@ -14,7 +14,7 @@
             <!-- image  -->
             <div class="col-xs-12 text-center col-md-6">
         
-                <img class="normal_img" src="/storage/images/{{$watch->cover_img}}" alt="{{$watch->watch_name}}">
+                <img  src="/storage/images/{{$watch->cover_img}}" alt="{{$watch->watch_name}}">
          
              </div>
 
