@@ -31,8 +31,20 @@ class CheckoutController extends Controller
         if($request->province and $request->subtotal) {
             $taxes = Tax::where('province', '=', $request->province)->first();
             $subtotal = floatval($request->subtotal);
-            $gst = round($subtotal * $taxes->GST, 3);
-            $pst = round($subtotal * $taxes->PST, 3);
+
+            // checking what type of taxes a province has
+
+            if ($taxes->HST != 0){
+                $tax = $taxes->HST;
+                $tax_message = "HST: $" . round($tax, 2);
+            } else if ($taxes->PST != 0) {
+                $tax = $taxes->HST + $taxes->PST;
+                $tax_message = "PST: $" .  round($taxes->PST, 2) . ", " . "GST: $" . round($taxes->GST, 2);
+            } else {
+                $tax = $taxes->GST;
+                $tax_message = "GST: $" . " " . round($tax, 2);
+            }
+
             $items_total = 0;
 
             $cart = session()->get('cart');
@@ -42,22 +54,21 @@ class CheckoutController extends Controller
             }
 
             $shipping = $items_total * 3;
-            $total = round($shipping + $gst + $pst + $subtotal,2);
+            $total = round($shipping + $tax + $subtotal,2);
 
             //getting cart out of session
 
             $cost = [
                 "order_total" => $total,
                 "subtotal" => $subtotal,
-                "gst" => $gst,
-                "pst" => $pst,
+                "tax" => $tax,
+                "tax_message" => $tax_message,
                 "shipping" => $shipping
             ];
 
             session()->put('cost', $cost);
 
-            return response()->json(['gst' => $gst, 'pst' => $pst, 'shipping' => $shipping, 'total' => $total]);
-
+            return response()->json(['tax' => $tax, 'tax_message' => $tax_message, 'shipping' => $shipping, 'total' => $total]);
 
         }
     }
@@ -69,7 +80,7 @@ class CheckoutController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function placeOrder(Request $request) {
-        
+
         $current_year = date("Y");
         $current_month = date("m");
         $now = $current_year.$current_month;
@@ -116,6 +127,17 @@ class CheckoutController extends Controller
             'shipping' => $cost['shipping'],
             'total' => $cost['order_total']
         ]);
+
+        // updated watches quantity in the database
+
+//        $cart = session()->get('cart');
+//        foreach($cart as $id => $value) {
+//            echo "Key=" . $id . ", Value=" . $value;
+//
+//        }
+
+        //create a record in orders_watches table
+
 
         //clean session, empty cart
         session()->forget('cart');
