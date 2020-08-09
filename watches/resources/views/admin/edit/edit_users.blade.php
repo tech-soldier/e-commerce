@@ -59,12 +59,12 @@
         </div>
 
         <div class="form-group">
-            <label for="province">Province: </label>
-            <input type="text" class="form-control" name="province" id="province" value="{{ old('province', $user->province) }}">
-            @error('province')
-                <span class="alert-danger">{{ $message }}</span>
-            @enderror
-        </div>
+                <label for="province">Province:</label><br />
+                <input id="province" name="province" class="form-control" value="{{ old('province', $user->province) }}" />
+                @error('province')
+                    <span class="error"> {{ $message }}</span>
+                @enderror
+            </div>
 
         <div class="form-group">
             <label for="country">Country: </label>
@@ -97,6 +97,17 @@
                 <span class="alert-danger">{{ $message }}</span>
             @enderror
         </div>
+
+        <div class="form-group">
+                <label for="cover_img">Cover Image</label>
+                @if(!empty($user->cover_img))
+                <img src="{{$user->cover_img}}" style="width: 150px; height: auto;">
+                @endif
+                <input type="file" name="cover_img"/>
+                @error('cover_img')
+                    <span class="error"> {{ $message }}</span>
+                @enderror
+            </div>
 
         <div class="form-group">
             <label for="is_admin">Is Admin</label> <br />
