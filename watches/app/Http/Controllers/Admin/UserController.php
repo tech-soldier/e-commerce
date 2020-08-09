@@ -95,9 +95,10 @@ class UserController extends Controller
      */
     public function update(Request $request)
     {
+
         $valid = $request->validate([
             'id' => 'required|integer',
-            'email' => 'required|email|unique:users,email', 
+            'email' => 'required|email', 
             'password' => 'required|string|max:255',
             'first_name' => 'required|string|max:255', 
             'last_name' => 'required|string|max:255', 
@@ -109,8 +110,6 @@ class UserController extends Controller
             'phone_number' => 'required|regex:/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/',
             'is_admin' => 'required|integer'
         ]);
-
-        
 
         $user=User::find($valid['id']);
         $user->email=$valid['email'];

@@ -140,7 +140,7 @@ use \App\Http\Controllers\CartController;
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group  col-md-6">
-                                        <label>Card Expiry</label>
+                                        <label>4 Digit Card Expiry  </label>
                                         <input type="text" class="form-control bg-light" name="card_expiry" value="{{ old('card_expiry') }}">
                                         @error('card_expiry')
                                         <span class="alert-danger">{{ $message }}</span>
@@ -211,10 +211,10 @@ use \App\Http\Controllers\CartController;
                                         </div>
                                     </div>
 
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="materialUnchecked">
-                                        <label class="form-check-label" for="materialUnchecked">Same as Billing Address</label>
-                                    </div>
+{{--                                    <div class="form-check">--}}
+{{--                                        <input type="checkbox" class="form-check-input" id="materialUnchecked">--}}
+{{--                                        <label class="form-check-label" for="materialUnchecked">Same as Billing Address</label>--}}
+{{--                                    </div>--}}
 
                                 </article>
                             </div>
@@ -234,11 +234,11 @@ use \App\Http\Controllers\CartController;
                                         </dl>
 
                                         <dl class="dlist-align">
-                                            <dt>GST: <span id="gst"></span></dt>
+                                            <dt><span id="tax"></span></dt>
                                         </dl>
-                                        <dl class="dlist-align">
-                                            <dt>PST:  <span id="pst"></span></dt>
-                                        </dl>
+{{--                                        <dl class="dlist-align">--}}
+{{--                                            <dt>PST:  <span id="pst"></span></dt>--}}
+{{--                                        </dl>--}}
                                         <dl class="dlist-align">
                                             <dt>Shipping: <span id="shipping"></span></dt>
                                         </dl>
@@ -268,30 +268,27 @@ use \App\Http\Controllers\CartController;
             $(".province").on('change', function() {
 
                 var ele = $(this).val();
-                var gst = $("#gst");
-                var pst = $("#pst");
+                var tax = $("#tax");
                 var total = $("#subtotal").text();
                 var shipping = $("#shipping");
                 var total_final = $("#total_final");
                 var order_total = $("#total");
 
 
-                    $.ajax({
-                        url: '{{ url('checkout-calculate-cost') }}',
-                        method: "patch",
-                        data: {_token: '{{ csrf_token() }}', province: ele, subtotal: total},
-                        dataType: "json",
-                        success: function (response) {
+                $.ajax({
+                    url: '{{ url('checkout-calculate-cost') }}',
+                    method: "patch",
+                    data: {_token: '{{ csrf_token() }}', province: ele, subtotal: total},
+                    dataType: "json",
+                    success: function (response) {
 
-                            gst.text(response.gst);
-                            pst.text(response.pst);
-                            shipping.text(response.shipping);
-                            total_final.text(response.total);
-                            order_total.setAttribute("value", response.total);
+                        tax.text(response.tax_message);
+                        shipping.text(response.shipping);
+                        total_final.text(response.total);
+                        order_total.setAttribute("value", response.total);
 
-
-                        }
-                    });
+                    }
+                });
             });
 
 
