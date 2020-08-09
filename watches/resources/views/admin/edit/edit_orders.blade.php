@@ -63,6 +63,7 @@
         @enderror
       </div>
 
+      @if($order->HST == null)
       <div class="form-group">
         <label for="GST">GST: </label>
         <input type="text" class="form-control" disabled name="GST" id="GST" value="{{ old('GST', $order->GST) }}">
@@ -70,7 +71,16 @@
             <span class="alert-danger">{{ $message }}</span>
         @enderror
       </div>
-      
+      @else 
+      <div class="form-group">
+        <input type="text" class="form-control" hidden name="GST" id="GST" value="{{ old('GST', $order->GST) }}">
+        @error('GST')
+            <span class="alert-danger">{{ $message }}</span>
+        @enderror
+      </div>
+      @endif
+
+      @if($order->HST == null)
       <div class="form-group">
         <label for="PST">PST: </label>
         <input type="text" class="form-control" name="PST" id="PST" value="{{ old('PST', $order->PST) }}">
@@ -78,7 +88,23 @@
             <span class="alert-danger">{{ $message }}</span>
         @enderror
       </div>
+      @else
+      <div class="form-group">
+        <input type="text" class="form-control" hidden name="PST" id="PST" value="{{ old('PST', $order->PST) }}">
+        @error('PST')
+            <span class="alert-danger">{{ $message }}</span>
+        @enderror
+      </div>
+      @endif
 
+      @if($order->PST != null)
+      <div class="form-group">
+        <input type="text" class="form-control" hidden name="HST" id="HST" value="{{ old('HST', $order->HST) }}">
+        @error('HST')
+            <span class="alert-danger">{{ $message }}</span>
+        @enderror
+      </div>
+      @else
       <div class="form-group">
         <label for="HST">HST: </label>
         <input type="text" class="form-control" name="HST" id="HST" value="{{ old('HST', $order->HST) }}">
@@ -86,6 +112,8 @@
             <span class="alert-danger">{{ $message }}</span>
         @enderror
       </div>
+      @endif
+
 
       <div class="form-group">
         <label for="shipping">Shipping: </label>
