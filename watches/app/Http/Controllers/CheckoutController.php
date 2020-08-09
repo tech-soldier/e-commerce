@@ -36,13 +36,13 @@ class CheckoutController extends Controller
 
             if ($taxes->HST != 0){
                 $tax = $taxes->HST;
-                $tax_message = "HST: " . " " . round($tax, 2);
+                $tax_message = "HST: $" . round($tax, 2);
             } else if ($taxes->PST != 0) {
                 $tax = $taxes->HST + $taxes->PST;
-                $tax_message = "PST: " . " " . round($taxes->PST, 2) . "<br>" . "GST: " . " " . round($taxes->GST, 2);
+                $tax_message = "PST: $" .  round($taxes->PST, 2) . ", " . "GST: $" . round($taxes->GST, 2);
             } else {
                 $tax = $taxes->GST;
-                $tax_message = "GST: " . " " . round($tax, 2);
+                $tax_message = "GST: $" . " " . round($tax, 2);
             }
 
             $items_total = 0;
@@ -69,7 +69,6 @@ class CheckoutController extends Controller
             session()->put('cost', $cost);
 
             return response()->json(['tax' => $tax, 'tax_message' => $tax_message, 'shipping' => $shipping, 'total' => $total]);
-
 
         }
     }

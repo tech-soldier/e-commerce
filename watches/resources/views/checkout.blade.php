@@ -234,11 +234,11 @@ use \App\Http\Controllers\CartController;
                                         </dl>
 
                                         <dl class="dlist-align">
-                                            <dt>GST: <span id="gst"></span></dt>
+                                            <dt><span id="tax"></span></dt>
                                         </dl>
-                                        <dl class="dlist-align">
-                                            <dt>PST:  <span id="pst"></span></dt>
-                                        </dl>
+{{--                                        <dl class="dlist-align">--}}
+{{--                                            <dt>PST:  <span id="pst"></span></dt>--}}
+{{--                                        </dl>--}}
                                         <dl class="dlist-align">
                                             <dt>Shipping: <span id="shipping"></span></dt>
                                         </dl>
@@ -268,8 +268,7 @@ use \App\Http\Controllers\CartController;
             $(".province").on('change', function() {
 
                 var ele = $(this).val();
-                var gst = $("#gst");
-                var pst = $("#pst");
+                var tax = $("#tax");
                 var total = $("#subtotal").text();
                 var shipping = $("#shipping");
                 var total_final = $("#total_final");
@@ -283,8 +282,7 @@ use \App\Http\Controllers\CartController;
                     dataType: "json",
                     success: function (response) {
 
-                        gst.text(response.gst);
-                        pst.text(response.pst);
+                        tax.text(response.tax_message);
                         shipping.text(response.shipping);
                         total_final.text(response.total);
                         order_total.setAttribute("value", response.total);
