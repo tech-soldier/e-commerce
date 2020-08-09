@@ -9,8 +9,10 @@
 
     <form method="post" action="/admin/edit/edit_users" enctype="multipart/form-data" >
 
-          @csrf 
-          @method('PUT')
+         
+        
+
+
 
         <div class="form-group">
             <label for="id">User ID: </label>
@@ -116,7 +118,7 @@
             <input type="radio" name="is_admin" value="1" {{ ($user->is_admin=="1")? "checked" : "" }} />
             True
         </div>
-
+         @csrf 
         <p><button type="submit" class="btn btn-primary">Submit</button></p>
     </form>
 
