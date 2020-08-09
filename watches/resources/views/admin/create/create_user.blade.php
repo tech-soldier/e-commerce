@@ -97,7 +97,7 @@
 
        <div class="form-group">
                 <label for="cover_img">Cover Image</label>
-                <input type="file" name="image" value="{{ old('image') }}" />
+                <input type="file" name="cover_img" value="{{ old('cover_img') }}" />
                 @error('cover_img')
                     <span class="error"> {{ $message }}</span>
                 @enderror
