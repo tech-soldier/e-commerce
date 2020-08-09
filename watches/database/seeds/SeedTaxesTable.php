@@ -113,6 +113,7 @@ class SeedTaxesTable extends Seeder
 	    ]);
 
 	    DB::table('taxes')->insert([
+
 	        'province' => 'Nova Scotia',
 	        'GST' => 0,
 	        'PST' => 0,
@@ -122,6 +123,7 @@ class SeedTaxesTable extends Seeder
 	    ]);
 
 	    DB::table('taxes')->insert([
+
 	        'province' => 'Northwest Territories',
 	        'GST' => 0.05,
 	        'PST' => 0.00,

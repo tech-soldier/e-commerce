@@ -128,5 +128,22 @@ class SeedUsersTable extends Seeder
         	'created_at' => Carbon::now(), 
             'updated_at' => Carbon::now() 
         ]); 
+
+        DB::table('users')->insert([
+            'first_name' => 'Aina', 
+            'last_name' => 'Ramos', 
+            'billing_address' => '187 Banning', 
+            'city' => 'Charlotte Town', 
+            'province' => 'Prince Edward Island', 
+            'country' => 'Canada', 
+            'postal_code' => 'e5n8u7', 
+            'email' => 'ainaramos14@gmail.com', 
+            'phone_number' => '226-146-9107', 
+            'image' => 'linkedin_aina.jpg', 
+            'password' => password_hash('mypass', PASSWORD_DEFAULT), 
+            'is_admin' => true,              
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now() 
+        ]); 
     }
 }

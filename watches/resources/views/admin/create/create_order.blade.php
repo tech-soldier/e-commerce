@@ -61,12 +61,12 @@
 
       <div class="form-group">
         <label for="GST">GST: </label>
-        <input type="text" class="form-control" name="GST" id="GST" value="{{ old('GST') }}">
+        <input type="text" class="form-control" disabled placeholder="0.05" name="GST" id="GST" value="{{ old('GST') }}">
         @error('GST')
             <span class="alert-danger">{{ $message }}</span>
         @enderror
       </div>
-      
+    
       <div class="form-group">
         <label for="PST">PST: </label>
         <input type="text" class="form-control" name="PST" id="PST" value="{{ old('PST') }}">
@@ -77,7 +77,7 @@
 
       <div class="form-group">
         <label for="HST">HST: </label>
-        <input type="text" class="form-control" name="HST" id="HST" value="{{ old('HST') }}">
+        <input type="text" class="form-control" hidden name="HST" id="HST" value="{{ old('HST') }}">
         @error('HST')
             <span class="alert-danger">{{ $message }}</span>
         @enderror
