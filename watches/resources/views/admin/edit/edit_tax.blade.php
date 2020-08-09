@@ -60,7 +60,7 @@
 
       @if($taxes->province == 'Quebec')
       <div class="form-group">
-        <label for="PST">QST: </label>
+        <label for="PST">*QST: </label>
         <input type="text" class="form-control" name="PST" id="PST" value="{{ old('PST', $taxes->PST) }}">
         @error('PST')
             <span class="alert-danger">{{ $message }}</span>
