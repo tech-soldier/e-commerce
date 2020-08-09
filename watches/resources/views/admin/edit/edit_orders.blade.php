@@ -5,6 +5,8 @@
 
 <div class="container" style="width: 50%;">
     <h1>{{ $title }}</h1>
+    <p><a href="/admin/orders_table" class="btn btn-warning">Back to Orders</a></p>
+
     <form method="post" action="/admin/edit/edit_orders" enctype="multipart/form-data" >
       <input type="hidden" name="_method" value="PUT" />
       @csrf 
@@ -63,7 +65,7 @@
         @enderror
       </div>
 
-      @if($order->HST == null)
+      @if($order->HST == 0.00)
       <div class="form-group">
         <label for="GST">GST: </label>
         <input type="text" class="form-control" disabled name="GST" id="GST" value="{{ old('GST', $order->GST) }}">
@@ -80,7 +82,7 @@
       </div>
       @endif
 
-      @if($order->HST == null)
+      @if($order->HST == 0.00)
       <div class="form-group">
         <label for="PST">PST: </label>
         <input type="text" class="form-control" name="PST" id="PST" value="{{ old('PST', $order->PST) }}">
@@ -97,7 +99,7 @@
       </div>
       @endif
 
-      @if($order->PST != null)
+      @if($order->PST != 0.00)
       <div class="form-group">
         <input type="text" class="form-control" hidden name="HST" id="HST" value="{{ old('HST', $order->HST) }}">
         @error('HST')

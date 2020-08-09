@@ -65,7 +65,7 @@ class OrderController extends Controller
             'subtotal' => "required|regex:/^\d+(\.\d{1,2})?$/",     
             'GST' => "nullable|regex:/^\d+(\.\d{1,2})?$/",   
             'PST' => "nullable|regex:/^\d+(\.\d{1,2})?$/",  
-            'HST' => "required|regex:/^\d+(\.\d{1,2})?$/",  
+            'HST' => "nullable|regex:/^\d+(\.\d{1,2})?$/",  
             'shipping' => "required|regex:/^\d+(\.\d{1,2})?$/", 
             'transaction_status' => 'required|integer', 
             'total' => "required|regex:/^\d+(\.\d{1,2})?$/"                                   
@@ -80,8 +80,8 @@ class OrderController extends Controller
             'shipping_address' => $valid['shipping_address'],
             'subtotal' => $valid['subtotal'], 
             'GST' => $valid['GST'] ?? 0.05, 
-            'PST' => $valid['PST'],
-            'HST' => $valid['HST'], 
+            'PST' => $valid['PST'] ?? 0.00,
+            'HST' => $valid['HST'] ?? 0.00, 
             'shipping' => $valid['shipping'], 
             'transaction_status' => $valid['transaction_status'] ?? 0,                                               
             'total' => $valid['total']
