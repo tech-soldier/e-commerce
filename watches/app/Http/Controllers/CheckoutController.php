@@ -164,7 +164,23 @@ class CheckoutController extends Controller
             die($e->getMessage());
         }
 
-        return redirect('/shop')->with('success', 'Order was successfully created');
+        return redirect("/thankyou/".$order_id)->with('success', 'Order was successfully created');
+    }
+
+    public function thankyou($id)
+    {
+
+
+        $title = 'Thank You ';
+        $final_order = Order::find($id);
+        
+        return view('thankyou', compact('title', 'final_order'));
+
+
+
+
+
+
     }
 
 }
