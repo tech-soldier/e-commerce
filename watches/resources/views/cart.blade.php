@@ -53,6 +53,10 @@
             </tbody>
             <tfoot>
             <tr class="visible-xs">
+
+                <td colspan="5" class="text-right"><strong><span class="message text-danger"></span></strong></td>
+            </tr>
+            <tr>
                 <td colspan="5" class="text-right"><strong>Total $<span class="cart-total">{{ $total }}</span></strong></td>
             </tr>
 {{--            <tr class="visible-xs">--}}
@@ -82,11 +86,8 @@
 
         $(".remove-from-cart").click(function (e) {
             e.preventDefault();
-
             var ele = $(this);
-
             var parent_row = ele.parents("tr");
-
             var cart_total = $(".cart-total");
 
             if(confirm("Are you sure?")) {
@@ -96,9 +97,7 @@
                     data: {_token: '{{ csrf_token() }}', id: ele.attr("data-id")},
                     dataType: "json",
                     success: function (response) {
-
                         parent_row.remove();
-
                         cart_total.text(response.total);
                     }
                 });
@@ -113,6 +112,7 @@
             var quantity = ele.val();
             var product_subtotal = parent_row.find("span.product-subtotal");
             var cart_total = $(".cart-total");
+            var message =  $(".message");
 
             $.ajax({
                 url: '{{ url('update-cart') }}',
@@ -120,9 +120,9 @@
                 data: {_token: '{{ csrf_token() }}', id: ele.attr("data-id"), quantity: quantity},
                 dataType: "json",
                 success: function (response) {
-
                     product_subtotal.text(response.subTotal);
                     cart_total.text(response.total);
+                    message.text(response.message);
                 }
             });
         });

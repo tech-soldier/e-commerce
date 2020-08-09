@@ -122,17 +122,36 @@ class CartController extends Controller
         {
             $cart = session()->get('cart');
 
-            $cart[$request->id]["quantity"] = $request->quantity;
+            //checking the number of watches left in the database
 
-            session()->put('cart', $cart);
+            $watch_name = $cart[$request->id]["watch_name"];
 
-            $subTotal = round($cart[$request->id]['quantity'] * $cart[$request->id]['price'], 2);
+            $watch = Watch::where('watch_name' , '=', $watch_name)->first();
 
-            $total = round($this->getCartTotal(),2);
+            if ($watch->quantity < 2) {
+                $message = "Sorry, no more items left in stock";
+                return response()->json(['message' => $message]);
+            } elseif ((($watch->quantity) - ($request->quantity)) >= 0) {
+//                $watch->quantity =  $watch->quantity - $request->quantity;
+//                $watch->save();
+                $message = "Quantity updated";
+                $cart[$request->id]["quantity"] = $request->quantity;
+                session()->put('cart', $cart);
 
-            return response()->json(['total' => $total, 'subTotal' => $subTotal]);
+                $subTotal = round($cart[$request->id]['quantity'] * $cart[$request->id]['price'], 2);
 
-            session()->flash('success', 'Cart updated successfully');
+                $total = round($this->getCartTotal(),2);
+
+                return response()->json(['total' => $total, 'subTotal' => $subTotal, 'message' => $message]);
+
+                session()->flash('success', 'Cart updated successfully');
+            } else {
+                $message = "Sorry, there are only " . $watch->quantity . " watches left in stock";
+                return response()->json(['message' => $message]);
+            }
+
+
+
         }
     }
 }
