@@ -37,12 +37,21 @@ class CheckoutController extends Controller
             if ($taxes->HST != 0){
                 $tax = $taxes->HST;
                 $tax_message = "HST: $" . round($tax, 2);
+                $gst = 0;
+                $pst = 0;
+                $hst = $taxes->HST;
             } else if ($taxes->PST != 0) {
-                $tax = $taxes->HST + $taxes->PST;
+                $tax = $taxes->GST + $taxes->PST;
                 $tax_message = "PST: $" .  round($taxes->PST, 2) . ", " . "GST: $" . round($taxes->GST, 2);
+                $gst = $taxes->GST;
+                $pst = $taxes->PST;
+                $hst = 0;
             } else {
                 $tax = $taxes->GST;
                 $tax_message = "GST: $" . " " . round($tax, 2);
+                $gst = $taxes->GST;
+                $pst = 0;
+                $hst = 0;
             }
 
             $items_total = 0;
@@ -62,6 +71,9 @@ class CheckoutController extends Controller
                 "order_total" => $total,
                 "subtotal" => $subtotal,
                 "tax" => $tax,
+                "gst" => $gst,
+                "pst" => $pst,
+                "hst" => $hst,
                 "tax_message" => $tax_message,
                 "shipping" => $shipping
             ];
@@ -123,7 +135,7 @@ class CheckoutController extends Controller
             'GST' => $cost['gst'],
             'PST' => $cost['pst'],
             // EDIT HST
-            'HST' => $cost['pst'],
+            'HST' => $cost['hst'],
             'shipping' => $cost['shipping'],
             'total' => $cost['order_total']
         ]);

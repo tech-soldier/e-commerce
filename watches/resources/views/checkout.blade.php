@@ -230,21 +230,21 @@ use \App\Http\Controllers\CartController;
                                     </header>
                                     <article class="card-body">
                                         <dl class="dlist-align">
-                                            <dt>Subtotal: <span id="subtotal" name="subtotal">{{ CartController::getCartTotal() }}</span></dt>
+                                            <dt>Subtotal: $<span id="subtotal" name="subtotal" class="text-dark">{{ CartController::getCartTotal() }}</span></dt>
                                         </dl>
 
                                         <dl class="dlist-align">
-                                            <dt><span id="tax"></span></dt>
+                                            <dt class="text-primary"><span id="tax" class="text-dark"></span></dt>
                                         </dl>
 {{--                                        <dl class="dlist-align">--}}
 {{--                                            <dt>PST:  <span id="pst"></span></dt>--}}
 {{--                                        </dl>--}}
                                         <dl class="dlist-align">
-                                            <dt>Shipping: <span id="shipping"></span></dt>
+                                            <dt>Shipping: <span id="shipping" class="text-dark"></span></dt>
                                         </dl>
                                         <dl class="dlist-align">
-                                            <dt>Total: </dt>
-                                            <dd class="text-right h5 b" id="total_final" name="total"></dd>
+                                            <dt class="text-primary">Total: </dt>
+                                            <dd class="text-right h5 b text-dark" id="total_final" name="total"></dd>
                                             <div class="form-group">
                                                 <input type="hidden" name="total" disabled class="form-control" id="total" value=" ">
                                             </div>
@@ -283,8 +283,8 @@ use \App\Http\Controllers\CartController;
                     success: function (response) {
 
                         tax.text(response.tax_message);
-                        shipping.text(response.shipping);
-                        total_final.text(response.total);
+                        shipping.text('$' + response.shipping);
+                        total_final.text('$' + response.total);
                         order_total.setAttribute("value", response.total);
 
                     }
