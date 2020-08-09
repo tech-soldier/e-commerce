@@ -276,22 +276,21 @@ use \App\Http\Controllers\CartController;
                 var order_total = $("#total");
 
 
-                    $.ajax({
-                        url: '{{ url('checkout-calculate-cost') }}',
-                        method: "patch",
-                        data: {_token: '{{ csrf_token() }}', province: ele, subtotal: total},
-                        dataType: "json",
-                        success: function (response) {
+                $.ajax({
+                    url: '{{ url('checkout-calculate-cost') }}',
+                    method: "patch",
+                    data: {_token: '{{ csrf_token() }}', province: ele, subtotal: total},
+                    dataType: "json",
+                    success: function (response) {
 
-                            gst.text(response.gst);
-                            pst.text(response.pst);
-                            shipping.text(response.shipping);
-                            total_final.text(response.total);
-                            order_total.setAttribute("value", response.total);
+                        gst.text(response.gst);
+                        pst.text(response.pst);
+                        shipping.text(response.shipping);
+                        total_final.text(response.total);
+                        order_total.setAttribute("value", response.total);
 
-
-                        }
-                    });
+                    }
+                });
             });
 
 
