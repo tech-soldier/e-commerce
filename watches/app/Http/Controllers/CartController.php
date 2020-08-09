@@ -126,7 +126,7 @@ class CartController extends Controller
 
             session()->put('cart', $cart);
 
-            $subTotal = $cart[$request->id]['quantity'] * $cart[$request->id]['price'];
+            $subTotal = round($cart[$request->id]['quantity'] * $cart[$request->id]['price'], 2);
 
             $total = round($this->getCartTotal(),2);
 
@@ -136,3 +136,6 @@ class CartController extends Controller
         }
     }
 }
+
+
+

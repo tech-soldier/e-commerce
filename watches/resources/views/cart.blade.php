@@ -40,11 +40,10 @@
                 </td>
                 <td data-th="Price">{{$details['price']}}</td>
                 <td data-th="Quantity">
-                    <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity" />
+                    <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity" data-id="{{ $id }}"/>
                 </td>
                 <td data-th="Subtotal" class="text-center">$<span class="product-subtotal">{{ $details['price'] * $details['quantity'] }}</span></td>
                 <td class="actions" data-th="">
-                    <button class="btn btn-info btn-sm update-cart" data-id="{{ $id }}"><i class="fas fa-sync-alt"></i></button>
                     <button class="btn btn-danger btn-sm remove-from-cart" data-id="{{ $id }}"><i class="fas fa-trash"></i></button>
                     <i class="fa fa-circle-o-notch fa-spin btn-loading" style="font-size:24px; display: none"></i>
                 </td>
@@ -90,7 +89,7 @@
 
             var cart_total = $(".cart-total");
 
-            if(confirm("Are you sure")) {
+            if(confirm("Are you sure?")) {
                 $.ajax({
                     url: '{{ url('remove-from-cart') }}',
                     method: "DELETE",
@@ -106,22 +105,14 @@
             }
         });
 
-        $(".update-cart").click(function (e) {
+        $(".quantity").change(function (e) {
             e.preventDefault();
 
             var ele = $(this);
-
             var parent_row = ele.parents("tr");
-
-            var quantity = parent_row.find(".quantity").val();
-
+            var quantity = ele.val();
             var product_subtotal = parent_row.find("span.product-subtotal");
-
             var cart_total = $(".cart-total");
-
-            var loading = parent_row.find(".btn-loading");
-
-            loading.show();
 
             $.ajax({
                 url: '{{ url('update-cart') }}',
@@ -130,10 +121,7 @@
                 dataType: "json",
                 success: function (response) {
 
-                    loading.hide();
-
                     product_subtotal.text(response.subTotal);
-
                     cart_total.text(response.total);
                 }
             });
