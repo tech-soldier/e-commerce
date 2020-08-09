@@ -5,6 +5,8 @@
 
 <div class="container" style="width: 50%;">
     <h1>{{ $title }}</h1>
+    <p><a href="/admin/orders_table" class="btn btn-warning">Back to Orders</a></p>
+
     <form method="post" action="/admin/edit/edit_orders" enctype="multipart/form-data" >
       <input type="hidden" name="_method" value="PUT" />
       @csrf 

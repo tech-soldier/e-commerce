@@ -5,6 +5,8 @@
 
 <div class="container" style="width: 50%;">
     <h1>{{ $title }}</h1>
+    <p><a href="/admin/orders_table" class="btn btn-warning">Back to Orders</a></p>
+
     <form method="post" action="/admin/create/create_order" enctype="multipart/form-data" >
       @csrf 
       <div class="form-group">
@@ -67,7 +69,7 @@
 
       <div class="form-group pst-div">
         <label for="GST">GST: </label>
-        <input type="text" class="form-control" disabled placeholder="0.05" name="GST" id="GST" value="{{ old('GST') }}">
+        <input type="text" class="form-control" name="GST" id="GST" value="{{ old('GST') }}">
         @error('GST')
             <span class="alert-danger">{{ $message }}</span>
         @enderror
