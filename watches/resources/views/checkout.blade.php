@@ -211,10 +211,10 @@ use \App\Http\Controllers\CartController;
                                         </div>
                                     </div>
 
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="materialUnchecked">
-                                        <label class="form-check-label" for="materialUnchecked">Same as Billing Address</label>
-                                    </div>
+{{--                                    <div class="form-check">--}}
+{{--                                        <input type="checkbox" class="form-check-input" id="materialUnchecked">--}}
+{{--                                        <label class="form-check-label" for="materialUnchecked">Same as Billing Address</label>--}}
+{{--                                    </div>--}}
 
                                 </article>
                             </div>

@@ -69,7 +69,7 @@ class CheckoutController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function placeOrder(Request $request) {
-        
+
         $current_year = date("Y");
         $current_month = date("m");
         $now = $current_year.$current_month;
@@ -116,6 +116,17 @@ class CheckoutController extends Controller
             'shipping' => $cost['shipping'],
             'total' => $cost['order_total']
         ]);
+
+        // updated watches quantity in the database
+
+//        $cart = session()->get('cart');
+//        foreach($cart as $id => $value) {
+//            echo "Key=" . $id . ", Value=" . $value;
+//
+//        }
+
+        //create a record in orders_watches table
+
 
         //clean session, empty cart
         session()->forget('cart');
