@@ -3,7 +3,6 @@
 
 @section('content')
 
-
 <div class="container" style="width: 50%;">
 
     <h1>{{ $title }}</h1>
@@ -38,7 +37,6 @@
         </form>
     
 </div>
-
 
 
 @stop 

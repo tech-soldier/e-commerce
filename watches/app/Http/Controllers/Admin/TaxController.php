@@ -48,12 +48,12 @@ class TaxController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request) 
     {
         $valid = $request->validate([
             'province' => 'required|string|max:255',
-            'PST' => "required|regex:/^\d+(\.\d{1,2})?$/", 
-            'HST' => "required|regex:/^\d+(\.\d{1,2})?$/"
+            'PST' => "nullable|regex:/^\d+(\.\d{1,2})?$/", 
+            'HST' => "nullable|regex:/^\d+(\.\d{1,2})?$/"
         ]); 
 
         Tax::create([
@@ -102,8 +102,8 @@ class TaxController extends Controller
         $valid = $request->validate([
             'id' => 'required|integer',
             'province' => 'required|string|max:255',
-            'PST' => "required|regex:/^\d+(\.\d{1,2})?$/", 
-            'HST' => "required|regex:/^\d+(\.\d{1,2})?$/"
+            'PST' => 'nullable|regex:/^\d+(\.\d{1,2})?$/', 
+            'HST' => 'nullable|regex:/^\d+(\.\d{1,2})?$/'
         ]); 
 
 

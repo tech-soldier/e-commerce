@@ -5,8 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-
-use App\Tax; 
 use App\Order; 
 use App\Watch; 
 use App\User; 
@@ -43,11 +41,11 @@ class OrderController extends Controller
         $title = 'Create A New Order'; 
         $orders = Order::all(); 
         $user = User::all();
-        $watch = Watch::all(); 
-        $taxes = Tax::all(); 
+        // $watch = Watch::all(); 
+        //$taxes = Tax::all(); 
 
 
-        return view('/admin/create/create_order', compact('title', 'orders', 'taxes'));
+        return view('/admin/create/create_order', compact('title', 'orders'));
     }
 
     /**
@@ -65,9 +63,9 @@ class OrderController extends Controller
             'billing_address' => 'required|string|max:255',                                              
             'shipping_address' => 'required|string|max:255',
             'subtotal' => "required|regex:/^\d+(\.\d{1,2})?$/",     
-            'GST' => "required|regex:/^\d+(\.\d{1,2})?$/",   
-            'PST' => "required|regex:/^\d+(\.\d{1,2})?$/",  
-            'HST' => "required|regex:/^\d+(\.\d{1,2})?$/",  
+            'GST' => "nullable|regex:/^\d+(\.\d{1,2})?$/",   
+            'PST' => "nullable|regex:/^\d+(\.\d{1,2})?$/",  
+            'HST' => "nullable|regex:/^\d+(\.\d{1,2})?$/",  
             'shipping' => "required|regex:/^\d+(\.\d{1,2})?$/", 
             'transaction_status' => 'required|integer', 
             'total' => "required|regex:/^\d+(\.\d{1,2})?$/"                                   
@@ -81,11 +79,11 @@ class OrderController extends Controller
             'billing_address' => $valid['billing_address'],                                              
             'shipping_address' => $valid['shipping_address'],
             'subtotal' => $valid['subtotal'], 
-            'GST' => $valid['GST'], 
-            'PST' => $valid['PST'],
-            'HST' => $valid['HST'], 
+            'GST' => $valid['GST'] ?? 0.05, 
+            'PST' => $valid['PST'] ?? 0.00,
+            'HST' => $valid['HST'] ?? 0.00, 
             'shipping' => $valid['shipping'], 
-            'transaction_status' => $valid['transaction_status'],                                               
+            'transaction_status' => $valid['transaction_status'] ?? 0,                                               
             'total' => $valid['total']
          ]); 
 
@@ -102,10 +100,7 @@ class OrderController extends Controller
     {
         $title = 'Edit Order';
         $order = Order::find($id); 
-        $user = User::all();
-        $watch = Watch::all(); 
-        $taxes = Tax::all();
-        return view('/admin/edit/edit_orders', compact('title', 'order', 'user', 'watch', 'taxes')); 
+        return view('/admin/edit/edit_orders', compact('title', 'order')); 
     }
 
     /**
@@ -117,29 +112,36 @@ class OrderController extends Controller
      */
     public function update(Request $request)
     {
+
+        // dd($request); 
+
          $valid = $request->validate([
-            'id' => 'required|integer',
-            'user_id' => 'required|integer',                                                       
-            'first_name' => 'required|string|max:255',                                                      
+            'id' => 'required|integer',                                             
+            'full_name' => 'required|string|max:255',                                                      
             'email' => 'required|email',                                                 
             'billing_address' => 'required|string|max:255',                                              
             'shipping_address' => 'required|string|max:255',
-            'subtotal' => "required|regex:/^\d+(\.\d{1,2})?$/",                                              
-            'tax_id' => 'required|integer',                                                         
-            'total' => "required|regex:/^\d+(\.\d{1,2})?$/"   
+            'subtotal' => "required|regex:/^\d+(\.\d{1,2})?$/",     
+            'PST' => "nullable|regex:/^\d+(\.\d{1,2})?$/",  
+            'HST' => "nullable|regex:/^\d+(\.\d{1,2})?$/",  
+            'shipping' => "required|regex:/^\d+(\.\d{1,2})?$/", 
+            'transaction_status' => 'required|integer', 
+            'total' => "required|regex:/^\d+(\.\d{1,2})?$/"
          ]);   
-         dd($valid);
     
 
-        $order = Order::find($valid['id']);
-        $order->first_name = $valid['first_name'];
-        $order->user_id = $valid['user_id'];
-        $order->email = $valid['email'];
-        $order->billing_address = $valid['billing_address'];
-        $order->shipping_address = $valid['shipping_address'];
-        $order->subtotal = $valid['subtotal'];
-        $order->tax_id = $valid['tax_id'];
-        $order->total = $valid['total'];
+
+            $order = Order::find($valid['id']);
+            $order->full_name = $valid['full_name'];
+            $order->email = $valid['email'];
+            $order->billing_address = $valid['billing_address'];
+            $order->shipping_address = $valid['shipping_address'];
+            $order->subtotal = $valid['subtotal'];
+            $order->PST = $valid['PST'] ?? 0.00; 
+            $order->HST = $valid['HST'] ?? 0.00;
+            $order->shipping = $valid['shipping']; 
+            $order->transaction_status = $valid['transaction_status'] ?? 0; 
+            $order->total = $valid['total'];
        
 
         if($order->save() ) {

@@ -211,10 +211,10 @@ use \App\Http\Controllers\CartController;
                                         </div>
                                     </div>
 
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="materialUnchecked">
-                                        <label class="form-check-label" for="materialUnchecked">Same as Billing Address</label>
-                                    </div>
+{{--                                    <div class="form-check">--}}
+{{--                                        <input type="checkbox" class="form-check-input" id="materialUnchecked">--}}
+{{--                                        <label class="form-check-label" for="materialUnchecked">Same as Billing Address</label>--}}
+{{--                                    </div>--}}
 
                                 </article>
                             </div>
@@ -230,21 +230,21 @@ use \App\Http\Controllers\CartController;
                                     </header>
                                     <article class="card-body">
                                         <dl class="dlist-align">
-                                            <dt>Subtotal: <span id="subtotal" name="subtotal">{{ CartController::getCartTotal() }}</span></dt>
+                                            <dt>Subtotal: $<span id="subtotal" name="subtotal" class="text-dark">{{ CartController::getCartTotal() }}</span></dt>
                                         </dl>
 
                                         <dl class="dlist-align">
-                                            <dt>GST: <span id="gst"></span></dt>
+                                            <dt class="text-primary"><span id="tax" class="text-dark"></span></dt>
+                                        </dl>
+{{--                                        <dl class="dlist-align">--}}
+{{--                                            <dt>PST:  <span id="pst"></span></dt>--}}
+{{--                                        </dl>--}}
+                                        <dl class="dlist-align">
+                                            <dt>Shipping: <span id="shipping" class="text-dark"></span></dt>
                                         </dl>
                                         <dl class="dlist-align">
-                                            <dt>PST:  <span id="pst"></span></dt>
-                                        </dl>
-                                        <dl class="dlist-align">
-                                            <dt>Shipping: <span id="shipping"></span></dt>
-                                        </dl>
-                                        <dl class="dlist-align">
-                                            <dt>Total: </dt>
-                                            <dd class="text-right h5 b" id="total_final" name="total"></dd>
+                                            <dt class="text-primary">Total: </dt>
+                                            <dd class="text-right h5 b text-dark" id="total_final" name="total"></dd>
                                             <div class="form-group">
                                                 <input type="hidden" name="total" disabled class="form-control" id="total" value=" ">
                                             </div>
@@ -268,8 +268,7 @@ use \App\Http\Controllers\CartController;
             $(".province").on('change', function() {
 
                 var ele = $(this).val();
-                var gst = $("#gst");
-                var pst = $("#pst");
+                var tax = $("#tax");
                 var total = $("#subtotal").text();
                 var shipping = $("#shipping");
                 var total_final = $("#total_final");
@@ -283,10 +282,9 @@ use \App\Http\Controllers\CartController;
                     dataType: "json",
                     success: function (response) {
 
-                        gst.text(response.gst);
-                        pst.text(response.pst);
-                        shipping.text(response.shipping);
-                        total_final.text(response.total);
+                        tax.text(response.tax_message);
+                        shipping.text('$' + response.shipping);
+                        total_final.text('$' + response.total);
                         order_total.setAttribute("value", response.total);
 
                     }
