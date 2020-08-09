@@ -5,6 +5,8 @@
 
 <div class="container" style="width: 50%;">
     <h1>{{ $title }}</h1>
+    <p><a href="/admin/taxes_table" class="btn btn-warning">Back to Tax Table</a></p>
+
     <form method="post" action="/admin/edit/edit_tax" enctype="multipart/form-data" >
       <input type="hidden" name="_method" value="PUT" />
       @csrf 
