@@ -41,9 +41,26 @@
       </div>
       @endif
 
-      @if($taxes->province == 'Manitoba' || $taxes->province == 'Saskatchewan' || $taxes->province == 'British Columbia' || $taxes->province == 'Quebec')
+      @if($taxes->province == 'Manitoba' || $taxes->province == 'Saskatchewan' || $taxes->province == 'British Columbia')
       <div class="form-group">
         <label for="PST">PST: </label>
+        <input type="text" class="form-control" name="PST" id="PST" value="{{ old('PST', $taxes->PST) }}">
+        @error('PST')
+            <span class="alert-danger">{{ $message }}</span>
+        @enderror
+      </div>
+      @else 
+      <div class="form-group">
+        <input type="text" class="form-control" hidden name="PST" id="PST" value="{{ old('PST', $taxes->PST) }}">
+        @error('PST')
+            <span class="alert-danger">{{ $message }}</span>
+        @enderror
+      </div>
+      @endif
+
+      @if($taxes->province == 'Quebec')
+      <div class="form-group">
+        <label for="PST">QST: </label>
         <input type="text" class="form-control" name="PST" id="PST" value="{{ old('PST', $taxes->PST) }}">
         @error('PST')
             <span class="alert-danger">{{ $message }}</span>
