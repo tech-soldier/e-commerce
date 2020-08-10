@@ -30,6 +30,7 @@
 	      		<th scope="col">GST</th>
 	      		<th scope="col">PST</th>
 	      		<th scope="col">HST</th>
+	      		<th scope="col">Total Tax</th>
 	      		<th scope="col">Created On</th>
 	      		<th scope="col">Updated On</th>
 	      		<th scope="col">Edit</th>
@@ -45,6 +46,7 @@
 				<td>{{ $tax->GST }}</td>
 				<td>{{ $tax->PST }}</td>
 				<td>{{ $tax->HST }}</td>
+				<td>{{ $tax->HST + $tax->GST + $tax->PST }}</td>
 				<td>{{ $tax->created_at }}</td>
 				<td>{{ $tax->updated_at }}</td>
 				<td><p><a href="/admin/edit/{{ $tax->id }}/edit_tax" class="btn btn-primary">Edit</a></p></td>

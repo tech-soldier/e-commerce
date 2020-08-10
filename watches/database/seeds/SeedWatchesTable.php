@@ -1287,5 +1287,29 @@ class SeedWatchesTable extends Seeder
             'updated_at' => Carbon::now()
         ]);
         //mechanical watch ends
+
+          DB::table('watches')->insert([ 
+            'SKU' => 66002631,
+            'watch_name' => 'TEST WATCH', 
+            'in_stock' => 1, 
+            'quantity' => 279, 
+            'cost' => 20993.99, 
+            'price' => 22443.99, 
+            'material' => 'stainless steel', 
+            'main_color' => 'silver', 
+            'movement' => 'mechanical', 
+            'gender' => 'male', 
+            'category_id' => 3, 
+            'diameter' => 28,
+            'strap_length' => '181mm', 
+            'strap_width' => '20mm', 
+            'weight' => '152g', 
+            'water_resistant' => '1 atm', 
+            'cover_img' => 'Elmington_Emerald.jpg', 
+            'short_description' => 'TEST Emerald Green Watch x Gold - 44mm', 
+            'long_description' => 'An TEST Emerald green dial recalls 1960s style with a sleek updated silhouette.',
+            'created_at' => Carbon::now(), 
+            'updated_at' => Carbon::now()
+        ]);
     }
 }
