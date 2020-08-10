@@ -10,14 +10,12 @@
 
 <!-- this is the table --> 
 	<p><a href="/admin/watches_table" class="btn btn-warning">Back to watches</a></p>
-	<p><a style="color: white;" href="/admin/restore/restore_watch" onclick="event.preventDefault();document.getElementByID('form_restore').submit();"><div class="btn btn-info">Restore</div></a></p>
 
 
 	<form method="get" action="{{ route('/admin/restore/restore_watch') }}" id="form_restore">
 		<table class="table table-striped">
 		  	<thead class="thead-dark">
 		    	<tr>
-		    		<th scope="col">Select to Restore</th>
 					<th scope="col">Watch ID</th>
 					<th scope="col">SKU</th>
 					<th scope="col">Watch name</th>
@@ -32,7 +30,6 @@
 			@foreach($watches as $watch)
 			<tbody>
 			    <tr>
-			    	<th scope="row"> <input type="checkbox" id="{{ $watch->id }}" name="id[]" value="Car"></th>
 			      	<th scope="row">{{ $watch->id }}</th>
 			      	<th>{{ $watch->SKU }}</th>
 			      	<td>{{ $watch->watch_name }}</td>
@@ -40,7 +37,7 @@
 			      	<td>{{ $watch->updated_at }}</td>
 			      	<td>{{ $watch->deleted_at }}</td>
 			      	<!-- <td><a style="color: white;" href="/admin/restore/restore_watch/{{ $watch->id }}" id="{{ $watch->id }}"><div class="btn btn-info">Restore</div></a></p> -->
-			      		<td><a style="color: white;" title="Restore" href="{{ route('/admin/restore/restore_watch', $watch->id) }}" id="{{ $watch->id }}"><div class="btn btn-info">Restore</div></a></p>
+			      		<td><a style="color: white;" title="Restore" href="{{ route('/admin/restore/restore_watch', $watch->id) }}" id="{{ $watch->id }}"><div style="font-size:1.4em" class="btn btn-info">&#x2672;</div></a></p>
 			  	</tr>
 			</tbody>
 			@endforeach
