@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Middleware;
+use \Auth;
 
 use Closure;
 
@@ -15,6 +16,10 @@ class RequireAdmin
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+        if(Auth::user()->is_admin){
+            return $next($request);
+        }
+
+        return redirect('')->with('error', 'You are not authorized to view the resource');
     }
 }

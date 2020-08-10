@@ -68,7 +68,7 @@ Route::get('/home', function(){
 
 
 /* ----------------  ADMIN ROUTES  ------------------ */
-Route::middleware('admin')->group(function{
+Route::middleware('admin')->group(function(){
 
 	// this is all for the admin side
 
