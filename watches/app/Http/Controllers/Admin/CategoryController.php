@@ -143,9 +143,9 @@ class CategoryController extends Controller
         ]);
 
         if( Category::find($valid['id'] )->delete() ) {
-            return back()->with('success', 'The record has been deleted!');
+            return back()->with('success', 'The category has been deleted!');
         }
-        return back()->with('error', 'There was a problem deleting that record');
+        return back()->with('error', 'There was a problem deleting that category');
     }
 
     /**

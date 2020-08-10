@@ -16,8 +16,7 @@ class WatchController extends Controller
     public function homeIndex()
     {
         $categories = Category::all();
-        $two = '2';
-        $watches = \DB::select(\DB::raw("select * from watches where category_id= :two"), array('two' => $two));
+        $watches = Watch::take(8)->get();
         $title = "TechWatch Home";
 
         $id = Auth::id(); //get authenticated user id
@@ -25,6 +24,18 @@ class WatchController extends Controller
 
         return view('watchhome', compact('categories', 'watches', 'title', 'user'));
     }
+    /**
+     * [Displaying list of categories fetching from database]
+     * @param  [type] $name [description]
+     * @return [type]       [description]
+     */
+     public function category_list($name){
+        $categories = Category::all();
+        $cat = Category::where('category_name', $name)->with('watches')->first();
+        $title = 'Category: ' . $name;
+        return view('watches/category_list', compact('cat', 'categories', 'title'));
+    }
+
 
     /**
      * Display a listing of the resource.
@@ -40,7 +51,7 @@ class WatchController extends Controller
             foreach ($watches as $watch) {
                 $str = 
                 
-                "<div class="."'col-3 text-center bord'>".
+                "<div class="."'col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 text-center bord'>".
                     "<div class="."'single-product-area mb-30'>".
                         "<div class="."'product_image'>".
                             
@@ -87,6 +98,8 @@ class WatchController extends Controller
         
         
     }
+
+
 
     /**
      * Show the form for creating a new resource.

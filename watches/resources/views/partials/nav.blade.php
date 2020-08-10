@@ -10,48 +10,47 @@
 
             @guest
             <li class="nav-item">
-                <a class="nav-link" href="/">Home</a>
+                <a class="nav-link {{ (request()->is('/')) ? 'active' : '' }}" href="/">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/shop">Shop</a>
+                <a class="nav-link {{ (request()->is('shop')) ? 'active' : '' }}" href="/shop">Shop</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/about">About</a>
+                <a class="nav-link {{ (request()->is('about')) ? 'active' : '' }}" href="/about">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/contact">Contact</a>
+                <a class="nav-link {{ (request()->is('contact')) ? 'active' : '' }}" href="/contact">Contact</a>
             </li>
 
             @if (Route::has('register'))
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                <a class="nav-link {{ (request()->is('register')) ? 'active' : '' }}" href="{{ route('register') }}">{{ __('Register') }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                <a class="nav-link {{ (request()->is('login')) ? 'active' : '' }}" href="{{ route('login') }}">{{ __('Login') }}</a>
             </li>
             @endif
 
             @else
                 @if(Auth::user()->is_admin)
             <li class="nav-item">
-                <a class="nav-link" href="/admin">Admin Dash</a>
+                <a class="nav-link" href="/admin">Admin</a>
             </li>
             @endif
 
             <li>
-                <a class="nav-link" href="/">Home
-                  <span class="sr-only">(current)</span>
-                </a>
+                <a class="nav-link {{ (request()->is('/')) ? 'active' : '' }}" href="/">Home</a>
+            </li>
+            <li  >
+                <a class="nav-link {{ (request()->is('shop')) ? 'active' : '' }}" href="/shop">Shop</a>
             </li>
             <li >
-                <a class="nav-link" href="/about">About</a>
+                <a class="nav-link {{ (request()->is('about')) ? 'active' : '' }}" href="/about">About</a>
             </li>
             <li  >
-                <a class="nav-link" href="/contact">Contact</a>
+                <a class="nav-link {{ (request()->is('contact')) ? 'active' : '' }}" href="/contact">Contact</a>
             </li>
-            <li  >
-                <a class="nav-link" href="/shop">Shop</a>
-            </li>
+            
             <li class="nav-item dropdown">
 
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -71,28 +70,29 @@
                 </div>
             </li>
 
-
-
-            <!-- <div class="circle_search">
-                
-                <form method="get" action="{{ url('/shop_search') }}">
-                    @csrf
-                    <div class="input-group">
-                        <input type="text" class="form-control" id="query" name="query" placeholder="Search Watch" /> 
-                            <span class="input-group-btn">
-                                <button type="submit" class="btn btn-default">
-                                    <span class="glyphicon glyphicon-search"></span>
-                                </button>
-                            </span>
-                    </div>
-                 </form>
-
-            </div>
- -->
-
+            
+            
 
             
-            <div class=" ml-3 acct_user d-flex">
+            @endguest
+
+        </ul>
+
+        <div class="ml-3 top-search" >
+                
+
+                <form method="get" class="form-inline" action="{{ url('/shop_search') }}">
+                    @csrf
+                    
+                    <input type="search" class="form-control mr-sm-2 searchbox" id="query" name="query" placeholder="Search" /> 
+                    <span class="input-group-btn">
+                        <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>                            
+                    </span>
+                    
+                 </form>
+
+        </div>
+        <div class=" ml-3 acct_user d-flex">
             <!-- util profile -->
                 <a href="/profile">
                     <div class="circle1">
@@ -106,26 +106,6 @@
 
                     </div>                    
                 </a>
-
-            </div>
-
-            
-            @endguest
-
-        </ul>
-
-        <div class="ml-3" >
-                
-
-                <form method="get" class="form-inline" action="{{ url('/shop_search') }}">
-                    @csrf
-                    
-                    <input type="search" class="form-control mr-sm-2 searchbox" id="query" name="query" placeholder="Search" /> 
-                    <span class="input-group-btn">
-                        <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>                            
-                    </span>
-                    
-                 </form>
 
             </div>
         <div class=" ml-2 acct_srch d-flex">
@@ -145,4 +125,19 @@
         </div>
 
     </div>
+
 </nav>
+<div class=" bottom-search " >
+                
+
+                <form method="get" class="form-inline" action="{{ url('/shop_search') }}">
+                    @csrf
+                    
+                    <input type="search" class="form-control mr-sm-2 searchbox1" id="query-bottom" name="query" placeholder="Search" /> 
+                    <span class="input-group-btn">
+                        <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>                            
+                    </span>
+                    
+                 </form>
+
+        </div>
