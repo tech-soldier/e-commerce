@@ -150,6 +150,7 @@ Route::middleware(['auth','admin'])->group(function(){
 	/* ------------------------------ RESTORE  ----------------------------------- */
 
 	Route::get('/admin/restore/restore_watch', 'Admin\WatchController@restoreWatch'); 
+	Route::get('/admin/restore/restore_watch/{id?}', 'Admin\WatchController@restoreBack')->name('/admin/restore/restore_watch'); 
 
 });
 
