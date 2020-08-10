@@ -52,19 +52,17 @@ class UserController extends Controller
             'country' => 'required|string|max:255', 
             'postal_code' => 'required|string|max:6', 
             'phone_number' => 'required|regex:/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/',
-            'cover_img' => 'nullable|image',
+            'image' => 'nullable|image',
             'is_admin' => 'required|integer'
-        ]); 
-
-        dd($valid);
+        ]);
         
-        if(!empty($valid['cover_img'])) {
+        if(!empty($valid['image'])) {
             //get the uploaded file
-            $file = $request->file('cover_img');
+            $file = $request->file('image');
             //get the original filename
             $image = time() . '_' . $file->getClientOriginalName();
             //save the image
-            $path = $file->storeAs('storage/app/public/images', $image);
+            $path = $file->storeAs('public/images', $image);
         }
 
         User::create([
@@ -78,7 +76,7 @@ class UserController extends Controller
             'country' => $valid['country'], 
             'postal_code' => $valid['postal_code'], 
             'phone_number' => $valid['phone_number'],
-            'cover_img' => $image ?? '',
+            'image' => $image ?? '',
             'is_admin' => $valid['is_admin'] ?? 0
         ]); 
 
@@ -121,19 +119,19 @@ class UserController extends Controller
             'country' => 'required|string|max:255', 
             'postal_code' => 'required|string|max:6', 
             'phone_number' => 'required|regex:/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/',
-            'cover_img' => 'nullable|image',
+            'image' => 'nullable|image',
             'is_admin' => 'required|integer' 
             
         ]);
 
         // image upload, make sure it is valid if added
-        if(!empty($valid['cover_img'])) {
+        if(!empty($valid['image'])) {
             // get the uploaded file
-            $file = $request->file('cover_img');
+            $file = $request->file('image');
             // get the original file name 
             $image = time() . '_' . $file->getClientOriginalName();
             // save the image
-            $path = $file->storeAs('storage/app/public/images', $image);
+            $path = $file->storeAs('public/images', $image);
         }
 
         $user=User::find($valid['id']);
