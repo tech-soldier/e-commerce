@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOrderWatchesTable extends Migration
+class CreateOrderWatchTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateOrderWatchesTable extends Migration
      */
     public function up()
     {
-        Schema::create('order_watches', function (Blueprint $table) {
+        Schema::create('order_watch', function (Blueprint $table) {
             $table->integer('watch_id')->unsigned();
             $table->integer('order_id')->unsigned();
-            $table->integer('tax_id')->unsigned();
             $table->string('watch_name', 255);
             $table->decimal('price', 14,2); 
             $table->integer('quantity'); 
@@ -32,6 +31,6 @@ class CreateOrderWatchesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('order_watches');
+        Schema::dropIfExists('order_watch');
     }
 }
