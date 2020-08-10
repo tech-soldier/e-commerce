@@ -10,6 +10,8 @@
 <!-- this is the table --> 
 	<p><a style="color: white;" href="/admin/create/create_tax"><div class="btn btn-success">Add Tax +</div></a></p>
 
+	<p><a style="color: white;" href="/admin/restore/restore_tax"><div class="btn btn-info">Restore 	&#xA71C;</div></a></p>
+
 	<form method="GET" action="{{ url('/admin/search/search_taxes') }}" style="margin-bottom: 25px">
 		@csrf
 	    <div class="input-group">
@@ -50,7 +52,15 @@
 				<td>{{ $tax->created_at }}</td>
 				<td>{{ $tax->updated_at }}</td>
 				<td><p><a href="/admin/edit/{{ $tax->id }}/edit_tax" class="btn btn-primary">Edit</a></p></td>
-				<td><button type="button" class="btn btn-danger">Delete</button></td>
+				<td>
+					<form class="delete"
+                    	onSubmit="return confirm('Do you really want to delete this post?')"
+                     	action="/admin/taxes_table" method="post">
+	                    @csrf
+	                    @method('DELETE')
+	                    <input type="hidden" name="id" value="{{ $tax->id }}"/>
+	                    <button type="submit" class="btn btn-danger">Delete</button>
+	            	</form></td>
 		    </tr>
 	  	</tbody>
 	   	@endforeach

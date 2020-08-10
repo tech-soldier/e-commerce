@@ -54,7 +54,6 @@
 					</p>
 				</td>
 				<td>
-
 					<form class="delete"
                     	onSubmit="return confirm('Do you really want to delete this post?')"
                      	action="/admin/users_table" method="post">

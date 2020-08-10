@@ -44,7 +44,7 @@
 		@foreach($watches as $watch)
 		<tbody>
 		    <tr>
-		      	<th scope="row">1{{ $watch->id }}</th>
+		      	<th scope="row">{{ $watch->id }}</th>
 		      	<th>{{ $watch->SKU }}</th>
 		      	<td>{{ $watch->watch_name }}</td>
 		      	<td>$ {{ $watch->price }}</td>

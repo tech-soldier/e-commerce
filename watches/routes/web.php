@@ -139,7 +139,7 @@ Route::middleware(['auth','admin'])->group(function(){
 
 	//Route::delete('/admin/taxes_table, Admin\CategoryController@destroy');
 
-	Route::delete('/admin/taxes_table', 'Admin\CategoryController@destroy');
+	Route::delete('/admin/taxes_table', 'Admin\TaxController@destroy');
 
 
 	// edit users table
@@ -163,6 +163,10 @@ Route::middleware(['auth','admin'])->group(function(){
 	// delete and restore categories
 	Route::get('/admin/restore/restore_category', 'Admin\CategoryController@restoreCategory'); 
 	Route::get('/admin/restore/restore_category/{id?}', 'Admin\CategoryController@restoreBack')->name('/admin/restore/restore_category'); 
+
+	// delete and restore taxes
+	Route::get('/admin/restore/restore_tax', 'Admin\TaxController@restoreTax'); 
+	Route::get('/admin/restore/restore_tax/{id?}', 'Admin\TaxController@restoreBack')->name('/admin/restore/restore_tax'); 
 });
 
 
