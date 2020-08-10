@@ -77,7 +77,7 @@ class WatchController extends Controller
             $image = time() . '_' . $file->getClientOriginalName();
 
             //save the image
-            $path = $file->storeAs('storage/app/public/images', $image);
+            $path = $file->storeAs('public/images', $image);
         }
 
         Watch::create([
@@ -97,7 +97,7 @@ class WatchController extends Controller
             'strap_length' => $valid['strap_length'],
             'weight' => $valid['weight'],
             'water_resistant' => $valid['water_resistant'],
-            'cover_img' => $valid['cover_img'] ?? '',
+            'cover_img' => $image ?? '',
             'short_description' => $valid['short_description'],
             'long_description' => $valid['long_description']
 
@@ -157,9 +157,9 @@ class WatchController extends Controller
         if(!empty($valid['cover_img'])){
         $file = $request->file('cover_img');
         //getting the orginal file name
-        $cover_img = time() . '_' . $file->getClientOriginalName();
+        $image = time() . '_' . $file->getClientOriginalName();
         //save the image
-        $path = $file->storeAs('storage/app/public/images', $cover_img);
+        $path = $file->storeAs('public/images', $image);
 
     }
 
@@ -182,11 +182,11 @@ class WatchController extends Controller
         $watch->short_description = $valid['short_description'];
         $watch->long_description = $valid['long_description'];
         if(!empty($cover_img)) {
-             $watch->cover_img = $cover_img;
+             $watch->cover_img = $image;
         }
 
         if($watch->save() ) {
-            return redirect('/admin/watches_table')->with('success', 'Your watch is successfully updated');
+            return redirect('/admin/watches_table')->with('success', 'Watch was successfully updated');
 
         }
 
@@ -207,9 +207,9 @@ class WatchController extends Controller
         ]);
 
         if( Watch::find($valid['id'] )->delete() ) {
-            return back()->with('success', 'The record has been deleted!');
+            return back()->with('success', 'The watch has been deleted!');
         }
-        return back()->with('error', 'There was a problem deleting that record');
+        return back()->with('error', 'There was a problem deleting that watch');
     }
 
     /**

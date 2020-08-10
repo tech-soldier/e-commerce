@@ -145,7 +145,7 @@ class OrderController extends Controller
        
 
         if($order->save() ) {
-            return redirect('/admin/orders_table')->with('success', 'Your order is successfully updated');
+            return redirect('/admin/orders_table')->with('success', 'Your order was successfully updated');
 
         }
 
@@ -166,9 +166,9 @@ class OrderController extends Controller
         ]);
         
         if( Order::find($valid['id'] )->delete() ) {
-            return back()->with('success', 'The record has been deleted!');
+            return back()->with('success', 'The order has been deleted!');
         }
-        return back()->with('error', 'There was a problem deleting that record');
+        return back()->with('error', 'There was a problem deleting that order');
     }
 
     /**
