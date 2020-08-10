@@ -6,13 +6,14 @@
                 <div class="col-md-5 col-sm-12">
                     <div class="single_footer_area mb-100">
                         <div class="footer_heading mb-4">
+                            <!-- <img class="logo my-3" src="/storage/images/logo1.png" alt="logo"> -->
                             <h6>Contact Us</h6>
                         </div>
                         <ul class="footer_content">
-                            <li><span>Address:</span> Lords, London, UK - 1259</li>
+                            <li><span>Address:</span> 460 Portage Ave. Winnipeg, Canada</li>
                             <li><span>Phone:</span> 002 63695 24624</li>
-                            <li><span>FAX:</span> 002 78965 369552</li>
-                            <li><span>Email:</span> support@example.com</li>
+                            <li><span>FAX:</span> +48 444 666 3333</li>
+                            <li><span>Email:</span> techwatch7@gmail.com</li>
                         </ul>
                         <div class="footer_social_area mt-15">
                             <a href="#" style="padding-left:0;"><i class="fab fa-facebook-f"></i></a>
