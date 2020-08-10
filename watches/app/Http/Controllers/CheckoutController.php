@@ -49,7 +49,7 @@ class CheckoutController extends Controller
                 $hst = $taxes->HST;
             } else if ($taxes->PST != 0) {
                 $tax = ($taxes->GST*$request->subtotal) + ($taxes->PST*$request->subtotal);
-                $tax_message = "PST: $" .  round($taxes->PST, 2) . ", " . "GST: $" . round($taxes->GST, 2);
+                $tax_message = "PST: $" .  round($taxes->PST*$request->subtotal, 2) . ", " . "GST: $" . round($taxes->GST*$request->subtotal, 2);
                 $gst = $taxes->GST;
                 $pst = $taxes->PST;
                 $hst = 0;
