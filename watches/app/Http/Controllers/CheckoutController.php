@@ -16,7 +16,7 @@ class CheckoutController extends Controller
     {
         $taxes = Tax::all();
         $title = "Checkout";
-        
+
         $id = Auth::id();
         $user = User::find($id);
 
@@ -38,19 +38,19 @@ class CheckoutController extends Controller
             // checking what type of taxes a province has
 
             if ($taxes->HST != 0){
-                $tax = $taxes->HST;
+                $tax = $taxes->HST*$request->subtotal;
                 $tax_message = "HST: $" . round($tax, 2);
                 $gst = 0;
                 $pst = 0;
                 $hst = $taxes->HST;
             } else if ($taxes->PST != 0) {
-                $tax = $taxes->GST + $taxes->PST;
+                $tax = ($taxes->GST*$request->subtotal) + ($taxes->PST*$request->subtotal);
                 $tax_message = "PST: $" .  round($taxes->PST, 2) . ", " . "GST: $" . round($taxes->GST, 2);
                 $gst = $taxes->GST;
                 $pst = $taxes->PST;
                 $hst = 0;
             } else {
-                $tax = $taxes->GST;
+                $tax = $taxes->GST*$request->subtotal;
                 $tax_message = "GST: $" . " " . round($tax, 2);
                 $gst = $taxes->GST;
                 $pst = 0;
