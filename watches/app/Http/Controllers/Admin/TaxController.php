@@ -52,14 +52,16 @@ class TaxController extends Controller
     {
         $valid = $request->validate([
             'province' => 'required|string|max:255',
+            'GST' => "nullable|regex:/^\d+(\.\d{1,2})?$/", 
             'PST' => "nullable|regex:/^\d+(\.\d{1,2})?$/", 
             'HST' => "nullable|regex:/^\d+(\.\d{1,2})?$/"
         ]); 
 
         Tax::create([
             'province' => $valid['province'],  
-            'PST' => $valid['PST'], 
-            'HST' => $valid['HST']
+            'GST' => $valid['GST'] ?? 0.00,
+            'PST' => $valid['PST'] ?? 0.00, 
+            'HST' => $valid['HST'] ?? 0.00
 
         ]); 
 
