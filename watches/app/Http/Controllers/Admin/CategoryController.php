@@ -105,6 +105,32 @@ class CategoryController extends Controller
 
     }
 
+    public function restoreCategory()
+    {
+        $categories = Category::onlyTrashed()->get();
+        $title = "Archive Categories";
+
+        return view('/admin/restore/restore_category', compact('categories', 'title'));
+    }
+
+
+    public function restoreBack($id)
+    {
+        Category::withTrashed()
+        ->where('id', $id)
+        ->restore();
+
+        if(isset(request()->id)){
+
+         return redirect('/admin/restore/restore_category')->with('success', 'Your Category was successfully restored. Go back and check the Users Table'); 
+
+        } else {
+
+            return redirect('/admin/restore/restore_category')->with('error', 'There was a problem storing the category.'); 
+        } 
+
+    }
+
     /* Remove the specified resource from storage.
      *
      * @param  int  $id
