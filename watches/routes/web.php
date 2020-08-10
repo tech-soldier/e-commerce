@@ -150,6 +150,19 @@ Route::middleware(['auth','admin'])->group(function(){
 
 	Route::delete('/admin/users_table', 'Admin\UserController@destroy');
 
+	/* ------------------------------ RESTORE  ----------------------------------- */
+
+	// delete and restore watch or watches
+	Route::get('/admin/restore/restore_watch', 'Admin\WatchController@restoreWatch'); 
+	Route::get('/admin/restore/restore_watch/{id?}', 'Admin\WatchController@restoreBack')->name('/admin/restore/restore_watch'); 
+
+	// delete and restore users
+	Route::get('/admin/restore/restore_user', 'Admin\UserController@restoreUser'); 
+	Route::get('/admin/restore/restore_user/{id?}', 'Admin\UserController@restoreBack')->name('/admin/restore/restore_user'); 
+
+	// delete and restore categories
+	Route::get('/admin/restore/restore_category', 'Admin\CategoryController@restoreCategory'); 
+	Route::get('/admin/restore/restore_category/{id?}', 'Admin\CategoryController@restoreBack')->name('/admin/restore/restore_category'); 
 });
 
 

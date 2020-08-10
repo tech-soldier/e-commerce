@@ -18,7 +18,7 @@
 
   @if($errors->any())
 
-  <div class="alert alert-success">
+  <div class="alert alert-danger">
 
         Please review and make correction before you submit.
 
