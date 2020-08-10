@@ -134,26 +134,35 @@ class CheckoutController extends Controller
             'subtotal' => $cost['subtotal'],
             'GST' => $cost['gst'],
             'PST' => $cost['pst'],
-            // EDIT HST
             'HST' => $cost['hst'],
             'shipping' => $cost['shipping'],
             'total' => $cost['order_total']
         ]);
 
         // updated watches quantity in the database
+        $order_id = $order->id;
+        $cart = session()->get('cart');
 
-//        $cart = session()->get('cart');
-//        foreach($cart as $id => $value) {
-//            echo "Key=" . $id . ", Value=" . $value;
-//
-//        }
+        //create records in order_watches table
+        foreach($cart as $id => $value) {
+            OrderWatch::create([
+                'watch_id' => $id,
+                'order_id' => $order_id,
+                'watch_name' => $value['watch_name'],
+                'quantity' => $value['quantity'],
+                'price' => $value['price']
+            ]);
 
-        //create a record in orders_watches table
+            //update watches quantity
+            $update_watch = Watch::find($id);
+            $update_watch->quantity -= $value['quantity'];
+            $update_watch->save();
+        }
 
-
+        
         //clean session, empty cart
         session()->forget('cart');
-        $order_id = $order->id;
+
 
         try {
 
@@ -207,7 +216,7 @@ class CheckoutController extends Controller
 
         $title = 'Thank You ';
         $final_order = Order::find($id);
-        
+
         return view('thankyou', compact('title', 'final_order'));
 
 
