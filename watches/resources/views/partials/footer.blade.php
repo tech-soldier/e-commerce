@@ -34,15 +34,16 @@
                         <div class="single_footer_area mb-100">
                             <div class="footer_heading mb-4 mt-4">
                                 <h6>INFORMATION</h6>
+                                <p class="mb-4">We offer hassle-free online shopping for our customers throughout Canada. Take a minute to check out our store and see what we have for you!</p>
                             </div>
-                            <ul class="footer_widget_menu">
+                            <!-- <ul class="footer_widget_menu">
                                 <li><a href="#"><i class="icofont-rounded-right"></i> Your Account</a></li>
                                 <li><a href="#"><i class="icofont-rounded-right"></i> Free Shipping Policy</a></li>
                                 <li><a href="#"><i class="icofont-rounded-right"></i> Your Cart</a></li>
                                 <li><a href="#"><i class="icofont-rounded-right"></i> Return Policy</a></li>
                                 <li><a href="#"><i class="icofont-rounded-right"></i> Free Coupon</a></li>
                                 <li><a href="#"><i class="icofont-rounded-right"></i> Delivary Info</a></li>
-                            </ul>
+                            </ul> -->
 
                         </div>
                     </div>
