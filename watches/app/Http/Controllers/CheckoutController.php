@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Transaction;
 use Pagerange\Bx\_5bx;
 use App\Order;
+use App\Auth;
 use App\User;
 use Illuminate\Http\Request;
 use App\Tax;
@@ -15,7 +16,9 @@ class CheckoutController extends Controller
     {
         $taxes = Tax::all();
         $title = "Checkout";
-        $user = User::all();
+        
+        $id = Auth::id();
+        $user = User::find($id);
 
         return view('checkout', compact('taxes', 'title', 'user'));
     }
@@ -159,7 +162,7 @@ class CheckoutController extends Controller
             $update_watch->save();
         }
 
-        
+
         //clean session, empty cart
         session()->forget('cart');
 
