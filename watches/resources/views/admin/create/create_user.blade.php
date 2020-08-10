@@ -95,6 +95,14 @@
         @enderror
       </div>
 
+       <div class="form-group">
+                <label for="cover_img">Cover Image</label>
+                <input type="file" name="cover_img" value="{{ old('cover_img') }}" />
+                @error('cover_img')
+                    <span class="error"> {{ $message }}</span>
+                @enderror
+            </div>
+
       <div class="form-group">
         <label for="is_admin">Is Admin</label> <br />
         <input type="radio" name="is_admin" value="0" checked />

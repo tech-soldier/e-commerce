@@ -9,11 +9,7 @@
 
     <form method="post" action="/admin/edit/edit_users" enctype="multipart/form-data" >
 
-         
-        
-
-
-
+   
         <div class="form-group">
             <label for="id">User ID: </label>
             <input type="hidden" name="id" class="form-control" id="id" value="{{ old('id', $user->id) }}">
