@@ -7,22 +7,22 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Order extends Model
 {
-    use SoftDeletes; 
+    use SoftDeletes;
 
     protected $fillable = [
-        'id',      
-        'user_id',                                                            
-        'full_name',                                                            
-        'email',                                                        
-        'billing_address',                                                        
-        'shipping_address',                                                       
-        'subtotal',  
-        'transaction_status',  
-        'GST', 
-        'PST', 
-        'HST', 
-        'shipping',                                         
-        'total', 
+        'id',
+        'user_id',
+        'full_name',
+        'email',
+        'billing_address',
+        'shipping_address',
+        'subtotal',
+        'transaction_status',
+        'GST',
+        'PST',
+        'HST',
+        'shipping',
+        'total',
     ];
 
 
@@ -37,10 +37,10 @@ class Order extends Model
     	return $this->hasMany(Transaction::class);
     }
 
-    // public function watch()
-    // {
-    // 	return $this->belongsToMany(Watch::class);
-    // }
+     public function watches()
+     {
+     	return $this->belongsToMany(Watch::class);
+     }
 
 //     public function tax()
 //     {

@@ -111,7 +111,7 @@ class TaxController extends Controller
          $taxes->HST = $valid['HST']; 
     
         if($taxes->save() ) {
-            return redirect('/admin/taxes_table')->with('success', 'Your tax was successfully updated');
+            return redirect('/admin/taxes_table')->with('success', 'Tax was successfully updated');
 
         }
 
@@ -133,9 +133,9 @@ class TaxController extends Controller
         ]);
         
         if( Tax::find($valid['id'] )->delete() ) {
-            return back()->with('success', 'The record has been deleted!');
+            return back()->with('success', 'The tax has been deleted!');
         }
-        return back()->with('error', 'There was a problem deleting that record');
+        return back()->with('error', 'There was a problem deleting that tax');
     }
     
     
