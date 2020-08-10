@@ -4,11 +4,15 @@ namespace App\Http\Controllers;
 use App\Transaction;
 use Pagerange\Bx\_5bx;
 use App\Order;
-use App\Auth;
+use \Auth;
 use App\User;
+use App\Watch;
 use Illuminate\Http\Request;
 use App\Tax;
 use \CartController;
+use \DB;
+use \Carbon\Carbon;
+
 
 class CheckoutController extends Controller
 {
@@ -16,7 +20,7 @@ class CheckoutController extends Controller
     {
         $taxes = Tax::all();
         $title = "Checkout";
-        
+
         $id = Auth::id();
         $user = User::find($id);
 
@@ -148,12 +152,14 @@ class CheckoutController extends Controller
 
         //create records in order_watches table
         foreach($cart as $id => $value) {
-            OrderWatch::create([
+            DB::table('order_watch')->insert([
                 'watch_id' => $id,
                 'order_id' => $order_id,
                 'watch_name' => $value['watch_name'],
                 'quantity' => $value['quantity'],
-                'price' => $value['price']
+                'price' => $value['price'],
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
             ]);
 
             //update watches quantity

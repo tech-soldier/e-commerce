@@ -7,35 +7,40 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Watch extends Model
 {
-    use SoftDeletes; 
+    use SoftDeletes;
 
 	protected $fillable = [
 		'watch_id',
-		'SKU', 
+		'SKU',
         'watch_name',
         'in_stock',
         'quantity',
-        'price', 
-        'cost', 
-        'material', 
+        'price',
+        'cost',
+        'material',
         'main_color',
-        'movement', 
-        'gender', 
-        'category_id', 
-        'diameter', 
-        'strap_width', 
-        'strap_length', 
-        'weight', 
-        'water_resistant', 
+        'movement',
+        'gender',
+        'category_id',
+        'diameter',
+        'strap_width',
+        'strap_length',
+        'weight',
+        'water_resistant',
         'cover_img',
-        'short_description', 
-        'long_description'  
-	]; 
+        'short_description',
+        'long_description'
+	];
 
     // use SoftDeletes;
     public function category()
     {
     	return $this->belongsTo(Category::class);
+    }
+
+    public function orders()
+    {
+    	return $this->belongsToMany(Order::class);
     }
 
 }
