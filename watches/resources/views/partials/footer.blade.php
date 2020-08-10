@@ -5,14 +5,15 @@
                 <!-- footer col 1 -->
                 <div class="col-md-5 col-sm-12">
                     <div class="single_footer_area mb-100">
-                        <div class="footer_heading mb-4">
-                            <h6>Contact Us</h6>
+                        <div class="footer_heading">
+                            <img class="logo my-3" src="/storage/images/logo1.png" alt="logo">
+                            <!-- <h6>CONTACT US</h6> -->
                         </div>
                         <ul class="footer_content">
-                            <li><span>Address:</span> Lords, London, UK - 1259</li>
+                            <li><span>Address:</span> 460 Portage Ave. Winnipeg, Canada</li>
                             <li><span>Phone:</span> 002 63695 24624</li>
-                            <li><span>FAX:</span> 002 78965 369552</li>
-                            <li><span>Email:</span> support@example.com</li>
+                            <li><span>FAX:</span> +48 444 666 3333</li>
+                            <li><span>Email:</span> techwatch7@gmail.com</li>
                         </ul>
                         <div class="footer_social_area mt-15">
                             <a href="#" style="padding-left:0;"><i class="fab fa-facebook-f"></i></a>
@@ -31,8 +32,8 @@
                     <!-- Single Footer Area -->
                     <div class="col-6">
                         <div class="single_footer_area mb-100">
-                            <div class="footer_heading mb-4">
-                                <h6>Information</h6>
+                            <div class="footer_heading mb-4 mt-4">
+                                <h6>INFORMATION</h6>
                             </div>
                             <ul class="footer_widget_menu">
                                 <li><a href="#"><i class="icofont-rounded-right"></i> Your Account</a></li>
@@ -49,16 +50,14 @@
                     <!-- Single Footer Area -->
                     <div class="col-6">
                         <div class="single_footer_area mb-100">
-                            <div class="footer_heading mb-4">
-                                <h6>Account</h6>
+                            <div class="footer_heading mb-4 mt-4">
+                                <h6>ABOUT TECHWATCH</h6>
                             </div>
                             <ul class="footer_widget_menu">
-                                <li><a href="#"><i class="icofont-rounded-right"></i> Product Support</a></li>
-                                <li><a href="#"><i class="icofont-rounded-right"></i> Terms &amp; Conditions</a></li>
-                                <li><a href="#"><i class="icofont-rounded-right"></i> Help</a></li>
-                                <li><a href="#"><i class="icofont-rounded-right"></i> Payment Method</a></li>
-                                <li><a href="#"><i class="icofont-rounded-right"></i> Affiliate Program</a></li>
-                                <li><a href="#"><i class="icofont-rounded-right"></i> Privacy Policy</a></li>
+                                <li><a href="/"><i class="icofont-rounded-right"></i> Home</a></li>
+                                <li><a href="/shop"><i class="icofont-rounded-right"></i> Shop</a></li>
+                                <li><a href="/about"><i class="icofont-rounded-right"></i> About</a></li>
+                                <li><a href="/contact"><i class="icofont-rounded-right"></i> Contact</a></li>
                             </ul>
 
                         </div>
