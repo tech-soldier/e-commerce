@@ -192,7 +192,15 @@ class WatchController extends Controller
 
         return redirect('/admin/watches_table')->with('error', 'There was a problem updating the watch');
 
-        }
+    }
+
+    public function restore()
+    {
+        $watches = Watch::all();
+        //$categories = Category::all();
+        $title = "Archive Table Watches";
+        return view('/admin/restore/restore_watch', compact('watches', 'title')); 
+    }
 
     /**
      * Remove the specified resource from storage.

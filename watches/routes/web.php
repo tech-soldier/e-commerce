@@ -147,6 +147,10 @@ Route::middleware(['auth','admin'])->group(function(){
 
 	Route::delete('/admin/users_table', 'Admin\UserController@destroy');
 
+	/* ------------------------------ RESTORE  ----------------------------------- */
+
+	Route::get('/admin/restore/restore_watch', 'Admin\WatchController@restore'); 
+
 });
 
 
