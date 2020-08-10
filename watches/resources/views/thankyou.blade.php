@@ -12,7 +12,7 @@ use \App\Http\Controllers\CartController;
     <div class="card">
     <div class="card-header">
         Invoice
-        <strong>{{$final_order->created_at}}</strong> 
+        <strong>{{$final_order->created_at}}</strong>
         <span class="float-right"> <strong>Status:</strong> {{$final_order->transaction_status}}</span>
 
     </div>
@@ -37,7 +37,7 @@ use \App\Http\Controllers\CartController;
                 <div>Attn: {{$final_order->full_name}}</div>
                 <div>{{$final_order->shipping_address}} Canada</div>
                 <div>Email: {{$final_order->email}}</div>
-                
+
             </div>
         </div>
 
@@ -45,30 +45,35 @@ use \App\Http\Controllers\CartController;
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th class="center">#</th>
-                        <th>Item</th>
-                        <th>Description</th>
-                        <th class="right">Unit Cost</th>
-                        <th class="center">Qty</th>
-                        <th class="right">Total</th>
+                        <th class="center">Order ID</th>
+                        <th>Watch</th>
+                        <th>Price</th>
+                        <th class="right">Quantity</th>
+                        <th class="center">Time</th>
+
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td class="center">1</td>
-                        <td class="left strong">Origin License</td>
-                        <td class="left">Extended License</td>
-                        <td class="right">$999,00</td>
-                        <td class="center">1</td>
-                        <td class="right">$999,00</td>
-                    </tr>
-                   
+
+                        @foreach($order_all as $item)
+                            <tr>
+                                @foreach($item as $key => $value)
+                                    @if($key != "watch_id" && $key != "updated_at")
+                                    <td class="center">{{ $value}}</td>
+                                    @endif
+                                @endforeach
+                            </tr>
+                        @endforeach
+
+
+
+
                 </tbody>
             </table>
         </div>
         <div class="row">
             <div class="col-lg-4 col-sm-5">
-                
+
             </div>
 
             <div class="col-lg-4 col-sm-5 ml-auto">

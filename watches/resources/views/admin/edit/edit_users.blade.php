@@ -90,7 +90,7 @@
         <div class="form-group">     
             <label for="image">User Image</label> <br />
                 @if(!empty($user->image))
-                    <img src="/storage/images/{{ $user->image }}" alt="{{ $user->image }}" width="200" />
+                    <img src="/storage/images/{{ $user->image }}" alt="{{ $user->name }}" width="200" />
                 @endif
             <input type="file" class="form-control-file" id="image" name="image" value="{{ old('image', $user->image) }}" />
             @error('image')
