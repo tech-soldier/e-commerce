@@ -17,7 +17,7 @@
 	            </button>
 	        </span>
 	    </div>
-	    <p><a style="color: white;" href="/admin/transactions_table"><div class="btn btn-info">Refresh Results &#x27F3;</div></a></p>
+	    <p><a style="color: black;" href="/admin/transactions_table"><div class="btn btn-light">Refresh Results &#x27F3;</div></a></p>
 
 	</form>
 	@if(count($transactions) > 0)
