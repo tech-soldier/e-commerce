@@ -63,7 +63,7 @@ Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home', function(){
-	return redirect('/'); // loged in user is redirected to watchhome page
+	return redirect('/')->with('success', 'You have been successfully logged in!'); // loged in user is redirected to watchhome page
 });
 
 
