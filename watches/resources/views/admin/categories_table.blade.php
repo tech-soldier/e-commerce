@@ -29,8 +29,8 @@
 		    <tr>
 		      	<th scope="col">Category ID</th>
 		      	<th scope="col">Category Name</th>
-		      	<th scope="col">Created At</th>
-		      	<th scope="col">Updated At</th>
+		      	<th scope="col">Created On</th>
+		      	<th scope="col">Updated On</th>
 		      	<th scope="col">Edit</th>
 		      	<th scope="col">Delete</th>
 
