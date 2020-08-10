@@ -56,7 +56,7 @@ class UserController extends Controller
             'is_admin' => 'required|integer'
         ]); 
 
-        dd($valid);
+        // dd($valid);
         
         if(!empty($valid['cover_img'])) {
             //get the uploaded file

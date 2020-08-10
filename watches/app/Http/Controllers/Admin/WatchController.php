@@ -32,7 +32,6 @@ class WatchController extends Controller
         $title = 'Create A New Watch'; 
         $watches = Watch::all(); 
         $categories = Category::all(); 
-
         return view('/admin/create/create_watch', compact('title', 'watches', 'categories')); 
     }
 

@@ -12,6 +12,7 @@
     <div class="container pt-5">
         <!-- Categories -->
     <!-- <form method="get" action="{{ url('/shop_search') }}" style="margin-bottom: 25px">
+        
         @csrf
         <div class="input-group">
             <input type="text" class="form-control" id="query" name="query" placeholder="Search Watch" /> 

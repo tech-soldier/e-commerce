@@ -25,6 +25,18 @@ class WatchController extends Controller
 
         return view('watchhome', compact('categories', 'watches', 'title', 'user'));
     }
+    /**
+     * [Displaying list of categories fetching from database]
+     * @param  [type] $name [description]
+     * @return [type]       [description]
+     */
+     public function category_list($name){
+        $categories = Category::all();
+        $cat = Category::where('category_name', $name)->with('watches')->first();
+        $title = 'Category: ' . $name;
+        return view('watches/category_list', compact('cat', 'categories', 'title'));
+    }
+
 
     /**
      * Display a listing of the resource.
@@ -87,6 +99,8 @@ class WatchController extends Controller
         
         
     }
+
+
 
     /**
      * Show the form for creating a new resource.
