@@ -11,9 +11,11 @@
 <!-- this is the table --> 
 	<p><a href="/admin/watches_table" class="btn btn-warning">Back to watches</a></p>
 
-
+	@if(count($watches) > 0) 
 	<form method="get" action="{{ route('/admin/restore/restore_watch') }}" id="form_restore">
 		<table class="table table-striped">
+		
+
 		  	<thead class="thead-dark">
 		    	<tr>
 					<th scope="col">Watch ID</th>
@@ -26,6 +28,7 @@
 		    	</tr>
 		  	</thead>
 		  
+		  	
 
 			@foreach($watches as $watch)
 			<tbody>
@@ -37,11 +40,18 @@
 			      	<td>{{ $watch->updated_at }}</td>
 			      	<td>{{ $watch->deleted_at }}</td>
 			      	<!-- <td><a style="color: white;" href="/admin/restore/restore_watch/{{ $watch->id }}" id="{{ $watch->id }}"><div class="btn btn-info">Restore</div></a></p> -->
-			      		<td><a style="color: white;" title="Restore" href="{{ route('/admin/restore/restore_watch', $watch->id) }}" id="{{ $watch->id }}"><div style="font-size:1.4em" class="btn btn-info">&#x2672;</div></a></p>
+			      		<td><a style="color: white;" title="Restore" href="{{ route('/admin/restore/restore_watch', $watch->id) }}" id="{{ $watch->id }}"><div class="btn btn-info">restore</div></a></p>
 			  	</tr>
 			</tbody>
 			@endforeach
+
+			
 		</table><!-- end of the table-->
+		@else 
+
+			<h2>There are currently no deleted Watches</h2>
+
+		@endif
 	</form> 
 
 </div>
