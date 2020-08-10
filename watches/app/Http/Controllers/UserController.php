@@ -86,7 +86,7 @@ class UserController extends Controller
             'province' => 'nullable|string|max:255',
             'country' => 'nullable|string|max:255',
             'postal_code' => 'nullable|string|max:6',
-            'email' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email,' . $request->id,
             'phone_number' => 'nullable|string|min:7|max:14',
             'image' => 'nullable|image',            
             'id' => 'required|integer'

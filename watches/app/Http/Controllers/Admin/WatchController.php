@@ -77,7 +77,7 @@ class WatchController extends Controller
             $image = time() . '_' . $file->getClientOriginalName();
 
             //save the image
-            $path = $file->storeAs('storage/images', $image);
+            $path = $file->storeAs('storage/app/public/images', $image);
         }
 
         Watch::create([
@@ -159,7 +159,7 @@ class WatchController extends Controller
         //getting the orginal file name
         $cover_img = time() . '_' . $file->getClientOriginalName();
         //save the image
-        $path = $file->storeAs('storage/images', $cover_img);
+        $path = $file->storeAs('storage/app/public/images', $cover_img);
 
     }
 

@@ -56,13 +56,15 @@ class UserController extends Controller
             'is_admin' => 'required|integer'
         ]); 
 
+        dd($valid);
+        
         if(!empty($valid['cover_img'])) {
             //get the uploaded file
             $file = $request->file('cover_img');
             //get the original filename
             $image = time() . '_' . $file->getClientOriginalName();
             //save the image
-            $path = $file->storeAs('public/images', $image);
+            $path = $file->storeAs('storage/app/public/images', $image);
         }
 
         User::create([
@@ -110,7 +112,7 @@ class UserController extends Controller
 
         $valid = $request->validate([
             'id' => 'required|integer',
-            'email' => 'required|email', 
+            'email' => 'required|email|unique:users,email,' . $request->id, 
             'first_name' => 'required|string|max:255', 
             'last_name' => 'required|string|max:255', 
             'billing_address' => 'required|string|max:255', 
@@ -131,12 +133,11 @@ class UserController extends Controller
             // get the original file name 
             $image = time() . '_' . $file->getClientOriginalName();
             // save the image
-            $path = $file->storeAs('public/images', $image);
+            $path = $file->storeAs('storage/app/public/images', $image);
         }
 
         $user=User::find($valid['id']);
         $user->email=$valid['email'];
-        $user->password= password_hash($valid['password'], PASSWORD_DEFAULT);
         $user->first_name=$valid['first_name'];
         $user->last_name=$valid['last_name'];
         $user->billing_address=$valid['billing_address'];
