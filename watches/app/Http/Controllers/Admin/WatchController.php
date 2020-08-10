@@ -74,11 +74,10 @@ class WatchController extends Controller
             $file = $request->file('cover_img');
 
             //get the original filename
-            //concatenate time so if same file uploaded, won't be overridden
             $image = time() . '_' . $file->getClientOriginalName();
 
             //save the image
-            $path = $file->storeAs('cover_img', $image);
+            $path = $file->storeAs('storage/images', $image);
         }
 
         Watch::create([
@@ -160,7 +159,7 @@ class WatchController extends Controller
         //getting the orginal file name
         $cover_img = time() . '_' . $file->getClientOriginalName();
         //save the image
-        $path = $file->storeAs('storage', $cover_img);
+        $path = $file->storeAs('storage/images', $cover_img);
 
     }
 
