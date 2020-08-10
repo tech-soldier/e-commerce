@@ -156,11 +156,11 @@
                 <span class="alert-danger">{{ $message }}</span>
             @enderror
         </div>
-
+        
         <div class="form-group">     
             <label for="cover_img">Cover Image</label> <br />
                 @if(!empty($watch->cover_img))
-                    <img src="{{ $watch->cover_img }}" alt="" />
+                    <img src="/storage/images/{{ $watch->cover_img }}" alt="{{ $watch->watch_name }}" width="300" />
                 @endif
             <input type="file" class="form-control-file" id="cover_img" name="cover_img" value="{{ old('cover_img', $watch->cover_img) }}" />
             @error('cover_img')

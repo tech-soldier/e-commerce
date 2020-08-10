@@ -56,13 +56,15 @@ class UserController extends Controller
             'is_admin' => 'required|integer'
         ]); 
 
+        dd($valid);
+        
         if(!empty($valid['cover_img'])) {
             //get the uploaded file
             $file = $request->file('cover_img');
             //get the original filename
             $image = time() . '_' . $file->getClientOriginalName();
             //save the image
-            $path = $file->storeAs('public/images', $image);
+            $path = $file->storeAs('storage/app/public/images', $image);
         }
 
         User::create([
@@ -131,7 +133,7 @@ class UserController extends Controller
             // get the original file name 
             $image = time() . '_' . $file->getClientOriginalName();
             // save the image
-            $path = $file->storeAs('public/images', $image);
+            $path = $file->storeAs('storage/app/public/images', $image);
         }
 
         $user=User::find($valid['id']);
