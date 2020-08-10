@@ -140,8 +140,6 @@ class TaxController extends Controller
             return redirect('/admin/restore/restore_tax')->with('error', 'There was a problem storing the tax.'); 
         } 
     }
-
-
     
     /**
      * Remove the specified resource from storage.

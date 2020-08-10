@@ -136,7 +136,7 @@ Route::middleware(['auth','admin'])->group(function(){
 
 	//Route::delete('/admin/taxes_table, Admin\CategoryController@destroy');
 
-	Route::delete('/admin/taxes_table', 'Admin\CategoryController@destroy');
+	Route::delete('/admin/taxes_table', 'Admin\TaxController@destroy');
 
 
 	// edit users table
