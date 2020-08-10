@@ -194,12 +194,29 @@ class WatchController extends Controller
 
     }
 
-    public function restore()
+    public function restoreWatch()
     {
         $watches = Watch::onlyTrashed()->get();
         //$categories = Category::all();
         $title = "Archive Table Watches";
         return view('/admin/restore/restore_watch', compact('watches', 'title')); 
+    }
+
+    public function restoreBack($id=null)
+    {
+        if($id != null){
+            Watch::onlyTrashed()->where('id ', $id)->restore(); 
+        } else {
+            if(isset(request()->id)){
+
+                Watch:onlyTrashed()->whereIn('id', request()->id)->restore(); 
+            } else {
+                return redirect('/admin/restore/restore_watch')->with('success', 'Your watch was successfully restored. Go back and check the Watches Table'); 
+            }
+
+        }
+         return redirect('/admin/restore/restore_watch')->with('error', 'There was a problem storing the watch.'); 
+
     }
 
     /**

@@ -31,10 +31,9 @@
 				<th scope="col">Watch ID</th>
 				<th scope="col">SKU</th>
 				<th scope="col">Watch name</th>
-				<th scope="col">Price</th>
-				<th scope="col">Cost</th>
-				<th scope="col">Category ID</th>
-				<th scope="col">Material</th>
+				<th scope="col">Created At</th>
+				<th scope="col">Updated At</th>
+				<th scope="col">Deleted At</th>
 				<th scope="col">Restore</th>
 	    	</tr>
 	  	</thead>
@@ -47,10 +46,9 @@
 		      	<th scope="row">{{ $watch->id }}</th>
 		      	<th>{{ $watch->SKU }}</th>
 		      	<td>{{ $watch->watch_name }}</td>
-		      	<td>$ {{ $watch->price }}</td>
-		      	<td>$ {{ $watch->cost }}</td>
-		      	<td>{{ $watch->category_id }}</td>
-		      	<td>{{ $watch->material }}</td>
+		      	<td>{{ $watch->created_at }}</td>
+		      	<td>{{ $watch->updated_at }}</td>
+		      	<td>{{ $watch->deleted_at }}</td>
 		      	<td>restore</p>
 		  	</tr>
 		</tbody>
