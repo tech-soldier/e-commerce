@@ -101,14 +101,12 @@ class TaxController extends Controller
     {
         $valid = $request->validate([
             'id' => 'required|integer',
-            'province' => 'required|string|max:255',
             'PST' => 'nullable|regex:/^\d+(\.\d{1,2})?$/', 
             'HST' => 'nullable|regex:/^\d+(\.\d{1,2})?$/'
         ]); 
 
 
          $taxes = Tax::find($request['id']);
-         $taxes->province = $valid['province'];
          $taxes->PST = $valid['PST']; 
          $taxes->HST = $valid['HST']; 
     
