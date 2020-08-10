@@ -20,8 +20,6 @@ class WatchController extends Controller
         return view('/admin/search/search_watches', compact('watches', 'search_term')); 
     }
 
-
-  
     /**
      * Show the form for creating a new resource.
      *
