@@ -112,7 +112,7 @@ class UserController extends Controller
 
         $valid = $request->validate([
             'id' => 'required|integer',
-            'email' => 'required|email', 
+            'email' => 'required|email|unique:users,email,' . $request->id, 
             'first_name' => 'required|string|max:255', 
             'last_name' => 'required|string|max:255', 
             'billing_address' => 'required|string|max:255', 
@@ -138,7 +138,6 @@ class UserController extends Controller
 
         $user=User::find($valid['id']);
         $user->email=$valid['email'];
-        $user->password= password_hash($valid['password'], PASSWORD_DEFAULT);
         $user->first_name=$valid['first_name'];
         $user->last_name=$valid['last_name'];
         $user->billing_address=$valid['billing_address'];
