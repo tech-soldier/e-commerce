@@ -113,7 +113,7 @@ class UserController extends Controller
 
         $user=User::find($valid['id']);
         $user->email=$valid['email'];
-        $user->password=$valid['password'];
+        $user->password= password_hash($valid['password'], PASSWORD_DEFAULT);
         $user->first_name=$valid['first_name'];
         $user->last_name=$valid['last_name'];
         $user->billing_address=$valid['billing_address'];
