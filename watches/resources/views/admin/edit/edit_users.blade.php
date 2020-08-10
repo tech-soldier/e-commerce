@@ -87,16 +87,16 @@
             @enderror
         </div>
 
-        <div>
-            <img src="{{ !empty($user->image) ? '/storage/images/' . $user->image : '/storage/images/profile_placeholder.png' }}" alt="profile image" width="200">
-        </div>
-        <div class="form-group">
-            <label for="image">Image</label>
-            <input type="file" class="form-control-file" name="image" id="image" value="{{ old('image', $user->image) }}" />
+        <div class="form-group">     
+            <label for="image">User Image</label> <br />
+                @if(!empty($user->image))
+                    <img src="/storage/images/{{ $user->image }}" alt="{{ $user->image }}" width="200" />
+                @endif
+            <input type="file" class="form-control-file" id="image" name="image" value="{{ old('image', $user->image) }}" />
             @error('image')
                 <span class="alert-danger">{{ $message }}</span>
             @enderror
-        </div>  
+        </div>
 
         <div class="form-group">
             <label for="is_admin">Is Admin</label> <br />
