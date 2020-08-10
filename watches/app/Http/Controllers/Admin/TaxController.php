@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Tax; 
 
 class TaxController extends Controller
-{
+{ 
 
     public function search()
     {
@@ -116,6 +116,29 @@ class TaxController extends Controller
         }
 
         return redirect('/admin/taxes_table')->with('error', 'There was a problem updating the tax');
+    }
+
+    public function restoreTax()
+    {
+        $taxes = Tax::onlyTrashed()->get();;
+        $title = "Taxes Archives";
+        return view('/admin/restore/restore_tax', compact('taxes', 'title'));
+    }
+
+    public function restoreBack($id)
+    {
+        Tac::withTrashed()
+        ->where('id', $id)
+        ->restore();
+
+        if(isset(request()->id)){
+
+         return redirect('/admin/restore/restore_tax')->with('success', 'Your Province was successfully restored. Go back and check the Taxes Table'); 
+
+        } else {
+
+            return redirect('/admin/restore/restore_tax')->with('error', 'There was a problem storing the tax.'); 
+        } 
     }
 
 

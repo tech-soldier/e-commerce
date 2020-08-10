@@ -7,22 +7,10 @@
 
 	<h1>Table Name: <em>{{ $title }}</em></h1>
 
+	<p><a href="/admin/taxes_table" class="btn btn-warning class=previous">&laquo; Back</a></p>
+
+
 <!-- this is the table --> 
-	<p><a style="color: white;" href="/admin/create/create_tax"><div class="btn btn-success">Add Tax +</div></a></p>
-
-	<p><a style="color: white;" href="/admin/restore/restore_tax"><div class="btn btn-info">Restore 	&#xA71C;</div></a></p>
-
-	<form method="GET" action="{{ url('/admin/search/search_taxes') }}" style="margin-bottom: 25px">
-		@csrf
-	    <div class="input-group">
-	        <input type="text" class="form-control" name="query"
-	            placeholder="Search for PST by Province"> <span class="input-group-btn">
-	            <button type="submit" class="btn btn-default">
-	                <span class="glyphicon glyphicon-search"></span>
-	            </button>
-	        </span>
-	    </div>
-	</form>
 
 	<table class="table table-striped">
 	  	<thead class="thead-dark">
