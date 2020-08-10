@@ -10,6 +10,8 @@
 <!-- this is the table --> 
 	<p><a style="color: white;" href="/admin/create/create_user"><div class="btn btn-success">Add User +</div></a></p>
 
+	<p><a style="color: white;" href="/admin/restore/restore_user"><div class="btn btn-info">Restore 	&#xA71C;</div></a></p>
+
 
 	<form method="GET" action="{{ url('/admin/search/search_users') }}" style="margin-bottom: 25px">
 		@csrf

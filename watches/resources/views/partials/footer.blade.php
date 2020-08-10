@@ -33,7 +33,7 @@
                     <div class="col-6">
                         <div class="single_footer_area mb-100">
                             <div class="footer_heading mb-4 mt-4">
-                                <h6>Information</h6>
+                                <h6>INFORMATION</h6>
                             </div>
                             <ul class="footer_widget_menu">
                                 <li><a href="#"><i class="icofont-rounded-right"></i> Your Account</a></li>

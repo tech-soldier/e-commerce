@@ -156,6 +156,14 @@ class UserController extends Controller
             return redirect('/admin/users_table')->with('error', 'There was a problem updating the user');
     }
 
+    public function restoreUser()
+    {
+        $users = User::onlyTrashed()->get();
+        $title = "Users";
+
+        return view('/admin/restore/restore_user', compact('users', 'title'));
+    }
+
 
     /**
      * Remove the specified resource from storage.
@@ -173,6 +181,23 @@ class UserController extends Controller
             return back()->with('success', 'The user has been deleted!');
         }
         return back()->with('error', 'There was a problem deleting that user');
+    }
+
+    public function restoreBack($id)
+    {
+        User::withTrashed()
+        ->where('id', $id)
+        ->restore();
+
+        if(isset(request()->id)){
+
+         return redirect('/admin/restore/restore_user')->with('success', 'Your User was successfully restored. Go back and check the Users Table'); 
+
+        } else {
+
+            return redirect('/admin/restore/restore_user')->with('error', 'There was a problem storing the user.'); 
+        } 
+
     }
     
     /**

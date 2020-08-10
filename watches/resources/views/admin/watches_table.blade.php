@@ -11,6 +11,8 @@
 <!-- this is the table --> 
 	<p><a style="color: white;" href="/admin/create/create_watch"><div class="btn btn-success">Add Watch +</div></a></p>
 
+	<p><a style="color: white;" href="/admin/restore/restore_watch"><div class="btn btn-info">Restore 	&#xA71C;</div></a></p>
+
 	<form method="get" action="{{ url('/admin/search/search_watches') }}" style="margin-bottom: 25px">
 		@csrf
 	    <div class="input-group">
