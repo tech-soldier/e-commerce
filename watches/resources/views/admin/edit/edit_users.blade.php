@@ -9,7 +9,6 @@
 
     <form method="post" action="/admin/edit/edit_users" enctype="multipart/form-data" >
 
-   
         <div class="form-group">
             <label for="id">User ID: </label>
             <input type="hidden" name="id" class="form-control" id="id" value="{{ old('id', $user->id) }}">
@@ -88,24 +87,16 @@
             @enderror
         </div>
 
+        <div>
+            <img src="{{ !empty($user->image) ? '/storage/images/' . $user->image : '/storage/images/profile_placeholder.png' }}" alt="profile image" width="200">
+        </div>
         <div class="form-group">
-            <label for="password">Password: </label>
-            <input type="password" class="form-control" name="password" id="password" value="{{ old('password', $user->password) }}">
-            @error('password')
+            <label for="image">Image</label>
+            <input type="file" class="form-control-file" name="image" id="image" value="{{ old('image', $user->image) }}" />
+            @error('image')
                 <span class="alert-danger">{{ $message }}</span>
             @enderror
-        </div>
-
-        <div class="form-group">
-                <label for="cover_img">Cover Image</label>
-                @if(!empty($user->cover_img))
-                <img src="{{$user->cover_img}}" style="width: 150px; height: auto;">
-                @endif
-                <input type="file" name="cover_img"/>
-                @error('cover_img')
-                    <span class="error"> {{ $message }}</span>
-                @enderror
-            </div>
+        </div>  
 
         <div class="form-group">
             <label for="is_admin">Is Admin</label> <br />

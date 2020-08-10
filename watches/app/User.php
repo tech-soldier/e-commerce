@@ -33,6 +33,7 @@ class User extends Authenticatable
         'country', 
         'postal_code', 
         'phone_number',
+        'image',
         'is_admin'
         
     ];
