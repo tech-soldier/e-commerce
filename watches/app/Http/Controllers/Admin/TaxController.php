@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Tax; 
 
 class TaxController extends Controller
-{
+{ 
 
     public function search()
     {
@@ -52,14 +52,16 @@ class TaxController extends Controller
     {
         $valid = $request->validate([
             'province' => 'required|string|max:255',
+            'GST' => "nullable|regex:/^\d+(\.\d{1,2})?$/", 
             'PST' => "nullable|regex:/^\d+(\.\d{1,2})?$/", 
             'HST' => "nullable|regex:/^\d+(\.\d{1,2})?$/"
         ]); 
 
         Tax::create([
             'province' => $valid['province'],  
-            'PST' => $valid['PST'], 
-            'HST' => $valid['HST']
+            'GST' => $valid['GST'] ?? 0.00,
+            'PST' => $valid['PST'] ?? 0.00, 
+            'HST' => $valid['HST'] ?? 0.00
 
         ]); 
 
@@ -111,14 +113,35 @@ class TaxController extends Controller
          $taxes->HST = $valid['HST']; 
     
         if($taxes->save() ) {
-            return redirect('/admin/taxes_table')->with('success', 'Your tax was successfully updated');
+            return redirect('/admin/taxes_table')->with('success', 'Tax was successfully updated');
 
         }
 
         return redirect('/admin/taxes_table')->with('error', 'There was a problem updating the tax');
     }
 
+    public function restoreTax()
+    {
+        $taxes = Tax::onlyTrashed()->get();;
+        $title = "Taxes Archives";
+        return view('/admin/restore/restore_tax', compact('taxes', 'title'));
+    }
 
+    public function restoreBack($id)
+    {
+        Tax::withTrashed()
+        ->where('id', $id)
+        ->restore();
+
+        if(isset(request()->id)){
+
+         return redirect('/admin/restore/restore_tax')->with('success', 'Your Province was successfully restored. Go back and check the Taxes Table'); 
+
+        } else {
+
+            return redirect('/admin/restore/restore_tax')->with('error', 'There was a problem storing the tax.'); 
+        } 
+    }
     
     /**
      * Remove the specified resource from storage.
@@ -133,9 +156,9 @@ class TaxController extends Controller
         ]);
         
         if( Tax::find($valid['id'] )->delete() ) {
-            return back()->with('success', 'The record has been deleted!');
+            return back()->with('success', 'The tax has been deleted!');
         }
-        return back()->with('error', 'There was a problem deleting that record');
+        return back()->with('error', 'There was a problem deleting that tax');
     }
     
     

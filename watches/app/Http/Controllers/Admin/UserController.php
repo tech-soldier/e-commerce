@@ -54,7 +54,9 @@ class UserController extends Controller
             'phone_number' => 'required|regex:/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/',
             'image' => 'nullable|image',
             'is_admin' => 'required|integer'
-        ]);
+
+        ]); 
+
         
         if(!empty($valid['image'])) {
             //get the uploaded file
@@ -150,10 +152,18 @@ class UserController extends Controller
         $user->is_admin=$valid['is_admin'] ?? 0;
 
         if($user->save()){
-            return redirect('/admin/users_table')->with('success', 'User successfully updated');
+            return redirect('/admin/users_table')->with('success', 'User was successfully updated');
         }
 
-            return redirect('/admin/users_table')->with('error', 'User record not updated');
+            return redirect('/admin/users_table')->with('error', 'There was a problem updating the user');
+    }
+
+    public function restoreUser()
+    {
+        $users = User::onlyTrashed()->get();
+        $title = "Users";
+
+        return view('/admin/restore/restore_user', compact('users', 'title'));
     }
 
 
@@ -170,9 +180,26 @@ class UserController extends Controller
         ]);
         
         if( User::find($valid['id'] )->delete() ) {
-            return back()->with('success', 'The record has been deleted!');
+            return back()->with('success', 'The user has been deleted!');
         }
-        return back()->with('error', 'There was a problem deleting that record');
+        return back()->with('error', 'There was a problem deleting that user');
+    }
+
+    public function restoreBack($id)
+    {
+        User::withTrashed()
+        ->where('id', $id)
+        ->restore();
+
+        if(isset(request()->id)){
+
+         return redirect('/admin/restore/restore_user')->with('success', 'Your User was successfully restored. Go back and check the Users Table'); 
+
+        } else {
+
+            return redirect('/admin/restore/restore_user')->with('error', 'There was a problem storing the user.'); 
+        } 
+
     }
     
     /**
