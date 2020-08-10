@@ -34,10 +34,10 @@
         </div>
         @if(isset($watches))
             <!-- /. Categories -->
-            <div class="row justify-content-center">
+            <div class="row justify-content-center shop-row">
                 @foreach($watches as $watch)
                 <!-- Single Product -->
-                <div class="col-3 text-center bord">
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 text-center bord">
                     <div class="single-product-area mb-30">
                         <div class="product_image">
                             <!-- Product Image -->
