@@ -4,29 +4,12 @@
 <div class="container">
     <div class="row justify-content-center py-4">
 
-        <div class="col-md-6">
-            <!-- <img class="login" src="/storage/images/banner4.jpg" alt=""> -->
-
-
-            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img class="d-block w-100 login" src="/storage/images/banner4.jpg" alt="First slide">
-                </div>
-                <div class="carousel-item">
-                  <img class="d-block w-100 login" src="/storage/images/banner3.jpg" alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                  <img class="d-block w-100 login" src="/storage/images/banner6.jpg" alt="Third slide">
-                </div>
-              </div>
-            </div>
-
-
+        <div class="col-md-7">
+            <img class="login" src="/storage/images/home_banner.jpg" alt="">
         </div>
 
         
-        <div class="col-md-6">
+        <div class="col-md-5">
             <div class="card">
                 <div class="card-header" style="background-color: #1e2537; font-weight: 700; color: #fff;">{{ __('SIGN IN') }}</div>
 
@@ -68,7 +51,7 @@
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                     <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
+                                        <small>{{ __('Remember Me') }}</small>
                                     </label>
                                 </div>
                             </div>
