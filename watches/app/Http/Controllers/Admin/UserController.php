@@ -44,7 +44,7 @@ class UserController extends Controller
         $valid = $request->validate([
             'email' => 'required|email|unique:users,email', 
             'password' => 'required|string|max:255',
-            'first_name' => 'required|string|max:255', 
+            'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255', 
             'billing_address' => 'required|string|max:255', 
             'city' => 'required|string|max:255', 
@@ -52,8 +52,18 @@ class UserController extends Controller
             'country' => 'required|string|max:255', 
             'postal_code' => 'required|string|max:6', 
             'phone_number' => 'required|regex:/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/',
+            'cover_img' => 'nullable|image',
             'is_admin' => 'required|integer'
         ]); 
+
+        if(!empty($valid['cover_img'])) {
+            //get the uploaded file
+            $file = $request->file('cover_img');
+            //get the original filename
+            $image = time() . '_' . $file->getClientOriginalName();
+            //save the image
+            $path = $file->storeAs('public/images', $image);
+        }
 
         User::create([
             'email' => $valid['email'], 
@@ -66,11 +76,13 @@ class UserController extends Controller
             'country' => $valid['country'], 
             'postal_code' => $valid['postal_code'], 
             'phone_number' => $valid['phone_number'],
+            'cover_img' => $image ?? '',
             'is_admin' => $valid['is_admin'] ?? 0
         ]); 
 
         return redirect('/admin/users_table')->with('success', 'User was successfully created'); 
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -99,7 +111,6 @@ class UserController extends Controller
         $valid = $request->validate([
             'id' => 'required|integer',
             'email' => 'required|email', 
-            'password' => 'required|string|max:255',
             'first_name' => 'required|string|max:255', 
             'last_name' => 'required|string|max:255', 
             'billing_address' => 'required|string|max:255', 
@@ -108,12 +119,23 @@ class UserController extends Controller
             'country' => 'required|string|max:255', 
             'postal_code' => 'required|string|max:6', 
             'phone_number' => 'required|regex:/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/',
-            'is_admin' => 'required|integer'
+            'cover_img' => 'nullable|image',
+            'is_admin' => 'required|integer' 
+            
         ]);
+
+        // image upload, make sure it is valid if added
+        if(!empty($valid['cover_img'])) {
+            // get the uploaded file
+            $file = $request->file('cover_img');
+            // get the original file name 
+            $image = time() . '_' . $file->getClientOriginalName();
+            // save the image
+            $path = $file->storeAs('public/images', $image);
+        }
 
         $user=User::find($valid['id']);
         $user->email=$valid['email'];
-        $user->password=$valid['password'];
         $user->first_name=$valid['first_name'];
         $user->last_name=$valid['last_name'];
         $user->billing_address=$valid['billing_address'];
@@ -122,7 +144,10 @@ class UserController extends Controller
         $user->country=$valid['country'];
         $user->postal_code=$valid['postal_code'];
         $user->phone_number=$valid['phone_number'];
-        $user->is_admin=$valid['is_admin'];
+        if(!empty($image)) {
+            $user->image = $image;
+        }
+        $user->is_admin=$valid['is_admin'] ?? 0;
 
         if($user->save()){
             return redirect('/admin/users_table')->with('success', 'User successfully updated');
