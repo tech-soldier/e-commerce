@@ -6,6 +6,7 @@
 <div class="container" style="width: 50%;">
     <h1>{{ $title }}</h1>
     <form method="post" action="/admin/create/create_user" enctype="multipart/form-data" >
+
         @csrf 
         <div class="form-group">
             <label for="id">User ID: </label>
@@ -115,6 +116,7 @@
         </div>
 
         <p><button type="submit" class="btn btn-primary">Submit</button></p>
+
     </form>
 
 </div>
