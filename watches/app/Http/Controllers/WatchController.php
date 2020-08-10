@@ -51,7 +51,7 @@ class WatchController extends Controller
             foreach ($watches as $watch) {
                 $str = 
                 
-                "<div class="."'col-3 text-center bord'>".
+                "<div class="."'col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 text-center bord'>".
                     "<div class="."'single-product-area mb-30'>".
                         "<div class="."'product_image'>".
                             

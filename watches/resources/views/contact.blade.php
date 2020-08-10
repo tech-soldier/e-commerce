@@ -9,14 +9,14 @@
         </div>
     </div>
     <div class="container mt-4 mb-4">
-        <div class="row">
+        <div class="row contact-row">
             <!-- Map -->
-            <div class="col-5 map">
+            <div class="col-xl-5 col-lg-6 col-md-12 map">
                 <!-- image in css  -->
             </div>
 
             <!-- Contact us form -->
-            <div class="col-7">
+            <div class="col-xl-7 col-lg-6 col-md-12">
                 <!-- content section  -->
                 <section class="text-center dark-grey-text ">
                     <div class="card">
@@ -40,14 +40,14 @@
                                 </div>
                                 <!-- Subject -->
                                 <div class="row">
-                                    <div class="col-md-12 mb-4">
-                                        <input type="text" id="subject" name="user_subject" class="form-control" placeholder="Subject">
+                                    <div class="col-md-12 mb-4 " id="subject1">
+                                        <input type="text" id="subject" name="user_subject" class="form-control " placeholder="Subject">
                                     </div>
                                 </div>
                                 <!-- textarea -->
                                 <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group mb-4">
+                                    <div class="col-md-12 text-stuff">
+                                        <div class="form-group mb-4" id="subject2">
                                             <textarea class="form-control rounded" name="user_message" id="message" rows="3" placeholder="How can we help?"></textarea>
                                         </div>
                                         <div class="text-center">
