@@ -9,9 +9,8 @@
 
 
 <!-- this is the table --> 
-	<p><a style="color: white;" href="/admin/create/create_watch"><div class="btn btn-success">Add Watch +</div></a></p>
-
-	<p><a style="color: white;" href="/admin/restore/restore_watch"><div class="btn btn-warning">Restore</div></a></p>
+	<p><a href="/admin/watches_table" class="btn btn-warning">Back to watches</a></p>
+	<p><a style="color: white;" href="/admin/restore/restore_watch"><div class="btn btn-info">Restore</div></a></p>
 
 	<form method="get" action="{{ url('/admin/search/search_watches') }}" style="margin-bottom: 25px">
 		@csrf
@@ -28,6 +27,7 @@
 	<table class="table table-striped">
 	  	<thead class="thead-dark">
 	    	<tr>
+	    		<th scope="col">Select to Restore</th>
 				<th scope="col">Watch ID</th>
 				<th scope="col">SKU</th>
 				<th scope="col">Watch name</th>
@@ -35,8 +35,7 @@
 				<th scope="col">Cost</th>
 				<th scope="col">Category ID</th>
 				<th scope="col">Material</th>
-				<th scope="col">Edit</th>
-				<th scope="col">Delete</th>
+				<th scope="col">Restore</th>
 	    	</tr>
 	  	</thead>
 	  
@@ -44,24 +43,15 @@
 		@foreach($watches as $watch)
 		<tbody>
 		    <tr>
-		      	<th scope="row">1{{ $watch->id }}</th>
+		    	<th scope="row"> <input type="checkbox" id="{{ $watch->id }}" name="vehicle2" value="Car"></th>
+		      	<th scope="row">{{ $watch->id }}</th>
 		      	<th>{{ $watch->SKU }}</th>
 		      	<td>{{ $watch->watch_name }}</td>
 		      	<td>$ {{ $watch->price }}</td>
 		      	<td>$ {{ $watch->cost }}</td>
 		      	<td>{{ $watch->category_id }}</td>
 		      	<td>{{ $watch->material }}</td>
-		      	<td> <p><a href="/admin/edit/{{ $watch->id }}/edit_watch" class="btn btn-primary">Edit</a></p>
-		      	<td>
-			  		<form class="delete"
-                    	onSubmit="return confirm('Do you really want to delete this post?')"
-                     	action="/admin/watches_table" method="post">
-	                    @csrf
-	                    @method('DELETE')
-	                    <input type="hidden" name="id" value="{{ $watch->id }}"/>
-	                    <button type="submit" class="btn btn-danger">Delete</button>
-	            	</form>
-	         	</td>
+		      	<td>restore</p>
 		  	</tr>
 		</tbody>
 		@endforeach

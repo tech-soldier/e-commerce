@@ -196,7 +196,7 @@ class WatchController extends Controller
 
     public function restore()
     {
-        $watches = Watch::all();
+        $watches = Watch::onlyTrashed()->get();
         //$categories = Category::all();
         $title = "Archive Table Watches";
         return view('/admin/restore/restore_watch', compact('watches', 'title')); 
