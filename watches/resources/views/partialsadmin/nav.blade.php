@@ -3,7 +3,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle navbar-brand" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle navbar-brand {{ (request()->is('admin')) ? 'active' : '' }}" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   TechWatch
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -12,22 +12,22 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/admin/watches_table">Watches</a>
+                <a class="nav-link {{ (request()->is('*watches_table*','*create_watch*','*edit_watch*')) ? 'active' : '' }}" href="/admin/watches_table">Watches</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/admin/users_table">Users</a>
+                <a class="nav-link {{ (request()->is('*users_table*','*create_user*','*edit_user*')) ? 'active' : '' }}" href="/admin/users_table">Users</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/admin/orders_table">Orders</a>
+                <a class="nav-link {{ (request()->is('*orders_table*','*create_order*','*edit_order*')) ? 'active' : '' }}" href="/admin/orders_table">Orders</a>
             </li>
    	        <li class="nav-item">
-                <a class="nav-link" href="/admin/transactions_table">Transactions</a>
+                <a class="nav-link {{ (request()->is('*transactions_table*','*create_transaction*','*edit_transaction*')) ? 'active' : '' }}" href="/admin/transactions_table">Transactions</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item {{ (request()->is('*categories_table*','*create_category*','*edit_category*')) ? 'active' : '' }}">
                 <a class="nav-link" href="/admin/categories_table">Categories</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/admin/taxes_table">Taxes</a>
+                <a class="nav-link {{ (request()->is('*taxes_table*','*create_tax*','*edit_tax*')) ? 'active' : '' }}" href="/admin/taxes_table">Taxes</a>
             </li>
             <!-- logout dropdown  -->
             <li class="nav-item dropdown">
