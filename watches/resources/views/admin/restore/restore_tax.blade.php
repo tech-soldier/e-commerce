@@ -11,7 +11,7 @@
 
 
 <!-- this is the table --> 
-
+	@if(count($taxes) > 0)
 	<table class="table table-striped">
 	  	<thead class="thead-dark">
 	    	<tr>
@@ -23,8 +23,8 @@
 	      		<th scope="col">Total Tax</th>
 	      		<th scope="col">Created On</th>
 	      		<th scope="col">Updated On</th>
-	      		<th scope="col">Edit</th>
-	      		<th scope="col">Delete</th>
+	      		<th scope="col">Deleted at</th>
+	      		<th scope="col">Restore</th>
 	    	</tr>
 	  	</thead>
 
@@ -39,13 +39,18 @@
 				<td>{{ $tax->HST + $tax->GST + $tax->PST }}</td>
 				<td>{{ $tax->created_at }}</td>
 				<td>{{ $tax->updated_at }}</td>
-				<td><p><a href="/admin/edit/{{ $tax->id }}/edit_tax" class="btn btn-primary">Edit</a></p></td>
-				<td><button type="button" class="btn btn-danger">Delete</button></td>
+				<td>{{ $tax->deleted_at }}</td>
+				<td><a style="color: white;" title="Restore" href="{{ route('/admin/restore/restore_tax', $tax->id) }}" id="{{ $tax->id }}"><div class="btn btn-info">Restore</div></a></p>
 		    </tr>
 	  	</tbody>
 	   	@endforeach
 	</table>
 	<!-- end of the table-->
+	@else 
+
+			<h2>There are currently no deleted Provinces</h2>
+
+	@endif
 </div>
 
 @stop 

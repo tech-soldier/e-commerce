@@ -127,7 +127,7 @@ class TaxController extends Controller
 
     public function restoreBack($id)
     {
-        Tac::withTrashed()
+        Tax::withTrashed()
         ->where('id', $id)
         ->restore();
 

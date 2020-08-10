@@ -39,7 +39,7 @@
 			      	<td>{{ $watch->created_at }}</td>
 			      	<td>{{ $watch->updated_at }}</td>
 			      	<td>{{ $watch->deleted_at }}</td>
-			      	<td><a style="color: white;" title="Restore" href="{{ route('/admin/restore/restore_watch', $watch->id) }}" id="{{ $watch->id }}"><div class="btn btn-info">restore</div></a></p>
+			      	<td><a style="color: white;" title="Restore" href="{{ route('/admin/restore/restore_watch', $watch->id) }}" id="{{ $watch->id }}"><div class="btn btn-info">Restore</div></a></p>
 			  	</tr>
 			</tbody>
 			@endforeach
