@@ -216,23 +216,6 @@ class WatchController extends Controller
             return redirect('/admin/restore/restore_watch')->with('error', 'There was a problem storing the watch.'); 
         } 
 
-        // if($id != null){
-
-        //     Watch::onlyTrashed()->where('id ', $id)->restore(); 
-
-        // } else {
-
-        //     if(isset(request()->id)){
-
-        //         Watch:onlyTrashed()->whereIn('id', request()->id)->restore(); 
-
-        //     } else {
-        //         return redirect('/admin/restore/restore_watch')->with('success', 'Your watch was successfully restored. Go back and check the Watches Table'); 
-        //     }
-
-        // }
-        //  return redirect('/admin/restore/restore_watch')->with('error', 'There was a problem storing the watch.'); 
-
     }
 
     /**

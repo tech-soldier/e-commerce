@@ -149,8 +149,13 @@ Route::middleware(['auth','admin'])->group(function(){
 
 	/* ------------------------------ RESTORE  ----------------------------------- */
 
+	// delete and restore watch or watches
 	Route::get('/admin/restore/restore_watch', 'Admin\WatchController@restoreWatch'); 
 	Route::get('/admin/restore/restore_watch/{id?}', 'Admin\WatchController@restoreBack')->name('/admin/restore/restore_watch'); 
+
+	// delete and restore users
+	Route::get('/admin/restore/restore_user', 'Admin\UserController@restoreUser'); 
+	Route::get('/admin/restore/restore_user/{id?}', 'Admin\UserController@restoreBack')->name('/admin/restore/restore_user'); 
 
 });
 
