@@ -54,7 +54,9 @@ class UserController extends Controller
             'phone_number' => 'required|regex:/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/',
             'image' => 'nullable|image',
             'is_admin' => 'required|integer'
-        ]);
+
+        ]); 
+
         
         if(!empty($valid['image'])) {
             //get the uploaded file
