@@ -157,6 +157,9 @@ Route::middleware(['auth','admin'])->group(function(){
 	Route::get('/admin/restore/restore_user', 'Admin\UserController@restoreUser'); 
 	Route::get('/admin/restore/restore_user/{id?}', 'Admin\UserController@restoreBack')->name('/admin/restore/restore_user'); 
 
+	// delete and restore categories
+	Route::get('/admin/restore/restore_category', 'Admin\CategoryController@restoreCategory'); 
+	Route::get('/admin/restore/restore_category/{id?}', 'Admin\CategoryController@restoreBack')->name('/admin/restore/restore_category'); 
 });
 
 
