@@ -8,7 +8,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="/admin">Dashboard</a>
-                  <a class="dropdown-item" href="home">Back to TechWatch Home Page</a>
+                  <a class="dropdown-item" href="/">Back to TechWatch Home Page</a>
                 </div>
             </li>
             <li class="nav-item">
