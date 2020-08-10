@@ -23,6 +23,8 @@ Route::get('/shop', 'WatchController@index');
 
 Route::get('/contact', 'PagesController@contact');
 
+Route::get('/thankyou/{id}', 'CheckoutController@thankyou');
+
 Route::get('/{watch}/detail', 'WatchController@show');
 
 Route::get('/profile', 'UserController@profile');
