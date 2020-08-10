@@ -150,10 +150,10 @@ class UserController extends Controller
         $user->is_admin=$valid['is_admin'] ?? 0;
 
         if($user->save()){
-            return redirect('/admin/users_table')->with('success', 'User successfully updated');
+            return redirect('/admin/users_table')->with('success', 'User was successfully updated');
         }
 
-            return redirect('/admin/users_table')->with('error', 'User record not updated');
+            return redirect('/admin/users_table')->with('error', 'There was a problem updating the user');
     }
 
 
@@ -170,9 +170,9 @@ class UserController extends Controller
         ]);
         
         if( User::find($valid['id'] )->delete() ) {
-            return back()->with('success', 'The record has been deleted!');
+            return back()->with('success', 'The user has been deleted!');
         }
-        return back()->with('error', 'There was a problem deleting that record');
+        return back()->with('error', 'There was a problem deleting that user');
     }
     
     /**
