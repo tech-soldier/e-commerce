@@ -84,7 +84,7 @@
                 <form method="get" class="form-inline" action="{{ url('/shop_search') }}">
                     @csrf
                     
-                    <input type="search" class="form-control mr-sm-2 searchbox" id="query" name="query" placeholder="Search" /> 
+                    <input type="search" class="form-control  searchbox" id="query" name="query" placeholder="Search" /> 
                     <span class="input-group-btn">
                         <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>                            
                     </span>
@@ -92,6 +92,8 @@
                  </form>
 
         </div>
+
+        <div class="menu-top-wrapper">
         <div class=" ml-3 acct_user d-flex">
             <!-- util profile -->
                 <a href="/profile">
@@ -123,7 +125,7 @@
             </div>
 
         </div>
-
+    </div>
     </div>
 
 </nav>
