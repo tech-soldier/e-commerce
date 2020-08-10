@@ -28,7 +28,7 @@
         
         <div class="col-md-6">
             <div class="card">
-                <div class="card-header" style="background-color: #1e2537; font-weight: 700; color: #fff;">{{ __('Login') }}</div>
+                <div class="card-header" style="background-color: #1e2537; font-weight: 700; color: #fff;">{{ __('SIGN IN') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
