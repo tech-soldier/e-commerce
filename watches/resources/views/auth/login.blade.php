@@ -76,7 +76,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn" style="background-color: #1e2537; color: #fff;">
                                     {{ __('Login') }}
                                 </button>
 
