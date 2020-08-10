@@ -44,7 +44,7 @@ class SendMailController extends Controller
                     $message->from($user_email, $user_name);
 
                 });
-                header("Location: /");
+                return redirect('/')->with('success', 'Your Email has been sent successfully!');;
                 die;
     }
 
