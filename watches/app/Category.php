@@ -14,6 +14,10 @@ class Category extends Model
 		'category_name'
 	];
 
+    /**
+     * Define relationship between two tables
+     * @return Relationship Eloquent relationship
+    */
 	public function watch() 
 	{
 		return $this->hasMany(Watch::class); 

@@ -32,7 +32,7 @@
 	  </div>
 	  <td><button type="submit" class="btn btn-primary">Submit</button></td>
 	</form>
-</div>
+</div> <!-- /.container -->
 
 
 @stop 

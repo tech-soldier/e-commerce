@@ -25,25 +25,33 @@ class Order extends Model
         'total',
     ];
 
-
+    /**
+     * Define relationship between two tables
+     * @return Relationship Eloquent relationship
+    */
     public function user()
     {
 
     	return $this->belongsTo(User::class);
     }
 
+    /**
+     * Define relationship between two tables
+     * @return Relationship Eloquent relationship
+    */
     public function transaction()
     {
     	return $this->hasMany(Transaction::class);
     }
 
-     public function watches()
-     {
-     	return $this->belongsToMany(Watch::class);
-     }
+    /**
+     * Define relationship between two tables
+     * @return Relationship Eloquent relationship
+    */
+    public function watches()
+    {
+    	return $this->belongsToMany(Watch::class);
+    }
 
-//     public function tax()
-//     {
-//         return $this->belongsTo(Tax::class);
-//     }
+
 }
