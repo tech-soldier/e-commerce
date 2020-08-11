@@ -623,6 +623,11 @@ a.watch-name::first-letter {
   height: 589px;
 }
 
+.footer_para{
+  margin: 0;
+
+}
+
 
 
 @media only screen and (min-width:768px) and  (max-width: 1167px) {
@@ -723,5 +728,7 @@ a.watch-name::first-letter {
 .alert-danger{
   margin-bottom: 0px;
 }
+
+
 
 
