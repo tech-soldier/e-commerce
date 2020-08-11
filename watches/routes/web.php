@@ -69,6 +69,11 @@ Route::get('/home', function(){
 	return redirect('/')->with('success', 'You have been successfully logged in!'); // loged in user is redirected to watchhome page
 });
 
+Route::post('/logout_user', function(){
+	Auth::logout();
+    return Redirect::back()->with('success', 'You have been successfully logged out!');
+});
+
 
 /* ----------------  ADMIN ROUTES  ------------------ */
 Route::middleware(['auth','admin'])->group(function(){
