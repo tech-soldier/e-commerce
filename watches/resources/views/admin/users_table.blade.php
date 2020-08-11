@@ -5,7 +5,7 @@
 
 <div class="container">
 
-	<h1>Table Name: <em>{{ $title }}</em></h1>
+	<h1>Table Name: <em>{{ $title }}</em></h1><!-- this table displays all the users/ admin or not-->
 
 
 	<p><a style="color: white;" href="/admin/create/create_user"><div class="btn btn-success">Add User +</div></a></p>
@@ -32,6 +32,7 @@
 				<th scope="col">Customer ID</th>
 				<th scope="col">First Name</th>
 				<th scope="col">Last Name</th>
+				<th scope="col">Is Admin</th>
 				<th scope="col">Email Address</th>
 				<th scope="col">Phone Number</th>	      
 				<th scope="col">Postal Code</th>
@@ -46,6 +47,13 @@
 				<th scope="row">{{ $user->id }}</th>
 				<th>{{ $user->first_name }}</th>
 				<td>{{ $user->last_name }}</td>
+				<td>
+					@if($user->is_admin == 1)
+					<span style="font-size:2em; color: green;">&#x2713;</span>
+					@else 
+					<span style="font-size:2em; color: red;">&#x2A2F;</span>
+					@endif
+				</td>
 				<td>{{ $user->email }}</td>
 				<td>{{ $user->phone_number }}</td>
 				<td>{{ $user->postal_code }}</td>
@@ -65,7 +73,7 @@
 				</td>
 	    	</tr>
 	  	</tbody>
-	  	@endforeach
+	  	@endforeach<!-- end of foreachloop -->
 
 	</table><!-- end of the table-->
 </div>
