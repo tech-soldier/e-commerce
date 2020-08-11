@@ -81,7 +81,7 @@
                                 <div class="form-group col-md-6">
                                     <label for="exampleFormControlSelect1">Province</label>
                                     <select class="form-control province" id="province" name="province">
-                                        <option disabled selected> -- Select Province -- </option>
+                                        <option disabled selected value="default"> -- Select Province -- </option>
                                         @foreach($taxes as $tax)
                                             <option value="{{$tax->province}}">
                                                 {{$tax->province}}
@@ -200,7 +200,7 @@
                                 <div class="form-group col-md-6">
                                     <label for="exampleFormControlSelect1">Province</label>
                                     <select class="form-control" id="shipping_province" name="shipping_province">
-                                        <option disabled selected> -- Select Province -- </option>
+                                        <option disabled selected value="default"> -- Select Province -- </option>
                                         @foreach($taxes as $tax)
                                             <option value="{{$tax->province}}">
                                                 {{$tax->province}}
@@ -309,6 +309,12 @@
                 $('#shipping_postal_code').val($("#postal_code").val());
                 $('#shipping_province').val($("#province").val());
 
+            } else {
+                $('#shipping_address').val("");
+                $('#shipping_city').val("");
+                $('#shipping_country').val("");
+                $('#shipping_postal_code').val("");
+                $('#shipping_province').val("default");
             }
 
         });
