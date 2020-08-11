@@ -717,4 +717,9 @@ a.watch-name::first-letter {
 
 }
 
+.alert-success,
+.alert-danger{
+  margin-bottom: 0px;
+}
+
 

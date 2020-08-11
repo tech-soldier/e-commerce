@@ -231,7 +231,7 @@ class CheckoutController extends Controller
 
         $order_all = DB::table('order_watch')->where('order_id', $id)->get();
 
-        return view('thankyou', compact('title', 'final_order', 'order_all'));
+        return view('thankyou', compact('title', 'final_order', 'order_all', 'user'));
     }
 
 }
