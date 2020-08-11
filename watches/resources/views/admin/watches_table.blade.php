@@ -8,23 +8,25 @@
 	<h1>Table Name: <em>{{ $title ?? '' }}</em></h1>
 
 
-<!-- this is the table --> 
 	<p><a style="color: white;" href="/admin/create/create_watch"><div class="btn btn-success">Add Watch +</div></a></p>
 
 	<p><a style="color: white;" href="/admin/restore/restore_watch"><div class="btn btn-info">Restore 	&#xA71C;</div></a></p>
-
+	
+	<!-- search form -->
 	<form method="get" action="{{ url('/admin/search/search_watches') }}" style="margin-bottom: 25px">
 		@csrf
 	    <div class="input-group">
 	        <input type="text" class="form-control" name="query" id="query" placeholder="Search watches" /> 
-		        <span class="input-group-btn">
-		            <button type="submit" class="btn btn-default">
-		                <span class="glyphicon glyphicon-search"></span>
-		            </button>
-		        </span>
+	        <span class="input-group-btn">
+	            <button type="submit" class="btn btn-default">
+	                <span class="glyphicon glyphicon-search"></span>
+	            </button>
+	        </span>
 	    </div>
 	</form>
+	
 
+	<!-- this is the watches table --> 
 	<table class="table table-striped">
 	  	<thead class="thead-dark">
 	    	<tr>
@@ -40,7 +42,6 @@
 	    	</tr>
 	  	</thead>
 	  
-
 		@foreach($watches as $watch)
 		<tbody>
 		    <tr>

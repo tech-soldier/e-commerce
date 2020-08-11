@@ -7,17 +7,18 @@
 
 	<h1>Table Name: <em>{{ $title }}</em></h1>
 
-<!-- this is the table --> 
+
 	<p><a style="color: white;" href="/admin/create/create_user"><div class="btn btn-success">Add User +</div></a></p>
 
 	<p><a style="color: white;" href="/admin/restore/restore_user"><div class="btn btn-info">Restore 	&#xA71C;</div></a></p>
 
-
+	<!-- search form -->
 	<form method="GET" action="{{ url('/admin/search/search_users') }}" style="margin-bottom: 25px">
 		@csrf
 	    <div class="input-group">
 	        <input type="text" class="form-control" name="query"
-	            placeholder="Search Users"> <span class="input-group-btn">
+	            placeholder="Search Users"> 
+	        <span class="input-group-btn">
 	            <button type="submit" class="btn btn-default">
 	                <span class="glyphicon glyphicon-search"></span>
 	            </button>
@@ -25,7 +26,7 @@
 	    </div>
 	</form>
 
-	
+	<!-- this is the Users table --> 
 	<table class="table table-striped">
 	  	<thead class="thead-dark">
 	    	<tr>
