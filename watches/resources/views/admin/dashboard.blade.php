@@ -9,7 +9,7 @@
         </div>
 
         <div class="card-body">
-        
+            <!-- overview of watches -->
             <table class="table">
                 <thead class="bg-light">
                     <tr>
@@ -24,9 +24,9 @@
                     </tr>
                 </tbody>             
             </table>
-            
+            <!-- /. overview of watches -->
             <hr>
-
+            <!-- overview of users -->
             <table class="table">
                 <thead class="bg-light">
                     <tr>
@@ -37,9 +37,9 @@
                     <td><strong>Number of Users: </strong> {{ $users }}</td>
                 </tbody>
             </table>
-
+            <!-- /. overview of users -->
             <hr>
-
+            <!-- overview of orders -->
             <table class="table">
                 <thead class="bg-light">
                     <tr>
@@ -52,12 +52,12 @@
                     <td><strong>Average Order Total: </strong> {{ $avgorder }}</td>
                 </tbody>
             </table>           
-
-        </div>
+            <!-- /. overview of orders -->
+        </div>  <!-- /.card body -->
         
-    </div>
+    </div> <!-- /.card -->
 
-</div>
+</div>  <!-- /.container -->
     
 
 

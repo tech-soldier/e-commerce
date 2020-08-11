@@ -615,13 +615,33 @@ a.watch-name::first-letter {
   cursor: pointer;
 }
 
-.login{
-  height: 353px;
+.login_img{
+  background-image: url(/storage/images/contact_image.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 .register{
-  height: 589px;
+  background-image: url(/storage/images/banner4.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 589px;
 }
+
+.register2{
+  background-image: url(/storage/images/banner3.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 589px;
+}
+
+.register3{
+  background-image: url(/storage/images/banner6.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 589px;
+}
+
 
 
 
@@ -723,5 +743,7 @@ a.watch-name::first-letter {
 .alert-danger{
   margin-bottom: 0px;
 }
+
+
 
 

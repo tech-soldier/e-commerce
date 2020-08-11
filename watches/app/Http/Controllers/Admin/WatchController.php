@@ -12,7 +12,7 @@ use App\Category;
 class WatchController extends Controller
 {
     /**
-     * search query for admin 
+     * search query for watches 
      * @return array view of search terms specified 
      */
     public function search()
@@ -226,17 +226,6 @@ class WatchController extends Controller
             return back()->with('success', 'The watch has been deleted!');
         }
         return back()->with('error', 'There was a problem deleting that watch');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
 }

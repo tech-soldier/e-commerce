@@ -10,7 +10,7 @@ use App\Tax;
 class TaxController extends Controller
 { 
     /**
-     * search query for admin 
+     * search query for taxes 
      * @return array view of search terms specified 
      */
     public function search()
@@ -150,28 +150,5 @@ class TaxController extends Controller
         }
         return back()->with('error', 'There was a problem deleting that tax');
     }
-    
-    
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-    
-    }
-
 
 }

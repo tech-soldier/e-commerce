@@ -18,6 +18,10 @@ class Tax extends Model
 		'HST'
 	]; 
 
+	/**
+     * Define relationship between two tables
+     * @return Relationship Eloquent relationship
+    */
    	public function order() 
 	{
 		return $this->hasMany(Order::class); 

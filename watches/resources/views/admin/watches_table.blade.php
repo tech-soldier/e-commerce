@@ -7,25 +7,27 @@
 
 	<h1>Table Name: <em>{{ $title ?? '' }}</em></h1><!-- this page is for the watches table to display a list view of the watches -->
 
-
 	<!-- button function to add another watch -->
 	<p><a style="color: white;" href="/admin/create/create_watch"><div class="btn btn-success">Add Watch +</div></a></p>
 	<!-- button function to restore a deleted watch -->
 	<p><a style="color: white;" href="/admin/restore/restore_watch"><div class="btn btn-info">Restore 	&#xA71C;</div></a></p>
 	
-	<form method="get" action="{{ url('/admin/search/search_watches') }}" style="margin-bottom: 25px"><!-- this is the search bar -->
+	<!-- search form -->
+	<form method="get" action="{{ url('/admin/search/search_watches') }}" style="margin-bottom: 25px">
 		@csrf
 	    <div class="input-group">
 	        <input type="text" class="form-control" name="query" id="query" placeholder="Search watches" /> 
-		        <span class="input-group-btn">
-		            <button type="submit" class="btn btn-default">
-		                <span class="glyphicon glyphicon-search"></span>
-		            </button>
-		        </span>
+	        <span class="input-group-btn">
+	            <button type="submit" class="btn btn-default">
+	                <span class="glyphicon glyphicon-search"></span>
+	            </button>
+	        </span>
 	    </div>
+
 	</form><!-- end of search form -->
 
 	<table class="table table-striped"><!-- this is the table --> 
+
 	  	<thead class="thead-dark">
 	    	<tr>
 				<th scope="col">Watch ID</th>
@@ -40,8 +42,8 @@
 	    	</tr>
 	  	</thead>
 	  
-
 		@foreach($watches as $watch)<!-- foreach loop to iterate watches fields-->
+
 		<tbody>
 		    <tr>
 		      	<th scope="row">{{ $watch->id }}</th>
@@ -65,6 +67,7 @@
 		  	</tr>
 		</tbody>
 		@endforeach<!-- end of foreach-->
+		
 	</table><!-- end of the table-->
 
 </div>

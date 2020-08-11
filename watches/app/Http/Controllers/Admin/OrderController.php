@@ -13,7 +13,7 @@ use App\User;
 class OrderController extends Controller
 {
     /**
-     * search query for admin 
+     * search query for orders 
      * @return array view of search terms specified 
      */
     public function search()
@@ -157,25 +157,5 @@ class OrderController extends Controller
         return back()->with('error', 'There was a problem deleting that order');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
     
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
 }
