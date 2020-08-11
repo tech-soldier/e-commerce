@@ -30,12 +30,7 @@
                 <!-- footer col 2 -->
                 <div class="col-md-7 col-sm-12 d-flex  ">
                     <!-- Single Footer Area -->
-                    <!-- <div class="col-6">
-                        <div class="single_footer_area mb-100">
-                            <div class="footer_heading mb-4 mt-4">
-                                <h6>INFORMATION</h6>
-                                <p class="mb-4">We offer hassle-free online shopping for our customers throughout Canada. Take a minute to check out our store and see what we have for you!</p>
-                            </div>
+                    
                             
 
                         </div>
@@ -99,7 +94,7 @@
 <!-- custom scripts (will need to be removed to main js file) -->
 <script>
     $(document).ready(function(){
-
+        $(".flash-area").delay(2500).slideUp(2500);
         // when 'my orders' button clicked
         $('#button_orders').click(function(){
             //show or hide (toggle) orders table
