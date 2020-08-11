@@ -341,21 +341,21 @@ i {
 
 .shop1{
   height: 550px;
-  background-image:url("/storage/images/shop_image.jpg");
+  background-image:url("/storage/images/shop_banner_filtered.jpg");
   background-size: cover;
   background-position: center;
 }
 
 .about1{
   height: 550px;
-  background-image:url("/storage/images/about_banner11.jpg");
+  background-image:url("/storage/images/about_banner_filtered.jpg");
   background-size: cover;
   background-position: center;
 }
 
 .contact1{
   height: 550px;
-  background-image:url("/storage/images/contact_banner.jpg");
+  background-image:url("/storage/images/contact_banner_filtered.jpg");
   background-size: cover;
   background-position: center;
 }
