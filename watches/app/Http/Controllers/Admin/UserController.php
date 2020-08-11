@@ -156,6 +156,24 @@ class UserController extends Controller
     }
 
     /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Request $request)
+    {
+        $valid = $request->validate([
+            'id' => 'required|integer'
+        ]);
+
+        if( Watch::find($valid['id'] )->delete() ) {
+            return back()->with('success', 'The user has been deleted!');
+        }
+        return back()->with('error', 'There was a problem deleting that user');
+    }
+
+    /**
      * get the user that was deleted
      * @return deleted user
      */
@@ -184,33 +202,4 @@ class UserController extends Controller
         return redirect('/admin/restore/restore_user')->with('error', 'There was a problem storing the user.'); 
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Request $request)
-    {
-        $valid = $request->validate([
-            'id' => 'required|integer'
-        ]);
-        
-        if( User::find($valid['id'] )->delete() ) {
-            return back()->with('success', 'The user has been deleted!');
-        }
-        return back()->with('error', 'There was a problem deleting that user');
-    }
-
-    
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 }

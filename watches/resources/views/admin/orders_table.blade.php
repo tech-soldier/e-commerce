@@ -7,21 +7,23 @@
 
 	<h1>Table Name: <em>{{ $title }}</em></h1>
 
-<!-- this is the table --> 
-	<p><a style="color: white;" href="/admin/create/create_order"><div class="btn btn-success">Add Order +</div></a></p>
 
+	<p><a style="color: white;" href="/admin/create/create_order"><div class="btn btn-success">Add Order +</div></a></p>
+	<!-- search form -->
 	<form method="GET" action="{{ url('/admin/search/search_orders') }}" style="margin-bottom: 25px">
 		@csrf
 	    <div class="input-group">
 	        <input type="text" class="form-control" name="query"
-	            placeholder="Search By Order ID or billing/shipping address"> <span class="input-group-btn">
+	            placeholder="Search By Order ID or billing/shipping address"> 
+            <span class="input-group-btn">
 	            <button type="submit" class="btn btn-default">
 	                <span class="glyphicon glyphicon-search"></span>
 	            </button>
 	        </span>
 	    </div>
-	</form>
+	</form>  <!-- /. search form -->
 
+	<!-- this is the orders table --> 
 	<table class="table table-striped">
 		<thead class="thead-dark">
 		    <tr>
@@ -66,8 +68,7 @@
 		    </tr>
 	  	</tbody>
 	  	@endforeach
-	</table>
-	<!-- end of the table-->
+	</table> <!-- end of the table-->
 </div>
 
 @stop 
