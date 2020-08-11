@@ -55,7 +55,7 @@
 				</td>
 				<td>
 					<form class="delete"
-                    	onSubmit="return confirm('Do you really want to delete this post?')"
+                    	onSubmit="return confirm('Do you really want to delete this record?')"
                      	action="/admin/users_table" method="post">
 	                    @csrf
 	                    @method('DELETE')

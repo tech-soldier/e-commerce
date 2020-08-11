@@ -9,7 +9,10 @@ use App\Tax;
 
 class TaxController extends Controller
 { 
-
+    /**
+     * search query for admin 
+     * @return array view of search terms specified 
+     */
     public function search()
     {
         $search_term = $_GET['query']; 
@@ -19,16 +22,6 @@ class TaxController extends Controller
     }
   
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-    
-    }
-
-    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -36,7 +29,6 @@ class TaxController extends Controller
     public function create()
     {
         $title = 'Create A New Tax'; 
-
         $taxes = Tax::all(); 
 
         return view('/admin/create/create_tax', compact('title', 'taxes')); 
@@ -69,17 +61,6 @@ class TaxController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -89,6 +70,7 @@ class TaxController extends Controller
     {
         $taxes=Tax::find($id);
         $title = 'Edit Tax'; 
+
         return view('/admin/edit/edit_tax', compact('taxes', 'title')); 
     }
 
@@ -107,19 +89,20 @@ class TaxController extends Controller
             'HST' => 'nullable|regex:/^\d+(\.\d{1,2})?$/'
         ]); 
 
-
          $taxes = Tax::find($request['id']);
          $taxes->PST = $valid['PST']; 
          $taxes->HST = $valid['HST']; 
     
         if($taxes->save() ) {
             return redirect('/admin/taxes_table')->with('success', 'Tax was successfully updated');
-
         }
-
         return redirect('/admin/taxes_table')->with('error', 'There was a problem updating the tax');
     }
 
+    /**
+     * get the tax that was deleted
+     * @return deleted category
+     */
     public function restoreTax()
     {
         $taxes = Tax::onlyTrashed()->get();;
@@ -127,6 +110,11 @@ class TaxController extends Controller
         return view('/admin/restore/restore_tax', compact('taxes', 'title'));
     }
 
+    /**
+     * Restore the deleted tax recor
+     * @param  int $id 
+     * @return \Illuminate\Http\Response  
+     */
     public function restoreBack($id)
     {
         Tax::withTrashed()
@@ -134,13 +122,9 @@ class TaxController extends Controller
         ->restore();
 
         if(isset(request()->id)){
-
-         return redirect('/admin/restore/restore_tax')->with('success', 'Your Province was successfully restored. Go back and check the Taxes Table'); 
-
-        } else {
-
-            return redirect('/admin/restore/restore_tax')->with('error', 'There was a problem storing the tax.'); 
-        } 
+            return redirect('/admin/restore/restore_tax')->with('success', 'Your Province was successfully restored. Go back and check the Taxes Table'); 
+        }
+        return redirect('/admin/restore/restore_tax')->with('error', 'There was a problem storing the tax.');  
     }
     
     /**
@@ -162,5 +146,26 @@ class TaxController extends Controller
     }
     
     
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+    
+    }
+
 
 }

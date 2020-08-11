@@ -11,7 +11,10 @@ use App\Category;
 
 class WatchController extends Controller
 {
-
+    /**
+     * search query for admin 
+     * @return array view of search terms specified 
+     */
     public function search()
     {
         $search_term = $_GET['query']; 
@@ -20,8 +23,6 @@ class WatchController extends Controller
         return view('/admin/search/search_watches', compact('watches', 'search_term')); 
     }
 
-
-  
     /**
      * Show the form for creating a new resource.
      *
@@ -32,6 +33,7 @@ class WatchController extends Controller
         $title = 'Create A New Watch'; 
         $watches = Watch::all(); 
         $categories = Category::all(); 
+
         return view('/admin/create/create_watch', compact('title', 'watches', 'categories')); 
     }
 
@@ -43,9 +45,7 @@ class WatchController extends Controller
      */
     public function store(Request $request)
     {
-        //dd('you are here');
-
-        $valid = $request->validate([
+         $valid = $request->validate([
             'SKU' => 'required|integer', 
             'watch_name' => 'required|string|max:255',
             'in_stock' => 'required|integer', 
@@ -65,16 +65,13 @@ class WatchController extends Controller
             'cover_img' => 'nullable|image',
             'short_description' => 'required|string|max:255', 
             'long_description' => 'required|string|max:500'
-
         ]); 
  
         if(!empty($valid['cover_img'])) {
             //get the uploaded file
             $file = $request->file('cover_img');
-
             //get the original filename
             $image = time() . '_' . $file->getClientOriginalName();
-
             //save the image
             $path = $file->storeAs('public/images', $image);
         }
@@ -99,11 +96,9 @@ class WatchController extends Controller
             'cover_img' => $image ?? '',
             'short_description' => $valid['short_description'],
             'long_description' => $valid['long_description']
-
         ]); 
 
-            //return redirect('/admin/'); 
-            return redirect('/admin/watches_table')->with('success', 'Watch was successfully created'); 
+        return redirect('/admin/watches_table')->with('success', 'Watch was successfully created'); 
     }
 
     /**
@@ -117,6 +112,7 @@ class WatchController extends Controller
         $watch=Watch::find($id);
         $categories = Category::all(); 
         $title = 'Edit Watch'; 
+
         return view('/admin/edit/edit_watch', compact('title', 'watch', 'categories')); 
     }
 
@@ -129,7 +125,6 @@ class WatchController extends Controller
      */
     public function update(Request $request)
     {
-
         $valid = $request->validate([
             'id' => 'required|integer',
             'SKU' => 'required|integer', 
@@ -159,9 +154,7 @@ class WatchController extends Controller
         $image = time() . '_' . $file->getClientOriginalName();
         //save the image
         $path = $file->storeAs('public/images', $image);
-
     }
-
         $watch = Watch::find($valid['id']);
         $watch->SKU = $valid['SKU'];
         $watch->watch_name = $valid['watch_name'];
@@ -183,16 +176,16 @@ class WatchController extends Controller
         if(!empty($cover_img)) {
              $watch->cover_img = $image;
         }
-
         if($watch->save() ) {
             return redirect('/admin/watches_table')->with('success', 'Watch was successfully updated');
-
         }
-
         return redirect('/admin/watches_table')->with('error', 'There was a problem updating the watch');
-
     }
 
+    /**
+     * get the watch that was deleted
+     * @return deleted watch
+     */
     public function restoreWatch()
     {
         $watches = Watch::onlyTrashed()->get();
@@ -200,6 +193,11 @@ class WatchController extends Controller
         return view('/admin/restore/restore_watch', compact('watches', 'title')); 
     }
 
+    /**
+     * Restore the deleted watch
+     * @param  int $id 
+     * @return \Illuminate\Http\Response  
+     */
     public function restoreBack($id)
     {
         Watch::withTrashed()
@@ -207,14 +205,9 @@ class WatchController extends Controller
         ->restore();
 
         if(isset(request()->id)){
-
-         return redirect('/admin/restore/restore_watch')->with('success', 'Your watch was successfully restored. Go back and check the Watches Table'); 
-
-        } else {
-
-            return redirect('/admin/restore/restore_watch')->with('error', 'There was a problem storing the watch.'); 
-        } 
-
+            return redirect('/admin/restore/restore_watch')->with('success', 'Your watch was successfully restored. Go back and check the Watches Table'); 
+        }
+        return redirect('/admin/restore/restore_watch')->with('error', 'There was a problem restoring the watch.'); 
     }
 
     /**
