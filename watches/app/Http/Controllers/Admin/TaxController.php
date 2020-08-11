@@ -42,12 +42,18 @@ class TaxController extends Controller
      */
     public function store(Request $request) 
     {
+
+        if((isset($request->GST) && isset($request->HST)) || (isset($request->PST) && isset($request->HST)) ) {
+            return redirect('/admin/create/create_tax')->with('error', 'Only either GST and PST or HST.'); 
+        }
+
         $valid = $request->validate([
             'province' => 'required|string|max:255',
             'GST' => "nullable|regex:/^\d+(\.\d{1,2})?$/", 
             'PST' => "nullable|regex:/^\d+(\.\d{1,2})?$/", 
             'HST' => "nullable|regex:/^\d+(\.\d{1,2})?$/"
         ]); 
+
 
         Tax::create([
             'province' => $valid['province'],  

@@ -7,7 +7,7 @@
 
 	<h1>Table Name: <em>{{ $title }}</em></h1>
 
-<!-- this is the table --> 
+
 	<p><a style="color: white;" href="/admin/create/create_user"><div class="btn btn-success">Add User +</div></a></p>
 
 	<p><a style="color: white;" href="/admin/restore/restore_user"><div class="btn btn-info">Restore 	&#xA71C;</div></a></p>
@@ -26,7 +26,7 @@
 	</form>
 
 	
-	<table class="table table-striped">
+	<table class="table table-striped"><!-- this is the table --> 
 	  	<thead class="thead-dark">
 	    	<tr>
 				<th scope="col">Customer ID</th>
@@ -40,7 +40,7 @@
 
 	    	</tr>
 	  	</thead>     
-	  	@foreach($users as $user)
+	  	@foreach($users as $user)<!-- foreaach loop to iterate all the users -->
 	  	<tbody>
 	    	<tr>
 				<th scope="row">{{ $user->id }}</th>
@@ -67,8 +67,7 @@
 	  	</tbody>
 	  	@endforeach
 
-	</table>
-	<!-- end of the table-->
+	</table><!-- end of the table-->
 </div>
 
 @stop 
