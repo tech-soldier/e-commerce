@@ -29,11 +29,14 @@ class WatchController extends Controller
      * @param  [type] $name [description]
      * @return [type]       [description]
      */
-     public function category_list($name){
+     public function category_list($id){
+        $watches = Watch::where('category_id', $id)->get();
+        $category = Category::find($id);
         $categories = Category::all();
-        $cat = Category::where('category_name', $name)->with('watches')->first();
-        $title = 'Category: ' . $name;
-        return view('watches/category_list', compact('cat', 'categories', 'title'));
+        // $cat = Category::where('category_name', $name)->with('watches')->first();
+        //$cat = Category::with('watches')->has('watches')->get();
+        $title = 'Category: ' . $category->name;
+        return view('category_list', compact('watches', 'categories', 'title'));
     }
 
 
@@ -219,6 +222,8 @@ class WatchController extends Controller
 
         return view('/shop_search', compact('watches')); 
     }
+
+    
    
 
 }
