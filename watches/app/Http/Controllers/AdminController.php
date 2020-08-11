@@ -23,15 +23,17 @@ class AdminController extends Controller
     public function index()
     {
         $title = "Dashboard";
-        $min = \DB::table('watches')->min('price');
-        $max = \DB::table('watches')->max('price');
-        $avg = \DB::table('watches')->avg('price');
-        $users = \DB::table('users')->count();
-        $minorder = \DB::table('orders')->min('total');
-        $maxorder = \DB::table('orders')->max('total');
-        $avgorder = \DB::table('orders')->avg('total');
+        $min = Watch::min('price');
+        $max = Watch::max('price');
+        $users = User::count();
+        $watches = Watch::count();
+        $categories = Category::count();
+        $provinces = Tax::count();
+        $minorder = Order::min('total');
+        $maxorder = Order::max('total');
+        $totorder = Order::count();
 
-        return view('/admin/dashboard', compact('title', 'min', 'max', 'avg', 'users', 'minorder', 'maxorder', 'avgorder'));
+        return view('/admin/dashboard', compact('title', 'min', 'max', 'users' ,'watches', 'categories', 'provinces', 'totorder' ,'minorder', 'maxorder'));
     }
 
     /**

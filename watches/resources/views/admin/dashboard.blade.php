@@ -13,14 +13,13 @@
             <table class="table">
                 <thead class="bg-light">
                     <tr>
-                        <th>Watches Overview</th><th></th><th></th>
+                        <th>Watches Overview</th><th></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td><strong>Min Price: </strong> $ {{ $min }}</td>
                         <td><strong>Max Price: </strong> $ {{ $max }}</td>
-                        <td><strong>Avg Price: </strong> $ {{ $avg }}</td>
                     </tr>
                 </tbody>             
             </table>
@@ -30,11 +29,14 @@
             <table class="table">
                 <thead class="bg-light">
                     <tr>
-                        <th>Users Overview</th>
+                        <th>Tables Overview</th><th></th><th></th><th></th><th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <td><strong>Number of Users: </strong> {{ $users }}</td>
+                    <td><strong>Users: </strong> {{ $users }}</td>
+                    <td><strong>Watches: </strong> {{ $watches }}</td>
+                    <td><strong>Categories: </strong> {{ $categories }}</td>
+                    <td><strong>Provinces We ship too: </strong> {{ $provinces }}</td>
                 </tbody>
             </table>
             <!-- /. overview of users -->
@@ -47,9 +49,9 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <td><strong>Total Orders: </strong> {{ $totorder }}</td>
                     <td><strong>Highest Order Total: </strong> {{ $maxorder }}</td>
                     <td><strong>Lowest Order Total: </strong> {{ $minorder }}</td>
-                    <td><strong>Average Order Total: </strong> {{ $avgorder }}</td>
                 </tbody>
             </table>           
             <!-- /. overview of orders -->
