@@ -120,9 +120,11 @@
                 data: {_token: '{{ csrf_token() }}', id: ele.attr("data-id"), quantity: quantity},
                 dataType: "json",
                 success: function (response) {
+                    console.log(ele.val())
                     product_subtotal.text(response.subTotal);
                     cart_total.text(response.total);
                     message.text(response.message);
+                    ele.val(response.quantity);
                 }
             });
         });
