@@ -16,6 +16,10 @@ use \Carbon\Carbon;
 
 class CheckoutController extends Controller
 {
+    /**
+     * get Checkout 
+     * @return array 
+     */
     public function getCheckout()
     {
         $taxes = Tax::all();
