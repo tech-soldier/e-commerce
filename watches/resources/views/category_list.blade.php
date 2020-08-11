@@ -37,8 +37,8 @@
                     <div class="single-product-area mb-30">
                         <div class="product_image">
                             <!-- Product Image -->
-                            <a href="{{$watch->id}}/detail">
-                            <img class="normal_img" src="/storage/images/{{$watch->cover_img}}" alt="{{$watch->watch_name}}" href="{{$watch->id}}/detail">
+                            <a href="/{{$watch->id}}/detail">
+                            <img class="normal_img" src="/storage/images/{{$watch->cover_img}}" alt="{{$watch->watch_name}}" href="/{{$watch->id}}/detail">
                             </a>
                             <!-- Product Badge -->
                             <!-- <div class="product_badge">
@@ -49,7 +49,7 @@
                         <!-- Product Description -->
                         <div class="product_description py-2">
                             <div class="watch_info_wrapper text-center ">
-                                <a class="text-center watch-name" href="{{$watch->id}}/detail">{{$watch->watch_name}}</a>
+                                <a class="text-center watch-name" href="/{{$watch->id}}/detail">{{$watch->watch_name}}</a>
                                 <hr style="background-color: white; width: 90% ;">
                                 <h6 class="text-center product-price mt-2">${{$watch->price}}</h6>
                                 <p class="text-center mb-0"> Width: {{$watch->strap_width}}</p>
@@ -59,11 +59,11 @@
                         <div class="add_quick_wrapper d-flex">
                                 <!-- Add to cart -->
                                 <div class="product_add_to_cart text-center">
-                                    <a href="add-to-cart/{{ $watch->id }}" data-id="{{ $watch->id }}"> Add to Cart</a>
+                                    <a href="/add-to-cart/{{ $watch->id }}" data-id="{{ $watch->id }}"> Add to Cart</a>
                                 </div>
                                 <!-- Quick View -->
                                 <div class="product_quick_view text-center">
-                                    <a href="{{$watch->id}}/detail"> Quick View</a>
+                                    <a href="/{{$watch->id}}/detail"> Quick View</a>
                                 </div>
                             </div>
                     </div>
