@@ -2,6 +2,13 @@
 
 @section('content')
 
+<div class="shop1" >
+        <div class="video-container">
+
+            <button class="shop-btn text-center"> SHOP </button>
+        </div>
+    </div>
+
 <div class="container pt-5">
           
               <h2 class="text-center">{{ $title }}</h2>
@@ -9,7 +16,7 @@
            <div class="categories-wrapper mb-5">
                 <ul>
                     @foreach($categories as $category)
-                        <li><a href="/watches/category/{{ $category->category_name }}" class="text-dark">{{ $category->category_name }}</a></li>
+                        <li><a href="/category_list/{{$category->id}}" class="text-dark">{{ $category->category_name }}</a></li>
                     @endforeach
                 </ul>
             </div>
