@@ -3,6 +3,8 @@
 
 @section('content')
 
+
+
 <div class="container page my-5">
     @if (Session::has('error'))
         <p class="alert alert-danger">{{ Session::get('error') }}</p>

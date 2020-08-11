@@ -16,8 +16,8 @@ use \Carbon\Carbon;
 class CheckoutController extends Controller
 {
     /**
-     * get Checkout 
-     * @return array 
+     * get Checkout
+     * @return array
      */
     public function getCheckout()
     {
@@ -172,9 +172,6 @@ class CheckoutController extends Controller
         }
 
 
-        //clean session, empty cart
-        session()->forget('cart');
-
 
         try {
 
@@ -208,18 +205,22 @@ class CheckoutController extends Controller
                 $update_order->transaction_status = 1;
                 $update_order->save();
 
+                //clean session, empty cart
+                session()->forget('cart');
+
+                return redirect("/thankyou/".$order_id)->with('success', 'Order was successfully created');
+
             } else {
 
-                //return back with errors
-                //return back()->withErrors((array) $response->errors);
-                echo "Failed";
+                $errors = $response->transaction_response->errors;
+                return redirect()->back()->with('error', 'Transaction failed, unfortunately. ' . json_encode($errors));
             }
 
         } catch (Exception $e) {
             die($e->getMessage());
         }
 
-        return redirect("/thankyou/".$order_id)->with('success', 'Order was successfully created');
+
     }
 
     public function thankyou($id)
