@@ -117,7 +117,7 @@ class CategoryController extends Controller
         ->restore();
 
         if(isset(request()->id)){
-            return redirect('/admin/restore/restore_category')->with('success', 'Your Category was successfully restored. Go back and check the Users Table'); 
+            return redirect('/admin/restore/restore_category')->with('success', 'Your Category was successfully restored. Go back and check the Categories Table'); 
         }
         return redirect('/admin/restore/restore_category')->with('error', 'There was a problem restoring the category.'); 
     }

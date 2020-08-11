@@ -5,11 +5,11 @@
 
 <div class="container">
 
-	<h1>Table Name: <em>{{ $title ?? '' }}</em></h1>
+	<h1>Table Name: <em>{{ $title ?? '' }}</em></h1><!-- this page is for the watches table to display a list view of the watches -->
 
-
+	<!-- button function to add another watch -->
 	<p><a style="color: white;" href="/admin/create/create_watch"><div class="btn btn-success">Add Watch +</div></a></p>
-
+	<!-- button function to restore a deleted watch -->
 	<p><a style="color: white;" href="/admin/restore/restore_watch"><div class="btn btn-info">Restore 	&#xA71C;</div></a></p>
 	
 	<!-- search form -->
@@ -23,11 +23,11 @@
 	            </button>
 	        </span>
 	    </div>
-	</form>
-	
 
-	<!-- this is the watches table --> 
-	<table class="table table-striped">
+	</form><!-- end of search form -->
+
+	<table class="table table-striped"><!-- this is the table --> 
+
 	  	<thead class="thead-dark">
 	    	<tr>
 				<th scope="col">Watch ID</th>
@@ -42,7 +42,8 @@
 	    	</tr>
 	  	</thead>
 	  
-		@foreach($watches as $watch)
+		@foreach($watches as $watch)<!-- foreach loop to iterate watches fields-->
+
 		<tbody>
 		    <tr>
 		      	<th scope="row">{{ $watch->id }}</th>
@@ -65,7 +66,8 @@
 	         	</td>
 		  	</tr>
 		</tbody>
-		@endforeach
+		@endforeach<!-- end of foreach-->
+		
 	</table><!-- end of the table-->
 
 </div>

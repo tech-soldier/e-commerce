@@ -35,13 +35,18 @@ class Order extends Model
     	return $this->belongsTo(User::class);
     }
 
+    // public function transaction()
+    // {
+    // 	return $this->hasMany(Transaction::class);
+    // }
+
     /**
      * Define relationship between two tables
      * @return Relationship Eloquent relationship
     */
     public function transaction()
     {
-    	return $this->hasMany(Transaction::class);
+        return $this->belongsTo(Transaction::class);
     }
 
     /**
@@ -53,5 +58,10 @@ class Order extends Model
     	return $this->belongsToMany(Watch::class);
     }
 
+
+    public function tax()
+    {
+        return $this->belongsTo(Tax::class);
+    }
 
 }
