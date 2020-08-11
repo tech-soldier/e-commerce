@@ -1,22 +1,10 @@
+<?php
+    use App\Http\Controllers\CartController;
+?>
 
 @extends('layouts/layout')
 
 @section('content')
-
-    <?php
-
-    $total = 0;
-
-    if (session()->has('cart')) {
-        $cart = session()->get('cart');
-
-        foreach($cart as $id => $details) {
-            $total += $details['price'] * $details['quantity'];
-        }
-    }
-
-    ?>
-
 
     <div class="container py-5">
         <div class="row">
@@ -113,9 +101,7 @@
                                 @error('email')
                                 <span class="alert-danger">{{ $message }}</span>
                                 @enderror
-
                             </div>
-
 
                             <div class="form-row">
                                 <div class="form-group col-md-12">
@@ -229,7 +215,6 @@
                     </div>
                 </div>
 
-
                 <div class="col-md-4">
                     <div class="row">
                         <div class="col-md-12">
@@ -239,7 +224,7 @@
                                 </header>
                                 <article class="card-body">
                                     <dl class="dlist-align">
-                                        <dt>Subtotal: $<span id="subtotal" name="subtotal" class="text-dark">{{ round($total, 2) }}</span></dt>
+                                        <dt>Subtotal: $<span id="subtotal" name="subtotal" class="text-dark">{{ CartController::getCartTotal() }}</span></dt>
                                     </dl>
 
                                     <dl class="dlist-align">
@@ -272,6 +257,8 @@
 
     <script type="text/javascript">
 
+        //sending an ajax request to the checkout Controller to calculate the costs on quantity filed update
+
         $(".province").on('change', function() {
 
             var ele = $(this).val();
@@ -297,6 +284,8 @@
                 }
             });
         });
+
+        //setting the value of shipping address form field same to billing address fields on checkbox checked
 
         $('#check-address').change(function() {
 

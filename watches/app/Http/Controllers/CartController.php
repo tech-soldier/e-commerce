@@ -67,15 +67,17 @@ class CartController extends Controller
      */
     public static function getCartTotal()
     {
-        $total = 0;
+        if (session()->has('cart')) {
+            $total = 0;
 
-        $cart = session()->get('cart');
+            $cart = session()->get('cart');
 
-        foreach($cart as $id => $details) {
-            $total += $details['price'] * $details['quantity'];
+            foreach ($cart as $id => $details) {
+                $total += $details['price'] * $details['quantity'];
+            }
+
+            return round($total, 2);
         }
-
-        return round($total, 2);
     }
 
 

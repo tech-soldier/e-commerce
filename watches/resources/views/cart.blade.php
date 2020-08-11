@@ -3,8 +3,6 @@
 
 @section('content')
 
-
-
     <div class="container page my-5">
         @if (Session::has('error'))
             <p class="alert alert-danger">{{ Session::get('error') }}</p>
@@ -71,6 +69,8 @@
 
     <script type="text/javascript">
 
+        // sending ajax request for removing an item from the cart
+
         $(".remove-from-cart").click(function (e) {
             e.preventDefault();
             var ele = $(this);
@@ -91,6 +91,7 @@
             }
         });
 
+        //sending ajax request to calculate the new subtotal and total
         $(".quantity").change(function (e) {
             e.preventDefault();
 
