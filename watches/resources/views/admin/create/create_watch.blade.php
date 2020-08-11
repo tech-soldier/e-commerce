@@ -15,8 +15,8 @@
             @enderror
         </div>
         <div class="form-group">
-            <label for="SKU">SKU: </label>
-            <input type="text" name="SKU" class="form-control" id="SKU" value="{{ old('SKU') }}" placeholder="22567959">
+            <label for="SKU">SKU: <span style="color:#cfcfcf">(Consists of 8 numbers)</span> </label>
+            <input type="text" name="SKU" class="form-control" id="SKU" value="{{ old('SKU') }}">
             @error('SKU')
                 <span class="alert-danger">{{ $message }}</span>
             @enderror
