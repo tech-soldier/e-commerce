@@ -622,13 +622,26 @@ a.watch-name::first-letter {
 }
 
 .register{
-  height: 589px;
+  background-image: url(/storage/images/banner4.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 589px;
 }
 
-.footer_para{
-  margin: 0;
-
+.register2{
+  background-image: url(/storage/images/banner3.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 589px;
 }
+
+.register3{
+  background-image: url(/storage/images/banner6.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 589px;
+}
+
 
 
 
