@@ -3,23 +3,23 @@
 
 @section('content')
 
-    <div class="container page my-5">
-        @if (Session::has('error'))
-            <p class="alert alert-danger">{{ Session::get('error') }}</p>
-        @endif
-        <span id="status"></span>
+<div class="container page my-5">
+    @if (Session::has('error'))
+        <p class="alert alert-danger">{{ Session::get('error') }}</p>
+    @endif
+    <span id="status"></span>
 
-        <table id="cart" class="table table-hover table-condensed">
-            <thead>
-            <tr>
-                <th style="width:50%" class="bg-light">Product</th>
-                <th style="width:10%" class="bg-light">Price</th>
-                <th style="width:8%" class="bg-light">Quantity</th>
-                <th style="width:22%" class="text-center bg-light">Subtotal</th>
-                <th style="width:10%" class="bg-light"></th>
-            </tr>
-            </thead>
-            <tbody>
+    <table id="cart" class="table table-hover table-condensed">
+        <thead>
+        <tr>
+            <th style="width:50%" class="bg-light">Product</th>
+            <th style="width:10%" class="bg-light">Price</th>
+            <th style="width:8%" class="bg-light">Quantity</th>
+            <th style="width:22%" class="text-center bg-light">Subtotal</th>
+            <th style="width:10%" class="bg-light"></th>
+        </tr>
+        </thead>
+        <tbody>
 
             <?php $total = 0 ?>
 
@@ -50,8 +50,8 @@
             </tr>
                 @endforeach
             @endif
-            </tbody>
-            <tfoot>
+        </tbody>
+        <tfoot>
             <tr class="visible-xs">
 
                 <td colspan="5" class="text-right"><strong><span class="message text-danger"></span></strong></td>
@@ -79,8 +79,8 @@
                 <td><a href="{{ route('checkout.index') }}" class="btn btn-primary"> Checkout</a></td>
             </tr>
         </tfoot>
-    </table>
-</div>
+    </table> <!-- /.table -->
+</div> <!-- /.container -->
 
     <script type="text/javascript">
 

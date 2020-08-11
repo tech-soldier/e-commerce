@@ -64,38 +64,32 @@
                         {{ __('Logout') }}
                     </a>
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    <form id="logout-form" action="/logout_user" method="POST" style="display: none;">
                         @csrf
                     </form>
                 </div>
             </li>
 
-            
-            
-
-            
             @endguest
 
         </ul>
 
         <div class="ml-3 top-search" >
                 
-
-                <form method="get" class="form-inline" action="{{ url('/shop_search') }}">
-                    @csrf
-                    
-                    <input type="search" class="form-control  searchbox" id="query" name="query" placeholder="Search" /> 
-                    <span class="input-group-btn">
-                        <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>                            
-                    </span>
-                    
-                 </form>
+            <form method="get" class="form-inline" action="{{ url('/shop_search') }}">
+                @csrf
+                
+                <input type="search" class="form-control  searchbox" id="query" name="query" placeholder="Search" /> 
+                <span class="input-group-btn">
+                    <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+                </span>    
+             </form>
 
         </div>
 
         <div class="menu-top-wrapper">
-        <div class=" ml-3 acct_user d-flex">
-            <!-- util profile -->
+            <div class=" ml-3 acct_user d-flex">
+                <!-- util profile -->
                 <a href="/profile">
                     <div class="circle1">
                         <?php if(!empty($user->image)) : ?>
@@ -105,41 +99,36 @@
                                 <i class="fas fa-user-alt text-dark"></i>
                             </div>
                         <?php endif ; ?>
-
                     </div>                    
                 </a>
-
             </div>
-        <div class=" ml-2 acct_srch d-flex">
-            <!-- util search -->
-            
-            <!-- shopping cart -->
-            <div class="ml-2 circle">
-                <a href="/cart"> <i class="fas fa-shopping-cart"></i></a>
+            <div class=" ml-2 acct_srch d-flex">
+                <!-- util search -->                
+                <!-- shopping cart -->
+                <div class="ml-2 circle">
+                    <a href="/cart"> <i class="fas fa-shopping-cart"></i></a>
 
-                @if(session('cart'))
-                <div class="sml-circle">
-                    <span class="text-center cart-blue-icon">{{ count((array) session('cart')) }}</span>
+                    @if(session('cart'))
+                    <div class="sml-circle">
+                        <span class="text-center cart-blue-icon">{{ count((array) session('cart')) }}</span>
+                    </div>
+                    @endif
                 </div>
-                @endif
             </div>
-
         </div>
-    </div>
     </div>
 
 </nav>
 <div class=" bottom-search " >
                 
+    <form method="get" class="form-inline" action="{{ url('/shop_search') }}">
+        @csrf
+        
+        <input type="search" class="form-control mr-sm-2 searchbox1" id="query-bottom" name="query" placeholder="Search" /> 
+        <span class="input-group-btn">
+            <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>                            
+        </span>
+        
+     </form>
 
-                <form method="get" class="form-inline" action="{{ url('/shop_search') }}">
-                    @csrf
-                    
-                    <input type="search" class="form-control mr-sm-2 searchbox1" id="query-bottom" name="query" placeholder="Search" /> 
-                    <span class="input-group-btn">
-                        <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>                            
-                    </span>
-                    
-                 </form>
-
-        </div>
+</div>

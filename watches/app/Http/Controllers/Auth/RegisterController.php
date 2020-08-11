@@ -65,6 +65,9 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        // this sets flash message for new registered users
+        session()->flash('success', 'You have successfully registered into our website!');
+
         return User::create([
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],

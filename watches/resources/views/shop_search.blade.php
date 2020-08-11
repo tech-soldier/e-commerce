@@ -2,9 +2,8 @@
 
 @section('content')
 
-<div class="shop1" >
+    <div class="shop1" >
         <div class="video-container">
-
             <button class="shop-btn text-center"> SHOP </button>
         </div>
     </div>

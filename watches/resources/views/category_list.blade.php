@@ -1,6 +1,7 @@
 @extends('layouts/layout')
 
 @section('content')
+<<<<<<< HEAD
 <div class="container pt-5">
 <div class='bg-light pl-4 pr-4 mt-4'>
     <div class="row mt-1 mb-3">
@@ -65,13 +66,15 @@
                 @endforeach
 
             </div> <!-- /. row -->
-
-
-        </div> 
     </div>
+
 </div>
 </div>
  @include('partials/features')
 
     @stop
+
+
+</div> <!-- /.container -->
+</div>
 

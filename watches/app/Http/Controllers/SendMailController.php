@@ -9,23 +9,25 @@ use App\Mail\SendEmail;
 
 class SendMailController extends Controller
 {
-
-     public function sendEmailToUser() {
-
+    /**
+     * Send email to support/website
+     * @return  email
+     */
+    public function sendEmailToUser() 
+    {
         $to_email = "techwatch7@gmail.com";
-
 
         Mail::to($to_email)->send(new SendEmail);
 
         return "<p> Your E-mail has been sent succssfully. </p>";
-
     }
 
-
+    /**
+     * Sen email to site owner
+     * @param Request $request 
+     */
     public function Email(Request $request)
-
     {
-        
         // Requred for email headers
         $to_email = 'techwatch7@gmail.com';
         $to_name = 'Laravel Site Owner';
@@ -47,7 +49,5 @@ class SendMailController extends Controller
                 return redirect('/')->with('success', 'Your Email has been sent successfully!');;
                 die;
     }
-
-
 
 }
