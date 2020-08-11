@@ -26,15 +26,21 @@ class AdminController extends Controller
         $min = Watch::min('price');
         $max = Watch::max('price');
         $avg = Watch::avg('price'); 
+
         $users = User::count();
         $watches = Watch::count();
         $categories = Category::count();
         $provinces = Tax::count();
+
         $minorder = Order::min('total');
         $maxorder = Order::max('total');
         $totorder = Order::count();
 
-        return view('/admin/dashboard', compact('title', 'min', 'max', 'avg','users' ,'watches', 'categories', 'provinces', 'totorder' ,'minorder', 'maxorder'));
+        $gst = Tax::max('GST'); 
+
+
+
+        return view('/admin/dashboard', compact('title', 'min', 'max', 'avg','users' ,'watches', 'categories', 'provinces', 'totorder' ,'minorder', 'maxorder', 'gst'));
     }
 
     /**
