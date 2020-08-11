@@ -655,12 +655,17 @@ a.watch-name::first-letter {
   padding-right: 0;
 }
 
-
+.menu-top-wrapper{
+  display: flex;
+}
 /* ----------------------------- ------------- -----------*/
 
-@media only screen and (min-width:1166px){
+@media only screen and (min-width:1167px){
   .bottom-search{
     display :none;
+  }
+  .searchbox{
+    margin-right: 4px;
   }
 }
 @media only screen and (max-width: 767px){
@@ -669,6 +674,9 @@ a.watch-name::first-letter {
   }
   .normal_img:hover{
   transform: scale(1.0);
+  }
+  .searchbox{
+    margin-bottom:7px;
   }
 }
 
@@ -682,7 +690,7 @@ a.watch-name::first-letter {
   }
 }
 
-@media only screen and (max-width:500px){
+@media only screen and (max-width:767px){
   .top-search form {
     margin-top: 20px;
     width: 100%;
@@ -697,6 +705,14 @@ a.watch-name::first-letter {
   .top-search form span button {
     width: 100%;
 
+  }
+  .col-9 {
+    max-width: 100%;
+    flex:0 0 100%;
+  }
+  .searchbox{
+    width: 100% !important;
+    margin-right:  !important;
   }
 
 }
