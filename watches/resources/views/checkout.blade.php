@@ -1,12 +1,21 @@
-<?php
-
-use \App\Http\Controllers\CartController;
-
-?>
 
 @extends('layouts/layout')
 
 @section('content')
+
+    <?php
+
+    $total = 0;
+
+    if (session()->has('cart')) {
+        $cart = session()->get('cart');
+
+        foreach($cart as $id => $details) {
+            $total += $details['price'] * $details['quantity'];
+        }
+    }
+
+    ?>
 
 
     <div class="container py-5">
@@ -230,15 +239,13 @@ use \App\Http\Controllers\CartController;
                                 </header>
                                 <article class="card-body">
                                     <dl class="dlist-align">
-                                        <dt>Subtotal: $<span id="subtotal" name="subtotal" class="text-dark">{{ CartController::getCartTotal() }}</span></dt>
+                                        <dt>Subtotal: $<span id="subtotal" name="subtotal" class="text-dark">{{ round($total, 2) }}</span></dt>
                                     </dl>
 
                                     <dl class="dlist-align">
                                         <dt class="text-primary"><span id="tax" class="text-dark"></span></dt>
                                     </dl>
-{{--                                        <dl class="dlist-align">--}}
-{{--                                            <dt>PST:  <span id="pst"></span></dt>--}}
-{{--                                        </dl>--}}
+
                                     <dl class="dlist-align">
                                         <dt>Shipping: <span id="shipping" class="text-dark"></span></dt>
                                     </dl>
