@@ -12,6 +12,7 @@
     <div class="container pt-5">
         <!-- Categories -->
     <!-- <form method="get" action="{{ url('/shop_search') }}" style="margin-bottom: 25px">
+        
         @csrf
         <div class="input-group">
             <input type="text" class="form-control" id="query" name="query" placeholder="Search Watch" /> 
@@ -28,16 +29,16 @@
         <div class="categories-wrapper mb-5">
             <ul>
                 @foreach($categories as $category)
-                <li><a href="">{{$category->category_name}}</a></li>
+                <li><a href="/category_list/{{$category->id}}">{{$category->category_name}}</a></li>
                 @endforeach
             </ul>
         </div>
         @if(isset($watches))
             <!-- /. Categories -->
-            <div class="row justify-content-center">
+            <div class="row justify-content-center shop-row">
                 @foreach($watches as $watch)
                 <!-- Single Product -->
-                <div class="col-3 text-center bord">
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 text-center bord">
                     <div class="single-product-area mb-30">
                         <div class="product_image">
                             <!-- Product Image -->

@@ -11,6 +11,8 @@
 <!-- this is the table --> 
 	<p><a style="color: white;" href="/admin/create/create_watch"><div class="btn btn-success">Add Watch +</div></a></p>
 
+	<p><a style="color: white;" href="/admin/restore/restore_watch"><div class="btn btn-info">Restore 	&#xA71C;</div></a></p>
+
 	<form method="get" action="{{ url('/admin/search/search_watches') }}" style="margin-bottom: 25px">
 		@csrf
 	    <div class="input-group">
@@ -42,7 +44,7 @@
 		@foreach($watches as $watch)
 		<tbody>
 		    <tr>
-		      	<th scope="row">1{{ $watch->id }}</th>
+		      	<th scope="row">{{ $watch->id }}</th>
 		      	<th>{{ $watch->SKU }}</th>
 		      	<td>{{ $watch->watch_name }}</td>
 		      	<td>$ {{ $watch->price }}</td>
@@ -52,7 +54,7 @@
 		      	<td> <p><a href="/admin/edit/{{ $watch->id }}/edit_watch" class="btn btn-primary">Edit</a></p>
 		      	<td>
 			  		<form class="delete"
-                    	onSubmit="return confirm('Do you really want to delete this post?')"
+                    	onSubmit="return confirm('Do you really want to delete this record?')"
                      	action="/admin/watches_table" method="post">
 	                    @csrf
 	                    @method('DELETE')

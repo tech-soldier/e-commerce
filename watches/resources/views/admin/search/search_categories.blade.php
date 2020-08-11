@@ -20,7 +20,7 @@
 	            </button>
 	        </span>
 	    </div>
-	    <p><a style="color: white;" href="/admin/categories_table"><div class="btn btn-info">Refresh Results &#x27F3;</div></a></p>
+	    <p><a style="color: black;" href="/admin/categories_table"><div class="btn btn-light">Refresh Results &#x27F3;</div></a></p>
 
 	</form>
 

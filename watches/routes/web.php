@@ -37,6 +37,11 @@ Route::get('/', 'WatchController@homeIndex');
 
 Route::post('send-mail','SendMailController@Email');
 
+//category link to shop page
+Route::get('/category_list/{id}', 'WatchController@category_list');
+Route::get('/watches/category/{name}', 'WatchController@category_list');
+
+
 // front-end search
 Route::get('/shop_search', 'WatchController@search');
 
@@ -63,7 +68,12 @@ Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home', function(){
-	return redirect('/'); // loged in user is redirected to watchhome page
+	return redirect('/')->with('success', 'You have been successfully logged in!'); // loged in user is redirected to watchhome page
+});
+
+Route::post('/logout_user', function(){
+	Auth::logout();
+    return Redirect::back()->with('success', 'You have been successfully logged out!');
 });
 
 
@@ -136,7 +146,7 @@ Route::middleware(['auth','admin'])->group(function(){
 
 	//Route::delete('/admin/taxes_table, Admin\CategoryController@destroy');
 
-	Route::delete('/admin/taxes_table', 'Admin\CategoryController@destroy');
+	Route::delete('/admin/taxes_table', 'Admin\TaxController@destroy');
 
 
 	// edit users table
@@ -147,6 +157,23 @@ Route::middleware(['auth','admin'])->group(function(){
 
 	Route::delete('/admin/users_table', 'Admin\UserController@destroy');
 
+	/* ------------------------------ RESTORE  ----------------------------------- */
+
+	// delete and restore watch or watches
+	Route::get('/admin/restore/restore_watch', 'Admin\WatchController@restoreWatch'); 
+	Route::get('/admin/restore/restore_watch/{id?}', 'Admin\WatchController@restoreBack')->name('/admin/restore/restore_watch'); 
+
+	// delete and restore users
+	Route::get('/admin/restore/restore_user', 'Admin\UserController@restoreUser'); 
+	Route::get('/admin/restore/restore_user/{id?}', 'Admin\UserController@restoreBack')->name('/admin/restore/restore_user'); 
+
+	// delete and restore categories
+	Route::get('/admin/restore/restore_category', 'Admin\CategoryController@restoreCategory'); 
+	Route::get('/admin/restore/restore_category/{id?}', 'Admin\CategoryController@restoreBack')->name('/admin/restore/restore_category'); 
+
+	// delete and restore taxes
+	Route::get('/admin/restore/restore_tax', 'Admin\TaxController@restoreTax'); 
+	Route::get('/admin/restore/restore_tax/{id?}', 'Admin\TaxController@restoreBack')->name('/admin/restore/restore_tax'); 
 });
 
 

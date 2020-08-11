@@ -8,8 +8,11 @@ use Illuminate\Http\Request;
 use App\Tax; 
 
 class TaxController extends Controller
-{
-
+{ 
+    /**
+     * search query for admin 
+     * @return array view of search terms specified 
+     */
     public function search()
     {
         $search_term = $_GET['query']; 
@@ -19,16 +22,6 @@ class TaxController extends Controller
     }
   
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-    
-    }
-
-    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -36,7 +29,6 @@ class TaxController extends Controller
     public function create()
     {
         $title = 'Create A New Tax'; 
-
         $taxes = Tax::all(); 
 
         return view('/admin/create/create_tax', compact('title', 'taxes')); 
@@ -52,29 +44,20 @@ class TaxController extends Controller
     {
         $valid = $request->validate([
             'province' => 'required|string|max:255',
+            'GST' => "nullable|regex:/^\d+(\.\d{1,2})?$/", 
             'PST' => "nullable|regex:/^\d+(\.\d{1,2})?$/", 
             'HST' => "nullable|regex:/^\d+(\.\d{1,2})?$/"
         ]); 
 
         Tax::create([
             'province' => $valid['province'],  
-            'PST' => $valid['PST'], 
-            'HST' => $valid['HST']
+            'GST' => $valid['GST'] ?? 0.00,
+            'PST' => $valid['PST'] ?? 0.00, 
+            'HST' => $valid['HST'] ?? 0.00
 
         ]); 
 
         return redirect('/admin/taxes_table')->with('success', 'PST was successfully created'); 
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
     /**
@@ -87,6 +70,7 @@ class TaxController extends Controller
     {
         $taxes=Tax::find($id);
         $title = 'Edit Tax'; 
+
         return view('/admin/edit/edit_tax', compact('taxes', 'title')); 
     }
 
@@ -105,20 +89,43 @@ class TaxController extends Controller
             'HST' => 'nullable|regex:/^\d+(\.\d{1,2})?$/'
         ]); 
 
-
          $taxes = Tax::find($request['id']);
          $taxes->PST = $valid['PST']; 
          $taxes->HST = $valid['HST']; 
     
         if($taxes->save() ) {
-            return redirect('/admin/taxes_table')->with('success', 'Your tax was successfully updated');
-
+            return redirect('/admin/taxes_table')->with('success', 'Tax was successfully updated');
         }
-
         return redirect('/admin/taxes_table')->with('error', 'There was a problem updating the tax');
     }
 
+    /**
+     * get the tax that was deleted
+     * @return deleted category
+     */
+    public function restoreTax()
+    {
+        $taxes = Tax::onlyTrashed()->get();;
+        $title = "Taxes Archives";
+        return view('/admin/restore/restore_tax', compact('taxes', 'title'));
+    }
 
+    /**
+     * Restore the deleted tax recor
+     * @param  int $id 
+     * @return \Illuminate\Http\Response  
+     */
+    public function restoreBack($id)
+    {
+        Tax::withTrashed()
+        ->where('id', $id)
+        ->restore();
+
+        if(isset(request()->id)){
+            return redirect('/admin/restore/restore_tax')->with('success', 'Your Province was successfully restored. Go back and check the Taxes Table'); 
+        }
+        return redirect('/admin/restore/restore_tax')->with('error', 'There was a problem storing the tax.');  
+    }
     
     /**
      * Remove the specified resource from storage.
@@ -133,11 +140,32 @@ class TaxController extends Controller
         ]);
         
         if( Tax::find($valid['id'] )->delete() ) {
-            return back()->with('success', 'The record has been deleted!');
+            return back()->with('success', 'The tax has been deleted!');
         }
-        return back()->with('error', 'There was a problem deleting that record');
+        return back()->with('error', 'There was a problem deleting that tax');
     }
     
     
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+    
+    }
+
 
 }

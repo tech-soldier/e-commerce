@@ -9,7 +9,10 @@ use App\User;
 
 class UserController extends Controller
 {
-
+    /**
+     * search query for user 
+     * @return array view of search terms specified 
+     */
     public function search()
     {
         $search_term = $_GET['query']; 
@@ -17,7 +20,6 @@ class UserController extends Controller
 
         return view('/admin/search/search_users', compact('users', 'search_term')); 
     }
-
 
     /**
      * Show the form for creating a new resource.
@@ -27,7 +29,6 @@ class UserController extends Controller
     public function create()
     {
         $title = 'Create A New User'; 
-
         $users = User::all(); 
 
         return view('/admin/create/create_user', compact('title', 'users')); 
@@ -52,19 +53,18 @@ class UserController extends Controller
             'country' => 'required|string|max:255', 
             'postal_code' => 'required|string|max:6', 
             'phone_number' => 'required|regex:/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/',
-            'cover_img' => 'nullable|image',
+            'image' => 'nullable|image',
             'is_admin' => 'required|integer'
         ]); 
 
-        dd($valid);
         
-        if(!empty($valid['cover_img'])) {
+        if(!empty($valid['image'])) {
             //get the uploaded file
-            $file = $request->file('cover_img');
+            $file = $request->file('image');
             //get the original filename
             $image = time() . '_' . $file->getClientOriginalName();
             //save the image
-            $path = $file->storeAs('storage/app/public/images', $image);
+            $path = $file->storeAs('public/images', $image);
         }
 
         User::create([
@@ -78,7 +78,7 @@ class UserController extends Controller
             'country' => $valid['country'], 
             'postal_code' => $valid['postal_code'], 
             'phone_number' => $valid['phone_number'],
-            'cover_img' => $image ?? '',
+            'image' => $image ?? '',
             'is_admin' => $valid['is_admin'] ?? 0
         ]); 
 
@@ -94,9 +94,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-
         $title = "Edit User";
         $user = User::find($id);
+
         return view('/admin/edit/edit_users', compact('title', 'user'));
     }
 
@@ -109,7 +109,6 @@ class UserController extends Controller
      */
     public function update(Request $request)
     {
-
         $valid = $request->validate([
             'id' => 'required|integer',
             'email' => 'required|email|unique:users,email,' . $request->id, 
@@ -121,19 +120,18 @@ class UserController extends Controller
             'country' => 'required|string|max:255', 
             'postal_code' => 'required|string|max:6', 
             'phone_number' => 'required|regex:/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/',
-            'cover_img' => 'nullable|image',
-            'is_admin' => 'required|integer' 
-            
+            'image' => 'nullable|image',
+            'is_admin' => 'required|integer'      
         ]);
 
         // image upload, make sure it is valid if added
-        if(!empty($valid['cover_img'])) {
+        if(!empty($valid['image'])) {
             // get the uploaded file
-            $file = $request->file('cover_img');
+            $file = $request->file('image');
             // get the original file name 
             $image = time() . '_' . $file->getClientOriginalName();
             // save the image
-            $path = $file->storeAs('storage/app/public/images', $image);
+            $path = $file->storeAs('public/images', $image);
         }
 
         $user=User::find($valid['id']);
@@ -152,12 +150,39 @@ class UserController extends Controller
         $user->is_admin=$valid['is_admin'] ?? 0;
 
         if($user->save()){
-            return redirect('/admin/users_table')->with('success', 'User successfully updated');
+            return redirect('/admin/users_table')->with('success', 'User was successfully updated');
         }
-
-            return redirect('/admin/users_table')->with('error', 'User record not updated');
+        return redirect('/admin/users_table')->with('error', 'There was a problem updating the user');
     }
 
+    /**
+     * get the user that was deleted
+     * @return deleted user
+     */
+    public function restoreUser()
+    {
+        $users = User::onlyTrashed()->get();
+        $title = "Users";
+
+        return view('/admin/restore/restore_user', compact('users', 'title'));
+    }
+
+    /**
+     * Restore the deleted User
+     * @param  int $id 
+     * @return \Illuminate\Http\Response  
+     */
+    public function restoreBack($id)
+    {
+        User::withTrashed()
+        ->where('id', $id)
+        ->restore();
+
+        if(isset(request()->id)){
+            return redirect('/admin/restore/restore_user')->with('success', 'Your User was successfully restored. Go back and check the Users Table'); 
+        }
+        return redirect('/admin/restore/restore_user')->with('error', 'There was a problem storing the user.'); 
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -172,10 +197,11 @@ class UserController extends Controller
         ]);
         
         if( User::find($valid['id'] )->delete() ) {
-            return back()->with('success', 'The record has been deleted!');
+            return back()->with('success', 'The user has been deleted!');
         }
-        return back()->with('error', 'There was a problem deleting that record');
+        return back()->with('error', 'There was a problem deleting that user');
     }
+
     
     /**
      * Display the specified resource.

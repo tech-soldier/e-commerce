@@ -2,9 +2,8 @@
 
 @section('content')
 
-<div class="shop1" >
+    <div class="shop1" >
         <div class="video-container">
-
             <button class="shop-btn text-center"> SHOP </button>
         </div>
     </div>
@@ -13,17 +12,7 @@
         <!-- Categories -->
         <h2 class="text-center">COLLECTION</h2>
         <hr>
-        <form method="get" action="{{ url('/shop_search') }}" style="margin-bottom: 25px">
-            @csrf
-            <div class="input-group">
-                <input type="text" class="form-control" id="query" name="query" placeholder="Search Watch" /> 
-                    <span class="input-group-btn">
-                        <button type="submit" class="btn btn-default">
-                            <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                    </span>
-            </div>
-         </form>
+      
 
         @if(isset($watches))
             <!-- /. Categories -->
@@ -71,10 +60,7 @@
 
     <br>
 
-    <div class="arrow-div text-center">
-        <p>Load more</p>
-        <i class=" text-center fas fa-arrow-down mb-3 fa-2x "></i>
-    </div>
+  
 
     @include('partials/features')
 

@@ -10,6 +10,8 @@
 <!-- this is the table --> 
 	<p><a style="color: white;" href="/admin/create/create_category"><div class="btn btn-success">Add Category +</div></a></p>
 
+	<p><a style="color: white;" href="/admin/restore/restore_category"><div class="btn btn-info">Restore 	&#xA71C;</div></a></p>
+
 	<form method="GET" action="{{ url('/admin/search/search_categories') }}" style="margin-bottom: 25px">
 		@csrf
 	    <div class="input-group">
@@ -27,8 +29,8 @@
 		    <tr>
 		      	<th scope="col">Category ID</th>
 		      	<th scope="col">Category Name</th>
-		      	<th scope="col">Created At</th>
-		      	<th scope="col">Updated At</th>
+		      	<th scope="col">Created On</th>
+		      	<th scope="col">Updated On</th>
 		      	<th scope="col">Edit</th>
 		      	<th scope="col">Delete</th>
 
@@ -44,7 +46,7 @@
 				<td><p><a href="/admin/edit/{{ $category->id }}/edit_category" class="btn btn-primary">Edit</a></p>
 				<td>
 					<form class="delete" 
-							onSubmit="return confirm('Do you really want to delete this post?')"
+							onSubmit="return confirm('Do you really want to delete this record?')"
                      		action="/admin/categories_table" method="post">
                     	@csrf
                     	@method('DELETE')
