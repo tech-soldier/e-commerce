@@ -1,52 +1,80 @@
 @extends('layouts/layout')
 
 @section('content')
-<div class="container">
-
-    <div class='bg-light pl-4 pr-4 mt-4'>
-
-        <div class="row mt-1 mb-3">
-            
-            <div class="col-3">              
-                <h6 class="text-muted">Categories</h6>
-                <hr/>
-                <ul class="text-left" style="list-style-type:none">
+<<<<<<< HEAD
+<div class="container pt-5">
+<div class='bg-light pl-4 pr-4 mt-4'>
+    <div class="row mt-1 mb-3">
+        <div class="col-3">
+          
+              <h2 class="text-center">CATEGORIES</h2>
+            <hr/>
+            <div class="categories-wrapper mb-5">
+                <ul>
                     @foreach($categories as $category)
-                        <li><a href="/watches/category/{{ $category-category_name }}" class="text-dark">{{ $category->category_name }}</a></li>
+                        <li><a href="/watches/category/{{ $category->category_name }}" class="text-dark">{{ $category->category_name }}</a></li>
                     @endforeach
                 </ul>
-            </div> <!-- /.col -->
-
+            </div>
+        </div>
+         <div class="row justify-content-center shop-row py-r">
             <div class="col-9 mt-1 pb-5">
-              
-                <div class="row">
-                    <div class="col mb-3 mt-4">
-                        <h4 class="title text-muted">{{ $title }}</h4>
-                    </div>
-                </div> <!-- /.row -->
-
-                <div class="row">
-                    @foreach($cat->watches as $watch)
-                    <div class="col-md-4 col-sm-6 mb-4">
-                        <div class="product-grid bg-white pb-3 shadow">
-                            <div class="product-image">
-                                <img src="/storage/images/{{$watch->cover_img }}" alt="{{ $watch->name }}" href="{{$watch->id}}" width="250" height="250">
-                            </div>
-                            <div class="product-content mt-3 text-center">
-                                <h6><a href="/watches/{{ $watch->id }}/detail" class="text-dark">{{ $watch->name }}</a></h6>
-                                <div class="price font-weight-bold">
-                                    <p>${{ $watch->price }}</p>
-                                </div>
+            <div class="row">
+                <div class="col mb-4 mt-4 text-center bord">
+                    <h3 class="title text-muted">{{ $title }}</h3>
+                </div>
+            </div>
+             <div class="row justify-content-center">
+                @foreach($watches as $watch)
+                <!-- Single Product -->
+                <div class="col-9 col-sm-6 col-md-4 col-lg-3 bord">
+                    
+                    <div class="single-product-area mb-30">
+                        <div class="product_image">
+                            <!-- Product Image -->
+                            <a href="{{$watch->id}}/detail">
+                            <img class="normal_img" src="/storage/images/{{$watch->cover_img}}" alt="{{$watch->watch_name}}" href="{{$watch->id}}/detail">
+                            </a>
+                            <!-- Product Badge -->
+                            <!-- <div class="product_badge">
+                                <span>Top</span>
+                            </div> -->
+                            
+                        </div>
+                        <!-- Product Description -->
+                        <div class="product_description py-2">
+                            <div class="watch_info_wrapper text-center ">
+                                <a class="text-center watch-name" href="{{$watch->id}}/detail">{{$watch->watch_name}}</a>
+                                <hr style="background-color: white; width: 90% ;">
+                                <h6 class="text-center product-price mt-2">${{$watch->price}}</h6>
+                                <p class="text-center mb-0"> Width: {{$watch->strap_width}}</p>
                             </div>
                         </div>
-                    </div> <!-- /.col -->
-                    @endforeach        
-                </div> <!-- /.row -->
 
-            </div> <!-- /.col -->
+                        <div class="add_quick_wrapper d-flex">
+                                <!-- Add to cart -->
+                                <div class="product_add_to_cart text-center">
+                                    <a href="add-to-cart/{{ $watch->id }}" data-id="{{ $watch->id }}"> Add to Cart</a>
+                                </div>
+                                <!-- Quick View -->
+                                <div class="product_quick_view text-center">
+                                    <a href="{{$watch->id}}/detail"> Quick View</a>
+                                </div>
+                            </div>
+                    </div>
+                </div>  <!-- /. end Single Product Area -->
+                @endforeach
 
-        </div> <!-- /.row -->
-
+            </div> <!-- /. row -->
     </div>
 
+</div>
+</div>
+ @include('partials/features')
+
+    @stop
+
+
 </div> <!-- /.container -->
+</div>
+

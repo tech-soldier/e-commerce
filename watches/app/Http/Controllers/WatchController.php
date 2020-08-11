@@ -33,12 +33,15 @@ class WatchController extends Controller
      * @param   $name 
      * @return  array    categories
      */
-     public function category_list($name){
+     public function category_list($id){
+        $watches = Watch::where('category_id', $id)->get();
+        $category = Category::find($id);
         $categories = Category::all();
-        $cat = Category::where('category_name', $name)->with('watches')->first();
-        $title = 'Category: ' . $name;
+        // $cat = Category::where('category_name', $name)->with('watches')->first();
+        //$cat = Category::with('watches')->has('watches')->get();
+        $title = 'Category: ' . $category->name;
+        return view('category_list', compact('watches', 'categories', 'title'));
 
-        return view('watches/category_list', compact('cat', 'categories', 'title'));
     }
 
     /**
@@ -163,6 +166,8 @@ class WatchController extends Controller
 
         return view('/shop_search', compact('watches')); 
     }
+
+    
    
     /**
      * Show the form for creating a new resource.

@@ -29,7 +29,7 @@
         <div class="categories-wrapper mb-5">
             <ul>
                 @foreach($categories as $category)
-                <li><a href="">{{$category->category_name}}</a></li>
+                <li><a href="/category_list/{{$category->id}}">{{$category->category_name}}</a></li>
                 @endforeach
             </ul>
         </div>
