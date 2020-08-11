@@ -615,8 +615,10 @@ a.watch-name::first-letter {
   cursor: pointer;
 }
 
-.login{
-  height: 353px;
+.login_img{
+  background-image: url(/storage/images/contact_image.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 .register{

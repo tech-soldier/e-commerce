@@ -33,8 +33,7 @@
                     
                             
 
-                        </div>
-                    </div> -->
+                        
                 
                     <!-- Single Footer Area -->
                     <div class="col-6">
