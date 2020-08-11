@@ -37,8 +37,6 @@ class WatchController extends Controller
         $watches = Watch::where('category_id', $id)->get();
         $category = Category::find($id);
         $categories = Category::all();
-        // $cat = Category::where('category_name', $name)->with('watches')->first();
-        //$cat = Category::with('watches')->has('watches')->get();
         $title = ucfirst($category->category_name);
         return view('category_list', compact('watches', 'categories', 'title'));
 

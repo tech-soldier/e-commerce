@@ -7,9 +7,9 @@
 
             <button class="shop-btn text-center"> SHOP </button>
         </div>
-    </div>
+</div>
 
-<div class="container pt-5">
+        <div class="container pt-5">
           
               <h2 class="text-center">{{ $title }}</h2>
             <hr/>
