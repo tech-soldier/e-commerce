@@ -11,7 +11,7 @@ class CategoryController extends Controller
 {
     /**
      * search query for admin 
-     * @return view of search terms specified 
+     * @return array view of search terms specified 
      */
     public function search()
     {
@@ -19,18 +19,6 @@ class CategoryController extends Controller
         $categories = Category::where('category_name', 'LIKE', '%'.$search_term.'%')->get(); 
 
         return view('/admin/search/search_categories', compact('categories', 'search_term')); 
-    }
-
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-
     }
 
     /**
@@ -76,6 +64,7 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
         $title = 'Edit Categories'; 
+
         return view('/admin/edit/edit_categories', compact('title', 'category')); 
     }
 
@@ -100,11 +89,10 @@ class CategoryController extends Controller
         // save into database and redirect accordingly with appropriate message
         if($category->save() ) {
             return redirect('/admin/categories_table')->with('success', 'Your category is successfully updated');
-        }else{
-           return redirect('/admin/categories_table')->with('error', 'There was a problem updating the category'); 
         }
-
+        return redirect('/admin/categories_table')->with('error', 'There was a problem updating the category'); 
     }
+
     /**
      * get the category that was deleted
      * @return deleted category
@@ -129,14 +117,9 @@ class CategoryController extends Controller
         ->restore();
 
         if(isset(request()->id)){
-
-         return redirect('/admin/restore/restore_category')->with('success', 'Your Category was successfully restored. Go back and check the Users Table'); 
-
-        } else {
-
-            return redirect('/admin/restore/restore_category')->with('error', 'There was a problem restoring the category.'); 
-        } 
-
+            return redirect('/admin/restore/restore_category')->with('success', 'Your Category was successfully restored. Go back and check the Users Table'); 
+        }
+        return redirect('/admin/restore/restore_category')->with('error', 'There was a problem restoring the category.'); 
     }
 
     /* Remove the specified resource from storage.
@@ -165,6 +148,17 @@ class CategoryController extends Controller
     public function show($id)
     {
         //
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        //
+
     }
 
 

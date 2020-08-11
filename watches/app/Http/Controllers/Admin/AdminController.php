@@ -11,7 +11,7 @@ class AdminController extends Controller
 {
     /**
      * search query for admin 
-     * @return view of search terms specified 
+     * @return array view of search terms specified 
      */
     public function search()
     {
@@ -40,7 +40,6 @@ class AdminController extends Controller
     public function create()
     {
         $data['title'] = 'Create A New Admin'; 
-
         $data['admins'] = Admin::all(); 
 
         return view('/admin/create/create_admin', $data); 

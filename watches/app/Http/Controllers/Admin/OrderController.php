@@ -12,23 +12,16 @@ use App\User;
 
 class OrderController extends Controller
 {
+    /**
+     * search query for admin 
+     * @return array view of search terms specified 
+     */
     public function search()
     {
         $search_term = $_GET['query']; 
         $orders = Order::where('id', 'LIKE', '%'.$search_term.'%')->orWhere('billing_address', 'LIKE', '%'.$search_term.'%')->orWhere('shipping_address', 'LIKE', '%'.$search_term.'%')->get(); 
 
         return view('/admin/search/search_orders', compact('orders', 'search_term')); 
-    }
-
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
     }
 
     /**
@@ -41,9 +34,6 @@ class OrderController extends Controller
         $title = 'Create A New Order'; 
         $orders = Order::all(); 
         $user = User::all();
-        // $watch = Watch::all(); 
-        //$taxes = Tax::all(); 
-
 
         return view('/admin/create/create_order', compact('title', 'orders'));
     }
@@ -71,8 +61,7 @@ class OrderController extends Controller
             'total' => "required|regex:/^\d+(\.\d{1,2})?$/"                                   
         ]); 
 
-
-         Order::create([
+        Order::create([
             'user_id' => $valid['user_id'],                                                       
             'full_name' => $valid['full_name'],                                                      
             'email'=> $valid['email'],                                                 
@@ -85,9 +74,9 @@ class OrderController extends Controller
             'shipping' => $valid['shipping'], 
             'transaction_status' => $valid['transaction_status'] ?? 0,                                               
             'total' => $valid['total']
-         ]); 
+        ]); 
 
-         return redirect('/admin/orders_table')->with('success', 'Order was successfully created'); 
+        return redirect('/admin/orders_table')->with('success', 'Order was successfully created'); 
     }
 
     /**
@@ -100,6 +89,7 @@ class OrderController extends Controller
     {
         $title = 'Edit Order';
         $order = Order::find($id); 
+        
         return view('/admin/edit/edit_orders', compact('title', 'order')); 
     }
 
@@ -112,9 +102,6 @@ class OrderController extends Controller
      */
     public function update(Request $request)
     {
-
-        // dd($request); 
-
          $valid = $request->validate([
             'id' => 'required|integer',                                             
             'full_name' => 'required|string|max:255',                                                      
@@ -129,8 +116,6 @@ class OrderController extends Controller
             'total' => "required|regex:/^\d+(\.\d{1,2})?$/"
          ]);   
     
-
-
             $order = Order::find($valid['id']);
             $order->full_name = $valid['full_name'];
             $order->email = $valid['email'];
@@ -143,14 +128,10 @@ class OrderController extends Controller
             $order->transaction_status = $valid['transaction_status'] ?? 0; 
             $order->total = $valid['total'];
        
-
         if($order->save() ) {
             return redirect('/admin/orders_table')->with('success', 'Your order was successfully updated');
-
         }
-
         return redirect('/admin/orders_table')->with('error', 'There was a problem updating the order');
-
     }
     
     /**
@@ -181,4 +162,15 @@ class OrderController extends Controller
     {
         //
     }
+    
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        //
+    }
+
 }

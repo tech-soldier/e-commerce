@@ -9,23 +9,16 @@ use App\Transaction;
 
 class TransactionController extends Controller
 {
-
+    /**
+     * search query for transactions 
+     * @return array view of search terms specified 
+     */
     public function search()
     {
         $search_term = $_GET['query']; 
         $transactions = Transaction::where('id', 'LIKE', '%'.$search_term.'%')->get(); 
 
         return view('/admin/search/search_transactions', compact('transactions', 'search_term')); 
-    }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
     }
 
     /**
@@ -36,7 +29,6 @@ class TransactionController extends Controller
     public function create()
     {
         $title = 'Create A Transaction'; 
-
         $transactions = Transaction::all(); 
 
         return view('/admin/create/create_transaction', compact('title', 'transactions')); 
@@ -63,6 +55,17 @@ class TransactionController extends Controller
         ]); 
 
         return redirect('/admin/transactions_table')->with('success', 'Transaction was successfully created'); 
+    }
+
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        //
     }
 
     /**
