@@ -46,6 +46,11 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
+
+        if((isset($request->GST) && isset($request->HST)) || (isset($request->PST) && isset($request->HST)) ) {
+            return redirect('/admin/create/create_order')->with('error', 'Only either GST and PST or HST.'); 
+        }
+
         $valid = $request->validate([      
             'user_id' => 'required|integer',                                                       
             'full_name' => 'required|string|max:255',                                                      

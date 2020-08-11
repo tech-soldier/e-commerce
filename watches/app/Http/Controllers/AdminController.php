@@ -41,6 +41,7 @@ class AdminController extends Controller
     public function watches()
     {
     	$watches = Watch::all();
+        // $categories = Category::all(); 
         $title = "Watches";
 
         return view('/admin/watches_table', compact('watches', 'title'));
