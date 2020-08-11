@@ -615,12 +615,19 @@ a.watch-name::first-letter {
   cursor: pointer;
 }
 
-.login{
-  height: 353px;
+.login_img{
+  background-image: url(/storage/images/contact_image.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 .register{
   height: 589px;
+}
+
+.footer_para{
+  margin: 0;
+
 }
 
 
@@ -723,5 +730,7 @@ a.watch-name::first-letter {
 .alert-danger{
   margin-bottom: 0px;
 }
+
+
 
 
