@@ -9,26 +9,16 @@ use App\Category;
 
 class CategoryController extends Controller
 {
-
+    /**
+     * search query for admin 
+     * @return array view of search terms specified 
+     */
     public function search()
     {
         $search_term = $_GET['query']; 
         $categories = Category::where('category_name', 'LIKE', '%'.$search_term.'%')->get(); 
 
         return view('/admin/search/search_categories', compact('categories', 'search_term')); 
-    }
-
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //display a view all of our catargories
-
-
     }
 
     /**
@@ -39,7 +29,6 @@ class CategoryController extends Controller
     public function create()
     {
         $title = 'Create A New Category'; 
-
         $categories = Category::all(); 
 
         return view('/admin/create/create_category', compact('categories', 'title')); 
@@ -75,6 +64,7 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
         $title = 'Edit Categories'; 
+
         return view('/admin/edit/edit_categories', compact('title', 'category')); 
     }
 
@@ -99,12 +89,14 @@ class CategoryController extends Controller
         // save into database and redirect accordingly with appropriate message
         if($category->save() ) {
             return redirect('/admin/categories_table')->with('success', 'Your category is successfully updated');
-        }else{
-           return redirect('/admin/categories_table')->with('error', 'There was a problem updating the category'); 
         }
-
+        return redirect('/admin/categories_table')->with('error', 'There was a problem updating the category'); 
     }
 
+    /**
+     * get the category that was deleted
+     * @return deleted category
+     */
     public function restoreCategory()
     {
         $categories = Category::onlyTrashed()->get();
@@ -113,7 +105,11 @@ class CategoryController extends Controller
         return view('/admin/restore/restore_category', compact('categories', 'title'));
     }
 
-
+    /**
+     * Restore the deleted category
+     * @param  int $id 
+     * @return \Illuminate\Http\Response  
+     */
     public function restoreBack($id)
     {
         Category::withTrashed()
@@ -121,14 +117,9 @@ class CategoryController extends Controller
         ->restore();
 
         if(isset(request()->id)){
-
-         return redirect('/admin/restore/restore_category')->with('success', 'Your Category was successfully restored. Go back and check the Users Table'); 
-
-        } else {
-
-            return redirect('/admin/restore/restore_category')->with('error', 'There was a problem storing the category.'); 
-        } 
-
+            return redirect('/admin/restore/restore_category')->with('success', 'Your Category was successfully restored. Go back and check the Users Table'); 
+        }
+        return redirect('/admin/restore/restore_category')->with('error', 'There was a problem restoring the category.'); 
     }
 
     /* Remove the specified resource from storage.
@@ -157,6 +148,17 @@ class CategoryController extends Controller
     public function show($id)
     {
         //
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        //
+
     }
 
 

@@ -92,7 +92,7 @@
                                 <td>{{$order->shipping_address}}</td>
                                 <td>${{$order->total}}</td>
                                 <td>
-                                    <button type="button" class="btn btn-outline-primary">see order</button>
+                                    <a href="/thankyou/{{$order->id}}"><button type="button" class="btn btn-outline-primary">see order</button></a>
                                 </td>
                             </tr>
                         <?php endforeach ; ?>

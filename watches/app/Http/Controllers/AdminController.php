@@ -34,34 +34,35 @@ class AdminController extends Controller
         return view('/admin/dashboard', compact('title', 'min', 'max', 'avg', 'users', 'minorder', 'maxorder', 'avgorder'));
     }
 
+    /**
+     * show all watches
+     * @return array 
+     */
     public function watches()
     {
-
     	$watches = Watch::all();
-       
+
         $title = "Watches";
 
         return view('/admin/watches_table', compact('watches', 'title'));
-       
-        //return view('/admin/watches_table');
     }
 
+    /**
+     * show all orers
+     * @return array 
+     */
     public function orders()
     {
     	$orders = Order::all();
-
-    	// $orders['watch_id'] = Watch::where('watch_id')->get();
-
-    	// $orders['customer_id'] = Customer::where('customer_id')->get(); 
-
         $title = "Orders";
 
         return view('/admin/orders_table', compact('orders', 'title'));
-
-
-        //return view('/admin/orders_table');
     }
 
+    /**
+     * show all users
+     * @return array 
+     */
     public function users()
     {
     	$users = User::all();
@@ -70,28 +71,34 @@ class AdminController extends Controller
         return view('/admin/users_table', compact('users', 'title'));
     }
 
-    public function admin()
-    {
-        $admin = Admin::all();
-        $title = "Admin User";
-
-        return view('/admin/admin_table', compact('admin', 'title'));
-    }
-
+    /**
+     * show all taxes
+     * @return array 
+     */
     public function taxes()
     {
         $taxes = Tax::all();
         $title = "Taxes";
+
         return view('/admin/taxes_table', compact('taxes', 'title'));
     }
 
+    /**
+     * show all transactions
+     * @return array 
+     */
     public function transactions()
     {
         $transactions = Transaction::all();
         $title = "Transactions";
+
         return view('/admin/transactions_table', compact('transactions', 'title'));
     }
 
+    /**
+     * show all categories
+     * @return array 
+     */
     public function categories()
     {
     	$categories = Category::all();

@@ -46,7 +46,7 @@
 				<td><p><a href="/admin/edit/{{ $category->id }}/edit_category" class="btn btn-primary">Edit</a></p>
 				<td>
 					<form class="delete" 
-							onSubmit="return confirm('Do you really want to delete this post?')"
+							onSubmit="return confirm('Do you really want to delete this record?')"
                      		action="/admin/categories_table" method="post">
                     	@csrf
                     	@method('DELETE')

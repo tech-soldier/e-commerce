@@ -4,12 +4,12 @@
 <div class="container">
     <div class="row justify-content-center py-4">
 
-        <div class="col-md-7">
+        <div class="col-md-6">
             <img class="login" src="/storage/images/home_banner.jpg" alt="">
         </div>
 
         
-        <div class="col-md-5">
+        <div class="col-md-6">
             <div class="card">
                 <div class="card-header" style="background-color: #1e2537; font-weight: 700; color: #fff;">{{ __('SIGN IN') }}</div>
 

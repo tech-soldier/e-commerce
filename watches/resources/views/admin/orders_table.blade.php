@@ -55,7 +55,7 @@
 		       	<td><p><a href="/admin/edit/{{ $order->id }}/edit_orders" class="btn btn-primary">Edit</a></p>
 		      	<td>
 					<form class="delete"
-	                    	onSubmit="return confirm('Do you really want to delete this post?')"
+	                    	onSubmit="return confirm('Do you really want to delete this record?')"
 	                     	action="/admin/orders_table" method="post">
 	                    @csrf
 	                    @method('DELETE')

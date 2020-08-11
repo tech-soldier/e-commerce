@@ -38,7 +38,7 @@ Route::get('/', 'WatchController@homeIndex');
 Route::post('send-mail','SendMailController@Email');
 
 //category link to shop page
-Route::get('/watches/category/{name}', 'WatchController@category_list');
+Route::get('/category_list/{id}', 'WatchController@category_list');
 
 // front-end search
 Route::get('/shop_search', 'WatchController@search');
@@ -66,7 +66,12 @@ Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home', function(){
-	return redirect('/'); // loged in user is redirected to watchhome page
+	return redirect('/')->with('success', 'You have been successfully logged in!'); // loged in user is redirected to watchhome page
+});
+
+Route::post('/logout_user', function(){
+	Auth::logout();
+    return Redirect::back()->with('success', 'You have been successfully logged out!');
 });
 
 
