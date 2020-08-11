@@ -229,7 +229,7 @@ class CheckoutController extends Controller
 
         // test, only authenticated user who ordered can access the page
         $user = Auth::user();
-        if((!isset($user->id)) || ($user->id != $final_order->user_id)){
+        if((!isset($user->id)) || (!isset($final_order->user_id)) || ($user->id != $final_order->user_id)){
             return redirect('')->with('error', 'You are not authorized to see that page');
         } // if passed the test, the user is the one
 
