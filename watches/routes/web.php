@@ -39,6 +39,8 @@ Route::post('send-mail','SendMailController@Email');
 
 //category link to shop page
 Route::get('/category_list/{id}', 'WatchController@category_list');
+Route::get('/watches/category/{name}', 'WatchController@category_list');
+
 
 // front-end search
 Route::get('/shop_search', 'WatchController@search');
