@@ -9,7 +9,10 @@ use App\Admin;
 
 class AdminController extends Controller
 {
-
+    /**
+     * search query for admin 
+     * @return view of search terms specified 
+     */
     public function search()
     {
         $search_term = $_GET['query']; 
@@ -107,16 +110,6 @@ class AdminController extends Controller
      */
     public function destroy (Request $request)
     {
-        // // validated -- make sure id is passed in request
-        // $valid = $request->validate([
-        //     'customer_id' => 'required|integer'
-        // ]);
-
-        // // Try to delete the post and send the user back to the posts 
-        // // index view with a flash message
-        // if( User::find($valid['customer_id'])->delete() ) {
-        //     return back()->with('success', 'Post has been deleted!');
-        // }
-        // return back()->with('error', 'There was a problem deleting that post');
+        // 
     }
 }

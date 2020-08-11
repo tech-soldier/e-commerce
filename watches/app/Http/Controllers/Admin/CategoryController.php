@@ -9,7 +9,10 @@ use App\Category;
 
 class CategoryController extends Controller
 {
-
+    /**
+     * search query for admin 
+     * @return view of search terms specified 
+     */
     public function search()
     {
         $search_term = $_GET['query']; 
@@ -26,8 +29,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //display a view all of our catargories
-
+        //
 
     }
 
@@ -39,7 +41,6 @@ class CategoryController extends Controller
     public function create()
     {
         $title = 'Create A New Category'; 
-
         $categories = Category::all(); 
 
         return view('/admin/create/create_category', compact('categories', 'title')); 
@@ -104,7 +105,10 @@ class CategoryController extends Controller
         }
 
     }
-
+    /**
+     * get the category that was deleted
+     * @return deleted category
+     */
     public function restoreCategory()
     {
         $categories = Category::onlyTrashed()->get();
@@ -113,7 +117,11 @@ class CategoryController extends Controller
         return view('/admin/restore/restore_category', compact('categories', 'title'));
     }
 
-
+    /**
+     * Restore the deleted category
+     * @param  int $id 
+     * @return \Illuminate\Http\Response  
+     */
     public function restoreBack($id)
     {
         Category::withTrashed()
@@ -126,7 +134,7 @@ class CategoryController extends Controller
 
         } else {
 
-            return redirect('/admin/restore/restore_category')->with('error', 'There was a problem storing the category.'); 
+            return redirect('/admin/restore/restore_category')->with('error', 'There was a problem restoring the category.'); 
         } 
 
     }
