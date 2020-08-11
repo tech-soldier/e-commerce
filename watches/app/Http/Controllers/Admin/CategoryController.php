@@ -10,7 +10,7 @@ use App\Category;
 class CategoryController extends Controller
 {
     /**
-     * search query for admin 
+     * search query for category 
      * @return array view of search terms specified 
      */
     public function search()
@@ -117,7 +117,7 @@ class CategoryController extends Controller
         ->restore();
 
         if(isset(request()->id)){
-            return redirect('/admin/restore/restore_category')->with('success', 'Your Category was successfully restored. Go back and check the Users Table'); 
+            return redirect('/admin/restore/restore_category')->with('success', 'Your Category was successfully restored. Go back and check the Categories Table'); 
         }
         return redirect('/admin/restore/restore_category')->with('error', 'There was a problem restoring the category.'); 
     }
@@ -137,28 +137,6 @@ class CategoryController extends Controller
             return back()->with('success', 'The category has been deleted!');
         }
         return back()->with('error', 'There was a problem deleting that category');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-
     }
 
 

@@ -4,8 +4,8 @@
 <div class="container">
     <div class="row justify-content-center py-4">
 
-        <div class="col-md-6">
-            <img class="login" src="/storage/images/home_banner.jpg" alt="">
+        <div class="col-md-6 login_img">
+            <!-- <img class="" src="/storage/images/home_banner.jpg" alt=""> -->
         </div>
 
         

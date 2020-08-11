@@ -56,6 +56,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    /**
+     * Define relationship between two tables
+     * @return Relationship Eloquent relationship
+    */
     public function order()
     {
         return $this->hasMany(Order::class); 
