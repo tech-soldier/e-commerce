@@ -32,9 +32,14 @@ class Order extends Model
     	return $this->belongsTo(User::class);
     }
 
-    public function transaction()
+    // public function transaction()
+    // {
+    // 	return $this->hasMany(Transaction::class);
+    // }
+
+     public function transaction()
     {
-    	return $this->hasMany(Transaction::class);
+        return $this->belongsTo(Transaction::class);
     }
 
      public function watches()
@@ -42,8 +47,8 @@ class Order extends Model
      	return $this->belongsToMany(Watch::class);
      }
 
-//     public function tax()
-//     {
-//         return $this->belongsTo(Tax::class);
-//     }
+    public function tax()
+    {
+        return $this->belongsTo(Tax::class);
+    }
 }
