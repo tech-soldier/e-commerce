@@ -5,9 +5,10 @@
 <!-- Header Area -->
 @include('partials/nav')
 
+<div class="flash-area text-center">
 @include('partials/flash')
 <!-- Header Area End -->
-
+</div>
 <!-- page content goes here -->
 
 @yield('content')

@@ -99,7 +99,7 @@
 <!-- custom scripts (will need to be removed to main js file) -->
 <script>
     $(document).ready(function(){
-
+        $(".flash-area").delay(2500).slideUp(2500);
         // when 'my orders' button clicked
         $('#button_orders').click(function(){
             //show or hide (toggle) orders table
