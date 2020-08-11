@@ -13,7 +13,6 @@ use \CartController;
 use \DB;
 use \Carbon\Carbon;
 
-
 class CheckoutController extends Controller
 {
     /**
@@ -225,19 +224,18 @@ class CheckoutController extends Controller
 
     public function thankyou($id)
     {
-
-
         $title = 'Thank You ';
         $final_order = Order::find($id);
+
+        // test, only authenticated user who ordered can access the page
+        $user = Auth::user();
+        if((!isset($user->id)) || ($user->id != $final_order->user_id)){
+            return redirect('')->with('error', 'You are not authorized to see that page');
+        } // if passed the test, the user is the one
+
         $order_all = DB::table('order_watch')->where('order_id', $id)->get();
 
-        return view('thankyou', compact('title', 'final_order', 'order_all'));
-
-
-
-
-
-
+        return view('thankyou', compact('title', 'final_order', 'order_all', 'user'));
     }
 
 }
