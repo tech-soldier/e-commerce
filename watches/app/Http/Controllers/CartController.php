@@ -132,8 +132,7 @@ class CartController extends Controller
                 $message = "Sorry, no more items left in stock";
                 return response()->json(['message' => $message]);
             } elseif ((($watch->quantity) - ($request->quantity)) >= 0) {
-//                $watch->quantity =  $watch->quantity - $request->quantity;
-//                $watch->save();
+
                 $message = "Quantity updated";
                 $cart[$request->id]["quantity"] = $request->quantity;
                 session()->put('cart', $cart);
@@ -149,8 +148,6 @@ class CartController extends Controller
                 $message = "Sorry, there are only " . $watch->quantity . " watches left in stock";
                 return response()->json(['message' => $message, 'quantity' => $watch->quantity]);
             }
-
-
 
         }
     }
