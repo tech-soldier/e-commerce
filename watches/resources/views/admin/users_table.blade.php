@@ -7,21 +7,13 @@
 
 	<h1>Table Name: <em>{{ $title }}</em></h1><!-- this table displays all the users/ admin or not-->
 
-<<<<<<< HEAD
 	<!-- button to go to form to add aonther user-->
-=======
-
->>>>>>> master
 	<p><a style="color: white;" href="/admin/create/create_user"><div class="btn btn-success">Add User +</div></a></p>
 
 	<!-- button to restore a deleted user-->
 	<p><a style="color: white;" href="/admin/restore/restore_user"><div class="btn btn-info">Restore 	&#xA71C;</div></a></p>
 
-<<<<<<< HEAD
 	<!-- form to search for users by name--> 
-=======
-	<!-- search form -->
->>>>>>> master
 	<form method="GET" action="{{ url('/admin/search/search_users') }}" style="margin-bottom: 25px">
 		@csrf
 	    <div class="input-group">
@@ -34,14 +26,9 @@
 	        </span>
 	    </div>
 	</form>
-
-<<<<<<< HEAD
 	
 	<table class="table table-striped"><!-- this is the table --> 
-=======
-	<!-- this is the Users table --> 
-	<table class="table table-striped">
->>>>>>> master
+
 	  	<thead class="thead-dark">
 	    	<tr>
 				<th scope="col">Customer ID</th>
