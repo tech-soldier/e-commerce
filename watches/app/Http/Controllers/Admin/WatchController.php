@@ -18,7 +18,7 @@ class WatchController extends Controller
     public function search()
     {
         $search_term = $_GET['query']; 
-        $watches = Watch::where('watch_name', 'LIKE', '%'.$search_term.'%')->orWhere('material', 'LIKE', '%'.$search_term.'%')->get(); 
+        $watches = Watch::where('watch_name', 'LIKE', '%'.$search_term.'%')->orWhere('material', 'LIKE', '%'.$search_term.'%')->orWhere('main_color', 'LIKE', '%'.$search_term.'%')->get(); 
 
         return view('/admin/search/search_watches', compact('watches', 'search_term')); 
     }
