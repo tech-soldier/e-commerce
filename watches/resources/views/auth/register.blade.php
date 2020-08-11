@@ -10,13 +10,13 @@
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img class="d-block w-100 register" src="/storage/images/banner4.jpg" alt="First slide">
+                  <img class="d-block w-100 register" src="" alt="">
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100 register" src="/storage/images/banner3.jpg" alt="Second slide">
+                  <img class="d-block w-100 register2" src="" alt="">
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block w-100 register" src="/storage/images/banner6.jpg" alt="Third slide">
+                  <img class="d-block w-100 register3" src="" alt="">
                 </div>
               </div>
             </div>

@@ -142,12 +142,12 @@ class CartController extends Controller
 
                 $total = round($this->getCartTotal(),2);
 
-                return response()->json(['total' => $total, 'subTotal' => $subTotal, 'message' => $message]);
+                return response()->json(['total' => $total, 'subTotal' => $subTotal, 'message' => $message, 'quantity' => $request->quantity]);
 
                 session()->flash('success', 'Cart updated successfully');
             } else {
                 $message = "Sorry, there are only " . $watch->quantity . " watches left in stock";
-                return response()->json(['message' => $message]);
+                return response()->json(['message' => $message, 'quantity' => $watch->quantity]);
             }
 
 
