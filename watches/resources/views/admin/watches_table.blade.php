@@ -26,6 +26,7 @@
 
 	</form><!-- end of search form -->
 
+	<!-- filters to sort orders by shipping or transaction status -->
     <div class="categories-wrapper">
         <ul>
         	<li><a class="{{ ('all' == $token) ? 'font-weight-bold text-primary' : '' }}" href="/admin/watches_table">all</a></li>
@@ -33,7 +34,6 @@
         	<li><a class="{{ ($category->category_name == $token) ? 'font-weight-bold text-primary' : '' }}" href="/admin/watches_table?category={{$category->id}}">{{$category->category_name}}</a></li>
             @endforeach
         </ul>
-
     </div>
 
 	<table class="table table-striped text-center"><!-- this is the table --> 

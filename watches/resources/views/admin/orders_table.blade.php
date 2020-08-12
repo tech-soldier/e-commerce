@@ -23,6 +23,7 @@
 	    </div>
 	</form>  <!-- /. search form -->
 
+	<!-- filters to sort watches by category -->
     <div class="categories-wrapper">
         <ul>
         	<li><a class="{{ ($token == 'all') ? 'font-weight-bold text-primary' : '' }}" href="/admin/orders_table">all</a></li>

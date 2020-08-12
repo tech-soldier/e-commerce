@@ -53,7 +53,6 @@ class AdminController extends Controller
         $categories = Category::all();
         $title = "Watches";
 
-
         return view('/admin/watches_table', compact('watches', 'title', 'categories', 'token'));
     }
 
@@ -63,13 +62,14 @@ class AdminController extends Controller
      */
     public function orders()
     {
-        // test if 
+        // test if there was a request by a filter
         if(request()->field){
-            $field = request()->field;
-            $value = request()->value;
+            $field = request()->field; // get database field requested
+            $value = request()->value; // get value requested
             $orders = Order::where($field, '=', $value)->get();
-            $token = request()->token;
+            $token = request()->token; // need this for bredcrumbs
         }else{
+            // if not requested by filter, get all orders
             $orders = Order::all();
             $token = 'all';
         }
