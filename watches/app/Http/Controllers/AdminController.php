@@ -11,6 +11,7 @@ use App\Category;
 use App\Order; 
 use App\User; 
 use App\Admin; 
+use Route;
 
 
 class AdminController extends Controller
@@ -52,19 +53,16 @@ class AdminController extends Controller
      */
     public function orders()
     {
-
+        // test if 
         if(request()->field){
             $field = request()->field;
             $value = request()->value;
-            //(request()->value == 1) ? $value = 1 : $value = 0;
             $orders = Order::where($field, '=', $value)->get();
         }else{
             $orders = Order::all();
         }
 
-    	
         $title = "Orders";
-
         return view('/admin/orders_table', compact('orders', 'title'));
     }
 

@@ -23,8 +23,9 @@
 	    </div>
 	</form>  <!-- /. search form -->
 
-    <div class="categories-wrapper mb-5">
+    <div class="categories-wrapper font-weight-bold">
         <ul>
+        	<li><a href="/admin/orders_table">all</a></li>
             <li><a href="/admin/orders_table?field=shipping_status&value=0">pending</a></li>
             <li><a href="/admin/orders_table?field=shipping_status&value=1">shipped</a></li>
             <li><a href="/admin/orders_table?field=transaction_status&value=1">successful</a></li>
