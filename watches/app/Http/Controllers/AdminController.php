@@ -43,14 +43,17 @@ class AdminController extends Controller
         if(request()->category){
             $id = request()->category;
             $watches = Watch::with('category')->where('category_id', $id)->get(); // by category
+            $current_category = Category::find($id); // get requested category
+            $token = $current_category->category_name; // assign category name to token (active link)
         }else{ // otherwise get all watches
             $watches = Watch::with('category')->get(); // all      
         }
 
         $categories = Category::all();
         $title = "Watches";
+        $token = 'all';
 
-        return view('/admin/watches_table', compact('watches', 'title', 'categories'));
+        return view('/admin/watches_table', compact('watches', 'title', 'categories', 'token'));
     }
 
     /**
