@@ -721,6 +721,13 @@ table p{
   .searchbox{
     margin-bottom:7px;
   }
+  #profile_page.container{
+    max-width: 100%;
+  }
+  #profile_page h1,
+  #profile_page h2{
+    font-size: 1.5rem;
+  }
 }
 
 @media only screen and (max-width:575px){
@@ -741,6 +748,21 @@ table p{
   .categories-wrapper ul li a{
     font-size: 0.8rem;
     padding: 5px 9px;
+  }
+  #profile_page .row{
+    display: block;
+  }
+  #profile_page .col-4,
+  #profile_page .col-8{
+    max-width: 100%;
+  }
+  #profile_page .mobile_wide{
+    display: block;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  #profile_page .mobile_disapear{
+    display: none;
   }
 }
 
