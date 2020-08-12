@@ -11,8 +11,8 @@
                         </div>
                         <ul class="footer_content">
                             <li><span>Address:</span> 460 Portage Ave. Winnipeg, Canada</li>
-                            <li><span>Phone:</span> 002 63695 24624</li>
-                            <li><span>FAX:</span> +48 444 666 3333</li>
+                            <li><span>Phone:</span> 204 666 3333</li>
+                            <li><span>FAX:</span> 204 666 4444</li>
                             <li><span>Email:</span> techwatch7@gmail.com</li>
                         </ul>
                         <div class="footer_social_area mt-15">
