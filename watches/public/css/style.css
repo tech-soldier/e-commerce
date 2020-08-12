@@ -642,6 +642,27 @@ a.watch-name::first-letter {
   min-height: 589px;
 }
 
+.alert-success,
+.alert-danger{
+  margin-bottom: 0px;
+}
+
+#profile_page label{
+  font-weight: 600;
+}
+
+table p{
+  margin-top: 1rem;
+}
+
+.table td,
+.table th{
+  vertical-align: middle;
+}
+
+.navbar-nav a{
+  color: #888;
+}
 
 
 
@@ -710,6 +731,17 @@ a.watch-name::first-letter {
   .normal_img:hover{
   transform: scale(1.0);
   }
+  
+  .categories-wrapper{
+    margin-bottom: 1rem !important;
+  }
+  .categories-wrapper ul{
+    padding: 0rem;
+  }
+  .categories-wrapper ul li a{
+    font-size: 0.8rem;
+    padding: 5px 9px;
+  }
 }
 
 @media only screen and (max-width:767px){
@@ -739,21 +771,4 @@ a.watch-name::first-letter {
 
 }
 
-.alert-success,
-.alert-danger{
-  margin-bottom: 0px;
-}
-
-#profile_page label{
-  font-weight: 600;
-}
-
-table p{
-  margin-top: 1rem;
-}
-
-.table td,
-.table th{
-  vertical-align: middle;
-}
 
