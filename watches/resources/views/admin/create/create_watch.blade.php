@@ -1,10 +1,12 @@
 @extends('layouts/admin')
 
-
+ 
 @section('content')
 
 <div class="container" style="width: 50%;">
     <h1>{{ $title }}</h1>
+    <p><a href="/admin/watches_table" class="btn btn-warning">Back to Watches Table</a></p>
+
     <form method="post" action="/admin/create/create_watch" enctype="multipart/form-data" >
       @csrf 
         <div class="form-group">

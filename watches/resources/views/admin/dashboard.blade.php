@@ -19,7 +19,7 @@
                         <p class="card-text"><strong>Name of Most Affordable Watch: </strong> {{ $cheap }}</p>
                         <p class="card-text"><strong>Max Price: </strong> $ {{ number_format($max, 2) }}</p>
                         <p class="card-text"><strong>Currently Most Expensive: </strong> {{ $expensive }}</p>
-                        <p><a href="/admin/orders_table" type="button"  class="btn btn-success">Watches Table <i class="fas fa-arrow-right"></i></a></p>
+                        <p><a href="/admin/watches_table" type="button"  class="btn btn-success">Watches Table <i class="fas fa-arrow-right"></i></a></p>
 
                       </div>
                     </div>

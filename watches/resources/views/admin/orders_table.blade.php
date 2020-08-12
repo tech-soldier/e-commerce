@@ -42,7 +42,8 @@
 				<th scope="col">User ID</th>
 				<th scope="col">Billing Address</th>
 				<th scope="col">Shipping Address</th>
-				<th scope="col">Status</th>
+				<th scope="col">Transaction Status</th>
+				<th scope="col">Shipping Status</th>				
 				<th scope="col">Subtotal</th>
 				<th scope="col">Total</th>
 				<th scope="col">Edit</th>
@@ -58,6 +59,13 @@
 				<td>{{ $order->shipping_address }}</td>
 				<td>
 					@if($order->transaction_status == 1)
+					<span style="font-size:2em; color: green;">&#x2713;</span>
+					@else 
+					<span style="font-size:2em; color: red;">&#x2A2F;</span>
+					@endif
+				</td>
+				<td>
+					@if($order->shipping_status == 1)
 					<span style="font-size:2em; color: green;">&#x2713;</span>
 					@else 
 					<span style="font-size:2em; color: red;">&#x2A2F;</span>
