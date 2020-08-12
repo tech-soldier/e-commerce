@@ -23,7 +23,7 @@ class SendMailController extends Controller
     }
 
     /**
-     * Sen email to site owner
+     * Send email to site owner
      * @param Request $request 
      */
     public function Email(Request $request)

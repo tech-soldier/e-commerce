@@ -762,6 +762,9 @@ table p{
     margin-top: 0.5rem;
   }
   #profile_page .mobile_disapear{
+    display: none;  
+  }
+  .detail1{
     display: none;
   }
 }
@@ -793,4 +796,14 @@ table p{
 
 }
 
+
+.detail-row{
+  margin-right:0;
+}
+
+.shop-link{
+  margin: 0 auto;
+    justify-content: center;
+    display: flex;
+}
 
