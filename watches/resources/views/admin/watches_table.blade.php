@@ -13,7 +13,7 @@
 	<p><a style="color: white;" href="/admin/restore/restore_watch"><div class="btn btn-info">Restore 	&#xA71C;</div></a></p>
 	
 	<!-- search form -->
-	<form method="get" action="{{ url('/admin/search/search_watches') }}" style="margin-bottom: 25px">
+	<form method="get" action="{{ url('/admin/search/search_watches') }}">
 		@csrf
 	    <div class="input-group">
 	        <input type="text" class="form-control" name="query" id="query" placeholder="Search watches" /> 
@@ -25,6 +25,16 @@
 	    </div>
 
 	</form><!-- end of search form -->
+
+	<!-- filters to sort orders by shipping or transaction status -->
+    <div class="categories-wrapper">
+        <ul>
+        	<li><a class="{{ ('all' == $token) ? 'font-weight-bold text-primary' : '' }}" href="/admin/watches_table">all</a></li>
+        	@foreach($categories as $category)
+        	<li><a class="{{ ($category->category_name == $token) ? 'font-weight-bold text-primary' : '' }}" href="/admin/watches_table?category={{$category->id}}">{{$category->category_name}}</a></li>
+            @endforeach
+        </ul>
+    </div>
 
 	<table class="table table-striped text-center"><!-- this is the table --> 
 

@@ -748,4 +748,12 @@ a.watch-name::first-letter {
   font-weight: 600;
 }
 
+table p{
+  margin-top: 1rem;
+}
+
+.table td,
+.table th{
+  vertical-align: middle;
+}
 

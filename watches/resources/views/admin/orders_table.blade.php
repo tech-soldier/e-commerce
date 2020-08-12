@@ -5,12 +5,12 @@
 
 <div class="container">
 
-	<h1>Table Name: <em>{{ $title }}</em></h1>
+	<h1><span class="text-muted">Table Name: </span><em>{{ $title }}</em></h1>
 
 
 	<p><a style="color: white;" href="/admin/create/create_order"><div class="btn btn-success">Add Order +</div></a></p>
 	<!-- search form -->
-	<form method="GET" action="{{ url('/admin/search/search_orders') }}" style="margin-bottom: 25px">
+	<form method="GET" action="{{ url('/admin/search/search_orders') }}">
 		@csrf
 	    <div class="input-group">
 	        <input type="text" class="form-control" name="query"
@@ -22,6 +22,17 @@
 	        </span>
 	    </div>
 	</form>  <!-- /. search form -->
+
+	<!-- filters to sort watches by category -->
+    <div class="categories-wrapper">
+        <ul>
+        	<li><a class="{{ ($token == 'all') ? 'font-weight-bold text-primary' : '' }}" href="/admin/orders_table">all</a></li>
+            <li><a class="{{ ($token == 'pending') ? 'font-weight-bold text-primary' : '' }}" href="/admin/orders_table?field=shipping_status&value=0&token=pending">pending</a></li>
+            <li><a class="{{ ($token == 'shipped') ? 'font-weight-bold text-primary' : '' }}" href="/admin/orders_table?field=shipping_status&value=1&token=shipped">shipped</a></li>
+            <li><a class="{{ ($token == 'successful') ? 'font-weight-bold text-primary' : '' }}" href="/admin/orders_table?field=transaction_status&value=1&token=successful">successful</a></li>
+            <li><a class="{{ ($token == 'abortive') ? 'font-weight-bold text-primary' : '' }}" href="/admin/orders_table?field=transaction_status&value=0&token=abortive">abortive</a></li>
+        </ul>
+    </div>
 
 	<!-- this is the orders table --> 
 	<table class="table table-striped">
