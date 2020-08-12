@@ -7,7 +7,7 @@ use \App\Http\Controllers\CartController;
 @extends('layouts/layout')
 
 @section('content')
-    <div class="container">
+    <div class="container my-5">
         <h1>{{$final_order->full_name}}</h1>
         <div class="card">
             <div class="card-header">
