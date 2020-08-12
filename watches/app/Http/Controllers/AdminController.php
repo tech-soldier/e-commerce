@@ -39,7 +39,14 @@ class AdminController extends Controller
      */
     public function watches()
     {
-        $watches = Watch::with('category')->get();
+        // test if request is by category
+        if(request()->category){
+            $id = request()->category;
+            $watches = Watch::with('category')->where('category_id', $id)->get(); // by category
+        }else{ // otherwise get all watches
+            $watches = Watch::with('category')->get(); // all      
+        }
+
         $categories = Category::all();
         $title = "Watches";
 

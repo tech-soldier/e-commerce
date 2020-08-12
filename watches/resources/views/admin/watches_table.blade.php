@@ -28,10 +28,12 @@
 
     <div class="categories-wrapper">
         <ul>
+        	<li><a class="" href="/admin/watches_table">all</a></li>
         	@foreach($categories as $category)
-        	<li><a class="/admin/watches_table?category={{$category->category_name}}" href="/admin/orders_table">{{$category->category_name}}</a></li>
+        	<li><a class="" href="/admin/watches_table?category={{$category->id}}">{{$category->category_name}}</a></li>
             @endforeach
         </ul>
+
     </div>
 
 	<table class="table table-striped text-center"><!-- this is the table --> 
