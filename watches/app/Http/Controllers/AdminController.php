@@ -22,15 +22,32 @@ class AdminController extends Controller
     public function index()
     {
         $title = "Dashboard";
-        $min = \DB::table('watches')->min('price');
-        $max = \DB::table('watches')->max('price');
-        $avg = \DB::table('watches')->avg('price');
-        $users = \DB::table('users')->count();
-        $minorder = \DB::table('orders')->min('total');
-        $maxorder = \DB::table('orders')->max('total');
-        $avgorder = \DB::table('orders')->avg('total');
+        $min = Watch::min('price');
+        $max = Watch::max('price');
+        $avg = Watch::avg('price'); 
 
-        return view('/admin/dashboard', compact('title', 'min', 'max', 'avg', 'users', 'minorder', 'maxorder', 'avgorder'));
+        $cheap = Watch::min('watch_name'); 
+        $expensive = Watch::max('watch_name'); 
+
+        $users = User::count(); 
+        $admin = User::get()->where('is_admin', '=', 1); 
+        $watches = Watch::count();
+        
+        $provinces = Tax::count();
+
+        $minorder = Order::min('total');
+        $maxorder = Order::max('total');
+        $totorder = Order::count();
+        $avgorder = Order::avg('total'); 
+
+        $GST = Tax::max('GST'); 
+        $hst = Tax::get()->where('HST', '>', 0); 
+        $gst = Tax::get()->where('PST', '>', 0); 
+
+        $categories = Category::count();
+        $catname = Category::all(); 
+
+        return view('/admin/dashboard', compact('title', 'min', 'max', 'avg','users', 'admin' , 'watches', 'categories', 'provinces', 'totorder' ,'minorder', 'maxorder', 'avgorder' ,'GST', 'hst', 'gst', 'catname', 'cheap', 'expensive'));
     }
 
     /**
