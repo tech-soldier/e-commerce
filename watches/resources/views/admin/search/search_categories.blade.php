@@ -10,6 +10,8 @@
 <!-- this is the table --> 
 	<p><a style="color: white;" href="/admin/create/create_category"><div class="btn btn-success">Add Category +</div></a></p>
 
+	<p><a style="color: white;" href="/admin/restore/restore_category"><div class="btn btn-info">Restore 	&#xA71C;</div></a></p>
+
 	<form method="GET" action="{{ url('/admin/search/search_categories') }}" style="margin-bottom: 25px">
 		@csrf
 	    <div class="input-group">

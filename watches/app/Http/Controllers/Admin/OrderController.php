@@ -13,7 +13,7 @@ use App\User;
 class OrderController extends Controller
 {
     /**
-     * search query for admin 
+     * search query for orders 
      * @return array view of search terms specified 
      */
     public function search()
@@ -46,6 +46,11 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
+
+        if((isset($request->GST) && isset($request->HST)) || (isset($request->PST) && isset($request->HST)) ) {
+            return redirect('/admin/create/create_order')->with('error', 'Only either GST and PST or HST.'); 
+        }
+
         $valid = $request->validate([      
             'user_id' => 'required|integer',                                                       
             'full_name' => 'required|string|max:255',                                                      
@@ -152,25 +157,5 @@ class OrderController extends Controller
         return back()->with('error', 'There was a problem deleting that order');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
     
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
 }

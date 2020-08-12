@@ -16,8 +16,8 @@ use \Carbon\Carbon;
 class CheckoutController extends Controller
 {
     /**
-     * get Checkout 
-     * @return array 
+     * get Checkout
+     * @return array
      */
     public function getCheckout()
     {
@@ -81,9 +81,9 @@ class CheckoutController extends Controller
                 "order_total" => $total,
                 "subtotal" => $subtotal,
                 "tax" => $tax,
-                "gst" => $gst,
-                "pst" => $pst,
-                "hst" => $hst,
+                "gst" => $gst*$request->subtotal,
+                "pst" => $pst*$request->subtotal,
+                "hst" => $hst*$request->subtotal,
                 "tax_message" => $tax_message,
                 "shipping" => $shipping
             ];
@@ -172,9 +172,6 @@ class CheckoutController extends Controller
         }
 
 
-        //clean session, empty cart
-        session()->forget('cart');
-
 
         try {
 
@@ -208,20 +205,28 @@ class CheckoutController extends Controller
                 $update_order->transaction_status = 1;
                 $update_order->save();
 
-            } else {
+                //clean session, empty cart
+                session()->forget('cart');
 
-                //return back with errors
-                //return back()->withErrors((array) $response->errors);
-                echo "Failed";
+                return redirect("/thankyou/".$order_id)->with('success', 'Order was successfully created');
+
+            } else {
+                $errors = $response->transaction_response->errors;
+                return redirect()->back()->with('error', 'Transaction failed, unfortunately. ' . json_encode($errors));
             }
 
         } catch (Exception $e) {
             die($e->getMessage());
         }
 
-        return redirect("/thankyou/".$order_id)->with('success', 'Order was successfully created');
     }
 
+    /**
+     * function for displaying a thank you page after the order is completed successfully
+     *
+     * @param $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|\Illuminate\View\View
+     */
     public function thankyou($id)
     {
         $title = 'Thank You ';

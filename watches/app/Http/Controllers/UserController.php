@@ -44,7 +44,6 @@ class UserController extends Controller
             'province' => 'nullable|string|max:255',
             'country' => 'nullable|string|max:255',
             'postal_code' => 'nullable|string|max:6',
-            'email' => 'required|email|unique:users,email,' . $request->id,
             'phone_number' => 'nullable|string|min:7|max:14',
             'image' => 'nullable|image',            
             'id' => 'required|integer'
@@ -71,7 +70,6 @@ class UserController extends Controller
         $user->province = $valid['province'];
         $user->country = $valid['country'];
         $user->postal_code = $valid['postal_code'];
-        $user->email = $valid['email'];
         $user->phone_number = $valid['phone_number'];
 
         // if changes were made redirect to list view with success message
@@ -100,60 +98,5 @@ class UserController extends Controller
         // return view with user's profile
         return view('/profile', compact('title','user','orders'));
     }   
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-       //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-         //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
-
-
     
 }

@@ -12,13 +12,13 @@ use App\Category;
 class WatchController extends Controller
 {
     /**
-     * search query for admin 
+     * search query for watches 
      * @return array view of search terms specified 
      */
     public function search()
     {
         $search_term = $_GET['query']; 
-        $watches = Watch::where('watch_name', 'LIKE', '%'.$search_term.'%')->orWhere('material', 'LIKE', '%'.$search_term.'%')->get(); 
+        $watches = Watch::where('watch_name', 'LIKE', '%'.$search_term.'%')->orWhere('material', 'LIKE', '%'.$search_term.'%')->orWhere('main_color', 'LIKE', '%'.$search_term.'%')->orWhere('long_description', 'LIKE', '%'.$search_term.'%')->get(); 
 
         return view('/admin/search/search_watches', compact('watches', 'search_term')); 
     }
@@ -226,17 +226,6 @@ class WatchController extends Controller
             return back()->with('success', 'The watch has been deleted!');
         }
         return back()->with('error', 'There was a problem deleting that watch');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
 }

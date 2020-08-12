@@ -67,15 +67,17 @@ class CartController extends Controller
      */
     public static function getCartTotal()
     {
-        $total = 0;
+        if (session()->has('cart')) {
+            $total = 0;
 
-        $cart = session()->get('cart');
+            $cart = session()->get('cart');
 
-        foreach($cart as $id => $details) {
-            $total += $details['price'] * $details['quantity'];
+            foreach ($cart as $id => $details) {
+                $total += $details['price'] * $details['quantity'];
+            }
+
+            return round($total, 2);
         }
-
-        return round($total, 2);
     }
 
 
@@ -122,7 +124,7 @@ class CartController extends Controller
         {
             $cart = session()->get('cart');
 
-            //checking the number of watches left in the database
+            //checking the number of watches left in the database and sendin an ajax response accordingly
 
             $watch_name = $cart[$request->id]["watch_name"];
 
@@ -132,14 +134,11 @@ class CartController extends Controller
                 $message = "Sorry, no more items left in stock";
                 return response()->json(['message' => $message]);
             } elseif ((($watch->quantity) - ($request->quantity)) >= 0) {
-//                $watch->quantity =  $watch->quantity - $request->quantity;
-//                $watch->save();
+
                 $message = "Quantity updated";
                 $cart[$request->id]["quantity"] = $request->quantity;
                 session()->put('cart', $cart);
-
                 $subTotal = round($cart[$request->id]['quantity'] * $cart[$request->id]['price'], 2);
-
                 $total = round($this->getCartTotal(),2);
 
                 return response()->json(['total' => $total, 'subTotal' => $subTotal, 'message' => $message, 'quantity' => $request->quantity]);
@@ -149,8 +148,6 @@ class CartController extends Controller
                 $message = "Sorry, there are only " . $watch->quantity . " watches left in stock";
                 return response()->json(['message' => $message, 'quantity' => $watch->quantity]);
             }
-
-
 
         }
     }

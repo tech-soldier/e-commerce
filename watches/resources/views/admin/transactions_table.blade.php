@@ -5,7 +5,7 @@
 
 <div class="container">
 
-	<h1>Table Name: <em>{{ $title }}</em></h1>
+	<h1>Table Name: <em>{{ $title }}</em></h1><!---->
 
 	<form method="GET" action="{{ url('/admin/search/search_transactions') }}" style="margin-bottom: 25px">
 		@csrf
@@ -29,7 +29,6 @@
 				<th scope="col">Transaction Code</th>
 				<th scope="col">Response Code</th>
 				<th scope="col">Auth Code</th>
-				<th scope="col">Order ID</th>
 				<th scope="col">Transaction</th>
 				<th scope="col">Created On</th>
 			</tr>
@@ -42,7 +41,6 @@
 				<th>{{ $transaction->transaction_status }}</th>
 				<th>{{ $transaction->response_code }}</th>
 				<th>{{ $transaction->auth_code }}</th>
-				<th>{{ $transaction->order_id }}</th>
 				<td>{{ $transaction->transaction }}</td>
 				<td>{{ $transaction->created_at }}</td>
 			</tr>

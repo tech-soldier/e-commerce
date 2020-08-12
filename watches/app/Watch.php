@@ -32,12 +32,19 @@ class Watch extends Model
         'long_description'
 	];
 
-    // use SoftDeletes;
+    /**
+     * Define relationship between two tables
+     * @return Relationship Eloquent relationship
+    */
     public function category()
     {
     	return $this->belongsTo(Category::class);
     }
 
+    /**
+     * Define relationship between two tables
+     * @return Relationship Eloquent relationship
+    */
     public function orders()
     {
     	return $this->belongsToMany(Order::class);
