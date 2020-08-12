@@ -23,6 +23,15 @@
 	    </div>
 	</form>  <!-- /. search form -->
 
+    <div class="categories-wrapper mb-5">
+        <ul>
+            <li><a href="/admin/orders_table?field=shipping_status&value=0">pending</a></li>
+            <li><a href="/admin/orders_table?field=shipping_status&value=1">shipped</a></li>
+            <li><a href="/admin/orders_table?field=transaction_status&value=1">successful</a></li>
+            <li><a href="/admin/orders_table?field=transaction_status&value=0">abortive</a></li>
+        </ul>
+    </div>
+
 	<!-- this is the orders table --> 
 	<table class="table table-striped">
 		<thead class="thead-dark">

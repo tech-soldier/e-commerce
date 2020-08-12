@@ -52,7 +52,17 @@ class AdminController extends Controller
      */
     public function orders()
     {
-    	$orders = Order::all();
+
+        if(request()->field){
+            $field = request()->field;
+            $value = request()->value;
+            //(request()->value == 1) ? $value = 1 : $value = 0;
+            $orders = Order::where($field, '=', $value)->get();
+        }else{
+            $orders = Order::all();
+        }
+
+    	
         $title = "Orders";
 
         return view('/admin/orders_table', compact('orders', 'title'));
