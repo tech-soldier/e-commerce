@@ -14,7 +14,8 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading mb-50 mt-5">
-                        <h3 class="mb-5 text-center">About Our Company</h3>
+                        <h2 class="text-center">ABOUT OUR COMPANY</h2>
+                        <hr>
                     </div>
                 </div>
             </div> <!-- /. row -->
