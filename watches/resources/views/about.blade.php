@@ -14,13 +14,13 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading mb-50 mt-5">
-                        <h3 class="mb-5">About Our Company</h3>
+                        <h3 class="mb-5 text-center">About Our Company</h3>
                     </div>
                 </div>
             </div> <!-- /. row -->
 
             <div class="row ">
-                <div class="col-6 ">
+                <div class="col-lg-6 col-md-12">
                     <div class="">
                         <div class="about_image">
                             <!-- Product Image -->
@@ -28,7 +28,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-lg-6 col-md-12">
                     <div class="about_txt">
                         <div class="about_txt mt-5">
                             <p class="font-weight-bold">TechWatch is a premiere maker of watches for today's world of tech and style. We are the go to brand for for young business professionals in these busy and often hectic times. Today, our brand has successfully gained the title of the most loved youth fashion brand in the country</p>

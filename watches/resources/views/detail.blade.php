@@ -9,7 +9,7 @@
         </div>
     </div>  <!--/. Header Area  -->
 
-    <div class="row">
+    <div class="row detail-row">
         <div class="container d-md-flex  mt-4">
             <!-- image  -->
             <div class="col-xs-12 text-center col-md-6">
