@@ -53,7 +53,11 @@ class WatchController extends Controller
     {
         $watches = Watch::paginate(8);
         $categories = Category::all();
-        return view('shop', compact('watches', 'categories'));
+
+        $id = Auth::id(); //get authenticated user id
+        $user = User::find($id); // get authenticated user
+
+        return view('shop', compact('watches', 'categories', 'user'));
     }
 
     /**
