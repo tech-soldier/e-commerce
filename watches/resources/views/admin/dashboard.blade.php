@@ -102,7 +102,6 @@
     </div> <!-- /.card -->
 
 </div>  <!-- /.container -->
-<script src="https://kit.fontawesome.com/e8b317f565.js" crossorigin="anonymous"></script>
     
 
 
