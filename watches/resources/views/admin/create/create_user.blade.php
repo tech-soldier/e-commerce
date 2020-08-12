@@ -5,6 +5,8 @@
 
 <div class="container" style="width: 50%;">
     <h1>{{ $title }}</h1>
+    <p><a href="/admin/users_table" class="btn btn-warning">Back to Users Table</a></p>
+
     <form method="post" action="/admin/create/create_user" enctype="multipart/form-data" >
 
         @csrf 
