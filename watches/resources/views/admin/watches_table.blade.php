@@ -28,9 +28,9 @@
 
     <div class="categories-wrapper">
         <ul>
-        	<li><a class="" href="/admin/watches_table">all</a></li>
+        	<li><a class="{{ ('all' == $token) ? 'font-weight-bold text-primary' : '' }}" href="/admin/watches_table">all</a></li>
         	@foreach($categories as $category)
-        	<li><a class="" href="/admin/watches_table?category={{$category->id}}">{{$category->category_name}}</a></li>
+        	<li><a class="{{ ($category->category_name == $token) ? 'font-weight-bold text-primary' : '' }}" href="/admin/watches_table?category={{$category->id}}">{{$category->category_name}}</a></li>
             @endforeach
         </ul>
 
