@@ -19,7 +19,7 @@
                         <p class="card-text"><strong>Name of Most Affordable Watch: </strong> {{ $cheap }}</p>
                         <p class="card-text"><strong>Max Price: </strong> $ {{ number_format($max, 2) }}</p>
                         <p class="card-text"><strong>Currently Most Expensive: </strong> {{ $expensive }}</p>
-                        <p><a href="/admin/orders_table" type="button"  class="btn btn-light">Watches Table <i class="fas fa-arrow-right"></i></a></p>
+                        <p><a href="/admin/orders_table" type="button"  class="btn btn-success">Watches Table <i class="fas fa-arrow-right"></i></a></p>
 
                       </div>
                     </div>
@@ -36,7 +36,7 @@
                                         <p class="card-text">{{ $admin->first_name . ' ' . $admin->last_name }}</p>
                                     @endforeach </p>
 
-                        <p><a href="/admin/users_table" type="button"  class="btn btn-light">Users Table <i class="fas fa-arrow-right"></i></a></p>
+                        <p><a href="/admin/users_table" type="button"  class="btn btn-success">Users Table <i class="fas fa-arrow-right"></i></a></p>
                       </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                         <p class="card-text"><strong>Highest Order Total: </strong> $ {{ number_format($maxorder, 2) }}</p>
                         <p class="card-text"><strong>Lowest Order Total: </strong> $ {{ number_format($minorder, 2) }}</p>
                         <p class="card-text"><strong>Average Order Total: </strong> $ {{ number_format($avgorder, 2) }}</p>
-                        <p><a href="/admin/orders_table" type="button"  class="btn btn-light">Orders Table <i class="fas fa-arrow-right"></i></a></p>
+                        <p><a href="/admin/orders_table" type="button"  class="btn btn-success">Orders Table <i class="fas fa-arrow-right"></i></a></p>
                       </div>
                     </div>
                 </div>
@@ -75,7 +75,7 @@
                                     @endforeach
                             </div>
                         </div>
-                            <p><a href="/admin/taxes_table" type="button"  class="btn btn-light">Taxes Table <i class="fas fa-arrow-right"></i></a></p>
+                            <p><a href="/admin/taxes_table" type="button"  class="btn btn-success">Taxes Table <i class="fas fa-arrow-right"></i></a></p>
                       </div>
                     </div>
                 </div>
@@ -90,7 +90,7 @@
                             <p class="card-text">{{ $cat->category_name }}</p>
                         @endforeach
 
-                        <p><a href="/admin/categories_table" type="button"  class="btn btn-light">Categories Table <i class="fas fa-arrow-right"></i></a></p>
+                        <p><a href="/admin/categories_table" type="button"  class="btn btn-success">Categories Table <i class="fas fa-arrow-right"></i></a></p>
 
                       </div>
                     </div>
