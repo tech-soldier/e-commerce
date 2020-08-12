@@ -16,6 +16,15 @@
                     @method('PUT')
 
                     <div class="form-group">
+                        <label for="email">Email <span class="text-muted">(permanent as username)</span></label>
+                        <input type="text" class="form-control" name="email" id="email" disabled value="{{ old('email', $user->email) }}" />
+
+                        @error('email')
+                            <span class="alert-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
                         <label for="first_name">First Name</label>
                         <input type="text" class="form-control" name="first_name" id="first_name" value="{{ old('first_name', $user->first_name) }}" />
 
@@ -87,15 +96,6 @@
                             <span class="alert-danger">{{ $message }}</span>
                         @enderror
                     </div>                
-
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="text" class="form-control" name="email" id="email" value="{{ old('email', $user->email) }}" />
-
-                        @error('email')
-                            <span class="alert-danger">{{ $message }}</span>
-                        @enderror
-                    </div>
 
                     <div class="form-group">
                         <label for="phone_number">Phone Number</label>
