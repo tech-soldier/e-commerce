@@ -81,9 +81,9 @@ class CheckoutController extends Controller
                 "order_total" => $total,
                 "subtotal" => $subtotal,
                 "tax" => $tax,
-                "gst" => $gst,
-                "pst" => $pst,
-                "hst" => $hst,
+                "gst" => $gst*$request->subtotal,
+                "pst" => $pst*$request->subtotal,
+                "hst" => $hst*$request->subtotal,
                 "tax_message" => $tax_message,
                 "shipping" => $shipping
             ];
