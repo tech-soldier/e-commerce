@@ -8,8 +8,6 @@
     <p><a href="/admin/watches_table" class="btn btn-warning">Back to watches</a></p>
         
     <form method="post" action="/admin/edit/edit_watch" enctype="multipart/form-data" >
-       
-
         @csrf 
         @method('PUT')
            
@@ -184,14 +182,10 @@
             @enderror
         </div>
 
-
         <p><button type="submit" class="btn btn-primary">Submit</button></p>
-    </form>
+    </form>  <!-- /. form -->
 
-   
-
-</div>
-
+</div>  <!-- /. container  -->
 
 @stop           
            

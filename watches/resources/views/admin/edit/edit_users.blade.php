@@ -105,10 +105,11 @@
             <input type="radio" name="is_admin" value="1" {{ ($user->is_admin=="1")? "checked" : "" }} />
             True
         </div>
-         @csrf 
+        @csrf 
+        
         <p><button type="submit" class="btn btn-primary">Submit</button></p>
-    </form>
+    </form>  <!-- /.form -->
 
-</div>
+</div>  <!--  /.container -->
 
 @stop 
