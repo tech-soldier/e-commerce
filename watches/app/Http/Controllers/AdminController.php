@@ -27,20 +27,28 @@ class AdminController extends Controller
         $max = Watch::max('price');
         $avg = Watch::avg('price'); 
 
-        $users = User::count();
+        $cheap = Watch::min('watch_name'); 
+        $expensive = Watch::max('watch_name'); 
+
+        $users = User::count(); 
+        $admin = User::get()->where('is_admin', '=', 1); 
         $watches = Watch::count();
-        $categories = Category::count();
+        
         $provinces = Tax::count();
 
         $minorder = Order::min('total');
         $maxorder = Order::max('total');
         $totorder = Order::count();
+        $avgorder = Order::avg('total'); 
 
-        $gst = Tax::max('GST'); 
+        $GST = Tax::max('GST'); 
+        $hst = Tax::get()->where('HST', '>', 0); 
+        $gst = Tax::get()->where('PST', '>', 0); 
 
+        $categories = Category::count();
+        $catname = Category::all(); 
 
-
-        return view('/admin/dashboard', compact('title', 'min', 'max', 'avg','users' ,'watches', 'categories', 'provinces', 'totorder' ,'minorder', 'maxorder', 'gst'));
+        return view('/admin/dashboard', compact('title', 'min', 'max', 'avg','users', 'admin' , 'watches', 'categories', 'provinces', 'totorder' ,'minorder', 'maxorder', 'avgorder' ,'GST', 'hst', 'gst', 'catname', 'cheap', 'expensive'));
     }
 
     /**
