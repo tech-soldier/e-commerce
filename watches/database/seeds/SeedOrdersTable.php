@@ -32,11 +32,11 @@ class SeedOrdersTable extends Seeder
 
         DB::table('orders')->insert([
 
-            'user_id' => 1,
+            'user_id' => 2,
             'full_name' => 'Milad',
-            'email' => 'milad-dirani@shaw.net',
-            'billing_address' => '1411 Ashburn st.',
-            'shipping_address' => '1411 Ashburn st.',
+            'email' => 'techwatch7@gmail.com',
+            'billing_address' => '141187 Ashburn st.',
+            'shipping_address' => '141187 Ashburn st.',
             'subtotal' => 1699.99,
             'GST' => 0.05,
             'PST' => 0.07,
@@ -49,7 +49,7 @@ class SeedOrdersTable extends Seeder
 
         DB::table('orders')->insert([
 
-            'user_id' => 2,
+            'user_id' => 3,
             'full_name' => 'Dawn',
             'email' => 'dawn-baker@bellmts.com',
             'billing_address' => '88 Hargrave Bay',
@@ -66,7 +66,7 @@ class SeedOrdersTable extends Seeder
 
         DB::table('orders')->insert([
 
-            'user_id' => 3,
+            'user_id' => 4,
             'full_name' => 'Inna',
             'email' => 'inna-solda@gmail.com',
             'billing_address' => '12 Abbots Cresent',
@@ -83,7 +83,7 @@ class SeedOrdersTable extends Seeder
 
         DB::table('orders')->insert([
 
-            'user_id' => 3,
+            'user_id' => 4,
             'full_name' => 'Inna',
             'email' => 'inna-solda@gmail.com',
             'billing_address' => '12 Abbots Cresent',
@@ -100,7 +100,7 @@ class SeedOrdersTable extends Seeder
 
         DB::table('orders')->insert([
 
-            'user_id' => 4,
+            'user_id' => 5,
             'full_name' => 'Alexandr',
             'email' => 'alex-the-great@gmail.com',
             'billing_address' => '43 Inkster st',
