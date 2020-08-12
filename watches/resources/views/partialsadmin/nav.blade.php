@@ -4,11 +4,11 @@
         <ul class="navbar-nav">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle navbar-brand {{ (request()->is('admin')) ? 'active' : '' }}" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  TechWatch
+                  TechWatch Admin
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="/admin">Dashboard</a>
-                  <a class="dropdown-item" href="/">Back to TechWatch Home Page</a>
+                  <a class="dropdown-item" href="/admin">Admin Dashboard</a>
+                  <a class="dropdown-item" href="/">TechWatch Home Page</a>
                 </div>
             </li>
             <li class="nav-item">

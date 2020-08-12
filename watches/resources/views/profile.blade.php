@@ -5,9 +5,9 @@
 
     <div class="container page my-5" id="profile_page">
         <h1 class="mb-3 py-3 px-3 bg-secondary text-light">My Personal Information
-            <span class="float-right">
+            <span class="float-right mobile_wide">
                 <a href="/profile/{{$user->id}}/edit">
-                    <button type="button" class="btn btn-outline-light text-uppercase">edit profile</button>
+                    <button type="button" class="btn btn-outline-light text-uppercase mobile_wide">edit profile</button>
                 </a>
             </span>
             <span style="display: block; clear: both;"></span>
@@ -66,8 +66,8 @@
             <h2 class="py-3 px-3 bg-secondary text-light">
                 Total Orders: 
                 <span class="font-weight-bold">{{ count($orders) }}</span>
-                <span class="float-right">
-                    <button type="button" class="btn btn-outline-light text-uppercase" id="button_orders">see orders</button>
+                <span class="float-right mobile_wide">
+                    <button type="button" class="btn btn-outline-light text-uppercase mobile_wide" id="button_orders">see orders</button>
                 </span>
                 <span style="display: block; clear: both;"></span>
             </h2>
@@ -77,8 +77,8 @@
                     <thead class="bg-light">
                         <tr>
                             <th scope="col">Order Number</th>
-                            <th scope="col">Ordered</th>
-                            <th scope="col">Shipped To</th>
+                            <th class="mobile_disapear" scope="col">Ordered</th>
+                            <th class="mobile_disapear" scope="col">Shipped To</th>
                             <th scope="col">Total</th>
                             <th scope="col">Details</th>
                         </tr>
@@ -88,8 +88,8 @@
                         <?php foreach ($orders as $order) : ?>
                             <tr>
                                 <th class="align-middle">{{$order->id}}</th>
-                                <td>{{ $order->created_at->diffForHumans() }}</td>
-                                <td>{{$order->shipping_address}}</td>
+                                <td class="mobile_disapear">{{ $order->created_at->diffForHumans() }}</td>
+                                <td class="mobile_disapear">{{$order->shipping_address}}</td>
                                 <td>${{$order->total}}</td>
                                 <td>
                                     <a href="/thankyou/{{$order->id}}"><button type="button" class="btn btn-outline-primary">see order</button></a>

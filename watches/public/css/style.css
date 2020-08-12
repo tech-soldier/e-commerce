@@ -642,6 +642,27 @@ a.watch-name::first-letter {
   min-height: 589px;
 }
 
+.alert-success,
+.alert-danger{
+  margin-bottom: 0px;
+}
+
+#profile_page label{
+  font-weight: 600;
+}
+
+table p{
+  margin-top: 1rem;
+}
+
+.table td,
+.table th{
+  vertical-align: middle;
+}
+
+.navbar-nav a{
+  color: #888;
+}
 
 
 
@@ -700,6 +721,13 @@ a.watch-name::first-letter {
   .searchbox{
     margin-bottom:7px;
   }
+  #profile_page.container{
+    max-width: 100%;
+  }
+  #profile_page h1,
+  #profile_page h2{
+    font-size: 1.5rem;
+  }
 }
 
 @media only screen and (max-width:575px){
@@ -709,6 +737,35 @@ a.watch-name::first-letter {
   }
   .normal_img:hover{
   transform: scale(1.0);
+  }
+  
+  .categories-wrapper{
+    margin-bottom: 1rem !important;
+  }
+  .categories-wrapper ul{
+    padding: 0rem;
+  }
+  .categories-wrapper ul li a{
+    font-size: 0.8rem;
+    padding: 5px 9px;
+  }
+  #profile_page .row{
+    display: block;
+  }
+  #profile_page .col-4,
+  #profile_page .col-8{
+    max-width: 100%;
+  }
+  #profile_page .mobile_wide{
+    display: block;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  #profile_page .mobile_disapear{
+    display: none;  
+  }
+  .detail1{
+    display: none;
   }
 }
 
@@ -739,21 +796,14 @@ a.watch-name::first-letter {
 
 }
 
-.alert-success,
-.alert-danger{
-  margin-bottom: 0px;
+
+.detail-row{
+  margin-right:0;
 }
 
-#profile_page label{
-  font-weight: 600;
-}
-
-table p{
-  margin-top: 1rem;
-}
-
-.table td,
-.table th{
-  vertical-align: middle;
+.shop-link{
+  margin: 0 auto;
+    justify-content: center;
+    display: flex;
 }
 

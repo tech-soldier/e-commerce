@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="shop1" >
+<div class="shop1 " >
         <div class="video-container">
 
             <button class="shop-btn text-center"> SHOP </button>
@@ -72,6 +72,8 @@
                 @endforeach
 
             </div> <!-- /. row -->
+            <hr> 
+            <div class="shop-link  container ">{{ $watches->links() }} </div>
            
         @else
 
@@ -82,20 +84,9 @@
     <!-- /. Best Selling Products -->
 
     <br>
-        
-        <div class="container">
-            <div id="results" class="row justify-content-center">
-        
-                <!-- <div class="ajax-loading" style="border:2px solid red; width:25%;">
-                    <img src="/storage/images/loading.gif" />
-                </div> -->
-        
-            </div>
-        </div>
-        <div class="load-more pb-4">
-            <p class="load-p text-center">load more</p>
-            <i id="load-arr" class="fas load-arrow fa-2x fa-angle-double-down" style="margin:0 auto; color:cornflowerblue"></i>
-        </div>
+       
+       
+       
     @include('partials/features')
     
 <script>

@@ -30,7 +30,7 @@
             <li><a class="{{ ($token == 'pending') ? 'font-weight-bold text-primary' : '' }}" href="/admin/orders_table?field=shipping_status&value=0&token=pending">pending</a></li>
             <li><a class="{{ ($token == 'shipped') ? 'font-weight-bold text-primary' : '' }}" href="/admin/orders_table?field=shipping_status&value=1&token=shipped">shipped</a></li>
             <li><a class="{{ ($token == 'successful') ? 'font-weight-bold text-primary' : '' }}" href="/admin/orders_table?field=transaction_status&value=1&token=successful">successful</a></li>
-            <li><a class="{{ ($token == 'abortive') ? 'font-weight-bold text-primary' : '' }}" href="/admin/orders_table?field=transaction_status&value=0&token=abortive">abortive</a></li>
+            <li><a class="{{ ($token == 'aborted') ? 'font-weight-bold text-primary' : '' }}" href="/admin/orders_table?field=transaction_status&value=0&token=aborted">aborted</a></li>
         </ul>
     </div>
 
