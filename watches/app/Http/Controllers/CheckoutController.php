@@ -81,9 +81,9 @@ class CheckoutController extends Controller
                 "order_total" => $total,
                 "subtotal" => $subtotal,
                 "tax" => $tax,
-                "gst" => $gst,
-                "pst" => $pst,
-                "hst" => $hst,
+                "gst" => $gst*$request->subtotal,
+                "pst" => $pst*$request->subtotal,
+                "hst" => $hst*$request->subtotal,
                 "tax_message" => $tax_message,
                 "shipping" => $shipping
             ];
@@ -211,7 +211,6 @@ class CheckoutController extends Controller
                 return redirect("/thankyou/".$order_id)->with('success', 'Order was successfully created');
 
             } else {
-
                 $errors = $response->transaction_response->errors;
                 return redirect()->back()->with('error', 'Transaction failed, unfortunately. ' . json_encode($errors));
             }
@@ -220,9 +219,14 @@ class CheckoutController extends Controller
             die($e->getMessage());
         }
 
-
     }
 
+    /**
+     * function for displaying a thank you page after the order is completed successfully
+     *
+     * @param $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|\Illuminate\View\View
+     */
     public function thankyou($id)
     {
         $title = 'Thank You ';

@@ -744,6 +744,16 @@ a.watch-name::first-letter {
   margin-bottom: 0px;
 }
 
+#profile_page label{
+  font-weight: 600;
+}
 
+table p{
+  margin-top: 1rem;
+}
 
+.table td,
+.table th{
+  vertical-align: middle;
+}
 

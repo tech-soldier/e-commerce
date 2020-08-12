@@ -12,7 +12,6 @@ use App\Order;
 use App\User; 
 use App\Admin; 
 
-
 class AdminController extends Controller
 {
     /**
@@ -57,11 +56,21 @@ class AdminController extends Controller
      */
     public function watches()
     {
-    	$watches = Watch::all();
-        // $categories = Category::all(); 
+        // test if request is by category
+        if(request()->category){
+            $id = request()->category;
+            $watches = Watch::with('category')->where('category_id', $id)->get(); // by category
+            $current_category = Category::find($id); // get requested category
+            $token = $current_category->category_name; // assign category name to token (active link)
+        }else{ // otherwise get all watches
+            $watches = Watch::with('category')->get(); // all  
+            $token = 'all';    
+        }
+
+        $categories = Category::all();
         $title = "Watches";
 
-        return view('/admin/watches_table', compact('watches', 'title'));
+        return view('/admin/watches_table', compact('watches', 'title', 'categories', 'token'));
     }
 
     /**
@@ -70,10 +79,20 @@ class AdminController extends Controller
      */
     public function orders()
     {
-    	$orders = Order::all();
-        $title = "Orders";
+        // test if there was a request by a filter
+        if(request()->field){
+            $field = request()->field; // get database field requested
+            $value = request()->value; // get value requested
+            $orders = Order::where($field, '=', $value)->get();
+            $token = request()->token; // need this for bredcrumbs
+        }else{
+            // if not requested by filter, get all orders
+            $orders = Order::all();
+            $token = 'all';
+        }
 
-        return view('/admin/orders_table', compact('orders', 'title'));
+        $title = "Orders";
+        return view('/admin/orders_table', compact('orders', 'title', 'token'));
     }
 
     /**

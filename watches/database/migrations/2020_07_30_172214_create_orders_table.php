@@ -15,7 +15,6 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            //$table->integer('watch_id')->unsigned(); 
             $table->integer('user_id')->unsigned(); 
             $table->string('full_name', 255); 
             $table->string('email', 255); 
@@ -28,7 +27,7 @@ class CreateOrdersTable extends Migration
             $table->decimal('HST', 10,2)->nullable(); 
             $table->decimal('shipping', 14,2);
             $table->boolean('transaction_status')->default(false); 
-
+            $table->boolean('shipping_status')->default(false); 
             $table->decimal('total', 14,2); 
             $table->timestamps();
             $table->softDeletes();

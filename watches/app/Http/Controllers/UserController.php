@@ -44,7 +44,6 @@ class UserController extends Controller
             'province' => 'nullable|string|max:255',
             'country' => 'nullable|string|max:255',
             'postal_code' => 'nullable|string|max:6',
-            'email' => 'required|email|unique:users,email,' . $request->id,
             'phone_number' => 'nullable|string|min:7|max:14',
             'image' => 'nullable|image',            
             'id' => 'required|integer'
@@ -71,7 +70,6 @@ class UserController extends Controller
         $user->province = $valid['province'];
         $user->country = $valid['country'];
         $user->postal_code = $valid['postal_code'];
-        $user->email = $valid['email'];
         $user->phone_number = $valid['phone_number'];
 
         // if changes were made redirect to list view with success message

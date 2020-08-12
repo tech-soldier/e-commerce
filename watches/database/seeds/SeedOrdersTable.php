@@ -76,6 +76,7 @@ class SeedOrdersTable extends Seeder
             'PST' => 0.07,
             'shipping' => 11.99,
             'transaction_status' => 1,
+            'shipping_status' => 1,
             'total' => 671.99,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
@@ -93,6 +94,7 @@ class SeedOrdersTable extends Seeder
             'PST' => 0.07,
             'shipping' => 11.99,
             'transaction_status' => 1,
+            'shipping_status' => 1,
             'total' => 223.99,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
@@ -110,6 +112,7 @@ class SeedOrdersTable extends Seeder
             'PST' => 0.00,
             'shipping' => 11.99,
             'transaction_status' => 1,
+            'shipping_status' => 1,
             'total' => 209.99,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
@@ -126,6 +129,7 @@ class SeedOrdersTable extends Seeder
             'HST' => 0.15, 
             'shipping' => 11.99,
             'transaction_status' => 1,
+            'shipping_status' => 1,
             'total' => 209.99,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
