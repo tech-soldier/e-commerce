@@ -11,8 +11,6 @@ use App\Category;
 use App\Order; 
 use App\User; 
 use App\Admin; 
-use Route;
-
 
 class AdminController extends Controller
 {
@@ -58,12 +56,14 @@ class AdminController extends Controller
             $field = request()->field;
             $value = request()->value;
             $orders = Order::where($field, '=', $value)->get();
+            $token = request()->token;
         }else{
             $orders = Order::all();
+            $token = 'all';
         }
 
         $title = "Orders";
-        return view('/admin/orders_table', compact('orders', 'title'));
+        return view('/admin/orders_table', compact('orders', 'title', 'token'));
     }
 
     /**
