@@ -87,7 +87,7 @@
         @endif
 
         <p><button type="submit" class="btn btn-primary">Submit</button></p>
-    </form>
-</div>
+    </form>  <!-- /.form -->
+</div> <!--  /.container -->
 
 @stop 

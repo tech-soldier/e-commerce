@@ -72,14 +72,10 @@
                         <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2" data-parent="#accordionEx">
                             <div class="card-body">
                                 <div class="tech-specs__pivot-menus">
+                                    
+                                    
                                     <div class="tech-specs__menu-header">
-                                        <h6 style="font-weight:bold !important;"><strong>Genre</strong></h6>
-                                    </div>
-                                    <ul>
-                                        <li class="tech-specs__menu-items" style="direction:ltr">Racing</li>
-                                    </ul>
-                                    <div class="tech-specs__menu-header">
-                                        <h6 style="font-weight:bold !important;"><strong>Measurements</strong></h6>
+                                        <h6 style="font-weight:bold !important;" class="text-center"><strong>Measurements</strong></h6>
                                     </div>
                                     <ul>
                                         <li class="tech-specs__menu-item-name">Strap length: {{$watch->strap_length}}</li>
@@ -88,7 +84,7 @@
                                         <li class="tech-specs__menu-items">Weight: {{$watch->weight}}</li>
                                         
                                     </ul>
-                                    <div class="tech-specs__menu-header">Specs</div>
+                                    <div class="tech-specs__menu-header text-center">Specs</div>
                                     <ul>
                                         <li class="tech-specs__menu-item-name">Water resistance {{$watch->water_resistant}}</li>
                                         <li class="tech-specs__menu-items">Movement: {{$watch->movement}}</li>
