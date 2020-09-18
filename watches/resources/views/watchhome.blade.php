@@ -103,7 +103,7 @@
                 @foreach($watches as $watch)
                 <!-- Single Product -->
                 <div class="col-9 col-sm-6 col-md-4 col-lg-3 bord">
-                    
+
                     <div class="single-product-area mb-30">
                         <div class="product_image">
                             <!-- Product Image -->
@@ -114,7 +114,7 @@
                             <!-- <div class="product_badge">
                                 <span>Top</span>
                             </div> -->
-                            
+
                         </div>
                         <!-- Product Description -->
                         <div class="product_description py-2">
