@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark justify-content-between">
-    <div style="display: none"><img src="http://techwatch.coledarani.com/storage/images/about_image.jpg" alt=""></div>
-    <a class="navbar-brand" href="/"><img class="logo my-3" src="/storage/images/logo1.png" alt="logo"></a>
+
+{{--    <a class="navbar-brand" href="/"><img class="logo my-3" src="/storage/images/logo1.png" alt="logo"></a>--}}
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -51,7 +51,7 @@
             <li  >
                 <a class="nav-link {{ (request()->is('contact')) ? 'active' : '' }}" href="/contact">Contact</a>
             </li>
-            
+
             <li class="nav-item dropdown">
 
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -76,14 +76,14 @@
         </ul>
 
         <div class="ml-3 top-search" >
-                
+
             <form method="get" class="form-inline" action="{{ url('/shop_search') }}">
                 @csrf
-                
-                <input type="search" class="form-control  searchbox" id="query" name="query" placeholder="Search" /> 
+
+                <input type="search" class="form-control  searchbox" id="query" name="query" placeholder="Search" />
                 <span class="input-group-btn">
                     <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
-                </span>    
+                </span>
              </form>
 
         </div>
@@ -100,11 +100,11 @@
                                 <i class="fas fa-user-alt text-dark"></i>
                             </div>
                         <?php endif ; ?>
-                    </div>                    
+                    </div>
                 </a>
             </div>
             <div class=" ml-2 acct_srch d-flex">
-                <!-- util search -->                
+                <!-- util search -->
                 <!-- shopping cart -->
                 <div class="ml-2 circle">
                     <a href="/cart"> <i class="fas fa-shopping-cart"></i></a>
@@ -121,15 +121,15 @@
 
 </nav>
 <div class=" bottom-search " >
-                
+
     <form method="get" class="form-inline" action="{{ url('/shop_search') }}">
         @csrf
-        
-        <input type="search" class="form-control mr-sm-2 searchbox1" id="query-bottom" name="query" placeholder="Search" /> 
+
+        <input type="search" class="form-control mr-sm-2 searchbox1" id="query-bottom" name="query" placeholder="Search" />
         <span class="input-group-btn">
-            <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>                            
+            <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
         </span>
-        
+
      </form>
 
 </div>
